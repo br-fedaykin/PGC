@@ -15,3 +15,21 @@
         - Até maio de 2012 estas informações estão disponíveis como "Natureza" e "Esfera Administrativa".
         - De junho de 2012 a outubro de 2015, estão disponíveis tanto como "Natureza" e "Esfera Administrativa", como "Natureza Jurídica" e "Esfera Jurídica".
         - A partir de novembro de 2015, estão disponíveis como "Natureza Jurídica" e "Esfera Jurídica".
+
+## Extração de dados
+
+Os dados das categorias foram sistematizadas em um [arquivo json](profissionais-saude.json), com a seguinte estrutura:
+
+```
+{
+    Nível de especialização:
+    [
+        {
+            área de atuação:
+            [
+                especialidades
+            ]
+        }
+    ]
+}
+```
