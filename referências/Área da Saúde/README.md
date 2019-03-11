@@ -34,5 +34,5 @@
    - [link da lista](http://tabnet.datasus.gov.br/cgi/cnes/tipo_estabelecimento.htm)
 
 [Portal da Saúde]: http://www2.datasus.gov.br/DATASUS/index.php?area=0204&id=11673
-[ABE]: siglas.md#ABE
+[ABE]: ../siglas.md#ABE
 [CNES]: https://wiki.saude.gov.br/cnes/index.php/P%C3%A1gina_principal

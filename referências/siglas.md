@@ -24,6 +24,10 @@
 
 ## Criptografia
 
+### ABE
+
+> Attribute Based Encryption. Um esquema de criptografia utilizando atributos.
+
 ### CA
 
 > Certifying Authority
