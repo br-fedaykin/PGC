@@ -33,3 +33,23 @@ Os dados das categorias foram sistematizadas em um [arquivo json](profissionais-
     ]
 }
 ```
+
+### TODO: reestruturar profissionais-saude.json para o formato
+
+```
+[
+    {
+        "nível": "Nível de Especialização",
+        "áreas" :
+        [
+            {
+                "especialidade": "Nome da Especialidade",
+                "profissões":
+                [
+                    profissões
+                ]
+            }
+        ]
+    }
+]
+```
