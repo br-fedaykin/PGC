@@ -1,15 +1,13 @@
-# Fontes relacionadas à área da Saúde
+# Categorização dos Profissionais da Saúde
 
-## Taxonomia ou Ontologia de Profissionais da Saúde
-
-### Artigos sobre taxonomia
+## Artigo sobre taxonomia
 
 1. An ontological knowledge framework for adaptive medical workflow, 2008.
    - Tem uma ontologia mostrando papeis médicos, e como ele se liga a uma ontologia de fluxo de trabalho de um hospital (p.5). As especialidades nesta ontologia se limitam a duas, e talvez possa ser estendida combinando-a com uma outra ontologia que encontrarmos.
    - não li todo o artigo, só chequei a figura contendo a ontologia.
    - [link do PDF](https://www.sciencedirect.com/science/article/pii/S1532046408000658)
 
-### Sites contendo informações estruturais sobre a saúde
+## Sites contendo informações estruturais sobre a saúde
 
 1. Crosswalk Medicare Provider/Supplier To Healthcare Provider Taxonomy:
    - Possui uma lista completa de fornecedores de serviço de saúde ligados ao Medicare, um programa de saúde dos EUA.
