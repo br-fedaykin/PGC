@@ -8,18 +8,11 @@ O prontuário médico constitui obrigação prevista no [Código de Ética do M�
 > É vedado ao médico:
 > Deixar de elaborar prontuário legível para cada paciente.
 
-Há várias normas que se aplicam ao sigilo das informações referentes ao paciente, e os casos em que é possível ter acesso:
+Há várias normas que se aplicam ao sigilo das informações no prontuário e os casos em que é possível ter acesso. Segue-se um diagrama preliminar sobre as políticas de acesso descritas no Código de Ética Médica, com adição de informação do CREMESP quanto ao caso de solicitação de acesso de prontuário por parte de familiares e uma decisão judicial a este respeito
 
-    TODO: listar aqui normas do CEM
-    art. 34 (sigilo do médico ao próprio paciente)
-    art. 41 (Advanced Directive)
-    art. 73 (consentimento do paciente, que pode ser usado para permitir inclusive elementos não criptografados no prontuário)
-    art. 74 (política de acesso a menor de idade)
-    art. 77 (óbito deve ter acesso externo, mas não deve ser público. Pensar se isso cabe em uma política de acesso ou deve ser contornado pelo administrador das permissões)
-    art. 85 (restringe o domínio público do prontuário)
-    art. 88 (obriga o médico a esclarecer dúvidas em prontuários. Isso faz parte do escopo de um sistema de permissões? Haveria uma política envolvendo isso?)
-    art. 89 (paciente pode permitir publicidade de prontuário)
-    art. 93. (médico não pode ser auditor do caso de seu paciente, familiares ou qualquer uma que possa influenciar a auditoria. Isso envolveria políticas de acesso com atributos de negação, se for compor o ABE)
+## Diagrama de permissão de acesso a um prontuário médico
+
+![Diagrama de permissão de acesso a um prontuário médico](https://mermaidjs.github.io/mermaid-live-editor/#/view/eyJjb2RlIjoiZ3JhcGggUkxcbkExW0NSTV0gLS0gaXJyZXN0cml0byA8YSBocmVmPVwiXCJodHRwOi8vYml0Lmx5L0PDs2RpZ2_DiXRpY2FNZWRpY2luYSNhcnQ5MFwiXCI-QXJ0LiA5MC0tPC9hPiAtLT4gIEJbUHJvbnR1w6FyaW9dXG5CIC0tLXxjb250w6ltfCBDW2RhZG9zIHNlbnPDrXZlaXNdXG5DIC0tLXxzw6NvfCBDMVtkb2Vuw6dhcywgbWVkaWNhbWVudG9zIG91IDxicj4gdHJhdGFtZW50b3MgZXN0aWdtYXRpemFkb3MgPGJyPiBzb2NpYWxtZW50ZV1cbkIgLS0tfGNvbnTDqW18IERbZGFkb3MgY29tdW5zXVxuQiAtLS18Y29udMOpbXwgRVtkYWRvcyBkYW5vc29zXVxuRSAtLS18c8Ojb3wgRTFbaGlww7N0ZXNlcy9wcm9nbsOzc3RpY29zIHF1ZSA8YnI-IG8gcGFjaWVudGUgcG9kZSBuw6NvIHN1cG9ydGFyXVxuQiAtLS18Y29udMOpbXwgRlthdGVzdGFkbyBkZSDDs2JpdG9dXG5CIC0tLXxjb250w6ltfCBHW2xhdWRvIGRlIMOzYml0b11cbkEyW1BhY2llbnRlXSAtLSBpcnJlc3RyaXRvLCBhIG1lbm9zIHF1ZSA8YnI-IGNhdXNlIGRhbm8gPGEgaHJlZj1cIlwiaHR0cDovL2JpdC5seS9Dw7NkaWdvw4l0aWNhTWVkaWNpbmEjYXJ0MzRcIlwiPkFydC4gMzQ8L2E-IC0tPiAgQltQcm9udHXDoXJpb11cbkEzW1JlcHJlc2VudGFudGUgTGVnYWxdIC0tIGlycmVzdHJpdG8gPGEgaHJlZj1cIlwiaHR0cDovL2JpdC5seS9Dw7NkaWdvw4l0aWNhTWVkaWNpbmEjYXJ0MzRcIlwiPkFydC4gMzQuPC9hPi4gLS0-ICBCW1Byb250dcOhcmlvXVxuQTRbRmFtaWxpYXIgZGUgMcK6XSAtLSBpcnJlc3RyaXRvIDxhIGhyZWY9XCJcImh0dHA6Ly9iaXQubHkvMlQ4NWhWTVwiXCI-Q1JFTUVTUDwvYT4uIC0tPiAgRlxuQTQgLS0gaXJyZXN0cml0byBhcMOzcyBvIMOzYml0byA8YnI-PGEgaHJlZj1cIlwiaHR0cHM6Ly9nbG8uYm8vMlQyTDRSaVwiXCI-c2VndW5kbyBhIGp1c3Rpw6dhPC9hPiAtLT4gIEJcbkE0IC0tIGlycmVzdHJpdG8gPGEgaHJlZj1cIlwiaHR0cDovL2JpdC5seS8yVDg1aFZNXCJcIj5DUkVNRVNQPC9hPiAtLT4gIEdcbkE1W1NlZ3VyYWRvcmFdIC0tIGlycmVzdHJpdG8gPGEgaHJlZj1cIlwiaHR0cDovL2JpdC5seS9Dw7NkaWdvw4l0aWNhTWVkaWNpbmEjYXJ0NzdcIlwiPkFydC4gNzcuLjwvYT4uIC0tPiAgRlxuQTUgLS0gIHF1YW5kbyBhdXRvcml6YWRvIHBlbG8gPGJyPiByZXByZXNlbnRhbnRlIGxlZ2FsIDxicj48YSBocmVmPVwiXCJodHRwOi8vYml0Lmx5L0PDs2RpZ2_DiXRpY2FNZWRpY2luYSNhcnQ3N1wiXCI-QXJ0LiA3Ny48L2E-IC0tPiAgR1xuQTZbUGVyaXRvXSAtLSBxdWFuZG8gPGJyPiBub21lYWRvIDxhIGhyZWY9XCJcImh0dHA6Ly9iaXQubHkvQ8OzZGlnb8OJdGljYU1lZGljaW5hI2FydDg5cDFcIlwiPiAmIzE2NyAxwrosIEFydC4gODkuPC9hPiAtLT4gQlxuQTdbUGVzcXVpc2Fkb3JdIC0tIGF1dG9yaXphZG8gcGVsbyBDb21pdMOqIDxicj4gZGUgw4l0aWNhIG91IHBhY2llbnRlIC0tLSBCXG5BOFtUZXJjZWlyb3NdIC0tIGF1dG9yaXphZG8gcGVsbyA8YnI-IHBhY2llbnRlIDxhIGhyZWY9XCJcImh0dHA6Ly9iaXQubHkvQ8OzZGlnb8OJdGljYU1lZGljaW5hI2FydDg5XCJcIj4gJiMxNjcgMcK6LCBBcnQuIDg5LjwvYT4gLS0-IENcbkE4W1RlcmNlaXJvc10gLS0gYXV0b3JpemFkbyBwZWxvIDxicj4gcGFjaWVudGUgPGEgaHJlZj1cIlwiaHR0cDovL2JpdC5seS9Dw7NkaWdvw4l0aWNhTWVkaWNpbmEjYXJ0ODlcIlwiPiAmIzE2NyAxwrosIEFydC4gODkuPC9hPiAtLT4gRCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19)
 
 ## Sites
 
