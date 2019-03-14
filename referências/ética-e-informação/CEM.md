@@ -164,9 +164,9 @@ Parágrafo único. Na ausência de médico plantonista substituto, a direção t
 
 <a name="art15"></a>Art. 15. Descumprir legislação específica nos casos de transplantes de órgãos ou de tecidos, esterilização, fecundação artificial, abortamento, manipulação ou terapia genética.
 
-<a name="art15§1"></a>§ 1º No caso de procriação medicamente assistida, a fertilização não deve conduzir sistematicamente à ocorrência de embriões supranumerários.
+<a name="art15p1"></a>§ 1º No caso de procriação medicamente assistida, a fertilização não deve conduzir sistematicamente à ocorrência de embriões supranumerários.
 
-<a name="art15§2"></a>§ 2º O médico não deve realizar a procriação medicamente assistida com nenhum dos seguintes objetivos:
+<a name="art15p2"></a>§ 2º O médico não deve realizar a procriação medicamente assistida com nenhum dos seguintes objetivos:
 
 <a name="art15§2I"></a>I – criar seres humanos geneticamente modificados;
 
@@ -174,7 +174,7 @@ Parágrafo único. Na ausência de médico plantonista substituto, a direção t
 
 <a name="art15§2III"></a>III – criar embriões com finalidades de escolha de sexo, eugenia ou para originar híbridos ou quimeras.
 
-<a name="art15§3"></a>§ 3º Praticar procedimento de procriação medicamente assistida sem que os participantes estejam de inteiro acordo e devidamente esclarecidos sobre o mesmo.
+<a name="art15p3"></a>§ 3º Praticar procedimento de procriação medicamente assistida sem que os participantes estejam de inteiro acordo e devidamente esclarecidos sobre o mesmo.
 
 <a name="art16"></a>Art. 16. Intervir sobre o genoma humano com vista à sua modificação, exceto na terapia gênica, excluindo-se qualquer ação em células germinativas que resulte na modificação genética da descendência.
 
@@ -228,9 +228,9 @@ Parágrafo único. Na ausência de médico plantonista substituto, a direção t
 
 <a name="art36"></a>Art. 36. Abandonar paciente sob seus cuidados.
 
-<a name="art36§1"></a>§ 1° Ocorrendo fatos que, a seu critério, prejudiquem o bom relacionamento com o paciente ou o pleno desempenho profissional, o médico tem o direito de renunciar ao atendimento, desde que comunique previamente ao paciente ou a seu representante legal, assegurando-se da continuidade dos cuidados e fornecendo todas as informações necessárias ao médico que lhe suceder.
+<a name="art36p1"></a>§ 1° Ocorrendo fatos que, a seu critério, prejudiquem o bom relacionamento com o paciente ou o pleno desempenho profissional, o médico tem o direito de renunciar ao atendimento, desde que comunique previamente ao paciente ou a seu representante legal, assegurando-se da continuidade dos cuidados e fornecendo todas as informações necessárias ao médico que lhe suceder.
 
-<a name="art36§2"></a>§ 2° Salvo por motivo justo, comunicado ao paciente ou aos seus familiares, o médico não abandonará o paciente por ser este portador de moléstia crônica ou incurável e continuará a assisti-lo ainda que para cuidados paliativos.
+<a name="art36p2"></a>§ 2° Salvo por motivo justo, comunicado ao paciente ou aos seus familiares, o médico não abandonará o paciente por ser este portador de moléstia crônica ou incurável e continuará a assisti-lo ainda que para cuidados paliativos.
 
 <a name="art37"></a>Art. 37. Prescrever tratamento ou outros procedimentos sem exame direto do paciente, salvo em casos de urgência ou emergência e impossibilidade comprovada de realizá-lo, devendo, nesse caso, fazê-lo imediatamente após cessar o impedimento.
 
@@ -368,17 +368,17 @@ Parágrafo único. A complementação de honorários em serviço privado pode se
 
 <a name="art87"></a>Art. 87. Deixar de elaborar prontuário legível para cada paciente.
 
-<a name="art87§1"></a>§ 1º O prontuário deve conter os dados clínicos necessários para a boa condução do caso, sendo preenchido, em cada avaliação, em ordem cronológica com data, hora, assinatura e número de registro do médico no Conselho Regional de Medicina. 
+<a name="art87p1"></a>§ 1º O prontuário deve conter os dados clínicos necessários para a boa condução do caso, sendo preenchido, em cada avaliação, em ordem cronológica com data, hora, assinatura e número de registro do médico no Conselho Regional de Medicina. 
 
-<a name="art87§2"></a>§ 2º O prontuário estará sob a guarda do médico ou da instituição que assiste o paciente.
+<a name="art87p2"></a>§ 2º O prontuário estará sob a guarda do médico ou da instituição que assiste o paciente.
 
 <a name="art88"></a>Art. 88. Negar, ao paciente, acesso a seu prontuário, deixar de lhe fornecer cópia quando solicitada, bem como deixar de lhe dar explicações necessárias à sua compreensão, salvo quando ocasionarem riscos ao próprio paciente ou a terceiros.
 
 <a name="art89"></a>Art. 89. Liberar cópias do prontuário sob sua guarda, salvo quando autorizado, por escrito, pelo paciente, para atender ordem judicial ou para a sua própria defesa.
 
-<a name="art89§1"></a>§ 1º Quando requisitado judicialmente o prontuário será disponibilizado ao perito médico nomeado pelo juiz.
+<a name="art89p1"></a>§ 1º Quando requisitado judicialmente o prontuário será disponibilizado ao perito médico nomeado pelo juiz.
 
-<a name="art89§2"></a>§ 2º Quando o prontuário for apresentado em sua própria defesa, o médico deverá solicitar que seja observado o sigilo profissional.
+<a name="art89p2"></a>§ 2º Quando o prontuário for apresentado em sua própria defesa, o médico deverá solicitar que seja observado o sigilo profissional.
 
 <a name="art90"></a>Art. 90. Deixar de fornecer cópia do prontuário médico de seu paciente quando de sua requisição pelos Conselhos Regionais de Medicina. 
 
