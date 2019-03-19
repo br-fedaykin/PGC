@@ -1,15 +1,13 @@
-var eccrypto = require('eccrypto')
+const eccrypto = require('eccrypto')
 
 class Message {
   /**
    * creates a Message object
    * @param {string} content - a message to be sent
    */
-  constructor (content, encryptionKey = '') {
+  constructor (content) {
     this.content = content
-    if (encryptionKey) {
-      this.encrypt(encryptionKey)
-    }
+    this.encryptionKey = ''
   }
 
   /**
@@ -18,10 +16,13 @@ class Message {
    * @return {Promise}
    */
   encrypt (publicKey) {
+    if (!this.encryptionKey) {
+      this.encryptionKey = publicKey
+    }
     return eccrypto.encrypt(publicKey, Buffer.from(this.content))
       .then((encrypted) => {
         this.content = encrypted
-        return encrypted
+        return this
       })
   }
 
@@ -33,7 +34,7 @@ class Message {
     return eccrypto.decrypt(privateKey, this.content)
       .then((plaintext) => {
         this.content = plaintext
-        return plaintext
+        return this
       })
   }
 }

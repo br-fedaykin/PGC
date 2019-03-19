@@ -1,17 +1,24 @@
 const CoinKey = require('coinkey')
-const Message = require('./Message.js')
+const Agent = require('./Agent.js').Agent
 
-let bitcoinKey = CoinKey.createRandom()
+// public information of the system
+let publicKeys = []
 
-let msg = new Message.Message('teste')
+// creating keys for Alice
+let btcKey = CoinKey.createRandom()
+let alice = new Agent('Alice', btcKey.privateKey)
+publicKeys[alice.name] = btcKey.publicKey
 
-msg.encrypt(bitcoinKey.publicKey)
-  .then((encrypted) => {
-    console.log(`encrypted object: ${encrypted}`)
-  })
-  .then(function () {
-    msg.decrypt(bitcoinKey.privateKey)
-      .then((plaintext) => {
-        console.log(`plaintext: ${plaintext}`)
-      })
+// creating keys for Bob
+btcKey = CoinKey.createRandom()
+let bob = new Agent('Bob', btcKey.privateKey)
+publicKeys[bob.name] = btcKey.publicKey
+
+// sending example message
+// BUG: if text has more than 14 chars, decrypt breaks
+let msgText = 'test to Bob'
+
+alice.sendMessage(msgText, bob.name, publicKeys)
+  .then((msg) => {
+    bob.receiveMessage(msg)
   })
