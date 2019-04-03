@@ -36,11 +36,11 @@ Autor | linguagem | Artigos citados | disponibilizado em | andamento | dependên
 6. [Practical Attribute-Based Encryption: Traitor Tracing, Revocation, and Large Universe][7]
 7. [A Framework and Compact Constructions for Non-monotonic Attribute-Based Encryption][8]
 
-[1]:(https://eprint.iacr.org/2017/807.pdf)
-[2]:(https://doi.org/10.1109/SP.2007.11)
-[3]:(http://eprint.iacr.org/2015/409)
-[4]:(https://www.bc.edu/content/dam/files/schools/cas_sites/cs/pdf/academics/honors/14Watanabe.pdf)
-[5]:(https://junwei.co/cpabe/)
-[6]:(https://www.cs.utexas.edu/~bwaters/publications/papers/cp-abe.pdf)
-[7]:(http://eprint.iacr.org/2014/616)
-[8]:(https://eprint.iacr.org/2014/181) 
+[1]: https://eprint.iacr.org/2017/807.pdf
+[2]: https://doi.org/10.1109/SP.2007.11
+[3]: http://eprint.iacr.org/2015/409
+[4]: https://www.bc.edu/content/dam/files/schools/cas_sites/cs/pdf/academics/honors/14Watanabe.pdf
+[5]: https://junwei.co/cpabe/
+[6]: https://www.cs.utexas.edu/~bwaters/publications/papers/cp-abe.pdf
+[7]: http://eprint.iacr.org/2014/616
+[8]: https://eprint.iacr.org/2014/181
