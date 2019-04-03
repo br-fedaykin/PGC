@@ -1,0 +1,361 @@
+<svg id="mermaid-1553280060498" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 941 316"><style>
+
+
+#mermaid-1553280060498 .label {
+  font-family: 'trebuchet ms', verdana, arial;
+  color: #333; }
+
+#mermaid-1553280060498 .node rect,
+#mermaid-1553280060498 .node circle,
+#mermaid-1553280060498 .node ellipse,
+#mermaid-1553280060498 .node polygon {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1px; }
+
+#mermaid-1553280060498 .node.clickable {
+  cursor: pointer; }
+
+#mermaid-1553280060498 .arrowheadPath {
+  fill: #333333; }
+
+#mermaid-1553280060498 .edgePath .path {
+  stroke: #333333;
+  stroke-width: 1.5px; }
+
+#mermaid-1553280060498 .edgeLabel {
+  background-color: #e8e8e8; }
+
+#mermaid-1553280060498 .cluster rect {
+  fill: #ffffde !important;
+  stroke: #aaaa33 !important;
+  stroke-width: 1px !important; }
+
+#mermaid-1553280060498 .cluster text {
+  fill: #333; }
+
+#mermaid-1553280060498 div.mermaidTooltip {
+  position: absolute;
+  text-align: center;
+  max-width: 200px;
+  padding: 2px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 12px;
+  background: #ffffde;
+  border: 1px solid #aaaa33;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 100; }
+
+#mermaid-1553280060498 .actor {
+  stroke: #CCCCFF;
+  fill: #ECECFF; }
+
+#mermaid-1553280060498 text.actor {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1553280060498 .actor-line {
+  stroke: grey; }
+
+#mermaid-1553280060498 .messageLine0 {
+  stroke-width: 1.5;
+  stroke-dasharray: '2 2';
+  stroke: #333; }
+
+#mermaid-1553280060498 .messageLine1 {
+  stroke-width: 1.5;
+  stroke-dasharray: '2 2';
+  stroke: #333; }
+
+#mermaid-1553280060498 #arrowhead {
+  fill: #333; }
+
+#mermaid-1553280060498 #crosshead path {
+  fill: #333 !important;
+  stroke: #333 !important; }
+
+#mermaid-1553280060498 .messageText {
+  fill: #333;
+  stroke: none; }
+
+#mermaid-1553280060498 .labelBox {
+  stroke: #CCCCFF;
+  fill: #ECECFF; }
+
+#mermaid-1553280060498 .labelText {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1553280060498 .loopText {
+  fill: black;
+  stroke: none; }
+
+#mermaid-1553280060498 .loopLine {
+  stroke-width: 2;
+  stroke-dasharray: '2 2';
+  stroke: #CCCCFF; }
+
+#mermaid-1553280060498 .note {
+  stroke: #aaaa33;
+  fill: #fff5ad; }
+
+#mermaid-1553280060498 .noteText {
+  fill: black;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 14px; }
+
+#mermaid-1553280060498 .activation0 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+#mermaid-1553280060498 .activation1 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+#mermaid-1553280060498 .activation2 {
+  fill: #f4f4f4;
+  stroke: #666; }
+
+
+#mermaid-1553280060498 .section {
+  stroke: none;
+  opacity: 0.2; }
+
+#mermaid-1553280060498 .section0 {
+  fill: rgba(102, 102, 255, 0.49); }
+
+#mermaid-1553280060498 .section2 {
+  fill: #fff400; }
+
+#mermaid-1553280060498 .section1,
+#mermaid-1553280060498 .section3 {
+  fill: white;
+  opacity: 0.2; }
+
+#mermaid-1553280060498 .sectionTitle0 {
+  fill: #333; }
+
+#mermaid-1553280060498 .sectionTitle1 {
+  fill: #333; }
+
+#mermaid-1553280060498 .sectionTitle2 {
+  fill: #333; }
+
+#mermaid-1553280060498 .sectionTitle3 {
+  fill: #333; }
+
+#mermaid-1553280060498 .sectionTitle {
+  text-anchor: start;
+  font-size: 11px;
+  text-height: 14px; }
+
+
+#mermaid-1553280060498 .grid .tick {
+  stroke: lightgrey;
+  opacity: 0.3;
+  shape-rendering: crispEdges; }
+
+#mermaid-1553280060498 .grid path {
+  stroke-width: 0; }
+
+
+#mermaid-1553280060498 .today {
+  visibility: hidden;
+  fill: none;
+  stroke: red;
+  stroke-width: 2px; }
+
+
+
+#mermaid-1553280060498 .task {
+  stroke-width: 2; }
+
+#mermaid-1553280060498 .taskText {
+  text-anchor: middle;
+  font-size: 11px; }
+
+#mermaid-1553280060498 .taskTextOutsideRight {
+  fill: black;
+  text-anchor: start;
+  font-size: 11px; }
+
+#mermaid-1553280060498 .taskTextOutsideLeft {
+  fill: black;
+  text-anchor: end;
+  font-size: 11px; }
+
+
+#mermaid-1553280060498 .taskText0,
+#mermaid-1553280060498 .taskText1,
+#mermaid-1553280060498 .taskText2,
+#mermaid-1553280060498 .taskText3 {
+  fill: white; }
+
+#mermaid-1553280060498 .task0,
+#mermaid-1553280060498 .task1,
+#mermaid-1553280060498 .task2,
+#mermaid-1553280060498 .task3 {
+  fill: #8a90dd;
+  stroke: #534fbc; }
+
+#mermaid-1553280060498 .taskTextOutside0,
+#mermaid-1553280060498 .taskTextOutside2 {
+  fill: black; }
+
+#mermaid-1553280060498 .taskTextOutside1,
+#mermaid-1553280060498 .taskTextOutside3 {
+  fill: black; }
+
+
+#mermaid-1553280060498 .active0,
+#mermaid-1553280060498 .active1,
+#mermaid-1553280060498 .active2,
+#mermaid-1553280060498 .active3 {
+  fill: #bfc7ff;
+  stroke: #534fbc; }
+
+#mermaid-1553280060498 .activeText0,
+#mermaid-1553280060498 .activeText1,
+#mermaid-1553280060498 .activeText2,
+#mermaid-1553280060498 .activeText3 {
+  fill: black !important; }
+
+
+#mermaid-1553280060498 .done0,
+#mermaid-1553280060498 .done1,
+#mermaid-1553280060498 .done2,
+#mermaid-1553280060498 .done3 {
+  stroke: grey;
+  fill: lightgrey;
+  stroke-width: 2; }
+
+#mermaid-1553280060498 .doneText0,
+#mermaid-1553280060498 .doneText1,
+#mermaid-1553280060498 .doneText2,
+#mermaid-1553280060498 .doneText3 {
+  fill: black !important; }
+
+
+#mermaid-1553280060498 .crit0,
+#mermaid-1553280060498 .crit1,
+#mermaid-1553280060498 .crit2,
+#mermaid-1553280060498 .crit3 {
+  stroke: #ff8888;
+  fill: red;
+  stroke-width: 2; }
+
+#mermaid-1553280060498 .activeCrit0,
+#mermaid-1553280060498 .activeCrit1,
+#mermaid-1553280060498 .activeCrit2,
+#mermaid-1553280060498 .activeCrit3 {
+  stroke: #ff8888;
+  fill: #bfc7ff;
+  stroke-width: 2; }
+
+#mermaid-1553280060498 .doneCrit0,
+#mermaid-1553280060498 .doneCrit1,
+#mermaid-1553280060498 .doneCrit2,
+#mermaid-1553280060498 .doneCrit3 {
+  stroke: #ff8888;
+  fill: lightgrey;
+  stroke-width: 2;
+  cursor: pointer;
+  shape-rendering: crispEdges; }
+
+#mermaid-1553280060498 .doneCritText0,
+#mermaid-1553280060498 .doneCritText1,
+#mermaid-1553280060498 .doneCritText2,
+#mermaid-1553280060498 .doneCritText3 {
+  fill: black !important; }
+
+#mermaid-1553280060498 .activeCritText0,
+#mermaid-1553280060498 .activeCritText1,
+#mermaid-1553280060498 .activeCritText2,
+#mermaid-1553280060498 .activeCritText3 {
+  fill: black !important; }
+
+#mermaid-1553280060498 .titleText {
+  text-anchor: middle;
+  font-size: 18px;
+  fill: black; }
+
+#mermaid-1553280060498 g.classGroup text {
+  fill: #9370DB;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 10px; }
+
+#mermaid-1553280060498 g.classGroup rect {
+  fill: #ECECFF;
+  stroke: #9370DB; }
+
+#mermaid-1553280060498 g.classGroup line {
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1553280060498 .classLabel .box {
+  stroke: none;
+  stroke-width: 0;
+  fill: #ECECFF;
+  opacity: 0.5; }
+
+#mermaid-1553280060498 .classLabel .label {
+  fill: #9370DB;
+  font-size: 10px; }
+
+#mermaid-1553280060498 .relation {
+  stroke: #9370DB;
+  stroke-width: 1;
+  fill: none; }
+
+#mermaid-1553280060498 #compositionStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1553280060498 #compositionEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1553280060498 #aggregationStart {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1553280060498 #aggregationEnd {
+  fill: #ECECFF;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1553280060498 #dependencyStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1553280060498 #dependencyEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1553280060498 #extensionStart {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1553280060498 #extensionEnd {
+  fill: #9370DB;
+  stroke: #9370DB;
+  stroke-width: 1; }
+
+#mermaid-1553280060498 .commit-id,
+#mermaid-1553280060498 .commit-msg,
+#mermaid-1553280060498 .branch-label {
+  fill: lightgrey;
+  color: lightgrey; }
+</style><style>#mermaid-1553280060498 {
+    color: rgba(0, 0, 0, 0.65);
+    font: ;
+  }</style><g></g><g class="grid" transform="translate(75, 266)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="currentColor" d="M0.5,-231V0.5H791.5V-231"></path><g class="tick" opacity="1" transform="translate(27.5,0)"><line stroke="currentColor" y2="-231"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">17-02-19</text></g><g class="tick" opacity="1" transform="translate(89.5,0)"><line stroke="currentColor" y2="-231"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">24-02-19</text></g><g class="tick" opacity="1" transform="translate(151.5,0)"><line stroke="currentColor" y2="-231"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">03-03-19</text></g><g class="tick" opacity="1" transform="translate(214.5,0)"><line stroke="currentColor" y2="-231"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">10-03-19</text></g><g class="tick" opacity="1" transform="translate(276.5,0)"><line stroke="currentColor" y2="-231"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">17-03-19</text></g><g class="tick" opacity="1" transform="translate(338.5,0)"><line stroke="currentColor" y2="-231"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">24-03-19</text></g><g class="tick" opacity="1" transform="translate(400.5,0)"><line stroke="currentColor" y2="-231"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">31-03-19</text></g><g class="tick" opacity="1" transform="translate(462.5,0)"><line stroke="currentColor" y2="-231"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">07-04-19</text></g><g class="tick" opacity="1" transform="translate(524.5,0)"><line stroke="currentColor" y2="-231"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">14-04-19</text></g><g class="tick" opacity="1" transform="translate(587.5,0)"><line stroke="currentColor" y2="-231"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">21-04-19</text></g><g class="tick" opacity="1" transform="translate(649.5,0)"><line stroke="currentColor" y2="-231"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">28-04-19</text></g><g class="tick" opacity="1" transform="translate(711.5,0)"><line stroke="currentColor" y2="-231"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">2019-05-05</text></g><g class="tick" opacity="1" transform="translate(773.5,0)"><line stroke="currentColor" y2="-231"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">2019-05-12</text></g></g><g><rect x="0" y="48" width="903.5" height="24" class="section section0"></rect><rect x="0" y="72" width="903.5" height="24" class="section section0"></rect><rect x="0" y="96" width="903.5" height="24" class="section section0"></rect><rect x="0" y="120" width="903.5" height="24" class="section section0"></rect><rect x="0" y="144" width="903.5" height="24" class="section section1"></rect><rect x="0" y="168" width="903.5" height="24" class="section section1"></rect><rect x="0" y="192" width="903.5" height="24" class="section section1"></rect><rect x="0" y="216" width="903.5" height="24" class="section section1"></rect><rect x="0" y="240" width="903.5" height="24" class="section section1"></rect></g><g><rect rx="3" ry="3" x="75" y="50" width="63" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="138" y="74" width="8" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="146" y="98" width="205" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="351" y="122" width="515" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="262" y="146" width="62" height="20" class="task  task1"></rect><rect rx="3" ry="3" x="289" y="170" width="35" height="20" class="task  task1"></rect><rect rx="3" ry="3" x="324" y="194" width="124" height="20" class="task  task1"></rect><rect rx="3" ry="3" x="448" y="218" width="347" height="20" class="task  task1"></rect><rect rx="3" ry="3" x="448" y="242" width="418" height="20" class="task  task1"></rect><text font-size="11" x="106.5" y="63.5" text-height="20" class="taskText taskText0 ">matrícula           </text><text font-size="11" x="151" y="87.5" text-height="20" class="taskTextOutsideRight taskTextOutside0 ">formulário de orientação </text><text font-size="11" x="248.5" y="111.5" text-height="20" class="taskText taskText0 ">avaliação parcial </text><text font-size="11" x="608.5" y="135.5" text-height="20" class="taskText taskText0 ">envio do conceito</text><text font-size="11" x="293" y="159.5" text-height="20" class="taskText taskText1 ">ontologias </text><text font-size="11" x="329" y="183.5" text-height="20" class="taskTextOutsideRight taskTextOutside1 ">políticas de acesso</text><text font-size="11" x="386" y="207.5" text-height="20" class="taskText taskText1 ">sistemas ABE</text><text font-size="11" x="621.5" y="231.5" text-height="20" class="taskText taskText1 ">monografia parcial / formalidades</text><text font-size="11" x="657" y="255.5" text-height="20" class="taskText taskText1 ">protótipo inicial</text></g><g><text x="10" y="98" class="sectionTitle sectionTitle0">Prazos</text><text x="10" y="206" class="sectionTitle sectionTitle1">Tarefas</text></g><g class="today"><line x1="401" x2="401" y1="25" y2="291" class="today"></line></g><text x="470.5" y="25" class="titleText">PGC 1</text></svg>
