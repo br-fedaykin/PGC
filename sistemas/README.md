@@ -19,8 +19,8 @@ Segui a orientação do criador da biblioteca, executando [ServerMain.py](sibich
 Autor | linguagem | Artigos citados | disponibilizado em | andamento | dependências | tem instruções de uso
 |---| ---| ---| ---| --- | --- | --- |
 [codewithmilo](https://github.com/codewithmilo/abescheme) | Python, C | [4] | jan/2014 | 26 commits, último em fev/2018 | [Charm 0.42](https://github.com/codewithmilo/abescheme/tree/master/Charm/dist), [Django 1.6.1](https://github.com/django/django) | não
-[junwei-wang](https://github.com/junwei-wang/cpabe) | Java | [5] | mar/2012 | 75 commits, último em mar/2018 | [jpbc-1.2.1](http://gas.dia.unisa.it/projects/jpbc/) | sim
-[TU-Berlin-SNET](https://github.com/TU-Berlin-SNET/JCPABE) | Java | [5] | abr/2015 | 56 commits, último em abr/2016 | [jpbc-2.0.0](http://gas.dia.unisa.it/projects/jpbc/) | sim
+[junwei-wang](https://github.com/junwei-wang/cpabe) | Java | [5][5a] | mar/2012 | 75 commits, último em mar/2018 | [jpbc-1.2.1](http://gas.dia.unisa.it/projects/jpbc/) | sim
+[TU-Berlin-SNET](https://github.com/TU-Berlin-SNET/JCPABE) | Java | [5][5b] | abr/2015 | 56 commits, último em abr/2016 | [jpbc-2.0.0](http://gas.dia.unisa.it/projects/jpbc/) | sim
 [TU-Berlin-SNET](https://github.com/TU-Berlin-SNET/jTR-ABE) | Java | [6], [7] | set/2015 | 19 commits, último em dez/2018 | [jpbc-2.0.0](http://gas.dia.unisa.it/projects/jpbc/) | sim
 [zlwen](https://github.com/zlwen/cpabe-java) | Java | sem artigos | nov/2014 | 27 commits, último em dez/2014 | [jpbc-2.0.0](http://gas.dia.unisa.it/projects/jpbc/) | não
 [tengyifei](https://github.com/tengyifei/dcpabe-web) | Java, Javascript | sem artigos | jan/2014 | 3 commits, último em fev/2015 | [Google Web Toolkit](http://www.gwtproject.org/), jpbc (não cita versão)| não
@@ -53,6 +53,7 @@ Autor | linguagem | Artigos citados | disponibilizado em | andamento | dependên
 11. [An Encrypted Database with Enforced AccessControl and Blockchain Validation][11]
 12. [Secure Cloud-Based EHR System Using Attribute-Based Cryptosystem and Blockchain.][12]
 13. [Blockchain-based Approach to the SecureSharing of Healthcare Data][13]
+14. [A Secured Proxy-Based Data Sharing Module in IoTEnvironments Using Blockchain][14]
 
 [1]: https://eprint.iacr.org/2017/807.pdf
 [2]: https://doi.org/10.1109/SP.2007.11
@@ -68,3 +69,4 @@ Autor | linguagem | Artigos citados | disponibilizado em | andamento | dependên
 [11]: http://xxhb.fjnu.edu.cn/_upload/tpl/06/5d/1629/template1629/papers/95.pdf
 [12]: https://www.ncbi.nlm.nih.gov/pubmed/29974270
 [13]: https://ojs.bibsys.no/index.php/NISK/article/view/462
+[14]: https://res.mdpi.com/sensors/sensors-19-01235/article_deploy/sensors-19-01235.pdf?filename=&attachment=1
