@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+from function import Encryption, Decryption, DicoFromFile
+import sys, time, base64
+
+entree = sys.argv[1]
+
+tab_entree = entree.split("#")
+
+IDc = tab_entree[0]
+ADc = tab_entree[1]
+IDv = tab_entree[2]
+TICKETtgs = base64.b64decode(tab_entree[3])
+
+IDtgs = "TGS1"
+
+keys = DicoFromFile()
+Ktgs = keys[IDtgs]
+
+dec_TICKETtgs = Decryption(Ktgs, TICKETtgs)
+tab_TICKETtgs = dec_TICKETtgs.split("#")
+
+if IDc != tab_TICKETtgs[0] or ADc != tab_TICKETtgs[1] or IDtgs != tab_TICKETtgs[2] or IDtgs != "TGS1" or int(time.time()) > int(tab_TICKETtgs[3]) + int(tab_TICKETtgs[4]):
+	print "Non"
+	sys.exit(1)
+
+Kv = keys[IDv]
+
+TS2 = str(int(time.time()))
+Duree2 = str(3600)
+
+TICKETv = base64.b64encode(Encryption(Kv, IDc + "#" + ADc + "#" + IDv + "#" + TS2 + "#" + Duree2))
+print TICKETv
+
+ 
