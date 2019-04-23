@@ -18,3 +18,4 @@ war/WEB-INF/classes/
 
 #compilation logs
 .gwt/
+/bin/
