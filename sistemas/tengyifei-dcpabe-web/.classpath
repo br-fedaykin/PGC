@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="bccastle"/>
+	<classpathentry kind="src" path="gwtfile"/>
+	<classpathentry excluding="com/nkdata/gwt/streamer/emu/" kind="src" path="gwtstreamer"/>
+	<classpathentry kind="src" path="gwtstreamer/com/nkdata/gwt/streamer/emu"/>
+	<classpathentry kind="src" path="java"/>
+	<classpathentry kind="src" path="jpbc"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="webworker"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.7.0_80"/>
+	<classpathentry kind="con" path="com.gwtplugins.gwt.eclipse.core.GWT_CONTAINER/gwt-2.5.0"/>
+	<classpathentry kind="output" path="war/WEB-INF/classes"/>
+</classpath>

@@ -1,14 +1,60 @@
 # Projeto de Graduação de Curso
 
-
 ## Um sistema distribuído de permissão de acesso a prontuários por meio de Smart Contracts
 
 Este repositório reunirá informações relativas ao Projeto de Graduação de Curso (PGC) realizado por mim, sob orientação do Dr. Vladmir E. M. Rocha
 
-## Descrição (provisória)
+## Sumário
 
-A informatização de prontuários médicos permite a transmissão de dados sensíveis de forma remota, acesso concorrente com a devida consistência dos dados, e também permite a extração de informação. A dificuldade é que mesmo estes dados, embora informatizados, não estão integrados entre as diversas bases de dados das instituições médicas, e resolver este problema certamente melhoraria a experiência dos pacientes e o resultado do tratamento. A proposta deste trabalho é explorar a possibilidade de comunicação de prontuários médicos por meio de uma blockchain e smart contracts. A partir de da análise da situação atual dos sistemas centralizado de gerenciamento de informações dos pacientes, será elaborada uma lógica contratual que consiga:
+<details><summary> clique para expandir </summary>
 
-1. prover mais segurança ao acesso da informação utilizando blockchain, que possibilita construir protocolos de comunicação com a imutabilidade das concessões e revogações de tanto o acesso quanto o cadastros de agentes que compõe o sistema de saúde.
-2. prover transparência aos agentes que compõem o sistema, que evitam a manipulação e acesso indevido.
-3. prover privacidade ao paciente, que terá o controle sobre as permissões de acesso às suas informações.
+### Dados
+
+1. [Seção Principal](dados/consulta-DATASUS_CNES-2019/README.md)
+2. [Profissões da área de saúde representados em JSON](dados/consulta-DATASUS_CNES-2019/profissionais-saude.json)
+3. [consultas realizadas ao DATASUS referente a 2019](dados/consulta-DATASUS_CNES-2019)
+
+### Referências
+
+1. [Criptografia](referências/criptografia/README.md)
+    1. [Attribute-Based Encryption: Using Identity-Based Encryption for Access Control](referências/criptografia/Juel2004.md)
+    2. [Self-Protecting Electronic Medical Records Using Attribute-Based Encryption](referências/criptografia/Akin2010.md)
+2. [Ética médica, sigilo e informação](referências/ética-e-informação/README.md)
+    1. [Resolução do CFM Nº 1931/2009 - Aprova o Código de Ética Médica.](referências/ética-e-informação/CEM.md)
+3. [Taxonomia médica](referências/taxonomia-médica/README.md)
+
+### Documentos
+
+1. [Descrição do PGC](documentos/descrição.md)
+2. modelos (a acrescentar)
+3. [cronograma do PGC](documentos/cronograma.md)
+4. [atas](documentos/atas)
+
+### Código
+
+1. [[Javascript] Criptografia de curva elíptica usando a curva secp256k1 (Curva do Bitcoin)](experimentos/node-bitcoin-key-encryption)
+2. [[Java] Conversão de código Java para Javascript com GWT](experimentos/gwt-simple-project)
+3. [Lista de sistemas e artigos citando trabalhos na área de ABE](sistemas/README.md)
+
+</details>
+
+## Situação do PGC
+
+### ✔️ Concluído
+
+- **~~publicação de repositório~~**
+- **~~fichamentos iniciais~~**
+- **~~diagrama de condições de acesso a um prontuário médico~~**
+- **~~experimento com Elliptical Curve Encryption~~**
+- **~~Situação do PGC~~**
+- **~~documentação de bibliotecas e sistemas ABE~~**
+
+### ⏳ Em andamento
+
+- **relatório final para o PGC-1**
+- **teste de trabalhos sobre ABE em JavaScript**
+
+### ✖️ Não iniciado
+
+- monografia
+- protótipo
