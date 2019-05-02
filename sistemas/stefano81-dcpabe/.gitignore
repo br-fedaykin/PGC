@@ -1,0 +1,20 @@
+# local data
+data/
+
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+.idea
+*.iml
+target/
+.classpath
+.project
+.settings/
+
+# eclipse / graddle / maven stuff
+.gradle/
+bin/
