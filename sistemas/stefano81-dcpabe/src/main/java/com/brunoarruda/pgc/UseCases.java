@@ -1,33 +1,64 @@
 package com.brunoarruda.pgc;
 
 import java.io.File;
-import java.util.Arrays;
-
+import java.lang.reflect.Method;
 import sg.edu.ntu.sce.sands.crypto.DCPABETool;
 
 public class UseCases {
 
 	final static String DATA_PATH = "data";
 	final static String TEST_PATH = DATA_PATH + File.separator + "test";
+	static boolean enablePersist = false;
 	
 	public static void main(String[] args) {
-		testBasicUserCreation();
+		if (args.length > 0 && args[0].equals("persist")) {
+			enablePersist = true;
+		}
+		
+		Method[] methods = UseCases.class.getDeclaredMethods();
+		for (Method m : methods) {
+			String test_path = TEST_PATH + File.separator + m.getName();
+			if (m.getName().startsWith("test")) {
+				setupTest(test_path);
+				try {
+					m.invoke(null, test_path);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				if (!enablePersist) {
+					tearDown(test_path);
+				}
+			}
+		}
 	}
-
-	private static void testBasicUserCreation() {
-		File path = new File(TEST_PATH);
+	
+	private static void setupTest(String testPath) {
+		File path = new File(testPath);
 		path.mkdir();
-		String authorityName = "CertifyingAuthority";		
+	}
+	
+	private static void tearDown(String testPath) {
+		File path = new File(testPath);		
+		for (File file : path.listFiles()) {
+			file.delete();
+		}
+		path.delete();
+	}
+	
+	private static void testBasicUserCreation(String testPath) {
+		
+		String authorityName = "CertifyingAuthority";
 		String pacientName = "Bob";
 		String fileName = "medicalRecording.txt";
 		
-		String globalSetupPath = TEST_PATH + File.separator + "globalSetup";
-		String authoritySecretKeyPath = TEST_PATH + File.separator + authorityName + "SecretKey";
-		String authorityPublicKeyPath = TEST_PATH + File.separator + authorityName + "PublicKey";
-		String pacientKeyPath = TEST_PATH + File.separator + "Key" + pacientName;
+		String globalSetupPath = testPath + File.separator + "globalSetup";
+		String authoritySecretKeyPath = testPath + File.separator + authorityName + "SecretKey";
+		String authorityPublicKeyPath = testPath + File.separator + authorityName + "PublicKey";
+		String pacientKeyPath = testPath + File.separator + "Key" + pacientName;
 		String filePath = DATA_PATH + File.separator + fileName ;
-		String encryptedFilePath = TEST_PATH + File.separator + "enc_" + fileName;
-		String decryptedFilePath = TEST_PATH + File.separator + "dec_" + fileName;
+		String encryptedFilePath = testPath + File.separator + "enc_" + fileName;
+		String decryptedFilePath = testPath + File.separator + "dec_" + fileName;
 		
 		String[][] commands = {
 				{"gsetup", globalSetupPath},
@@ -44,7 +75,7 @@ public class UseCases {
 		for (String[] args : commands) {
 			System.out.println(String.join(" ", args));
 			DCPABETool.main(args);
-		}
+		}				
 	}
 
 	private static void testBasicUserEncrypt() {
