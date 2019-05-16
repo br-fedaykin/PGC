@@ -1,5 +1,6 @@
 # local data
 data/
+/test data/
 
 *.class
 
