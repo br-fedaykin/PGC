@@ -38,6 +38,7 @@ public class Utility {
                 FileOutputStream fos = new FileOutputStream(publicKeysPath);
                 ObjectOutputStream outputPublicKey = new ObjectOutputStream(fos)) {
             //oos.writeObject(ak.getAuthorityID());
+//        	System.out.println(fos.toString());
             outputPublicKey.writeObject(publicKeys);
         }
 
