@@ -1,21 +1,20 @@
 package com.brunoarruda.pgc;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintStream;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.Stack;
 
-public class TestUseCases {
+public class TestUseCases {	
 	
 	/**
 	 * if you are opening stefano81-dcpabe as the root project folder on your IDE, 
@@ -110,7 +109,7 @@ public class TestUseCases {
 
 	public static void testDecrypt_WithTwoAttributes(String testPath) {
 		String[] names = { "Bob", "Bob" };
-		String[] attributes = { "paciente", "dono-do-prontuário" };
+		String[] attributes = {"paciente", "dono-do-prontuário"};
 		String authorityName = "Entidade Certificadora";
 
 		UseCase test = new UseCase(authorityName, testPath, attributes);
@@ -187,5 +186,97 @@ public class TestUseCases {
 		test.encrypt(fileDir, "paciente");
 		String[] keyPath = test.searchKeys(names[0]);
 		test.decrypt(fileDir, names[0], keyPath);
+	}
+
+	public static void testKeyGen_GenerateKeyWithEmptyName(String testPath) {
+		String[] names = {""};
+		String[] attributes = {"paciente"};
+		String authorityName = "Entidade Certificadora";
+
+		UseCase test = new UseCase(authorityName, testPath, attributes);
+		test.globalSetup();
+		test.authoritySetup();
+		test.keyGeneration(names, attributes);
+		test.encrypt("", "paciente");
+		String[] keyPath = test.searchKeys(names[0]);
+		test.decrypt("", names[0], keyPath);
+	}
+
+	// policySize must be a power of 2 in order to make this algorithm work.
+	private static String generatePolicy(int policySize, String[] attributes, String[] operators) {	
+		Stack<String> stack = new Stack<String>();
+		for (int i = 0; i < attributes.length; i++) {
+			stack.push(attributes[i]);
+			int elements = (i + 1);			
+			
+			while ( elements % 2 == 0) {
+				String rightPolicy = stack.pop();
+				String leftPolicy = stack.pop();
+				int decisor = new Random().nextInt(operators.length);
+				String aggregation = String.format("%s %s %s", operators[decisor], leftPolicy, rightPolicy);
+				// stack.add((int) log2i - 1, aggregation);
+				stack.push(aggregation);
+				elements = elements / 2;
+			}
+		}
+		return stack.toString().replace("[", "").replace("]", "");
+	}
+
+	public static void testPolicy_HundredsOfOrOperatorsWorks(String testPath) {
+		/*
+		 * the policy generation algorithm derives a complete binary tree of or, thus
+		 * policySize must be a power of 2
+		*/
+		int policySize = 128;
+		String[] names = new String[policySize];
+		String[] operators = {"or"};
+		String authorityName = "Entidade Certificadora";
+
+		List<String> temp = new ArrayList<String>();
+		for (int i = 0; i < names.length; i++) {
+			names[i] = "Alice";
+		}
+		for (int i = 0; i < names.length; i++) {
+			temp.add(String.format("attribute-%03d", i));
+		}
+
+		String[] attributes = temp.toArray(new String[temp.size()]);		
+		String bigPolicy = generatePolicy(policySize, attributes, operators);
+
+		UseCase test = new UseCase(authorityName, testPath, attributes);
+		test.globalSetup();
+		test.authoritySetup();
+		test.keyGeneration(names, attributes);		
+		test.encrypt("", bigPolicy);
+		test.decrypt("", names[0], test.searchKeys(names[0]));
+	}
+
+	public static void testPolicy_HundredsOfAndOperatorsWorks(String testPath) {
+		/*
+		 * the policy generation algorithm derives a complete binary tree of or, thus
+		 * policySize must be a power of 2
+		*/
+		int policySize = 128;
+		String[] names = new String[policySize];
+		String[] operators = {"and"};
+		String authorityName = "Entidade Certificadora";
+
+		List<String> temp = new ArrayList<String>();
+		for (int i = 0; i < names.length; i++) {
+			names[i] = "Alice";
+		}
+		for (int i = 0; i < names.length; i++) {
+			temp.add(String.format("attribute-%03d", i));
+		}
+
+		String[] attributes = temp.toArray(new String[temp.size()]);		
+		String bigPolicy = generatePolicy(policySize, attributes, operators);
+
+		UseCase test = new UseCase(authorityName, testPath, attributes);
+		test.globalSetup();
+		test.authoritySetup();
+		test.keyGeneration(names, attributes);		
+		test.encrypt("", bigPolicy);
+		test.decrypt("", names[0], test.searchKeys(names[0]));
 	}
 }
