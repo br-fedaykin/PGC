@@ -25,8 +25,8 @@ public class UseCase {
 		this.testPath = testPath;
 		this.globalSetup = testPath + File.separator + "globalSetup";
 		this.authorityName = testPath + File.separator + authorityName;
-		this.authorityPublicFile = authorityName.replace(" ", "-") + "-PublicKey";
-		this.authoritySecretFile = authorityName.replace(" ", "-") + "-SecretKey";
+		this.authorityPublicFile = testPath + File.separator + authorityName.replace(" ", "-") + "-PublicKey";
+		this.authoritySecretFile = testPath + File.separator + authorityName.replace(" ", "-") + "-SecretKey";
 		this.attributes = attributes;
 		this.keyFiles = new String[attributes.length];
 
