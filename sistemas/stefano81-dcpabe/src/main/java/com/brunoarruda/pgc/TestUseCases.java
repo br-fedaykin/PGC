@@ -10,7 +10,6 @@ import java.io.PrintWriter;
 import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.Stack;
@@ -96,7 +95,7 @@ public class TestUseCases {
 	public static void testDecrypt_WithOneAttribute(String testPath) {
 		String[] names = { "Bob" };
 		String[] attributes = { "paciente" };
-		String authorityName = "Entidade Certificadora";
+		String authorityName = "Hospital";
 
 		UseCase test = new UseCase(authorityName, testPath, attributes);
 		test.globalSetup();
@@ -110,7 +109,7 @@ public class TestUseCases {
 	public static void testDecrypt_WithTwoAttributes(String testPath) {
 		String[] names = { "Bob", "Bob" };
 		String[] attributes = {"paciente", "dono-do-prontuário"};
-		String authorityName = "Entidade Certificadora";
+		String authorityName = "Hospital";
 
 		UseCase test = new UseCase(authorityName, testPath, attributes);
 		test.globalSetup();
@@ -123,7 +122,7 @@ public class TestUseCases {
 	public static void testPolicy_AndGateWithMissingAttribute_shouldFail(String testPath) {
 		String[] names = { "Bob", "Bob", "Alice" };
 		String[] attributes = { "paciente", "dono-do-prontuário", "usuário-credenciado" };
-		String authorityName = "Entidade Certificadora";
+		String authorityName = "Hospital";
 
 		UseCase test = new UseCase(authorityName, testPath, attributes);
 		test.globalSetup();
@@ -137,7 +136,7 @@ public class TestUseCases {
 	public static void testPolicy_OrGateWithMissingAttribute(String testPath) {
 		String[] names = { "Bob", "Alice" };
 		String[] attributes = { "dono-do-prontuário", "médico" };
-		String authorityName = "Entidade Certificadora";
+		String authorityName = "Hospital";
 
 		UseCase test = new UseCase(authorityName, testPath, attributes);
 		test.globalSetup();
@@ -150,7 +149,7 @@ public class TestUseCases {
 	public static void testDecrypt_WithKeyFromOtherUser_shouldFail(String testPath) {
 		String[] names = { "Bob", "Mr. Robot" };
 		String[] attributes = { "dono-do-prontuário", "hacker" };
-		String authorityName = "Entidade Certificadora";
+		String authorityName = "Hospital";
 
 		UseCase test = new UseCase(authorityName, testPath, attributes);
 		test.globalSetup();
@@ -163,7 +162,7 @@ public class TestUseCases {
 	public static void testDecrypt_UserWithOwnAndStolenKeys_shouldFail(String testPath) {
 		String[] names = { "Bob", "Alice" };
 		String[] attributes = { "paciente", "dono-do-prontuário" };
-		String authorityName = "Entidade Certificadora";
+		String authorityName = "Hospital";
 
 		UseCase test = new UseCase(authorityName, testPath, attributes);
 		test.globalSetup();
@@ -177,7 +176,7 @@ public class TestUseCases {
 	public static void testEncrypt_WithLargeFile(String testPath) {
 		String[] names = { "Bob" };
 		String[] attributes = { "paciente" };
-		String authorityName = "Entidade Certificadora";
+		String authorityName = "Hospital";
 
 		String fileDir = testPath + File.separator + "BigFile.txt";
 		File filePath = new File(fileDir);
@@ -205,7 +204,7 @@ public class TestUseCases {
 	public static void testKeyGen_GenerateKeyWithEmptyName(String testPath) {
 		String[] names = {""};
 		String[] attributes = {"paciente"};
-		String authorityName = "Entidade Certificadora";
+		String authorityName = "Hospital";
 
 		UseCase test = new UseCase(authorityName, testPath, attributes);
 		test.globalSetup();
@@ -219,7 +218,7 @@ public class TestUseCases {
 	public static void testKeyGen_MultipleAttributes(String testPath) {
 		String[] names = { "" };
 		String[] attributes = { "paciente" };
-		String authorityName = "Entidade Certificadora";
+		String authorityName = "Hospital";
 
 		UseCase test = new UseCase(authorityName, testPath, attributes);
 		test.globalSetup();
@@ -231,7 +230,7 @@ public class TestUseCases {
 	}
 
 	// policySize must be a power of 2 in order to make this algorithm work.
-	private static String generatePolicy(int policySize, String[] attributes, String[] operators) {
+	private static String generatePolicy(int policySize, String[] operators, String[] attributes) {
 		Stack<String> stack = new Stack<String>();
 		for (int i = 0; i < attributes.length; i++) {
 			stack.push(attributes[i]);
@@ -255,10 +254,10 @@ public class TestUseCases {
 		 * the policy generation algorithm derives a complete binary tree of or, thus
 		 * policySize must be a power of 2
 		*/
-		int policySize = 128;
+		int policySize = 64;
 		String[] names = new String[policySize];
 		String[] operators = {"or"};
-		String authorityName = "Entidade Certificadora";
+		String authorityName = "Hospital";
 
 		List<String> temp = new ArrayList<String>();
 		for (int i = 0; i < names.length; i++) {
@@ -269,7 +268,7 @@ public class TestUseCases {
 		}
 
 		String[] attributes = temp.toArray(new String[temp.size()]);
-		String bigPolicy = generatePolicy(policySize, attributes, operators);
+		String bigPolicy = generatePolicy(policySize, operators, attributes);
 
 		UseCase test = new UseCase(authorityName, testPath, attributes);
 		test.globalSetup();
@@ -284,10 +283,10 @@ public class TestUseCases {
 		 * the policy generation algorithm derives a complete binary tree of or, thus
 		 * policySize must be a power of 2
 		*/
-		int policySize = 128;
+		int policySize = 64;
 		String[] names = new String[policySize];
 		String[] operators = {"and"};
-		String authorityName = "Entidade Certificadora";
+		String authorityName = "Hospital";
 
 		List<String> temp = new ArrayList<String>();
 		for (int i = 0; i < names.length; i++) {
@@ -298,7 +297,7 @@ public class TestUseCases {
 		}
 
 		String[] attributes = temp.toArray(new String[temp.size()]);
-		String bigPolicy = generatePolicy(policySize, attributes, operators);
+		String bigPolicy = generatePolicy(policySize, operators, attributes);
 
 		UseCase test = new UseCase(authorityName, testPath, attributes);
 		test.globalSetup();
