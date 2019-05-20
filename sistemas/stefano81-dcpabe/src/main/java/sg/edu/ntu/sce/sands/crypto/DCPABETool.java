@@ -18,12 +18,12 @@ import java.util.Map;
 public class DCPABETool {
 	public static void main(String[] args) {
 		Security.addProvider(new BouncyCastleProvider());
-		
+
 		if (encrypt(args) ||
 				decrypt(args) ||
 				globalsetup(args) ||
 				keygen(args) ||
-				authhoritySetup(args) ||
+				authoritySetup(args) ||
 				check(args)) {
         } else {
             help();
@@ -31,7 +31,7 @@ public class DCPABETool {
 	}
 
     // asetup <authority name> <gpfile> <authorityfileS> <authorityfileP> <attribute 1 > ... <attribute n>
-    private static boolean authhoritySetup(String[] args) {
+    private static boolean authoritySetup(String[] args) {
         if (!args[0].equals("asetup") || args.length <= 5) return false;
 
 		try {
@@ -97,7 +97,7 @@ public class DCPABETool {
 
 		return false;
 	}
-	
+
 	// check <username> <policy> <gpfile> m <authorityP 1>...<authorityP m> n <keyfile 1> ... <keyfile n>
 	@SuppressWarnings("unchecked")
 	private static boolean check(String[] args) {
@@ -214,7 +214,7 @@ public class DCPABETool {
 			AccessStructure arho = AccessStructure.buildFromPolicy(args[2]);
 			Message m = DCPABE.generateRandomMessage(gp);
 			Ciphertext ct = DCPABE.encrypt(m, arho, gp, pks);
-			
+
 			try (
 					FileOutputStream fos = new FileOutputStream(args[3]);
 					ObjectOutputStream oos = new ObjectOutputStream(fos);
