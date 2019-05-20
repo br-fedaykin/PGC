@@ -117,7 +117,7 @@ public class UseCase {
 		filePath = decryptedFile + "enc_" + path[path.length - 1];
 		decryptedFile = decryptedFile + "dec_" + path[path.length - 1];
 		String[] args = {"dec", userName, filePath, decryptedFile, this.globalSetup};
-		List<String> list = new ArrayList(Arrays.asList(args));
+		List<String> list = new ArrayList<String>(Arrays.asList(args));
 		list.addAll(Arrays.asList(keys));
 		args = list.toArray(new String[list.size()]);
 		this.runCommand(args);
