@@ -1,5 +1,6 @@
 package com.brunoarruda.pgc;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
@@ -191,24 +192,23 @@ public class TestUseCases {
 		String[] attributes = { "paciente" };
 		String authorityName = "Hospital";
 
-		String fileDir = testDir + File.separator + "BigFile.txt";
-		File filePath = new File(fileDir);
-		try {
-			OutputStreamWriter writer = new OutputStreamWriter(
-				new FileOutputStream(filePath), StandardCharsets.UTF_8);
-			for (int i = 0; i < 100000; i++) {
-				writer.append("This is mock for a Big File sent to encryption with an ABE scheme.\n");
-			}
-			writer.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
 		UseCase test = new UseCase(authorityName, testDir, attributes);
 		test.globalSetup();
 		test.authoritySetup();
 		test.keyGeneration(names, attributes);
 
+		String fileDir = testDir + File.separator + "BigFile.txt";		
+		try (			
+			FileWriter fr = new FileWriter(new File(fileDir));
+            BufferedWriter bw = new BufferedWriter(fr);
+		){
+			
+			for (int i = 0; i < 100000; i++) {
+				bw.write("This is mock for a Big File sent to encryption with an ABE scheme.\n");
+			}			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		test.encrypt(fileDir, "paciente");
 		String[] keyPath = test.searchKeys(names[0]);
 		test.decrypt(fileDir, names[0], keyPath);
