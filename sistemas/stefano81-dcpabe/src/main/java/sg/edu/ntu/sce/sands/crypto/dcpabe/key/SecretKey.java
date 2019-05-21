@@ -2,6 +2,9 @@ package sg.edu.ntu.sce.sands.crypto.dcpabe.key;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -42,5 +45,16 @@ public class SecretKey implements Serializable {
         int result = Arrays.hashCode(getAi());
         result = 31 * result + Arrays.hashCode(getYi());
         return result;
+    }
+
+    @Override
+    public String toString() {
+        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        try {
+            return ow.writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return "error";
     }
 }
