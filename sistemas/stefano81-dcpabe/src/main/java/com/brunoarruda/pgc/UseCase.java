@@ -35,7 +35,14 @@ public class UseCase {
 	}
 
 	private void runCommand(String[] args) {
-		DCPABETool.main(args);
+		if (args[0].equals("check")) {
+			boolean is_valid = DCPABETool.check(args);
+			if (!is_valid) {
+				throw new IllegalArgumentException("Não confere");
+			}
+		} else {
+			DCPABETool.main(args);
+		}
 	}
 
 	public String[] searchKeys(String name) {
@@ -103,6 +110,15 @@ public class UseCase {
 			throw new Error("could not write data to " + mockFilePath);
 		}
 		return mockFilePath;
+	}
+
+	public void check(String filePath, String userName, String accessPolicy, String[] keys) {
+		String[] args = {"check", userName, accessPolicy, this.globalSetup, "1", this.authorityPublicFile};
+		List<String> list = new ArrayList<String>(Arrays.asList(args));
+		list.add("" + keys.length);
+		list.addAll(Arrays.asList(keys));
+		args = list.toArray(new String[0]);
+		runCommand(args);
 	}
 
 	public void decrypt(String filePath, String userName, String ... keys) {

@@ -27,7 +27,7 @@ public class DCPABETool {
 				check(args)) {
         } else {
             help();
-        }
+		}
 	}
 
     // asetup <authority name> <gpfile> <authorityfileS> <authorityfileP> <attribute 1 > ... <attribute n>
@@ -99,8 +99,7 @@ public class DCPABETool {
 	}
 
 	// check <username> <policy> <gpfile> m <authorityP 1>...<authorityP m> n <keyfile 1> ... <keyfile n>
-	@SuppressWarnings("unchecked")
-	private static boolean check(String[] args) {
+	public static boolean check(String[] args) {
 		if (!args[0].equals("check") || args.length < 8) return false;
 
 		try {
@@ -133,14 +132,14 @@ public class DCPABETool {
                     pks.addKey(Utility.readPersonalKey(args[4 + i + m + 2]));
                 }
 
-                Message dm = DCPABE.decrypt(nct, pks, gp);
+				Message dm = DCPABE.decrypt(nct, pks, gp);
 
-                System.err.println(om.getM().length);
+				System.err.println(om.getM().length);
                 System.err.println(dm.getM().length);
                 System.err.println(Arrays.toString(om.getM()));
                 System.err.println(Arrays.toString(dm.getM()));
 
-                return true;
+                return om.equals(dm);
             }
         } catch (IllegalStateException | IOException | DataLengthException | ClassNotFoundException e) {
 			System.err.println(e.getMessage());
@@ -198,7 +197,6 @@ public class DCPABETool {
     }
 
 	// enc <resource file> <policy> <ciphertext> <gpfile> <authorityfileP 1> ... <authorityfileP n>
-	@SuppressWarnings("unchecked")
 	private static boolean encrypt(String[] args) {
 		if (!args[0].equals("enc") || args.length < 6) return false;
 
@@ -243,6 +241,6 @@ public class DCPABETool {
 		System.out.println("asetup <authority name> <gpfile> <authorityfileS> <authorityfileP> <attribute 1 > ... <attribute n>");
 		System.out.println("keyGen <username> <attribute name> <gpfile> <authorityfileS> <keyfile>");
 		System.out.println("enc <resource file> <policy> <ciphertext> <gpfile> <authorityfileP 1> ... <authorityfileP n>");
-		System.out.println("dec <ciphertext> <resource file> <gpfile> <keyfile 1> <keyfile 2>");
+		System.out.println("dec <username> <ciphertext> <resource file> <gpfile> <keyfile 1> <keyfile 2>");
 	}
 }

@@ -53,7 +53,7 @@ public class TestUseCases {
 		Method[] methods = TestUseCases.class.getDeclaredMethods();
 		for (Method m : methods) {
 			if (m.getName().startsWith("test")) {
-				String testPath = TEST_PATH + File.separator + m.getName();
+				String testDir = TEST_PATH + File.separator + m.getName();
 				try {
 					System.out.print(String.format("running: %s ... ", m.getName()));
 
@@ -62,7 +62,7 @@ public class TestUseCases {
 					System.setErr(new PrintStream(new NullOutputStream()));
 
 					// invoke the function which name starts with 'test'
-					m.invoke(null, testPath);
+					m.invoke(null, testDir);
 
 					// restores the output from System.out
 					System.setOut(realSystemOut);
@@ -80,7 +80,7 @@ public class TestUseCases {
 					if(m.getName().contains("shouldFail")) {
 						result = "OK.";
 					}
-					String fileDir = testPath + File.separator + "log_error.txt";
+					String fileDir = testDir + File.separator + "log_error.txt";
 					try (PrintWriter pw = new PrintWriter(new FileWriter(fileDir, true))) {
 						e.printStackTrace(pw);
 					} catch (Exception e1) {
@@ -92,39 +92,39 @@ public class TestUseCases {
 		}
 	}
 
-	public static void testDecrypt_WithOneAttribute(String testPath) {
+	public static void testDecrypt_WithOneAttribute(String testDir) {
 		String[] names = { "Bob" };
 		String[] attributes = { "paciente" };
 		String authorityName = "Hospital";
 
-		UseCase test = new UseCase(authorityName, testPath, attributes);
+		UseCase test = new UseCase(authorityName, testDir, attributes);
 		test.globalSetup();
 		test.authoritySetup();
 		test.keyGeneration(names, attributes);
 		test.encrypt("", "paciente");
-		String[] keyPath = test.searchKeys(names[0]);
-		test.decrypt("", names[0], keyPath);
+		test.decrypt("", names[0], test.searchKeys(names[0]));
+		test.check(testDir, names[0], "paciente", test.searchKeys(names[0]));
 	}
 
-	public static void testDecrypt_WithTwoAttributes(String testPath) {
+	public static void testDecrypt_WithTwoAttributes(String testDir) {
 		String[] names = { "Bob", "Bob" };
 		String[] attributes = {"paciente", "dono-do-prontuário"};
 		String authorityName = "Hospital";
 
-		UseCase test = new UseCase(authorityName, testPath, attributes);
+		UseCase test = new UseCase(authorityName, testDir, attributes);
 		test.globalSetup();
 		test.authoritySetup();
 		test.keyGeneration(names, attributes);
-		test.encrypt("", "dono-do-prontuário and paciente");
+		test.encrypt("", "and dono-do-prontuário paciente");
 		test.decrypt("", names[0], test.searchKeys(names[0]));
 	}
 
-	public static void testPolicy_AndGateWithMissingAttribute_shouldFail(String testPath) {
+	public static void testPolicy_AndGateWithMissingAttribute_shouldFail(String testDir) {
 		String[] names = { "Bob", "Bob", "Alice" };
 		String[] attributes = { "paciente", "dono-do-prontuário", "usuário-credenciado" };
 		String authorityName = "Hospital";
 
-		UseCase test = new UseCase(authorityName, testPath, attributes);
+		UseCase test = new UseCase(authorityName, testDir, attributes);
 		test.globalSetup();
 		test.authoritySetup();
 		test.keyGeneration(names, attributes);
@@ -133,12 +133,12 @@ public class TestUseCases {
 
 	}
 
-	public static void testPolicy_OrGateWithMissingAttribute(String testPath) {
+	public static void testPolicy_OrGateWithMissingAttribute(String testDir) {
 		String[] names = { "Bob", "Alice" };
 		String[] attributes = { "dono-do-prontuário", "médico" };
 		String authorityName = "Hospital";
 
-		UseCase test = new UseCase(authorityName, testPath, attributes);
+		UseCase test = new UseCase(authorityName, testDir, attributes);
 		test.globalSetup();
 		test.authoritySetup();
 		test.keyGeneration(names, attributes);
@@ -146,39 +146,41 @@ public class TestUseCases {
 		test.decrypt("", names[0], test.searchKeys(names[0]));
 	}
 
-	public static void testDecrypt_WithKeyFromOtherUser_shouldFail(String testPath) {
-		String[] names = { "Bob", "Mr. Robot" };
+	public static void testDecrypt_WithKeyFromOtherUser_shouldFail(String testDir) {
+		String[] names = { "Bob", "Alice" };
 		String[] attributes = { "dono-do-prontuário", "hacker" };
 		String authorityName = "Hospital";
 
-		UseCase test = new UseCase(authorityName, testPath, attributes);
+		UseCase test = new UseCase(authorityName, testDir, attributes);
 		test.globalSetup();
 		test.authoritySetup();
 		test.keyGeneration(names, attributes);
 		test.encrypt("", "dono-do-prontuário");
-		test.decrypt("", names[1], test.searchKeys(names[0]));
+		test.decrypt("", "Alice", test.searchKeys("Bob"));
+		test.check(testDir, "Alice", "dono-do-prontuário", test.searchKeys("Bob"));
 	}
 
-	public static void testDecrypt_UserWithOwnAndStolenKeys_shouldFail(String testPath) {
+	public static void testDecrypt_UserWithOwnAndStolenKeys_shouldFail(String testDir) {
 		String[] names = { "Bob", "Alice" };
 		String[] attributes = { "paciente", "dono-do-prontuário" };
 		String authorityName = "Hospital";
 
-		UseCase test = new UseCase(authorityName, testPath, attributes);
+		UseCase test = new UseCase(authorityName, testDir, attributes);
 		test.globalSetup();
 		test.authoritySetup();
 		test.keyGeneration(names, attributes);
-		test.encrypt("", "paciente and dono-do-prontuário");
-		String[] keyPath = { test.searchKeys(names[0])[0], test.searchKeys(names[1])[0] };
-		test.decrypt("", names[0], keyPath);
+		test.encrypt("", "and dono-do-prontuário paciente");
+		String[] keyPath = { test.searchKeys("Bob")[0], test.searchKeys("Alice")[0] };
+		test.decrypt("", "Bob", keyPath);
+		test.check(testDir, "Bob", "and dono-do-prontuário paciente", keyPath);
 	}
 
-	public static void testEncrypt_WithLargeFile(String testPath) {
+	public static void testEncrypt_WithLargeFile(String testDir) {
 		String[] names = { "Bob" };
 		String[] attributes = { "paciente" };
 		String authorityName = "Hospital";
 
-		String fileDir = testPath + File.separator + "BigFile.txt";
+		String fileDir = testDir + File.separator + "BigFile.txt";
 		File filePath = new File(fileDir);
 		try {
 			OutputStreamWriter writer = new OutputStreamWriter(
@@ -191,7 +193,7 @@ public class TestUseCases {
 			e.printStackTrace();
 		}
 
-		UseCase test = new UseCase(authorityName, testPath, attributes);
+		UseCase test = new UseCase(authorityName, testDir, attributes);
 		test.globalSetup();
 		test.authoritySetup();
 		test.keyGeneration(names, attributes);
@@ -201,12 +203,12 @@ public class TestUseCases {
 		test.decrypt(fileDir, names[0], keyPath);
 	}
 
-	public static void testKeyGen_GenerateKeyWithEmptyName(String testPath) {
+	public static void testKeyGen_GenerateKeyWithEmptyName(String testDir) {
 		String[] names = {""};
 		String[] attributes = {"paciente"};
 		String authorityName = "Hospital";
 
-		UseCase test = new UseCase(authorityName, testPath, attributes);
+		UseCase test = new UseCase(authorityName, testDir, attributes);
 		test.globalSetup();
 		test.authoritySetup();
 		test.keyGeneration(names, attributes);
@@ -215,12 +217,12 @@ public class TestUseCases {
 		test.decrypt("", names[0], keyPath);
 	}
 
-	public static void testKeyGen_MultipleAttributes(String testPath) {
+	public static void testKeyGen_MultipleAttributes(String testDir) {
 		String[] names = { "" };
 		String[] attributes = { "paciente" };
 		String authorityName = "Hospital";
 
-		UseCase test = new UseCase(authorityName, testPath, attributes);
+		UseCase test = new UseCase(authorityName, testDir, attributes);
 		test.globalSetup();
 		test.authoritySetup();
 		test.keyGeneration(names, attributes);
@@ -249,7 +251,7 @@ public class TestUseCases {
 		return stack.toString().replace("[", "").replace("]", "");
 	}
 
-	public static void testPolicy_HundredsOfOrOperatorsWorks(String testPath) {
+	public static void testPolicy_HundredsOfOrOperatorsWorks(String testDir) {
 		/*
 		 * the policy generation algorithm derives a complete binary tree of or, thus
 		 * policySize must be a power of 2
@@ -270,7 +272,7 @@ public class TestUseCases {
 		String[] attributes = temp.toArray(new String[temp.size()]);
 		String bigPolicy = generatePolicy(policySize, operators, attributes);
 
-		UseCase test = new UseCase(authorityName, testPath, attributes);
+		UseCase test = new UseCase(authorityName, testDir, attributes);
 		test.globalSetup();
 		test.authoritySetup();
 		test.keyGeneration(names, attributes);
@@ -278,7 +280,7 @@ public class TestUseCases {
 		test.decrypt("", names[0], test.searchKeys(names[0]));
 	}
 
-	public static void testPolicy_HundredsOfAndOperatorsWorks(String testPath) {
+	public static void testPolicy_HundredsOfAndOperatorsWorks(String testDir) {
 		/*
 		 * the policy generation algorithm derives a complete binary tree of or, thus
 		 * policySize must be a power of 2
@@ -299,11 +301,12 @@ public class TestUseCases {
 		String[] attributes = temp.toArray(new String[temp.size()]);
 		String bigPolicy = generatePolicy(policySize, operators, attributes);
 
-		UseCase test = new UseCase(authorityName, testPath, attributes);
+		UseCase test = new UseCase(authorityName, testDir, attributes);
 		test.globalSetup();
 		test.authoritySetup();
 		test.keyGeneration(names, attributes);
 		test.encrypt("", bigPolicy);
 		test.decrypt("", names[0], test.searchKeys(names[0]));
+
 	}
 }
