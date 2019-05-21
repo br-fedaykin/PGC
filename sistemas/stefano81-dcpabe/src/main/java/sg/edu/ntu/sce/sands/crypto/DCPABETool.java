@@ -12,7 +12,9 @@ import sg.edu.ntu.sce.sands.crypto.utility.Utility;
 
 import java.io.*;
 import java.security.Security;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 public class DCPABETool {
@@ -171,7 +173,7 @@ public class DCPABETool {
             PaddedBufferedBlockCipher aes = Utility.initializeAES(m.getM(), false);
 
             try (BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(args[3]))) {
-                encryptOrDecryptPayload(aes, oIn, bos);
+                encryptOrDecryptPayload(aes, oIn, bos, null);
                 bos.flush();
             }
 
@@ -184,16 +186,29 @@ public class DCPABETool {
         return false;
     }
 
-    private static void encryptOrDecryptPayload(PaddedBufferedBlockCipher cipher, InputStream is, OutputStream os) throws DataLengthException, IllegalStateException, InvalidCipherTextException, IOException {
+    private static void encryptOrDecryptPayload(PaddedBufferedBlockCipher cipher, InputStream is, OutputStream os, BufferedWriter bw) throws DataLengthException, IllegalStateException, InvalidCipherTextException, IOException {
         byte[] inBuff = new byte[cipher.getBlockSize()];
-        byte[] outBuff = new byte[cipher.getOutputSize(inBuff.length)];
-        int nbytes;
+		byte[] outBuff = new byte[cipher.getOutputSize(inBuff.length)];
+		int nbytes;
+		if (bw != null) {
+			bw.write("\n dados binários de criptografia AES: \n");
+		}
+		StringBuilder sb = new StringBuilder();
         while (-1 != (nbytes = is.read(inBuff, 0, inBuff.length))) {
-            int length1 = cipher.processBytes(inBuff, 0, nbytes, outBuff, 0);
-            os.write(outBuff, 0, length1);
+			int length1 = cipher.processBytes(inBuff, 0, nbytes, outBuff, 0);			
+			os.write(outBuff, 0, length1);
+			if (bw != null) {
+				byte[] bin = Arrays.copyOfRange(outBuff, 0, length1);
+				sb.append(bin.toString());
+			}
         }
-        nbytes = cipher.doFinal(outBuff, 0);
-        os.write(outBuff, 0, nbytes);
+		nbytes = cipher.doFinal(outBuff, 0);
+		os.write(outBuff, 0, nbytes);
+		if (bw != null) {
+			byte[] bin = Arrays.copyOfRange(outBuff, 0, nbytes);
+			sb.append(bin.toString());
+			bw.write(sb.toString());
+		}		
     }
 
 	// enc <resource file> <policy> <ciphertext> <gpfile> <authorityfileP 1> ... <authorityfileP n>
@@ -219,13 +234,16 @@ public class DCPABETool {
 
 					FileInputStream fis = new FileInputStream(args[1]);
 					BufferedInputStream bis = new BufferedInputStream(fis);
+
+					FileWriter fr = new FileWriter(new File(args[3] + "_plainText"));
+                	BufferedWriter bw = new BufferedWriter(fr);
 			) {
 				oos.writeObject(ct);
+				bw.write(ct.toString());
 
-                PaddedBufferedBlockCipher aes = Utility.initializeAES(m.getM(), true);
-
-				encryptOrDecryptPayload(aes, bis, oos);
-
+				PaddedBufferedBlockCipher aes = Utility.initializeAES(m.getM(), true);
+				
+				encryptOrDecryptPayload(aes, bis, oos, bw);				
 				return true;
 
 			}

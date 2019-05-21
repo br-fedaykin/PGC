@@ -37,7 +37,7 @@ public class Utility {
         try (
                 FileOutputStream fos = new FileOutputStream(publicKeysPath);
                 ObjectOutputStream outputPublicKey = new ObjectOutputStream(fos);
-                FileWriter fr = new FileWriter(new File(publicKeysPath + "_clearText"));
+                FileWriter fr = new FileWriter(new File(publicKeysPath + "_plainText"));
                 BufferedWriter bw = new BufferedWriter(fr)) {
             //oos.writeObject(ak.getAuthorityID());
 //        	System.out.println(fos.toString());
@@ -51,7 +51,7 @@ public class Utility {
         try (
                 FileOutputStream fos = new FileOutputStream(secretKeyPath);
                 ObjectOutputStream outputSecretKey = new ObjectOutputStream(fos);
-                FileWriter fr = new FileWriter(new File(secretKeyPath + "_clearText"));
+                FileWriter fr = new FileWriter(new File(secretKeyPath + "_plainText"));
                 BufferedWriter bw = new BufferedWriter(fr);) {
             //oos.writeObject(ak.getAuthorityID());
             outputSecretKey.writeObject(secretKeys);
@@ -72,7 +72,7 @@ public class Utility {
         try (
                 FileOutputStream fos = new FileOutputStream(personalKeyPath);
                 ObjectOutputStream oos = new ObjectOutputStream(fos);
-                FileWriter fr = new FileWriter(new File(personalKeyPath + "_clearText"));
+                FileWriter fr = new FileWriter(new File(personalKeyPath + "_plainText"));
                 BufferedWriter bw = new BufferedWriter(fr);
             ) {
             oos.writeObject(personalKey);
@@ -84,7 +84,7 @@ public class Utility {
         try (
                 FileOutputStream fos = new FileOutputStream(globalParameterPath);
                 ObjectOutputStream oos = new ObjectOutputStream(fos);
-                FileWriter fr = new FileWriter(new File(globalParameterPath + "_clearText"));
+                FileWriter fr = new FileWriter(new File(globalParameterPath + "_plainText"));
                 BufferedWriter bw = new BufferedWriter(fr);
             ) {
             oos.writeObject(globalParameters);
