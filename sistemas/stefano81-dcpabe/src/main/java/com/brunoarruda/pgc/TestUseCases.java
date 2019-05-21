@@ -27,8 +27,19 @@ public class TestUseCases {
 	public static void main(String[] args) {
 		System.out.println("Tests:\n");
 
+		// create root folder to store test files, nothing happens if it already exists
 		File root_test_path = new File(TEST_PATH);
 		root_test_path.mkdir();
+		
+		// needed to clean test path directory
+		for (File file : root_test_path.listFiles()) {
+			if (file.isDirectory()) {
+				for (File innerFile : file.listFiles()) {
+					innerFile.delete();					
+				}
+			}
+			file.delete();
+		}
 
 		runTestMethods();
 	}
