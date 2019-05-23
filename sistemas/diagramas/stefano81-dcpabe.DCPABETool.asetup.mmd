@@ -1,0 +1,39 @@
+sequenceDiagram
+    participant User
+    participant DT as DCPABETool
+    participant D as DCPABE    
+    participant P as Pairing
+    participant E as Element
+    participant PK as PublicKey
+    participant SK as SecretKey
+    participant A as AuthorityKeys
+    participant U as Utility
+    User ->> DT: asetup nome gp afileP afileS  atritutos+
+    DT ->> D: authoritySetup : string nome, string atritutos+
+    D ->> A: new : nome
+    A -->> D: authority
+    D ->> P: getPairing
+    P -->> D: pairing
+    D ->> P: pairing
+    P ->> E: interno
+    E -->> D: eg1g1
+    loop for atr in atributos
+        D ->> P: getZr 
+        P ->> E: interno
+        E -->> D: ai
+        D ->> P: getZr 
+        P ->> E: interno
+        E -->> D: yi
+        D ->> E: eg1g1.powZn(ai)
+        E -->> PK: e_ai.toBytes
+        D ->> E: gp.powZn(yi)
+        E -->> PK: e_yi.toBytes
+        D ->> PK: new
+        PK  -->> D: pk
+        D ->> A: getPublicKeys.put : atr, pk
+        D ->>SK: new : ai.toBytes, yi.toBytes
+        SK -->> D: sk
+        D ->> A: getSecretKeys.put : atr, sk
+    end
+    D -->> User: write in afileP : getPublicKeys
+    D -->> User: write in afileS : getSecretKeys

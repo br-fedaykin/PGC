@@ -1,0 +1,39 @@
+sequenceDiagram
+    participant User
+    participant DT as DCPABETool
+    participant D as DCPABE
+    participant A as AccessTree
+    participant P as Pairing
+    participant M as Message
+    participant C as CipherText
+    participant U as Utility
+    participant PBBC as PaddedBufferedBlockCipher
+    participant CP as CipherParameters
+    User -->> DT: enc : args
+    DT->>A: buildFromPolice : string policy
+    A-->>DT: arho
+    DT ->> D: gererateRandomMessage
+    D ->> P: getPairing
+    P -->> D: pairing
+    D ->> P : getGT.newRandomElement
+    P -->> D: Element
+    D ->> M: new : Element.toBytes
+    M -->> D: m
+    D -->> DT: m
+    DT ->> D: encrypt : m, arho, keys
+    D ->> C: new
+    C -->> D: ct
+    D -->>D: operações criptográficas com pareamentos
+    D ->> C: setAccessStrucutre : arho
+    D ->> C: setC0, setC1, setC2
+    D -->> DT: ct
+    DT --> User: write : ct
+    DT ->> U: initializeAES : m
+    U ->> PBBC: new
+    PBBC -->> U:  aes
+    U ->> CP:  new : m
+    CP -->> U: ivAndKey
+    U ->> PBBC: init : ivAndKey
+    U -->> DT: aes
+    D -->>D: criptografia AES do input
+    D -->> User: write in out : bytes
