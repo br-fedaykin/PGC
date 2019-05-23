@@ -3,6 +3,9 @@ package sg.edu.ntu.sce.sands.crypto.dcpabe;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 
 import java.util.Arrays;
 
@@ -30,5 +33,16 @@ public class Message {
     @Override
     public int hashCode() {
         return Arrays.hashCode(getM());
+    }
+
+    @Override
+    public String toString() {
+        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        try {
+            return ow.writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return "error";
     }
 }

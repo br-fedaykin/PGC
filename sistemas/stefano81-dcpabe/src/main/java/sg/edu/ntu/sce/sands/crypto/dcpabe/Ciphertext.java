@@ -6,6 +6,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+
 
 public class Ciphertext implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -14,7 +19,7 @@ public class Ciphertext implements Serializable {
     private List<byte[]> c2;
     private List<byte[]> c3;
     private AccessStructure accessStructure;
-
+    
     public Ciphertext() {
         c1 = new ArrayList<byte[]>();
         c2 = new ArrayList<byte[]>();
@@ -33,16 +38,28 @@ public class Ciphertext implements Serializable {
         return c1.get(x);
     }
 
+    public List<byte[]> getC1() {
+        return c1;
+    }
+
     public void setC1(byte[] c1x) {
         c1.add(c1x);
     }
-
+    
     public byte[] getC2(int x) {
         return c2.get(x);
     }
 
+    public List<byte[]> getC2() {
+        return c2;
+    }
+
     public void setC2(byte[] c2x) {
         c2.add(c2x);
+    }
+
+    public List<byte[]> getC3() {
+        return c3;
     }
 
     public byte[] getC3(int x) {
@@ -59,5 +76,16 @@ public class Ciphertext implements Serializable {
 
     public void setAccessStructure(AccessStructure accessStructure) {
         this.accessStructure = accessStructure;
+    }
+
+    @Override
+    public String toString() {        
+        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        try {
+            return ow.writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return "error";
     }
 }

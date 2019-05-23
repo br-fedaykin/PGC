@@ -12,26 +12,28 @@ import sg.edu.ntu.sce.sands.crypto.utility.Utility;
 
 import java.io.*;
 import java.security.Security;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 public class DCPABETool {
 	public static void main(String[] args) {
 		Security.addProvider(new BouncyCastleProvider());
-		
+
 		if (encrypt(args) ||
 				decrypt(args) ||
 				globalsetup(args) ||
 				keygen(args) ||
-				authhoritySetup(args) ||
+				authoritySetup(args) ||
 				check(args)) {
         } else {
             help();
-        }
+		}
 	}
 
     // asetup <authority name> <gpfile> <authorityfileS> <authorityfileP> <attribute 1 > ... <attribute n>
-    private static boolean authhoritySetup(String[] args) {
+    private static boolean authoritySetup(String[] args) {
         if (!args[0].equals("asetup") || args.length <= 5) return false;
 
 		try {
@@ -97,10 +99,9 @@ public class DCPABETool {
 
 		return false;
 	}
-	
+
 	// check <username> <policy> <gpfile> m <authorityP 1>...<authorityP m> n <keyfile 1> ... <keyfile n>
-	@SuppressWarnings("unchecked")
-	private static boolean check(String[] args) {
+	public static boolean check(String[] args) {
 		if (!args[0].equals("check") || args.length < 8) return false;
 
 		try {
@@ -133,14 +134,14 @@ public class DCPABETool {
                     pks.addKey(Utility.readPersonalKey(args[4 + i + m + 2]));
                 }
 
-                Message dm = DCPABE.decrypt(nct, pks, gp);
+				Message dm = DCPABE.decrypt(nct, pks, gp);
 
-                System.err.println(om.getM().length);
+				System.err.println(om.getM().length);
                 System.err.println(dm.getM().length);
                 System.err.println(Arrays.toString(om.getM()));
                 System.err.println(Arrays.toString(dm.getM()));
 
-                return true;
+                return om.equals(dm);
             }
         } catch (IllegalStateException | IOException | DataLengthException | ClassNotFoundException e) {
 			System.err.println(e.getMessage());
@@ -172,7 +173,7 @@ public class DCPABETool {
             PaddedBufferedBlockCipher aes = Utility.initializeAES(m.getM(), false);
 
             try (BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(args[3]))) {
-                encryptOrDecryptPayload(aes, oIn, bos);
+                encryptOrDecryptPayload(aes, oIn, bos, null);
                 bos.flush();
             }
 
@@ -185,20 +186,32 @@ public class DCPABETool {
         return false;
     }
 
-    private static void encryptOrDecryptPayload(PaddedBufferedBlockCipher cipher, InputStream is, OutputStream os) throws DataLengthException, IllegalStateException, InvalidCipherTextException, IOException {
+    private static void encryptOrDecryptPayload(PaddedBufferedBlockCipher cipher, InputStream is, OutputStream os, BufferedWriter bw) throws DataLengthException, IllegalStateException, InvalidCipherTextException, IOException {
         byte[] inBuff = new byte[cipher.getBlockSize()];
-        byte[] outBuff = new byte[cipher.getOutputSize(inBuff.length)];
-        int nbytes;
+		byte[] outBuff = new byte[cipher.getOutputSize(inBuff.length)];
+		int nbytes;
+		if (bw != null) {
+			bw.write("\n dados binários de criptografia AES: \n");
+		}
+		StringBuilder sb = new StringBuilder();
         while (-1 != (nbytes = is.read(inBuff, 0, inBuff.length))) {
-            int length1 = cipher.processBytes(inBuff, 0, nbytes, outBuff, 0);
-            os.write(outBuff, 0, length1);
+			int length1 = cipher.processBytes(inBuff, 0, nbytes, outBuff, 0);			
+			os.write(outBuff, 0, length1);
+			if (bw != null) {
+				byte[] bin = Arrays.copyOfRange(outBuff, 0, length1);
+				sb.append(bin.toString());
+			}
         }
-        nbytes = cipher.doFinal(outBuff, 0);
-        os.write(outBuff, 0, nbytes);
+		nbytes = cipher.doFinal(outBuff, 0);
+		os.write(outBuff, 0, nbytes);
+		if (bw != null) {
+			byte[] bin = Arrays.copyOfRange(outBuff, 0, nbytes);
+			sb.append(bin.toString());
+			bw.write(sb.toString());
+		}		
     }
 
 	// enc <resource file> <policy> <ciphertext> <gpfile> <authorityfileP 1> ... <authorityfileP n>
-	@SuppressWarnings("unchecked")
 	private static boolean encrypt(String[] args) {
 		if (!args[0].equals("enc") || args.length < 6) return false;
 
@@ -214,20 +227,23 @@ public class DCPABETool {
 			AccessStructure arho = AccessStructure.buildFromPolicy(args[2]);
 			Message m = DCPABE.generateRandomMessage(gp);
 			Ciphertext ct = DCPABE.encrypt(m, arho, gp, pks);
-			
+
 			try (
 					FileOutputStream fos = new FileOutputStream(args[3]);
 					ObjectOutputStream oos = new ObjectOutputStream(fos);
 
 					FileInputStream fis = new FileInputStream(args[1]);
 					BufferedInputStream bis = new BufferedInputStream(fis);
+
+					FileWriter fr = new FileWriter(new File(args[3] + "_plainText"));
+                	BufferedWriter bw = new BufferedWriter(fr);
 			) {
 				oos.writeObject(ct);
+				bw.write(ct.toString());
 
-                PaddedBufferedBlockCipher aes = Utility.initializeAES(m.getM(), true);
-
-				encryptOrDecryptPayload(aes, bis, oos);
-
+				PaddedBufferedBlockCipher aes = Utility.initializeAES(m.getM(), true);
+				
+				encryptOrDecryptPayload(aes, bis, oos, bw);				
 				return true;
 
 			}
@@ -243,6 +259,6 @@ public class DCPABETool {
 		System.out.println("asetup <authority name> <gpfile> <authorityfileS> <authorityfileP> <attribute 1 > ... <attribute n>");
 		System.out.println("keyGen <username> <attribute name> <gpfile> <authorityfileS> <keyfile>");
 		System.out.println("enc <resource file> <policy> <ciphertext> <gpfile> <authorityfileP 1> ... <authorityfileP n>");
-		System.out.println("dec <ciphertext> <resource file> <gpfile> <keyfile 1> <keyfile 2>");
+		System.out.println("dec <username> <ciphertext> <resource file> <gpfile> <keyfile 1> <keyfile 2>");
 	}
 }

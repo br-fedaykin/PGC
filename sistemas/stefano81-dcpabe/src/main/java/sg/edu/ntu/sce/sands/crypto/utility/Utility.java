@@ -36,9 +36,13 @@ public class Utility {
     public static void writePublicKeys(String publicKeysPath, Map<String, PublicKey> publicKeys) throws IOException {
         try (
                 FileOutputStream fos = new FileOutputStream(publicKeysPath);
-                ObjectOutputStream outputPublicKey = new ObjectOutputStream(fos)) {
+                ObjectOutputStream outputPublicKey = new ObjectOutputStream(fos);
+                FileWriter fr = new FileWriter(new File(publicKeysPath + "_plainText"));
+                BufferedWriter bw = new BufferedWriter(fr)) {
             //oos.writeObject(ak.getAuthorityID());
+//        	System.out.println(fos.toString());
             outputPublicKey.writeObject(publicKeys);
+            bw.write(publicKeys.toString());
         }
 
     }
@@ -46,9 +50,12 @@ public class Utility {
     public static void writeSecretKeys(String secretKeyPath, Map<String, SecretKey> secretKeys) throws IOException {
         try (
                 FileOutputStream fos = new FileOutputStream(secretKeyPath);
-                ObjectOutputStream outputSecretKey = new ObjectOutputStream(fos)) {
+                ObjectOutputStream outputSecretKey = new ObjectOutputStream(fos);
+                FileWriter fr = new FileWriter(new File(secretKeyPath + "_plainText"));
+                BufferedWriter bw = new BufferedWriter(fr);) {
             //oos.writeObject(ak.getAuthorityID());
             outputSecretKey.writeObject(secretKeys);
+            bw.write(secretKeys.toString());
         }
 
     }
@@ -64,16 +71,24 @@ public class Utility {
     public static void writePersonalKey(String personalKeyPath, PersonalKey personalKey) throws IOException {
         try (
                 FileOutputStream fos = new FileOutputStream(personalKeyPath);
-                ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+                ObjectOutputStream oos = new ObjectOutputStream(fos);
+                FileWriter fr = new FileWriter(new File(personalKeyPath + "_plainText"));
+                BufferedWriter bw = new BufferedWriter(fr);
+            ) {
             oos.writeObject(personalKey);
+            bw.write(personalKey.toString());
         }
     }
 
     public static void writeGlobalParameters(String globalParameterPath, GlobalParameters globalParameters) throws IOException {
         try (
                 FileOutputStream fos = new FileOutputStream(globalParameterPath);
-                ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+                ObjectOutputStream oos = new ObjectOutputStream(fos);
+                FileWriter fr = new FileWriter(new File(globalParameterPath + "_plainText"));
+                BufferedWriter bw = new BufferedWriter(fr);
+            ) {
             oos.writeObject(globalParameters);
+            bw.write(globalParameters.toString());
         }
     }
 
