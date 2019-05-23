@@ -1,0 +1,30 @@
+graph LR
+
+usuário -- gsetup gpfile --> DT1
+
+subgraph DCPABETool
+DT1[gsetup]
+end
+
+subgraph DCPABE
+D1[globalSetup]
+end
+DT1 --> D1
+
+subgraph GlobalParameters
+obj
+GP1[setPairingParameters]
+GP2[setG1]
+end
+D1 --lambda=160 --> obj
+obj --- GP1
+
+subgraph Pairing
+P1[Pairing]
+end
+
+D1--> P1
+P1-->GP2
+obj((obj)) --- GP2
+
+DT1 --- gpfile

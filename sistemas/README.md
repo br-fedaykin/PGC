@@ -14,6 +14,12 @@ Autor | linguagem | Artigos citados | disponibilizado em | andamento | dependên
 
 Segui a orientação do criador da biblioteca, executando [ServerMain.py](sibichakkaravarthy-python-ABE-IBE/ServerMain.py) e [MultiClient.py](sibichakkaravarthy-python-ABE-IBE/MultiClient.py), que parecem realizar alguma negociação para criar uma conexão segura. Isso envolve a troca de hashings, mas não vi o uso de ABE ou IBE. Há outros arquivos no repositório que usam a biblioteca charm, mas não sei como usá-los, pois não há orientação. Alguns deles parecem usar de fato ABE. **Há também um método de codificação de mensagens que pode ser útil se funcionar. Não o testei**.
 
+Autor | linguagem | Artigos citados | disponibilizado em | andamento | dependências
+|---| ---| ---| ---| --- | --- |
+[stefano81](https://github.com/stefano81/dcpabe) | Java | [15], [16], [17] | abr/2018 | 54 commits, último em abr/2019 | [Bouncy Castle](https://www.bouncycastle.org/) v1.46, [JPBC](http://gas.dia.unisa.it/projects/jpbc/) v2.0.0-m)
+
+Código funcionando em Java. A análise deste sistema será extensa, visto que é o que melhor funciona e do qual pode-se compreender melhor todo o processo envolvido em ABE. Aqui está [uma análise mais extensa sobre o sistema](stefano81-dcpabe.md). Parece ter sido feito em uma equipe chamada [SANDS][18].
+
 ## Sistemas encontrados mas não testados
 
 Autor | linguagem | Artigos citados | disponibilizado em | andamento | dependências | tem instruções de uso
@@ -54,6 +60,9 @@ Autor | linguagem | Artigos citados | disponibilizado em | andamento | dependên
 12. [Secure Cloud-Based EHR System Using Attribute-Based Cryptosystem and Blockchain.][12]
 13. [Blockchain-based Approach to the SecureSharing of Healthcare Data][13]
 14. [A Secured Proxy-Based Data Sharing Module in IoTEnvironments Using Blockchain][14]
+15. [Decentralizing Attribute-Based Encryption][15]
+16. [The Java Pairing Based Cryptography Library][16]
+17. [PriSM: A Private Social Mesh for Leveraging Social Networking at Workplace][17]
 
 [1]: https://eprint.iacr.org/2017/807.pdf
 [2]: https://doi.org/10.1109/SP.2007.11
@@ -70,3 +79,7 @@ Autor | linguagem | Artigos citados | disponibilizado em | andamento | dependên
 [12]: https://www.ncbi.nlm.nih.gov/pubmed/29974270
 [13]: https://ojs.bibsys.no/index.php/NISK/article/view/462
 [14]: https://res.mdpi.com/sensors/sensors-19-01235/article_deploy/sensors-19-01235.pdf?filename=&attachment=1
+[15]: https://eprint.iacr.org/2010/351.pdf
+[16]: http://gas.dia.unisa.it/projects/jpbc/
+[17]: https://arxiv.org/abs/1206.1653
+[18]: http://sands.sce.ntu.edu.sg/
