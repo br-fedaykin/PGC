@@ -1,4 +1,5 @@
 sequenceDiagram
+
     participant User
     participant DT as DCPABETool
     participant D as DCPABE    
@@ -8,6 +9,7 @@ sequenceDiagram
     participant SK as SecretKey
     participant A as AuthorityKeys
     participant U as Utility
+
     User ->> DT: asetup nome gp afileP afileS  atritutos+
     DT ->> D: authoritySetup : string nome, string atritutos+
     D ->> A: new : nome
@@ -17,6 +19,7 @@ sequenceDiagram
     D ->> P: pairing
     P ->> E: interno
     E -->> D: eg1g1
+
     loop for atr in atributos
         D ->> P: getZr 
         P ->> E: interno
@@ -35,5 +38,6 @@ sequenceDiagram
         SK -->> D: sk
         D ->> A: getSecretKeys.put : atr, sk
     end
+    
     D -->> User: write in afileP : getPublicKeys
     D -->> User: write in afileS : getSecretKeys

@@ -1,0 +1,45 @@
+sequenceDiagram
+
+    participant User
+    participant dt as DCPABETool
+    participant pk as Public Key
+    participant d as DCPABE
+    participant u as Utility
+    participant c as CipherText    
+    participant p as Pairing
+    participant e as Element
+    participant m as Message
+    participant pbbc as PaddedBufferedBlockCipher
+    participant cp as CipherParameters
+
+    User ->> dt: dec : args
+    dt ->> pk: new : nome
+    dt ->> pk: addKey : keyfile*
+    dt ->> u:  readCipherText : input
+    u ->> c: readObject : input
+    c -->> u: ct
+    u -->> dt: ct
+    dt ->> d: decrypt : ct, keys
+    d ->> c: getAccessStructure.getIndexesList : keys.getAttributes
+    c ->> d: integer toUse*
+    d ->> p: getPairing
+    p -->> d: pairing
+    d ->> p: getG1.newElement
+    p ->> e: ?
+    e -->> d:  HGID
+    d ->> e: setFromHash(keys.userName)
+    d ->> e: getGT.newOneElement
+    e --> d: t
+    d -->> d: operações em grupos
+    d ->> m: c0.toBytes
+    m -->> d: 
+    d -->> dt: m
+    d ->> u: initializeAES : m
+    u ->> pbbc: new
+    pbbc -->> u: aes
+    u ->> cp: new : m
+    cp -->> u: ivAndKey
+    u ->> pbbc: init : ivAndKey
+    u -->> dt: aes
+    dt ->> dt: descriptografia AES do input 
+    dt ->> User: write in output : bytes
