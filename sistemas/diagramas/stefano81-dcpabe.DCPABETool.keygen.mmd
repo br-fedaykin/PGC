@@ -1,0 +1,32 @@
+sequenceDiagram
+   participant User
+   participant dt as DCPABETool
+   participant d as DCPABE
+   participant u as Utility
+   participant sk as Secret Key
+   participant p as Pairing
+   participant e as Element
+   participant pk as Personal Key
+   User ->> dt: keyGen nome atributo gp afileS keyfile
+   dt ->> u: readSecretKeys
+   u ->> sk: readObject
+   sk --> dt: skeys
+   dt ->> d: keyGen : nome, atributo, skeys
+   d ->> p: getPairing
+   p -->> d: pairing
+   d ->> p: getG1.newElement
+   p ->> e: 
+   e -->> d: HGID
+   d ->> e: setFromHash : nome.getBytes
+   d ->> p: getZr.newElement
+   p ->> e: 
+   d ->> e : setFromBytes : SecretKey.getai
+   e -->> d: ai
+   d ->> p: getZr.newElement
+   p ->> e: 
+   d ->> e : setFromBytes : SecretKey.getyi
+   e -->> d: yi
+   d ->> pk: new : atributo, operações(ai, yi).toBytes
+   pk -->> dt: pk
+   dt ->> u: writePersonalKey
+   u ->> User: write pk on keyfile
