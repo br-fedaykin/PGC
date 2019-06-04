@@ -1,6 +1,6 @@
 # Protótipo do PGC
 
-codinome: hyper-abe
+## codinome: hyper-abe
 
 ## Arquitetura
 
@@ -32,7 +32,8 @@ Os possíveis usuários foram abstraídos em 5 categorias distintas:
 
 Os atores e funcionalidades do sistema estão resumidos no seguinte diagrama
 
-![Diagrama de caso de uso do Protótipo do PGC](diagramas/caso-de-uso-do-protótipo-do-PGC.svg)
+1. Diagrama de consulta e edição de dados
+![Diagrama de caso de uso do Protótipo do PGC](diagramas/caso-de-uso--consulta-e-edição.svg "Diagrama de consulta e edição de dados")
 
 ### Funcionalidades
 
