@@ -1,0 +1,248 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[left=3cm,top=3cm,right=2cm,bottom=2cm]{geometry}
+\usepackage[brazilian, english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[numbers]{natbib}
+\usepackage{epigraph}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{adjustbox}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\newcommand*{\SignatureAndDate}[4]{%
+	\parbox{7cm}{
+      \centering
+      \rule{6cm}{1pt}\\
+       #1
+       
+       #2
+    }
+    \hfill
+\parbox{7cm}{
+      \centering
+      \rule{6cm}{1pt}\\
+       #3
+       
+       #4
+    }
+}%
+\usepackage{float}
+
+\floatstyle{ruled}
+\newfloat{program}{thp}{lop}
+\floatname{program}{Program}
+
+\onehalfspacing
+
+\title{Relatório de Estágio III}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+\selectlanguage{brazilian}
+
+%%% CAPA %%%
+
+\begin{titlepage}
+
+\begin{wrapfigure}[2]{l}{0.2\textwidth}
+	\label{Logo UFABC}
+	\vspace{-1\baselineskip}
+	\centering
+	\includegraphics[width=0.25\textwidth]{images/Logo_UFABC}
+\end{wrapfigure}
+
+\uppercase{Universidade Federal do ABC}
+
+\uppercase{Bacharelado em Ciência da Computação}
+
+\vfill
+\begin{center}
+
+\uppercase{\textbf{Projeto de Graduação em Computação}}
+
+\vfill
+
+\uppercase{Bruno Cesar Porto de Arruda}
+\vspace{1cm}
+
+Orientador: Prof. Dr. Vladimir Moreira Rocha
+
+\vfill
+
+Santo André -- SP
+
+2019
+\end{center}
+\end{titlepage}
+
+%%% FIM DA CAPA %%%
+
+%%% FOLHA DE ROSTO %%%
+
+\begin{titlepage}
+\begin{center}
+\uppercase{\textbf{Bruno Cesar Porto de Arruda}}
+
+\vfill
+
+\uppercase{\textbf{Um sistema distribuído com permissão de acesso a prontuários de pacientes por meio de Smart Contracts}}
+\end{center}
+
+\vfill
+
+\hfill \begin{minipage}{0.5\textwidth}
+Trabalho submetido à Universidade Federal do ABC como parte dos requisitos para a conclusão do Bacharelado em Ciência da Computação.
+\vspace{1cm}
+
+Orientador: Prof. Dr. Vladimir Moreira Rocha
+\end{minipage}
+
+\vfill
+
+\begin{center}
+Santo André -- SP
+
+2019
+\end{center}
+\end{titlepage}
+
+%%% FIM DA FOLHA DE ROSTO %%%
+
+\begin{center}
+\uppercase{\textbf{Dedicatória}}
+\end{center}
+	xxx.
+
+
+\newpage
+\begin{center}
+\uppercase{\textbf{Agradecimentos}}
+\end{center}
+
+\noindent	Ofereço meus sinceros agradecimentos:
+
+\vspace{1cm}
+
+
+%%% ABSTRACT - PORTUGUÊS %%%
+\newpage
+\begin{abstract}
+
+\noindent FAZER NO FINAL.
+
+\noindent \textbf{Palavras-Chave:} Blockchain ...
+\end{abstract}
+
+%%% ABSTRACT - INGLÊS %%%
+
+\newpage
+\selectlanguage{english} 
+\begin{abstract}
+\noindent FAZER NO FINAL.
+
+\noindent \textbf{Palavras-Chave:} Blockchain ...
+\end{abstract}
+
+\selectlanguage{brazilian} 
+
+%%% SUMÁRIO %%%
+\newpage
+\tableofcontents
+
+%%% LISTA DE FIGURAS %%%
+\newpage
+\listoffigures
+
+%%% LISTA DE TABELAS %%%
+
+% \newpage
+% \listoftables
+
+% -------------------------------------------------------------------- %
+\newpage
+\section{Introdução}
+
+A tecnologia Blockchain~\cite{nakamoto2008bitcoin}...	
+
+\subsection{Objetivo geral}
+
+Criar um sistema, com base em contratos inteligentes executados em uma Blockchain, que permita o acesso a prontuários eletrônicos dos pacientes via políticas de acesso baseadas em atributos.
+
+\subsection{Objetivos específicos}
+
+\begin{itemize}
+
+\item Criar uma taxonomia de permissões no contexto de saúde.
+
+\item Analisar como funciona a criptografia baseada em atributos (\textit{attribute-based encryption}, em inglês). 
+
+\item Analisar como funcionam a tecnologia Blockchain {\color{red}escolher a tecnologia} e os contratos inteligentes. 
+
+\item Implementar os contratos inteligentes para dar acesso aos prontuários eletrônicos utilizando a taxonomia e a criptografia baseada em atributos.
+
+\item Implantar e executar os contratos inteligentes em uma arquitetura Blockchain.
+
+\end{itemize}
+
+\subsection{Justificativa}
+
+% -------------------------------------------------------------------- %
+\newpage
+\section{Fundamentação Teórica}
+
+\subsection{Criptografia baseada em atributos (CBA)}
+
+\subsection{Blockchain}
+
+\subsection{Contratos inteligentes}
+
+% -------------------------------------------------------------------- %
+\newpage
+\section{Sistema Proposto}
+
+\subsection{Taxonomia de permissões}
+
+\subsection{Contratos inteligentes com CBA}
+
+\subsection{Arquitetura Blockchain}
+
+% -------------------------------------------------------------------- %
+\newpage
+\section{Trabalhos Relacionados}
+
+\subsection{Sistemas de saúde com Blockchain e CBA}
+
+\subsection{Sistemas de saúde com CBA}
+\label{sub:sec:saude-cba}
+
+\subsection{Sistemas gerais com CBA}
+
+Caso não hajam trabalhos na seção~\ref{sub:sec:saude-cba}.
+
+% -------------------------------------------------------------------- %
+\newpage
+\section{Resultados Experimentais}
+
+
+
+% -------------------------------------------------------------------- %
+\newpage
+\section{Conclusões e Trabalhos futuros}
+
+\bibliography{doc}
+\bibliographystyle{plainnat}
+
+
+\end{document}
+
+
+
+
+
+
+
+
