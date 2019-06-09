@@ -9,8 +9,9 @@ Sumário
 1. [Componentes](#componentes)
 2. [Atores](#atores)
 3. [Diagramas](#diagramas)
-4. [Principais funções](#funções)
-5. [Estória de uso](#estórias-de-uso)
+4. [Estruturas de Dados](#estruturas-de-dados)
+5. [Principais funções](#funções)
+6. [Estória de uso](#estórias-de-uso)
 
 </details>
 
@@ -41,6 +42,148 @@ Os possíveis usuários foram abstraídos em 6 categorias distintas:
 5. **Terceiro**: alguém autorizado a acessar o prontuário do paciente, seja pelo paciente, seja pelo hospital.
 
 6. **Certificador**: um usuário com a capacidade de emitir atributos a outros usuários.
+
+## Estruturas de dados
+
+As estruturas de dados identificadas como necessárias para a execução do protótipo são:
+
+### Transações
+
+#### Requisição de atributo
+
+Um objeto JSON com os campos:
+
+```json
+{
+    "registerTransaction":"hash da transação de registro no sistema pelo requerente",
+    "atributes":[
+        "atributo 1",
+        "(...)",
+        "atributo N"
+    ],
+    "signature":"Assinatura da mensagem enviada diretamente à autoridade com a solicitação",
+    "authorities":[
+        "Autoridade 1",
+        "(...)",
+        "Autoridade M"
+    ]
+}
+```
+
+#### concessão de atributo
+
+Um objeto JSON com os campos:
+
+```json
+{
+    "requesterAddress":"endereço do requerente",
+    "result":[
+        "código informando concessão ou não do atributo 1",
+        "(...)",
+        "código informando concessão ou não do atributo N"
+        ],
+    "signature":"Assinatura da mensagem enviada diretamente ao requerente, caso exista",
+}
+```
+
+Obs: o campo result usará uma tabela de código informando a concessão de um atributo, e uma série de códigos informando o motivo de negar tal atributo, caso ocorra. Para fins de construção de protótipo, usaremos apenas 2 códigos: ```ACCEPTED_REQUEST``` e ```DENIED_REQUEST```
+
+#### publicação de prontuário
+
+Um objeto JSON com os campos:
+
+```json
+{
+    "ownerAddress":"Endereço do Dono do Prontuário",
+    "EHRSources":[
+        {
+            "sourceName": "Nome da instituição dona do Servidor",
+            "ciphertextParams": {
+                "accessStructure": "regra de acesso para descriptografia",
+                "c0": "parâmetro c0",
+                "c1": ["parâmetros c1"],
+                "c2": ["parâmetros c2"],
+                "c3": ["parâmetros c3"],
+            },
+            "source": "dados criptografados"
+        }
+    ]
+}
+```
+
+Quando descriptografado, ```source``` conterá a seguinte informação:
+
+```json
+{
+    "sourceName":"...",
+    "ciphertextParams": {...},
+    "source":
+    {
+        "IP":"IP do servidor do prontuário",
+        "key":"chave para referenciar o prontuário em questão ao Servidor"
+    }
+}
+```
+
+#### publicação dos Parâmetros Globais
+
+Um objeto JSON com os campos:
+
+```json
+{
+    "type": "",
+    "p": "",
+    "n": "",
+    "n0": "",
+    "n1": "",
+    "n2": "",
+    "l": "",
+    "append": ["(...)"]
+}
+```
+
+#### publicação de autoridade
+
+A ser feito
+
+### Arquivos
+
+- EHR (prontuário)
+- teste (contém hash)
+- gerados pelo DCPABE
+
+### Smart Contract
+
+```java
+class Container {
+    Paciente patients[];
+
+    public addPatient(Address patient);
+    public getPatient(Address patient);
+}
+```
+
+```java
+class Paciente {
+    Prontuário prontuários[];
+    String nome;
+    String email;
+
+    addEHR();
+    getEHR();
+}
+```
+
+```java
+class Prontuário {
+    String url;
+    String código;
+}
+```
+
+### Servidor
+
+- arquivo temp com chave privada do atributo enquanto o cliente não recebe
 
 ## Diagramas
 
