@@ -5,7 +5,7 @@ com: Bruno e Prof. Vladimir
 
 Eu havia solicitado a suspensão de reuniões por 2 semanas, para que eu pudesse me dedicar a um curso que estava fazendo e com cronograma apertado, o [Nanodegree Blockchain Developer](https://www.udacity.com/course/blockchain-developer-nanodegree--nd1309). O curso foi muito instrutivo, aprendi muito, entretanto não consegui entregar todas as tarefas a tempo e assim, perdi a chance de seguir para o termo 2 e conseguir meu diploma.
 
-## Sobre a reunião anterior
+## Contexto
 
 Apresentei uma [tabela organizando os sistemas com código publicado relacionados a ABE](../../sistemas/README.md).
 Essa tabela lista sistemas que implementam ABE e várias características, separadas em conjuntos que citam o uso de blockchains, e as que não usam.

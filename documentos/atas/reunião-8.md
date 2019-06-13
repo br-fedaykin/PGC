@@ -3,15 +3,13 @@
 Data: 23/05/2019,
 com: Bruno e Prof. Vladimir
 
-## Sobre Reuniões Anteriores
+## Pontos Importantes
 
 Apresentei os [diagramas criados para explicar o fluxo de dados no código DCPABE do stefano 81](../../sistemas/stefano81-dcpabe.md).
 
 Informei também que li o artigo que fundamenta o código, e logo pretendo disponibilizar um fichamento dele no repositório.
 
 Os testes de casos de uso do repositório do DCPABE estão concluídos, e a biblioteca funciona normalmente. A dúvida sobre a importância de informar um usuário nas fases de geração de chave e descriptografia foram esclarecidas. As chaves são derivadas a partir de um hash do usuário, e ao conjugar um usuário com chaves que não tenham sido geradas para ele mas que cumpram a política de acesso, pode-se até conseguir executar o método de descriptografia sem erros, porém com um resultado corrompido.
-
-## Pontos Importantes
 
 O professor havia passado um link de um [tutorial para criar um blockchain com Hyperledger Fabric e Java](https://medium.com/@aleksobol/explained-java-chaincode-in-hyperledger-fabric-fc63fccc84a3), e decidimos explorar o código durante a reunião, visto que não consegui desenvolver a atividade a parte. Exploramos a lógica, que parece girar em torno de [criar/conectar um canal com a blockchain em execução](https://github.com/alek-sobol/hyperledgerfabric-tutorial/blob/736ff6b973524f1b23e87678f75cd90b03d1d88b/java-chaincode/carmileage-tracking/src/test/java/tutorial/chaincode/CarMileageChaincodeTest.java#L125), e [fazer a invocação de funções publicadas nela](https://github.com/alek-sobol/hyperledgerfabric-tutorial/blob/736ff6b973524f1b23e87678f75cd90b03d1d88b/java-chaincode/carmileage-tracking/src/main/java/tutorial/chaincode/CarMileageChaincode.java#L36). Analisamos o fluxo de informação e possíveis pontos-chave para o entendimento do código e consequentemente, do funcionamento do Hyperledger.
 
@@ -27,7 +25,7 @@ A ideia então é publicar as permissões de algum recurso. Permissões mais rec
   - um paciente que envia algo ao blockchain. O que que ele vai enviar? o arquivo todo, alguma parte? uma referência a um recurso em um servidor?
   - um usuário deseja acessar o arquivo do paciente. Ele vai acessar por um client. Como ele vai acessar?
   - supondo que o arquivo tá no blockchain, como controlar (permitir/restringir) a descriptografia feita pelo usuário do lado do cliente?
-  - O usuário teria que perguntar ao hyperledger algo para poder descriptografar. O que? 
+  - O usuário teria que perguntar ao hyperledger algo para poder descriptografar. O que?
   - se publicar a estrutura de acesso na blockchain, pode-se condicionar o acesso ao arquivo ao ter as credenciais necessárias.
 
 Publicando no Hyperledger, pode-se ter:

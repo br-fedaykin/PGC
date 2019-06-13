@@ -15,3 +15,5 @@
 7. [Reunião #7, em 16/05/2019](reunião-7.md)
 
 8. [Reunião #8, em 23/05/2019](reunião-8.md)
+
+9. [Reunião #9, em 05/06/2019](reunião-9.md)

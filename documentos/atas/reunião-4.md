@@ -5,7 +5,7 @@ com: Bruno e Prof. Vladimir
 
 Esta reunião foi feita para compensar a que foi perdida em 25/abril, cancelada por dificuldades técnicas.
 
-## Sobre reuniões anteriores
+## Contexto
 
 Por e-mail, informei ao Prof. quanto à dificuldade de testar o código do tengyifei. Mesmo tentando inúmeras combinações de configurações, não houve sucesso em rodar o código dele - DCPABE-Web, nem na versão de produção nem no modo de teste. Criei um código básico para testar as funcionalidades do GWT, e verifiquei que ele funciona corretamente. Eliminando o erro do jdk e do gwt, restou somente avaliar se o código em Java continha erros de lógica, o que significa analisar o código do stefano81, de quem o tengyifei copiou o código.
 
