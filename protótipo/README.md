@@ -8,9 +8,10 @@ Sumário
 
 1. [Componentes](#componentes)
 2. [Atores](#atores)
-3. [Diagramas](#diagramas)
-4. [Principais funções](#funções)
-5. [Estória de uso](#estórias-de-uso)
+3. [Estruturas de Dados](#estruturas-de-dados)
+4. [Diagramas](#diagramas)
+5. [Principais funções](#funções)
+6. [Estória de uso](#estórias-de-uso)
 
 </details>
 
@@ -42,6 +43,8 @@ Os possíveis usuários foram abstraídos em 6 categorias distintas:
 
 6. **Certificador**: um usuário com a capacidade de emitir atributos a outros usuários.
 
+## Estruturas de Dados
+
 ## Diagramas
 
 Os atores e funcionalidades do sistema estão resumidos nos seguintes diagramas de caso de uso:
@@ -66,7 +69,7 @@ Os atores e funcionalidades do sistema estão resumidos nos seguintes diagramas 
 
 6. **solicitar acesso**: Um usuário pode solicitar acesso a um prontuário. Após verificar a ausência de credenciais para acessar um prontuário, o *cliente* consulta na *blockchain* quais são as entidades certificadores que podem emitir os atributos faltantes. Caso não encontre alguma, pode haver alguma inconsistência na regra de acesso, então supõem-se que uma autoridade sempre será encontrada, ou então o dono do prontuário é obrigado a alterar a regra de acesso removendo o atributo em questão. O *cliente* publica na blockchain uma solicitação para obtenção de tais atributos.
 
-7. **conceder atributo**: O *cliente* de algum certificador descobre a requisição publicada na *blockchain* e caso ache ela legítima gera um par de chaves do atributo em questão a partir do endereço público do requerente. Ele criptografa a mensagem usando o endereço público, de forma que somente o *cliente* do requerente possa recuperar as chaves. Esse envio é p2p, ou por meio de um *servidor* dedicado para a comunicação entre usuários do sistema, sem utilizar os servidores dos arquivos de prontuários ou a *blockchain*. Para fins de auditoria, o certificador publica na *blockchain* uma transação informando a concessão ou não do atributo, juntamente com um código informando o motivo de recursa.
+7. **conceder atributo**: O *cliente* de algum certificador descobre a requisição publicada na *blockchain* e caso ache ela legítima gera um par de chaves do atributo em questão a partir do endereço público do requerente. Ele criptografa a mensagem usando o endereço público, de forma que somente o *cliente* do requerente possa recuperar as chaves. Esse envio é p2p, ou por meio de um *servidor* dedicado para a comunicação entre usuários do sistema, sem utilizar os servidores dos arquivos de prontuários ou a *blockchain*. Para fins de auditoria, o certificador publica na *blockchain* uma transação informando a concessão ou não do atributo, juntamente com um código informando o motivo da recusa.
 
 ## Estórias de Uso
 
