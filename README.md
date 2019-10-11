@@ -9,18 +9,18 @@ Este repositório reunirá informações relativas ao Projeto de Graduação de 
 <details><summary> clique para expandir </summary>
 
 - [Análise de Requisitos do Protótipo](protótipo/README.md)
-- [Revisão Bibliográfica](referências/README.md)
-  - [Attribute-Based Encryption: Using Identity-Based Encryption for Access Control (2004)](referências/criptografia/Juel2004.md)
-  - [Self-Protecting Electronic Medical Records Using Attribute-Based Encryption (2010)](referências/criptografia/Akin2010.md)
-  - [Sobre ética médica, sigilo e informação](referências/ética-e-informação/README.md)
-  - [Resolução do CFM Nº 1931/2009 - Aprova o Código de Ética Médica.](referências/ética-e-informação/CEM.md)
-  - [Taxonomia médica dos profissionais do SUS](referências/taxonomia-médica/README.md)
-- Experimentos com código
+- [Revisão Bibliográfica](revisão-bibliográfica/README.md)
+  - [Attribute-Based Encryption: Using Identity-Based Encryption for Access Control (2004)](revisão-bibliográfica/criptografia/Juel2004.md)
+  - [Self-Protecting Electronic Medical Records Using Attribute-Based Encryption (2010)](revisão-bibliográfica/criptografia/Akin2010.md)
+  - [Sobre ética médica, sigilo e informação](revisão-bibliográfica/ética-e-informação/README.md)
+  - [Resolução do CFM Nº 1931/2009 - Aprova o Código de Ética Médica.](revisão-bibliográfica/ética-e-informação/CEM.md)
+  - [Taxonomia médica dos profissionais do SUS](revisão-bibliográfica/taxonomia-médica/README.md)
+- Códigos Experimentais sobre ABE, ECC e conversão Java para JavaScript
   - [Análise de sistemas que utilizam Criptografia Baseada em Atributos](sistemas/README.md)
-  - [[Javascript] Criptografia de curva elíptica usando a curva do Bitcoin, a secp256k1](experimentos/node-bitcoin-key-encryption)
-  - [[Java] Conversão de código Java para Javascript com GWT](experimentos/gwt-simple-project)
+  - [[Javascript] Criptografia de curva elíptica usando a curva do Bitcoin, a secp256k1](códigos-experimentais/node-bitcoin-key-encryption)
+  - [[Java] Conversão de código Java para Javascript com GWT](códigos-experimentais/gwt-simple-project)
 - Documentos e organização
-  - [monografia](documentos/monografia)
+  - [monografia](monografia)
   - [Descrição do PGC](documentos/descrição.md)
   - [cronograma](documentos/cronograma.md)
   - [atas](documentos/atas/README.md)  
@@ -34,12 +34,17 @@ Este repositório reunirá informações relativas ao Projeto de Graduação de 
 
 ### ⏳ Em andamento
 
-- levantamento de requisitos e análise do protótipo
+- monografia
 
 ### ✖️ Não iniciado
 
-- monografia
-- código do protótipo
+- estruturação da apresentação
+- configuração do protótipo para apresentação
+
+### ✔️ Concluído - fase 2 do PGC
+
+- **~~levantamento de requisitos e análise do protótipo~~**
+- **~~código do protótipo~~**
 
 ### ✔️ Concluído - fase 1 do PGC
 
