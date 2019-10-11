@@ -9,7 +9,8 @@
 \usepackage{wrapfig}
 \usepackage{setspace}
 \usepackage[hidelinks]{hyperref}
-\usepackage{xcolor}
+%\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{adjustbox}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 \newcommand*{\SignatureAndDate}[4]{%
@@ -132,9 +133,9 @@ Santo André -- SP
 \newpage
 \begin{abstract}
 
-\noindent FAZER NO FINAL.
+\noindent FAZER NO FINAL.\\
 
-\noindent \textbf{Palavras-Chave:} Blockchain ...
+\noindent \textbf{Palavras-Chave:} Blockchain; Ethereum; Contratos Inteligents; CBA.
 \end{abstract}
 
 %%% ABSTRACT - INGLÊS %%%
@@ -142,9 +143,9 @@ Santo André -- SP
 \newpage
 \selectlanguage{english} 
 \begin{abstract}
-\noindent FAZER NO FINAL.
+\noindent FAZER NO FINAL. \\
 
-\noindent \textbf{Palavras-Chave:} Blockchain ...
+\noindent \textbf{Keywords:} Blockchain; Ethereum; Smart Contracts; ABE.
 \end{abstract}
 
 \selectlanguage{brazilian} 
@@ -196,15 +197,46 @@ Criar um sistema, com base em contratos inteligentes executados em uma Blockchai
 
 \subsection{Criptografia baseada em atributos (CBA)}
 
-\subsection{Blockchain}
+\subsection{Blockchain Ethereum}
 
-\subsection{Contratos inteligentes}
+\subsection{Contratos inteligentes no Ethereum}
 
 % -------------------------------------------------------------------- %
 \newpage
 \section{Sistema Proposto}
 
+\begin{itemize}
+    \item {\color{red} Assuma nesta seção que os conceitos de blockchain, Ethereum, contratos inteligentes e criptografia baseada em atributos já foram definidos e explicados.}
+    
+    \item {\color{red}Cada parágrafo deve ter em torno de 10 linhas}
+    
+    \item {\color{red}Não mostrar código.}
+    
+\end{itemize}
+
+\subsection{Visão Geral}
+
+{\color{ForestGreen}Explicar que o sistema é composto por X componentes (1 parágrafo).} \\
+
+{\color{ForestGreen}Explicar a função de cada componente (1-2 parágrafos para cada um).} \\
+
+{\color{ForestGreen}Figura dos principais componentes em alto nível: programa cliente (exemplo celular ou notebook), servidor de armazenamento de arquivos; blockchain ethereum; contratos inteligentes; servidor de chaves de permissões.} \\
+
+{\color{ForestGreen}Explicar um cenário de uso passo-a-passo (exemplo, milestone 1, mas com permissões direcionadas ao contexto de saúde, por exemplo um paciente quer dar permissão de acesso a médicos cardiologistas) (2 parágrafos)}.
+
 \subsection{Taxonomia de permissões}
+
+{\color{ForestGreen}Explicar que o servidor de permissões deverá ser responsabilidade de uma organização apta para entregar as permissões online (ex. Ministério de Saúde ou algúm conselho federal/regional de medicina) (1 parágrafo)}. \\
+
+{\color{ForestGreen}Explicar que a autenticação de uma pessoa para obter a permissão deverá ser realizada de forma externa ao sistema proposto (1 parágrafo).} \\
+
+{\color{ForestGreen}Explicar que foi realizada uma taxonomia das possíveis permissões que seriam utilizadas no sistema para o contexto médico. (3 parágrafos explicando como foi realizado o levantamento, me lembro que tinha um artigo e uma lista gigante que foi filtrada por quantidade de médicos).} \\
+
+{\color{ForestGreen}Figura da taxonomia}. \\
+
+{\color{ForestGreen}Explicar que no sistema proposto existe um servidor de atributos ao qual se pedem as chaves públicas/privadas para realizar a encriptação/decriptação (1 parágrafo).} \\
+
+{\color{ForestGreen}Explicar como é realizado o passo-a-passo para o pedido/entrega das chaves (note que aqui a descrição é muito mais profunda que o que foi mencionado na visão geral) (1 parágrafo).}
 
 \subsection{Contratos inteligentes com CBA}
 
@@ -238,11 +270,3 @@ Caso não hajam trabalhos na seção~\ref{sub:sec:saude-cba}.
 
 
 \end{document}
-
-
-
-
-
-
-
-
