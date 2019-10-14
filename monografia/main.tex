@@ -5,6 +5,7 @@
 \usepackage[numbers]{natbib}
 \usepackage{epigraph}
 \usepackage{indentfirst}
+\usepackage{listings}
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{setspace}
@@ -135,7 +136,7 @@ Santo André -- SP
 
 \noindent FAZER NO FINAL.\\
 
-\noindent \textbf{Palavras-Chave:} Blockchain; Ethereum; Contratos Inteligents; CBA.
+\noindent \textbf{Palavras-Chave:} Blockchain; Ethereum; Contratos Inteligentes; CBA.
 \end{abstract}
 
 %%% ABSTRACT - INGLÊS %%%
@@ -195,18 +196,57 @@ Criar um sistema, com base em contratos inteligentes executados em uma Blockchai
 \newpage
 \section{Fundamentação Teórica}
 
+\begin{itemize}
+    \item {\color{red}Cada parágrafo deve ter em torno de 10 linhas}
+    \item {\color{red}Não mostrar código.}
+\end{itemize}
+
 \subsection{Criptografia baseada em atributos (CBA)}
+
+{\color{ForestGreen}Explicar quando nasceu, quem a criou, e qual foi o problema que estava resolvendo (basicamente que a criptografia chaves publica/privada precisa ser criada para cada usuário que precisa de permissão e com a por atributos não). (2 parágrafos).} \\
+
+{\color{ForestGreen}Explicar alguns conceitos da CBA (chave pública/privada/etc para que sirva como base do exemplo mostrado no último parágrafo (1 parágrafo).} \\
+
+{\color{ForestGreen}Explicar os benefícios do CBA (2 parágrafos).} \\
+
+{\color{ForestGreen}Explicar um exemplo de uso (1 parágrafo). Pode usar algo assim: https://medium.com/asecuritysite-when-bob-met-alice/towards-true-security-attribute-based-encryption-20d5799aeda6} \\
 
 \subsection{Blockchain Ethereum}
 
+{\color{ForestGreen}Explicar quando nasceu, quem a criou e que resolve o problema de não estar atrelada somente a transações financeiras, tendo um uso mais abrangente para qualquer domínio de aplicação. (2 parágrafos).} \\
+
+{\color{ForestGreen}Explicar o que é (distributed ledger, cadeia de blocos, transação) e suas características (anonimato, imutabilidade, distribuição). (2 parágrafos).} \\
+
+{\color{ForestGreen}Explicar que para criar o consenso, ou seja, escolher quem irá inserir o último bloco na cadeia, é necessário utilizar o mecanismo de consenso denominado Proof-of-Work (PoW). Explicar em que consiste o PoW. (2 parágrafos).} \\
+
 \subsection{Contratos inteligentes no Ethereum}
+
+{\color{ForestGreen}Explicar para que servem e listar benefícios. (1 parágrafo).} \\
+
+{\color{ForestGreen}Explicar o código de um contrato simples que terá o atributo idPaciente, um map de urls de registros médicos e um método addUrl. (1 parágrafo).} \\
+
+\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=2pt, label={lst:modelo}, caption={Exemplo de Contrato Inteligente}}
+\begin{lstlisting}
+classe Registro {
+   int version;
+   string result;
+   string data;
+   DateTime MinTime;
+   DateTime MaxTime;
+   string extHash;
+}
+\end{lstlisting}
+
+
+{\color{ForestGreen}Explicar um exemplo passo-a-passo (Só TEXTO, Não Código) de um cliente que obtém o contrato do parágrafo anterior e o executa remotamente em uma máquina. (2 parágrafo).} \\
+
 
 % -------------------------------------------------------------------- %
 \newpage
 \section{Sistema Proposto}
 
 \begin{itemize}
-    \item {\color{red} Assuma nesta seção que os conceitos de blockchain, Ethereum, contratos inteligentes e criptografia baseada em atributos já foram definidos e explicados.}
+    \item {\color{red} Assuma nesta sessão que os conceitos de blockchain, Ethereum, contratos inteligentes e criptografia baseada em atributos já foram definidos e explicados.}
     
     \item {\color{red}Cada parágrafo deve ter em torno de 10 linhas}
     
@@ -234,7 +274,7 @@ Criar um sistema, com base em contratos inteligentes executados em uma Blockchai
 
 {\color{ForestGreen}Figura da taxonomia}. \\
 
-{\color{ForestGreen}Explicar que no sistema proposto existe um servidor de atributos ao qual se pedem as chaves públicas/privadas para realizar a encriptação/decriptação (1 parágrafo).} \\
+{\color{ForestGreen}Explicar que no sistema proposto existe um servidor de atributos ao qual se pedem as chaves públicas/privadas para realizar a encriptação/descriptografia (1 parágrafo).} \\
 
 {\color{ForestGreen}Explicar como é realizado o passo-a-passo para o pedido/entrega das chaves (note que aqui a descrição é muito mais profunda que o que foi mencionado na visão geral) (1 parágrafo).}
 
@@ -253,7 +293,7 @@ Criar um sistema, com base em contratos inteligentes executados em uma Blockchai
 
 \subsection{Sistemas gerais com CBA}
 
-Caso não hajam trabalhos na seção~\ref{sub:sec:saude-cba}.
+Caso não hajam trabalhos na sessão~\ref{sub:sec:saude-cba}.
 
 % -------------------------------------------------------------------- %
 \newpage
