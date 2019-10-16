@@ -1,0 +1,3 @@
+[submodule "protótipo/código"]
+	path = protótipo/código
+	url = https://github.com/brunoarruda/PGC-Prototype-Client.git
