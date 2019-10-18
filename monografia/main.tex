@@ -19,7 +19,7 @@
       \centering
       \rule{6cm}{1pt}\\
        #1
-       
+
        #2
     }
     \hfill
@@ -27,7 +27,7 @@
       \centering
       \rule{6cm}{1pt}\\
        #3
-       
+
        #4
     }
 }%
@@ -142,14 +142,14 @@ Santo André -- SP
 %%% ABSTRACT - INGLÊS %%%
 
 \newpage
-\selectlanguage{english} 
+\selectlanguage{english}
 \begin{abstract}
 \noindent FAZER NO FINAL. \\
 
 \noindent \textbf{Keywords:} Blockchain; Ethereum; Smart Contracts; ABE.
 \end{abstract}
 
-\selectlanguage{brazilian} 
+\selectlanguage{brazilian}
 
 %%% SUMÁRIO %%%
 \newpage
@@ -168,7 +168,7 @@ Santo André -- SP
 \newpage
 \section{Introdução}
 
-A tecnologia Blockchain~\cite{nakamoto2008bitcoin}...	
+A tecnologia Blockchain~\cite{nakamoto2008bitcoin}...
 
 \subsection{Objetivo geral}
 
@@ -180,9 +180,9 @@ Criar um sistema, com base em contratos inteligentes executados em uma Blockchai
 
 \item Criar uma taxonomia de permissões no contexto de saúde.
 
-\item Analisar como funciona a criptografia baseada em atributos (\textit{attribute-based encryption}, em inglês). 
+\item Analisar como funciona a criptografia baseada em atributos (\textit{attribute-based encryption}, em inglês).
 
-\item Analisar como funcionam a tecnologia Blockchain {\color{red}escolher a tecnologia} e os contratos inteligentes. 
+\item Analisar como funcionam a tecnologia Blockchain {\color{red}escolher a tecnologia} e os contratos inteligentes.
 
 \item Implementar os contratos inteligentes para dar acesso aos prontuários eletrônicos utilizando a taxonomia e a criptografia baseada em atributos.
 
@@ -247,22 +247,38 @@ classe Registro {
 
 \begin{itemize}
     \item {\color{red} Assuma nesta sessão que os conceitos de blockchain, Ethereum, contratos inteligentes e criptografia baseada em atributos já foram definidos e explicados.}
-    
+
     \item {\color{red}Cada parágrafo deve ter em torno de 10 linhas}
-    
+
     \item {\color{red}Não mostrar código.}
-    
+
 \end{itemize}
 
 \subsection{Visão Geral}
 
 {\color{ForestGreen}Explicar que o sistema é composto por X componentes (1 parágrafo).} \\
 
+O protótipo pode ser abstraído em diferentes módulos de acordo com sua capacidade. A criptografia no esquema ABE é realizada por meio da biblioteca DCPABE. A conectividade com a Blockchain Ethereum é feita por uma classe específica por meio da biblioteca Web3j. A lógica de execução que coordena as atividades entre os usários do sistema está encerrada em sua maior parte no módulo denominado como Cliente, e em menor parte nos smart contracts que são executados na EVM do Ethereum. Finalmente, o servidor de arquivos pode ser visto como o quinto módulo do sistema. \\
+
 {\color{ForestGreen}Explicar a função de cada componente (1-2 parágrafos para cada um).} \\
+
+O módulo do cliente é responsável por incorporar a camada lógica responsável por coordenar as atividades entre os demais componentes.\\
+
+O módulo do servidor recebe, armazena e envia arquivos criptografados. Presumiu-se que o servidor não fosse confiável, e por isso as informações nele estão sempre criptografadas. Durante os testes, ele também armazenou, de forma temporária, chaves criptográficas que representam a posse de um atributos. Essa função poderia ser transferida para qualquer serviço de transferência de arquivos, como um servidor dedicado sob controle do certificador, um serviço de hospedagem em nuvem ou mesmo por e-mail.\\
+
+O módulo blockchain é responsável por armazenar de forma permanente e imutável a cifra de um documento, e a política de acesso descrita em termos de uma forma booleana composta por funções lógicas E e OU aplicadas a atributos. A Blockchain para desenvolvimento e teste do protótipo foi uma rede privada do Ethereum.\\
+
+Também é necessário que a blockchain tenha a capacidade de executar smart contracts, e por isso a rede Bitcoin não foi escolhida para este trabalho. Há muitas opções de projetos de blockchain que suportam smart contracts, e a rede Ethereum foi escolhida por ser o projeto mais popular e bem sucedido no tocante à base de usuários e também ao valor de mercado.\\
+
+Em conjução com a blockchain Ethereum, foi utilizado a biblioteca Web3j para conectar o cliente à rede privada. O Web3j fornece a interface para a conexão por meio de socket a um provedor de dados da rede blockchain, que pode ser tanto uma rede local, um cliente ethereum como o geth ou um serviço de terceiros como o Infura. Além disso, fornece implantação de contratos inteligentes, invocação de métodos destes contratos e classes geradas dinamicamente.\\
 
 {\color{ForestGreen}Figura dos principais componentes em alto nível: programa cliente (exemplo celular ou notebook), servidor de armazenamento de arquivos; blockchain ethereum; contratos inteligentes; servidor de chaves de permissões.} \\
 
 {\color{ForestGreen}Explicar um cenário de uso passo-a-passo (exemplo, milestone 1, mas com permissões direcionadas ao contexto de saúde, por exemplo um paciente quer dar permissão de acesso a médicos cardiologistas) (2 parágrafos)}.
+
+O protótipo funcionaria então da seguinte forma: Uma paciente de nome Alice receberia um documento digital, como um encaminhamento ou exame, e precisa juntar ele ao seu prontuário médico. Ela utiliza o então o módulo cliente para criptografar este documento de forma segura usando um esquema criptográfico ABE, aplicado ao documento para cifrá-lo de acordo com uma política de acesso. Para este caso de uso, suponhamos que a tal política seja "paciente OU (Hospital-X E Hematologista)". Isso garante acesso ao próprio paciente e aos médicos daquele especialidade, naquele hospital. \\
+
+Após aplicar criptografia ao documento, simultaneamente o cliente encaminha o documento para um servidor de arquivos e publica os parâmetros da cifra na blockchain, informando além dela informações como o nome do arquivo, o instante da transação e uma referência ao servidor onde o arquivo está alocado. Em um segundo momento, um hematologista do Hospital X, ciente de que atenderá a Alice, usa o cliente para obter informações sobre que arquivos dela estão disponíveis na blockchain. Ao baixar a descrição dos arquivos, ele identifica qual possui uma política de acesso compatível com os atributos concedidos a ele, e então ele requisita o documento cifrado ao servidor de arquivos e decifra o documento utilizando os parâmetros criptográficos publicados na blockchain.
 
 \subsection{Taxonomia de permissões}
 
@@ -274,7 +290,7 @@ classe Registro {
 
 {\color{ForestGreen}Figura da taxonomia}. \\
 
-{\color{ForestGreen}Explicar que no sistema proposto existe um servidor de atributos ao qual se pedem as chaves públicas/privadas para realizar a encriptação/descriptografia (1 parágrafo).} \\
+{\color{ForestGreen}Explicar que no sistema proposto existe um servidor de atributos ao qual se pedem as chaves públicas/privadas para realizar a encriptação/decriptação (1 parágrafo).} \\
 
 {\color{ForestGreen}Explicar como é realizado o passo-a-passo para o pedido/entrega das chaves (note que aqui a descrição é muito mais profunda que o que foi mencionado na visão geral) (1 parágrafo).}
 
