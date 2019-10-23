@@ -328,9 +328,95 @@ Atributos são pares de chaves pública e um conjunto de chaves privadas pessoai
 O conjunto de chaves privadas pessoais deriva de uma chave privada secreta associada a um atributo público e de posse do certificador que a gerou. Para assegurar a unicidade da chave, também é necessário derivar a chave a partir de um identificador único (ID) associado ao usuário. Utilizar atributos com ID distintos impede a descriptografia de funcionar, assegurando que atributos não sejam intercambiáveis entre os usuários. {\color{RoyalBlue} existe um nome para esse problema onde alguém tentar ceder credenciais para alguém não autorizado. Usar aquela definição aqui} \\
 
 O mecanismo de derivação de chaves privadas pessoais está atrelado ao processamento de requisições, impedindo o certificador de conceder chaves arbitrariamente, mas somente a partir de requisição prévia. Isso é uma estratégia para limitar o poder do certificador em criar atributos, e dessa forma abusar de sua autoridade para conceder acesso indevido a agentes não autorizados de forma. O certificador portanto consulta a blockchain para obter novas requisições e decide se irá processá-la ou não. Nos dois casos, a resposta retorna à blockchain assim que a chave é criada ou quando sua criação é negada, quer seja por decisão do certificação ou por falha devido a parâmetros incorretos. \\
+
+
 \subsection{Contratos inteligentes com CBA}
 
+Foram desenvolvidos cinco contratos inteligentes que permitem a autenticação, entrega de permissões e armazenamento de metadados dos prontuários eletrônicos dos pacientes. A seguir serão explicados cada um deles.
+
+
+{\color{ForestGreen} Explicação do  SmartDCPABEAuthority (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.\\}
+
+{\color{Magenta} 1 parágrafo para explicar o que faz o contrato (el linhas gerais).\\}
+
+{\color{Magenta} Inserir o código da linha 7 até 20.\\}
+
+{\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos. Exemplo. O struct X permite armazenar dados que servirão para Y. O atributo V armazena informações de W que servirão para Z.\\}
+
+
+{\color{ForestGreen} Explicação do  SmartDCPABEKeys (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.\\}
+
+{\color{Magenta} 1 parágrafo para explicar o que faz o contrato (el linhas gerais).\\}
+
+{\color{Magenta} Inserir o código da linha 6 até 24.\\}
+
+{\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.\\}
+
+{\color{ForestGreen} Explicação do  SmartDCPABEFiles  (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.\\}
+
+{\color{Magenta} 1 parágrafo para explicar o que faz o contrato (el linhas gerais).\\}
+
+{\color{Magenta} Inserir o código da linha 6 até 39.\\}
+
+{\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.\\}
+
+
+{\color{ForestGreen} Explicação do  SmartDCPABERequests  (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.\\}
+
+{\color{Magenta} 1 parágrafo para explicar o que faz o contrato (el linhas gerais).\\}
+
+{\color{Magenta} Inserir o código da linha 6 até 35.\\}
+
+{\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.\\}
+
+
+{\color{ForestGreen} Explicação do  SmartDCPABEUsers  (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.\\}
+
+{\color{Magenta} 1 parágrafo para explicar o que faz o contrato (el linhas gerais).\\}
+
+{\color{Magenta} Inserir o código da linha 6 até 16.\\}
+
+{\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.\\}
+
+
+
 \subsection{Arquitetura Blockchain}
+
+Como mencionado na Seção \ref{visaogeral}, o sistema é composto por 3 componentes: cliente, servidor, e a Blockchain. A Figura X mostra o relacionamento entre esses componentes. \\
+
+{\color{ForestGreen} Fazer uma figura simples que mostre os 3 componentes interligados. \\}
+
+
+{\color{ForestGreen} Explicar implementação do cliente (5 parágrafos). Ver abaixo os 5 parágrafos destrinchados. \\}
+
+{\color{Magenta} 1 parágrafo para explicar que para realizar a conexão com a Blockchain usou o web3j (explique em 2-3 linhas o web3j).\\}
+
+{\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como realizar a conexão. Explicar cada linha do código. \\}
+
+{\color{Magenta} 1 parágrafo para explicar que para encriptar um documento utilizando atributos usou a dcabe.\\}
+
+{\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como realizar a encriptação. Explicar cada linha do código.\\}
+
+{\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como acessar um contrato inteligente. Explicar cada linha do código.\\}
+
+{\color{ForestGreen} Explicar implementação do servidor (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados. \\}
+
+{\color{Magenta} 1 parágrafo para explicar que o servidor utiliza REST para prover os serviços via web  (explique em 2-3 o que é REST).\\}
+
+{\color{Magenta} 1 parágrafo para explicar que o servidor possui o serviço para inserir um documento e para recuperar um documento.\\}
+
+{\color{Magenta} 1 parágrafo para explicar que o servidor insere e recupera os prontuários eletrônicos de pacientes diretamente do seu sistema de arquivos advindos das requisições web.\\}
+
+
+{\color{ForestGreen} Explicar implementação da Blockchain (4 parágrafos). Ver abaixo os 4 parágrafos destrinchados. \\}
+
+{\color{Magenta} 1 parágrafo para explicar que a Blockchain utilizada foi a testnet (explicar que existe a main e a testnet, onde a testnet é utilizada por desenvolvedores serve para realizar implantações de teste sem dispender recursos financeiros.\\}
+
+{\color{Magenta} 1 parágrafo para explicar que a rede Blockchain foi implantada em um computador usando o Ganache. Explicar o que é o ganhache e o que entrega a implantação (X mineradores? X fullnodes, etc).\\}
+
+{\color{Magenta} 1 parágrafo para explicar que a Blockchain possui 5 contratos inteligentes mencionados na Seção anterior.\\}
+
+{\color{Magenta} 1 parágrafo para explicar que a implantação dos contratos inteligentes usou o metamask. Explicar o que é o metamask e o que especificamente você usou dele: ver identificadores das transações, conversão de .sol para .abi. Explicar o que é .abi.\\}
 
 % -------------------------------------------------------------------- %
 \newpage
