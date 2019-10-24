@@ -10,6 +10,7 @@
 \usepackage{wrapfig}
 \usepackage{setspace}
 \usepackage[hidelinks]{hyperref}
+\usepackage[bottom]{footmisc}
 %\usepackage{xcolor}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{adjustbox}
@@ -19,7 +20,7 @@
       \centering
       \rule{6cm}{1pt}\\
        #1
-
+       
        #2
     }
     \hfill
@@ -27,7 +28,7 @@
       \centering
       \rule{6cm}{1pt}\\
        #3
-
+       
        #4
     }
 }%
@@ -142,14 +143,14 @@ Santo André -- SP
 %%% ABSTRACT - INGLÊS %%%
 
 \newpage
-\selectlanguage{english}
+\selectlanguage{english} 
 \begin{abstract}
 \noindent FAZER NO FINAL. \\
 
 \noindent \textbf{Keywords:} Blockchain; Ethereum; Smart Contracts; ABE.
 \end{abstract}
 
-\selectlanguage{brazilian}
+\selectlanguage{brazilian} 
 
 %%% SUMÁRIO %%%
 \newpage
@@ -168,7 +169,7 @@ Santo André -- SP
 \newpage
 \section{Introdução}
 
-A tecnologia Blockchain~\cite{nakamoto2008bitcoin}...
+A tecnologia Blockchain~\cite{nakamoto2008bitcoin}...	
 
 \subsection{Objetivo geral}
 
@@ -180,9 +181,9 @@ Criar um sistema, com base em contratos inteligentes executados em uma Blockchai
 
 \item Criar uma taxonomia de permissões no contexto de saúde.
 
-\item Analisar como funciona a criptografia baseada em atributos (\textit{attribute-based encryption}, em inglês).
+\item Analisar como funciona a criptografia baseada em atributos (\textit{attribute-based encryption}, em inglês). 
 
-\item Analisar como funcionam a tecnologia Blockchain {\color{red}escolher a tecnologia} e os contratos inteligentes.
+\item Analisar como funcionam a tecnologia Blockchain {\color{red}escolher a tecnologia} e os contratos inteligentes. 
 
 \item Implementar os contratos inteligentes para dar acesso aos prontuários eletrônicos utilizando a taxonomia e a criptografia baseada em atributos.
 
@@ -212,6 +213,8 @@ Criar um sistema, com base em contratos inteligentes executados em uma Blockchai
 {\color{ForestGreen}Explicar um exemplo de uso (1 parágrafo). Pode usar algo assim: https://medium.com/asecuritysite-when-bob-met-alice/towards-true-security-attribute-based-encryption-20d5799aeda6} \\
 
 \subsection{Blockchain Ethereum}
+
+Isso é um teste\footnote{teste}.\\
 
 {\color{ForestGreen}Explicar quando nasceu, quem a criou e que resolve o problema de não estar atrelada somente a transações financeiras, tendo um uso mais abrangente para qualquer domínio de aplicação. (2 parágrafos).} \\
 
@@ -249,11 +252,11 @@ classe Registro {
 
 \begin{itemize}
     \item {\color{red} Assuma nesta seção que os conceitos de blockchain, Ethereum, contratos inteligentes e criptografia baseada em atributos já foram definidos e explicados.}
-
+    
     \item {\color{red}Cada parágrafo deve ter em torno de 10 linhas}
-
+    
     \item {\color{red}Não mostrar código.}
-
+    
 \end{itemize}
 
 \subsection{Visão Geral}
@@ -291,13 +294,13 @@ As permissões de acesso a documentos se dão por meio da concessão de atributo
 
 {\color{ForestGreen}Explicar que a autenticação de uma pessoa para obter a permissão deverá ser realizada de forma externa ao sistema proposto (1 parágrafo).} \\
 
-Atributos são gerados a partir de requisições feitas por usuários e publicadas na blockchain, por meio de um Smart Contract específico que armazena o estado destas requisições. É necessário que o usuário exista para realizar tal requisição, ou seja, é preciso que ele, anteriormente, tenha interagido com o contrato relativo à gestão de usuários, associando seus dados básicos pessoais a um endereço de carteira. Embora fosse possível criar um canal seguro usando criptografia elíptica para transmitir o arquivo com os atributos ao requisitante, isso estava além do escopo deste trabalho. Desta forma, uma vez geradas as chaves fica a critério do certificador escolher o método de envio, que pode depender ou não de sua infraestrutura de TI, ou pode requerer uma transmissão offline (presencial) dos arquivos que contém os atributos. \\
+Atributos são gerados a partir de requisições feitas por usuários e publicadas na blockchain, por meio de um Smart Contract específico que armazena o estado destas requisições. É necessário que o usuário exista para realizar tal requisição, ou seja, é preciso que ele, anteriormente, tenha interagido com o contrato relativo à gestão de usuários, associando seus dados básicos pessoais a um endereço de carteira. Embora fosse possível criar um canal seguro usando criptografia elíptica para transmitir o arquivo com os atributos ao requisitante, isso estava além do escopo deste trabalho. Desta forma, uma vez geradas as chaves fica a critério do certificador escolher o método de envio, que pode depender ou não de sua infraestrutura de TI, ou pode requerer uma transmissão offline (presencial) dos arquivos que contém os atributos. \\  
 
 {\color{RoyalBlue} Cogitei no texto a entrega física de um arquivo do atributo mas o protótipo implementado sempre supõe que ele vai pegar o atributo de um servidor, não de um sistema de arquivos. Não sei se posso assumir essa redação ou se eu devo remover essa possibilidade do texto.}\\
 
 {\color{ForestGreen}Explicar que foi realizada uma taxonomia das possíveis permissões que seriam utilizadas no sistema para o contexto médico. (3 parágrafos explicando como foi realizado o levantamento, me lembro que tinha um artigo e uma lista gigante que foi filtrada por quantidade de médicos).} \\
 
-O sistema proposto pretende integrar diversas bases de dados de diferentes órgãos que, uma vez  certificadores, serão providos com a capacidade de publicar os atributos que forem necessários para a cifra dos documentos. A autonomia dos agentes para criar atributos levanta a necessidade de coordenação entre eles, de forma a manter políticas de acesso harmônicas e funcionais entre documentos que possam ser acessados por entidades distintas. Sem uma proposta de padronização, corre-se o risco das entidades desenvolverem padrões distintos e provavelmente conflitantes no que diz respeito ao escopo, à reutilização e à descrição textual de um atributo.  \\
+O sistema proposto pretende integrar diversas bases de dados de diferentes órgãos que, uma vez  certificadores, serão providos com a capacidade de publicar os atributos que forem necessários para a cifra dos documentos. A autonomia dos agentes para criar atributos levanta a necessidade de coordenação entre eles, de forma a manter políticas de acesso harmônicas e funcionais entre documentos que possam ser acessados por entidades distintas. Sem uma proposta de padronização, corre-se o risco das entidades desenvolverem padrões distintos e provavelmente conflitantes no que diz respeito ao escopo, à reutilização e à descrição textual de um atributo.  \\ 
 
 A diferença na hierarquia da estrutura das instituições na área da saúde, em suas competências e especialidades e suas políticas de acesso à informação podem resultar em diversas configurações distintas e incompatíveis quando descritos em um esquema criptográfico ABE. Um sistema que pretenda permitir o acesso a prontuários médicos distribuídos entre instituições com este esquema deve, portanto, propor também uma norma para a criação e gestão de atributos e de escrita das políticas de acesso . Para atingir este fim, buscou-se o denominador comum entre as exigências e restrições a que devem se condicionar todos os operadores na área da saúde, considerando-se o profissional da saúde como a unidade elementar desta análise , visto que uma política de atributos tem o potencial descritivo para modelar essas distintas responsabilidades. \\
 
@@ -305,7 +308,7 @@ O Código de Ética Médica (CEM) trata da conduta médica em diversos casos, in
 
 \[ CFM \vee CRM \vee Paciente \vee Terceiro\textnormal{-}Autorizado \]
 
-Essa política padrão não impede a aplicação de outras políticas em subseções do prontuário, preservando informações de quem a princípio já possui acesso ao prontuário. Caso exista uma política de acesso em alguma subseção do prontuário, será necessário obrigatoriamente adicionar o acesso ao menos aos Conselhos de Medicina. Outras regras podem ser abstraídas a partir da taxonomia, como a necessidade de substituir a partícula $Paciente \vee Terceiro\textnormal{-}Autorizado$ por $Responsável\textnormal{-}Legal$ caso o paciente seja menor de idade. \\
+Essa política padrão não impede a aplicação de outras políticas em subseções do prontuário, preservando informações de quem a princípio já possui acesso ao prontuário. Caso exista uma política de acesso em alguma subseção do prontuário, será necessário obrigatoriamente adicionar o acesso ao menos aos Conselhos de Medicina. Outras regras podem ser abstraídas a partir da taxonomia, como a necessidade de substituir a partícula $Paciente \vee Terceiro\textnormal{-}Autorizado$ por $Respons\acute{a}vel\textnormal{-}Legal$ caso o paciente seja menor de idade. \\
 
 A escrita de política de acesso fica sujeita a uma normalização a partir da taxonomia apresentada, mas ainda é necessário adequar o escopo de atribuições dos funcionários de saúde entre os distintos órgãos em que podem trabalhar. A estratégia para propor uma taxonomia abrangente e relevante foi obter dados do DATASUS (Orgão que administra a consulta de informações do Sistema de Saúde Pública) sobre todas as profissões registradas no país na área da Saúde relativas ao início do ano de 2019. Na pesquisa obteve-se mais de 400 profissões distintas, que foram categorizadas pelo nível de ensino e agregadas pela área de atuação. Isso resultou em uma segunda taxonomia, disponível no Anexo I {\color{RoyalBlue}(referenciar)}, que serve como referência para a escrita de política de acesso usando termos e escopos comuns entre os certificadores. A entidade responsável por emitir o atributo a um médico seria o CRM de sua região. As entidades diversas emitiriam o restante dos atributos relativos às outras funções que necessitam acessar os dados do paciente, tais como setor administrativo ou o corpo de funcionários técnico-hospitalar. \\
 
