@@ -217,7 +217,44 @@ Criar um sistema, com base em contratos inteligentes executados em uma Blockchai
 
 {\color{ForestGreen}Explicar quando nasceu, quem a criou e que resolve o problema de não estar atrelada somente a transações financeiras, tendo um uso mais abrangente para qualquer domínio de aplicação. (2 parágrafos).}
 
-{\color{ForestGreen}Explicar o que é (distributed ledger, cadeia de blocos, transação) e suas características (anonimato, imutabilidade, distribuição). (2 parágrafos).}
+ Sistemas de pagamentos virtuais sugiram para atender a necessidade do comércio à distância através da internet, e esses sistemas passaram a depender exclusivamente de instituições financeiras vistas como entidades confiáveis para a transação de pagamentos eletrônicos.
+ Neste modelo centralizado, uma autoridade é considerada confiável e é encarregada da manter a consistência de um sistema, processando as transações dos usuários e rejeitando tanto transações impossíveis (e.g., em um contexto financeiro, transações com data passada, saldo negativo ou outros parâmetros incorretos) quanto transações que são válidas, mas inconsistentes (e.g., transações com gasto duplo, onde um usuário consegue pagar dois títulos distintos com um mesmo recurso).
+ A geração de moeda é um caso especial, pois embora a princípio seja considerada uma operação inválida para seus usuários, pode ser necessário ao gestor para adequar a oferta e a demanda do meio de troca do sistema, provendo liquidez necessária para o mercado.
+ Em um contexto financeiro, por todo o mundo atribuiu-se a posição de confiança a empresas de pagamentos e ao sistema bancário, cabendo a este último também a política de emissão de moeda.
+
+Um sistema baseado em confiança tem fragilidades inerentes à sua natureza, tais como o abuso de autoridade pela imposição de regras arbitrárias, exposição de informações das partes aos entes ditos confiáveis, possibilidade de manipulação do sistema em proveito próprio e uma institucionalização do risco de fraude, pois os sistema de pagamentos, por força regulatória, possuem mecanismos de reversão de transações, trazendo prejuízos ao destinatário do pagamento nos casos onde o serviço contratado não é reversível, aumentando os riscos e custos entre as partes.
+
+O \emph{Bitcoin}\footnote{Bitcoin pode significar tanto a unidade de valor transferida entre as contas do sistema, quanto a rede de processamento em sua totalidade, o que inclui a descrição da moeda, seus protocolos e implementações em código.
+Assim, o sentido do termo pode variar entre moeda, sistema, rede ou até mesmo de plataforma, nos casos em que é utilizada como uma ferramenta por outros serviços.} surge como a primeira alternativa de uma rede descentralizada ponto-a-ponto de pagamentos que não depende de uma entidade central confiável.
+A confiança é depositada aos próprios integrantes da rede de processamento, através de um conjunto de algoritmos e incentivos que, uma vez postos em funcionamento, conseguem produzir o registro válido e imutável das transações, sob a premissa de que a maior parte dos membros da rede não estejam coordenados em um ataque para alterá-lo, como será explicado adiante.
+Compreender o funcionamento do Bitcoin e sua mecânica é essencial para compreender a tecnologia que se apresenta como sua sucessora: o Ethereum.
+
+{\color{ForestGreen}Explicar o que é (distributed ledger, cadeia de blocos, transação) e suas características (anonimato, inmutabilidade, distribuição). (2 parágrafos).}
+
+As transações no Bitcoin são propagadas pela rede e agregadas por algum usuário com o interesse em aceitá-la em uma estrutura conhecida como bloco, que as ordena em uma sequência que se torna imutável, e serve para determinar a ordem cronológica delas dentro do mesmo bloco, trazendo um determinismo ao sistema, pois todos os usuários com acesso àquele bloco executarão suas transações da mesma forma.
+Cada bloco tem uma referência única calculada a partir de seu conteúdo por meio de hashing\footnote{Especificamente, é realizado um hashing duplo utilizando SHA-256 nos campos que compõem o cabeçalho do bloco, representados em bytes \cite{bitcoinWikiHashing}.}, e cada novo bloco de transações referencia o último bloco reconhecido como válido, o que forma uma cadeia de blocos em ordem cronológica e sucessiva, indo do mais recente até o primeiro, denominado como bloco Genesis.
+Esta estrutura é conhecida como \emph{Blockchain}, e as transações são consideradas efetivadas se estão dentro de um bloco na Blockchain.
+A Blockchain é a estrutura de dados compartilhada entre todos os integrantes da rede e tanto as novas transações quanto blocos são propagados pela rede continuamente para a atualização.
+Qualquer integrante pode não só propor novas transações como também propor os novos blocos que constituirão a blockchain, o que levanta uma objeção óbvia a esse sistema, afinal, se tratando de um sistema de transação de valor, o que evita que participantes maliciosos registrem e propaguem transações fraudulentas ou blocos que levem o Bitcoin a um estado inconsistente?
+
+Há protocolos estabelecidos para uma transação considerada válida ou um bloco considerado válido.
+Uma transação é dividida em 3 partes: metadados, entradas e saídas.
+Metadados possuem informações relacionadas à transação, como o hashing e seu tamanho.
+Nas saídas, há uma lista de pares contendo um valor e um Script rotulado como ScriptPubKey, que permitirá o uso dela a quem conseguir inserir os dados que consigam fazê-lo executar normalmente, na maioria das vezes sendo um teste associado a um endereço de carteira, onde somente o detentor da chave privada dele pode resolver.
+Na entradas, há uma lista de estruturas contendo o ID de uma transação (hashing), o índice na lista da transação e um script chamado ScriptSig, que resolve corretamente o ScriptPubKey da transação referenciada, e no caso do ScriptPubKey.
+
+% TODO: configurar hiperlinks de sites para ficarem coloridos. Possíveis soluções: http://bit.ly/2MU78hd, http://bit.ly/2BNQQQv
+
+O protocolo do Bitcoin prevê muitas regras de verificação de uma transação\footnote{Para uma lista completa dos requisitos para a validade uma transação, ver a enciclopédia colaborativa do Bitcoin referente às {\color{RoyalBlue}\href{https://en.bitcoin.it/wiki/Protocol_rules\#.22tx.22_messages}{regras de protocolo}}.}, dentre elas destacam-se as seguintes:
+\begin{itemize}
+\item se o valor transmitido está dentro da faixa de valores possíveis, i.e. entre 0 e o limite de bitcoin de exatos 21 milhões de unidades;
+\item se a soma dos valores na lista de saídas é igual ou inferior à soma dos valores no conjunto de entradas da transação. A diferença existente é geralmente utilizada pelo minerador para adicionar uma transação para o seu próprio endereço;
+\item se a lista de entrada referencia corretamente cada item nas respectivas listas de saída de suas transações, se os dados contidos no ScriptSig é suficiente para resolver corretamente o script dessas moedas e essas mesmas moedas já não foram utilizadas em transações já registradas na Blockchain ou no bloco em que ela está sendo inserida.
+\end{itemize}
+
+Esse script é construído em uma linguagem chamada somente de Script ou Bitcoin script, e é intencionalmente Turing-Incompleta baseada em pilha, não permitindo recorrências ou recursividade em sua lógica.
+As instruções, comumente chamadas de \emph{opcodes} são representadas em palavras de 1 byte, portanto possibilitando até 256 palavras, das quais 15 foram desativadas e 75 estão sem uso \cite{Narayanan2016a}. O Bitcoin permite à princípio scripts com tamanho de até 10 mil bytes e com dados de no máximo 520 bytes na pilha de execução\footnote{Informações retiradas do cliente oficial do Bitcoin, versão 0.19, no arquivo de cabeçalho referente a scripts, linhas {\color{RoyalBlue}\href{https://github.com/bitcoin/bitcoin/blob/0.19/src/script/script.h\#L23}{23}} e {\color{RoyalBlue}\href{https://github.com/bitcoin/bitcoin/blob/0.19/src/script/script.h\#L32}{32}}.}.
+Seu uso, porém, tem restrições. A implementação padrão do Bitcoin simplemente descarta transações que não usem um pequeno conjunto específico de scripts considerados seguros, visando oferecer maior proteção à rede ao evitar ante à propagação de transações prejudiciais e também para controlar a dificuldade e complexidade em propor mudanças futuras no protocolo \cite{Bistarelli2019}. Um destes script chamado P2SH (Pay to Script Hash) permite a execução de scripts arbitrários, entretanto, por ser alocado na pilha no ato da verificação ele deve ser inferior ao tamanho máximo de 520 bytes, contando nesse limite opcodes e dados.
 
 {\color{ForestGreen}Explicar que para criar o consenso, ou seja, escolher quem irá inserir o último bloco na cadeia, é necessário utilizar o mecanismo de consenso denominado Proof-of-Work (PoW). Explicar em que consiste o PoW. (2 parágrafos).}
 
