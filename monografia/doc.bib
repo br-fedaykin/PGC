@@ -1,4 +1,5 @@
 @misc{nakamoto2008bitcoin,
+  abstract = {A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one party to another without going through a financial institution. Digital signatures provide part of the solution, but the main benefits are lost if a trusted third party is still required to prevent double-spending. We propose a solution to the double-spending problem using a peer-to-peer network. The network timestamps transactions by hashing them into an ongoing chain of hash-based proof-of-work, forming a record that cannot be changed without redoing the proof-of-work. The longest chain not only serves as proof of the sequence of events witnessed, but proof that it came from the largest pool of CPU power. As long as a majority of CPU power is controlled by nodes that are not cooperating to attack the network, they'll generate the longest chain and outpace attackers. The network itself requires minimal structure. Messages are broadcast on a best effort basis, and nodes can leave and rejoin the network at will, accepting the longest proof-of-work chain as proof of what happened while they were gone.},
   title={Bitcoin: A peer-to-peer electronic cash system},
   author={Nakamoto, Satoshi},
   howpublished={\url{https://bitcoin.org/bitcoin.pdf}},
@@ -27,6 +28,7 @@ year = {2016}
 }
 
 @article{Bistarelli2019,
+abstract = {In Bitcoin, the most common kind of transactions is in the form “Bob pays Alice,” and it is based on the Pay to-Public Key Hash (P2PKH) script, which are resolved by sending the public key and a digital signature created by the corresponding private key. P2PKH transactions are just one among many standard classes: a transaction is standard if it passes Bitcoin Core IsStandard() and IsStandardTx() tests. However, the creation of ad-hoc scripts to lock (and unlock) transactions allows for also generating non-standard transactions, which can be nevertheless broadcast and mined as well. In this work, we explore the Bitcoin block-chain with the purpose to analyze and classify standard and non-standard transactions, understanding howmuch the standard behavior is respected.},
 author = {Bistarelli, Stefano and Mercanti, Ivan and Santini, Francesco},
 doi = {10.3389/fbloc.2019.00007},
 journal = {Frontiers in Blockchain},
@@ -36,4 +38,19 @@ pages = {1--16},
 title = {{An Analysis of Non-standard Transactions}},
 volume = {2},
 year = {2019}
+}
+
+@article{Haber1991,
+abstract = {The prospect of a world in which all text, audio, picture, and video documents are in digital form on easily modi?able media raises the issue of how to certify when a document was created or last changed. The problem is to time-stamp the data, not the medium. We propose computationally practical procedures for digital time-stamping of such documents so that it is infeasible for a user either to back-date or to forward-date his document, even with the collusion of a time-stamping service. Our procedures maintain complete privacy of the documents themselves, and require no record-keeping by the time-stamping service.},
+author = {Haber, Stuart and Stornetta, W.Scott},
+doi = {10.1007/BF00196791},
+file = {:C$\backslash$:/Users/bruno/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Haber, Stornetta - 1991 - How to time-stamp a digital document.pdf:pdf},
+issn = {0933-2790},
+journal = {Journal of Cryptology},
+number = {2},
+pages = {99--111},
+title = {{How to time-stamp a digital document}},
+url = {http://link.springer.com/10.1007/BF00196791},
+volume = {3},
+year = {1991}
 }
