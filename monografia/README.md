@@ -21,11 +21,16 @@
 - [x] Blockchain, bloco, transação, script, validação
   - [ ] converter imagem para tex
 - [x] Blockchain 2.0 / Distributed Ledger
+  - [ ] indicar no rodapé mais informações ou adicionar referências quanto a Smart Properties, Smart Contracts e DApps
   - [ ] citar aplicações financeiras
   - [ ] citar aplicações semi-financeiras
   - [ ] citar aplicações não financeiras
+- [ ] algoritmo de consenso
+  - [ ] necessidade
+  - [ ] funcionamento
+  - [ ] figura
 - [ ] PoW, PoS
-  - [ ] encontrar figura relacionada
+  - [ ] figura
 
 #### 2.3 Contratos Inteligentes no Ethereum
 
