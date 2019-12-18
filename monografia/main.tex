@@ -264,9 +264,11 @@ Uma transação é considerada padrão quando só utiliza scripts padrões, e ma
 rede\footnote{Há outras verificações que impedem o recebimento e transmissão de uma transação na rede. Veja \url{https://en.bitcoin.it/wiki/Protocol_rules\#.22tx.22_messages}},
 virtualmente negando o serviço a transações deste tipo, impondo ao seu proponente o ônus de propagar sua transação de forma externa à rede na tentativa de fazê-la alcançar algum nó da rede que futuramente inclua um bloco na Blockchain.
 
-Essa linguagem de script demonstra a preocupação no projeto do Bitcoin para poder abarcar, caso fosse necessário, complexidades e regras de transação além do escopo de uma moeda ou pagamento. É possível realizar transações de garantia, vínculos contratuais, arbitragem privada e multi-assinaturas.
-Desde o início de 2014 \cite{Greenspan2015} o protocolo permite a adição de até 80 bytes de metadados arbitrários em transações, que abriu o caminho, mesmo que limitado, para a utilização da blockchain como um \textbf{livro-razão distribuído} (em inglês Distributed Ledger), onde informações escritas neles seriam públicas, perenes e inalteráveis.
-A Blockchain 2.0 surge para avançar o suporte ao conceito de livro-razão distribuído, trazendo novas tecnologias, entre elas destacam-se \emph{Smart Properties}, \emph{Smart Contracts} e \emph{DApps (Decentralized Applications)} \cite{Swan2015}. Essas ferramentas elevam a expressividade e capacidade da Blockchain enquanto plataforma para a criação de aplicações financeiras, semi-financeiras, e até mesmo aplicações com ativos que não são financeiros.
+Essa linguagem de script demonstra a preocupação no projeto do Bitcoin para poder abarcar, caso fosse necessário, complexidades e regras de transação além do escopo de uma moeda ou pagamento.
+É possível realizar transações de garantia, vínculos contratuais, arbitragem privada e multi-assinaturas.
+Desde o início de 2014 o protocolo permite a adição de até 80 bytes de metadados arbitrários em transações \cite{Greenspan2015}, abrindo um caminho, mesmo que limitado, para a utilização da blockchain como um \textbf{livro-razão distribuído} (em inglês Distributed Ledger), onde informações escritas neles seriam públicas, perenes e inalteráveis.
+A Blockchain 2.0 surge para avançar o suporte ao conceito de livro-razão distribuído, trazendo novas tecnologias, entre elas destacam-se \emph{Smart Properties}, \emph{Smart Contracts} e \emph{DApps (Decentralized Applications)} \cite{Kuo2017, Swan2015}.
+Essas ferramentas elevam a expressividade e capacidade da Blockchain enquanto plataforma, possibilitando a utilização em aplicações financeiras, semi-financeiras, e até mesmo aplicações que operam com ativos que não são financeiros.
 
 %% detalhamento do Bitcoin que o professor disse estar fora de escopo, sobre scripts no Bitcoin
 % O Bitcoin permite à princípio scripts com tamanho de até 10 mil bytes e com dados de no máximo 520 bytes na pilha de execução\footnote{Informações retiradas do cliente oficial do Bitcoin, versão 0.19, no arquivo de cabeçalho referente a scripts, linhas {\color{RoyalBlue}\href{https://github.com/bitcoin/bitcoin/blob/0.19/src/script/script.h\#L23}{23}} e {\color{RoyalBlue}\href{https://github.com/bitcoin/bitcoin/blob/0.19/src/script/script.h\#L32}{32}}.}.
@@ -297,6 +299,8 @@ A Blockchain 2.0 surge para avançar o suporte ao conceito de livro-razão distr
 \subsection{Contratos inteligentes no Ethereum}
 
 {\color{ForestGreen}Explicar para que servem e listar benefícios. (1 parágrafo).}
+
+\emph{Smart Contracts} são
 
 {\color{ForestGreen}Explicar que a linguagem utilizada é denominada Solidity. Explicar o que é solidity. (1 parágrafo).}
 
