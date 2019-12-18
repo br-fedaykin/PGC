@@ -34,6 +34,13 @@
 
 #### 2.3 Contratos Inteligentes no Ethereum
 
+- [ ] origem da ideia por Szabo
+- [ ] utilidade, benefícios
+- [ ] introdução à implementação no Ethereum
+  - [ ] o que é EVM
+  - [ ] o que é Solidity
+  - [ ] exemplo de Smart Contract
+
 ### 3. Sistema Proposto
 
 #### 3.1 Visão Geral
