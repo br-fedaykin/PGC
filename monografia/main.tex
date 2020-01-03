@@ -261,13 +261,16 @@ interpretador\footnote{O artigo \cite{Bistarelli2019} ilustra em suas figuras o 
 
 Diversos comportamentos foram então modelados, e o mais comumente utilizado entre eles implementa a operação que é o núcleo da rede Bitcoin - a transferência de moeda entre carteiras - implementada pelo script conhecido como P2PKH \emph{(Pay to Public Key Hash)}, que carrega um hash de uma chave pública e condiciona a utilização do valor na saída de uma transação à apresentação da chave pública que corresponda ao hash, juntamente com uma assinatura produzida pela chave privada da respectiva chave pública, permitindo que somente o detentor da chave privada possa utilizar o valor encaminhado a ele por meio da chave pública.
 Outros scripts juntamente com este formam um pequeno conjunto de scripts creditados como seguros e alçados ao status de padrão no protocolo do Bitcoin.
-Uma transação é considerada padrão quando só utiliza scripts padrões, e mais de 99,9\% das transações na Blockchain são padrões \cite{Bistarelli2019}. A alta adesão não é coincidência, pois o cliente oficial do Bitcoin não permite a propagação de transações não-padrão pela
+Uma transação é considerada padrão quando só utiliza scripts padrões, e mais de 99,9\% das transações na Blockchain são padrões \cite{Bistarelli2019}.
+A alta adesão não é coincidência, pois o cliente oficial do Bitcoin não permite a propagação de transações não-padrão pela
 rede\footnote{Há outras verificações que impedem o recebimento e transmissão de uma transação na rede. Veja \url{https://en.bitcoin.it/wiki/Protocol_rules\#.22tx.22_messages}},
 virtualmente negando o serviço a transações deste tipo, impondo ao seu proponente o ônus de propagar sua transação de forma externa à rede na tentativa de fazê-la alcançar os nós que tenham a eventual chance de incluir um bloco na Blockchain.
 
-Essa linguagem de script demonstra a preocupação no projeto do Bitcoin para poder abarcar, caso fosse necessário, complexidades e regras de transação além do escopo de uma moeda ou pagamento. Com ela torna-se possível projetar e realizar transações de garantia, vínculos contratuais, arbitragem privada e multi-assinaturas.
+Essa linguagem de script demonstra a preocupação no projeto do Bitcoin para poder abarcar, caso fosse necessário, complexidades e regras de transação além do escopo de uma moeda ou pagamento.
+Com ela torna-se possível projetar e realizar transações de garantia, vínculos contratuais, arbitragem privada e multi-assinaturas.
 Mais ainda do que isso, no início de 2014 \cite{Greenspan2015} o protocolo passou a permitir a adição de até 80 bytes de metadados arbitrários em uma transação, abrindo o caminho, mesmo que limitado, para a utilização da blockchain como um \textbf{livro-razão distribuído} (em inglês \textbf{\textit{Distributed Ledger}}), uma fonte de dados onde seria possível registrar informações públicas, perenes e inalteráveis, acessíveis em qualquer lugar do mundo.
-A \emph{Blockchain 2.0} surge para avançar o suporte ao conceito de livro-razão distribuído, trazendo novas tecnologias baseadas em blockchain, destacando-se entre elas as \emph{Smart Properties}, \emph{Smart Contracts} e \emph{DApps (Decentralized Applications)} \cite{Swan2015}. Essas ferramentas elevam a expressividade e capacidade da Blockchain como uma plataforma para a criação de aplicações financeiras, semi-financeiras, e até mesmo aplicações com ativos que não são financeiros.
+A \emph{Blockchain 2.0} surge para avançar o suporte ao conceito de livro-razão distribuído, trazendo novas tecnologias baseadas em blockchain, destacando-se entre elas as \emph{Smart Properties}, \emph{Smart Contracts} e \emph{DApps (Decentralized Applications)} \cite{Swan2015}.
+Essas ferramentas elevam a expressividade e capacidade da Blockchain como uma plataforma para a criação de aplicações financeiras, semi-financeiras, e até mesmo aplicações com ativos que não são financeiros.
 
 %% detalhamento do Bitcoin que o professor disse estar fora de escopo, sobre scripts no Bitcoin
 % O Bitcoin permite à princípio scripts com tamanho de até 10 mil bytes e com dados de no máximo 520 bytes na pilha de execução\footnote{Informações retiradas do cliente oficial do Bitcoin, versão 0.19, no arquivo de cabeçalho referente a scripts, linhas {\color{RoyalBlue}\href{https://github.com/bitcoin/bitcoin/blob/0.19/src/script/script.h\#L23}{23}} e {\color{RoyalBlue}\href{https://github.com/bitcoin/bitcoin/blob/0.19/src/script/script.h\#L32}{32}}.}.
@@ -298,6 +301,11 @@ A \emph{Blockchain 2.0} surge para avançar o suporte ao conceito de livro-razã
 \subsection{Contratos inteligentes no Ethereum}
 
 {\color{ForestGreen}Explicar para que servem e listar benefícios. (1 parágrafo).}
+
+O conceito de \emph{Smart Contract} antecede o advento da blockchain, como uma solução que torna um acordo entre duas ou mais partes em um conjunto de regras computáveis, que podem ser, portanto, embutidos no software ou hardware de propriedades com valor e que são controladas por meios digitais, com protocolos estabelecidos para que as partes possam interagir com as regras.
+Isso possibilita a execução automática do contrato sem a necessidade de intermediários, reduzindo a necessidade de confiança e os custos de transação \cite{Bartoletti2019, Szabo1996}.
+O Ethereum foi o primeiro projeto bem-sucedido baseado em Blockchain desenvolvido especificamente para a execução de Smart Contracts, oferecendo uma linguagem de programação turing-completa com suporte a funções criptográficas e alguns metadados da blockchain.
+Esta linguagem, chamada de \emph{Ethereum Virtual Machine code (EVM code)} (... continua)
 
 {\color{ForestGreen}Explicar que a linguagem utilizada é denominada Solidity. Explicar o que é solidity. (1 parágrafo).}
 
