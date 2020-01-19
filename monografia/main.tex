@@ -15,7 +15,8 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{adjustbox}
 \usepackage{verbatim}
-\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\usepackage{float}
+\newcommand{\tabitem}{~~\llap{\textbullet{\ensuremath{\bullet}}}~~}
 \newcommand*{\SignatureAndDate}[4]{%
 	\parbox{7cm}{
       \centering
@@ -33,7 +34,6 @@
        #4
     }
 }%
-\usepackage{float}
 
 \floatstyle{ruled}
 \newfloat{program}{thp}{lop}
@@ -302,31 +302,49 @@ Essas ferramentas elevam a expressividade e capacidade da Blockchain como uma pl
 
 {\color{ForestGreen}Explicar para que servem e listar benefícios. (1 parágrafo).}
 
-O conceito de \emph{Smart Contract} antecede o advento da blockchain, proposto como uma solução que torna um acordo entre duas ou mais partes em um conjunto de regras computáveis, que podem ser, portanto, embutidos no software ou hardware de propriedades com valor e que são controladas por meios digitais, com protocolos estabelecidos para que as partes possam interagir com as regras.
-Isso possibilita a execução automática do contrato sem a necessidade de intermediários, reduzindo a necessidade de confiança e os custos de transação \cite{Bartoletti2019, Szabo1996}.
+O conceito de \emph{Smart Contract} antecede o advento da blockchain, vislumbrando a possibilidade  de tornar um acordo formal (i.e. um contrato) firmado entre duas ou mais partes em um conjunto de regras computáveis que podem ser, portanto, embutidos no software ou hardware de propriedades com valor e que são controladas por meios digitais, com protocolos estabelecidos para que as partes possam interagir com as regras e desempanhar seus papéis.
+Isso possibilita a execução automática do contrato sem a necessidade de intermediários, reduzindo a necessidade de confiança em terceiros e os custos de transação \cite{Bartoletti2019, Szabo1996}.
 O Ethereum foi o primeiro e mais bem-sucedido projeto baseado em Blockchain voltado especificamente para a execução de Smart Contracts, fornecendo uma linguagem de programação turing-completa com suporte a funções criptográficas e de consulta de metadados da blockchain, permitindo expressar contratos na forma de programas que podem ser publicados na rede Ethereum e com os quais usuários e outros contratos podem interagir.
 
-Invocações às funções de um contrato se dão por meio de uma transação, contendo argumentos codificados em bytes para sua execução e um limite computacional compulsório, expresso em termos de um recurso quantitativo denominado \emph{gas}.
-O gas é uma unidade calculada a partir de dados de uso da rede e convertida automaticamente a partir do \emph{Ether}, a moeda base do Ethereum, e serve para lastrear o uso de computação da rede Ethereum em um recurso escasso e finito.
+Invocações às funções de um contrato se dão por meio de uma transação contendo, entre outros parâmetros, os argumentos para a execução da função e um limite computacional compulsório a esta execução, expresso em termos de um recurso quantitativo denominado \emph{gas}.
+O gas é a unidade fundamental do custo computacional na rede Ethereum, é convertido automaticamente a partir do \emph{Ether} --- a moeda base do Ethereum --- e a taxa de conversão é governada por uma equação definida no protocolo da plataforma, levando em conta estatísticas de uso da rede e ajustando o preço da computação de acordo com a demanda registrada na blockchain.
 O usuário pode configurar na transação o quanto de gas deseja utilizar, desde que possua o respectivo saldo em Ether, até um limite máximo atribuído pelo próprio protocolo.
-Essa mecânica incentiva um uso consciente da capacidade computacional da rede, contorna o problema da indecibilidade quanto ao fim da execução ou não de um programa, impedindo a parada da \emph{Ethereum Virtual Machine (EVM)} diante da execução de funções que rodariam indefinidamente e por fim serve para proteger os recursos do próprio usuário, diante de um custo imprevisto ou desconhecido de uma função em um Smart Contract com o qual pretende interagir, quer seja o custo inerente à função devido à complexidade da operação ou só produto de um código ineficiente ou mesmo incapaz de terminar.
+Essa mecânica incentiva um uso consciente da capacidade computacional da rede, contorna o problema da indecibilidade quanto ao fim ou não da execução de um programa, impedindo a parada da \emph{Ethereum Virtual Machine (EVM)} diante da execução de funções que, sem tal limitação, ao rodar indefinidamente ou por períodos extensos poderiam perturbar a taxa com que são processadas novas transações, e por fim serve para proteger os recursos do próprio usuário ao interagir com uma função de um Smart Contract cujo custo esteja além da expectativa, quer seja este custo inerente à função (devido à complexidade da operação) ou só produto de um código ineficiente ou mesmo incapaz de terminar.
 
 {\color{ForestGreen}Explicar que a linguagem utilizada é denominada Solidity. Explicar o que é solidity. (1 parágrafo).}
 
-A linguagem na qual Smart Contracts são publicados na rede Ethereum se chama \emph{Ethereum Virtual Machine code (EVM code)} --- uma linguagem de baixo nível baseada em pilhas, similar à linguagem \emph{Forth}. A própria fundação Ethereum desenvolveu linguagens de programação de mais alto nível, com sintaxes similares às linguagens mais utilizadas no mercado, com ferramentas que as compilem para o EVM code. O \emph{Solidity} é uma destas linguagens, com sintaxe similar a Java e C\texttt{++}, com compiladores e opções de compilação tais como otimização de código, além de um crescente ecossistema composto por padrões de programação, bibliotecas e ferramentas de desenvolvimento\footnote{Uma descrição do ecossistema Solidity em \href{https://github.com/bkrem/awesome-solidity}{https://github.com/bkrem/awesome-solidity}. As bibliotecas atualmente com maior base de usuário são, nesta ordem, \emph{\href{https://openzeppelin.com/}{OpenZeppelin}}, \emph{\href{https://github.com/dapphub/dappsys}{Dappsys}} e \emph{\href{https://github.com/modular-network/ethereum-libraries}{Modular Libraries}}}, destancando-se o ambiente de desenvolvimento e implantação de Smart Contracts \emph{Remix}, utilizada neste trabalho para codificar, depurar e implantar os Smart Contracts do protótipo em redes de teste Ethereum.
+A linguagem na qual Smart Contracts são publicados na rede Ethereum se chama \emph{Ethereum Virtual Machine code (EVM code)} --- uma linguagem de baixo nível baseada em pilhas, similar à linguagem \emph{Forth}.
+Visando ampliar o acesso à tecnologia, a Fundação Ethereum desenvolveu também linguagens de programação de alto nível, com sintaxes similares às linguagens mais utilizadas no mercado, com compiladores para produzir EVM code a partir delas. O \emph{Solidity} é uma destas linguagens, com sintaxe similar a Java e C\texttt{++}, dispondo de um compilador com parâmetros configuráveis e um crescente ecossistema composto por padrões de desenvolvimento, bibliotecas e ferramentas de desenvolvimento\footnote{Para se inteirar do ecossistema Solidity, veja \href{https://github.com/bkrem/awesome-solidity}{https://github.com/bkrem/awesome-solidity} ou outras listas publicadas na internet. Entre as bibliotecas, destacam-se a \emph{\href{https://openzeppelin.com/}{OpenZeppelin}}, \emph{\href{https://github.com/dapphub/dappsys}{Dappsys}} e \emph{\href{https://github.com/modular-network/ethereum-libraries}{Modular Libraries}} por atualmente possuírem as maiores bases de usuários, segundo o site \emph{GitHub}.}, destancando-se o ambiente de desenvolvimento e implantação de Smart Contracts \emph{Remix}, utilizada para codificar, depurar e implantar os Smart Contracts do protótipo deste trabalho em redes de teste Ethereum.
 
 {\color{ForestGreen}Explicar o código de um contrato simples que terá o atributo idPaciente, um map de urls de registros médicos e um método addUrl. (1 parágrafo). Explicar que esse contrato é escrito em um arquivo com extensão .sol}
 
-\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=2pt, label={lst:modelo}, caption={Exemplo de Contrato Inteligente}}
+Com Solidity é possível descrever tanto funções quanto estruturas de dados temporárias ou armazenadas na blockchain.
+A coleção de dados armazenados na Blockchain compõe o que se denomina como estado da EVM.
+
+\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:modelo}, caption={Exemplo de Contrato Inteligente}}
 \begin{lstlisting}
-classe Registro {
-   int version;
-   string result;
-   string data;
-   DateTime MinTime;
-   DateTime MaxTime;
-   string extHash;
-}
+ pragma solidity ^0.5.1;
+ pragma experimental ABIEncoderV2;
+
+ contract Hospital {
+
+   enum CodigoResultado {negativo, positivo, inconclusivo, falha}
+
+   struct Registro {
+     int version;
+     CodigoResultado resultado;
+     string data;
+     uint MinTime;
+     uint MaxTime;
+     string extHash;
+   }
+
+   mapping (string => Registro) registros;
+   mapping (address => string[]) patientURLs;
+
+   function addURL (address patient, string  memory url, Registro memory r) public;
+   function getRegistro(string memory url) public view returns (Registro);
+  }
 \end{lstlisting}
 
 
