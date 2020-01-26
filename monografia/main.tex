@@ -446,12 +446,29 @@ O mecanismo de derivação de chaves privadas pessoais está atrelado ao process
 
 Foram desenvolvidos cinco contratos inteligentes que permitem a autenticação, entrega de permissões e armazenamento de metadados dos prontuários eletrônicos dos pacientes. A seguir serão explicados cada um deles.
 
-
 {\color{ForestGreen} Explicação do  SmartDCPABEAuthority (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 
 {\color{Magenta} 1 parágrafo para explicar o que faz o contrato (el linhas gerais).}
 
 {\color{Magenta} Inserir o código da linha 7 até 20.}
+
+\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:SmartDCPABEAuthority}, caption={Dados em SmartDCPABEAuthority}}
+\begin{lstlisting}
+ contract SmartDCPABEAuthority is Collection {
+
+ struct Certifier {
+   address addr;
+   bytes32 name;
+   bytes32 email;
+   uint64 numPublicKeys;
+ }
+
+ address[] public certifierAddresses;
+ mapping (address => Certifier) certifiers;
+ SmartDCPABEUtility util;
+ SmartDCPABEUsers user;
+ address contractKeys;
+\end{lstlisting}
 
 {\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos. Exemplo. O struct X permite armazenar dados que servirão para Y. O atributo V armazena informações de W que servirão para Z.}
 
