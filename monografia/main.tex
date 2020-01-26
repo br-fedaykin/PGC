@@ -319,9 +319,9 @@ Visando ampliar o acesso à tecnologia, a Fundação Ethereum desenvolveu també
 {\color{ForestGreen}Explicar o código de um contrato simples que terá o atributo idPaciente, um map de urls de registros médicos e um método addUrl. (1 parágrafo). Explicar que esse contrato é escrito em um arquivo com extensão .sol}
 
 Com Solidity é possível descrever tanto funções quanto estruturas de dados temporárias ou armazenadas na blockchain.
-A coleção de dados armazenados na Blockchain compõe o que se denomina como estado da EVM.
+A coleção de dados armazenados na Blockchain compõe o que se denomina como estado da EVM. A Lista \ref{lst:exemploSmartContract} contém um exemplo de uso de Solidity, implementando um contrato que disponibiliza o acesso de resultado de exames a pacientes.
 
-\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:modelo}, caption={Exemplo de Contrato Inteligente}}
+\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:exemploSmartContract}, caption={Exemplo de Contrato Inteligente}}
 \begin{lstlisting}
  pragma solidity ^0.5.1;
  pragma experimental ABIEncoderV2;
@@ -349,6 +349,11 @@ A coleção de dados armazenados na Blockchain compõe o que se denomina como es
 
 
 {\color{ForestGreen}Explicar um exemplo passo-a-passo (Só TEXTO, Não Código) de um cliente que obtém o contrato do parágrafo anterior e o executa remotamente em uma máquina. (2 parágrafo).}
+
+As funções implementadas no contrato apontam a existência de dois tipos de papeis relacionados, um que provê informações e outro que as consulta. O Smart Contract armazena duas tabelas, uma associando endereços a uma lista de URLs e outra associando um URL a um objeto do tipo Registro, que contém as informações de um exame. Essas tabelas são alimentadas por meio da função \emph{addURL} do contrato, sendo utilizada pelo Hospital que deseja disponibilizar os exames para consulta, e os exames podem ser consultados usando-se a função \emph{getRegistro}. Ambos os papeis necessitam possuir uma identidade na blockchain Ethereum, ou seja, possuir um endereço válido e ser capaz de publicar transações. Também é necessário possuir um cliente capaz de se conectar a rede para poder publicar novas transações. Já para a consulta de dados, é possível utilizar serviços Web de terceiros, como sites de visualização de transação, para resgatar uma atualização particular ou obter o estado atual das variáveis do contrato.
+
+Este exemplo, embora introduza a sintaxe do Solidity, também incorre em três situações problemáticas que podem precisar de conserto. Primeiro, Smart Contracts tem seu código tornado público à rede no momento de sua implantação e suas funções podem ser utilizadas por qualquer usuário da rede. A ausência de controle no uso da função é um risco à integridade dos dados, uma vez que pode estar sujeita a alterações maliciosas. Um contrato deve impor uma política de acesso a funções sensíveis, implementando nestas funções verificações internas do endereço responsável pela interação, permitindo ou não a execução de acordo com tal política. Segundo, dados publicados na Blockchain são sempre públicos em sua visibilidade, embora possam ter diferentes escopos de acesso. Isso quer dizer que os dados relacionados aos exames serão públicos, expondo informações privativas a quem tiver acesso à Blockchain. Uma maneira de mitigar este problema e ainda assim manter a segurança da informação é publicar assinaturas dos dados, que não conterão informação sensível mas ainda servirão para verificar a integridade e imutabilidade dos dados armazenados externamente, na web. Terceiro, mesmo que não configurasse problema de privacidade, este uso da Blockchain tornaria o custo de operação muito alto, uma vez que a cada exame médico haveria um custo para armazenar múltiplas informações, sendo as mais caras as informações de tamanho dinâmico como a variável de texto \emph{data}. Embora o exemplo exemplifique uma estrutura de dados, na prática a Blockchain tem restrições computacionais de uso baseada no alto custo de armazenamento e processamento, o que significa que mesmo em um cenário onde não seja necessário a privacidade, ainda assim há um incentivo para esvaziar as estruturas de dados de informação relativa ao domínio de aplicação e ao invés disso utilizar ela somente como um meio para se verificar estes dados que estarão alocados em bases de dados externas à Blockchain.
+
 
 % -------------------------------------------------------------------- %
 \newpage
