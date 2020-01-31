@@ -43,8 +43,23 @@
 
 ### 3. Sistema Proposto
 
+- [ ] primeira revisão e melhoria de redação
+- [ ] incluir na descrição do servidor que ele implementa política criptográfica Zero-Knowledge <https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof>, <https://medium.com/iryo-network/why-now-is-the-right-time-to-deploy-zero-knowledge-encryption-9bd26c5be4ca>
+- [ ] Figura dos principais componentes em alto nível
+- [ ] 
+
 #### 3.1 Visão Geral
 
 #### 3.2 Taxonomia das permissões
 
 #### 3.3 Contratos inteligentes com CBA
+
+- [ ] Explicação do SmartDCPABEAuthority
+- [ ] Explicação do SmartDCPABEKeys 
+- [ ] Explicação do SmartDCPABEFiles
+- [ ] Explicação do SmartDCPABERequests
+- [ ] Explicação do SmartDCPABEUsers
+
+#### 3.4 Arquitetura Blockchain
+
+- [ ] figura simples que mostrando cliente, servidor, e a Blockchain interligados.
