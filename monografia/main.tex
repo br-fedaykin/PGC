@@ -298,7 +298,7 @@ Essas ferramentas elevam a expressividade e capacidade da Blockchain como uma pl
 \begin{itemize}
     \item O desafio computacional é baseado na ideia do HashCash \cite{Back2002} e foi denominado como \emph{Proof-of-Work} \emph{(PoW)}.
 \end{itemize}
-\subsection{Contratos inteligentes no Ethereum}
+\subsection{Contratos inteligentes no Ethereum} \label{sub:sec:contratos-ethereum}
 
 {\color{ForestGreen}Explicar para que servem e listar benefícios. (1 parágrafo).}
 
@@ -369,7 +369,7 @@ Este exemplo, embora introduza a sintaxe do Solidity, também incorre em três s
 \end{itemize}
 
 \subsection{Visão Geral}
-\label{visaogeral}
+\label{sec:visaogeral}
 
 {\color{ForestGreen}Explicar que o sistema é composto por X componentes (1 parágrafo).}
 
@@ -448,7 +448,12 @@ Foram desenvolvidos cinco contratos inteligentes que permitem a autenticação, 
 
 {\color{ForestGreen} Explicação do  SmartDCPABEAuthority (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 
-{\color{Magenta} 1 parágrafo para explicar o que faz o contrato (el linhas gerais).}
+{\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
+
+O contrato \emph{Authority} registra na Blockchain as entidades certificadoras disponíveis no sistema, tornando público seu endereço público na Ethereum, associando dados de indentificação e a quantidade de atributos que a entidade já publicou.
+o ID usado para derivar as chaves privadas dos atributos no esquema ABE é a chave privada que corresponde à chave pública do Ethereum.
+Esse esquema permite que uma entidade possa ser identificável de forma única sem a necessidade de controle centralizada sobre o cadastro de novas unidades.
+A escolha do ID visa impossibilitar um atacante de se passar pela entidade certificadora, uma vez que não há método computacionalmente viável para recuperar a chave privada de um endereço Ethereum a partir de uma chave pública.
 
 {\color{Magenta} Inserir o código da linha 7 até 20.}
 
@@ -472,13 +477,37 @@ Foram desenvolvidos cinco contratos inteligentes que permitem a autenticação, 
 
 {\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos. Exemplo. O struct X permite armazenar dados que servirão para Y. O atributo V armazena informações de W que servirão para Z.}
 
-A struct Certifier armazena dados informações da autoridade responsável por publicar atributos e concedê-los a usuários. Além do endereço Ethereum, também é armazenado seu nome, e-mail e a quantidade de chaves que ele já publicou. Tal unidade de controle é necessária porque as chaves são armazenadas em \emph{mappings}, uma estrutura que não possui informação sobre a quantidade de membros.
+A struct Certifier armazena dados informações da autoridade responsável por publicar atributos e concedê-los a usuários. Além do endereço Ethereum, também é armazenado seu nome, e-mail e a quantidade de chaves que ele já publicou.
+Tal unidade de controle é necessária porque as chaves são armazenadas em \emph{mappings}, conforme explicitado na Sessão \ref{sub:sec:contratos-ethereum}.
 
 {\color{ForestGreen} Explicação do  SmartDCPABEKeys (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 
-{\color{Magenta} 1 parágrafo para explicar o que faz o contrato (el linhas gerais).}
+{\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
 
 {\color{Magenta} Inserir o código da linha 6 até 24.}
+
+\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:SmartDCPABEKeys}, caption={Dados em SmartDCPABEAuthority}}
+\begin{lstlisting}
+ contract SmartDCPABEKeys is Collection {
+
+ struct PublicKey {
+  Bytes127 eg1g1ai;
+  Bytes127 g1yi;
+ }
+
+ struct Bytes127 {
+  bytes32 chunk1;
+  bytes32 chunk2;
+  bytes32 chunk3;
+  bytes31 chunk4;
+  uint8 lastChunkSize;
+ }
+
+ SmartDCPABEUtility util;
+ SmartDCPABEAuthority authority;
+ mapping (address => bytes32[]) publicKeyNames;
+ mapping (address => mapping (bytes32 => PublicKey)) ABEKeys;
+\end{lstlisting}
 
 {\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.}
 
@@ -512,7 +541,7 @@ A struct Certifier armazena dados informações da autoridade responsável por p
 
 \subsection{Arquitetura Blockchain}
 
-Como mencionado na Seção \ref{visaogeral}, o sistema é composto por 3 componentes: cliente, servidor, e a Blockchain. A Figura X mostra o relacionamento entre esses componentes.
+Como mencionado na Seção \ref{sec:visaogeral}, o sistema é composto por 3 componentes: cliente, servidor, e a Blockchain. A Figura X mostra o relacionamento entre esses componentes.
 
 {\color{ForestGreen} Fazer uma figura simples que mostre os 3 componentes interligados. }
 
