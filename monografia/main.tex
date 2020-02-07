@@ -379,7 +379,7 @@ O protótipo pode ser abstraído em diferentes módulos de acordo com sua capaci
 
 O módulo do cliente é responsável por incorporar a camada lógica responsável por coordenar as atividades entre os demais componentes.
 
-O módulo do servidor recebe, armazena e envia arquivos criptografados. Presumiu-se que o servidor não fosse confiável, e por isso as informações nele estão sempre criptografadas. Durante os testes, ele também armazenou, de forma temporária, chaves criptográficas que representam a posse de um atributos. Essa função poderia ser transferida para qualquer serviço de transferência de arquivos, como um servidor dedicado sob controle do certificador, um serviço de hospedagem em nuvem ou mesmo por e-mail. 
+O módulo do servidor recebe, armazena e envia arquivos criptografados. Presumiu-se que o servidor não fosse confiável, e por isso as informações nele estão sempre criptografadas. Durante os testes, ele também armazenou, de forma temporária, chaves criptográficas que representam a posse de um atributos. Essa função poderia ser transferida para qualquer serviço de transferência de arquivos, como um servidor dedicado sob controle do certificador, um serviço de hospedagem em nuvem ou mesmo por e-mail.
 
 O módulo blockchain é responsável por armazenar de forma permanente e imutável a cifra de um documento, e a política de acesso descrita em termos de uma forma booleana composta por funções lógicas E e OU aplicadas a atributos. A Blockchain para desenvolvimento e teste do protótipo foi uma rede privada do Ethereum.
 
@@ -472,6 +472,7 @@ Foram desenvolvidos cinco contratos inteligentes que permitem a autenticação, 
 
 {\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos. Exemplo. O struct X permite armazenar dados que servirão para Y. O atributo V armazena informações de W que servirão para Z.}
 
+A struct Certifier armazena dados informações da autoridade responsável por publicar atributos e concedê-los a usuários. Além do endereço Ethereum, também é armazenado seu nome, e-mail e a quantidade de chaves que ele já publicou. Tal unidade de controle é necessária porque as chaves são armazenadas em \emph{mappings}, uma estrutura que não possui informação sobre a quantidade de membros.
 
 {\color{ForestGreen} Explicação do  SmartDCPABEKeys (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 
