@@ -130,3 +130,33 @@ url = {https://www.frontiersin.org/articles/10.3389/fbloc.2019.00008/full},
 volume = {2},
 year = {2019}
 }
+
+@article{DeCaro2011,
+abstract = {It has been recently discovered that some cyclic groups that could be used in Cryptography admit a special bilinear pairing map that introduces extra structure to the group. Bilinear pairing maps were first used to break cryptosystems (see, for example, [1], [2], [3]) and later it was realized that the extra structure could be exploited to build cryptosystems with extra properties. Boneh and Franklins identity-based encryption scheme [4] is the most famous early example of what could be achieved using bilinear maps. After that, a plethora of cryptosystems have been designed using bilinear maps. No full and freely available implementation of pairing based cryptography was available until this work. Recent proposals [13], [14], [15] fall short of this goal as either their source code is not available or because they support a limited range of elliptic curve. Moreover, neither one of [13], [14], [15] implements preprocessing that is crucial to reduce the computation time. In this work, we present jPBC a Java port of the PBC library written in C [24], [25]. jPBC provides a full ecosystem of interfaces and classes to simplify the use of the bilinear maps even for a non-cryptographer. jPBC supports different types of elliptic curves, preprocessing which can speedup the computation significantly and it is ready for the mobile world. Moreover a benchmark comparison between jPBC and PBC has been performed to measure the gap between the two libraries. Furthermore jPBC has been benchmarked on different Android mobile platforms. {\textcopyright} 2011 IEEE.},
+author = {{De Caro}, Angelo and Iovino, Vincenzo},
+doi = {10.1109/ISCC.2011.5983948},
+isbn = {9781457706783},
+issn = {15301346},
+journal = {Proceedings - IEEE Symposium on Computers and Communications},
+keywords = {Java,pairing-based cryptography},
+mendeley-groups = {PGC/PBC},
+number = {June 2011},
+pages = {850--855},
+publisher = {IEEE},
+title = {{jPBC: Java Pairing Based Cryptography}},
+year = {2011}
+}
+
+@article{Lewko2011,
+abstract = {We propose a Multi-Authority Attribute-Based Encryption (ABE) system. In our system, any party can become an authority and there is no requirement for any global coordination other than the creation of an initial set of common reference parameters. A party can simply act as an ABE authority by creating a public key and issuing private keys to different users that reflect their attributes. A user can encrypt data in terms of any boolean formula over attributes issued from any chosen set of authorities. Finally, our system does not require any central authority. In constructing our system, our largest technical hurdle is to make it collusion resistant. Prior Attribute-Based Encryption systems achieved collusion resistance when the ABE sys- tem authority “tied” together different components (representing different attributes) of a user's private key by randomizing the key. However, in our system each component will come from a potentially different authority, where we assume no coordination between such authorities. We create new techniques to tie key components together and prevent collusion attacks between users with different global identifiers. We prove our system secure using the recent dual system encryption methodology where the security proof works by first converting the challenge ciphertext and private keys to a semi-functional form and then arguing security. We follow a recent variant of the dual system proof technique due to Lewko andWaters and build our system using bilinear groups of composite order. We prove security under similar static assumptions to the LW paper in the random oracle model},
+author = {Lewko, Allison and Waters, Brent},
+doi = {10.1007/978-3-642-20465-4_31},
+isbn = {9783642204647},
+issn = {03029743},
+journal = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+mendeley-groups = {PGC/ABE e sistemas com ABE},
+pages = {568--588},
+title = {{Decentralizing attribute-based encryption}},
+volume = {6632 LNCS},
+year = {2011}
+}

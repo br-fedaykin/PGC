@@ -204,11 +204,13 @@ Criar um sistema, com base em contratos inteligentes executados em uma Blockchai
     \item {\color{red}Não mostrar código.}
 \end{itemize}
 
-\subsection{Criptografia baseada em atributos (CBA)}
+\subsection{Criptografia baseada em atributos (CBA)} \label{sec:sub:cba}
 
 {\color{ForestGreen}Explicar quando nasceu, quem a criou, e qual foi o problema que estava resolvendo (basicamente que a criptografia chaves publica/privada precisa ser criada para cada usuário que precisa de permissão e com a por atributos não). (2 parágrafos).}
 
 {\color{ForestGreen}Explicar alguns conceitos da CBA (chave pública/privada/etc para que sirva como base do exemplo mostrado no último parágrafo (1 parágrafo).}
+
+{\color{RoyalBlue}Explicar e fazer uma imagem explicando a derivação de atributos em um ambiente multi-autoridade, através do ID, que então gera uma chave mestra privada e uma chave pública, e várias outras chaves privadas particulares derivadas a partir da chave mestra e todas compatíveis com a mesma chave pública.}
 
 {\color{ForestGreen}Explicar os benefícios do CBA (2 parágrafos).}
 
@@ -484,6 +486,9 @@ Tal unidade de controle é necessária porque as chaves são armazenadas em \emp
 
 {\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
 
+O contrato \emph{Keys} disponibiliza a chave pública de atributos criados por autoridades.
+Para fins de prototipagem foram implementadas somente as operação de inclusão e consulta de chaves, mas não de edição ou remoção. Seria trivial implementar isto no Smart Contract, mas não seria trivial e nem viável implementar os protocolos de revogação e substituição de atributos no módulo Cliente, responsável pelas operações criptográficas e pela coordenação das informações entre a Blockchain e o Servidor.
+
 {\color{Magenta} Inserir o código da linha 6 até 24.}
 
 \lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:SmartDCPABEKeys}, caption={Dados em SmartDCPABEAuthority}}
@@ -510,6 +515,13 @@ Tal unidade de controle é necessária porque as chaves são armazenadas em \emp
 \end{lstlisting}
 
 {\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.}
+
+a estrutura \emph{Bytes127} foi criada como um container econômico para armazenar os elementos gerados pela biblioteca jPBC \emph{(Java Pairing-Based Cryptography)} \cite{DeCaro2011}.
+O tamanho dos elementos varia entre 120 a 124 bytes de informação e, embora o Solidity disponha da estrutura de dados \emph{bytes} para armazenar bytes em tamanho arbitrário, seu custo é maior.
+Dados consomem gas, e quando são utilizadas estruturas de dados de tamanho dinâmico, o valor é maior do que suas contrapartes estáticas, justificando a criação de uma estrutura que divida os dados em um conjunto de elementos de tamanho fixo.
+A estrutura \emph{PublicKey} armazena a chave pública gerada pela biblioteca \emph{DCPABE}\footnote{código fonte: \href{https://github.com/stefano81/dcpabe}{\texttt{https://github.com/stefano81/dcpabe}}. Para uma análise teórica, ver \cite{Lewko2011}}, que são representadas por duas sequências de bytes como mostra o código.
+O mapa \emph{publicKeyNames} mapeia um endereço de uma autoridade a uma lista de nomes de atributos representados como bytes.
+O mapa \emph{ABEKeys} contém, para cada endereço cadastrado, um submapa relacionando o nome do atributo representado em bytes com uma chave pública.
 
 {\color{ForestGreen} Explicação do  SmartDCPABEFiles  (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 

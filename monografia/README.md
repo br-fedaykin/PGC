@@ -46,16 +46,17 @@
 - [ ] primeira revisão e melhoria de redação
 - [ ] incluir na descrição do servidor que ele implementa política criptográfica Zero-Knowledge <https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof>, <https://medium.com/iryo-network/why-now-is-the-right-time-to-deploy-zero-knowledge-encryption-9bd26c5be4ca>
 - [ ] Figura dos principais componentes em alto nível
-- [ ] 
 
 #### 3.1 Visão Geral
+
+- [x] Descrever aqui ou na Seção 3.3 que o módulo DCPABE gera atributos que são uma estrutura contendo um nome e dois campos de bytes, entre 138 e 142, que codificam elementos de um Grupo de pareamento gerado pela biblioteca X do java (pesquisar quem gera isso).
 
 #### 3.2 Taxonomia das permissões
 
 #### 3.3 Contratos inteligentes com CBA
 
-- [ ] Explicação do SmartDCPABEAuthority
-- [ ] Explicação do SmartDCPABEKeys 
+- [x] Explicação do SmartDCPABEAuthority
+- [x] Explicação do SmartDCPABEKeys
 - [ ] Explicação do SmartDCPABEFiles
 - [ ] Explicação do SmartDCPABERequests
 - [ ] Explicação do SmartDCPABEUsers
