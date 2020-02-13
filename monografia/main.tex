@@ -565,12 +565,33 @@ A Estrutura \emph{Recording} informa a base de dados na qual o arquivo está hos
 
 {\color{ForestGreen} Explicação do  SmartDCPABERequests  (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 
-{\color{Magenta} 1 parágrafo para explicar o que faz o contrato (el linhas gerais).}
+{\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
 
 {\color{Magenta} Inserir o código da linha 6 até 35.}
 
-{\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.}
+\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:SmartDCPABERequests}, caption={Dados em SmartDCPABERequests}}
+\begin{lstlisting}
+ contract SmartDCPABERequests is Collection {
 
+ enum KeyRequestStatus {
+  PENDING,
+  OK,
+  REJECTED
+ }
+
+ struct KeyRequest {
+  KeyRequestStatus status;
+  uint64 timestamp;
+  uint64 responseTimestamp;
+  bytes32[] attrNames;
+ }
+
+ mapping (address => address[]) pendingRequesters;
+ mapping (address => mapping (address => uint64[]))  pendingRequests;
+ mapping (address => mapping (address => KeyRequest[]))  requests;
+\end{lstlisting}
+
+{\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.}
 
 {\color{ForestGreen} Explicação do  SmartDCPABEUsers  (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 
@@ -579,8 +600,6 @@ A Estrutura \emph{Recording} informa a base de dados na qual o arquivo está hos
 {\color{Magenta} Inserir o código da linha 6 até 16.}
 
 {\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.}
-
-
 
 \subsection{Arquitetura Blockchain}
 
