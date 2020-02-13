@@ -472,9 +472,6 @@ A escolha do ID visa impossibilitar um atacante de se passar pela entidade certi
 
  address[] public certifierAddresses;
  mapping (address => Certifier) certifiers;
- SmartDCPABEUtility util;
- SmartDCPABEUsers user;
- address contractKeys;
 \end{lstlisting}
 
 {\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos. Exemplo. O struct X permite armazenar dados que servirão para Y. O atributo V armazena informações de W que servirão para Z.}
@@ -491,7 +488,7 @@ Para fins de prototipagem foram implementadas somente as operação de inclusão
 
 {\color{Magenta} Inserir o código da linha 6 até 24.}
 
-\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:SmartDCPABEKeys}, caption={Dados em SmartDCPABEAuthority}}
+\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:SmartDCPABEKeys}, caption={Dados em SmartDCPABEKeys}}
 \begin{lstlisting}
  contract SmartDCPABEKeys is Collection {
 
@@ -508,8 +505,6 @@ Para fins de prototipagem foram implementadas somente as operação de inclusão
   uint8 lastChunkSize;
  }
 
- SmartDCPABEUtility util;
- SmartDCPABEAuthority authority;
  mapping (address => bytes32[]) publicKeyNames;
  mapping (address => mapping (bytes32 => PublicKey)) ABEKeys;
 \end{lstlisting}
@@ -527,9 +522,11 @@ O mapa \emph{ABEKeys} contém, para cada endereço cadastrado, um submapa relaci
 
 {\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
 
+O contrato \emph{Files} mantém disponível na blockchain informações sobre a hospedagem do arquivo de prontuários e também os dados do objeto \emph{Ciphertext} produzido pela Biblioteca DCPABE, necessário para realizar a descriptografia. O contrato também gerencia informações sobre as bases de dados onde os arquivos estão hospedados.
+
 {\color{Magenta} Inserir o código da linha 6 até 39.}
 
-\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:SmartDCPABEKeys}, caption={Dados em SmartDCPABEAuthority}}
+\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:SmartDCPABEFiles}, caption={Dados em SmartDCPABEFiles}}
 \begin{lstlisting}
  contract SmartDCPABEFiles is Collection {
 
@@ -560,12 +557,11 @@ O mapa \emph{ABEKeys} contém, para cada endereço cadastrado, um submapa relaci
  mapping (address => mapping(string => Ciphertext)) ciphertexts;
 
  FileServer[] servers;
- SmartDCPABEUtility util;
- SmartDCPABEUsers users;
 \end{lstlisting}
 
 {\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.}
 
+A Estrutura \emph{Recording} informa a base de dados na qual o arquivo está hospedado e qual é a sua identificação no servidor, o hashing para permitir a verificação de integridade e uma marca temporal para manter registro público do momento de sua publicação na Blockchain. Seria possível remover o campo timestamp e trabalhar somente com altura ou timestamp do bloco em que a transação foi validada, economizando o uso de gas, porém deixando de possuir uma data exata de publicação de um documento. A estrutura \emph{Ciphertext} contém a política de acesso utilizada para cifrar o arquivo e um conjunto de parâmetros (c0 a c3) que resultam do processo de criptografia e que são necessários para decifrar o documento. A estrutura \emph{FileServer} contém informações para conexão com uma base de dados na Internet. O contrato mantém uma lista de servidores \emph{servers} e um par de mapas \emph{files} e \emph{ciphertexts} com estrutura similar, ligando endereços de usuários a submapas que associam, por sua vez, um nome de arquivo às estruturas de dados \emph{Recording} e \emph{Ciphetext} relacionadas àquele arquivo. Disso segue-se que uma edição no conteúdo é mais barato que a alteração no nome do documento, uma vez que no caso do conteúdo somente o hashing e o timestamp são atualizados, enquanto que na renomeação o mapa armazena o arquivo como se fosse um novo, sendo necessário publicar os dados do arquivo e deletar aqueles que estavam disponibilizados.
 
 {\color{ForestGreen} Explicação do  SmartDCPABERequests  (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 
