@@ -567,6 +567,11 @@ A Estrutura \emph{Recording} informa a base de dados na qual o arquivo está hos
 
 {\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
 
+O contrato \emph{Requests} é responsável por lidar com requisições de concessão de atributos.
+Usuários do sistema publicam suas requisições e as autoridades certificadoras podem checar por requisições pendentes e atendê-las ou rejeitá-las.
+Uma requisição pode solicitar a concessão de um ou mais atributos a um mesmo certificador e é consumida quando processada, não sendo possível alterar novamente seu status.
+A transmissão dos atributos ocorre fora da blockchain e pode usar qualquer meio de comunicação considerado seguro entre as partes.
+
 {\color{Magenta} Inserir o código da linha 6 até 35.}
 
 \lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:SmartDCPABERequests}, caption={Dados em SmartDCPABERequests}}
@@ -586,6 +591,9 @@ A Estrutura \emph{Recording} informa a base de dados na qual o arquivo está hos
   bytes32[] attrNames;
  }
 
+ event pendingRequestIndexChanged(uint64 oldIndex, uint64 newIndex);
+ event pendingRequesterIndexChanged(uint64 oldIndex, uint64 newIndex);
+
  mapping (address => address[]) pendingRequesters;
  mapping (address => mapping (address => uint64[]))  pendingRequests;
  mapping (address => mapping (address => KeyRequest[]))  requests;
@@ -593,9 +601,16 @@ A Estrutura \emph{Recording} informa a base de dados na qual o arquivo está hos
 
 {\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.}
 
+A estrutura \emph{KeyRequest} representa uma requisição de atributos, contendo um campo para indicar a situação, marcas temporais da criação e processamento da requisição e uma lista de nomes de atributos representados como sequências de 32 bytes (Bytes32).
+As situações estão listadas no enum \emph{KeyRequestStatus}, e podem ser expandidas para um conjunto maior de situações, conforme a necessidade das entidades que utilizem um sistema assim.
+Dois eventos notificam sobre o processamento de requisições, para que os interessados possam atualizar seu cache local com a blockchain e obter assim o estado mais atualizado das requisições.
+O mapa \emph{requests} usa endereços de certificadores como chave primária para submapas cujas chaves são os endereços de usuários e que levam às listas de requisições feitas por eles.
+O mapa \emph{pendingRequests} segue esta mesma estrutura, com a diferença de apenas armazenar os índices das listas de requisições em \emph{requests} que estão pendentes de processamento.
+O mapa \emph{pendingRequesters} mantém os endereços de usuários com requisições pendentes em listas agregadas por certificador, possibilitando que estes possam iterar pelo mapa \emph{pendingRequests}, obtendo os índices de acesso das requisições de interesse gravadas em \emph{requests}.
+
 {\color{ForestGreen} Explicação do  SmartDCPABEUsers  (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 
-{\color{Magenta} 1 parágrafo para explicar o que faz o contrato (el linhas gerais).}
+{\color{Magenta} 1 parágrafo para expl'icar o que faz o contrato (el linhas gerais).}
 
 {\color{Magenta} Inserir o código da linha 6 até 16.}
 
