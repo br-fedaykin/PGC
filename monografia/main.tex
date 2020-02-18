@@ -610,11 +610,32 @@ O mapa \emph{pendingRequesters} mantém os endereços de usuários com requisiç
 
 {\color{ForestGreen} Explicação do  SmartDCPABEUsers  (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 
-{\color{Magenta} 1 parágrafo para expl'icar o que faz o contrato (el linhas gerais).}
+{\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
+
+O contrato \emph{Users} gerencia o cadastro de usuários passíveis de obter atributos no esquema de criptografia ABE e exercer papeis dentro do deste sistema, implementando funções básicas de inclusão, consulta e checagem de usuários válidos.
+A estrutura \emph{User} atrela dados básicos de identificação a um endereço válido de carteira Ethereum, e instâncias desta estrutura são salvas em um mapa \emph{users}, onde a chave deste mapa é o próprio endereço do usuário.
+A lista \emph{userAddresses} armazena todos os endereços já cadastrados para permitir a iteração, se necessária, sobre as chaves do mapa \emph{users}.
 
 {\color{Magenta} Inserir o código da linha 6 até 16.}
 
+\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:SmartDCPABEUsers}, caption={Dados em SmartDCPABEUsers}}
+\begin{lstlisting}
+ contract SmartDCPABEUsers is Collection {
+
+ struct User {
+  address addr;
+  bytes32 name;
+  bytes32 email;
+ }
+
+ address[] public userAddresses;
+ mapping (address => User) users;
+ uint64 public numUsers;
+\end{lstlisting}
+
 {\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.}
+
+{\color{RoyalBlue} esse parágrafo foi agregado ao anterior porque os dois são pequenos, afinal o código deste contrato é pequeno.}
 
 \subsection{Arquitetura Blockchain}
 
