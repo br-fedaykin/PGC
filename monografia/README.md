@@ -57,10 +57,12 @@
 
 - [x] Explicação do SmartDCPABEAuthority
 - [x] Explicação do SmartDCPABEKeys
-- [ ] Explicação do SmartDCPABEFiles
-- [ ] Explicação do SmartDCPABERequests
-- [ ] Explicação do SmartDCPABEUsers
+- [x] Explicação do SmartDCPABEFiles
+- [x] Explicação do SmartDCPABERequests
+- [x] Explicação do SmartDCPABEUsers
 
 #### 3.4 Arquitetura Blockchain
 
 - [ ] figura simples que mostrando cliente, servidor, e a Blockchain interligados.
+- [ ] Descrição do cliente
+  - [ ] corrigir erro `Package inputenc: Invalid UTF-8 byte sequence.` na palavra "código", próximo à [L658](./main.tex#L658)
