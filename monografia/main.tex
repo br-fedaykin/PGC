@@ -16,6 +16,7 @@
 \usepackage{adjustbox}
 \usepackage{verbatim}
 \usepackage{float}
+\usepackage{lmodern}% http://ctan.org/pkg/lm
 \newcommand{\tabitem}{~~\llap{\textbullet{\ensuremath{\bullet}}}~~}
 \newcommand*{\SignatureAndDate}[4]{%
 	\parbox{7cm}{
@@ -647,6 +648,17 @@ Como mencionado na Seção \ref{sec:visaogeral}, o sistema é composto por 3 com
 {\color{ForestGreen} Explicar implementação do cliente (5 parágrafos). Ver abaixo os 5 parágrafos destrinchados. }
 
 {\color{Magenta} 1 parágrafo para explicar que para realizar a conexão com a Blockchain usou o web3j (explique em 2-3 linhas o web3j).}
+
+\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={lst:conexãoBlockchain}, caption={Código para conexão com a Blockchain usando o web3j}}
+
+\begin{lstlisting}
+ private final Web3j web3j;
+
+ public BlockchainConnection(String networkURL, ...) {
+     // codigo omitido por brevidade
+     web3j = Web3j.build(new HttpService(networkURL));
+ }
+\end{lstlisting}
 
 {\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como realizar a conexão. Explicar cada linha do código. }
 
