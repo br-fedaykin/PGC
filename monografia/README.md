@@ -50,8 +50,11 @@
 #### 3.1 Visão Geral
 
 - [x] Descrever aqui ou na Seção 3.3 que o módulo DCPABE gera atributos que são uma estrutura contendo um nome e dois campos de bytes, entre 138 e 142, que codificam elementos de um Grupo de pareamento gerado pela biblioteca X do java (pesquisar quem gera isso).
+- [x] primeira revisão e melhoria de redação
 
 #### 3.2 Taxonomia das permissões
+
+- [ ] primeira revisão e melhoria de redação
 
 #### 3.3 Contratos inteligentes com CBA
 
@@ -60,6 +63,7 @@
 - [x] Explicação do SmartDCPABEFiles
 - [x] Explicação do SmartDCPABERequests
 - [x] Explicação do SmartDCPABEUsers
+- [ ] primeira revisão e melhoria de redação
 
 #### 3.4 Arquitetura Blockchain
 
