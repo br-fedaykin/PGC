@@ -660,6 +660,8 @@ Como mencionado na Seção \ref{sec:visaogeral}, o sistema é composto por 3 com
 
 {\color{Magenta} 1 parágrafo para explicar que para realizar a conexão com a Blockchain usou o web3j (explique em 2-3 linhas o web3j).}
 
+O Web3j instancia um objeto singleton
+
 \lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={lst:conexãoBlockchain}, caption={Código para conexão com a Blockchain usando o web3j}}
 
 \begin{lstlisting}
@@ -672,6 +674,10 @@ Como mencionado na Seção \ref{sec:visaogeral}, o sistema é composto por 3 com
 \end{lstlisting}
 
 {\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como realizar a conexão. Explicar cada linha do código. }
+
+Uma classe específica dentro do módulo cliente denominada \emph{BlockchainConnection} lida com a interface com a Blockchain.
+A biblioteca Web3j possibilita a conexão, e o principal parâmetro para funcionar é um endereço válido apontando para uma porta socket de um processo executado no computador, um IP na rede local ou mesmo um serviço Web na internet que provenha o acesso à Blockchain.
+Este parâmetro é passado durante a inicialização da classe e é armazenado no cache do programa em futuras conexões.
 
 {\color{Magenta} 1 parágrafo para explicar que para encriptar um documento utilizando atributos usou a dcabe.}
 
