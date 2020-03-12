@@ -660,7 +660,8 @@ Como mencionado na Seção \ref{sec:visaogeral}, o sistema é composto por 3 com
 
 {\color{Magenta} 1 parágrafo para explicar que para realizar a conexão com a Blockchain usou o web3j (explique em 2-3 linhas o web3j).}
 
-O Web3j instancia um objeto singleton
+A Web3j fornece conectividade com diferentes fontes de dados para consulta do estado de transações e envio de novas transações em blockchains compatíveis com o protocolo JSON-RPC Ethereum\footnote{ver \href{https://github.com/ethereum/wiki/wiki/JSON-RPC}{https://github.com/ethereum/wiki/wiki/JSON-RPC}.}, compreendendo a rede principal (\emph{MainNet}), as redes de teste oficiais Ropsten, Rinkeby e Kovan, redes permissionadas usando o Hyperledger Besu ou simulações da rede Ethereum para teste por meio de programas como o Ganache.
+A Web3j se conecta ao provedor de dados por meio de Protocolos HTTP/HTTPS e IPC.
 
 \lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={lst:conexãoBlockchain}, caption={Código para conexão com a Blockchain usando o web3j}}
 
@@ -675,11 +676,10 @@ O Web3j instancia um objeto singleton
 
 {\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como realizar a conexão. Explicar cada linha do código. }
 
-Uma classe específica dentro do módulo cliente denominada \emph{BlockchainConnection} lida com a interface com a Blockchain.
-A biblioteca Web3j possibilita a conexão, e o principal parâmetro para funcionar é um endereço válido apontando para uma porta socket de um processo executado no computador, um IP na rede local ou mesmo um serviço Web na internet que provenha o acesso à Blockchain.
-Este parâmetro é passado durante a inicialização da classe e é armazenado no cache do programa em futuras conexões.
+Dentro do módulo Cliente, a classe \emph{BlockchainConnection} é a responsável por lidar com a Blockchain por meio do Web3j e as classes em Java que representam os Smart Contracts, e exige somente um endereço de rede válido para uma porta no computador ou rede local onde exista comunicação com um programa compatível com a API JSON-RPC do Ethereum, ou para um serviço Web na internet que ofereça a API, tais como os sites Infura e Ethercluster.
+O endereço informado é armazenado no cache do programa para uso em execuções futuras.
 
-{\color{Magenta} 1 parágrafo para explicar que para encriptar um documento utilizando atributos usou a dcabe.}
+{\color{Magenta} 1 parágrafo para explicar que para encriptar um documento utilizando atributos usou a dcpabe.}
 
 {\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como realizar a encriptação. Explicar cada linha do código.}
 
