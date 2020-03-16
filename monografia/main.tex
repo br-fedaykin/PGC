@@ -669,8 +669,8 @@ A Web3j se conecta ao provedor de dados por meio de Protocolos HTTP/HTTPS e IPC.
  private final Web3j web3j;
 
  public BlockchainConnection(String networkURL, ...) {
-     // codigo omitido por brevidade
-     web3j = Web3j.build(new HttpService(networkURL));
+   // codigo omitido por brevidade
+   web3j = Web3j.build(new HttpService(networkURL));
  }
 \end{lstlisting}
 
@@ -681,7 +681,26 @@ O endereço informado é armazenado no cache do programa para uso em execuções
 
 {\color{Magenta} 1 parágrafo para explicar que para encriptar um documento utilizando atributos usou a dcpabe.}
 
+A biblioteca DCPABE desenvolvida em Java possui suporte à operações criptográficas do protocolo ABE em um ambiente com múltiplas autoridades, conforme descrito em \cite{Lewko2011}.
+Ela depende por sua vez da biblioteca \emph{jPBC} (Java Pairing Based Cryptography), a primeira e mais abrangente biblioteca de código aberto para criptografia baseada em emparelhamento em Java e compatível com Android, tendo o objetivo explícito de tanto portar a biblioteca PGC para código nativo em Java quanto de oferecer uma interface para essa biblioteca \cite{DeCaro2011}.
+A DCPABE fornece todo o ferramentário necessário para o uso do esquema ABE, incluindo a geração de parâmetros globais, geração de chaves privadas, públicas e pessoais dos atributos, cifra e deciframento de fluxos de dados.
+Ao criptografar um documento, os parâmetros necessários para a decifragem são serializados e prefixados no arquivo container dos bytes criptografados.
+Esse comportamento foi alterado para produzir um artefato com os mesmos parâmetros que pode ser serializado em JSON,separado do arquivo que contem os bytes criptografados, com a finalidade de poder publicar na Blockchain somente este artefato JSON ao invés de todo o arquivo, tornando o sistema mais viável quanto aos custos de armazenamento.
+
 {\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como realizar a encriptação. Explicar cada linha do código.}
+
+\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={lst:conexãoBlockchain}, caption={Criptografando um arquivo usando a biblioteca DCPABE}}
+
+\begin{lstlisting}
+ public void encrypt(String file, String policy, String[] authorities) {
+   AccessStructure as = AccessStructure.buildFromPolicy(policy);
+   Message m = DCPABE.generateRandomMessage(gp);
+   CiphertextJSON ct = new CiphertextJSON(DCPABE.encrypt(m, as, gp, pks));
+   String path = fc.getUserDirectory(user);
+   r = new Recording(path, file, ct);
+   r.encryptFile(m);
+ }
+\end{lstlisting}
 
 {\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como acessar um contrato inteligente. Explicar cada linha do código.}
 
