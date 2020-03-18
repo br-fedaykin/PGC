@@ -46,6 +46,8 @@
 \title{Relatório de Estágio III}
 
 \renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\lstlistingname}{Código}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{List of \lstlistingname s}% List of Listings -> List of Algorithms
 
 \begin{document}
 \selectlanguage{brazilian}
@@ -212,6 +214,10 @@ Criar um sistema, com base em contratos inteligentes executados em uma Blockchai
 {\color{ForestGreen}Explicar alguns conceitos da CBA (chave pública/privada/etc para que sirva como base do exemplo mostrado no último parágrafo (1 parágrafo).}
 
 {\color{RoyalBlue}Explicar e fazer uma imagem explicando a derivação de atributos em um ambiente multi-autoridade, através do ID, que então gera uma chave mestra privada e uma chave pública, e várias outras chaves privadas particulares derivadas a partir da chave mestra e todas compatíveis com a mesma chave pública.}
+
+{\color{RoyalBlue}Explicar aqui que uma política de acesso deve ser escrito como uma fórmula booleana descrita em termos de atributos e operadores E e OU (ou seja, monotônica)}
+
+{\color{RoyalBlue}Explicar aqui que a política de acesso pode ser convertida em uma matriz que representa a estrutura de acesso de um LSSS (Linear Secret Sharing Scheme) e que isso torna o processo mais eficiente. É o que o artigo de criação do ABE prevê e é o que o esquema DCPABE aplica.}
 
 {\color{ForestGreen}Explicar os benefícios do CBA (2 parágrafos).}
 
@@ -682,25 +688,34 @@ O endereço informado é armazenado no cache do programa para uso em execuções
 {\color{Magenta} 1 parágrafo para explicar que para encriptar um documento utilizando atributos usou a dcpabe.}
 
 A biblioteca DCPABE desenvolvida em Java possui suporte à operações criptográficas do protocolo ABE em um ambiente com múltiplas autoridades, conforme descrito em \cite{Lewko2011}.
-Ela depende por sua vez da biblioteca \emph{jPBC} (Java Pairing Based Cryptography), a primeira e mais abrangente biblioteca de código aberto para criptografia baseada em emparelhamento em Java e compatível com Android, tendo o objetivo explícito de tanto portar a biblioteca PGC para código nativo em Java quanto de oferecer uma interface para essa biblioteca \cite{DeCaro2011}.
+Ela depende por sua vez da biblioteca \emph{jPBC} (Java Pairing Based Cryptography), a primeira e mais abrangente biblioteca de código aberto para criptografia baseada em emparelhamento em Java e compatível com Android, tendo o objetivo explícito de portar a biblioteca PGC\footnote{mais informações em \href{https://crypto.stanford.edu/pbc/}{https://crypto.stanford.edu/pbc/}}, originalmente escrita em C, para código nativo em Java e oferecer uma interface para essa biblioteca \cite{DeCaro2011}.
 A DCPABE fornece todo o ferramentário necessário para o uso do esquema ABE, incluindo a geração de parâmetros globais, geração de chaves privadas, públicas e pessoais dos atributos, cifra e deciframento de fluxos de dados.
-Ao criptografar um documento, os parâmetros necessários para a decifragem são serializados e prefixados no arquivo container dos bytes criptografados.
-Esse comportamento foi alterado para produzir um artefato com os mesmos parâmetros que pode ser serializado em JSON,separado do arquivo que contem os bytes criptografados, com a finalidade de poder publicar na Blockchain somente este artefato JSON ao invés de todo o arquivo, tornando o sistema mais viável quanto aos custos de armazenamento.
+Ao criptografar um documento, um objeto do tipo \emph{Ciphertext} contendo os parâmetros necessários para a decifragem é serializado e escrito no início do arquivo container dos bytes criptografados.
+Esse comportamento foi alterado para produzir um artefato equivalente, serializável em JSON, escrito em um arquivo separado daquele que contem os bytes criptografados, com a finalidade de poder publicar na Blockchain somente este artefato JSON, ao invés de todo o arquivo, e assim reduzir os custos de transação e viabilizar o uso da rede Ethereum.
 
 {\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como realizar a encriptação. Explicar cada linha do código.}
 
-\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={lst:conexãoBlockchain}, caption={Criptografando um arquivo usando a biblioteca DCPABE}}
+\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={lst:métodoCriptografia}, caption={Criptografando um arquivo usando a biblioteca DCPABE}}
 
 \begin{lstlisting}
  public void encrypt(String file, String policy, String[] authorities) {
+   // codigo omitido por brevidade
    AccessStructure as = AccessStructure.buildFromPolicy(policy);
    Message m = DCPABE.generateRandomMessage(gp);
    CiphertextJSON ct = new CiphertextJSON(DCPABE.encrypt(m, as, gp, pks));
-   String path = fc.getUserDirectory(user);
    r = new Recording(path, file, ct);
    r.encryptFile(m);
  }
 \end{lstlisting}
+
+% O objeto \emph{as}, instância da classe \emph{AccessStructure}, armazena uma representação matricial da fórmula boooleana descrita em \emph{policy}, produzindo uma estrutura de acesso de um \emph{LSSS} (Linear Secret Sharing Scheme), tornando a fórmula um elemento matricial vetorial compatível com a estrutura matemática necessária ao funcionamento dos algoritmos definidos pelo DCPABE.
+
+A classe \emph{Client} implementa a função \emph{encrypt}, em parte exposto sessão de código \ref{lst:métodoCriptografia}.
+A função encrypt exige os parâmetros \emph{file} contendo o nome do arquivo a ser criptografado, \emph{policy} contendo uma política de acesso e o vetor \emph{authorities} contendo o ID das autoridades dos atributos relacionados em \emph{policy}.
+Na linha 3 o objeto \emph{as}, instância da classe \emph{AccessStructure}, armazena uma representação matricial gerada a partir da fórmula boooleana descrita em \emph{policy}, tornando a fórmula em um elemento matricial vetorial compatível com a estrutura matemática necessária ao funcionamento dos algoritmos definidos pelo DCPABE.
+Na linha 4 é definido como mensagem \emph{m} um elemento aleatório pertencente ao grupo do aparelhamento definido pelos parâmetros globais \emph{gp} -- o mesmo utilizado para a geração de chaves privas dos atributos.
+
+Na linha 5 a mensagem m é ocultada sob a criptografia ABE utilizando a matriz \emph{as}, a mensagem \emph{m}, os parâmetros globais \emph{gp} e um vetor \emph{pks} com as chaves públicas de todos os atributos mencionados em \emph{policy}, retornando uma instância equivalente à da classe \emph{Ciphertext}, com a capacidade de ser serializada em JSON, e na linha 7 o arquivo é cifrado usando um algoritmo AES\footnote{Especificamente, é usada a classe AESEngine da biblioteca Bouncy Castle com configuração padrão. Ver \href{https://people.eecs.berkeley.edu/~jonah/bc/org/bouncycastle/crypto/engines/AESEngine.html}{https://people.eecs.berkeley.edu/~jonah/bc/org/bouncycastle/crypto/engines/AESEngine.html}} e a mensagem \emph{m} como chave. A descriptografia consiste em fornecer as chaves pessoais dos mesmos atributos usados na criptografia, aplicando o esquema ABE para obter a mensagem \emph{m} e usando-a como chave do algoritmo AES para descriptografar o conteúdo desejado.
 
 {\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como acessar um contrato inteligente. Explicar cada linha do código.}
 
@@ -717,11 +732,11 @@ Esse comportamento foi alterado para produzir um artefato com os mesmos parâmet
 
 {\color{Magenta} 1 parágrafo para explicar que a Blockchain utilizada foi a testnet (explicar que existe a main e a testnet, onde a testnet é utilizada por desenvolvedores serve para realizar implantações de teste sem dispender recursos financeiros.}
 
-{\color{Magenta} 1 parágrafo para explicar que a rede Blockchain foi implantada em um computador usando o Ganache. Explicar o que é o ganache e o que entrega a implantação (X mineradores? X fullnodes, etc).}
+{\color{Magenta} 1 parágrafo para explicar que a rede Blockchain foi implantada em um computador usando o Ganache. Explicar o que é o ganache e o que entrega a implantação (X mineradores? X full nodes, etc).}
 
 {\color{Magenta} 1 parágrafo para explicar que a Blockchain possui 5 contratos inteligentes mencionados na Seção anterior.}
 
-{\color{Magenta} 1 parágrafo para explicar que a implantação dos contratos inteligentes usou o metamask. Explicar o que é o Metamask e o que especificamente você usou dele: ver identificadores das transações, conversão de .sol para .abi. Explicar o que é .abi.}
+{\color{Magenta} 1 parágrafo para explicar que a implantação dos contratos inteligentes usou o Metamask. Explicar o que é o Metamask e o que especificamente você usou dele: ver identificadores das transações, conversão de .sol para .abi. Explicar o que é .abi.}
 
 % -------------------------------------------------------------------- %
 \newpage
