@@ -710,7 +710,7 @@ Esse comportamento foi alterado para produzir um artefato equivalente, serializ�
 
 % O objeto \emph{as}, instância da classe \emph{AccessStructure}, armazena uma representação matricial da fórmula boooleana descrita em \emph{policy}, produzindo uma estrutura de acesso de um \emph{LSSS} (Linear Secret Sharing Scheme), tornando a fórmula um elemento matricial vetorial compatível com a estrutura matemática necessária ao funcionamento dos algoritmos definidos pelo DCPABE.
 
-A classe \emph{Client} implementa a função \emph{encrypt}, em parte exposto sessão de código \ref{lst:métodoCriptografia}.
+A classe \emph{Client} implementa a função \emph{encrypt}, em parte exposto seção de código \ref{lst:métodoCriptografia}.
 A função encrypt exige os parâmetros \emph{file} contendo o nome do arquivo a ser criptografado, \emph{policy} contendo uma política de acesso e o vetor \emph{authorities} contendo o ID das autoridades dos atributos relacionados em \emph{policy}.
 Na linha 3 o objeto \emph{as}, instância da classe \emph{AccessStructure}, armazena uma representação matricial gerada a partir da fórmula boooleana descrita em \emph{policy}, tornando a fórmula em um elemento matricial vetorial compatível com a estrutura matemática necessária ao funcionamento dos algoritmos definidos pelo DCPABE.
 Na linha 4 é definido como mensagem \emph{m} um elemento aleatório pertencente ao grupo do aparelhamento definido pelos parâmetros globais \emph{gp} -- o mesmo utilizado para a geração de chaves privas dos atributos.
@@ -718,6 +718,26 @@ Na linha 4 é definido como mensagem \emph{m} um elemento aleatório pertencente
 Na linha 5 a mensagem m é ocultada sob a criptografia ABE utilizando a matriz \emph{as}, a mensagem \emph{m}, os parâmetros globais \emph{gp} e um vetor \emph{pks} com as chaves públicas de todos os atributos mencionados em \emph{policy}, retornando uma instância equivalente à da classe \emph{Ciphertext}, com a capacidade de ser serializada em JSON, e na linha 7 o arquivo é cifrado usando um algoritmo AES\footnote{Especificamente, é usada a classe AESEngine da biblioteca Bouncy Castle com configuração padrão. Ver \href{https://people.eecs.berkeley.edu/~jonah/bc/org/bouncycastle/crypto/engines/AESEngine.html}{https://people.eecs.berkeley.edu/~jonah/bc/org/bouncycastle/crypto/engines/AESEngine.html}} e a mensagem \emph{m} como chave. A descriptografia consiste em fornecer as chaves pessoais dos mesmos atributos usados na criptografia, aplicando o esquema ABE para obter a mensagem \emph{m} e usando-a como chave do algoritmo AES para descriptografar o conteúdo desejado.
 
 {\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como acessar um contrato inteligente. Explicar cada linha do código.}
+
+\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={lst:acessoSmartContract}, caption={Acessando um Smart Contract na Blockchain}}
+
+\begin{lstlisting}
+ private CiphertextJSON getCiphertext(String user, String fileName) {
+   Tuple5<String, byte[], byte[], byte[], byte[]> ciphertextData;
+   try {
+     ciphertextData = contractFiles.getCiphertext(user, fileName).send();
+     if (!ciphertextData.getValue1().equals("")) {
+       // codigo usando os dados retornados pelo contrato
+     }
+   } catch (Exception e) { ... }
+ }
+\end{lstlisting}
+
+O Acesso aos Smart Contracts em Java é intermediado por classes "wrappers", isto é, classes geradas automaticamente a partir da compilação de um Smart Contract em EVM Code e da ABI \emph{(Application Binary Interface)} de suas funções e preparado para interagir com o contrato.
+Estas classes contém métodos correspondentes às funções nos Smart Contract, possuindo dois métodos a mais, um para implantar o contrato na rede, e outro para carregar o contrato, caso já tenha sido publicado na EVM.
+Uma vez inicializado, a interação se dá como exemplificado na sessão de código \ref{lst:acessoSmartContract}. Na linha 4 o método \emph{getCiphertext} do objeto \emph{contractFiles}, wrapper do contrato \emph{SmartDCPABEFiles}, recebe os argumentos necessários à função, prepara um objeto que representa uma chamada remota ao contrato, que é enviada à rede Ethereum por meio da invocação do método \emph{send()} ao fim da linha.
+Funções de Smart Contracts podem retornar dados, e se for o caso, serão inseridos em um objeto do tipo \emph{TupleN}, sendo N o número de parâmetros retornados. Este objeto tem uma função \emph{getValueN()} para acessar o n-ésimo valor de retorno do Smart Contract.
+A EVM por padrão não retorna objetos nulos e nem gera erros de acesso de elementos fora do array, ao invés disso ele retorna o objeto do tipo requerido, ou o struct, atribuindo a cada variável relacionada um valor que seja equivalente ao false em termos booleanos.
 
 {\color{ForestGreen} Explicar implementação do servidor (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados. }
 
