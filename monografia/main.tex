@@ -329,9 +329,9 @@ Visando ampliar o acesso à tecnologia, a Fundação Ethereum desenvolveu també
 {\color{ForestGreen}Explicar o código de um contrato simples que terá o atributo idPaciente, um map de urls de registros médicos e um método addUrl. (1 parágrafo). Explicar que esse contrato é escrito em um arquivo com extensão .sol}
 
 Com Solidity é possível descrever tanto funções quanto estruturas de dados temporárias ou armazenadas na blockchain.
-A coleção de dados armazenados na Blockchain compõe o que se denomina como estado da EVM. A Lista \ref{lst:exemploSmartContract} contém um exemplo de uso de Solidity, implementando um contrato que disponibiliza o acesso de resultado de exames a pacientes.
+A coleção de dados armazenados na Blockchain compõe o que se denomina como estado da EVM. A Lista \ref{cod:exemploSmartContract} contém um exemplo de uso de Solidity, implementando um contrato que disponibiliza o acesso de resultado de exames a pacientes.
 
-\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:exemploSmartContract}, caption={Exemplo de Contrato Inteligente}}
+\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={cod:exemploSmartContract}, caption={Exemplo de Contrato Inteligente}}
 \begin{lstlisting}
  pragma solidity ^0.5.1;
  pragma experimental ABIEncoderV2;
@@ -485,7 +485,7 @@ A escolha do ID visa impossibilitar um atacante de se passar pela entidade certi
 
 {\color{Magenta} Inserir o código da linha 7 até 20.}
 
-\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:SmartDCPABEAuthority}, caption={Dados em SmartDCPABEAuthority}}
+\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABEAuthority}, caption={Dados em SmartDCPABEAuthority}}
 \begin{lstlisting}
  contract SmartDCPABEAuthority is Collection {
 
@@ -514,7 +514,7 @@ Para fins de prototipagem foram implementadas somente as operação de inclusão
 
 {\color{Magenta} Inserir o código da linha 6 até 24.}
 
-\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:SmartDCPABEKeys}, caption={Dados em SmartDCPABEKeys}}
+\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABEKeys}, caption={Dados em SmartDCPABEKeys}}
 \begin{lstlisting}
  contract SmartDCPABEKeys is Collection {
 
@@ -552,7 +552,7 @@ O contrato \emph{Files} mantém disponível na blockchain informações sobre a 
 
 {\color{Magenta} Inserir o código da linha 6 até 39.}
 
-\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:SmartDCPABEFiles}, caption={Dados em SmartDCPABEFiles}}
+\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABEFiles}, caption={Dados em SmartDCPABEFiles}}
 \begin{lstlisting}
  contract SmartDCPABEFiles is Collection {
 
@@ -600,7 +600,7 @@ A transmissão dos atributos ocorre fora da blockchain e pode usar qualquer meio
 
 {\color{Magenta} Inserir o código da linha 6 até 35.}
 
-\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:SmartDCPABERequests}, caption={Dados em SmartDCPABERequests}}
+\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABERequests}, caption={Dados em SmartDCPABERequests}}
 \begin{lstlisting}
  contract SmartDCPABERequests is Collection {
 
@@ -644,7 +644,7 @@ A lista \emph{userAddresses} armazena todos os endereços já cadastrados para p
 
 {\color{Magenta} Inserir o código da linha 6 até 16.}
 
-\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={lst:SmartDCPABEUsers}, caption={Dados em SmartDCPABEUsers}}
+\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABEUsers}, caption={Dados em SmartDCPABEUsers}}
 \begin{lstlisting}
  contract SmartDCPABEUsers is Collection {
 
@@ -677,7 +677,7 @@ Como mencionado na Seção \ref{sec:visaogeral}, o sistema é composto por 3 com
 A Web3j fornece conectividade com diferentes fontes de dados para consulta do estado de transações e envio de novas transações em blockchains compatíveis com o protocolo JSON-RPC Ethereum\footnote{ver \href{https://github.com/ethereum/wiki/wiki/JSON-RPC}{https://github.com/ethereum/wiki/wiki/JSON-RPC}.}, compreendendo a rede principal (\emph{MainNet}), as redes de teste oficiais Ropsten, Rinkeby e Kovan, redes permissionadas usando o Hyperledger Besu ou simulações da rede Ethereum para teste por meio de programas como o Ganache.
 A Web3j se conecta ao provedor de dados por meio de Protocolos HTTP/HTTPS e IPC.
 
-\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={lst:conexãoBlockchain}, caption={Código para conexão com a Blockchain usando o web3j}}
+\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={cod:conexãoBlockchain}, caption={Código para conexão com a Blockchain usando o web3j}}
 
 \begin{lstlisting}
  private final Web3j web3j;
@@ -703,7 +703,7 @@ Esse comportamento foi alterado para produzir um artefato equivalente, serializ�
 
 {\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como realizar a encriptação. Explicar cada linha do código.}
 
-\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={lst:métodoCriptografia}, caption={Criptografando um arquivo usando a biblioteca DCPABE}}
+\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={cod:métodoCriptografia}, caption={Criptografando um arquivo usando a biblioteca DCPABE}}
 
 \begin{lstlisting}
  public void encrypt(String file, String policy, String[] authorities) {
@@ -718,7 +718,7 @@ Esse comportamento foi alterado para produzir um artefato equivalente, serializ�
 
 % O objeto \emph{as}, instância da classe \emph{AccessStructure}, armazena uma representação matricial da fórmula boooleana descrita em \emph{policy}, produzindo uma estrutura de acesso de um \emph{LSSS} (Linear Secret Sharing Scheme), tornando a fórmula um elemento matricial vetorial compatível com a estrutura matemática necessária ao funcionamento dos algoritmos definidos pelo DCPABE.
 
-A classe \emph{Client} implementa a função \emph{encrypt}, em parte exposto sessão de código \ref{lst:métodoCriptografia}.
+A classe \emph{Client} implementa a função \emph{encrypt}, em parte exposto seção de código \ref{cod:métodoCriptografia}.
 A função encrypt exige os parâmetros \emph{file} contendo o nome do arquivo a ser criptografado, \emph{policy} contendo uma política de acesso e o vetor \emph{authorities} contendo o ID das autoridades dos atributos relacionados em \emph{policy}.
 Na linha 3 o objeto \emph{as}, instância da classe \emph{AccessStructure}, armazena uma representação matricial gerada a partir da fórmula boooleana descrita em \emph{policy}, tornando a fórmula em um elemento matricial vetorial compatível com a estrutura matemática necessária ao funcionamento dos algoritmos definidos pelo DCPABE.
 Na linha 4 é definido como mensagem \emph{m} um elemento aleatório pertencente ao grupo do aparelhamento definido pelos parâmetros globais \emph{gp} -- o mesmo utilizado para a geração de chaves privas dos atributos.
@@ -726,6 +726,33 @@ Na linha 4 é definido como mensagem \emph{m} um elemento aleatório pertencente
 Na linha 5 a mensagem m é ocultada sob a criptografia ABE utilizando a matriz \emph{as}, a mensagem \emph{m}, os parâmetros globais \emph{gp} e um vetor \emph{pks} com as chaves públicas de todos os atributos mencionados em \emph{policy}, retornando uma instância equivalente à da classe \emph{Ciphertext}, com a capacidade de ser serializada em JSON, e na linha 7 o arquivo é cifrado usando um algoritmo AES\footnote{Especificamente, é usada a classe AESEngine da biblioteca Bouncy Castle com configuração padrão. Ver \href{https://people.eecs.berkeley.edu/~jonah/bc/org/bouncycastle/crypto/engines/AESEngine.html}{https://people.eecs.berkeley.edu/~jonah/bc/org/bouncycastle/crypto/engines/AESEngine.html}} e a mensagem \emph{m} como chave. A descriptografia consiste em fornecer as chaves pessoais dos mesmos atributos usados na criptografia, aplicando o esquema ABE para obter a mensagem \emph{m} e usando-a como chave do algoritmo AES para descriptografar o conteúdo desejado.
 
 {\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como acessar um contrato inteligente. Explicar cada linha do código.}
+
+\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={cod:acessoSmartContract}, caption={Acessando um Smart Contract na Blockchain}}
+
+\begin{lstlisting}
+ private CiphertextJSON getCiphertext(String user, String fileName) {
+   Tuple5<String, byte[], byte[], byte[], byte[]> ciphertextData;
+   try {
+     ciphertextData = contractFiles.getCiphertext(user, fileName).send();
+     if (!ciphertextData.getValue1().equals("")) {
+       // codigo usando os dados retornados pelo contrato
+     }
+   } catch (Exception e) { ... }
+ }
+\end{lstlisting}
+
+O Acesso aos Smart Contracts em Java é intermediado por classes "wrappers", isto é, classes geradas automaticamente a partir do EVM Code e da ABI \emph{(Application Binary Interface)} de Smart Contracts para interação com o contrato.
+Estas classes contém métodos que correspondem às funções nos Smart Contract, possuindo dois métodos a mais, um para implantar o contrato na EVM e outro para carregar o contrato, caso já tenha sido implantado.
+Uma vez inicializado, a interação ocorre como exemplifica a sessão de código \ref{cod:acessoSmartContract}.
+Na linha 4 o método \emph{getCiphertext} do objeto \emph{contractFiles}, wrapper do contrato \emph{SmartDCPABEFiles}, recebe os argumentos necessários à função, prepara um objeto que representa uma chamada remota ao contrato, que é enviada à rede Ethereum por meio da invocação do método \emph{send()} ao fim da linha.
+
+Funções de Smart Contracts podem retornar dados, e se for o caso, serão inseridos em um objeto do tipo \emph{TupleN}, sendo N o número de parâmetros retornados. Este objeto possui métodos na forma \emph{getValueN()} para acessar o n-ésimo valor de retorno do Smart Contract.
+A checagem feita na linha 5 é necessária para identificar se o objeto retornado pelo Smart Contract é vazio.
+Isto é necessário porque a implementação da EVM não possui um elemento nulo como na maioria das linguagens mais populares, e também não suspende a execução e retorna um erro quando tenta-se acessar uma chave inexistente de um mapa.
+Quando a EVM encontra uma variável indefinida ou inexistente, seu comportamento padrão é retornar um valor do mesmo tipo da variável que corresponda ao valor FALSO de uma variável booleana.
+Sem um mecanismo de erro ou identificação de valores nulos, torna-se necessário checar o valor de alguma das variáveis recebidas cujo valor não possa ser equivalente ao FALSO booleano.
+No código \ref{cod:acessoSmartContract}, a variável escolhida é \emph{policy}, que ocupa a posição 1 da tupla e que nunca pode ser igual a uma string vazia, visto que isto significaria que o conteúdo não está criptografado, necessariamente significando que o valor de retorno se refere a valores nulos ou inexistentes.
+Confirmado que os dados recebidos realmente existem, estes são processados conforme a necessidade, no escopo aninhado à verificação, na linha 6.
 
 {\color{ForestGreen} Explicar implementação do servidor (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados. }
 

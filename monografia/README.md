@@ -34,18 +34,18 @@
 
 #### 2.3 Contratos Inteligentes no Ethereum
 
-- [ ] origem da ideia por Szabo
+- [x] origem da ideia por Szabo
 - [ ] utilidade, benefícios
-- [ ] introdução à implementação no Ethereum
-  - [ ] o que é EVM
-  - [ ] o que é Solidity
-  - [ ] exemplo de Smart Contract
+- [x] introdução à implementação no Ethereum
+  - [x] o que é EVM
+  - [x] o que é Solidity
+  - [x] exemplo de Smart Contract
 
 ### 3. Sistema Proposto
 
 - [ ] primeira revisão e melhoria de redação
 - [ ] incluir na descrição do servidor que ele implementa política criptográfica Zero-Knowledge <https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof>, <https://medium.com/iryo-network/why-now-is-the-right-time-to-deploy-zero-knowledge-encryption-9bd26c5be4ca>
-- [ ] Figura dos principais componentes em alto nível
+- [x] Figura dos principais componentes em alto nível
 
 #### 3.1 Visão Geral
 
@@ -54,6 +54,7 @@
 
 #### 3.2 Taxonomia das permissões
 
+- [ ] passar figura da taxonomia a limpo
 - [ ] primeira revisão e melhoria de redação
 
 #### 3.3 Contratos inteligentes com CBA
@@ -68,5 +69,7 @@
 #### 3.4 Arquitetura Blockchain
 
 - [ ] figura simples que mostrando cliente, servidor, e a Blockchain interligados.
-- [ ] Descrição do cliente
+- [x] Descrição do cliente
   - [ ] corrigir erro `Package inputenc: Invalid UTF-8 byte sequence.` na palavra "código", próximo à [L658](./main.tex#L658)
+- [ ] Descrição do servidor
+- [ ] Descrição da rede Ethereum e ambiente de desenvolvimento
