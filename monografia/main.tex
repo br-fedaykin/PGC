@@ -17,6 +17,7 @@
 \usepackage{verbatim}
 \usepackage{float}
 \usepackage{lmodern}% http://ctan.org/pkg/lm
+\usepackage{svg}
 \newcommand{\tabitem}{~~\llap{\textbullet{\ensuremath{\bullet}}}~~}
 \newcommand*{\SignatureAndDate}[4]{%
 	\parbox{7cm}{
@@ -311,7 +312,7 @@ Essas ferramentas elevam a expressividade e capacidade da Blockchain como uma pl
 
 {\color{ForestGreen}Explicar para que servem e listar benefícios. (1 parágrafo).}
 
-O conceito de \emph{Smart Contract} antecede o advento da blockchain, vislumbrando a possibilidade  de tornar um acordo formal (i.e. um contrato) firmado entre duas ou mais partes em um conjunto de regras computáveis que podem ser, portanto, embutidos no software ou hardware de propriedades com valor e que são controladas por meios digitais, com protocolos estabelecidos para que as partes possam interagir com as regras e desempanhar seus papéis.
+O conceito de \emph{Smart Contract} antecede o advento da blockchain, vislumbrando a possibilidade  de tornar um acordo formal (i.e. um contrato) firmado entre duas ou mais partes em um conjunto de regras computáveis que podem ser, portanto, embutidos no software ou hardware de propriedades com valor e que são controladas por meios digitais, com protocolos estabelecidos para que as partes possam interagir com as regras e desempenhar seus papéis.
 Isso possibilita a execução automática do contrato sem a necessidade de intermediários, reduzindo a necessidade de confiança em terceiros e os custos de transação \cite{Bartoletti2019, Szabo1996}.
 O Ethereum foi o primeiro e mais bem-sucedido projeto baseado em Blockchain voltado especificamente para a execução de Smart Contracts, fornecendo uma linguagem de programação turing-completa com suporte a funções criptográficas e de consulta de metadados da blockchain, permitindo expressar contratos na forma de programas que podem ser publicados na rede Ethereum e com os quais usuários e outros contratos podem interagir.
 
@@ -323,7 +324,7 @@ Essa mecânica incentiva um uso consciente da capacidade computacional da rede, 
 {\color{ForestGreen}Explicar que a linguagem utilizada é denominada Solidity. Explicar o que é solidity. (1 parágrafo).}
 
 A linguagem na qual Smart Contracts são publicados na rede Ethereum se chama \emph{Ethereum Virtual Machine code (EVM code)} --- uma linguagem de baixo nível baseada em pilhas, similar à linguagem \emph{Forth}.
-Visando ampliar o acesso à tecnologia, a Fundação Ethereum desenvolveu também linguagens de programação de alto nível, com sintaxes similares às linguagens mais utilizadas no mercado, com compiladores para produzir EVM code a partir delas. O \emph{Solidity} é uma destas linguagens, com sintaxe similar a Java e C\texttt{++}, dispondo de um compilador com parâmetros configuráveis e um crescente ecossistema composto por padrões de desenvolvimento, bibliotecas e ferramentas de desenvolvimento\footnote{Para se inteirar do ecossistema Solidity, veja \href{https://github.com/bkrem/awesome-solidity}{https://github.com/bkrem/awesome-solidity} ou outras listas publicadas na internet. Entre as bibliotecas, destacam-se a \emph{\href{https://openzeppelin.com/}{OpenZeppelin}}, \emph{\href{https://github.com/dapphub/dappsys}{Dappsys}} e \emph{\href{https://github.com/modular-network/ethereum-libraries}{Modular Libraries}} por atualmente possuírem as maiores bases de usuários, segundo o site \emph{GitHub}.}, destancando-se o ambiente de desenvolvimento e implantação de Smart Contracts \emph{Remix}, utilizada para codificar, depurar e implantar os Smart Contracts do protótipo deste trabalho em redes de teste Ethereum.
+Visando ampliar o acesso à tecnologia, a Fundação Ethereum desenvolveu também linguagens de programação de alto nível, com sintaxes similares às linguagens mais utilizadas no mercado, com compiladores para produzir EVM code a partir delas. O \emph{Solidity} é uma destas linguagens, com sintaxe similar a Java e C\texttt{++}, dispondo de um compilador com parâmetros configuráveis e um crescente ecossistema composto por padrões de desenvolvimento, bibliotecas e ferramentas de desenvolvimento\footnote{Para se inteirar do ecossistema Solidity, veja \href{https://github.com/bkrem/awesome-solidity}{https://github.com/bkrem/awesome-solidity} ou outras listas publicadas na internet. Entre as bibliotecas, destacam-se a \emph{\href{https://openzeppelin.com/}{OpenZeppelin}}, \emph{\href{https://github.com/dapphub/dappsys}{Dappsys}} e \emph{\href{https://github.com/modular-network/ethereum-libraries}{Modular Libraries}} por atualmente possuírem as maiores bases de usuários, segundo o site \emph{GitHub}.}, destacando-se o ambiente de desenvolvimento e implantação de Smart Contracts \emph{Remix}, utilizada para codificar, depurar e implantar os Smart Contracts do protótipo deste trabalho em redes de teste Ethereum.
 
 {\color{ForestGreen}Explicar o código de um contrato simples que terá o atributo idPaciente, um map de urls de registros médicos e um método addUrl. (1 parágrafo). Explicar que esse contrato é escrito em um arquivo com extensão .sol}
 
@@ -405,6 +406,13 @@ O Web3j fornece a interface para a conexão por meio de socket a um provedor de 
 
 {\color{ForestGreen}Figura dos principais componentes em alto nível: programa cliente (exemplo celular ou notebook), servidor de armazenamento de arquivos; blockchain ethereum; contratos inteligentes; servidor de chaves de permissões.}
 
+\begin{figure}[H]
+  \centering
+  \includesvg[width=1.1\linewidth]{images/diagrama-DCPABE.svg}
+  \caption{Diagrama do sistema: (1) Geração de chaves privadas, públicas e pessoais de atributos, (2) aplicação de póliticas de acesso em massa em prontuários eletrônicos de pacientes (PEP), (3) Smart Contract de gestão de chaves públicas de atributos recebe novas chaves e as disponibiliza para consulta, (4) Smart Contract de gestão de arquivos cadastra novos arquivos relacionados a um usuário e permite a consulta de metadados que contém informações sobre o servidor em que os dados estão hospedados, (5) um servidor hospeda os dados criptografados, (6) o usuário pode consultar metadados sobre um arquivo, requisitá-lo ao servidor e descriptografar localmente, consultar novas chaves de atributos e atualizar tanto o conteúdo do documento quanto a política de acesso, comunicando a atualização aos Smart Contracts e servidores de arquivos. A linha tracejada indica uma conexão estabelecida em comum acordo entre as partes, podendo ser um canal seguro via web e }
+  \label{fig:diagramaDCPABE}
+\end{figure}
+
 {\color{ForestGreen}Explicar um cenário de uso passo-a-passo (exemplo, milestone 1, mas com permissões direcionadas ao contexto de saúde, por exemplo um paciente quer dar permissão de acesso a médicos cardiologistas) (2 parágrafos)}.
 
 O protótipo funcionaria então da seguinte forma: Uma paciente de nome Alice receberia um documento digital, tal como um encaminhamento ou exame, e precisa juntar ele ao seu prontuário médico. Ela utiliza o módulo cliente para criptografar o documento usando um esquema criptográfico ABE, cifrando o documento de acordo com uma política de acesso que ela tenha escolhido ou concordado em usar.
@@ -470,7 +478,7 @@ Foram desenvolvidos cinco contratos inteligentes que permitem a autenticação, 
 
 {\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
 
-O contrato \emph{Authority} registra na Blockchain as entidades certificadoras disponíveis no sistema, tornando público seu endereço público na Ethereum, associando dados de indentificação e a quantidade de atributos que a entidade já publicou.
+O contrato \emph{Authority} registra na Blockchain as entidades certificadoras disponíveis no sistema, tornando público seu endereço público na Ethereum, associando dados de identificação e a quantidade de atributos que a entidade já publicou.
 o ID usado para derivar as chaves privadas dos atributos no esquema ABE é a chave privada que corresponde à chave pública do Ethereum.
 Esse esquema permite que uma entidade possa ser identificável de forma única sem a necessidade de controle centralizada sobre o cadastro de novas unidades.
 A escolha do ID visa impossibilitar um atacante de se passar pela entidade certificadora, uma vez que não há método computacionalmente viável para recuperar a chave privada de um endereço Ethereum a partir de uma chave pública.
