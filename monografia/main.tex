@@ -758,10 +758,29 @@ Confirmado que os dados recebidos realmente existem, estes são processados conf
 
 {\color{Magenta} 1 parágrafo para explicar que o servidor utiliza REST para prover os serviços via web  (explique em 2-3 o que é REST).}
 
+O módulo do servidor conta com uma estrutura padrão de acordo com os princípios REST, ou seja, oferece uma API acessível (via protocolo HTTP) com métodos GET, POST e PUT, atribui URIs a todos os recursos sob gestão do servidor e pode executar com sucesso as requisições sem precisar gerenciar o estado de cada conexão realizada, i.e., possui um modelo de comunicação \emph{stateless}.
+O método DELETE não é implementado porque o sistema proposto é contextualizado e modelado para manter o registro permanecente e inviolável de dados de pacientes médicos, não havendo justificativa para a exclusão dos dados, uma vez que o sigilo é preservado e operações de atualização de dados são permitidas nos cenários onde for preciso atualizar ou corrigir os dados armazenados.
+O módulo cliente utiliza a classe \emph{ServerConnection} para encapsular o acesso ao servidor, que foi executado localmente durante todas as fases de desenvolvimento e experimentação do protótipo.
+
 {\color{Magenta} 1 parágrafo para explicar que o servidor possui o serviço para inserir um documento e para recuperar um documento.}
+
+a API disponível permite o envio, substituição e recuperação de arquivos enviados ao servidor.
+As URIs dos arquivos no servidor são construídas a partir de hashes SHA-256 gerados aleatoriamente, sendo gerados e enviados ao cliente como resposta de uma requisição sinalizando o envio de um novo arquivo para o servidor.
+Sendo exigido para a publicação na Blockchain, o cliente precisa informar este hash que passa a ser tratado como uma chave de acesso para o arquivo no servidor, junto com a identificação do servidor e outros dados, conforme as estruturas de dados definidas no contrato SmartDCPABEFiles exigem (ver código \ref{cod:SmartDCPABEFiles}).
+Usuários do sistema interessados no arquivo acessam seus metadados na Blockchain, entre eles a identificação do servidor e a chave que compõe a URI.
+A partir daí o cliente pode montar a URL da requisição do arquivo e obtê-lo do servidor.
 
 {\color{Magenta} 1 parágrafo para explicar que o servidor insere e recupera os prontuários eletrônicos de pacientes diretamente do seu sistema de arquivos advindos das requisições web.}
 
+O servidor foi implementado para salvar os arquivos diretamente em seu sistema de arquivos local, sem criptografia adicional sobre o conteúdo uma vez que este já é enviado criptografado pelo cliente, restringindo acessos não autorizados por terceiros.
+O fato do arquivo ser entregue sempre que requisitado a princípio não apresenta violações à privacidade e segurança dos dados, uma vez que está criptografado e só poderá ser decifrado por quem possua os atributos compatíveis com a política de acesso, porém é possível que um atacante escolha acumular arquivos sob sua posse e aguardar pela descoberta de vulnerabilidades críticas nas bibliotecas de criptografia que possibilitariam, no pior cenário possível, a quebra da criptografia. A fim de evitar isso, pode-se acrescentar desafios criptográficos que provem que o requisitante realmente possui os atributos necessários para decifrar o arquivo.
+
+Um esquema inspirado no conceito da Prova de Conhecimento-Zero \emph{(Zero Knowledge-Proof - ZPK)}, onde um verificador (o servidor) pode se "convencer" que um provador (o cliente) realmente possui as credenciais necessárias para acessar o arquivo, sem com isso expor suas chaves ou ter que informar sua identidade para deixar a cargo do servidor a verificação na Blockchain dos atributos concedidos ao usuário e a compatibilidade destes com a política de acesso do arquivo.
+Uma solução viável é fazer o servidor exigir que o cliente, ao enviar o arquivo a ser hospedado, produzir o hashing deste arquivo, cifrá-lo com a mesma política usada para o arquivo e enviar ambos.
+O comportamento do servidor seria levemente modificado para que, diante de uma requisição de um arquivo sem parâmetros adicionais, a resposta seria um objeto cifrado contendo o valor do hashing do arquivo que se deseja requisitar.
+Um usuário com as credenciais necessárias seria capaz de decifrar esse objeto, e realizar novamente a mesma requisição do arquivo, desta vez informando o hashing.
+Diante de uma requisição de arquivo com algum parâmetro adicional, o servidor verifica se ele é equivalente ao valor do hashing do arquivo requisitado.
+Em caso afirmativo, é evidente que o usuário tem consigo os atributos necessários para acessar o arquivo e o servidor envia o arquivo, negando o acesso no caso contrário.
 
 {\color{ForestGreen} Explicar implementação da Blockchain (4 parágrafos). Ver abaixo os 4 parágrafos destrinchados. }
 
