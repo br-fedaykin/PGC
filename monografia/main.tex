@@ -788,11 +788,20 @@ Seria impraticável tentar acertar o valor do hashing ao acaso, de forma que cas
 
 {\color{Magenta} 1 parágrafo para explicar que a Blockchain utilizada foi a testnet (explicar que existe a main e a testnet, onde a testnet é utilizada por desenvolvedores serve para realizar implantações de teste sem dispender recursos financeiros.}
 
-
+O desenvolvimento de aplicações para Ethereum exige em algum momento a interação com a rede.
+O design de Smart Contracts e testes de integração exigem essa dinâmica, e pode-se querer ainda verificar o comportamento da aplicação após sua implantação, diante por exemplo do uso contínuo de uma base real de usuários ou da interação com outros projetos igualmente implantados na Blockchain.
+Há todo um ecossistema em torno da rede Ethereum permitindo a simulação da rede em graus diferentes de similaridade.
+A opção mais próxima da rede principal do Ethereum são as chamadas testnets.
+As quatro testnets mais difundidas, por ordem cronológica de início, são as redes Ropsten, Kovan, Rinkeby, Sokol e Görli (também grafada como Goerli).
+A rede Ropsten usa a mesma configuração e o algoritmo de consenso PoW da rede principal, produzindo a cópia mais fiel possível da dinâmica real da Blockchain, enquanto as outras utilizam configurações distintas e um tipo de algoritmo de consenso denominado como Prova de Autoridade \emph{(PoA)}.
+Basicamente, a PoA restringe a tarefa do consenso sobre o estado da blockchain e inserção de novos blocos a um conjunto restrito de nós confiáveis chamados de autoridades, que realizam um processo de mineração\footnote{A fim de diferenciar algoritmos de consenso que não são baseados em hashing como o Proof-of-Work, alguns denominam sua atividade como cunhagem \emph{(minting)} ao invés de mineração \emph{(mining)}.} rotativa, distribuindo a responsabilidade da criação do bloco entre elas e estipulando regras de criação de blocos que evidenciam a tentativa de manipulação por nós maliciosos, permitindo a exclusão dessa entidade maliciosa, desde que a rede tenha uma composição majoritária de nós honestos \cite{DeAngelis2018}.
 
 {\color{Magenta} 1 parágrafo para explicar que a rede Blockchain foi implantada em um computador usando o Ganache. Explicar o que é o ganache e o que entrega a implantação (X mineradores? X full nodes, etc).}
 
-execução determinística
+Enquanto as testnets oferecem uma forma de teste gratuita de uma rede com aspectos realísticos, o tempo para a confirmação das transações pode prolongar os testes e experimentação durante o desenvolvimento.
+Ferramentas foram desenvolvidas para oferecer uma rede privada Ethereum em um ambiente controlado e determinístico, permitindo a escrita de testes, execução de comandos e facilitando a inspeção dos estados da EVM e das variáveis de Smart Contracts, destacando-se entre elas o Remix, um IDE online que executa uma EVM com um motor escrito em JavaScript diretamente no navegador Web e oferece ferramentas para implantação, interação e depuração de Smart Contracts e o Ganache, um programa que roda localmente, grava em disco o estado da simulação e expõe uma interface RPC para interação.
+Este trabalho utilizou o Ganache para gerar uma rede determinística em ambiente controlado, a fim de estudar o comportamento das sucessivas versões dos contratos e as interações entre eles, e utilizou Remix para realizar a implantação dos contratos e para realizar transações manuais.
+O sistema desenvolvido neste trabalho também realizou transações por meio de conexão RPC usando o Web3j como ponte, conforme é descrito acima nesta mesma seção.
 
 {\color{Magenta} 1 parágrafo para explicar que a Blockchain possui 5 contratos inteligentes mencionados na Seção anterior.}
 
