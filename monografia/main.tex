@@ -44,11 +44,17 @@
 \onehalfspacing
 \setlength{\parskip}{1em}
 
+% table configuration
+\setlength{\tabcolsep}{18pt}
+\renewcommand{\arraystretch}{1.5}
+
 \title{Relatório de Estágio III}
 
 \renewcommand{\familydefault}{\sfdefault}
-\renewcommand{\lstlistingname}{Código}% Listing -> Algorithm
-\renewcommand{\lstlistlistingname}{List of \lstlistingname s}% List of Listings -> List of Algorithms
+
+% listing label configuration
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Lista de \lstlistingname s-Fonte}
 
 \begin{document}
 \selectlanguage{brazilian}
@@ -162,14 +168,18 @@ Santo André -- SP
 \newpage
 \tableofcontents
 
+%%% LISTA DE CÓDIGOS %%%
+\newpage
+\lstlistoflistings
+
 %%% LISTA DE FIGURAS %%%
 \newpage
 \listoffigures
 
 %%% LISTA DE TABELAS %%%
 
-% \newpage
-% \listoftables
+\newpage
+\listoftables
 
 % -------------------------------------------------------------------- %
 \newpage
@@ -469,8 +479,8 @@ O conjunto de chaves privadas pessoais deriva de uma chave privada secreta assoc
 
 O mecanismo de derivação de chaves privadas pessoais está atrelado ao processamento de requisições, impedindo o certificador de conceder chaves arbitrariamente, mas somente a partir de requisição prévia. Isso é uma estratégia para limitar o poder do certificador em criar atributos, e dessa forma abusar de sua autoridade para conceder acesso indevido a agentes não autorizados de forma. O certificador portanto consulta a blockchain para obter novas requisições e decide se irá processá-la ou não. Nos dois casos, a resposta retorna à blockchain assim que a chave é criada ou quando sua criação é negada, quer seja por decisão do certificação ou por falha devido a parâmetros incorretos.
 
-
 \subsection{Contratos inteligentes com CBA}
+\label{sec:sub:ImplementacaoSmartContracts}
 
 Foram desenvolvidos cinco contratos inteligentes que permitem a autenticação, entrega de permissões e armazenamento de metadados dos prontuários eletrônicos dos pacientes. A seguir serão explicados cada um deles.
 
@@ -801,15 +811,67 @@ Basicamente, a PoA restringe a tarefa do consenso sobre o estado da blockchain e
 Enquanto as testnets oferecem uma forma de teste gratuita de uma rede com aspectos realísticos, o tempo para a confirmação das transações pode prolongar os testes e experimentação durante o desenvolvimento.
 Ferramentas foram desenvolvidas para oferecer uma rede privada Ethereum em um ambiente controlado e determinístico, permitindo a escrita de testes, execução de comandos e facilitando a inspeção dos estados da EVM e das variáveis de Smart Contracts, destacando-se entre elas o Remix, um IDE online que executa uma EVM com um motor escrito em JavaScript diretamente no navegador Web e oferece ferramentas para implantação, interação e depuração de Smart Contracts e o Ganache, um programa que roda localmente, grava em disco o estado da simulação e expõe uma interface RPC para interação.
 Este trabalho utilizou o Ganache para gerar uma rede determinística em ambiente controlado, a fim de estudar o comportamento das sucessivas versões dos contratos e as interações entre eles, e utilizou Remix para realizar a implantação dos contratos e para realizar transações manuais.
-O sistema desenvolvido neste trabalho também realizou transações por meio de conexão RPC usando o Web3j como ponte, conforme é descrito acima nesta mesma seção.
 
 {\color{Magenta} 1 parágrafo para explicar que a Blockchain possui 5 contratos inteligentes mencionados na Seção anterior.}
 
-publicar SC na testnet e colocar endereços aqui
+Os Smart Contracts descritos na seção \ref{sec:sub:ImplementacaoSmartContracts} foram projetados inicialmente usando a EVM virtual do Remix, partindo para uma série de testes de integração com o código do Protótipo, com várias implantações em Blockchains virtuais usando o Ganache, e foram então publicadas na testnet Rinkeby.
+Além dos contratos citados, foram criados dois contratos auxiliares: o \emph{SmartDCPABEUtility} que atua como uma biblioteca para os outros contratos, oferecendo funções de conversão de dados do tipo bytes em string e vice-versa, e o \emph{SmartDCPABERoot}, responsável por automatizar a gestão de dependências entre os contratos.
 
-jogar código fonte dos SC na internet
+Quando um contrato é publicado na EVM do Ethereum, ele se torna um objeto imutável, sendo possível alterar somente os valores definidos como variáveis deste contrato.
+Portanto, para alterar a lógica do contrato ou a estrutura de dados, é necessário publicar um novo contrato e também todos os outros contratos que fizessem uma referência estática ao endereço deste contrato.
+O \emph{SmartDCPABERoot} auxilia o processo de injeção de novos valores de contrato e conta com uma trava de segurança em suas funções para somente aceitar como válidas as invocações feitas pelo dono do contrato, i.e., somente as transações cujo o endereço de carteira do autor coincidam com o usado na transação de criação do contrato.
+O endereço da carteira usado para implantação dos contratos foi 0x584cf84bcc601da596b4f12a4c976577b40e9970, e os endereços dos contratos na Blockchain testnet Rinkeby estão na tabela \ref{tbl:enderecosSmartContracts}.
+Os endereços são links clicáveis e direcionam para a página do respectivo contrato no site Etherscan, um serviço de exploração e pesquisa de transações, endereços e outros dados tanto na rede principal Ethereum quanto nas testnets.
+
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{ |c|c|c| }
+      \hline
+      Contrato & Endereço do contrato na rede Rinkeby \\
+      \hline
+      SmartDCPABERoot & \href{https://rinkeby.etherscan.io/address/0xad1c2b4d33bb1d373e5fbf0cc525390362433dd9#code}{0xAd1c2b4d33Bb1d373E5fBF0cC525390362433DD9} \\
+      \hline
+      SmartDCPABEAuthority & \href{https://rinkeby.etherscan.io/address/0x94f5cb858438cfc9841fb50f2d022d9a66168b67#code}{0x94f5Cb858438CFc9841FB50F2d022d9a66168b67 } \\
+      \hline
+      SmartDCPABEFiles & \href{https://rinkeby.etherscan.io/address/0xad1c2b4d33bb1d373e5fbf0cc525390362433dd9#code}{0xAd1c2b4d33Bb1d373E5fBF0cC525390362433DD9} \\
+      \hline
+      SmartDCPABEKeys & \href{https://rinkeby.etherscan.io/address/0x2b92348a73681debb4b2c111000f3cb1bfd143b5#code}{0x2B92348A73681dEbb4B2c111000f3CB1BfD143b5} \\
+      \hline
+      SmartDCPABERequests & \href{https://rinkeby.etherscan.io/address/0x76a5b0db83060951837363787bb0f711b1a2901d#code}{0x76A5b0dB83060951837363787Bb0f711b1A2901D} \\
+      \hline
+      SmartDCPABEUsers & \href{https://rinkeby.etherscan.io/address/0x9004de663614268a1663a9dcbe5a65e79542db0a#code}{0x9004de663614268a1663A9dCbe5A65E79542Db0A } \\
+      \hline
+      SmartDCPABEUtility & \href{https://rinkeby.etherscan.io/address/0xae0ac361c316a696cd4a89990036d95a45296841#code}{0xaE0aC361c316A696Cd4a89990036d95A45296841 } \\
+      \hline
+    \end{tabular}
+  \caption{Endereços dos Smart Contracts na rede testnet Ethereum Rinkeby}
+  \label{tbl:enderecosSmartContracts}
+\end{center}
+\end{table}
 
 {\color{Magenta} 1 parágrafo para explicar que a implantação dos contratos inteligentes usou o Metamask. Explicar o que é o Metamask e o que especificamente você usou dele: ver identificadores das transações, conversão de .sol para .abi. Explicar o que é .abi.}
+
+Como explicado anteriormente, a interação com a rede Ethereum é possível usando uma interface preparada para interação com um nó local da rede ou serviço remoto compatível com RPC Ethereum.
+A biblioteca Web3, disponível para as linguagens de programação mais utilizadas, cumpre este propósito, porém sua implementação não conta com uma interface para interação com o usuário.
+O Metamask surge como uma extensão compatível com os navegadores modernos, implementando uma interface de usuário a uma biblioteca Web3 que é disponibilizada ao ambiente JavaScript para utilização dos sites.
+O Metamask introduz vantagens ao padronizar a forma com que usuários interagem e configuram a Web3 na internet e ao adotar o código aberto e a segurança proveniente deste método de desenvolvimento.
+Sem o Metamask, seria necessário a um serviço Web importar o Web3 diretamente em seu projeto e implementar os controles necessários ao uso do serviço, introduzindo custos e riscos adicionais ao projeto. A IDE Remix é um exemplo de site que usa a Web3 diretamente, além de ser compatível com a injeção da Web3 configurada pelo Metamask.
+
+\begin{figure}[!h]
+  \centering
+  \includesvg{images/infraestrutura-Blockchain.svg}
+  \caption{Infraestrutura para integração de Smart Contracts do Ethereum a aplicações}
+  \label{fig:infraestruturaBlockchain}
+\end{figure}
+
+A Figura \ref{fig:infraestruturaBlockchain} ilustra o esquema de infraestrutura utilizada para integrar a rede Ethereum ao ambiente de desenvolvimento da aplicação.
+Em síntese, Smart Contracts na linguagem solidity são disponibilizados à IDE Web Remix, que se conecta à Blockchain por meio da biblioteca Web3 embutida na própria ferramenta ou injetada pelo Metamask, permitindo a implantação e execução de funções dos Smart Contracts.
+A biblioteca Web3j cria classes Wrappers em Java dos contratos usando a especificação ABI e as instruções em bytecode gerados pela compilação dos arquivos escritos em Solidity no Remix.
+As instâncias destas usam a Web3j como interface de conexão com a Blockchain.
+A conexão com a Blockchain é feita por meio de um provedor de dados, que pode ser um nó local em execução, um gerador de Blockchain virtual para teste ou um serviço Web compatível com a RPC Ethereum.
+A rede Ethereum (ou similar) processa as transações, acionando os Smart Contracts em execução na EVM e retornando dados de retorno das funções, juntamente com o novo estado da Blockchain.
+
+{\color{RoyalBlue} Professor, a explicação do que é ABI estará na sessão \ref{sub:sec:contratos-ethereum}, porque lá já estou abordando o Solidity e o bytecode (EVM Code)}
 
 % -------------------------------------------------------------------- %
 \newpage

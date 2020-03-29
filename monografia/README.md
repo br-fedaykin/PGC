@@ -71,5 +71,8 @@
 - [ ] figura simples que mostrando cliente, servidor, e a Blockchain interligados.
 - [x] Descrição do cliente
   - [ ] corrigir erro `Package inputenc: Invalid UTF-8 byte sequence.` na palavra "código", próximo à [L658](./main.tex#L658)
-- [ ] Descrição do servidor
-- [ ] Descrição da rede Ethereum e ambiente de desenvolvimento
+- [x] Descrição do servidor
+- [x] Descrição da rede Ethereum e ambiente de desenvolvimento
+  - [x] Publicação dos contratos na testnet Rinkeby
+  - [x] Verificação e adição de código fonte aos Smart Contracts na testnet Rinkeby
+  - [x] Imagem de dependências dos Smart Contracts
