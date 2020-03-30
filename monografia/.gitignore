@@ -11,6 +11,10 @@
 *.cb
 *.cb2
 .*.lb
+*.lol
+
+# pdflatex temporary files
+*.pdf_tex
 
 ## Intermediate documents:
 *.dvi

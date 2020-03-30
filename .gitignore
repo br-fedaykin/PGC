@@ -3,6 +3,3 @@ artigos/
 temp/
 *.pdf
 .vscode
-
-# pdflatex temporary files
-*.pdf_tex
