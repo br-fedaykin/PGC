@@ -887,9 +887,17 @@ Este trabalho utilizou o Ganache para gerar uma rede determinística em ambiente
 Os Smart Contracts descritos na seção \ref{sec:sub:ImplementacaoSmartContracts} foram projetados inicialmente usando a EVM virtual do Remix, partindo para uma série de testes de integração com o código do Protótipo, com várias implantações em Blockchains virtuais usando o Ganache, e foram então publicadas na testnet Rinkeby.
 Além dos contratos citados, foram criados dois contratos auxiliares: o \emph{SmartDCPABEUtility} que atua como uma biblioteca para os outros contratos, oferecendo funções de conversão de dados do tipo bytes em string e vice-versa, e o \emph{SmartDCPABERoot}, responsável por automatizar a gestão de dependências entre os contratos.
 
+\begin{figure}[!h]
+  \centering
+  \includesvg{images/dependencias-SmartContracts.svg}
+  \caption{Dependências entre os Smart Contracts}
+  \label{fig:dependenciasSmartContracts}
+\end{figure}
+
 Quando um contrato é publicado na EVM do Ethereum, ele se torna um objeto imutável, sendo possível alterar somente os valores definidos como variáveis deste contrato.
 Portanto, para alterar a lógica do contrato ou a estrutura de dados, é necessário publicar um novo contrato e também todos os outros contratos que fizessem uma referência estática ao endereço deste contrato.
 O \emph{SmartDCPABERoot} auxilia o processo de injeção de novos valores de contrato e conta com uma trava de segurança em suas funções para somente aceitar como válidas as invocações feitas pelo dono do contrato, i.e., somente as transações cujo o endereço de carteira do autor coincidam com o usado na transação de criação do contrato.
+A figura \ref{fig:dependenciasSmartContracts} mostra a dependência entre contratos gerenciados pelo contrato SmartDCPABERoot e que sem ele precisariam ser configurados manualmente a cada nova versão dos contratos durante o desenvolvimento.
 O endereço da carteira usado para implantação dos contratos foi 0x584cf84bcc601da596b4f12a4c976577b40e9970, e os endereços dos contratos na Blockchain testnet Rinkeby estão na tabela \ref{tbl:enderecosSmartContracts}.
 Os endereços são links clicáveis e direcionam para a página do respectivo contrato no site Etherscan, um serviço de exploração e pesquisa de transações, endereços e outros dados tanto na rede principal Ethereum quanto nas testnets.
 
