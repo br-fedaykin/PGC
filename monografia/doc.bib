@@ -261,3 +261,98 @@ urldate = {30/03/2020},
 year = {2020},
 url = {https://specifications.openehr.org/releases/1.0.2/architecture/computable/terminology/terminology.html}
 }
+
+@article{Shamir1985,
+abstract = {In this paper we introduce a novel type of cryptographic scheme, which enables any pair of users to communicate securely and to verify each other's signatures without exchanging private or public keys, without keeping key directories, and without using the services of a third party. The scheme assumes the existence of trusted key generation centers, whose sole purpose is to give each user a personalized smart card when he first joins the network. The information embedded in this card enables the user to sign and encrypt the messages he sends and to decrypt and verify the messages he receives in a totally independent way, regardless of the identity of the other party. Previously issued cards do not have to be updated when new users join the network, and the various centers do not have to coordinate their activities or even to keep a user list. The centers can be closed after all the cards are issued, and the network can continue to function in a completely decentralized way for an indefinite period.},
+author = {Shamir, Adi},
+doi = {10.1007/3-540-39568-7_5},
+isbn = {9783540156581},
+issn = {16113349},
+journal = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+mendeley-groups = {PGC/Criptografia/IBE e ABE},
+pages = {47--53},
+title = {{Identity-Based Cryptosystems and Signature Schemes}},
+volume = {196 LNCS},
+year = {1985}
+}
+
+@article{Boneh2001,
+abstract = {We propose a fully functional identity-based encryption scheme (IBE). The scheme has chosen ciphertext security in the random oracle model assuming an elliptic curve variant of the computational Diffie-Hellman problem. Our system is based on the Weil pairing. We give precise definitions for secure identity based encryption schemes and give several applications for such systems. {\textcopyright} Springer-Verlag Berlin Heidelberg 2001.},
+author = {Boneh, Dan and Franklin, Matt},
+doi = {10.1007/3-540-44647-8_13},
+isbn = {3540424563},
+issn = {03029743},
+journal = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+number = {3},
+pages = {213--229},
+title = {{Identity-based encryption from the weil pairing}},
+volume = {2139 LNCS},
+year = {2001}
+}
+
+@article{Sahai2005,
+abstract = {We introduce a new type of Identity-Based Encryption (IBE) scheme that we call Fuzzy Identity-Based Encryption. In Fuzzy IBE we view an identity as set of descriptive attributes. A Fuzzy IBE scheme allows for a private key for an identity, $\omega$′, to decrypt a ciphertext encrypted with an identity, $\omega$′, if and only if the identities $\omega$ and $\omega$′ are close to each other as measured by the "set overlap" distance metric. A Fuzzy IBE scheme can be applied to enable encryption using biometric inputs as identities; the error-tolerance property of a Fuzzy IBE scheme is precisely what allows for the use of biometric identities, which inherently will have some noise each time they are sampled. Additionally, we show that Fuzzy-IBE can be used for a type of application that we term "attribute-based encryption". In this paper we present two constructions of Fuzzy IBE schemes. Our constructions can be viewed as an Identity-Based Encryption of a message under several attributes that compose a (fuzzy) identity. Our IBE schemes are both error-tolerant and secure against collusion attacks. Additionally, our basic construction does not use random oracles. We prove the security of our schemes under the Selective-ID security model. {\textcopyright} International Association for Cryptologic Research 2005.},
+author = {Sahai, Amit and Waters, Brent},
+doi = {10.1007/978-1-4419-5906-5_148},
+issn = {03029743},
+journal = {Lecture Notes in Computer Science},
+pages = {457--473},
+title = {{Fuzzy identity-based encryption}},
+volume = {3494},
+year = {2005}
+}
+
+@article{Bethencourt2007,
+abstract = {In several distributed systems a user should only be able to access data if a user posses a certain set of credentials or attributes. Currently, the only method for enforcing such policies is to employ a trusted server to store the data and mediate access control. However, if any server storing the data is compromised, then the confidentiality of the data will be compromised. In this paper we present a system for realizing complex access control on encrypted data that we call Ciphertext-Policy Attribute-Based Encryption. By using our techniques encrypted data can be kept confidential even if the storage server is untrusted; moreover, our methods are secure against collusion attacks. Previous Attribute-Based Encryption systems used attributes to describe the encrypted data and built policies into user's keys; while in our system attributes are used to describe a user's credentials, and a party encrypting data determines a policy for who can decrypt. Thus, our methods are conceptually closer to traditional access control methods such as Role-Based Access Control (RBAC). In addition, we provide an implementation of our system and give performance measurements. {\textcopyright}2007 IEEE.},
+author = {Bethencourt, John and Sahai, Amit and Waters, Brent},
+doi = {10.1109/SP.2007.11},
+isbn = {0769528481},
+issn = {10816011},
+journal = {Proceedings - IEEE Symposium on Security and Privacy},
+pages = {321--334},
+title = {{Ciphertext-policy attribute-based encryption}},
+year = {2007}
+}
+
+@article{Juels2004,
+annote = {O Artigo introduz uma criptografia denominada por eles como ABE, que {\'{e}} uma extens{\~{a}}o da t{\'{e}}cnica IBE. A t{\'{e}}cnica se baseia em criptografia assim{\'{e}}trica por chaves p{\'{u}}blicas e privadas, onde uma CA gera as chaves p{\'{u}}blicas e privadas de acordo com a requisi{\c{c}}{\~{a}}o de novos agentes no sistema. no ABE, h{\'{a}} tamb{\'{e}}m uma AA que gera certificados (chaves p{\'{u}}blicas) de atributos e distribui as chaves privadas deste atributo a indiv{\'{i}}duos, conforme sua requisi{\c{c}}{\~{a}}o.
+A chave privada gerada pela AA para algu{\'{e}}m comprovando um certo atributo pode depender ou n{\~{a}}o da identidade dele. A tecnologia que independe da identidade se chama "freesteading", e tem a vantagem de criar uma mesma cifra para todos aqueles que possuem os atributos necess{\'{a}}rios para decifrar o documento, ou seja, {\'{e}} uma criptografia independente de identidades.
+As pol{\'{i}}tica de acesso do ABE podem ser reduzidas a f{\'{o}}rmulas booleanas envolvendo atributos, o que traz clareza.
+Como o operador OU de disjun{\c{c}}{\~{a}}o necessita que se dobre o tamanho da cifra, o autor aponta que {\'{e}} interessante investigar outros m{\'{e}}todos que as tornem mais compactas, e.g., a t{\'{e}}cnica do segredo (k,n) de Shamir.
+O funcionamento b{\'{a}}sico do ABE {\'{e}}:
+1. setup: o AA gera uma chave privada mestra e valores p{\'{u}}blicos params.
+2 . Lista de atributos: (opcional) o usu{\'{a}}rio obt{\'{e}}m a lista dos atributos do sistema.
+3. permiss{\~{o}}es: O usu{\'{a}}rio determina a pol{\'{i}}tica de acesso f para um recurso k em termos dos atributos.
+4. cifra: O usu{\'{a}}rio computa a cifra c = f[k]
+5. Distribui{\c{c}}{\~{a}}o: o usu{\'{a}}rio deixa a cifra em um local p{\'{u}}blico.
+6. Deciframento: outro usu{\'{a}}rio que possua a chave privada que corresponde aos atributos que satisfazem f poder{\'{a}} decifrar c, obtendo ent{\~{a}}o k.
+7. Autoriza{\c{c}}{\~{a}}o: este outro usu{\'{a}}rio pode requerer ao AA as chaves privadas que lhe s{\~{a}}o de direito, a fim de proceder o passo 6.},
+author = {Juels, Ari and Szydlo, Michael},
+keywords = {access control,attribute,elliptic curve,identity-based encryption},
+title = {{Attribute-Based Encryption : Using Identity-Based Encryption for Access Control}},
+year = {2004}
+}
+
+@article{Shamir1979,
+abstract = {In this paper we show how to divide data D into n pieces in such a way that D is easily reconstructable from any k pieces, but even complete knowledge of k - 1 pieces reveals absolutely no information about D. This technique enables the construction of robust key management schemes for cryptographic systems that can function securely and reliably even when misfortunes destroy half the pieces and security breaches expose all but one of the remaining pieces. {\textcopyright} 1979, ACM. All rights reserved.},
+author = {Shamir, Adi},
+doi = {10.1145/359168.359176},
+issn = {15577317},
+journal = {Communications of the ACM},
+keywords = {cryptography,interpolation,key management},
+number = {11},
+pages = {612--613},
+title = {{How to Share a Secret}},
+volume = {22},
+year = {1979}
+}
+
+@misc{Benaloh1988,
+abstract = {Secret Sharing from the perspective of threshold schemes has been well-studied over the past decade. Threshold schemes, however, can only handle a small fraction of the secret sharing functions which we may wish to form. For example, if it is desirable to divide a secret among four participants A, B. C, and D in such a way that either A together with B can reconstruct the secret or C together with D can reconstruct the secret, then threshold schemes (even with weighting) are provably insufficient. This paper will present general methods for constructing secret sharing schemes for any given secret sharing function. There is a natural correspondence between the set of “generalized” secret sharing functions and the set of monotone functions, and tools developed for simplifying the latter set can be applied equally well to the former set.},
+author = {Benaloh and Leichter, Jerry and Josh},
+booktitle = {Generalized secret sharing and monotone functions},
+keywords = {Monotone Function,Secret Share Scheme,Secret Sharing Access Structure,Threshold Scheme},
+mendeley-tags = {Monotone Function,Secret Sharing Access Structure,Secret Share Scheme,Threshold Scheme},
+title = {{Proceedings on Advances in cryptology}},
+year = {1988}
+}
