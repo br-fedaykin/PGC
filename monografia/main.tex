@@ -231,35 +231,56 @@ A necessidade da consulta e validação das chaves públicas no diretório de ce
 Visando eliminar tais restrições, Shamir idealizou em 1984 a Criptografia Baseada em Identidades \emph{(IBE - Identity-Based Cryptography)}, um esquema onde as chaves públicas utilizadas para criptografia seriam as próprias formas textuais de identificação de uma pessoa, tais como e-mail, nome completo, números de documento ou qualquer combinação arbitrária destes dados.
 Chaves privadas seriam derivadas adicionando à chave pública um parâmetro fixo e secreto, sob controle de uma terceira parte confiável responsável por gerenciar a requisição, geração e entrega de chaves privadas \cite{Shamir1985}.
 Foi somente em 2001 que houve a primeira proposta efetivamente segura e prática de um sistema que atendesse as características da IBE, junto com esquemas de uso que possibilitariam mecanismos de revocação automática de usuários e controle de acesso ao embutir na chave pública marcações com um significado definido no contexto de uso do sistema \cite{Boneh2001}.
-Por exemplo, ao criptografar e enviar um arquivo usando identidade de Bob concatenada com ano atual (``ano-2020''), pode-se conceber um cenário onde Bob devesse solicitar ao gerador de chaves a chave privada correspondente à chave pública ``Bob@mail.com ano-2020'', levando a requisições periódicas de novas chaves em anos subsequentes e implementando uma forma efetiva e automática de revocação de acesso de usuários simplesmente ao deixar de conceder novas chaves.
-Adicionando tags do tipo ``acesso=restrito'' ao exemplo anterior pode-se pensar em um cenário onde o gerador de chaves iria exigir privilégios de acesso ou o aceite de termos de compromisso para conceder a chave privada relacionada a uma chave pública do tipo ``Bob@mail.com ano-2020 acesso=restrito''.
+Por exemplo, ao criptografar e enviar um arquivo usando identidade de Bob concatenada com ano atual (``\emph{ano-2020}''), pode-se conceber um cenário onde Bob devesse solicitar ao gerador de chaves a chave privada correspondente à chave pública ``\emph{Bob@mail.com ano-2020}'', levando a requisições periódicas de novas chaves em anos subsequentes e implementando uma forma efetiva e automática de revocação de acesso de usuários simplesmente ao deixar de conceder novas chaves.
+Adicionando tags do tipo ``\emph{acesso=restrito}'' ao exemplo anterior pode-se pensar em um cenário onde o gerador de chaves iria exigir privilégios de acesso ou o aceite de termos de compromisso para conceder a chave privada relacionada a uma chave pública do tipo ``\emph{Bob@mail.com ano-2020 acesso=restrito}''.
 
 A Criptografia Baseada em Atributos (em inglês, \emph{ABE - Attribute-Based Encryption}) visa aumentar a expressividade da IBE ao modelar identidades como um conjunto de atributos, definir chaves públicas como subconjuntos de atributos e tornar a descriptografia possível ao usuário que possuir as chaves privadas correspondentes a estes atributos \cite{Sahai2005}.
 Atributos podem ser vinculados a grupos de usuários ou a papéis desempenhados por eles, permitindo expressar políticas de acesso específicas de forma simples e eficaz, sem que seja necessário conhecer a identidade exata de todas as pessoas que deveriam ter acesso aos dados criptografados.
 Indivíduos precisariam se autenticar junto a um ente confiável para obter as chaves privadas correspondentes a cada atributo da mesma maneira que ocorre na IBE, e utilizariam estas chaves para cumprir os requisitos da política de acesso e realizar a descriptografia de dados.
 É importante que a concessão das chaves privadas relacionadas a um atributo sejam diferentes para cada usuário e preferencialmente sejam
-atreladas à identidade do usuário, de forma a não permitir um ataque de conluio \emph{(collusion attacks)}, onde um usuário com atributos ``$A$'' e ``$B$'' e outro com atributos ``$C$'' e ``$D$'' unam suas chaves privadas para satisfazer uma política de acesso que exija ``$A$'' e ``$D$'' \footnote{Juels e Szydlo propõem uma noção diferente de um esquema ABE sem resistência a ataques de colusão \cite{Juels2004}, publicado logo em seguida à publicação de Sahai e Waters.}.
+atreladas à identidade do usuário, de forma a não permitir um ataque de conluio \emph{(collusion attacks)}, onde um usuário com atributos ``$A$'' e ``$B$'' e outro com atributos ``$C$'' e ``$D$'' unam suas chaves privadas para satisfazer uma política de acesso que exija ``$A$'' e ``$D$'' \footnote{Subsequente ao trabalho de Sahai e Waters, um trabalho de Juels e Szydlo propôs outra noção para ABE, onde não haveria resistência contra ataques de colusão. Para mais detalhes, ver \cite{Juels2004}.}.
 
 {\color{ForestGreen}Explicar alguns conceitos da CBA (chave pública/privada/etc para que sirva como base do exemplo mostrado no último parágrafo (1 parágrafo).}
 
-As políticas de acesso são convertidas em um esquema de compartilhamento de segredo \emph{(em inglês, SSS - Secret Sharing Scheme)}, onde os atributos ocupam o papel de participantes do esquema e o segredo é um parâmetro necessário ao algoritmo para poder descobrir a chave aleatória usada para criptografar um conteúdo.
+As políticas de acesso usadas na ABE são traduzidas em um Esquema de Compartilhamento de Segredo (em inglês, \emph{SSS - Secret Sharing Scheme}), onde os atributos ocupam o papel de participantes do esquema e o segredo a ser reconstruído é parte indispensável para executar o algoritmo de descriptografia.
 Qualquer esquema de compartilhamento delineia também alguma estrutura de acesso que defina os subconjuntos de participantes que deveriam ser capazes de reconstruir o segredo a partir de suas partes.
-Shamir demonstrou como produzir estruturas de acesso com uma porta de limiar $(k,n)$, permitindo a reconstrução do segredo se $k$ participantes se unirem, impedindo a reconstrução em número menor do que $k$ ou qualquer ganho de informação sobre o segredo \cite{Shamir1979}.
+Shamir demonstrou como produzir estruturas de acesso com uma porta de limiar $(k,n)$, permitindo a reconstrução do segredo se $k$ entre os $n$ participantes se unirem e impedindo, para números menores do que $k$, a reconstrução ou qualquer ganho de informações quanto ao segredo \cite{Shamir1979}.
 Benaloh expandiu a ideia, descrevendo esquemas eficientes para estruturas de acesso que pudessem ser descritas em termos de fórmulas monótonas, isto é, fórmulas booleanas utilizando operadores lógicos binários $AND$ e $OR$ e os participantes como predicados \cite{Benaloh1988}.
+Desta forma a ABE consegue descrever políticas de acesso como fórmulas booleanas e computar de forma eficiente se os atributos apresentados formam um dos subconjuntos de atributos definidos como válidos pela estrutura de acesso, impedindo que atributos não relacionados a uma estrutura de acesso possam ser usados para descriptografar um conteúdo.
 
-O esquema ABE em sua inicialização monta um esquema de compartilhamento de segredos compatível com o universo de atributos a serem utilizados, esquema este usado posteriormente para esconder um parâmetro cuja falta impede a descriptografia e que só pode ser recuperado ao apresentar as chaves dos atributos que correspondam à política de acesso (fórmula) delineada na estrutura de acesso.
-Há duas formas básicas de estruturar a ABE, dependendo da parte em que a estrutura de acesso é alojada. A primeira forma de ABE gerava as chaves privadas baseadas em políticas que continham atributos, e por inserir a política de acesso na chave foi denominada como KPABE \emph{Key-Policy Attribute-Based Encryption}.
+% não estou certo deste conteúdo abaixo, então deixei como comentário
+% Por conta do uso de esquemas de compartilhamento de segredos em sua operação, é necessário que todos os atributos tenham uma identidade definida e fixa ao logo da execução do programa, e isso impõe uma etapa de inicialização ao esquema ABE onde o universo de atributos são criados, publicando-se seus dados como parâmetros públicos do sistema, e remove do sistema a capacidade de adicionar atributos após inicializado.
 
+As estruturas de acesso descritas anteriormente foram inicialmente construídas e distribuídas como parte das chaves privadas conferidas aos usuários, enquanto que o conjunto de atributos necessários à descriptografia era informado na cifra.
+Essa foi a primeira forma de construção de ABE e foi denominada como KP-ABE \emph{(Key-Policy Attribute-Based Encryption)} por definir nas chaves privadas as políticas de acesso que um usuário poderia cumprir e requerer e especificar os atributos na cifra \cite{Goyal2006}.
+Posteriormente reverteram essa construção de forma que chaves privadas de usuários fossem conjuntos de atributos e a cifra contivesse a política de acesso e consequentemente a estrutura de acesso subjacente dela. Essa abordagem foi denominada como CP-ABE \emph{(Ciphertext-Policy Attribute-Based Encryption)} \cite{Bethencourt2007}.
+Embora sejam contrapartes de uma mesma construção teórica, elas diferem em seu uso, uma vez que a decisão da escrita de políticas de acesso e a consequente decisão sobre quem pode ou não pode descriptografar conteúdos é feita por partes diferentes.
+Na KP-ABE a entidade geradora de chaves define as políticas de acesso na emissão de chaves aos usuários, enquanto na CP-ABE as políticas de acesso podem ser escritas conforme a necessidade e o conhecimento específico das informações de um documento pelo usuário que realizará a criptografia.
 
-\begin{itemize}
-  \item Explicar e fazer uma imagem explicando a derivação de atributos em um ambiente multi-autoridade, através do ID, que então gera uma chave mestra privada e uma chave pública, e várias outras chaves privadas particulares derivadas a partir da chave mestra e todas compatíveis com a mesma chave pública.
-  \item Explicar aqui que uma política de acesso deve ser escrito como uma fórmula booleana descrita em termos de atributos e operadores E e OU (ou seja, monotônica)
-  \item Explicar aqui que a política de acesso pode ser convertida em uma matriz que representa a estrutura de acesso de um LSSS (Linear Secret Sharing Scheme) e que isso torna o processo mais eficiente. É o que o artigo de criação do ABE prevê e é o que o esquema DCPABE aplica.
-\end{itemize}
 
 {\color{ForestGreen}Explicar os benefícios do CBA (2 parágrafos).}
 
+A definição de uma autoridade central para gerar chaves pode representar um problema em um contexto de operação multi-institucional, uma vez que isso exige encontrar uma autoridade que seja confiável entre todas as instituições participantes.
+Ademais, uma única autoridade também se configura como um ponto de falha central, levando à suspensão do serviço em caso de problemas técnicos ou ataques de negação de serviço.
+Pode-se diluir esse problema ao espalhar o funcionamento do programa entre vários servidores, mas esta medida também expõem os parâmetros secretos de funcionamento do sistema a mais ambientes, aumentando o risco de vazamento de dados.
+
+A proposta da DCPABE \emph{(Decentralized Ciphertext-Policy Attribute Based Encryption)} busca resolver esse problema ao permitir um ambiente ABE com multi-autoridades que podem ser criadas e operar sem necessidade de qualquer coordenação além do uso de um mesmo conjunto de parâmetros iniciais de configuração \cite{Lewko2011}.
+A DCPABE permite que qualquer participante pode se tornar uma autoridade e criar atributos, gerando para cada atributo uma chave pública e uma chave privada, esta última usada para gerar chaves pessoais de usuário.
+Esse sistema permite a escrita de políticas de acesso usando atributos emitidos por diferentes autoridades, tornando-se atrativo como a base fundacional de um sistema de integração criptograficamente seguro.
+Para impedir ataques de colusão por parte dos usuários, a derivação das chaves é feita usando um identificador global de usuário.
+Este identificador passa a fazer parte do mecanismo de descriptografia e assegura o fracasso da criptografia se atributos emitidos com diferentes identificadores globais forem utilizados para satisfazer uma política de acesso.
+
 {\color{ForestGreen}Explicar um exemplo de uso (1 parágrafo). Pode usar algo assim: https://medium.com/asecuritysite-when-bob-met-alice/towards-true-security-attribute-based-encryption-20d5799aeda6}
+
+Com a DCPABE pode-se finalmente integrar com segurança bases de dados distintas sob controle de entidades separadas.
+Por exemplo, suponha que um serviço de consulta de dados médicos de pacientes entre múltiplos hospitais use um esquema DCPABE.
+Isso permitiria que hospitais criassem seu próprio esquema ABE com sua própria declaração e concessão de atributos.
+Criptografar os dados assegura o sigilo da informação, simplificando a implantação e manutenção de serviços Web de consulta aos dados.
+Neste cenário, suponha que um centro de emergência receba um caso de um paciente em estado grave com identidade mas inconsciente.
+Rapidamente, o centro utiliza o sistema de consulta para obter mais dados deste paciente, e alguns hospitais confirmam possuir dados dele.
+Os dados informam cifras diferentes, mas sempre permitindo o acesso a quem possuir um atributo ``\emph{emergência}''.
+Este centro médico negociou o recebimento de uma chave pessoal deste atributo ``\emph{emergência}'' que foi concedida pelos hospitais individualmente, e desta maneira ganha o acesso ao prontuário.
+Para evitar uma forma contínua de acesso irrestrito ao prontuário os hospitais poderiam adicionar este atributo ``\emph{emergência}''  sob demanda específicas de dados de um paciente e retornar à política anterior após a alta médica.
 
 \subsection{Blockchain Ethereum}
 
