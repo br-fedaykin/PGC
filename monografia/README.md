@@ -14,7 +14,7 @@
 
 #### 2.1 Criptografia baseada em atributos
 
-- [ ] Explicar e fazer uma imagem explicando a derivação de atributos em um ambiente multi-autoridade, através do ID, que então gera uma chave mestra privada e uma chave pública, e várias outras chaves privadas particulares derivadas a partir da chave mestra e todas compatíveis com a mesma chave pública.
+- [x] Explicar e fazer uma imagem explicando a derivação de atributos em um ambiente multi-autoridade, através do ID, que então gera uma chave mestra privada e uma chave pública, e várias outras chaves privadas particulares derivadas a partir da chave mestra e todas compatíveis com a mesma chave pública.
 - [x] Explicar aqui que uma política de acesso deve ser escrito como uma fórmula booleana descrita em termos de atributos e operadores E e OU (ou seja, monotônica)
 - [x] Explicar aqui que a política de acesso pode ser convertida em uma matriz que representa a estrutura de acesso de um LSSS (Linear Secret Sharing Scheme) e que isso torna o processo mais eficiente. É o que o artigo de criação do ABE prevê e é o que o esquema DCPABE aplica.
 

@@ -263,12 +263,22 @@ Na KP-ABE a entidade geradora de chaves define as políticas de acesso na emiss�
 A definição de uma autoridade central para gerar chaves pode representar um problema em um contexto de operação multi-institucional, uma vez que isso exige encontrar uma autoridade que seja confiável entre todas as instituições participantes.
 Ademais, uma única autoridade também se configura como um ponto de falha central, levando à suspensão do serviço em caso de problemas técnicos ou ataques de negação de serviço.
 Pode-se diluir esse problema ao espalhar o funcionamento do programa entre vários servidores, mas esta medida também expõem os parâmetros secretos de funcionamento do sistema a mais ambientes, aumentando o risco de vazamento de dados.
+O esquema DCPABE \emph{(Decentralized Ciphertext-Policy Attribute Based Encryption)} oferece as vantagens de uma arquitetura descentralizada, buscando resolver o problema da centralização ao propor uma plataforma com multi-autoridades com esquemas ABE independentes que podem ser criadas e operar sem necessidade de qualquer coordenação, além do uso de um mesmo conjunto de parâmetros iniciais de configuração \cite{Lewko2011}.
 
-A proposta da DCPABE \emph{(Decentralized Ciphertext-Policy Attribute Based Encryption)} busca resolver esse problema ao permitir um ambiente ABE com multi-autoridades que podem ser criadas e operar sem necessidade de qualquer coordenação além do uso de um mesmo conjunto de parâmetros iniciais de configuração \cite{Lewko2011}.
-A DCPABE permite que qualquer participante pode se tornar uma autoridade e criar atributos, gerando para cada atributo uma chave pública e uma chave privada, esta última usada para gerar chaves pessoais de usuário.
-Esse sistema permite a escrita de políticas de acesso usando atributos emitidos por diferentes autoridades, tornando-se atrativo como a base fundacional de um sistema de integração criptograficamente seguro.
-Para impedir ataques de colusão por parte dos usuários, a derivação das chaves é feita usando um identificador global de usuário.
-Este identificador passa a fazer parte do mecanismo de descriptografia e assegura o fracasso da criptografia se atributos emitidos com diferentes identificadores globais forem utilizados para satisfazer uma política de acesso.
+\begin{figure}[!h]
+  \centering
+  %\includesvg{images/diagrama-DCPABE.svg}
+  \includegraphics[width=\textwidth]{images/diagrama-DCPABE.png}
+  \caption{Um esquema DCPABE com K autoridades e exemplo de geração de chaves pessoais a usuários}
+  \label{fig:diagramaDCPABE}
+\end{figure}
+
+A figura \ref{fig:diagramaDCPABE} descreve os principais elementos que compõem o esquema DCPABE e a geração de chaves a dois usuários do sistema, Alice e Bob.
+Qualquer participante pode se tornar uma autoridade e criar atributos, gerando para cada atributo uma chave pública e uma chave privada, esta última usada para gerar chaves pessoais e intransferíveis aos usuários do sistema.
+Esse sistema suporta a escrita de políticas de acesso usando atributos emitidos por diferentes autoridades, tornando-se atrativo como a base fundacional de um sistema de integração criptograficamente seguro.
+A fim de impedir ambiguidades, a chave pública é considerada a concatenação de seu nome e valor, possibilitando a diferenciação entre dois atributos de mesmo nome gerados por entidades distintas, impedindo também ataques do tipo \emph{spoofing}\footnote{Em um ataque de \emph{Spoofing} um atacante tenta }.
+Para impedir ataques de colusão por parte dos usuários a geração das chaves é feita usando um identificador global \emph{(GID)} de usuário, que é utilizado para "vincular" os atributos de diferentes autoridades a um mesmo usuário.
+Este identificador GID é um parâmetro adicional usado durante o processo de verificação da satisfazibilidade da estrutura de acesso no mecanismo e descriptografia e assegura o fracasso da criptografia quando atributos emitidos com identificadores globais distintos forem utilizados em conjunto para satisfazer uma política de acesso, em complemento ao comportamento padrão da ABE que impede a criptografia caso não exista um subconjunto entre os atributos apresentados que satisfaça a estrutura de acesso subjacente à política de acesso.
 
 {\color{ForestGreen}Explicar um exemplo de uso (1 parágrafo). Pode usar algo assim: https://medium.com/asecuritysite-when-bob-met-alice/towards-true-security-attribute-based-encryption-20d5799aeda6}
 
@@ -470,14 +480,14 @@ A biblioteca também possui funcionalidade para gerar classes geradas dinamicame
 
 \begin{figure}[H]
   \centering
-  \includesvg[width=1.1\linewidth]{images/diagrama-DCPABE.svg}
+  \includesvg[width=1.1\linewidth]{images/diagrama-SmartDCPABE.svg}
   {Funcionamento geral e interação entre os módulos cliente, servidor de armazenamento de arquivos e Smart Contracts na Blockchain Ethereum.}
-  \label{fig:diagramaDCPABE}
+  \label{fig:diagramaSmartDCPABE}
 \end{figure}
 
 {\color{ForestGreen}Explicar um cenário de uso passo-a-passo (exemplo, milestone 1, mas com permissões direcionadas ao contexto de saúde, por exemplo um paciente quer dar permissão de acesso a médicos cardiologistas) (2 parágrafos)}.
 
-A Figura \ref{fig:diagramaDCPABE} apresenta os componentes do sistema e seu funcionamento.
+A Figura \ref{fig:diagramaSmartDCPABE} apresenta os componentes do sistema e seu funcionamento.
 (1) Uma autoridade usa o módulo cliente gera chaves privadas, públicas e pessoais de atributos;
 (2) A autoridade usa o módulo cliente para aplicar as políticas de acesso em prontuários eletrônicos de pacientes (PEP), tarefa que pode ser automatizada no caso de uma migração de bases de dados para o sistema proposto;
 (3) o módulo cliente aciona um Smart Contract que reúne informações públicas sobre atributos recebe as novas chaves e as disponibiliza para consulta;
