@@ -29,11 +29,12 @@
   - [ ] citar aplicações financeiras
   - [ ] citar aplicações semi-financeiras
   - [ ] citar aplicações não financeiras
-- [ ] algoritmo de consenso
-  - [ ] necessidade
-  - [ ] funcionamento
+- [x] algoritmo de consenso
+  - [x] necessidade
+  - [x] funcionamento
   - [ ] figura
-- [ ] PoW, PoS
+- [x] PoW
+- [ ] PoS
   - [ ] figura
 
 #### 2.3 Contratos Inteligentes no Ethereum
