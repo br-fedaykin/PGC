@@ -308,7 +308,7 @@ Também é atribuído ao sistema bancário a posição de confiança para emiss�
 Juntamente com corretoras de valores, o sistema bancário e os sistemas de pagamentos eletrônicos são as bases operacionais do mercado financeiro, permitindo o fluxo de capital entre agentes econômicos em escala nacional ou internacional, tornando viável o sistema financeiro mundial como o conhecemos.
 
 Qualquer sistema baseado em confiança tem fragilidades intrínsecas à sua natureza centralizada tais como o abuso hierárquico da autoridade pela imposição de regras arbitrárias, possivelmente invasivas, desnecessárias e ineficientes, a exposição indiscriminada de informações particulares aos membros das autoridades julgadas particulares, a possibilidade de manipulação de transações e taxas do sistema para proveitos particulares e, em um contexto comercial, devido a exigências legais instituídas amplamente que preveem o direito ao estorno de pagamentos, acaba-se introduzindo a possibilidade de perdas permanentes a prestadores de serviços irreversíveis ou produtos perecíveis, abrindo margem para que fraudadores utilizem tais mecanismos para aplicar golpes e obter bens e serviços sem pagar por eles, principalmente em casos onde a mediação de disputas é ineficiente em apurar as reivindicações ou adota um viés que desfavorece o comerciante
-\footnote{Vejas algumas notícias relacionadas a fraudes \link{https://canaltech.com.br/e-commerce/golpe-pedra-mercado-livre-115288/}{neste}, \link{https://www.techtudo.com.br/noticias/2019/07/golpe-da-compra-falsa-faz-vitimas-no-mercado-livre-veja-como-evitar.ghtml}{neste} e \link{https://www.coindesk.com/how-fraud-sunk-bitcoin-exchange}{neste} link}.
+\footnote{Veja algumas notícias relacionadas a fraudes \link{https://canaltech.com.br/e-commerce/golpe-pedra-mercado-livre-115288/}{neste}, \link{https://www.techtudo.com.br/noticias/2019/07/golpe-da-compra-falsa-faz-vitimas-no-mercado-livre-veja-como-evitar.ghtml}{neste} e \link{https://www.coindesk.com/how-fraud-sunk-bitcoin-exchange}{neste} link}.
 Uma moeda com pagamentos irreversíveis poderia anular o risco de fraude deste tipo, reduzir os custos e estabelecer contratualmente os mecanismos de mediação necessários em caso de disputa.
 
 O \emph{Bitcoin}
@@ -339,58 +339,88 @@ A Figura \ref{fig:blockchain} demonstra essa estrutura.
 \end{figure}
 
 Satoshi Nakamoto projetou a Blockchain do Bitcoin para atender as necessidade de uma moeda, contudo o protocolo extrapola essa finalidade, suportando operações mais complexas, além do simples escopo de um sistema de pagamentos.
-Isto porque, ao invés de implementar uma lista preemptiva e exaustiva de todas as transações que pudessem vir a ser necessárias, o protocolo do Bitcoin imbui as transações com uma linguagem de script baseada em pilha, intencionalmente turing-incompleta, sem loopings ou recursividade, contendo algumas operações aritméticas, lógicas e criptográficas julgadas úteis para modelar as transações que a rede viria a suportar \cite{Narayanan2016a}.
+Isto porque, ao invés de implementar uma lista preemptiva e exaustiva de todas as transações que pudessem vir a ser necessárias, o protocolo do Bitcoin descreve as transações em termos de comandos de uma linguagem de script baseada em pilha, intencionalmente turing-incompleta, sem loopings ou recursividade, contendo algumas operações aritméticas, lógicas e criptográficas julgadas úteis para oferecer maior liberdade na modelagem de transações que a rede viria a suportar \cite{Narayanan2016a}.
 
-As transações, unidades elementares da Blockchain, dependem dessa linguagem de script para definir o comportamento de suas entradas e saídas, duas listas que as compõem e indicam respectivamente de onde estão vindo os fundos e qual será a destinação deles.
-Uma saída especifica uma quantidade em bitcoins e usa um script para 'trancar' este valor sob um desafio criptográfico, podendo ser utilizada por uma transação posterior que a referencie em uma de suas entradas.
-Uma entrada contém uma referência à uma transação, especificamente para alguma de suas saídas que pretende utilizar, e o script que resolve o desafio relacionado àquela saída.
-A checagem de uma transação se dá pela união dos scripts de entrada e saída e sua execução pelo cliente do Bitcoin, sendo considerada válida se, e somente se, para cada uma de suas entradas, a união do script com a respectiva saída de transação referenciada por ela resultar, ao fim do processo, em um valor verdade na pilha de execução do
-interpretador\footnote{O artigo \cite{Bistarelli2019} ilustra em suas figuras o processo de execução de scripts passo-a-passo.}.
+%que impedirá o uso de transações que não o resolvam corretamento e reconhecerá como legítima a transação que a resolver
 
-Diversos comportamentos foram então modelados, e o mais comumente utilizado entre eles implementa a operação que é o núcleo da rede Bitcoin - a transferência de moeda entre carteiras - implementada pelo script conhecido como P2PKH \emph{(Pay to Public Key Hash)}, que carrega um hash de uma chave pública e condiciona a utilização do valor na saída de uma transação à apresentação da chave pública que corresponda ao hash, juntamente com uma assinatura produzida pela chave privada da respectiva chave pública, permitindo que somente o detentor da chave privada possa utilizar o valor encaminhado a ele por meio da chave pública.
+A transação é a unidade elementar da Blockchain e em sua estrutura possui um cabeçalho contendo metadados e duas listas, denominadas somente como "entradas" e "saídas", que indicam respectivamente de que transação estão vindo os fundos sendo consumidos e qual será a sua destinação.
+Uma saída na lista de saídas especifica uma quantidade em bitcoins e usa um script para 'trancar' este valor sob um desafio criptográfico descrito em termos do script do Bitcoin.
+Uma entrada na lista de entradas contém uma referência a uma saída específica da lista de saídas de uma transação e um script que "resolve" o desafio relacionado àquela saída.
+A checagem de uma transação se dá pela união e execução dos scripts de entrada e saída pelo cliente do Bitcoin, que é considerada válida se, e somente se, para cada elemento da lista de entradas, a execução conjunta dos scripts de entrada e saída resultar em um estado válido, que é definido pelo protocolo como a situação onde, ao fim da execução do script, a pilha de execução do interpretador contar somente com a instrução definida como o valor VERDADEIRO
+\footnote{O artigo \cite{Bistarelli2019} ilustra o estado da pilha de um interpretador durante execução de scripts Bitcoin passo a passo.}.
+Qualquer outro estado ao final da execução de qualquer um dos elementos de entrada a tornará uma transação inválida e nesta situação será descartada pelos nós da rede Bitcoin que por ventura a receberem.
+
+A linguagem de Script do Bitcoin modela o comportamento das transações e pode ser copiada e reusada em outras transações de mesma natureza.
+O script mais utilizado na Blockchain foi chamado de P2PKH \emph{(Pay to Public Key Hash)} e modela uma transação de transferência de moeda Bitcoin entre duas carteiras.
+O P2PKH especifica um hash de uma chave pública na saída de uma transação, condicionando a utilização do valor à apresentação da chave pública que corresponda ao hash, juntamente com uma assinatura produzida pela chave privada da respectiva chave pública, permitindo que somente o detentor da chave privada possa utilizar o valor encaminhado a ele por meio da chave pública.
 Outros scripts juntamente com este formam um pequeno conjunto de scripts creditados como seguros e alçados ao status de padrão no protocolo do Bitcoin.
 Uma transação é considerada padrão quando só utiliza scripts padrões, e mais de 99,9\% das transações na Blockchain são padrões \cite{Bistarelli2019}.
 A alta adesão não é coincidência, pois o cliente oficial do Bitcoin não permite a propagação de transações não-padrão pela
-rede\footnote{Há outras verificações que impedem o recebimento e transmissão de uma transação na rede. Veja \url{https://en.bitcoin.it/wiki/Protocol_rules\#.22tx.22_messages}},
+rede
+\footnote{
+Não é relevante descrever aqui todas as restrições e validações de transações. É possível ver a lista completa na página da \link{https://en.bitcoin.it/wiki/Protocol_rules\#.22tx.22_messages}{Bitcoin Wiki}},
 virtualmente negando o serviço a transações deste tipo, impondo ao seu proponente o ônus de propagar sua transação de forma externa à rede na tentativa de fazê-la alcançar os nós que tenham a eventual chance de incluir um bloco na Blockchain.
 
-Essa linguagem de script demonstra a preocupação no projeto do Bitcoin para poder abarcar, caso fosse necessário, complexidades e regras de transação além do escopo de uma moeda ou pagamento.
-Com ela torna-se possível projetar e realizar transações de garantia, vínculos contratuais, arbitragem privada e multi-assinaturas.
-Mais ainda do que isso, no início de 2014 \cite{Greenspan2015} o protocolo passou a permitir a adição de até 80 bytes de metadados arbitrários em uma transação, abrindo o caminho, mesmo que limitado, para a utilização da blockchain como um \textbf{livro-razão distribuído} (em inglês \textbf{\textit{Distributed Ledger}}), uma fonte de dados onde seria possível registrar informações públicas, perenes e inalteráveis, acessíveis em qualquer lugar do mundo.
-A \emph{Blockchain 2.0} surge para avançar o suporte ao conceito de livro-razão distribuído, trazendo novas tecnologias baseadas em blockchain, destacando-se entre elas as \emph{Smart Properties}, \emph{Smart Contracts} e \emph{DApps (Decentralized Applications)} \cite{Swan2015}.
+Essa linguagem de script demonstra a preocupação desde o projeto do Bitcoin para abarcar, caso fosse necessário, complexidades e regras de transação para além do escopo de uma moeda ou de um sistema de pagamentos, tornando viável projetar por em prática transações de calção, execução de vínculos contratuais, mecanismos de arbitragem privada e transações com multi-assinaturas.
+As possibilidades se expandiram no início de 2014 \cite{Greenspan2015} com um \emph{Hard Fork}
+\footnote{Hard Fork é uma atualização no protocolo Bitcoin sem compatibilidade com as versões anteriores e que obriga a atualização do software para uma versão compatível com o novo formato dos dados na Blockchain.}
+que passou a permitir a adição de até 80 bytes de metadados arbitrários em uma transação, abrindo o caminho, mesmo que limitado, para a utilização da blockchain como um \textbf{livro-razão distribuído} (em inglês, \textbf{\textit{Distributed Ledger}}), isto é, uma fonte de dados onde seria possível registrar informações públicas, perenes e inalteráveis com alta disponibilidade e acessibilidade.
+A \emph{Blockchain 2.0} surge para avançar o suporte a este conceito de livro-razão distribuído, trazendo novas tecnologias baseadas em blockchain, destacando-se as \emph{Smart Properties}, \emph{Smart Contracts} e \emph{DApps (Decentralized Applications)} \cite{Swan2015}.
 Essas ferramentas elevam a expressividade e capacidade da Blockchain como uma plataforma para a criação de aplicações financeiras, semi-financeiras, e até mesmo aplicações com ativos que não são financeiros.
 
-%% detalhamento do Bitcoin que o professor disse estar fora de escopo, sobre scripts no Bitcoin
+%% detalhamento do Bitcoin além do escopo do trabalho removido do texto
 % O Bitcoin permite à princípio scripts com tamanho de até 10 mil bytes e com dados de no máximo 520 bytes na pilha de execução\footnote{Informações retiradas do cliente oficial do Bitcoin, versão 0.19, no arquivo de cabeçalho referente a scripts, linhas {\color{RoyalBlue}\href{https://github.com/bitcoin/bitcoin/blob/0.19/src/script/script.h\#L23}{23}} e {\color{RoyalBlue}\href{https://github.com/bitcoin/bitcoin/blob/0.19/src/script/script.h\#L32}{32}}.}.
-
-%% especificação do tipo de hashing que o Bitcoin faz. Não sei se no Ethereum é assim, então fica de fora do texto até que seja relevante
-% Cada bloco tem uma referência única calculada a partir de seu conteúdo por meio de hashing\footnote{Especificamente, é realizado um hashing duplo utilizando SHA-256 nos campos que compõem o cabeçalho do bloco, representados em bytes \cite{bitcoinWikiHashing}.}
 
 {\color{ForestGreen}Explicar que para criar o consenso, ou seja, escolher quem irá inserir o último bloco na cadeia, é necessário utilizar o mecanismo de consenso denominado Proof-of-Work (PoW). Explicar em que consiste o PoW. (2 parágrafos).}
 
-\textbf{Fatos sobre a necessidade consenso}
+\begin{figure}[!h]
+  \centering
+  \includesvg{images/taxonomia-blockchains.svg}
+  %\includegraphics[width=\textwidth]{images/diagrama-DCPABE.png}
+  \caption{Taxonomia de Blockchains quanto ao acesso à rede e diferenciação de usuários}
+  \label{fig:taxonomiaBlockchains}
+\end{figure}
 
-\begin{itemize}
-    \item A Blockchain pode ser centralizada ou distribuída, e pode ser permissionada ou pública.
-    \item Uma Blockchain centralizada é operada por uma autoridade central ou um conjunto delas, que serão responsáveis que selecionar transações, montar blocos e adicioná-los.
-    \item a Blockchain pública não contém barreiras de entrada para o sistema, e as criptomoedas todas operam nessa política de acesso. Blockchains permissionadas ou privadas surgiram para atender soluções comerciais e empresariais, podendo consistir em uma rede clientes de uma blockchain pública configurada para operar numa rede interna, ou utilizando blockchains com arquiteturas que considerem a permissão de uso, como o Hyperledger Fabric \cite{Indeterminado2019}.
-    \item A Blockchain distribuída opera em uma base p2p e foi projetada sob a suposição da ausência de papéis de confiança aos integrantes da rede, o que implica em uma dificuldade óbvia de decidir quem será o responsável por incluir o próximo bloco.
-    \item A Blockchain distribuída opera em uma arquitetura p2p e foi projetado para operar sem a confiança em usuários para realizar operações sensíveis e que poderiam destruir a rede em caso de uso mal intencionado. Sem haver um papel fixo para gerenciar a rede, decorre que o acesso a ela torna-se público e irrestrito e sem esse controle perde-se a proporção de nós na rede que sejam mal intencionados, não sendo possível derivar propriedades de segurança que tornariam mais simples o desenvolvimento do sistema.
-    \item Devido à homogeneidade de papeis, a única saída é conferir a possibilidade de escrita a todos os participantes da rede, o que acarretaria em cada usuário escrevendo sua própria blockchain e realizando broadcast de sua versão aos demais levaria a múltiplas e incompatíveis versões na rede, destruindo sua funcionalidade. Para resolver essa questão é necessário estabelecer um consenso quanto às alterações na Blockchain e um período de tempo para que o consenso possa se propagar por toda a rede.
-    \item O algoritmo de consenso organiza a escrita na blockchain em rodadas, estabelecendo um desafio computacional com uma dificuldade ajustada dinamicamente de acordo com a capacidade de processamento total da rede. Esse algoritmo estabelece que tem o direito de inserir um bloco na Blockchain o nó que apresentar um bloco válido (i.e., um bloco constituído somente por transações válidas) cujo cabeçalho contenha uma solução válida de acordo com a dificuldade pré-estabelecida no último bloco da rede.
-    \item a participação no consenso é opcional, sendo possível configurar o software para somente obter os dados da Blockchain provindos da rede, e são denominados como \emph{light nodes}. Integrantes que participam do consenso e portanto tem uma chance de adicionar blocos são denominados \emph{mineradores}.
-\end{itemize}
+Uma rede Blockchain pode ser configurada como pública ou privada e
+pode exigir ou não permissão de entrada, formando uma taxonomia ilustrada na figura X.
+Uma Blockchain pública disponibiliza seus dados de maneira irrestrita, bastando que o interessado execute o programa para receber os dados difundidos pela rede, sendo o modelo usado em muitas criptomoedas, a exemplo do Bitcoin e Ethereum.
+Em decorrência de sua estrutura descentralizada, os projetos de criptomoedas carecem de uma autoridade central para verificar e autenticar usuários e por isso operam em um modelo sem permissão \emph{(permissionless)}, onde qualquer pessoa pode adicionar nós à rede de processamento.
+Redes Blockchain públicas são tratadas como sinônimo de redes sem restrições de acesso e de fato até o momento não há menção de alguma rede do tipo que implemente restrição de acesso
+\footnote{Ruiz\cite{Ruiz2020} propõe uma noção diferente para Blockchains públicas e discute sobre a viabilidade a aplicabilidade deste tipo de rede.}.
 
- \textbf{Sobre o Proof-of-Work}
+Uma Blockchain privada é propriedade de uma instituição ou um consórcio delas com a intenção de incorporar suas vantagens à infraestrutura do setor privado.
+Para implantar uma Blockchain privada, pode-se configurar um software da criptomoeda mais apropriada aos requisitos de uso para funcionar em uma rede interna e fechada, ou utilizar arquiteturas desenvolvidas propriamente para este fim, como o Hyperledger Fabric ou Hyperledger Besu \cite{Blummer2019}.
+Blockchains privadas são uma opção viável quando instituições sem confiança entre si desejam interagir ou integrar suas bases dados e ao mesmo tempo não estão dispostas a concordar com uma terceira parte confiável para intermediar a operação deste sistema \cite{OLeary2017, Wust2017}.
+O conjunto de participantes é controlado e conhecido, permitindo o uso de identidades para gerenciar permissão de escrita na Blockchain.
+A leitura de dados pode ser restrito aos participantes ou tornado público, caso haja partes interessadas em conduzir uma verificação da validade dos dados armazenados (e.g., clientes ou auditores) .
 
-\begin{itemize}
-    \item O desafio computacional é baseado na ideia do HashCash \cite{Back2002} e foi denominado como \emph{Proof-of-Work} \emph{(PoW)}.
-\end{itemize}
+A Blockchain do Ethereum e outras criptomoedas operam uma arquitetura p2p e foram projetadas para operar sem a premissa de poder contar com usuários confiáveis para realizar operações sensíveis à rede.
+A inexistência de um papel fixo para gerenciar o registro de usuários implica na necessidade de tornar a entrada à rede pública e irrestrita e sem esse controle não é mais possível derivar propriedades de segurança acerca da proporção esperada de usuários que possam ser mal intencionados.
+Além do mais, a ausência de diferenciação entre usuários implica em um sistema com homogeneidade de papeis, i.e, um sistema onde todos podem realizar o armazenamento, leitura, escrita e atualização e distribuição dos dados da Blockchain.
+A viabilidade da rede depende da correta coordenação entre os usuários em meio a um número desconhecido de usuários desonestos dispostos a subverter a ordem do sistema, formando um cenário equivalente ao descrito na literatura como o Problema dos Generais Bizantinos \cite{Lamport1982}.
+
+É necessário um algoritmo de consenso que coordene as alterações realizadas e estabeleça a frequência em que estas alterações devem ocorrer para que o consenso se propague entre todos os usuários da rede.
+
+O algoritmo de consenso do Ethereum em seu cerne é o mesmo do Bitcoin e resolve esse problema de maneira distinta às soluções presentes na literatura.
+O algoritmo de consenso organiza a escrita na blockchain em rodadas, estabelecendo um desafio computacional com uma dificuldade ajustada dinamicamente de acordo com a capacidade de processamento total da rede para que se leve, em média, o mesmo período de tempo para produzir blocos.
+A participação desse desafio denomina-se mineração, e os usuários realizando mineração são chamados de \emph{minerador}.
+A mineração é uma atividade opcional aos usuários, que podem abrir mão desta tarefa ao configurar seu software para operar no modo \emph{Light node}, somente obtendo dados da rede e realizando a verificação e redistribuição.
+
+O desafio computacional se baseia na ideia do HashCash \cite{Back2002} e foi denominada como \emph{Proof-of-Work} \emph{(PoW)}.
+Esse algoritmo estabelece o direito de inserir um bloco na Blockchain para quem apresentar um bloco válido, i.e., um bloco constituído somente por transações válidas e cujo cabeçalho contenha uma solução válida para o PoW.
+Uma solução válida para o PoW consiste em um hash cujo valor seja precedido por uma quantidade de zeros de acordo com a dificuldade de mineração estabelecida naquele momento.
+A mineração é adversarial uma vez que todos os mineradores estão ao mesmo tempo tentando propor o próximo bloco, e não se sabe quem será o próximo responsável por alterar o estado da Blockchain.
+
+Usuários devem enviar aos outros pares conectados a solução válida de um bloco que serão recebidas, verificadas e redistribuídas até que atinja toda a rede conectada.
+A distribuição do novo bloco e sua referência em novas propostas de blocos são o consenso da rede de que ele realmente participa da Blockchain.
+Por isso pode-se dizer que o consenso ocorre \textbf{implicitamente}, ou seja, não há coordenação de mensagens para desencadear um processo de decisão formal para que um determinado bloco seja aceito ou rejeitado.
+Ao invés disso, o consenso se dá pela inclusão, por meio de sua referência, na cadeia de blocos.
+
 \subsection{Contratos inteligentes no Ethereum} \label{sec:sub:contratos-ethereum}
 
 {\color{ForestGreen}Explicar para que servem e listar benefícios. (1 parágrafo).}
 
-O conceito de \emph{Smart Contract} antecede o advento da blockchain, vislumbrando a possibilidade  de tornar um acordo formal (i.e. um contrato) firmado entre duas ou mais partes em um conjunto de regras computáveis que podem ser, portanto, embutidos no software ou hardware de propriedades com valor e que são controladas por meios digitais, com protocolos estabelecidos para que as partes possam interagir com as regras e desempenhar seus papéis.
+O conceito de \emph{Smart Contract} antecede o advento da blockchain, vislumbrando a possibilidade de tornar um acordo formal (i.e., um contrato) firmado entre duas ou mais partes em um conjunto de regras computáveis que podem ser, portanto, embutidos no software ou hardware de propriedades com valor e que são controladas por meios digitais, com protocolos estabelecidos para que as partes possam interagir com as regras e desempenhar seus papéis.
 Isso possibilita a execução automática do contrato sem a necessidade de intermediários, reduzindo a necessidade de confiança em terceiros e os custos de transação \cite{Bartoletti2019, Szabo1996}.
 O Ethereum foi o primeiro e mais bem-sucedido projeto baseado em Blockchain voltado especificamente para a execução de Smart Contracts, fornecendo uma linguagem de programação turing-completa com suporte a funções criptográficas e de consulta de metadados da blockchain, permitindo expressar contratos na forma de programas que podem ser publicados na rede Ethereum e com os quais usuários e outros contratos podem interagir.
 
