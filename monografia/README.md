@@ -101,3 +101,7 @@
 - [ ] An Efficient Framework for Health System Based on Hybrid Cloud with ABE-Outsourced Decryption | SpringerLink
 - [ ] Scalable and Secure Sharing of Personal Health Records in Cloud Computing Using Attribute-Based Encryption - IEEE Journals & Magazine
 - [ ] Securing electronic medical records using attribute-based encryption on mobile devices | Proceedings of the 1st ACM workshop on Security and privacy in smartphones and mobile devices
+
+### 5 Resultados
+
+- [ ] tabela de chaves criptográficas do Sistema
