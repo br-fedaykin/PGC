@@ -1047,20 +1047,38 @@ As instâncias destas usam a Web3j como interface de conexão com a Blockchain.
 A conexão com a Blockchain é feita por meio de um provedor de dados, que pode ser um nó local em execução, um gerador de Blockchain virtual para teste ou um serviço Web compatível com a RPC Ethereum.
 A rede Ethereum (ou similar) processa as transações, acionando os Smart Contracts em execução na EVM e retornando dados de retorno das funções, juntamente com o novo estado da Blockchain.
 
-{\color{RoyalBlue} Professor, a explicação do que é ABI estará na sessão \ref{sec:sub:contratos-ethereum}, porque lá já estou abordando o Solidity e o bytecode (EVM Code)}
+{\color{RoyalBlue} Professor, a explicação do que é ABI está na seção \ref{sec:sub:contratos-ethereum}, porque lá já estou abordando o Solidity e o bytecode (EVM Code)}
 
 % -------------------------------------------------------------------- %
 \newpage
 \section{Trabalhos Relacionados}
 
-\subsection{Sistemas de saúde com Blockchain e CBA}
+{\color{ForestGreen} Para cada trabalho, escrever um texto como o esqueleto mencionado abaixo (tentar manter esse esqueleto para todos os trabalhos relacionados):
 
-\subsection{Sistemas de saúde com CBA}
-\label{sec:sub:saude-cba}
+Os autores  $\backslash$cite\{trabalhoX\} apresentam um sistema que [explicar "o que faz" o sistema em 2 linhas alto nível, não explicar o "como faz" nem os módulos]. Os principais módulos do sistema são: [listar os módulos, só o nome], os quais serão definidos a seguir.
 
-\subsection{Sistemas gerais com CBA}
+O módulos X ... [1 parágrafo explicando o módulo].
+O módulos Y ... [1  parágrafo explicando o módulo e tentar relacionar a interação com os outros módulos].
 
-Caso não hajam trabalhos na seção~\ref{sec:sub:saude-cba}.
+A principal diferença com o sistema proposto é [2 a 3 linhas].}
+
+A ABE foi proposta inicialmente em 2005 \cite{Sahai2005}, em 2006 \cite{Goyal2006} é publicado o primeiro trabalho aplicando este novo esquema de criptografia a dados e a partir de 2010 \cite{Akinyele2010} a KP-ABE é aplicada com sucesso na área médica em um protótipo para gerenciar dados da Instituição Médica Johns Hopkins (Maryland, EUA).
+A ideia da Blockchain surge junto e por meio do Bitcoin em 2008 \cite{nakamoto2008bitcoin} e as possibilidades de seu uso como um Livro-Razão Distribuído continuam crescendo com novos algoritmos, protocolos e variadas áreas de aplicação.
+Foi necessário a passagem do tempo para que se tornasse evidente a viabilidade da inovação trazida com o Bitcoin, atraindo a atenção do meio acadêmico que passou a estudar suas propriedades e suas aplicações.
+Em 2016 os primeiros trabalhos na área médica com projetos usando Blockchain são publicados, focados em garantir a autenticidade de dados médicos com soluções baseadas em Blockchain \cite{Zhang2016,Azaria2016,Ekblaw2016}.
+Particularmente, o sistema MedRec também implementa um mecanismo para integração de dados de pacientes fragmentados entre bases de dados distintas.
+A união de esquemas ABE com compartilhamento de dados usando Blockchain demonstrou alguns resultados, que serão analisados e comparados com este trabalho a seguir.
+
+\subsection{Sistemas na área de saúde usando Blockchain e ABE}
+\label{sec:sub:saude-blockchain-cba}
+
+Sun et al. \cite{Sun2018} apresentam um sistema para assegurar a autenticidade de dados médico por meio de Blockchain e promover o anonimato dos usuários envolvidos no sistema ao substituir o mecanismo nativo de geração de chaves do Bitcoin por um esquema usando ABE.
+Eles usam um cliente Bitcoin modificado para conter transações que representem registros de prontuários médicos (EHR) com substituição do mecanismos de geração de chaves e assinatura nativo do Bitcoin por outro baseado em um esquema ABE descentralizado que permite que múltiplas autoridades criem e concedam atributos a usuários.
+A proposta foca na preservação do anonimato do usuário e propõe a ABE como forma de escapar às possibilidades de ataque de inferência para descobrir possíveis identidades de usuários usando o Bitcoin, entretanto não trabalha a questão quanto ao sigilo do conteúdo dos prontuários.
+O trabalho proposto aqui difere do mencionado por dar enfoque ao sigilo da informação, não só propondo um esquema de criptografia como também elementos semânticos mínimos para que as múltiplas autoridades gerem atributos com hierarquia e escopos de atuação similares entre elas.
+
+\subsection{Sistemas na área de saúde com acesso online usando ABE}
+\label{sec:sub:saude-nuvem-cba}
 
 % -------------------------------------------------------------------- %
 \newpage
