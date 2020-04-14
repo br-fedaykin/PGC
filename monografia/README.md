@@ -49,20 +49,22 @@
 ### 3. Sistema Proposto
 
 - [ ] primeira revisão e melhoria de redação
-- [ ] incluir na descrição do servidor que ele implementa política criptográfica Zero-Knowledge <https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof>, <https://medium.com/iryo-network/why-now-is-the-right-time-to-deploy-zero-knowledge-encryption-9bd26c5be4ca>
+- [x] incluir na descrição do servidor que ele implementa política criptográfica Zero-Knowledge <https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof>, <https://medium.com/iryo-network/why-now-is-the-right-time-to-deploy-zero-knowledge-encryption-9bd26c5be4ca>
 - [x] Figura dos principais componentes em alto nível
 
 #### 3.1 Visão Geral
 
 - [x] Descrever aqui ou na Seção 3.3 que o módulo DCPABE gera atributos que são uma estrutura contendo um nome e dois campos de bytes, entre 138 e 142, que codificam elementos de um Grupo de pareamento gerado pela biblioteca X do java (pesquisar quem gera isso).
 - [x] primeira revisão e melhoria de redação
+- [ ] imagem e texto declarando que se trabalha de forma híbrida com dados dentro e fora da Blockchain
+- [ ] descrever que o sistema possui X fases e elaborar cada uma
 
 #### 3.2 Taxonomia das permissões
 
 - [ ] passar figura da taxonomia a limpo. [Link do Diagrama](https://mermaidjs.github.io/mermaid-live-editor/#/view/eyJjb2RlIjoiZ3JhcGggUkxcbkExW0NSTV0gLS0gaXJyZXN0cml0byA8YSBocmVmPVwiXCJodHRwOi8vYml0Lmx5L0PDs2RpZ2_DiXRpY2FNZWRpY2luYSNhcnQ5MFwiXCI-QXJ0LiA5MC0tPC9hPiAtLT4gIEJbUHJvbnR1w6FyaW9dXG5CIC0tLXxjb250w6ltfCBDW2RhZG9zIHNlbnPDrXZlaXNdXG5DIC0tLXxzw6NvfCBDMVtkb2Vuw6dhcywgbWVkaWNhbWVudG9zIG91IDxicj4gdHJhdGFtZW50b3MgZXN0aWdtYXRpemFkb3MgPGJyPiBzb2NpYWxtZW50ZV1cbkIgLS0tfGNvbnTDqW18IERbZGFkb3MgY29tdW5zXVxuQiAtLS18Y29udMOpbXwgRVtkYWRvcyBkYW5vc29zXVxuRSAtLS18c8Ojb3wgRTFbaGlww7N0ZXNlcy9wcm9nbsOzc3RpY29zIHF1ZSA8YnI-IG8gcGFjaWVudGUgcG9kZSBuw6NvIHN1cG9ydGFyXVxuQiAtLS18Y29udMOpbXwgRlthdGVzdGFkbyBkZSDDs2JpdG9dXG5CIC0tLXxjb250w6ltfCBHW2xhdWRvIGRlIMOzYml0b11cbkEyW1BhY2llbnRlXSAtLSBpcnJlc3RyaXRvLCBhIG1lbm9zIHF1ZSA8YnI-IGNhdXNlIGRhbm8gPGEgaHJlZj1cIlwiaHR0cDovL2JpdC5seS9Dw7NkaWdvw4l0aWNhTWVkaWNpbmEjYXJ0MzRcIlwiPkFydC4gMzQ8L2E-IC0tPiAgQltQcm9udHXDoXJpb11cbkEzW1JlcHJlc2VudGFudGUgTGVnYWxdIC0tIGlycmVzdHJpdG8gPGEgaHJlZj1cIlwiaHR0cDovL2JpdC5seS9Dw7NkaWdvw4l0aWNhTWVkaWNpbmEjYXJ0MzRcIlwiPkFydC4gMzQuPC9hPi4gLS0-ICBCW1Byb250dcOhcmlvXVxuQTRbRmFtaWxpYXIgZGUgMcK6XSAtLSBpcnJlc3RyaXRvIDxhIGhyZWY9XCJcImh0dHA6Ly9iaXQubHkvMlQ4NWhWTVwiXCI-Q1JFTUVTUDwvYT4uIC0tPiAgRlxuQTQgLS0gaXJyZXN0cml0byBhcMOzcyBvIMOzYml0byA8YnI-PGEgaHJlZj1cIlwiaHR0cHM6Ly9nbG8uYm8vMlQyTDRSaVwiXCI-c2VndW5kbyBhIGp1c3Rpw6dhPC9hPiAtLT4gIEJcbkE0IC0tIGlycmVzdHJpdG8gPGEgaHJlZj1cIlwiaHR0cDovL2JpdC5seS8yVDg1aFZNXCJcIj5DUkVNRVNQPC9hPiAtLT4gIEdcbkE1W1NlZ3VyYWRvcmFdIC0tIGlycmVzdHJpdG8gPGEgaHJlZj1cIlwiaHR0cDovL2JpdC5seS9Dw7NkaWdvw4l0aWNhTWVkaWNpbmEjYXJ0NzdcIlwiPkFydC4gNzcuLjwvYT4uIC0tPiAgRlxuQTUgLS0gIHF1YW5kbyBhdXRvcml6YWRvIHBlbG8gPGJyPiByZXByZXNlbnRhbnRlIGxlZ2FsIDxicj48YSBocmVmPVwiXCJodHRwOi8vYml0Lmx5L0PDs2RpZ2_DiXRpY2FNZWRpY2luYSNhcnQ3N1wiXCI-QXJ0LiA3Ny48L2E-IC0tPiAgR1xuQTZbUGVyaXRvXSAtLSBxdWFuZG8gPGJyPiBub21lYWRvIDxhIGhyZWY9XCJcImh0dHA6Ly9iaXQubHkvQ8OzZGlnb8OJdGljYU1lZGljaW5hI2FydDg5cDFcIlwiPiAmIzE2NyAxwrosIEFydC4gODkuPC9hPiAtLT4gQlxuQTdbUGVzcXVpc2Fkb3JdIC0tIGF1dG9yaXphZG8gcGVsbyBDb21pdMOqIDxicj4gZGUgw4l0aWNhIG91IHBhY2llbnRlIC0tLSBCXG5BOFtUZXJjZWlyb3NdIC0tIGF1dG9yaXphZG8gcGVsbyA8YnI-IHBhY2llbnRlIDxhIGhyZWY9XCJcImh0dHA6Ly9iaXQubHkvQ8OzZGlnb8OJdGljYU1lZGljaW5hI2FydDg5XCJcIj4gJiMxNjcgMcK6LCBBcnQuIDg5LjwvYT4gLS0-IENcbkE4W1RlcmNlaXJvc10gLS0gYXV0b3JpemFkbyBwZWxvIDxicj4gcGFjaWVudGUgPGEgaHJlZj1cIlwiaHR0cDovL2JpdC5seS9Dw7NkaWdvw4l0aWNhTWVkaWNpbmEjYXJ0ODlcIlwiPiAmIzE2NyAxwrosIEFydC4gODkuPC9hPiAtLT4gRCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0Iiwic2VjdXJpdHlMZXZlbCI6Imxvb3NlIn19). Ver se é viável usar a biblioteca TikZ
   - [ ] Incluir o MÉDICO na taxonomia com acesso irrestrito se ele for o responsável pelo paciente
 - [x] primeira revisão e melhoria de redação
-- [ ] no parágrafo falando sobre derivação de chaves privadas e uso de chaves feitas para um terceiro, existe um nome para esse problema onde alguém tentar ceder credenciais para alguém não autorizado. Usar aquela definição aqui.
+- [x] Usar aquela definição para o ataque onde alguém tentar ceder credenciais para alguém não autorizado.
 
 #### 3.3 Contratos inteligentes com CBA
 
@@ -87,6 +89,7 @@
 ### 4 Trabalhos relacionados
 
 - [x] Texto introdutório
+- [ ] tabela de comparação de funcionalidades
 
 #### 4.1 Sistemas na área de saúde usando Blockchain e ABE
 
@@ -105,3 +108,5 @@
 ### 5 Resultados
 
 - [ ] tabela de chaves criptográficas do Sistema
+- [ ] caso de uso
+- [ ] gráficos e dados
