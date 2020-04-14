@@ -40,7 +40,7 @@
 #### 2.3 Contratos Inteligentes no Ethereum
 
 - [x] origem da ideia por Szabo
-- [ ] utilidade, benefícios
+- [men ] utilidade, benefícios
 - [x] introdução à implementação no Ethereum
   - [x] o que é EVM
   - [x] o que é Solidity
@@ -83,3 +83,21 @@
   - [x] Publicação dos contratos na testnet Rinkeby
   - [x] Verificação e adição de código fonte aos Smart Contracts na testnet Rinkeby
   - [x] Imagem de dependências dos Smart Contracts
+
+### 4 Trabalhos relacionados
+
+- [x] Texto introdutório
+
+#### 4.1 Sistemas na área de saúde usando Blockchain e ABE
+
+- [ ] Attribute-based Multi-Signature and Encryption for EHR Management: A Blockchain-based Solution
+- [x] A Decentralizing Attribute-Based Signature for Healthcare Blockchain - IEEE Conference Publication
+- [ ] Securing e-health records using keyless signature infrastructure blockchain technology in the cloud | SpringerLink
+- [ ] Medical Data Sharing Scheme Based on Attribute Cryptosystem and Blockchain Technology - IEEE Journals & Magazine
+- [ ] Toward Secure, Privacy-Preserving, and Interoperable Medical Data Sharing via Blockchain - IEEE Conference Publication
+
+#### 4.2 Sistemas na área de saúde com acesso online usando ABE
+
+- [ ] An Efficient Framework for Health System Based on Hybrid Cloud with ABE-Outsourced Decryption | SpringerLink
+- [ ] Scalable and Secure Sharing of Personal Health Records in Cloud Computing Using Attribute-Based Encryption - IEEE Journals & Magazine
+- [ ] Securing electronic medical records using attribute-based encryption on mobile devices | Proceedings of the 1st ACM workshop on Security and privacy in smartphones and mobile devices
