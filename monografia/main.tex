@@ -465,13 +465,11 @@ A coleção de dados armazenados na Blockchain compõe o que se denomina como es
   }
 \end{lstlisting}
 
-
 {\color{ForestGreen}Explicar um exemplo passo-a-passo (Só TEXTO, Não Código) de um cliente que obtém o contrato do parágrafo anterior e o executa remotamente em uma máquina. (2 parágrafo).}
 
 As funções implementadas no contrato apontam a existência de dois tipos de papeis relacionados, um que provê informações e outro que as consulta. O Smart Contract armazena duas tabelas, uma associando endereços a uma lista de URLs e outra associando um URL a um objeto do tipo Registro, que contém as informações de um exame. Essas tabelas são alimentadas por meio da função \emph{addURL} do contrato, sendo utilizada pelo Hospital que deseja disponibilizar os exames para consulta, e os exames podem ser consultados usando-se a função \emph{getRegistro}. Ambos os papeis necessitam possuir uma identidade na blockchain Ethereum, ou seja, possuir um endereço válido e ser capaz de publicar transações. Também é necessário possuir um cliente capaz de se conectar a rede para poder publicar novas transações. Já para a consulta de dados, é possível utilizar serviços Web de terceiros, como sites de visualização de transação, para resgatar uma atualização particular ou obter o estado atual das variáveis do contrato.
 
 Este exemplo, embora introduza a sintaxe do Solidity, também incorre em três situações problemáticas que podem precisar de conserto. Primeiro, Smart Contracts tem seu código tornado público à rede no momento de sua implantação e suas funções podem ser utilizadas por qualquer usuário da rede. A ausência de controle no uso da função é um risco à integridade dos dados, uma vez que pode estar sujeita a alterações maliciosas. Um contrato deve impor uma política de acesso a funções sensíveis, implementando nestas funções verificações internas do endereço responsável pela interação, permitindo ou não a execução de acordo com tal política. Segundo, dados publicados na Blockchain são sempre públicos em sua visibilidade, embora possam ter diferentes escopos de acesso. Isso quer dizer que os dados relacionados aos exames serão públicos, expondo informações privativas a quem tiver acesso à Blockchain. Uma maneira de mitigar este problema e ainda assim manter a segurança da informação é publicar assinaturas dos dados, que não conterão informação sensível mas ainda servirão para verificar a integridade e imutabilidade dos dados armazenados externamente, na web. Terceiro, mesmo que não configurasse problema de privacidade, este uso da Blockchain tornaria o custo de operação muito alto, uma vez que a cada exame médico haveria um custo para armazenar múltiplas informações, sendo as mais caras as informações de tamanho dinâmico como a variável de texto \emph{data}. Embora o exemplo exemplifique uma estrutura de dados, na prática a Blockchain tem restrições computacionais de uso baseada no alto custo de armazenamento e processamento, o que significa que mesmo em um cenário onde não seja necessário a privacidade, ainda assim há um incentivo para esvaziar as estruturas de dados de informação relativa ao domínio de aplicação e ao invés disso utilizar ela somente como um meio para se verificar estes dados que estarão alocados em bases de dados externas à Blockchain.
-
 
 % -------------------------------------------------------------------- %
 \newpage
@@ -489,177 +487,295 @@ Este exemplo, embora introduza a sintaxe do Solidity, também incorre em três s
 \subsection{Visão Geral}
 \label{sec:sub:visaogeral}
 
-{\color{ForestGreen}Explicar que o sistema é composto por X componentes (1 parágrafo).}
+% {\color{ForestGreen}Explicar que o sistema é composto por X componentes (1 parágrafo).}
 
-A arquitetura do protótipo é constituída por 3 módulos: um módulo Cliente, que é o maior módulo, destinado para o uso tanto de autoridades quanto de usuários, responsável por coordenar e integrar os demais módulos do sistema, incluindo os Smart Contracts implantados na EVM.
-O módulo cliente também oferece a funcionalidade de realizar operações criptográficas no esquema ABE e conexão com a Blockchain Ethereum.
-O módulo Blockchain se refere aos Smart Contracts, operando de forma autônoma e contínua na Blockchain, possuindo alguma lógica de aplicação embutida, a maior parte dela para a verificação de que os dados não caracterizam uma transação inconsistente.
-Um terceiro módulo servidor armazena e faz a distribuição de arquivos criptografados pelo cliente.
+A arquitetura do sistema proposto é constituída por 3 módulos: Cliente, Blockchain e Servidor.  Em linhas gerais, o módulo cliente, % que é o maior módulo,
+destinado para o uso tanto de autoridades (quem cria os atributos de acesso) quanto de usuários (quem usa o sistema), é responsável por %coordenar e integrar os demais módulos do sistema, incluindo os Smart Contracts implantados na EVM. Já o módulo cliente também oferece a funcionalidade de
+realizar operações criptográficas, utilizando o esquema ABE, e por se conectar com a Blockchain Ethereum.
+O módulo Blockchain é responsável pelo gerenciamento dos Smart Contracts, operando de forma autônoma e contínua, o que permite executar a lógica do sistema (e.g., verificação de inconsistência nos dados).
+Finalmente, o módulo servidor é responsável por armazenar e distribuir os arquivos criptografados pelo cliente.
+A seguir serão detalhados os módulos.
 
-{\color{ForestGreen}Explicar a função de cada componente (1-2 parágrafos para cada um).}
+% {\color{ForestGreen}Explicar a função de cada componente (1-2 parágrafos para cada um).}
 
-O módulo cliente é responsável por definir a lógica de funcionamento da aplicação, coordenando a atividade dos demais componentes.
-Ele acumula funcionalidades que atendem tanto a usuários do sistema, quanto a autoridades que outorgam atributos.
-Isso ocorre porque parte da lógica das políticas de acesso considera que o próprio cliente possa criar os próprios atributos e concedê-los a terceiros.
+O módulo cliente é responsável por definir a lógica de funcionamento do sistema, coordenando as atividades dos demais componentes.
+Ele acumula funcionalidades que atendem tanto a usuários do sistema, quanto a autoridades certificadoras que outorgam atributos (tais como a profissão, e.g., se é enfermeiro ou radiologista).
+Isso ocorre porque parte da lógica das políticas de acesso considera que o próprio cliente (i.e., o certificador) possa criar os próprios atributos e concedê-los a terceiros (outros clientes).
 
-O módulo do servidor recebe, armazena e envia arquivos criptografados, operando como um serviço Web público na internet.
-A modelagem deste módulo foi feita considerando um ambiente não-seguro de armazenamento dos dados e em consequência disto, o cliente não envia dados sem estarem criptografados e não é necessário que o servidor armazene metadados de usuários para a identificação de seus dados, bastando apenas armazenar uma código que funcionará como uma chave-primária para a identificação e recuperação de um arquivo em seu sistema de arquivos.
-Cabe ao cliente solicitar este código antes do envio, publicá-lo na Blockchain e informá-lo em uma requisição de um arquivo do servidor.
-Durante o desenvolvimento e experimentação este mesmo módulo armazenou, de forma temporária, as chaves pessoais de atributos gerados para usuários, mas isso de forma alguma é um requerimento desta solução.
-Estas chaves podem ser transferidas de maneira externa ao sistema, pela via que for considerada segura por ambos usuário e certificador, tais como mídia física, serviço de e-mail criptografado ou serviços de armazenamento em nuvem.
+O módulo servidor recebe, armazena e envia arquivos criptografados, operando como um serviço Web público na internet.
+A modelagem deste módulo considera um ambiente não-seguro de armazenamento dos dados, especificamente, que podem ser roubados.
+Em consequência disto, o módulo cliente deve enviar os dados criptografados e o servidor os armazenará.
+Para lidar com o mapeamento entre o usuário e seus dados, o servidor armazena um identificador único que funciona como uma chave-primária para recuperar os dados (evitando armazenar os metadados dos usuários, tais como, o nome).
+Para inserir um dado\footnote{O dado pode ser um arquivo}, cabe ao cliente realizar os seguintes passos:
+(i) solicitar o identificador antes do envio de dados,
+(ii) publicar o identificador na Blockchain. No caso da recuperação do dado, o módulo cliente deve informar ao servidor o identificador.
+% Durante o desenvolvimento e experimentação este mesmo módulo armazenou, de forma temporária, as chaves pessoais de atributos gerados para usuários, mas isso de forma alguma é um requerimento desta solução. Estas chaves podem ser transferidas de maneira externa ao sistema, pela via que for considerada segura por ambos usuário e certificador, tais como mídia física, serviço de e-mail criptografado ou serviços de armazenamento em nuvem.
 
-O módulo blockchain é responsável por armazenar de forma permanente e imutável o registro de documentos cifrados e a respectiva política de acesso ao documento, descrita em termos de uma forma booleana composta por funções lógicas E e OU com atributos como predicados.
-A Blockchain utilizada para teste do protótipo durante o protótipo foi uma versão privada da rede Ethereum gerada e processada por um programa específico para este fim denominado como Ganache.
-A necessidade de impor verificações de validade de uma transação e de possuir variáveis com estados exigiu a adoção de Smart Contracts, tornando o Bitcoin uma opção inviável para este trabalho.
-Embora seja a rede mais segura e bem-sucedida em termos de desenvolvimento, a rede Ethereum demonstra ser uma melhor opção porque suporta nativamente a execução de Smart Contracts e porque é o projeto mais bem-sucedido entre as opções que envolvem Smart Contracts ao se considerar o tamanho da comunidade envolvida no desenvolvimento e sua posição de mercado em relação aos demais projetos de mesma finalidade.
+O módulo Blockchain é responsável por armazenar de forma permanente e imutável {\color{blue}os metadados} dos documentos cifrados e suas respectivas políticas de acesso. Para impor verificações de acesso e validade de uma transação (seja uma inserção ou modificação de um dado), foi necessário adotar os Smart Contracts. %, descrita em termos de uma forma booleana composta por funções lógicas E e OU com atributos como predicados.
+Nesse sentido, foi escolhida a rede Ethereum por suportar nativamente a execução de Smart Contracts e porque é um projeto bem-sucedido entre as opções existentes, considerando tanto o tamanho da comunidade envolvida no desenvolvimento quanto sua posição de mercado. %A Blockchain na qual se baseia o sistema é uma versão privada da rede Ethereum gerada e processada por um programa específico para este fim, denominado Ganache\cite{ganache}.
 
-A biblioteca Web3j foi utilizada neste trabalho para fornecer conectividade à Blockchain Ethereum. Por meio da Web3j o módulo cliente se conecta por meio do protocolo HTTP ou IPC a qualquer fonte de dados compatível com a RPC Blockchain, incluindo nós locais conectados à rede principal ou a redes de teste (testnets) Ethereum, programas que emulam a execução de uma Blockchain ou a serviços Web compatíveis.
-A biblioteca também possui funcionalidade para gerar classes geradas dinamicamente baseadas no código de Smart Contracts, facilitando a integração do Ethereum com projetos Java.
+Para fornecer conectividade à Blockchain Ethereum foi utilizada a biblioteca Web3j.
+Por meio dela, o módulo Cliente pode conectar-se à Blockchain principal ou à de teste, sendo esta última utilizada para emular a execução da Blockchain principal. %A biblioteca também possui funcionalidades para gerar classes geradas dinamicamente baseadas no código de Smart Contracts, facilitando a integração do Ethereum com projetos Java.
 
-{\color{ForestGreen}Figura dos principais componentes em alto nível: programa cliente (exemplo celular ou notebook), servidor de armazenamento de arquivos; blockchain ethereum; contratos inteligentes; servidor de chaves de permissões.}
+% {\color{ForestGreen}Figura dos principais componentes em alto nível: programa cliente (exemplo celular ou notebook), servidor de armazenamento de arquivos; blockchain ethereum; contratos inteligentes; servidor de chaves de permissões.}
+
+A Figura \ref{fig:diagramaDCPABE} apresenta as responsabilidades dos módulos do sistema.
 
 \begin{figure}[H]
   \centering
-  \includesvg[width=1.1\linewidth]{images/diagrama-SmartDCPABE.svg}
-  {Funcionamento geral e interação entre os módulos cliente, servidor de armazenamento de arquivos e Smart Contracts na Blockchain Ethereum.}
-  \label{fig:diagramaSmartDCPABE}
+  \includesvg[width=1.1\linewidth]{images/diagrama-DCPABE.svg}
+  \caption{Funcionamento geral e interação entre os módulos cliente, servidor de armazenamento de arquivos e Smart Contracts na Blockchain Ethereum.}
+  \label{fig:diagramaDCPABE}
 \end{figure}
 
-{\color{ForestGreen}Explicar um cenário de uso passo-a-passo (exemplo, milestone 1, mas com permissões direcionadas ao contexto de saúde, por exemplo um paciente quer dar permissão de acesso a médicos cardiologistas) (2 parágrafos)}.
+% {\color{ForestGreen}Explicar um cenário de uso passo-a-passo (exemplo, milestone 1, mas com permissões direcionadas ao contexto de saúde, por exemplo um paciente quer dar permissão de acesso a médicos cardiologistas) (2 parágrafos)}.
 
-A Figura \ref{fig:diagramaSmartDCPABE} apresenta os componentes do sistema e seu funcionamento.
-(1) Uma autoridade usa o módulo cliente gera chaves privadas, públicas e pessoais de atributos;
-(2) A autoridade usa o módulo cliente para aplicar as políticas de acesso em prontuários eletrônicos de pacientes (PEP), tarefa que pode ser automatizada no caso de uma migração de bases de dados para o sistema proposto;
-(3) o módulo cliente aciona um Smart Contract que reúne informações públicas sobre atributos recebe as novas chaves e as disponibiliza para consulta;
-(4) durante o envio de um arquivo ao servidor, o módulo cliente aciona um Smart Contract de gestão de arquivos cifrados e cadastra os metadados referentes ao arquivo, entre eles o servidor de hospedagem e o código de acesso;
-(5) o cliente envia ao servidor os dados criptografados para armazenamento e consulta;
-(6) um usuário pode consultar metadados sobre um arquivo e as chaves existentes de atributos e pode requisitar ao servidor o arquivo, descriptografá-lo e editá-lo localmente conforme a necessidade.
-Havendo alteração no documento, o usuário aciona o módulo cliente para realizar a criptografia, envia os novos dados ao servidor e atualiza o registro do arquivo no Smart Contract no caso onde a política de acesso foi alterada.
-A linha tracejada indica uma conexão estabelecida fora do sistema entre a autoridade e usuário para a entrega de uma chave pessoal de um atributo, usando qualquer meio de transmissão de dados que as partes considerem seguro.
+Na figura: (1) cabe à autoridade usar o módulo Cliente para gerar tanto as chaves privadas e públicas dos usuários quanto as chaves pessoais dos atributos;
+(2) cabe à autoridade usar o módulo Cliente para aplicar as políticas de acesso nos PEPs - Prontuários Eletrônicos de Pacientes; %, tarefa que pode ser automatizada no caso de uma migração de bases de dados para o sistema proposto;
+(3) cabe ao módulo Cliente acionar um Smart Contract que reúne informações públicas sobre atributos recebe as novas chaves e as disponibiliza para consulta;
+(4) durante o envio de um arquivo ao servidor, cabe ao  módulo Cliente acionar um Smart Contract de gestão de arquivos cifrados e cadastrar os metadados referentes ao arquivo, entre eles o servidor de hospedagem e o código de acesso;
+(5) cabe ao módulo cliente enviar ao servidor os dados criptografados para armazenamento e consulta;
+(6) para consultar os metadados de um arquivo com suas chaves existentes de atributos, cabe ao cliente requisitar ao servidor o arquivo, descriptografá-lo e editá-lo localmente conforme a necessidade.
+Se um usuário alterar o documento, cabe ao módulo Cliente realizar a criptografia, enviar os novos dados ao servidor e atualizar o registro do arquivo no Smart Contract.
 
-Em um contexto específico da saúde, o sistema funcionaria da seguinte forma:
-Uma paciente de nome Alice receberia um documento digital, por exemplo um encaminhamento médico para outra especialidade, e deseja juntar a documentação ao seu PEP.
-Ela utiliza um programa específico para editar seu prontuário, adicionando este documento digital à estrutura de dados do prontuário e utiliza o módulo cliente para criptografar o documento usando um esquema criptográfico ABE, cifrando o documento de acordo com uma política de acesso que ela tenha escolhido ou concordado em usar.
-Para este caso de uso, suponhamos que a tal política seja a seguinte:
+Na Figura, a linha tracejada indica que a entrega de uma chave pessoal de um atributo será realizada fora do sistema.
 
-\[paciente \vee (Hospital\ X \wedge Hematologista)\]
+A seguir será dado um exemplo de como funciona o sistema.
+A paciente Alice recebe um documento digital, correspondendo a seu exame laboratorial de sangue, e deseja adicioná-lo ao sistema.
+Para isso, Alice %ela utiliza um programa específico para editar seu prontuário, adicionando este documento digital à estrutura de dados do prontuário e
+utiliza o módulo cliente para criptografar o documento, usando o esquema ABE, de acordo com uma política de acesso que ela tenha escolhido usar.
+Vamos supor que a política escolhida seja a seguinte:
 
-Essa política garante acesso ao próprio paciente e aos médicos da especialidade Hematologista e vinculados ao Hospital X, e pode ser descrita trocando os símbolos dos operadores lógicos pelo seus nomes em inglês, ou seja, ``paciente OR (Hospital-X AND Hematologista)''.
-Repare que a aplicação da política é realizada pelo próprio usuário, efetivamente entregando o controle da segurança da informação ao paciente e respeitando seu direito à privacidade e à informação médica.
+\[paciente \vee (Hospital-X \wedge Hematologista)\]
 
-Ao cifrar o documento, ele está pronto para ser enviado.
-Sob o comando do usuário o cliente solicita a reserva de um código de acesso de arquivos a um servidor, caso seja o primeiro envio deste documento, realiza o envio à Blockchain informando diversos dados: o código de acesso, a identificação do servidor, o nome do arquivo, a política de acesso, o instante em que a transação está sendo feita e extratos de dados produzidos pela criptografia ABE necessários para decifrar o arquivo.
-Caso não seja o primeiro envio do arquivo\footnote{Os arquivos são considerados os mesmos se tiverem o mesmo nome.}, o cliente só enviará a nova versão ao servidor e só alterará a Blockchain quando houver necessidade de atualizar algum dos dados que tenham sofrido alteração.
+Essa política garante acesso ao próprio paciente e aos médicos da especialidade Hematologista que estejam vinculados ao Hospital-X. A política pode ser descrita trocando os símbolos dos operadores lógicos pelo seus nomes em inglês, ou seja, ``paciente OR (Hospital-X AND Hematologista)''.
+Repare que a aplicação da política é realizada pelo próprio usuário, efetivamente entregando o controle da segurança da informação ao paciente e respeitando seu direito à privacidade da informação.
 
-Em um segundo momento Bob, o Hematologista do Hospital X, ciente do agendamento da consulta de Alice e em posse de uma ficha cadastral dela onde conste a carteira Ethereum cadastrada no sistema, usa o cliente para consultar na Blockchain informações de seu prontuário médico.
-Ao baixar os metadados do arquivos, ele requisita o documento cifrado ao servidor de arquivos e decifra o documento utilizando o extrato do processo de criptografia e suas chaves pessoais dos atributos referidos na política de acesso, decifrando com sucesso o arquivo e usando um programa específico para visualizar e editar o prontuário.
+Após o cifrado do documento, ele está pronto para ser enviado ao servidor.
+Para isso, o usuário aciona o módulo cliente, quem solicita a reserva de um código de acesso de arquivos ao servidor, caso seja o primeiro envio deste documento.
+Após a obtenção do código, realiza o envio à Blockchain informando diversos dados, entre eles: o código de acesso, a identificação do servidor, o nome do arquivo, a política de acesso, o instante em que a transação está sendo feita e extratos de dados produzidos pela criptografia ABE necessários para decifrar o arquivo.
+Caso não seja o primeiro envio do arquivo\footnote{Os arquivos são considerados os mesmos se tiverem o mesmo nome.}, o cliente enviará somente a nova versão do mesmo ao servidor.
+Caso haja alguma atualização nos dados ({\color{magenta}por exemplo ...}), o módulo cliente também alterará a Blockchain.
 
-\subsection{Taxonomia de permissões}
+Em um segundo momento, o Hematologista do Hospital-X, ciente do agendamento da consulta de Alice e em posse da  ficha cadastral onde conste sua carteira Ethereum cadastrada no sistema, usa o módulo cliente para consultar na Blockchain os metadados do arquivo que contêm informações de acesso ao servidor.
+Ao recuperar esses metadados, o módulo cliente do Hematologista requisita o documento cifrado ao servidor e o decifra, utilizando as chaves pessoais dos atributos referidos na política de acesso.
+
+\subsection{Módulo Cliente}
+
+Nesta seção serão apresentadas as diferentes funcionalidades do módulo: geração da taxonomia dos atributos; como são criadas as permissões usando essa taxonomia; como são encriptados os arquivos usando essa taxonomia; como se conectar à Blockchain.
+
+\subsubsection{Taxonomia e criação de permissões}
 \label{sec:sub:taxonomia-permissoes}
+% {\color{ForestGreen}Explicar que o servidor de permissões deverá ser responsabilidade de uma organização apta para entregar as permissões online (ex. Ministério de Saúde ou algúm conselho federal/regional de medicina) (1 parágrafo)}.
 
-{\color{ForestGreen}Explicar que o servidor de permissões deverá ser responsabilidade de uma organização apta para entregar as permissões online (ex. Ministério de Saúde ou algúm conselho federal/regional de medicina) (1 parágrafo)}.
-
-A gestão de acesso a arquivos no sistema é feita pelos usuários, configurando grupos de acesso combinando os operadores lógicos e atributos que representam credenciais de acesso por quem as possui.
-É denominado como autoridade ou certificador quem cria atributos, publica na Blockchain e processa as requisições de concessão deste atributo registradas na Blockchain.
-Qualquer usuário pode se tornar um certificador, bastando publicar um atributo na Blockchain para que sejam registrados como tais em uma lista pública de certificadores mantida pelo contrato \emph{SmartDCPABEAuthority}.
-Entidades como o Ministério da Saúde, os Conselhos Federais e Regionais de Medicina, e todos os laboratórios, clínicas e hospitais se tornariam certificadores, passando a publicar atributos que seriam úteis para a escrita de política de acesso em um prontuário médico.
+A gestão de acesso a arquivos é realizada pelo usuário, combinando os operadores lógicos e atributos que representam credenciais de acesso por quem as possui.
+No sistema, é denominado como autoridade ou certificador quem cria os atributos, publica na Blockchain e processa as requisições de concessão destes atributos.
+%Qualquer usuário pode se tornar um certificador, bastando publicar um atributo na Blockchain para que sejam registrados como tais em uma lista pública de certificadores mantida pelo contrato \emph{SmartDCPABEAuthority}.
+No sistema, entidades como o Ministério da Saúde, os Conselhos Federais e Regionais de Medicina, e todos os laboratórios, clínicas e hospitais se tornariam certificadores, passando a publicar atributos que seriam úteis para a escrita da política de acesso em um prontuário eletrônico do paciente.
 A identidade principal do certificador é seu endereço de carteira ao invés de seu nome, acrescentada ao sistema somente para facilitar a operação e prover um sistema de identificação básico na Blockchain sem a necessidade de terceiros.
 
-{\color{RoyalBlue} Professor, inicialmente comecei a descrever a forma com que uma autoridade se cadastrava no sistema, mas acabei entrando em detalhes técnicos. Estou pensando em mover isso para a seção \ref{sec:sub:ImplementacaoSmartContracts} na parte onde se fala do contrato \emph{SmartDCPABEAuthority} }
+% {\color{RoyalBlue} Professor, inicialmente comecei a descrever a forma com que uma autoridade se cadastrava no sistema, mas acabei entrando em detalhes técnicos. Estou pensando em mover isso para a seção \ref{sec:sub:ImplementacaoSmartContracts} na parte onde se fala do contrato \emph{SmartDCPABEAuthority}}
 
-Usar endereços de carteira Ethereum como a identidade principal de certificadores impossibilita um agente mal intencionado a forjar a identidade de um certificador já cadastrado, uma vez que para se passar por ele o atacante teria que derivar a chave privada a partir do endereço da carteira, o que não pode ser feito.
-Ainda resta o cenário onde um atacante se cadastra no sistema antes mesmo do certificador e usufrui desta posição até ser descoberto, lançando atributos que serviriam como backdoor nas políticas de acesso definidas pelo usuário, podendo acessar arquivos onde seus atributos fossem condição suficiente para a descriptografia.
-Isso também poderia ser evitado ao assumir um esquema de consumo de tokens no ato do registro de uma autoridade no sistema, como por exemplo o hashing do nome da instituição e um endereço de carteira informado previamente ao responsável pela implantação do sistema.
-A verificação da validade de uma solicitação de cadastro de uma autoridade seria simplesmente calcular o hashing da carteira e seu nome e verificar com essa lista de hashes disponíveis ao contrato.
-Por não exporem informação sensível, esses hashes poderiam ser uma estrutura de dados no contrato que gerencia as autoridades ou constituir um contrato auxiliar próprio, que seria atualizado pelos administradores da implantação e utilizado pelo contrato principal.
+Usar endereços de carteira Ethereum como a identidade principal de certificadores evita que um agente mal intencionado forje a identidade de um certificador já cadastrado, uma vez que para se passar por ele o atacante teria que derivar a chave privada a partir do endereço da carteira, o que computacionalmente é muito difícil.
+%Ainda resta o cenário onde um atacante se cadastra no sistema antes mesmo do certificador e usufrui desta posição até ser descoberto, lançando atributos que serviriam como backdoor nas políticas de acesso definidas pelo usuário, podendo acessar arquivos onde seus atributos fossem condição suficiente para a descriptografia.
+%Isso também poderia ser evitado ao assumir um esquema de consumo de tokens no ato do registro de uma autoridade no sistema, como por exemplo o hashing do nome da instituição e um endereço de carteira informado previamente ao responsável pela implantação do sistema.
+%A verificação da validade de uma solicitação de cadastro de uma autoridade seria simplesmente calcular o hashing da carteira e seu nome e verificar com essa lista de hashes disponíveis ao contrato.
+%Por não exporem informação sensível, esses hashes poderiam ser uma estrutura de dados no contrato que gerencia as autoridades ou constituir um contrato auxiliar próprio, que seria atualizado pelos administradores da implantação e utilizado pelo contrato principal.
 
-{\color{ForestGreen}Explicar que a autenticação de uma pessoa para obter a permissão deverá ser realizada de forma externa ao sistema proposto (1 parágrafo).}
+%{\color{ForestGreen}Explicar que a autenticação de uma pessoa para obter a permissão deverá ser realizada de forma externa ao sistema proposto (1 parágrafo).}
 
-Atributos são gerados a partir de requisições feitas por usuários e publicadas na blockchain, por meio de um Smart Contract específico para armazená-las e atualizar o seu estado.
-É necessário que o usuário tenha previamente se registrado em um contrato específico para gestão de usuários para poder requisitar a concessão de um atributo, informando a carteira e dados básicos de identificação.
-Após a autoridade gerar uma chave pessoal de atributo, este é encaminhado de forma externa ao sistema, eliminando desta forma a existência de outros algoritmos e chaves que não fossem relacionados ao trabalho.
-Teoricamente seria possível criar um canal seguro entre usuários sem a adição de outros algoritmos e chaves distintas das já utilizadas uma vez que o Ethereum cria um par de chaves que poderiam ser usadas como chaves assimétricas em um sistema de criptografia de curva-elíptica \emph{(Elliptic-Curve Cryptography - ECC)}, porém tal investigação está além do escopo deste trabalho\footnote{O par de chaves pública e privada geradas pelo Ethereum pertence à curva secp256k1, que não é considerada segura.
-Estudar um sistema com essa capacidade envolveria em primeiro lugar a escolha de uma blockchain alternativa compatível com as curvas consideradas seguradas para realizar a ECC \cite{Bernstein2017}.}.
-Desta forma, uma vez geradas as chaves, fica a critério do certificador escolher o método de envio das chaves, utilizando uma infraestrutura de TI própria, serviços de terceiros ou mesmo a cópia em mídia física.
+Atributos são gerados a partir de requisições feitas por usuários e publicadas na Blockchain, por meio de um Smart Contract específico para armazená-las e atualizar o seu estado (e.g., se foi processada ou rejeitada).
+Para requisitar a concessão de um atributo é necessário que o usuário tenha previamente se registrado em um contrato específico, de gestão de usuários, informando sua carteira e alguns dados básicos de identificação.
+Após a autoridade gerar uma chave pessoal do atributo, esta é encaminhada ao usuário de forma externa ao sistema (e.g., via correio eletrônico, que terá no conteúdo um link seguro para baixá-la). %, eliminando desta forma a existência de outros algoritmos e chaves que não fossem relacionados ao trabalho.
+%Teoricamente seria possível criar um canal seguro entre usuários sem a adição de outros algoritmos e chaves distintas das já utilizadas uma vez que o Ethereum cria um par de chaves que poderiam ser usadas como chaves assimétricas em um sistema de criptografia de curva-elíptica \emph{(Elliptic-Curve Cryptography - ECC)}, porém tal investigação está além do escopo deste trabalho\footnote{O par de chaves pública e privada geradas pelo Ethereum pertence à curva secp256k1, que não é considerada segura.
+%Estudar um sistema com essa capacidade envolveria em primeiro lugar a escolha de uma blockchain alternativa compatível com as curvas consideradas seguradas para realizar a ECC \cite{Bernstein2017}.}.
+Desta forma, uma vez geradas as chaves, fica a critério do certificador escolher o método de envio das mesmas, utilizando uma infraestrutura de TI própria, serviços de terceiros ou mesmo a cópia em mídia física.
 
-{\color{ForestGreen}Explicar que foi realizada uma taxonomia das possíveis permissões que seriam utilizadas no sistema para o contexto médico. (3 parágrafos explicando como foi realizado o levantamento, me lembro que tinha um artigo e uma lista gigante que foi filtrada por quantidade de médicos).}
+% {\color{ForestGreen}Explicar que foi realizada uma taxonomia das possíveis permissões que seriam utilizadas no sistema para o contexto médico. (3 parágrafos explicando como foi realizado o levantamento, me lembro que tinha um artigo e uma lista gigante que foi filtrada por quantidade de médicos).}
 
-O sistema proposto pretende integrar diversas bases de dados de diferentes órgãos que, quando tornados  certificadores, serão providos com a capacidade de publicar tantos atributos quanto considerarem necessários.
-A autonomia dos agentes para criar atributos pode se tornar um risco à gestão do sistema, evidenciando a necessidade de coordenação entre na publicação de atributos para que as  políticas de acesso se demonstrem harmônicas, funcionais e previsíveis ao longo do tempo, podendo ser acessadas e compreendidas por entidades distintas.
-Sem uma proposta de padronização, corre-se o risco das entidades desenvolverem padrões distintos e provavelmente conflitantes no que diz respeito ao escopo, uso e descrição textual de um atributo.
+%O sistema proposto integra bases de dados de diferentes órgãos que, quando tornados  certificadores, serão providos com a capacidade de publicar tantos atributos quanto considerarem necessários.
+No sistema proposto, a autonomia dos certificadores para criar atributos pode se tornar um risco à gestão do sistema, evidenciando a necessidade de coordenação na publicação de atributos para que as políticas de acesso se demonstrem funcionais e previsíveis ao longo do tempo. %, podendo ser acessadas e compreendidas por entidades distintas.
+Sem uma proposta de padronização, corre-se o risco das entidades desenvolverem atributos distintos e provavelmente conflitantes no que diz respeito ao escopo, uso e descrição textual deste.
 
-A diferença de hierarquia das instituições na área da saúde, em suas competências e especialidades,  suas políticas de acesso à informação e suas normas internas certamente resultariam em diversas configurações distintas e incompatíveis dos atributos em um esquema criptográfico ABE.
-Um sistema que pretenda permitir o acesso a prontuários médicos distribuídos entre instituições com este esquema deve, portanto, propor também uma norma para a criação e gestão de atributos e de escrita das políticas de acesso.
-Para atingir este fim, buscou-se o denominador comum entre as exigências e restrições a que devem ser submetidos todos os operadores na área da saúde, modelando-se uma taxonomia de acordo com os papéis envolvidos na gestão e uso dos dados médicos de paciente, partindo da análise das normas que regem o trabalho do profissional da saúde.
+Nesse sentido, a diferença das instituições na área da saúde, em suas competências e especialidades,  suas políticas de acesso à informação e suas normas internas, certamente resultariam em configurações dos atributos usando o esquema ABE.
+Assim, um sistema que pretenda permitir o acesso a prontuários médicos distribuídos entre instituições com este esquema deve, portanto, propor também uma norma tanto para a criação e gestão de atributos quanto para a escrita das políticas de acesso.
+Para atingir este fim, buscou-se o denominador comum entre as exigências e restrições a que devem ser submetidos todas as instituições da área de saúde.
 
-O Código de Ética Médica (CEM) trata da conduta médica em diversos casos e entre elas institui regras de conduta para o acesso e gestão de informações médicas, provendo os elementos necessários para a elaboração de uma taxonomia de condição de acesso a um prontuário médico, conforme mostra a figura \ref{fig:taxonomiaPermissoes}.
-Isso já permite descrever qual será a política elementar e universal ao qual qualquer prontuário médico deve se submeter:
+{\color{magenta}Uma taxonomia permite ....(algumas linhas só)}. Assim, foi modelada uma taxonomia de acordo com os papéis envolvidos na gestão e uso dos dados médicos de paciente, partindo da análise das normas que regem o trabalho do profissional da saúde.
+
+O Código de Ética Médica (CEM) trata da conduta médica em diversos casos e entre elas institui regras de conduta para o acesso e gestão de informações médicas. Ele provê os elementos necessários para a elaboração de uma taxonomia de condição de acesso a um prontuário médico, conforme mostra a Figura \ref{fig:taxonomiaPermissoes}.
+A partir dessa taxonomia, é possível descrever qual será a política mínima padrão ao qual qualquer prontuário médico {\color{blue}no nosso sistema} deve se submeter:
 
 \[ CFM \vee CRM \vee Paciente \vee Terceiro\textnormal{-}Autorizado \]
 
-Essa política padrão se refere à criptografia que será aplicada à estrutura mais externa do PEP, e só descreve as condições mínimas de acesso que deverão constar nesta fórmula por possuírem acesso irrestrito segundo a CEM, podendo-se adicionar mais cenários de acesso.
-Pode ainda considerar a estrutura do prontuário eletrônico como uma árvore de dados compatível com XML.
-Além da norma nacional \cite{SociedadeBrasileiradeInformaticaemSaude2016} e normas internacionais ISO/EN 13.606 e HL7 previrem essa estrutura \cite{Munoz2011, Dolin2000}, projetos de especificação aberta como a iniciativa OpenEHR \cite{openEHRFoundation2020} e as próprias ferramentas e padrões de serviço Web contemporâneos favorecem a adoção de estruturas de dados XML (ou compatíveis, como o JSON) como veículo de representação, transmissão e exportação de dados.
-Uma estrutura em árvore possibilita a aplicação de criptografia a seus subelementos, oferecendo assim o controle personalizado pelo paciente da granularidade das políticas de acesso sobre seus dados por terceiros.
-Caso exista uma política de acesso em alguma subseção do prontuário, será obrigatório conceder o acesso ao menos aos Conselhos de Medicina Federal e Regional.
-Outras regras podem ser abstraídas a partir da taxonomia, como por exemplo a substituição dos elementos $Paciente$ em caso de prontuários de menor de idade, uma vez que este não deveria ter a autonomia sobre a gestão dos próprios dados, produzindo a seguinte política de acesso:
+%A política padrão acima se refere à criptografia {\color{blue} das condições mínimas de acesso} que será aplicada ao PEP.
+
+%Em se tratando do formato do PEP, ele é baseado em uma estrutura de árvore compatível com XML. A adoção de XML (ou JSON), como veículo de representação, transmissão e exportação de dados, tem sido utilizada por diversas fontes. Além da norma nacional \cite{SociedadeBrasileiradeInformaticaemSaude2016} e normas internacionais ISO/EN 13.606 e HL7 previrem essa estrutura \cite{Munoz2011, Dolin2000}, projetos de especificação aberta como a iniciativa OpenEHR \cite{openEHRFoundation2020} também a utilizam.
+
+%O interessante do uso de uma estrutura em árvore é que possibilita a aplicação de criptografia a seus subelementos, oferecendo assim o controle personalizado pelo paciente da granularidade das políticas de acesso sobre seus dados por terceiros.Por outro lado, qualquer elemento do prontuário deverá obrigatoriamente conceder o acesso ao menos aos Conselhos de Medicina Federal e Regional.
+
+A partir da taxonomia apresentada, outras regras podem ser abstraídas.
+Por exemplo a substituição dos elementos $Paciente$ em caso de prontuários de menores de idade, uma vez que este não deveria ter a autonomia sobre a gestão dos próprios dados, produzindo a seguinte política de acesso:
 
 \[ CFM \vee CRM \vee Respons\acute{a}vel\textnormal{-}Legal \vee Terceiro\textnormal{-}Autorizado \]
 
-A taxonomia consegue estipular os diferentes papéis de acesso a um prontuário, mas ainda é necessário adequar e categorizar as diversas funções na área da saúde que precisarão, eventualmente, ter acesso a prontuários médicos.
+A taxonomia consegue estipular os diferentes papéis de acesso a um prontuário, mas ainda é necessário  categorizá-los nas diversas funções que terão acesso aos prontuários médicos (por exemplo, especialidades médicas, administrativas, etc).
 A estratégia para propor uma categorização abrangente e relevante envolveu obter dados do DATASUS (Órgão que administra a consulta de informações do Sistema de Saúde Pública) sobre todas as profissões registradas na área da Saúde relativas ao início do ano de 2019 no Brasil.
 Na pesquisa obteve-se mais de 400 profissões distintas, que foram agregadas pelo nível de ensino e pela área de atuação.
-Isso resultou em uma segunda taxonomia, disponível no Anexo \ref{etc:anexoI}, que serve como referência para a criação de atributos específicos para profissionais com escopos comuns entre os certificadores.
+Isso resultou em uma segunda taxonomia, disponível no Anexo \ref{etc:anexoI}, que serve como referência para a criação de atributos específicos para profissionais com escopos comuns entre os diversos certificadores.
 
-A entidade responsável por emitir o atributo a um médico seria o CRM de sua região.
-As demais entidades emitiriam os atributos que descrevem outros grupos de profissionais que necessitam acessar os dados do paciente, tais como setor administrativo ou o corpo de funcionários técnico-hospitalar.
-Os usuários também geram alguns atributos pré-definidos, porém diferente dos certificadores, estes não são publicados na Blockchain.
-A função destes atributos criados pelo usuário é conceder o acesso dele mesmo e de terceiros ao prontuário, por meio dos atributos $Paciente$ e $Terceiro\textnormal{-}Autorizado$.
-O atributo $Respons\acute{a}vel\textnormal{-}Legal$ seria um atributo gerado por um usuário para cifrar o prontuário de um outro usuário que não seja juridicamente responsável por si mesmo.
+No sistema, a entidade certificadora responsável por emitir o atributo a um médico de ser o CRM de sua região de atuação. As demais entidades (por exemplo, hospitais) emitiriam os atributos que descrevem outros grupos de profissionais que também precisam acessar os dados do paciente, tais como setor administrativo ou o corpo de funcionários técnico-hospitalar.
+Os usuários, por exemplo, um paciente, também podem gerar atributos pré-definidos, porém diferentemente dos certificadores, estes não são publicados na Blockchain.
+A função destes atributos pré-definidos é conceder o acesso dele próprio e de terceiros ao prontuário.
+Esses atributos são: $Paciente$, $Terceiro\textnormal{-}Autorizado$ e $Respons\acute{a}vel\textnormal{-}Legal$.
+Como exemplo, este último, permite cifrar o prontuário de um outro usuário que não é juridicamente responsável por si mesmo (e.g., do filho recém-nascido).
 
-{\color{ForestGreen}Figura da taxonomia}.
+% {\color{ForestGreen}Figura da taxonomia}.
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{images/taxonomia-de-permissoes.png}
-  \caption{Taxonomia de permissões de acesso a prontuários segundo a norma do Código de Ética Médica}
+  \caption{Taxonomia de permissões de acesso a prontuários segundo a norma do CEM}
   \label{fig:taxonomiaPermissoes}
 \end{figure}
 
-{\color{ForestGreen}Explicar que no sistema proposto existe um servidor de atributos ao qual se pedem as chaves públicas/privadas para realizar a encriptação/decriptação (1 parágrafo).}
+% {\color{ForestGreen}Explicar que no sistema proposto existe um servidor de atributos ao qual se pedem as chaves públicas/privadas para realizar a encriptação/decriptação (1 parágrafo).}
 
-Do ponto de vista computacional, atributos são pares chaves privada e pública, sendo a chave privada usada para derivar um conjunto de chaves pessoais que são concedidas aos usuários. As chaves públicas são utilizadas para criptografar e as chaves pessoais são utilizadas para descriptografar um conteúdo.
-Um atributo precisa ser publicado na blockchain para ser utilizado pelos outros usuários, e considera-se publicado o atributo que tenha seus parâmetros de chave pública enviados ao contrato SmartDCPABEKeys, que as disponibiliza para consulta.
-De posse da chave pública é possível criptografar um arquivo com uma política de acesso descrita em termos daqueles atributos e, caso o usuário possua as respectivas chaves privadas pessoais também, é possível descriptografar o conteúdo cifrado.
-As operações criptográficas sempre ocorrem localmente para evitar a exposição de informação sensível à rede a qual está conectado.
+No sistema proposto, atributos são pares de chaves privada e pública.
+A chave privada é usada para derivar um conjunto de chaves pessoais que são concedidas aos usuários.
+Já as chaves públicas são utilizadas para criptografar e as chaves pessoais são utilizadas para descriptografar um conteúdo.
+Um atributo precisa ser publicado na blockchain para ser utilizado pelos usuários.
+Nesse sentido, considera-se publicado o atributo que tenha seus parâmetros de chave pública disponíveis para consulta (especificamente utilizando o contrato SmartDCPABEKeys, como será analisado na próxima seção).
 
-{\color{ForestGreen}Explicar como é realizado o passo-a-passo para o pedido/entrega das chaves (note que aqui a descrição é muito mais profunda que o que foi mencionado na visão geral) (1 parágrafo).}
+De posse da chave pública, é possível criptografar um arquivo com uma política de acesso descrita em termos daqueles atributos. Caso o usuário possua as chaves privadas pessoais desses atributos, é possível descriptografar o conteúdo cifrado.
+Cabe destacar que as operações criptográficas sempre ocorrem localmente {\color{blue}(no módulo cliente)} para evitar a exposição de informação sensível à rede a qual está conectado.
 
-O conjunto de chaves privadas pessoais deriva de uma chave privada secreta associada a um atributo público e de posse do certificador que a gerou.
-Para assegurar a unicidade da chave privada, também é necessário derivar a chave a partir de um identificador único (ID) associado ao usuário.
-Utilizar chaves privadas de atributos com ID distintos entre si causa uma falha na descriptografia, assegurando que atributos não sejam intercambiáveis entre os usuários.
+% {\color{ForestGreen}Explicar como é realizado o passo-a-passo para o pedido/entrega das chaves (note que aqui a descrição é muito mais profunda que o que foi mencionado na visão geral) (1 parágrafo).}
 
-O mecanismo de derivação de chaves privadas pessoais implementado no cliente está atrelado ao processamento de requisições, impedindo o certificador de conceder chaves arbitrariamente sem uma requisição prévia.
-Isso é uma estratégia para limitar o poder do certificador em criar atributos e dessa forma abusar de sua autoridade para conceder acesso indevido a agentes não autorizados e possivelmente levar a um acesso não autorizado de dados.
-O certificador portanto consulta a blockchain para obter novas requisições e decide se irá processá-la ou não.
-Nos dois casos, a resposta retorna à blockchain assim que a chave é criada ou quando sua criação é negada, quer seja por decisão do certificação ou por falha devido a parâmetros incorretos, e o requerente do atributo fica ciente que sua requisição foi consumida, devendo realizar uma nova caso necessário.
+% O conjunto de chaves privadas pessoais deriva de uma chave privada secreta associada a um atributo público e de posse do certificador que a gerou. Para assegurar a unicidade da chave privada, também é necessário derivar a chave a partir de um identificador único (ID) associado ao usuário. Utilizar chaves privadas de atributos com ID distintos entre si causa uma falha na descriptografia, assegurando que atributos não sejam intercambiáveis entre os usuários.
 
-\subsection{Contratos inteligentes com CBA}
+% O mecanismo de derivação de chaves privadas pessoais implementado no cliente está atrelado ao processamento de requisições, impedindo o certificador de conceder chaves arbitrariamente sem uma requisição prévia.
+%Isso é uma estratégia para limitar o poder do certificador em criar atributos e dessa forma abusar de sua autoridade para conceder acesso indevido a agentes não autorizados e possivelmente levar a um acesso não autorizado de dados.
+
+{\color{blue}Em resumo, a requisição por um atributo (i.e., as chaves) por parte do módulo cliente funciona da seguinte maneira. Primeiro, o módulo realiza uma requisição de um atributo via Blockchain. A seguir, o certificador desse atributo consulta a Blockchain para obter as requisições e decide se irá processá-la ou não. Após esse passo, o certificador atualiza a Blockchain assim que a chave é criada ou quando sua criação é negada, quer seja por decisão do certificação ou por falha devido a parâmetros incorretos. Finalmente, a resposta é obtida pelo módulo cliente.}
+
+\subsubsection{Encriptação com ABE}
+
+% {\color{Magenta} 1 parágrafo para explicar que para encriptar um documento utilizando atributos usou a dcpabe.}
+
+A biblioteca DCPABE desenvolvida em Java possui suporte à operações criptográficas do protocolo ABE em um ambiente com múltiplas autoridades, conforme descrito em \cite{Lewko2011}. Ela depende da biblioteca \emph{jPBC} (Java Pairing Based Cryptography) %biblioteca em Java, de código aberto,
+para realizar a criptografia baseada em emparelhamento~\footnote{mais informações em \href{https://crypto.stanford.edu/pbc/}{https://crypto.stanford.edu/pbc/}}. %, originalmente escrita em C, para código nativo em Java e oferecer uma interface para essa biblioteca \cite{DeCaro2011}.
+A DCPABE fornece todas as ferramentas necessárias para o uso do esquema ABE, incluindo a geração de parâmetros globais, geração de chaves privadas, públicas e pessoais dos atributos, cifra e deciframento de fluxos de dados.
+Ao criptografar um documento, um objeto do tipo \emph{Ciphertext}, contendo os parâmetros necessários para a decifragem, é serializado e escrito no início de um arquivo que conterá os bytes criptografados. {\color{blue}Além disso, o processo de criptografia produz um JSON, com metadados da encriptação, o qual será publicado na Blockchain}.
+
+% {\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como realizar a encriptação. Explicar cada linha do código.}
+
+\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={cod:metodoCriptografia}, caption={Criptografando um arquivo usando a biblioteca DCPABE}}
+
+\begin{lstlisting}
+ public void encrypt(String file, String policy, String[] authorities) {
+   // codigo omitido por brevidade
+   AccessStructure as = AccessStructure.buildFromPolicy(policy);
+   Message m = DCPABE.generateRandomMessage(gp);
+   CiphertextJSON ct = new CiphertextJSON(DCPABE.encrypt(m, as, gp, pks));
+   r = new Recording(path, file, ct);
+   r.encryptFile(m);
+ }
+\end{lstlisting}
+
+No sistema, a classe \emph{Client} implementa a função que realiza a encriptação de um arquivo (função \emph{encrypt}), em parte exposto seção de código \ref{cod:metodoCriptografia}. A função encrypt exige os parâmetros \emph{file}, que corresponde ao nome do arquivo a ser criptografado; \emph{policy}, que corresponde à política de acesso; e o vetor \emph{authorities}, que corresponde aos IDs das autoridades dos atributos definidos em \emph{policy}. Na linha 3, o objeto \emph{as}, instância da classe \emph{AccessStructure}, armazena uma representação matricial gerada a partir da fórmula booleana descrita em \emph{policy}. %, tornando a fórmula em um elemento matricial vetorial compatível com a estrutura matemática necessária ao funcionamento dos algoritmos definidos pelo DCPABE.
+Na linha 4 é definido como mensagem \emph{m} um elemento aleatório pertencente ao grupo do aparelhamento definido pelos parâmetros globais \emph{gp} -- o mesmo utilizado para a geração de chaves privas dos atributos. {\color{magenta} Essa mensagem, no DCPABE permite que (escrever 2 linhas caso não tenha sido explicada antes)...} Na linha 5 a mensagem m é ocultada sob a criptografia ABE utilizando a matriz \emph{as}, a mensagem \emph{m}, os parâmetros globais \emph{gp} e um vetor \emph{pks} com as chaves públicas de todos os atributos mencionados em \emph{policy}, retornando uma instância equivalente à da classe \emph{Ciphertext}. %, com a capacidade de ser serializada em JSON, e
+Na linha 7, o arquivo é cifrado usando um algoritmo AES\footnote{Especificamente, é usada a classe AESEngine da biblioteca Bouncy Castle com configuração padrão. Ver \href{https://people.eecs.berkeley.edu/~jonah/bc/org/bouncycastle/crypto/engines/AESEngine.html}{https://people.eecs.berkeley.edu/~jonah/bc/org/bouncycastle/crypto/engines/AESEngine.html}} e a mensagem \emph{m} como chave.
+
+A descriptografia consiste em fornecer as chaves pessoais dos mesmos atributos usados na criptografia, aplicando o esquema ABE para obter a mensagem \emph{m} e usando-a como chave do algoritmo AES para descriptografar o conteúdo desejado.
+
+{\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como decriptar um arquivo. Explicar cada linha do código.}
+
+\subsubsection{Conexão com a Blockchain e acesso aos \textit{Smart Contracts}}
+
+% Como mencionado na Seção \ref{sec:sub:visaogeral}, o sistema é composto por 3 componentes: cliente, servidor, e a Blockchain. %A Figura X mostra o relacionamento entre esses componentes.
+
+%{\color{ForestGreen} Fazer uma figura simples que mostre os 3 componentes interligados. }
+
+
+%{\color{ForestGreen} Explicar implementação do cliente (5 parágrafos). Ver abaixo os 5 parágrafos destrinchados. }
+
+%{\color{Magenta} 1 parágrafo para explicar que para realizar a conexão com a Blockchain usou o web3j (explique em 2-3 linhas o web3j).}
+
+Como mencionado, o Cliente precisa conectar-se à Blockchain para realizar suas atividades.
+Em se tratando da conexão, a biblioteca Web3j fornece conectividade com diferentes fontes de dados para consulta (do estado das transações e envio de novas transações) em Blockchains compatíveis com o protocolo JSON-RPC Ethereum
+\footnote{ver \href{https://github.com/ethereum/wiki/wiki/JSON-RPC}{https://github.com/ethereum/wiki/wiki/JSON-RPC}.}.
+Entre essas fontes, podem-se citar a rede principal (denominada \emph{MainNet}), as redes de teste oficiais (Ropsten, Rinkeby e Kovan) ou simulações da rede Ethereum para teste por meio de programas como o Ganache~\cite{ganache}.
+% A Web3j se conecta ao provedor de dados por meio de Protocolos HTTP/HTTPS e IPC.
+
+\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={cod:conexaoBlockchain}, caption={Código para conexão com a Blockchain usando o web3j}}
+
+\begin{lstlisting}
+ private final Web3j web3j;
+
+ public BlockchainConnection(String networkURL, ...) {
+   // codigo omitido por brevidade
+   web3j = Web3j.build(new HttpService(networkURL));
+ }
+\end{lstlisting}
+
+% {\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como realizar a conexão. Explicar cada linha do código. }
+
+No sistema proposto, a conectividade é realizada no módulo Cliente.
+Dentro desse módulo, a classe \emph{BlockchainConnection} é a responsável por lidar com a Blockchain (por meio do Web3j) e com as classes em Java que representam os Smart Contracts. Como mostra o código \ref{cod:conexaoBlockchain}, para realizar o acesso  somente é exigido um endereço IP/porta válido (atributo networkURL) no computador ou rede local onde exista comunicação com a API JSON-RPC do Ethereum, ou com um serviço Web que ofereça essa API, tais como os sites da Infura e do Ethercluster.
+%O endereço informado é armazenado no cache do programa para uso em execuções futuras.
+
+% {\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como acessar um contrato inteligente. Explicar cada linha do código.}
+
+\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={cod:acessoSmartContract}, caption={Acessando um Smart Contract na Blockchain}}
+
+\begin{lstlisting}
+ private CiphertextJSON getCiphertext(String user, String fileName) {
+   Tuple5<String, byte[], byte[], byte[], byte[]> ciphertextData;
+   try {
+     ciphertextData = contractFiles.getCiphertext(user, fileName).send();
+     if (!ciphertextData.getValue1().equals("")) {
+       // codigo usando os dados retornados pelo contrato
+     }
+   } catch (Exception e) { ... }
+ }
+\end{lstlisting}
+
+O acesso aos Smart Contracts em Java é intermediado por classes "wrappers", isto é, classes geradas automaticamente a partir do EVM Code e da ABI \emph{(Application Binary Interface)} de Smart Contracts para interação com o contrato.
+Estas classes contém métodos que correspondem às funções nos Smart Contract, possuindo dois métodos a mais, um para implantar o contrato na EVM e outro para carregar o contrato, caso já tenha sido implantado.
+Uma vez inicializado, a interação ocorre como exemplifica a sessão de código \ref{cod:acessoSmartContract}.
+Na linha 4 o método \emph{getCiphertext} do objeto \emph{contractFiles} (wrapper do contrato \emph{SmartDCPABEFiles}) recebe os argumentos necessários, prepara um objeto que representa uma chamada remota ao contrato, e o envia à rede Ethereum por meio da invocação do método \emph{send()} ao fim da linha.
+
+As funções executadas nos Smart Contracts podem retornar dados, sendo inseridos em um objeto do tipo \emph{TupleN}, onde N o número de parâmetros retornados. Este objeto possui métodos na forma \emph{getValueN()} para acessar o n-ésimo valor de retorno do Smart Contract.
+A checagem feita na linha 5 é necessária para identificar se o objeto retornado pelo Smart Contract é vazio.
+Isto é necessário porque a implementação da EVM não possui um elemento nulo como na maioria das linguagens, e também não levanta um erro quando tenta-se acessar um valor inexistente.
+Quando a EVM acessa uma variável indefinida ou inexistente, seu comportamento padrão é retornar um valor do mesmo tipo da variável que corresponda ao valor FALSO de uma variável booleana.
+Assim, sem um mecanismo de erro ou identificação de valores nulos, torna-se necessário checar o valor de alguma das variáveis recebidas cujo valor não possa ser equivalente ao FALSO booleano.
+No código \ref{cod:acessoSmartContract}, a variável escolhida é \emph{policy}, que ocupa a posição 1 da tupla e que nunca pode ser igual a uma string vazia, visto que isto significaria que o conteúdo não está criptografado, necessariamente significando que o valor de retorno se refere a valores nulos ou inexistentes.
+Confirmado que os dados recebidos realmente existem, estes são processados no escopo aninhado à verificação, na linha 6.
+
+\subsection{Módulo Blockchain}
+
+{\color{magenta}Nesta seção serão apresentadas bla bla bla igual que na seção do módulo do cliente.}
+
+\subsubsection{Contratos inteligentes}
 \label{sec:sub:ImplementacaoSmartContracts}
 
-Foram desenvolvidos cinco contratos inteligentes que permitem a autenticação, entrega de permissões e armazenamento de metadados dos prontuários eletrônicos dos pacientes.
+Foram desenvolvidos cinco contratos inteligentes que que permitem realizar a autenticação, entrega de permissões e armazenamento de metadados dos prontuários eletrônicos dos pacientes.
 A seguir serão explicados cada um deles.
 
-{\color{ForestGreen} Explicação do  SmartDCPABEAuthority (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
+\paragraph{Contrato SmartDCPABEAuthority}
 
-{\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
+%{\color{ForestGreen} Explicação do  SmartDCPABEAuthority (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 
-O contrato \emph{SmartDCPABEAuthority} registra na Blockchain as entidades certificadoras disponíveis no sistema, tornando público seu endereço público na Ethereum, associando dados de identificação e a quantidade de atributos que a entidade já publicou.
-o ID usado para derivar as chaves privadas dos atributos no esquema ABE é a chave privada que corresponde à chave pública do Ethereum.
+% {\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
+
+O contrato \emph{SmartDCPABEAuthority} registra na Blockchain as entidades certificadoras disponíveis no sistema, tornando público seu endereço na Ethereum, associando dados de identificação e a quantidade de atributos que a entidade já publicou.
+O identificador (ID) usado para derivar as chaves privadas dos atributos no esquema ABE é a chave privada que corresponde à chave pública do Ethereum.
 Esse esquema permite que uma entidade possa ser identificável de forma única sem a necessidade de controle centralizada sobre o cadastro de novas unidades.
-A escolha do ID visa impossibilitar um atacante de se passar pela entidade certificadora, uma vez que não há método computacionalmente viável para recuperar a chave privada de um endereço Ethereum a partir de uma chave pública.
+%A escolha do ID visa impossibilitar um atacante de se passar pela entidade certificadora, uma vez que não há método computacionalmente viável para recuperar a chave privada de um endereço Ethereum a partir de uma chave pública.
 
-{\color{Magenta} Inserir o código da linha 7 até 20.}
+%{\color{Magenta} Inserir o código da linha 7 até 20.}
 
 \lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABEAuthority}, caption={Dados em SmartDCPABEAuthority}}
 \begin{lstlisting}
@@ -676,22 +792,25 @@ A escolha do ID visa impossibilitar um atacante de se passar pela entidade certi
  mapping (address => Certifier) certifiers;
 \end{lstlisting}
 
-{\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos. Exemplo. O struct X permite armazenar dados que servirão para Y. O atributo V armazena informações de W que servirão para Z.}
+% {\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos. Exemplo. O struct X permite armazenar dados que servirão para Y. O atributo V armazena informações de W que servirão para Z.}
 
-A sessão de código \ref{cod:SmartDCPABEAuthority} exibe a estrutura básica do contrato.
-A struct Certifier armazena dados informações da autoridade responsável por publicar atributos e concedê-los a usuários.
+A sessão de código \ref{cod:SmartDCPABEAuthority} exibe os pontos mais relevantes do contrato.
+A estrutura (\textit{struct}) Certifier armazena dados informações da autoridade responsável por publicar atributos e concedê-los a usuários.
 Além do endereço Ethereum, também é armazenado seu nome, e-mail e a quantidade de chaves que ele já publicou.
 Tal unidade de controle é necessária porque as chaves são armazenadas em \emph{mappings}, conforme explicitado na Sessão \ref{sec:sub:contratos-ethereum}.
 
-{\color{ForestGreen} Explicação do  SmartDCPABEKeys (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
+\paragraph{Contrato SmartDCPABEKeys}
 
-{\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
+%{\color{ForestGreen} Explicação do  SmartDCPABEKeys (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 
-O contrato \emph{SmartDCPABEKeys} (código \ref{cod:SmartDCPABEKeys}) disponibiliza a chave pública de atributos criados por autoridades.
-Para fins de prototipagem foram implementadas somente as operação de inclusão e consulta de chaves, mas não de edição ou remoção.
-Seria trivial implementar isto no Smart Contract, mas não seria trivial e nem viável implementar os protocolos de revogação e substituição de atributos no módulo Cliente, responsável pelas operações criptográficas e pela coordenação das informações entre a Blockchain e o Servidor.
+% {\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
 
-{\color{Magenta} Inserir o código da linha 6 até 24.}
+O contrato \emph{SmartDCPABEKeys} disponibiliza a chave pública de atributos criados por autoridades.
+No sistema, foram implementadas somente as operação de inclusão e consulta de chaves, mas não de edição ou remoção.
+Cabe destacar que não seria complicado implementar isto no Smart Contract.
+Por outro lado, não seria fácil implementar os protocolos de revogação e substituição de atributos no módulo Cliente.%, responsável pelas operações criptográficas e pela coordenação das informações entre a Blockchain e o Servidor.
+
+% {\color{Magenta} Inserir o código da linha 6 até 24.}
 
 \lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABEKeys}, caption={Dados em SmartDCPABEKeys}}
 \begin{lstlisting}
@@ -714,22 +833,25 @@ Seria trivial implementar isto no Smart Contract, mas não seria trivial e nem v
  mapping (address => mapping (bytes32 => PublicKey)) ABEKeys;
 \end{lstlisting}
 
-{\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.}
+% {\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.}
 
-a estrutura \emph{Bytes127} foi criada como um container econômico para armazenar os elementos gerados pela biblioteca jPBC \emph{(Java Pairing-Based Cryptography)} \cite{DeCaro2011}.
+A sessão do código \ref{cod:SmartDCPABEKeys} exibe os pontos mais relevantes do contrato.
+A estrutura \emph{Bytes127} foi criada como um contêiner que armazena os elementos gerados pela biblioteca jPBC \emph{(Java Pairing-Based Cryptography)} \cite{DeCaro2011}.
 O tamanho dos elementos varia entre 120 a 124 bytes de informação e, embora o Solidity disponha da estrutura de dados \emph{bytes} para armazenar bytes em tamanho arbitrário, seu custo é maior.
 Dados consomem gas, e quando são utilizadas estruturas de dados de tamanho dinâmico, o valor é maior do que suas contrapartes estáticas, justificando a criação de uma estrutura que divida os dados em um conjunto de elementos de tamanho fixo.
 A estrutura \emph{PublicKey} armazena a chave pública gerada pela biblioteca \emph{DCPABE}\footnote{código fonte: \href{https://github.com/stefano81/dcpabe}{\texttt{https://github.com/stefano81/dcpabe}}. Para uma análise teórica, ver \cite{Lewko2011}}, que são representadas por duas sequências de bytes como mostra o código.
-O mapa \emph{publicKeyNames} mapeia um endereço de uma autoridade a uma lista de nomes de atributos representados como bytes.
-O mapa \emph{ABEKeys} contém, para cada endereço cadastrado, um submapa relacionando o nome do atributo representado em bytes com uma chave pública.
+O mapa \emph{publicKeyNames} mapeia um endereço de uma autoridade a uma lista de nomes de atributos, representados como bytes.
+O mapa \emph{ABEKeys} contém, para cada endereço cadastrado, um submapa relacionando o nome do atributo, representado em bytes, com uma chave pública.
 
-{\color{ForestGreen} Explicação do  SmartDCPABEFiles  (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
+\paragraph{Contrato SmartDCPABEFiles}
 
-{\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
+%{\color{ForestGreen} Explicação do  SmartDCPABEFiles  (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 
-O contrato \emph{SmartDCPABEFiles} (código \ref{cod:SmartDCPABEFiles}) mantém disponível na blockchain informações sobre a hospedagem do arquivo de prontuários e também os dados do objeto \emph{Ciphertext} produzido pela Biblioteca DCPABE, necessário para realizar a descriptografia. O contrato também gerencia informações sobre as bases de dados onde os arquivos estão hospedados.
+% {\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
 
-{\color{Magenta} Inserir o código da linha 6 até 39.}
+O contrato \emph{SmartDCPABEFiles} mantém disponível na Blockchain informações sobre a hospedagem (localização) do arquivo de prontuários e também os dados do objeto \emph{Ciphertext} produzido pela Biblioteca DCPABE, necessário para realizar a descriptografia. O contrato também gerencia informações sobre as bases de dados onde os arquivos estão hospedados.
+
+% {\color{Magenta} Inserir o código da linha 6 até 39.}
 
 \lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABEFiles}, caption={Dados em SmartDCPABEFiles}}
 \begin{lstlisting}
@@ -764,20 +886,29 @@ O contrato \emph{SmartDCPABEFiles} (código \ref{cod:SmartDCPABEFiles}) mantém 
  FileServer[] servers;
 \end{lstlisting}
 
-{\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.}
+% {\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.}
 
-A Estrutura \emph{Recording} informa a base de dados na qual o arquivo está hospedado e qual é a sua identificação no servidor, o hashing para permitir a verificação de integridade e uma marca temporal para manter registro público do momento de sua publicação na Blockchain. Seria possível remover o campo timestamp e trabalhar somente com altura ou timestamp do bloco em que a transação foi validada, economizando o uso de gas, porém deixando de possuir uma data exata de publicação de um documento. A estrutura \emph{Ciphertext} contém a política de acesso utilizada para cifrar o arquivo e um conjunto de parâmetros (c0 a c3) que resultam do processo de criptografia e que são necessários para decifrar o documento. A estrutura \emph{FileServer} contém informações para conexão com uma base de dados na Internet. O contrato mantém uma lista de servidores \emph{servers} e um par de mapas \emph{files} e \emph{ciphertexts} com estrutura similar, ligando endereços de usuários a submapas que associam, por sua vez, um nome de arquivo às estruturas de dados \emph{Recording} e \emph{Ciphetext} relacionadas àquele arquivo. Disso segue-se que uma edição no conteúdo é mais barato que a alteração no nome do documento, uma vez que no caso do conteúdo somente o hashing e o timestamp são atualizados, enquanto que na renomeação o mapa armazena o arquivo como se fosse um novo, sendo necessário publicar os dados do arquivo e deletar aqueles que estavam disponibilizados.
+A sessão do código \ref{cod:SmartDCPABEFiles} exibe os pontos mais relevantes do contrato.
+A estrutura \emph{Recording} informa a base de dados na qual o arquivo está hospedado e, no campo serverID, qual é a sua identificação no servidor.
+O campo hashing permite a verificação de integridade. O campo timestamp é uma marca temporal que mantém o momento de sua publicação na Blockchain. %Seria possível remover o campo timestamp e trabalhar somente com altura ou timestamp do bloco em que a transação foi validada, economizando o uso de gas, porém deixando de possuir uma data exata de publicação de um documento.
 
-{\color{ForestGreen} Explicação do  SmartDCPABERequests  (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
+A estrutura \emph{Ciphertext} contém a política de acesso utilizada para cifrar o arquivo e um conjunto de parâmetros (c0 a c3) que resultam do processo de criptografia e que são necessários para decifrar o documento.
+A estrutura \emph{FileServer} contém informações para conexão com uma base de dados na Internet.
 
-{\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
+Além das estruturas, o contrato mantém uma lista de servidores \emph{servers} e um par de mapas \emph{files} e \emph{ciphertexts} com estrutura similar, mapeando endereços de usuários a submapas que associam, por sua vez, um nome de arquivo às estruturas de dados \emph{Recording} e \emph{Ciphetext} relacionadas àquele arquivo. %Disso segue-se que uma edição no conteúdo é mais barato que a alteração no nome do documento, uma vez que no caso do conteúdo somente o hashing e o timestamp são atualizados, enquanto que na renomeação o mapa armazena o arquivo como se fosse um novo, sendo necessário publicar os dados do arquivo e deletar aqueles que estavam disponibilizados.
 
-O contrato \emph{SmartDCPABERequests} (código \ref{cod:SmartDCPABERequests}) é responsável por lidar com requisições de concessão de atributos.
+\paragraph{Contrato SmartDCPABERequests}
+
+%{\color{ForestGreen} Explicação do  SmartDCPABERequests  (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
+
+% {\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
+
+O contrato \emph{SmartDCPABERequests}  é responsável por lidar com requisições de concessão de atributos.
 Usuários do sistema publicam suas requisições e as autoridades certificadoras podem checar por requisições pendentes e atendê-las ou rejeitá-las.
 Uma requisição pode solicitar a concessão de um ou mais atributos a um mesmo certificador e é consumida quando processada, não sendo possível alterar novamente seu status.
-A transmissão dos atributos ocorre fora da blockchain e pode usar qualquer meio de comunicação considerado seguro entre as partes.
+A transmissão dos atributos ocorre fora da Blockchain e pode usar qualquer meio de comunicação considerado seguro entre as partes.
 
-{\color{Magenta} Inserir o código da linha 6 até 35.}
+% {\color{Magenta} Inserir o código da linha 6 até 35.}
 
 \lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABERequests}, caption={Dados em SmartDCPABERequests}}
 \begin{lstlisting}
@@ -804,24 +935,29 @@ A transmissão dos atributos ocorre fora da blockchain e pode usar qualquer meio
  mapping (address => mapping (address => KeyRequest[]))  requests;
 \end{lstlisting}
 
-{\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.}
+% {\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.}
 
-A estrutura \emph{KeyRequest} representa uma requisição de atributos, contendo um campo para indicar a situação, marcas temporais da criação e processamento da requisição e uma lista de nomes de atributos representados como sequências de 32 bytes (Bytes32).
-As situações estão listadas no enum \emph{KeyRequestStatus}, e podem ser expandidas para um conjunto maior de situações, conforme a necessidade das entidades que utilizem um sistema assim.
-Dois eventos notificam sobre o processamento de requisições, para que os interessados possam atualizar seu cache local com a blockchain e obter assim o estado mais atualizado das requisições.
-O mapa \emph{requests} usa endereços de certificadores como chave primária para submapas cujas chaves são os endereços de usuários e que levam às listas de requisições feitas por eles.
+A sessão do código \ref{cod:SmartDCPABERequests} exibe os pontos mais relevantes do contrato.
+A estrutura \emph{KeyRequest} representa uma requisição de atributos, contendo um campo para indicar a situação (enum das linhas 3-7), marcas temporais da criação e processamento da requisição e uma lista de nomes de atributos representados como sequências de 32 bytes (Bytes32).
+As situações estão listadas no enum \emph{KeyRequestStatus}, e podem ser expandidas para um conjunto maior de situações, conforme a necessidade das entidades que utilizem o sistema.
+Dois eventos notificam sobre o processamento de requisições, para que os interessados possam obter  o estado mais atualizado das requisições.
+O mapa \emph{requests} usa endereços de certificadores como chave primária para submapas cujas chaves são os endereços de usuários e que mapeiam às listas de requisições feitas por eles.
 O mapa \emph{pendingRequests} segue esta mesma estrutura, com a diferença de apenas armazenar os índices das listas de requisições em \emph{requests} que estão pendentes de processamento.
 O mapa \emph{pendingRequesters} mantém os endereços de usuários com requisições pendentes em listas agregadas por certificador, possibilitando que estes possam iterar pelo mapa \emph{pendingRequests}, obtendo os índices de acesso das requisições de interesse gravadas em \emph{requests}.
 
-{\color{ForestGreen} Explicação do  SmartDCPABEUsers  (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
+\paragraph{Contrato SmartDCPABEUsers}
 
-{\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
+%{\color{ForestGreen} Explicação do  SmartDCPABEUsers  (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 
-O contrato \emph{SmartDCPABEUsers} (código \ref{cod:SmartDCPABEUsers}) gerencia o cadastro de usuários passíveis de obter atributos no esquema de criptografia ABE e exercer papeis dentro do deste sistema, implementando funções básicas de inclusão, consulta e checagem de usuários válidos.
-A estrutura \emph{User} atrela dados básicos de identificação a um endereço válido de carteira Ethereum, e instâncias desta estrutura são salvas em um mapa \emph{users}, onde a chave deste mapa é o próprio endereço do usuário.
+% {\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
+
+O contrato \emph{SmartDCPABEUsers} gerencia o cadastro de usuários passíveis de obter atributos no esquema de criptografia ABE e exercer papeis dentro do sistema.
+O gerenciamento é realizado através da implementação de funções básicas de inclusão, consulta e checagem de usuários válidos.
+
+A sessão do código \ref{cod:SmartDCPABEUsers} exibe os pontos mais relevantes do contrato. A estrutura \emph{User} atrela dados básicos de identificação a um endereço válido de carteira Ethereum, e instâncias desta estrutura são salvas em um mapa \emph{users}, onde a chave deste mapa é o próprio endereço do usuário.
 A lista \emph{userAddresses} armazena todos os endereços já cadastrados para permitir a iteração, se necessária, sobre as chaves do mapa \emph{users}.
 
-{\color{Magenta} Inserir o código da linha 6 até 16.}
+% {\color{Magenta} Inserir o código da linha 6 até 16.}
 
 \lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABEUsers}, caption={Dados em SmartDCPABEUsers}}
 \begin{lstlisting}
@@ -838,153 +974,45 @@ A lista \emph{userAddresses} armazena todos os endereços já cadastrados para p
  uint64 public numUsers;
 \end{lstlisting}
 
-{\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.}
+%{\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.}
 
-{\color{RoyalBlue} esse parágrafo foi agregado ao anterior porque os dois são pequenos, afinal o código deste contrato é pequeno.}
+% {\color{RoyalBlue} esse parágrafo foi agregado ao anterior porque os dois são pequenos, afinal o código deste contrato é pequeno.}
 
-\subsection{Arquitetura Blockchain}
+\paragraph{Contratos auxiliares}
 
-Como mencionado na Seção \ref{sec:sub:visaogeral}, o sistema é composto por 3 componentes: cliente, servidor, e a Blockchain. A Figura X mostra o relacionamento entre esses componentes.
+Além dos contratos citados, foram criados dois contratos auxiliares: o \emph{SmartDCPABEUtility} que atua como uma biblioteca para os outros contratos, oferecendo funções de conversão de dados do tipo bytes em string e vice-versa, e o \emph{SmartDCPABERoot}, responsável por automatizar a gestão de dependências entre os contratos.
 
-{\color{ForestGreen} Fazer uma figura simples que mostre os 3 componentes interligados. }
+\subsubsection{Integração com o ecossistema da Ethereum}
 
+% {\color{ForestGreen} Explicar implementação da Blockchain (4 parágrafos). Ver abaixo os 4 parágrafos destrinchados. }
 
-{\color{ForestGreen} Explicar implementação do cliente (5 parágrafos). Ver abaixo os 5 parágrafos destrinchados. }
-
-{\color{Magenta} 1 parágrafo para explicar que para realizar a conexão com a Blockchain usou o web3j (explique em 2-3 linhas o web3j).}
-
-A Web3j fornece conectividade com diferentes fontes de dados para consulta do estado de transações e envio de novas transações em blockchains compatíveis com o protocolo JSON-RPC Ethereum\footnote{ver \href{https://github.com/ethereum/wiki/wiki/JSON-RPC}{https://github.com/ethereum/wiki/wiki/JSON-RPC}.}, compreendendo a rede principal (\emph{MainNet}), as redes de teste oficiais Ropsten, Rinkeby e Kovan, redes permissionadas usando o Hyperledger Besu ou simulações da rede Ethereum para teste por meio de programas como o Ganache.
-A Web3j se conecta ao provedor de dados por meio de Protocolos HTTP/HTTPS e IPC.
-
-\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={cod:conexãoBlockchain}, caption={Código para conexão com a Blockchain usando o web3j}}
-
-\begin{lstlisting}
- private final Web3j web3j;
-
- public BlockchainConnection(String networkURL, ...) {
-   // codigo omitido por brevidade
-   web3j = Web3j.build(new HttpService(networkURL));
- }
-\end{lstlisting}
-
-{\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como realizar a conexão. Explicar cada linha do código. }
-
-Dentro do módulo Cliente, a classe \emph{BlockchainConnection} é a responsável por lidar com a Blockchain por meio do Web3j e as classes em Java que representam os Smart Contracts, e exige somente um endereço de rede válido para uma porta no computador ou rede local onde exista comunicação com um programa compatível com a API JSON-RPC do Ethereum, ou para um serviço Web na internet que ofereça a API, tais como os sites Infura e Ethercluster.
-O endereço informado é armazenado no cache do programa para uso em execuções futuras.
-
-{\color{Magenta} 1 parágrafo para explicar que para encriptar um documento utilizando atributos usou a dcpabe.}
-
-A biblioteca DCPABE desenvolvida em Java possui suporte à operações criptográficas do protocolo ABE em um ambiente com múltiplas autoridades, conforme descrito em \cite{Lewko2011}.
-Ela depende por sua vez da biblioteca \emph{jPBC} (Java Pairing Based Cryptography), a primeira e mais abrangente biblioteca de código aberto para criptografia baseada em emparelhamento em Java e compatível com Android, tendo o objetivo explícito de portar a biblioteca PGC\footnote{mais informações em \href{https://crypto.stanford.edu/pbc/}{https://crypto.stanford.edu/pbc/}}, originalmente escrita em C, para código nativo em Java e oferecer uma interface para essa biblioteca \cite{DeCaro2011}.
-A DCPABE fornece todo o ferramentário necessário para o uso do esquema ABE, incluindo a geração de parâmetros globais, geração de chaves privadas, públicas e pessoais dos atributos, cifra e deciframento de fluxos de dados.
-Ao criptografar um documento, um objeto do tipo \emph{Ciphertext} contendo os parâmetros necessários para a decifragem é serializado e escrito no início do arquivo container dos bytes criptografados.
-Esse comportamento foi alterado para produzir um artefato equivalente, serializável em JSON, escrito em um arquivo separado daquele que contem os bytes criptografados, com a finalidade de poder publicar na Blockchain somente este artefato JSON, ao invés de todo o arquivo, e assim reduzir os custos de transação e viabilizar o uso da rede Ethereum.
-
-{\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como realizar a encriptação. Explicar cada linha do código.}
-
-\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={cod:métodoCriptografia}, caption={Criptografando um arquivo usando a biblioteca DCPABE}}
-
-\begin{lstlisting}
- public void encrypt(String file, String policy, String[] authorities) {
-   // codigo omitido por brevidade
-   AccessStructure as = AccessStructure.buildFromPolicy(policy);
-   Message m = DCPABE.generateRandomMessage(gp);
-   CiphertextJSON ct = new CiphertextJSON(DCPABE.encrypt(m, as, gp, pks));
-   r = new Recording(path, file, ct);
-   r.encryptFile(m);
- }
-\end{lstlisting}
-
-% O objeto \emph{as}, instância da classe \emph{AccessStructure}, armazena uma representação matricial da fórmula boooleana descrita em \emph{policy}, produzindo uma estrutura de acesso de um \emph{LSSS} (Linear Secret Sharing Scheme), tornando a fórmula um elemento matricial vetorial compatível com a estrutura matemática necessária ao funcionamento dos algoritmos definidos pelo DCPABE.
-
-A classe \emph{Client} implementa a função \emph{encrypt}, em parte exposto seção de código \ref{cod:métodoCriptografia}.
-A função encrypt exige os parâmetros \emph{file} contendo o nome do arquivo a ser criptografado, \emph{policy} contendo uma política de acesso e o vetor \emph{authorities} contendo o ID das autoridades dos atributos relacionados em \emph{policy}.
-Na linha 3 o objeto \emph{as}, instância da classe \emph{AccessStructure}, armazena uma representação matricial gerada a partir da fórmula boooleana descrita em \emph{policy}, tornando a fórmula em um elemento matricial vetorial compatível com a estrutura matemática necessária ao funcionamento dos algoritmos definidos pelo DCPABE.
-Na linha 4 é definido como mensagem \emph{m} um elemento aleatório pertencente ao grupo do aparelhamento definido pelos parâmetros globais \emph{gp} -- o mesmo utilizado para a geração de chaves privas dos atributos.
-
-Na linha 5 a mensagem m é ocultada sob a criptografia ABE utilizando a matriz \emph{as}, a mensagem \emph{m}, os parâmetros globais \emph{gp} e um vetor \emph{pks} com as chaves públicas de todos os atributos mencionados em \emph{policy}, retornando uma instância equivalente à da classe \emph{Ciphertext}, com a capacidade de ser serializada em JSON, e na linha 7 o arquivo é cifrado usando um algoritmo AES\footnote{Especificamente, é usada a classe AESEngine da biblioteca Bouncy Castle com configuração padrão. Ver \href{https://people.eecs.berkeley.edu/~jonah/bc/org/bouncycastle/crypto/engines/AESEngine.html}{https://people.eecs.berkeley.edu/~jonah/bc/org/bouncycastle/crypto/engines/AESEngine.html}} e a mensagem \emph{m} como chave. A descriptografia consiste em fornecer as chaves pessoais dos mesmos atributos usados na criptografia, aplicando o esquema ABE para obter a mensagem \emph{m} e usando-a como chave do algoritmo AES para descriptografar o conteúdo desejado.
-
-{\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como acessar um contrato inteligente. Explicar cada linha do código.}
-
-\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={cod:acessoSmartContract}, caption={Acessando um Smart Contract na Blockchain}}
-
-\begin{lstlisting}
- private CiphertextJSON getCiphertext(String user, String fileName) {
-   Tuple5<String, byte[], byte[], byte[], byte[]> ciphertextData;
-   try {
-     ciphertextData = contractFiles.getCiphertext(user, fileName).send();
-     if (!ciphertextData.getValue1().equals("")) {
-       // codigo usando os dados retornados pelo contrato
-     }
-   } catch (Exception e) { ... }
- }
-\end{lstlisting}
-
-O Acesso aos Smart Contracts em Java é intermediado por classes "wrappers", isto é, classes geradas automaticamente a partir do EVM Code e da ABI \emph{(Application Binary Interface)} de Smart Contracts para interação com o contrato.
-Estas classes contém métodos que correspondem às funções nos Smart Contract, possuindo dois métodos a mais, um para implantar o contrato na EVM e outro para carregar o contrato, caso já tenha sido implantado.
-Uma vez inicializado, a interação ocorre como exemplifica a sessão de código \ref{cod:acessoSmartContract}.
-Na linha 4 o método \emph{getCiphertext} do objeto \emph{contractFiles}, wrapper do contrato \emph{SmartDCPABEFiles}, recebe os argumentos necessários à função, prepara um objeto que representa uma chamada remota ao contrato, que é enviada à rede Ethereum por meio da invocação do método \emph{send()} ao fim da linha.
-
-Funções de Smart Contracts podem retornar dados, e se for o caso, serão inseridos em um objeto do tipo \emph{TupleN}, sendo N o número de parâmetros retornados. Este objeto possui métodos na forma \emph{getValueN()} para acessar o n-ésimo valor de retorno do Smart Contract.
-A checagem feita na linha 5 é necessária para identificar se o objeto retornado pelo Smart Contract é vazio.
-Isto é necessário porque a implementação da EVM não possui um elemento nulo como na maioria das linguagens mais populares, e também não suspende a execução e retorna um erro quando tenta-se acessar uma chave inexistente de um mapa.
-Quando a EVM encontra uma variável indefinida ou inexistente, seu comportamento padrão é retornar um valor do mesmo tipo da variável que corresponda ao valor FALSO de uma variável booleana.
-Sem um mecanismo de erro ou identificação de valores nulos, torna-se necessário checar o valor de alguma das variáveis recebidas cujo valor não possa ser equivalente ao FALSO booleano.
-No código \ref{cod:acessoSmartContract}, a variável escolhida é \emph{policy}, que ocupa a posição 1 da tupla e que nunca pode ser igual a uma string vazia, visto que isto significaria que o conteúdo não está criptografado, necessariamente significando que o valor de retorno se refere a valores nulos ou inexistentes.
-Confirmado que os dados recebidos realmente existem, estes são processados conforme a necessidade, no escopo aninhado à verificação, na linha 6.
-
-{\color{ForestGreen} Explicar implementação do servidor (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados. }
-
-{\color{Magenta} 1 parágrafo para explicar que o servidor utiliza REST para prover os serviços via web  (explique em 2-3 o que é REST).}
-
-O módulo do servidor conta com uma estrutura padrão de acordo com os princípios REST, ou seja, oferece uma API acessível (via protocolo HTTP) com métodos GET, POST e PUT, atribui URIs a todos os recursos sob gestão do servidor e possui um modelo de comunicação \emph{stateless}, i.e., toda a informação necessária à interação deve estar contida na mensagem recebida pelo servidor, sem a necessidade dele controlar o estado de comunicação ou contexto da interação de cada um dos clientes \cite{Mark2013}.
-O método DELETE não é implementado porque o sistema proposto é contextualizado e modelado para manter o registro permanecente e inviolável de dados de pacientes médicos, não havendo justificativa para a exclusão dos dados, uma vez que o sigilo é preservado e operações de atualização de dados são permitidas nos cenários onde for preciso atualizar ou corrigir os dados armazenados.
-O módulo cliente utiliza a classe \emph{ServerConnection} para encapsular o acesso ao servidor, que foi executado localmente durante todas as fases de desenvolvimento e experimentação do protótipo.
-
-{\color{Magenta} 1 parágrafo para explicar que o servidor possui o serviço para inserir um documento e para recuperar um documento.}
-
-a API disponível permite o envio, substituição e recuperação de arquivos enviados ao servidor.
-As URIs dos arquivos no servidor são construídas a partir de hashes SHA-256 gerados aleatoriamente, sendo gerados e enviados ao cliente como resposta de uma requisição sinalizando o envio de um novo arquivo para o servidor.
-Sendo exigido para a publicação na Blockchain, o cliente precisa informar este hash que passa a ser tratado como uma chave de acesso para o arquivo no servidor, junto com a identificação do servidor e outros dados, conforme as estruturas de dados definidas no contrato SmartDCPABEFiles exigem (ver código \ref{cod:SmartDCPABEFiles}).
-Usuários do sistema interessados no arquivo acessam seus metadados na Blockchain, entre eles a identificação do servidor e a chave que compõe a URI.
-A partir daí o cliente pode montar a URL da requisição do arquivo e obtê-lo do servidor.
-
-{\color{Magenta} 1 parágrafo para explicar que o servidor insere e recupera os prontuários eletrônicos de pacientes diretamente do seu sistema de arquivos advindos das requisições web.}
-
-O servidor foi implementado para salvar os arquivos diretamente em seu sistema de arquivos local, sem criptografia adicional sobre o conteúdo uma vez que este já é enviado criptografado pelo cliente, restringindo acessos não autorizados por terceiros.
-O fato do arquivo ser entregue sempre que requisitado a princípio não apresenta violações à privacidade e segurança dos dados, uma vez que está criptografado e só poderá ser decifrado por quem possua os atributos compatíveis com a política de acesso, porém é possível que um atacante escolha acumular arquivos sob sua posse e aguardar pela descoberta de vulnerabilidades críticas nas bibliotecas de criptografia que possibilitariam, no pior cenário possível, a quebra da criptografia. A fim de evitar isso, pode-se acrescentar desafios criptográficos que provem que o requisitante realmente possui os atributos necessários para decifrar o arquivo.
-
-Pode-se recorrer a um esquema baseado no conceito da Prova de Conhecimento-Zero \emph{(Zero Knowledge-Proof - ZPK)}, onde um verificador (o servidor) pode ser "convencido" que um provador (o cliente) realmente possui um segredo, sem com isso ter de expor alguma informação que altere o nível de conhecimento prévio do verificador sobre aquele segredo \cite{Rice2010,Buchanan2017}.
-Considere que o servidor deva se convencer da legitimidade da aquisição\footnote{interpretando uma aquisição legítima como aquela em que de fato o cliente possui a capacidade de descriptografar o conteúdo solicitado.} de um arquivo por um usuário, sem que o usuário tenha que revelar suas chaves ou sua identidade, evitando neste último caso o ônus ao servidor de verificar na Blockchain o histórico de concessões de atributos àquela identidade e testar a compatibilidade deles com a política de acesso do arquivo em questão, introduzindo estados intermediários e mutáveis entre requisições do cliente devido à consulta na Blockchain, que implicarão na quebra do princípio REST da comunicação sem estados.
-
-Uma solução viável é exigir ao cliente que, no ato do envio de um arquivo para ser hospedado, calcule o hashing deste arquivo, cifre este valor com a mesma política de acesso usada para o arquivo e então envie este par de arquivos cifrados ao servidor.
-O comportamento do servidor seria levemente modificado para que, diante de uma requisição de um arquivo sem parâmetros adicionais, a resposta seria o objeto cifrado que contém o valor do hashing enviado anteriormente pelo cliente.
-Um usuário com as credenciais necessárias seria capaz de decifrar esse objeto, realizando novamente a requisição do mesmo arquivo, desta vez informando o hashing como parâmetro.
-Diante de uma requisição de arquivo com algum parâmetro adicionado, o servidor verifica se seu valor é equivalente ao valor do hashing do arquivo sob sua posse.
-Seria impraticável tentar acertar o valor do hashing ao acaso, de forma que caso sejam equivalentes, torna-se evidente que o usuário tem consigo os atributos necessários para decifrar o conteúdo do arquivo e o servidor envia o arquivo, negando o acesso nos casos contrários.
-
-{\color{ForestGreen} Explicar implementação da Blockchain (4 parágrafos). Ver abaixo os 4 parágrafos destrinchados. }
-
-{\color{Magenta} 1 parágrafo para explicar que a Blockchain utilizada foi a testnet (explicar que existe a main e a testnet, onde a testnet é utilizada por desenvolvedores serve para realizar implantações de teste sem dispender recursos financeiros.}
+% {\color{Magenta} 1 parágrafo para explicar que a Blockchain utilizada foi a testnet (explicar que existe a main e a testnet, onde a testnet é utilizada por desenvolvedores serve para realizar implantações de teste sem dispender recursos financeiros.}
 
 O desenvolvimento de aplicações para Ethereum exige em algum momento a interação com a rede.
 O design de Smart Contracts e testes de integração exigem essa dinâmica, e pode-se querer ainda verificar o comportamento da aplicação após sua implantação, diante por exemplo do uso contínuo de uma base real de usuários ou da interação com outros projetos igualmente implantados na Blockchain.
-Há todo um ecossistema em torno da rede Ethereum permitindo a simulação da rede em graus diferentes de similaridade.
-A opção mais próxima da rede principal do Ethereum são as chamadas testnets.
+Há todo um ecossistema em torno da rede Ethereum que permite a simulação da rede. %em graus diferentes de similaridade.
+A opção de simulação mais próxima da rede principal do Ethereum são as chamadas testnets.
 As quatro testnets mais difundidas, por ordem cronológica de início, são as redes Ropsten, Kovan, Rinkeby, Sokol e Görli (também grafada como Goerli).
-A rede Ropsten usa a mesma configuração e o algoritmo de consenso PoW da rede principal, produzindo a cópia mais fiel possível da dinâmica real da Blockchain, enquanto as outras utilizam configurações distintas e um tipo de algoritmo de consenso denominado como Prova de Autoridade \emph{(PoA)}.
-Basicamente, a PoA restringe a tarefa do consenso sobre o estado da blockchain e inserção de novos blocos a um conjunto restrito de nós confiáveis chamados de autoridades, que realizam um processo de mineração\footnote{A fim de diferenciar algoritmos de consenso que não são baseados em hashing como o Proof-of-Work, alguns denominam sua atividade como cunhagem \emph{(minting)} ao invés de mineração \emph{(mining)}.} rotativa, distribuindo a responsabilidade da criação do bloco entre elas e estipulando regras de criação de blocos que evidenciam a tentativa de manipulação por nós maliciosos, permitindo a exclusão dessa entidade maliciosa, desde que a rede tenha uma composição majoritária de nós honestos \cite{DeAngelis2018}.
+A rede Ropsten usa a mesma configuração e o algoritmo de consenso PoW da rede principal, produzindo a cópia mais fiel possível da dinâmica real da Blockchain, enquanto as outras utilizam configurações distintas e um tipo de algoritmo de consenso denominado como Prova de Autoridade \emph{(PoA)}~\cite{DeAngelis2018}.
+%Basicamente, a PoA restringe a tarefa do consenso sobre o estado da blockchain e inserção de novos blocos a um conjunto restrito de nós confiáveis chamados de autoridades, que realizam um processo de mineração\footnote{A fim de diferenciar algoritmos de consenso que não são baseados em hashing como o Proof-of-Work, alguns denominam sua atividade como cunhagem \emph{(minting)} ao invés de mineração \emph{(mining)}.} rotativa, distribuindo a responsabilidade da criação do bloco entre elas e estipulando regras de criação de blocos que evidenciam a tentativa de manipulação por nós maliciosos, permitindo a exclusão dessa entidade maliciosa, desde que a rede tenha uma composição majoritária de nós honestos \cite{DeAngelis2018}.
 
-{\color{Magenta} 1 parágrafo para explicar que a rede Blockchain foi implantada em um computador usando o Ganache. Explicar o que é o ganache e o que entrega a implantação (X mineradores? X full nodes, etc).}
+% {\color{Magenta} 1 parágrafo para explicar que a rede Blockchain foi implantada em um computador usando o Ganache. Explicar o que é o ganache e o que entrega a implantação (X mineradores? X full nodes, etc).}
 
 Enquanto as testnets oferecem uma forma de teste gratuita de uma rede com aspectos realísticos, o tempo para a confirmação das transações pode prolongar os testes e experimentação durante o desenvolvimento.
-Ferramentas foram desenvolvidas para oferecer uma rede privada Ethereum em um ambiente controlado e determinístico, permitindo a escrita de testes, execução de comandos e facilitando a inspeção dos estados da EVM e das variáveis de Smart Contracts, destacando-se entre elas o Remix, um IDE online que executa uma EVM com um motor escrito em JavaScript diretamente no navegador Web e oferece ferramentas para implantação, interação e depuração de Smart Contracts e o Ganache, um programa que roda localmente, grava em disco o estado da simulação e expõe uma interface RPC para interação.
-Este trabalho utilizou o Ganache para gerar uma rede determinística em ambiente controlado, a fim de estudar o comportamento das sucessivas versões dos contratos e as interações entre eles, e utilizou Remix para realizar a implantação dos contratos e para realizar transações manuais.
+Para diminuir esse tempo, diversas ferramentas foram desenvolvidas para oferecer uma rede privada Ethereum em um ambiente controlado e determinístico, permitindo a escrita de testes, execução de comandos e facilitando a inspeção dos estados da EVM e das variáveis de Smart Contracts.
+Das ferramentas, destacam-se:
+(1) Remix, um IDE online que executa uma EVM diretamente no navegador Web, e oferece ferramentas para implantação, interação e depuração de Smart Contracts;
+(2) Ganache, um programa que roda localmente, grava em disco o estado da simulação e expõe uma interface RPC para interação.
 
-{\color{Magenta} 1 parágrafo para explicar que a Blockchain possui 5 contratos inteligentes mencionados na Seção anterior.}
+Este trabalho utilizou ambas as ferramentas.
+O Ganache foi utilizado para gerar uma rede determinística em ambiente controlado, a fim de estudar o comportamento das sucessivas versões dos contratos e as interações entre eles.
+O Remix foi utilizado para realizar a implantação dos contratos e para realizar transações manuais.
 
-Os Smart Contracts descritos na seção \ref{sec:sub:ImplementacaoSmartContracts} foram projetados inicialmente usando a EVM virtual do Remix, partindo para uma série de testes de integração com o código do Protótipo, com várias implantações em Blockchains virtuais usando o Ganache, e foram então publicadas na testnet Rinkeby.
-Além dos contratos citados, foram criados dois contratos auxiliares: o \emph{SmartDCPABEUtility} que atua como uma biblioteca para os outros contratos, oferecendo funções de conversão de dados do tipo bytes em string e vice-versa, e o \emph{SmartDCPABERoot}, responsável por automatizar a gestão de dependências entre os contratos.
+\subsubsection{Dependência dos Smart Contracts e publicação na Ethereum}
+
+% {\color{Magenta} 1 parágrafo para explicar que a Blockchain possui 5 contratos inteligentes mencionados na Seção anterior.}
+
+Os Smart Contracts descritos na seção \ref{sec:sub:ImplementacaoSmartContracts} foram implementados usando a EVM virtual do Remix, testados e implantados em Blockchains virtuais usando o Ganache, e  publicados na testnet Rinkeby.
 
 \begin{figure}[!h]
   \centering
@@ -993,10 +1021,10 @@ Além dos contratos citados, foram criados dois contratos auxiliares: o \emph{Sm
   \label{fig:dependenciasSmartContracts}
 \end{figure}
 
-Quando um contrato é publicado na EVM do Ethereum, ele se torna um objeto imutável, sendo possível alterar somente os valores definidos como variáveis deste contrato.
+Quando um contrato é publicado na EVM do Ethereum, ele se torna um objeto imutável {\color{blue}com um endereço  estático como referência}, sendo possível alterar somente os valores definidos como variáveis deste contrato.
 Portanto, para alterar a lógica do contrato ou a estrutura de dados, é necessário publicar um novo contrato e também todos os outros contratos que fizessem uma referência estática ao endereço deste contrato.
-O \emph{SmartDCPABERoot} auxilia o processo de injeção de novos valores de contrato e conta com uma trava de segurança em suas funções para somente aceitar como válidas as invocações feitas pelo dono do contrato, i.e., somente as transações cujo o endereço de carteira do autor coincidam com o usado na transação de criação do contrato.
-A figura \ref{fig:dependenciasSmartContracts} mostra a dependência entre contratos gerenciados pelo contrato SmartDCPABERoot e que sem ele precisariam ser configurados manualmente a cada nova versão dos contratos durante o desenvolvimento.
+O \emph{SmartDCPABERoot} auxilia o processo de injeção de novos valores de contrato e conta com uma trava de segurança em suas funções para somente aceitar como válidas as invocações feitas pelo dono do contrato, i.e., somente as transações cujo  endereço de carteira do autor coincidam com o usado na transação de criação do contrato.
+A Figura \ref{fig:dependenciasSmartContracts} mostra a dependência entre contratos gerenciados pelo contrato SmartDCPABERoot. % e que sem ele precisariam ser configurados manualmente a cada nova versão dos contratos durante o desenvolvimento.
 O endereço da carteira usado para implantação dos contratos foi 0x584cf84bcc601da596b4f12a4c976577b40e9970, e os endereços dos contratos na Blockchain testnet Rinkeby estão na tabela \ref{tbl:enderecosSmartContracts}.
 Os endereços são links clicáveis e direcionam para a página do respectivo contrato no site Etherscan, um serviço de exploração e pesquisa de transações, endereços e outros dados tanto na rede principal Ethereum quanto nas testnets.
 
@@ -1026,13 +1054,14 @@ Os endereços são links clicáveis e direcionam para a página do respectivo co
 \end{center}
 \end{table}
 
-{\color{Magenta} 1 parágrafo para explicar que a implantação dos contratos inteligentes usou o Metamask. Explicar o que é o Metamask e o que especificamente você usou dele: ver identificadores das transações, conversão de .sol para .abi. Explicar o que é .abi.}
+% {\color{Magenta} 1 parágrafo para explicar que a implantação dos contratos inteligentes usou o Metamask. Explicar o que é o Metamask e o que especificamente você usou dele: ver identificadores das transações, conversão de .sol para .abi. Explicar o que é .abi.}
 
-Como explicado anteriormente, a interação com a rede Ethereum é possível usando uma interface preparada para interação com um nó local da rede ou serviço remoto compatível com RPC Ethereum.
+{\color{red}Como explicado anteriormente, a interação com a rede Ethereum é possível usando uma interface preparada para interação com um nó local da rede ou serviço remoto compatível com RPC Ethereum.
 A biblioteca Web3, disponível para as linguagens de programação mais utilizadas, cumpre este propósito, porém sua implementação não conta com uma interface para interação com o usuário.
 O Metamask surge como uma extensão compatível com os navegadores modernos, implementando uma interface de usuário a uma biblioteca Web3 que é disponibilizada ao ambiente JavaScript para utilização dos sites.
 O Metamask introduz vantagens ao padronizar a forma com que usuários interagem e configuram a Web3 na internet e ao adotar o código aberto e a segurança proveniente deste método de desenvolvimento.
-Sem o Metamask, seria necessário a um serviço Web importar o Web3 diretamente em seu projeto e implementar os controles necessários ao uso do serviço, introduzindo custos e riscos adicionais ao projeto. A IDE Remix é um exemplo de site que usa a Web3 diretamente, além de ser compatível com a injeção da Web3 configurada pelo Metamask.
+Sem o Metamask, seria necessário a um serviço Web importar o Web3 diretamente em seu projeto e implementar os controles necessários ao uso do serviço, introduzindo custos e riscos adicionais ao projeto.
+A IDE Remix é um exemplo de site que usa a Web3 diretamente, além de ser compatível com a injeção da Web3 configurada pelo Metamask.
 
 \begin{figure}[!h]
   \centering
@@ -1046,9 +1075,43 @@ Em síntese, Smart Contracts na linguagem solidity são disponibilizados à IDE 
 A biblioteca Web3j cria classes Wrappers em Java dos contratos usando a especificação ABI e as instruções em bytecode gerados pela compilação dos arquivos escritos em Solidity no Remix.
 As instâncias destas usam a Web3j como interface de conexão com a Blockchain.
 A conexão com a Blockchain é feita por meio de um provedor de dados, que pode ser um nó local em execução, um gerador de Blockchain virtual para teste ou um serviço Web compatível com a RPC Ethereum.
-A rede Ethereum (ou similar) processa as transações, acionando os Smart Contracts em execução na EVM e retornando dados de retorno das funções, juntamente com o novo estado da Blockchain.
+A rede Ethereum (ou similar) processa as transações, acionando os Smart Contracts em execução na EVM e retornando dados de retorno das funções, juntamente com o novo estado da Blockchain.}
 
-{\color{RoyalBlue} Professor, a explicação do que é ABI está na seção \ref{sec:sub:contratos-ethereum}, porque lá já estou abordando o Solidity e o bytecode (EVM Code)}
+%{\color{RoyalBlue} Professor, a explicação do que é ABI estará na sessão \ref{sec:sub:contratos-ethereum}, porque lá já estou abordando o Solidity e o bytecode (EVM Code)}
+
+\subsection{Módulo Servidor}
+
+%{\color{ForestGreen} Explicar implementação do servidor (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados. }
+
+%{\color{Magenta} 1 parágrafo para explicar que o servidor utiliza REST para prover os serviços via web  (explique em 2-3 o que é REST).}
+
+O módulo do servidor conta com uma estrutura padrão de acordo com os princípios REST, ou seja, oferece uma API acessível (via protocolo HTTP) com métodos GET, POST e PUT. Para isso, atribui URIs a todos os recursos sob sua gestão e possui um modelo de comunicação \emph{stateless}, i.e., toda a informação necessária à interação deve estar contida na mensagem recebida pelo servidor. Assim, o servidor não tem necessidade de controlar o estado de comunicação ou contexto da interação de cada um dos clientes \cite{Mark2013}.
+O método DELETE não é implementado porque o sistema proposto é modelado para manter o registro permanente e inviolável de dados de pacientes médicos, não havendo justificativa para a exclusão destes. %, uma vez que o sigilo é preservado e operações de atualização de dados são permitidas nos cenários onde for preciso atualizar ou corrigir os dados armazenados.
+%O módulo cliente utiliza a classe \emph{ServerConnection} para encapsular o acesso ao servidor, que foi executado localmente durante todas as fases de desenvolvimento e experimentação do protótipo.
+
+% {\color{Magenta} 1 parágrafo para explicar que o servidor possui o serviço para inserir um documento e para recuperar um documento.}
+
+A API disponível permite o envio, substituição e recuperação de arquivos enviados ao servidor.
+As URIs dos arquivos no servidor são construídas a partir de hashes SHA-256 gerados aleatoriamente, sendo gerados e enviados ao cliente como resposta de uma requisição sinalizando o envio de um novo arquivo para o servidor.
+Esse hash servirá no processo de publicação dos metadados do arquivo na Blockchain pelo módulo Cliente. Assim, este último precisará informar o hash (que passa a ser tratado como uma chave de acesso para o arquivo no servidor), junto com a identificação do servidor e outros dados, conforme as estruturas de dados definidas no contrato SmartDCPABEFiles exigem (ver código \ref{cod:SmartDCPABEFiles}).
+Usuários do sistema interessados em obter o arquivo, acessam os metadados publicados na Blockchain, entre eles a identificação do servidor e a chave que compõe a URI.
+A partir daí o cliente pode montar a URL da requisição do arquivo e obtê-lo do servidor.
+
+% {\color{Magenta} 1 parágrafo para explicar que o servidor insere e recupera os prontuários eletrônicos de pacientes diretamente do seu sistema de arquivos advindos das requisições web.}
+
+O servidor foi implementado para salvar os arquivos diretamente em seu sistema de arquivos local, sem criptografia adicional sobre o conteúdo uma vez que este já é enviado criptografado pelo cliente, o que restringe o acesso se não tiver a respectiva política.
+O fato do arquivo ser entregue sempre que requisitado a princípio não apresenta violações à privacidade e segurança dos dados, uma vez que está criptografado e só poderá ser decifrado por quem possua os atributos compatíveis com a política de acesso.
+Entretanto, é possível que um atacante escolha acumular arquivos sob sua posse e aguardar pela descoberta de vulnerabilidades críticas nas bibliotecas de criptografia que possibilitariam, no pior cenário possível, a quebra da criptografia.
+A fim de evitar isso, pode-se acrescentar desafios criptográficos que provem que o requisitante realmente possui os atributos necessários para decifrar o arquivo.
+Uma dessas técnicas é a Prova de Conhecimento-Zero \emph{(Zero Knowledge-Proof - ZPK)}, onde um verificador (o servidor) pode ser convencido que o cliente realmente possui um segredo~\cite{Rice2010,Buchanan2017}.
+
+%Pode-se recorrer a um esquema baseado no conceito da Prova de Conhecimento-Zero \emph{(Zero Knowledge-Proof - ZPK)}, onde um verificador (o servidor) pode ser "convencido" que um provador (o cliente) realmente possui um segredo, sem com isso ter de expor alguma informação que altere o nível de conhecimento prévio do verificador sobre aquele segredo \cite{Rice2010,Buchanan2017}.
+%Considere que o servidor deva se convencer da legitimidade da aquisição\footnote{interpretando uma aquisição legítima como aquela em que de fato o cliente possui a capacidade de descriptografar o conteúdo solicitado.} de um arquivo por um usuário, sem que o usuário tenha que revelar suas chaves ou sua identidade, evitando neste último caso o ônus ao servidor de verificar na Blockchain o histórico de concessões de atributos àquela identidade e testar a compatibilidade deles com a política de acesso do arquivo em questão, introduzindo estados intermediários e mutáveis entre requisições do cliente devido à consulta na Blockchain, que implicarão na quebra do princípio REST da comunicação sem estados.
+
+Outra solução viável é exigir ao cliente que, no ato do envio de um arquivo para ser armazenado, calcule o hashing deste arquivo, cifre este valor com a mesma política de acesso usada para o arquivo e então envie este par de arquivos cifrados ao servidor.
+Diante de uma requisição, o servidor devolveria somente o objeto cifrado que contém o valor do hashing do arquivo (e não o arquivo cifrado em si).
+Um usuário, com as credenciais necessárias seria capaz de decifrar esse objeto, realizando novamente a requisição do mesmo arquivo, desta vez informando o valor do hashing como parâmetro.
+Diante de uma requisição de arquivo com algum parâmetro adicionado, o servidor verifica se seu valor é equivalente ao valor do hashing do arquivo sob sua posse. Note que, caso os valores sejam iguais, o servidor evidencia que o usuário tem consigo os atributos necessários para decifrar o conteúdo do arquivo e o envia cifrado ao cliente, negando o envio caso contrário.
 
 % -------------------------------------------------------------------- %
 \newpage
