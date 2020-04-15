@@ -555,6 +555,7 @@ Em um segundo momento Bob, o Hematologista do Hospital X, ciente do agendamento 
 Ao baixar os metadados do arquivos, ele requisita o documento cifrado ao servidor de arquivos e decifra o documento utilizando o extrato do processo de criptografia e suas chaves pessoais dos atributos referidos na política de acesso, decifrando com sucesso o arquivo e usando um programa específico para visualizar e editar o prontuário.
 
 \subsection{Taxonomia de permissões}
+\label{sec:sub:taxonomia-permissoes}
 
 {\color{ForestGreen}Explicar que o servidor de permissões deverá ser responsabilidade de uma organização apta para entregar as permissões online (ex. Ministério de Saúde ou algúm conselho federal/regional de medicina) (1 parágrafo)}.
 
@@ -1066,16 +1067,30 @@ A ABE foi proposta inicialmente em 2005 \cite{Sahai2005}, em 2006 \cite{Goyal200
 A ideia da Blockchain surge juntamente e por meio do Bitcoin em 2008 \cite{nakamoto2008bitcoin} e as possibilidades de seu uso como um Livro-Razão Distribuído expandem-se intensamente com novas propostas de algoritmos e sistemas nas mais variadas áreas de aplicação.
 Foi necessário a passagem do tempo para que se tornasse evidente a viabilidade da inovação trazida com o Bitcoin, atraindo a atenção do meio acadêmico que passou a estudar suas propriedades, alternativas e aplicações.
 Em 2016 foram publicados os primeiros trabalhos na área médica com projetos usando Blockchain, focados em garantir a autenticidade de dados médicos com soluções baseadas em Blockchain \cite{Zhang2016,Azaria2016,Ekblaw2016}.
-Particularmente, o sistema MedRec também implementa um mecanismo para integração de dados de pacientes fragmentados entre bases de dados distintas.
-A união de esquemas ABE com compartilhamento de dados usando Blockchain demonstrou alguns resultados, que serão analisados e comparados com este trabalho a seguir.
+Adicionalmente o sistema MedRec também implementa um mecanismo para integração de dados de pacientes fragmentados entre bases de dados distintas.
+O avanço das considerações da criptografia ABE e da Blockchain na área da saúde se encontraram em estudos recentes que serão analisados a seguir e comparados quando possível ao trabalho proposto aqui.
 
 \subsection{Sistemas na área de saúde usando Blockchain e ABE}
 \label{sec:sub:saude-blockchain-cba}
 
-Sun et al. \cite{Sun2018} apresentam um sistema para assegurar a autenticidade de dados médico por meio de uma Blockchain privada e promover o anonimato dos usuários envolvidos no sistema ao substituir o mecanismo nativo de geração de chaves do Bitcoin por um esquema usando ABE.
+Em 2018 Sun et al. \cite{Sun2018} apresentam um sistema para assegurar a autenticidade de dados médico por meio de uma Blockchain privada e promover o anonimato dos usuários envolvidos no sistema ao substituir o mecanismo nativo de geração de chaves do Bitcoin por um esquema usando ABE.
 Eles usam um cliente Bitcoin modificado para conter transações que representem registros de prontuários médicos (EHR) com substituição do mecanismos de geração de chaves e assinatura nativo do Bitcoin por outro baseado em um esquema ABE descentralizado que permite que múltiplas autoridades criem e concedam atributos a usuários.
 A proposta foca na preservação do anonimato do usuário e propõe a ABE como forma de escapar às possibilidades de ataque de inferência para descobrir possíveis identidades de usuários usando o Bitcoin, entretanto não trabalha a questão quanto ao sigilo do conteúdo dos prontuários.
-O trabalho proposto aqui difere do mencionado por dar enfoque ao sigilo da informação, não só propondo um esquema de criptografia como também elementos semâforam publicadosnticos mínimos para que as múltiplas autoridades gerem atributos com hierarquia e escopos de atuação similares entre elas.
+O trabalho proposto aqui difere do mencionado por dar enfoque ao sigilo da informação, não só propondo um esquema de criptografia como também elementos semânticos mínimos para que as múltiplas autoridades gerem atributos com hierarquia e escopos de atuação similares entre elas.
+
+No mesmo ano Zhang e Lin \cite{Zhang2018} propõem o esquema BSPP \emph{(Blockchain-based secure and privacy-preserving)}, que protege tanto a identidade do paciente quanto o conteúdo dos prontuários ao mesmo tempo que concede acesso a terceiros previamente autorizados por meio do esquema de re-cifragem por \emph{proxy} com termos de pesquisa descrito em \cite{Wang2012}.
+O paciente, no papel de usuário, consegue controlar o acesso aos seus dados de forma granular ao assumir a função de \emph{proxy}, gerando chaves de re-cifragem pelas quais é possível alterar uma cifra já realizada a um documento de forma a poder descriptografar e obter a mensagem original.
+Esta chave é atrelada à chave pública de um terceiro de tal forma que somente o possuidor da chave privada correspondente poderá usá-la com sucesso.
+Semelhante modo, a chave também é atrelada à chave pública de quem a cria e só é válida para cifras desta chave pública.
+Adicionalmente a chave também é atrelada a um termo de pesquisa, restringindo sua atuação para funcionar somente nas cifras em que o termo escolhido constar entre o conjunto de termos definidos no momento da criptografia.
+Embora não utilize explicitamente um esquema ABE, o resultado final é próximo a um sistema ABE se estabelecermos uma comparação onde termos de pesquisa sejam considerados chaves públicas de atributos.
+Nesta ótica, os termos de pesquisa atrelados à cifra de um documento seriam equivalentes a uma política de acesso monótona utilizando somente operadores conjuntivos (OR); o papel de \emph{proxy} nas mãos do usuário seria comparável ao de uma autoridade certificadora; e para finalizar a analogia, a chave de re-cifragem concedida para algum usuário e referindo-se a algum termo de pesquisa específico seria similar à chave pessoal de um atributo com de mesmo nome, concedida a este mesmo usuário.
+
+Visando a interoperabilidade entre instituições, Zhang e Lin sugerem o FHIR \emph{(Fast Healthcare Interoperability Resources)} \cite{HL72019} como um escopo comum de referência para a definição dos termos de pesquisa.
+O trabalho proposto aqui busca este mesmo objetivo e produz taxonomias de permissões e papeis médicos em um contexto específico do Brasil (seção \ref{sec:sub:taxonomia-permissoes}), visando definir um escopo semântico comum e facilitar a interoperabilidade de todos integrantes do sistema de saúde em uma escala nacional.
+Para assegurar a integridade e autenticidade dos dados médicos entre várias instituições os autores propõem o uso de dois tipos de blockchains.
+As blockchains do primeiro tipo são privadas (particulares a cada instituição) e registram hashes dos dados de prontuários cifrados, enquanto uma outra blockchain única e de acesso compartilhado serve para indexar todos os dados e possibilitar a pesquisa por meio dos termos de pesquisa e identidades de usuário, obtendo-se os dados ao contatar as instituições donas das blockchains encontradas na pesquisa.
+Em ambos os tipos de blockchains os autores adotam um mesmo mecanismo de consenso explícito e o denominam PoC \emph{(Proof of Conformity)}, aceitando a validade de novas transações e blocos somente quando estes forem declarados como válidos por no mínimo dois terços dos nós da rede, onde os nós utilizam trocas de mensagens via \emph{broadcast} para atingir este propósito.
 
 \subsection{Sistemas na área de saúde com acesso online usando ABE}
 \label{sec:sub:saude-nuvem-cba}
