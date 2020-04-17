@@ -19,7 +19,8 @@
 \usepackage{lmodern}% http://ctan.org/pkg/lm
 \usepackage{svg}
 \usepackage{xcolor}
-
+\usepackage{array} % for custom space in table columns
+\usepackage{makecell}
 % custom link style
 \newcommand{\link}[2]{{\color{blue}\underline{\href{#1}{#2}}}}
 \newcommand{\tabitem}{~~\llap{\textbullet{\ensuremath{\bullet}}}~~}
@@ -1131,7 +1132,47 @@ A ideia da Blockchain surge juntamente e por meio do Bitcoin em 2008 \cite{nakam
 Foi necessário a passagem do tempo para que se tornasse evidente a viabilidade da inovação trazida com o Bitcoin, atraindo a atenção do meio acadêmico que passou a estudar suas propriedades, alternativas e aplicações.
 Em 2016 foram publicados os primeiros trabalhos na área médica com projetos usando Blockchain, focados em garantir a autenticidade de dados médicos com soluções baseadas em Blockchain \cite{Zhang2016,Azaria2016,Ekblaw2016}.
 Adicionalmente o sistema MedRec também implementa um mecanismo para integração de dados de pacientes fragmentados entre bases de dados distintas.
-O avanço das considerações da criptografia ABE e da Blockchain na área da saúde se encontraram em estudos recentes que serão analisados a seguir e comparados quando possível ao trabalho proposto aqui.
+O avanço das considerações da criptografia ABE e da Blockchain na área da saúde se encontraram em estudos recentes que são analisados a seguir e comparados quando possível ao trabalho proposto aqui.
+As diferenças entre os trabalhos considerados mais relevantes estão resumidas na tabela \ref{tbl:comparacao-entre-trabalhos}.
+
+\begin{table}[h]
+  \begin{center}
+    \begin{adjustbox}{width=1\textwidth}
+    \begin{tabular}{lllll}
+      \hline
+      Propriedades & \cite{Sun2018} & \cite{Zhang2018} & \cite{Guo2020} & \makecell[l]{Smart\\DCPABE} \\
+      \hline
+      \makecell[l]{Baseado em\\Blockchain} & v & v & v & v \\
+      Smart Contracts & x & x & v & v \\
+      \makecell[l]{Controle\\de acesso} & x & v & v & v \\
+      \makecell[l]{Lastreabilidade\\de Autoridades} & x & x & x & v \\
+      \makecell[l]{Normalização\\semântica} & x & v & x & v \\
+      \hline
+    \end{tabular}
+  \end{adjustbox}
+  \caption{Comparação de propriedades sistêmicas dos trabalhos similares}
+  \label{tbl:comparacao-entre-trabalhos}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+  \begin{center}
+    \begin{adjustbox}{width=1\textwidth}
+    \begin{tabular}{llllll}
+      \hline
+      Trabalho & \makecell{Baseado em\\Blockchain} & \makecell{Smart\\Contracts} & \makecell{Controle\\de acesso} & \makecell{Lastreabilidade\\de Autoridades} & \makecell{Normalização\\semântica} \\
+      \hline
+      Sun et al. \cite{Sun2018} & v & x & x & x & x \\
+      Zhang e Lin \cite{Zhang2018} & v & x & v & x & v \\
+      Guo et al. \cite{Guo2020} & v & v & v & x & x \\
+      SmartDCPABE & v & v & v & v & v \\
+      \hline
+    \end{tabular}
+  \end{adjustbox}
+  \caption{Comparação de propriedades sistêmicas dos trabalhos similares}
+  \label{tbl:comparacao-entre-trabalhos2}
+\end{center}
+\end{table}
 
 \subsection{Sistemas na área de saúde usando Blockchain e ABE}
 \label{sec:sub:saude-blockchain-cba}
@@ -1154,6 +1195,17 @@ O trabalho proposto aqui busca este mesmo objetivo e produz taxonomias de permis
 Para assegurar a integridade e autenticidade dos dados médicos entre várias instituições os autores propõem o uso de dois tipos de blockchains.
 As blockchains do primeiro tipo são privadas (particulares a cada instituição) e registram hashes dos dados de prontuários cifrados, enquanto uma outra blockchain única e de acesso compartilhado serve para indexar todos os dados e possibilitar a pesquisa por meio dos termos de pesquisa e identidades de usuário, obtendo-se os dados ao contatar as instituições donas das blockchains encontradas na pesquisa.
 Em ambos os tipos de blockchains os autores adotam um mesmo mecanismo de consenso explícito e o denominam PoC \emph{(Proof of Conformity)}, aceitando a validade de novas transações e blocos somente quando estes forem declarados como válidos por no mínimo dois terços dos nós da rede, onde os nós utilizam trocas de mensagens via \emph{broadcast} para atingir este propósito.
+
+Nagasubramanian et al. \cite{Nagasubramanian2020} propõem o sistema PKIBC \emph{(Public Keyless Infrastructure Blockchain)} para garantir a segurança, privacidade e integridade de dados médicos, entretanto o trabalho só desenvolve o aspecto da integridade, que é garantida por um esquema de assinatura sem chaves.
+Essas assinaturas seriam armazenadas em uma Blockchain para garantir a imutabilidade e autenticidade dos dados.
+Criptografia baseada em atributos é citada no trabalho, porém é a maneira como o sistema foi descrito torna inconclusivo a forma que ABE foi potencialmente utilizada neste trabalho.
+
+Em 2020 Guo et al. \cite{Guo2020} implementam um sistema seguro, confidencial e descentralizado utilizando DCPABE, ABMS (Attribute-Based Multi-Signature) e controlando o acesso a recursos por meio de blockchain.
+A adoção do esquema DCPABE assegura a proteção dos dados hospedados em servidores na nuvem e fornece escalabilidade ao sistema ao permitir a criação de múltiplas autoridades que independem de coordenação para funcionamento.
+A ABMS é um módulo independente da DCPABE e permite elaborar mecanismos de autenticação anônimos por meio de atributos, associando um usuário a um conjunto de atributos e exigindo estes para verificação de uma assinatura digital.
+Os autores usam as blockchains Hyperledger Fabric e Hyperledger Ursa para implantar Smart Contracts que realizam controle de acesso aos dados criptografados via ABE, liberando acesso aos dados somente se as requisições obtiverem assinaturas válidas dos usuários donos dos prontuários.
+O trabalho proposto aqui também utiliza Smart Contracts para intermediar o acesso a arquivos criptografados em ABE mas utiliza a rede Ethereum, que não possui suporte ou biblioteca com as primitivas criptográficas necessárias para tornar possível (e viável) operações bilineares diretamente nos contratos, resultando em uma arquitetura diversa da apresentada no trabalho em análise.
+Uma outra diferença é que o trabalho proposto modela Smart Contracts para intermediar e lastrear a atividade de concessão de atributos, produzindo informações úteis para realização de auditoria das atividades das autoridades certificadoras.
 
 \subsection{Sistemas na área de saúde com acesso online usando ABE}
 \label{sec:sub:saude-nuvem-cba}
