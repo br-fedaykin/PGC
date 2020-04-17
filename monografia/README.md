@@ -121,3 +121,8 @@
 - [ ] estudar mecanismos de revocação no artigo Attribute-Based Encryption Optimized for Cloud Computing (2015)
 - [ ] implementar ZPK no servidor
 - [ ] usar hyperledger Fabric / hyperledger Besu para diminuir gasto financeiro / problema energético do Ethereum (citar artigo Is bitcoin the only problem? A scenario model for the power demand of blockchains)
+
+### Anexos
+
+- [ ] Revisar e formatar Anexo I
+- [ ] Anexo II - código dos Smart Contracts
