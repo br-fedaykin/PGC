@@ -40,7 +40,7 @@
 #### 2.3 Contratos Inteligentes no Ethereum
 
 - [x] origem da ideia por Szabo
-- [men ] utilidade, benefícios
+- [x] utilidade, benefícios
 - [x] introdução à implementação no Ethereum
   - [x] o que é EVM
   - [x] o que é Solidity
@@ -93,11 +93,12 @@
 
 #### 4.1 Sistemas na área de saúde usando Blockchain e ABE
 
-- [ ] Attribute-based Multi-Signature and Encryption for EHR Management: A Blockchain-based Solution
+- [x] Attribute-based Multi-Signature and Encryption for EHR Management: A Blockchain-based Solution
 - [x] A Decentralizing Attribute-Based Signature for Healthcare Blockchain - IEEE Conference Publication
-- [ ] Securing e-health records using keyless signature infrastructure blockchain technology in the cloud | SpringerLink
+- [x] Securing e-health records using keyless signature infrastructure blockchain technology in the cloud
 - [ ] Medical Data Sharing Scheme Based on Attribute Cryptosystem and Blockchain Technology - IEEE Journals & Magazine
-- [ ] Toward Secure, Privacy-Preserving, and Interoperable Medical Data Sharing via Blockchain - IEEE Conference Publication
+- [x] Toward Secure, Privacy-Preserving, and Interoperable Medical Data Sharing via Blockchain - IEEE Conference Publication
+- [ ] A Blockchain-based Approach to the Secure Sharing of Healthcare Data
 
 #### 4.2 Sistemas na área de saúde com acesso online usando ABE
 
@@ -107,9 +108,12 @@
 
 ### 5 Resultados
 
-- [ ] tabela de chaves criptográficas do Sistema
-- [ ] caso de uso
-- [ ] gráficos e dados
+- [ ] tabela listando todas as chaves utilizadas no sistema e uma breve explicação
+- [ ] caso de uso básico
+  - [ ] custo de gás para execução do caso de uso, por etapa
+- [ ] análise do crescimento de custo de uma transação de publicação de um arquivo em relação ao tamanho da política de acesso
+- [ ] tabela das funções implementadas na Blockchain com o custo em gas de cada uma e o custo em valor monetário em relação à cotação do Ethereum hoje e a 12 meses atrás.
+- [ ] texto citando as restrições de trabalho que influenciaram a arquitetura atual. Por exemplo, falar de especificidades do Java e do Solidity/EVM que restringiram a quantidade de instruções em Smart Contracts.
 
 ### 6 conclusão e trabalhos futuros
 
