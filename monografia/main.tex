@@ -109,7 +109,7 @@ Santo André -- SP
 
 \vfill
 
-\uppercase{\textbf{Um sistema distribuído com permissão de acesso a prontuários de pacientes por meio de Smart Contracts}}
+\uppercase{\textbf{SmartDCPABE: Um sistema distribuído com permissão de acesso a prontuários de pacientes por meio de Smart Contracts}}
 \end{center}
 
 \vfill
@@ -374,16 +374,16 @@ Essas ferramentas elevam a expressividade e capacidade da Blockchain como uma pl
 
 {\color{ForestGreen}Explicar que para criar o consenso, ou seja, escolher quem irá inserir o último bloco na cadeia, é necessário utilizar o mecanismo de consenso denominado Proof-of-Work (PoW). Explicar em que consiste o PoW. (2 parágrafos).}
 
-\begin{figure}[!h]
-  \centering
-  \includesvg{images/taxonomia-blockchains.svg}
+%\begin{figure}[!h]
+%  \centering
+%  \includesvg{images/taxonomia-blockchains.svg}
   %\includegraphics[width=\textwidth]{images/diagrama-DCPABE.png}
-  \caption{Taxonomia de Blockchains quanto ao acesso à rede e diferenciação de usuários}
-  \label{fig:taxonomiaBlockchains}
-\end{figure}
+%  \caption{Taxonomia de Blockchains quanto ao acesso à rede e diferenciação de usuários}
+%  \label{fig:taxonomiaBlockchains}
+%\end{figure}
 
 Uma rede Blockchain pode ser configurada como pública ou privada e
-pode exigir ou não permissão de entrada, formando uma taxonomia ilustrada na figura X.
+pode exigir ou não permissão de entrada.%, formando uma taxonomia ilustrada na figura X.
 Uma Blockchain pública disponibiliza seus dados de maneira irrestrita, bastando que o interessado execute o programa para receber os dados difundidos pela rede, sendo o modelo usado em muitas criptomoedas, a exemplo do Bitcoin e Ethereum.
 Em decorrência de sua estrutura descentralizada, os projetos de criptomoedas carecem de uma autoridade central para verificar e autenticar usuários e por isso operam em um modelo sem permissão \emph{(permissionless)}, onde qualquer pessoa pode adicionar nós à rede de processamento.
 Redes Blockchain públicas são tratadas como sinônimo de redes sem restrições de acesso e de fato até o momento não há menção de alguma rede do tipo que implemente restrição de acesso
@@ -391,7 +391,7 @@ Redes Blockchain públicas são tratadas como sinônimo de redes sem restriçõe
 
 Uma Blockchain privada é propriedade de uma instituição ou um consórcio delas com a intenção de incorporar suas vantagens à infraestrutura do setor privado.
 Para implantar uma Blockchain privada, pode-se configurar um software da criptomoeda mais apropriada aos requisitos de uso para funcionar em uma rede interna e fechada, ou utilizar arquiteturas desenvolvidas propriamente para este fim, como o Hyperledger Fabric ou Hyperledger Besu \cite{Blummer2019}.
-Blockchains privadas são uma opção viável quando instituições sem confiança entre si desejam interagir ou integrar suas bases dados e ao mesmo tempo não estão dispostas a concordar com uma terceira parte confiável para intermediar a operação deste sistema \cite{OLeary2017, Wust2017}.
+Blockchains privadas são uma opção viável quando instituições sem confiança entre si desejam interagir ou integrar suas bases de dados e ao mesmo tempo não estão dispostas a concordar com uma terceira parte confiável para intermediar a operação deste sistema \cite{OLeary2017, Wust2017}.
 O conjunto de participantes é controlado e conhecido, permitindo o uso de identidades para gerenciar permissão de escrita na Blockchain.
 A leitura de dados pode ser restrito aos participantes ou tornado público, caso haja partes interessadas em conduzir uma verificação da validade dos dados armazenados (e.g., clientes ou auditores) .
 
@@ -1127,7 +1127,7 @@ O módulos Y ... [1  parágrafo explicando o módulo e tentar relacionar a inter
 
 A principal diferença com o sistema proposto é [2 a 3 linhas].}
 
-A ABE foi proposta inicialmente em 2005 \cite{Sahai2005}, em 2006 \cite{Goyal2006} é publicado o primeiro trabalho aplicando este novo esquema de criptografia a dados e a partir de 2010 \cite{Akinyele2010} a KP-ABE é aplicada com sucesso na área médica em um protótipo para gerenciar dados da Instituição Médica Johns Hopkins (Maryland, EUA).
+A ABE foi proposta inicialmente em 2005 \cite{Sahai2005} e em 2006 \cite{Goyal2006} é publicado o primeiro trabalho aplicando este novo esquema de criptografia a dados e a partir de 2010 \cite{Akinyele2010} a KP-ABE é aplicada com sucesso na área médica em um protótipo para gerenciar dados da Instituição Médica Johns Hopkins (Maryland, EUA).
 A ideia da Blockchain surge juntamente e por meio do Bitcoin em 2008 \cite{nakamoto2008bitcoin} e as possibilidades de seu uso como um Livro-Razão Distribuído expandem-se intensamente com novas propostas de algoritmos e sistemas nas mais variadas áreas de aplicação.
 Foi necessário a passagem do tempo para que se tornasse evidente a viabilidade da inovação trazida com o Bitcoin, atraindo a atenção do meio acadêmico que passou a estudar suas propriedades, alternativas e aplicações.
 Em 2016 foram publicados os primeiros trabalhos na área médica com projetos usando Blockchain, focados em garantir a autenticidade de dados médicos com soluções baseadas em Blockchain \cite{Zhang2016,Azaria2016,Ekblaw2016}.
@@ -1138,19 +1138,19 @@ As diferenças entre os trabalhos considerados mais relevantes estão resumidas 
 \begin{table}[h]
   \begin{center}
     \begin{adjustbox}{width=1\textwidth}
-    \begin{tabular}{lllll}
+    \begin{tabular}{lcccccc}
       \hline
-      Propriedades & \cite{Sun2018} & \cite{Zhang2018} & \cite{Guo2020} & \makecell[l]{Smart\\DCPABE} \\
+      Propriedades & \cite{Yang2017} & \cite{Sun2018} & \cite{Zhang2018} & \cite{Guo2020} & \cite{Yang2020} & \makecell{Smart\\DCPABE} \\
       \hline
-      \makecell[l]{Baseado em\\Blockchain} & v & v & v & v \\
-      Smart Contracts & x & x & v & v \\
-      \makecell[l]{Controle\\de acesso} & x & v & v & v \\
-      \makecell[l]{Lastreabilidade\\de Autoridades} & x & x & x & v \\
-      \makecell[l]{Normalização\\semântica} & x & v & x & v \\
+      \makecell[l]{Baseado em\\Blockchain} & & v & v & v & & v \\
+      Smart Contracts & & x & x & v & & v \\
+      \makecell[l]{Controle\\de acesso} & & x & v & v & &v \\
+      \makecell[l]{Lastreabilidade\\de Autoridades} & & x & x & x & & v \\
+      \makecell[l]{Normalização\\semântica} & & x & v & x & & v \\
       \hline
     \end{tabular}
   \end{adjustbox}
-  \caption{Comparação de propriedades sistêmicas dos trabalhos similares}
+  \caption{Comparação de propriedades dos sistemas apresentados em trabalhos similares}
   \label{tbl:comparacao-entre-trabalhos}
 \end{center}
 \end{table}
@@ -1169,7 +1169,7 @@ As diferenças entre os trabalhos considerados mais relevantes estão resumidas 
       \hline
     \end{tabular}
   \end{adjustbox}
-  \caption{Comparação de propriedades sistêmicas dos trabalhos similares}
+  \caption{Comparação de propriedades dos sistemas apresentados em trabalhos similares}
   \label{tbl:comparacao-entre-trabalhos2}
 \end{center}
 \end{table}
@@ -1198,7 +1198,7 @@ Em ambos os tipos de blockchains os autores adotam um mesmo mecanismo de consens
 
 Nagasubramanian et al. \cite{Nagasubramanian2020} propõem o sistema PKIBC \emph{(Public Keyless Infrastructure Blockchain)} para garantir a segurança, privacidade e integridade de dados médicos, entretanto o trabalho só desenvolve o aspecto da integridade, que é garantida por um esquema de assinatura sem chaves.
 Essas assinaturas seriam armazenadas em uma Blockchain para garantir a imutabilidade e autenticidade dos dados.
-Criptografia baseada em atributos é citada no trabalho, porém é a maneira como o sistema foi descrito torna inconclusivo a forma que ABE foi potencialmente utilizada neste trabalho.
+Criptografia baseada em atributos é citada no trabalho, porém a maneira como o sistema foi descrito torna inconclusivo a forma em que a ABE foi potencialmente utilizada neste trabalho e por este motivo a comparação ficou prejudicada e este trabalho não consta na tabela \ref{tbl:comparacao-entre-trabalhos}.
 
 Em 2020 Guo et al. \cite{Guo2020} implementam um sistema seguro, confidencial e descentralizado utilizando DCPABE, ABMS (Attribute-Based Multi-Signature) e controlando o acesso a recursos por meio de blockchain.
 A adoção do esquema DCPABE assegura a proteção dos dados hospedados em servidores na nuvem e fornece escalabilidade ao sistema ao permitir a criação de múltiplas autoridades que independem de coordenação para funcionamento.
@@ -1206,6 +1206,8 @@ A ABMS é um módulo independente da DCPABE e permite elaborar mecanismos de aut
 Os autores usam as blockchains Hyperledger Fabric e Hyperledger Ursa para implantar Smart Contracts que realizam controle de acesso aos dados criptografados via ABE, liberando acesso aos dados somente se as requisições obtiverem assinaturas válidas dos usuários donos dos prontuários.
 O trabalho proposto aqui também utiliza Smart Contracts para intermediar o acesso a arquivos criptografados em ABE mas utiliza a rede Ethereum, que não possui suporte ou biblioteca com as primitivas criptográficas necessárias para tornar possível (e viável) operações bilineares diretamente nos contratos, resultando em uma arquitetura diversa da apresentada no trabalho em análise.
 Uma outra diferença é que o trabalho proposto modela Smart Contracts para intermediar e lastrear a atividade de concessão de atributos, produzindo informações úteis para realização de auditoria das atividades das autoridades certificadoras.
+
+Yang et al. \cite{Yang2020}
 
 \subsection{Sistemas na área de saúde com acesso online usando ABE}
 \label{sec:sub:saude-nuvem-cba}
