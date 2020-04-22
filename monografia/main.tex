@@ -1142,11 +1142,11 @@ As diferenças entre os trabalhos considerados mais relevantes estão resumidas 
       \hline
       Propriedades & \cite{Yang2017} & \cite{Sun2018} & \cite{Zhang2018} & \cite{Guo2020} & \cite{Yang2020} & \makecell{Smart\\DCPABE} \\
       \hline
-      \makecell[l]{Baseado em\\Blockchain} & & v & v & v & & v \\
-      Smart Contracts & & x & x & v & & v \\
-      \makecell[l]{Controle\\de acesso} & & x & v & v & &v \\
-      \makecell[l]{Lastreabilidade\\de Autoridades} & & x & x & x & & v \\
-      \makecell[l]{Normalização\\semântica} & & x & v & x & & v \\
+      \makecell[l]{Baseado em\\Blockchain} & & v & v & v & v & v \\
+      Smart Contracts & & x & x & v & x & v \\
+      \makecell[l]{Controle\\de acesso} & & x & v & v & v & v \\
+      \makecell[l]{Lastreabilidade\\de Autoridades} & & x & x & x & x & v \\
+      \makecell[l]{Normalização\\semântica} & & x & v & x & x & v \\
       \hline
     \end{tabular}
   \end{adjustbox}
@@ -1162,9 +1162,11 @@ As diferenças entre os trabalhos considerados mais relevantes estão resumidas 
       \hline
       Trabalho & \makecell{Baseado em\\Blockchain} & \makecell{Smart\\Contracts} & \makecell{Controle\\de acesso} & \makecell{Lastreabilidade\\de Autoridades} & \makecell{Normalização\\semântica} \\
       \hline
+      \cite{Yang2017} \\
       Sun et al. \cite{Sun2018} & v & x & x & x & x \\
       Zhang e Lin \cite{Zhang2018} & v & x & v & x & v \\
       Guo et al. \cite{Guo2020} & v & v & v & x & x \\
+      Yang et al. \cite{Yang2020} & v & x & v & x & x \\
       SmartDCPABE & v & v & v & v & v \\
       \hline
     \end{tabular}
@@ -1182,7 +1184,7 @@ Eles usam um cliente Bitcoin modificado para conter transações que representem
 A proposta foca na preservação do anonimato do usuário e propõe a ABE como forma de escapar às possibilidades de ataque de inferência para descobrir possíveis identidades de usuários usando o Bitcoin, entretanto não trabalha a questão quanto ao sigilo do conteúdo dos prontuários.
 O trabalho proposto aqui difere do mencionado por dar enfoque ao sigilo da informação, não só propondo um esquema de criptografia como também elementos semânticos mínimos para que as múltiplas autoridades gerem atributos com hierarquia e escopos de atuação similares entre elas.
 
-No mesmo ano Zhang e Lin \cite{Zhang2018} propõem o esquema BSPP \emph{(Blockchain-based secure and privacy-preserving)}, que protege tanto a identidade do paciente quanto o conteúdo dos prontuários ao mesmo tempo que concede acesso a terceiros previamente autorizados por meio do esquema de re-cifragem por \emph{proxy} com termos de pesquisa descrito em \cite{Wang2012}.
+No mesmo ano Zhang e Lin \cite{Zhang2018} propõem o esquema BSPP \emph{(Blockchain-based secure and privacy-preserving)}, que protege tanto a identidade do paciente quanto o conteúdo dos prontuários ao mesmo tempo que concede acesso a terceiros previamente autorizados por meio do esquema de re-cifragem por \emph{proxy} com termos de pesquisa \cite{Wang2012}.
 O paciente, no papel de usuário, consegue controlar o acesso aos seus dados de forma granular ao assumir a função de \emph{proxy}, gerando chaves de re-cifragem pelas quais é possível alterar uma cifra já realizada a um documento de forma a poder descriptografar e obter a mensagem original.
 Esta chave é atrelada à chave pública de um terceiro de tal forma que somente o possuidor da chave privada correspondente poderá usá-la com sucesso.
 Semelhante modo, a chave também é atrelada à chave pública de quem a cria e só é válida para cifras desta chave pública.
@@ -1207,7 +1209,15 @@ Os autores usam as blockchains Hyperledger Fabric e Hyperledger Ursa para implan
 O trabalho proposto aqui também utiliza Smart Contracts para intermediar o acesso a arquivos criptografados em ABE mas utiliza a rede Ethereum, que não possui suporte ou biblioteca com as primitivas criptográficas necessárias para tornar possível (e viável) operações bilineares diretamente nos contratos, resultando em uma arquitetura diversa da apresentada no trabalho em análise.
 Uma outra diferença é que o trabalho proposto modela Smart Contracts para intermediar e lastrear a atividade de concessão de atributos, produzindo informações úteis para realização de auditoria das atividades das autoridades certificadoras.
 
-Yang et al. \cite{Yang2020}
+Yang et al. \cite{Yang2020} usam esquemas de criptografia e assinatura baseados em atributos para assegurar a segurança da informação e privacidade dos usuários.
+Uma organização central gerencia a geração de atributos e concessão de chaves privadas às instituições que aderirem ao sistema.
+Os pacientes comunicam a política de acesso que desejam aplicar a seus dados médicos que são aplicadas pelas instituições e assina esta política usando ABS \emph{Attribute-Based Signature}.
+Os dados criptografados pelas instituições são enviados a um servidor temporário integrado a uma blockchain que assegura que somente arquivos com assinaturas válidas de pacientes e cifradas com as políticas indicadas por ele sejam enviadas ao provedor de serviço de nuvem, rejeitando o envio de dados que não se adequem a estas exigências.
+Não se fala do tipo específico blockchain ou de sua estrutura de dados.
+O provedor de serviço utiliza tecnologia OD-ABE \emph{Attribute-Based Encryption with Outsourcing Decryption} para permitir transformações em dados cifrados em um estado intermediário de menor custo computacional para o deciframento de um usuário que possuir a chave correspondente a esta nova cifra.
+A organização central de atributos atua como \emph{proxy} neste esquema, entregando chaves de re-cifragem aos usuários que a requisitarem.
+O modelo deste sistema difere do trabalho proposto aqui por modelar uma solução centralizada em uma entidade apenas apesar de usar DCPABE e esta entidade não interage de forma alguma com a Blockchain, dificultando análises de auditoria.
+Por considerarem um modelo centralizado, os autores não exploram questões sobre interoperabilidade e padronização de atributos entre múltiplas instituições, o que o diferencia do trabalho apresentado aqui.
 
 \subsection{Sistemas na área de saúde com acesso online usando ABE}
 \label{sec:sub:saude-nuvem-cba}
