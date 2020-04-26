@@ -89,16 +89,16 @@
 ### 4 Trabalhos relacionados
 
 - [x] Texto introdutório
-- [ ] tabela de comparação de funcionalidades
+- [x] tabela de comparação de funcionalidades
 
 #### 4.1 Sistemas na área de saúde usando Blockchain e ABE
 
 - [x] Attribute-based Multi-Signature and Encryption for EHR Management: A Blockchain-based Solution
 - [x] A Decentralizing Attribute-Based Signature for Healthcare Blockchain - IEEE Conference Publication
 - [x] Securing e-health records using keyless signature infrastructure blockchain technology in the cloud
-- [ ] Medical Data Sharing Scheme Based on Attribute Cryptosystem and Blockchain Technology - IEEE Journals & Magazine
+- [x] Medical Data Sharing Scheme Based on Attribute Cryptosystem and Blockchain Technology - IEEE Journals & Magazine
 - [x] Toward Secure, Privacy-Preserving, and Interoperable Medical Data Sharing via Blockchain - IEEE Conference Publication
-- [ ] A Blockchain-based Approach to the Secure Sharing of Healthcare Data
+- [x] A Blockchain-based Approach to the Secure Sharing of Healthcare Data
 
 #### 4.2 Sistemas na área de saúde com acesso online usando ABE
 
@@ -123,6 +123,6 @@
 - [ ] usar hyperledger Fabric / hyperledger Besu para diminuir gasto financeiro / problema energético do Ethereum (citar artigo Is bitcoin the only problem? A scenario model for the power demand of blockchains)
 
 ### Anexos
-
+- [ ] Pesquisar sobre numeração própria para anexos em Latex
 - [ ] Revisar e formatar Anexo I
 - [ ] Anexo II - código dos Smart Contracts
