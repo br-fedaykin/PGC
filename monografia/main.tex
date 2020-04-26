@@ -21,6 +21,9 @@
 \usepackage{xcolor}
 \usepackage{array} % for custom space in table columns
 \usepackage{makecell}
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+
 % custom link style
 \newcommand{\link}[2]{{\color{blue}\underline{\href{#1}{#2}}}}
 \newcommand{\tabitem}{~~\llap{\textbullet{\ensuremath{\bullet}}}~~}
@@ -41,6 +44,10 @@
        #4
     }
 }%
+
+% check and uncheck marks for comparison table
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
 
 \floatstyle{ruled}
 \newfloat{program}{thp}{lop}
@@ -1161,12 +1168,12 @@ A tabela \ref{tbl:comparacao-entre-trabalhos} sumariza as comparações com os s
       \hline
       Trabalho & \makecell{Baseado em\\Blockchain} & \makecell{Smart\\Contracts} & \makecell{Controle\\de acesso} & \makecell{Lastreabilidade\\de Autoridades} & \makecell{Normalização\\semântica} \\
       \hline
-      Yang e Yang \cite{Yang2017} & v & v & v & x & x\\
-      Sun et al. \cite{Sun2018} & v & x & x & x & x \\
-      Zhang e Lin \cite{Zhang2018} & v & x & v & x & v \\
-      Guo et al. \cite{Guo2020} & v & v & v & x & x \\
-      Yang et al. \cite{Yang2020} & v & x & v & x & x \\
-      SmartDCPABE & v & v & v & v & v \\
+      Yang e Yang \cite{Yang2017} & \cmark & \cmark & \cmark & \xmark & \xmark\\
+      Sun et al. \cite{Sun2018} & \cmark & \xmark & \xmark & \xmark & \xmark \\
+      Zhang e Lin \cite{Zhang2018} & \cmark & \xmark & \cmark & \xmark & \cmark\\
+      Guo et al. \cite{Guo2020} & \cmark & \cmark & \cmark & \xmark & \xmark\\
+      Yang et al. \cite{Yang2020} & \cmark & \xmark & \cmark & \xmark & \xmark\\
+      SmartDCPABE & \cmark & \cmark & \cmark & \cmark & \cmark \\
       \hline
     \end{tabular}
   \end{adjustbox}
