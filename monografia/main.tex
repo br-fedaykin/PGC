@@ -1235,6 +1235,15 @@ Por considerarem um modelo centralizado, os autores não exploram questões sobr
 \subsection{Sistemas na área de saúde com acesso online usando ABE}
 \label{sec:sub:saude-nuvem-cba}
 
+Outros sistemas foram propostos sem utilizar a Blockchain e em geral pressupõem a existência de uma entidade confiável ou de um cenário de uso restrito a uma só instituição, atribuindo a ela operações sensíveis em graus que variam de acordo com a proposta do sistema.
+Akinyele et al. \cite{Akinyele2010} usam ABE para implementar o conceito de prontuários médicos auto-protegidos, isto é, prontuários cujos dados estão seguros contra acesso não-autorizado e carregam as informações necessárias para permitir este acesso baseado em restrições e limitações atreladas ao arquivo.
+Eles usam um sistema de controle de acesso dual, utilizando CP-ABE para para derivar chaves relacionadas a atributos para usuários e KP-ABE para para derivar chaves relacionadas a políticas de acesso específicas para acesso temporário à base de dados para o caso de pesquisadores por exemplo.
+O sistema deles conta com uma central para geração de chaves ABE que também faz gestão de certificados, um módulo motor de políticas de acesso que tem a função de aplicar políticas de acesso por meio de reconhecimento de padrões previamente estabelecidos administrador do sistema, que reflitam as regras de acesso atuais no hospital.
+Por não trabalharem em ambiente multi-institucional, não há preocupações em relação à interoperabilidade do sistema.
+Entretanto, os autores demonstram como transcrever regras de acesso particulares à instituição em que o protótipo foi implementado em políticas de acesso compatíveis com ABE, utilizando um esquema para implementar não somente operadores lógicos AND e OR mas também operadores de comparação numérica.
+
+
+
 % -------------------------------------------------------------------- %
 \newpage
 \section{Resultados Experimentais}
