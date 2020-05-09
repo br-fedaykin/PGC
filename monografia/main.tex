@@ -1242,6 +1242,13 @@ O sistema deles conta com uma central para geração de chaves ABE que também f
 Por não trabalharem em ambiente multi-institucional não há uma abordagem quanto à interoperabilidade do sistema e a discussão em torno da construção políticas de acesso se refere exclusivamente às normas particulares da Instituição Médica John Hopkins, onde o protótipo foi implementado.
 Eles descrevem neste trabalho como produzir estruturas de comparação numérica, estendendo a expressividade da política de acesso para além dos operadores lógicos AND e OR.
 
+Li et al. \cite{Li2013} implementam um sistema centrado no controle dos dados pelo paciente usando um esquema ABE.
+De forma similar a este trabalho, os autores concedem aos usuários a capacidade de se tornarem autoridades e dividem os atributos em dois domínios distintos: público e particular.
+Atributos de domínio público são controlados por instituições e são públicos no sistema para serem utilizados na escrita de políticas de acesso, enquanto que os de domínio particular são criados e gerenciados pelo usuário dono de um prontuário para permitir o acesso específico a certas partes de seus dados.
+Os autores consideram a interação entre múltiplas autoridades mas diferente do trabalho apresentado aqui, estas autoridades precisam coordenar a emissão de atributos para que cada subconjunto seja exclusivo a cada autoridade.
+Há uma limitação na expressividade de na política, permitindo operadores lógicos AND e OR sobre atributos de uma mesma autoridade, mas a combinação destas políticas de cada subconjunto de atributo só é possível pela conjunção com operadores AND, enquanto a estrutura multi-autoridade deste trabalho permite qualquer combinação entre atributos.
+Uma vantagem do esquema apresentado pelos autores é a possibilidade de revocação de atributos de forma mais eficiente que os trabalhos anteriores e de forma imediata.
+
 % -------------------------------------------------------------------- %
 \newpage
 \section{Resultados Experimentais}
