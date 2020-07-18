@@ -232,7 +232,7 @@ Criar um sistema, com base em contratos inteligentes executados em uma Blockchai
 
 \subsection{Criptografia baseada em atributos (CBA)} \label{sec:sub:cba}
 
-{\color{ForestGreen}Explicar quando nasceu, quem a criou, e qual foi o problema que estava resolvendo (basicamente que a criptografia chaves publica/privada precisa ser criada para cada usuário que precisa de permissão e com a por atributos não). (2 parágrafos).}
+{\color{ForestGreen}Explicar quando nasceu, quem a criou, e qual foi o problema que estava resolvendo (basicamente que a criptografia chaves publica/privada precisa ser criada para cada usuário que precisa de permissão e com a por atributos não). (2 parágrafos).} % TODO: padronizar acesso e permissão, fica confuso usar diferentes palavras para o mesmo conceito. Se forem diferentes, explicar
 
 A criptografia assimétrica pode ser vista como um mecanismo para que um usuário, Alice, codifique dados de forma confidencial e o aderece a um destinatário, Bob.
 Para que seja viável criptografar um conteúdo desta forma, geralmente é necessário que exista uma Infraestrutura de Chaves Pública \emph{(Public Key Infrastructure - PKI)} para incluir Bob ao sistema, atribuir-lhe uma chave pública de forma aleatória e manter um diretório de certificados com chaves públicas acessível à Alice e demais usuários do sistema para realização de operações de criptografia.
@@ -263,7 +263,7 @@ Desta forma a ABE consegue descrever políticas de acesso como fórmulas boolean
 % não estou certo deste conteúdo abaixo, então deixei como comentário
 % Por conta do uso de esquemas de compartilhamento de segredos em sua operação, é necessário que todos os atributos tenham uma identidade definida e fixa ao logo da execução do programa, e isso impõe uma etapa de inicialização ao esquema ABE onde o universo de atributos são criados, publicando-se seus dados como parâmetros públicos do sistema, e remove do sistema a capacidade de adicionar atributos após inicializado.
 
-As estruturas de acesso descritas anteriormente foram inicialmente construídas e distribuídas como parte das chaves privadas conferidas aos usuários, enquanto que o conjunto de atributos necessários à descriptografia era informado na cifra.
+As estruturas de acesso descritas anteriormente foram inicialmente construídas e distribuídas como parte das chaves privadas conferidas aos usuários, enquanto que o conjunto de atributos necessários à descriptografia era informado na cifra. % TODO: padronizar: ou usar cifra/descrifra ou encripta/descripta. Ver em todos os lugares do texto
 Essa foi a primeira forma de construção de ABE e foi denominada como KP-ABE \emph{(Key-Policy Attribute-Based Encryption)} por definir nas chaves privadas as políticas de acesso que um usuário poderia cumprir e requerer e especificar os atributos na cifra \cite{Goyal2006}.
 Posteriormente reverteram essa construção de forma que chaves privadas de usuários fossem conjuntos de atributos e a cifra contivesse a política de acesso e consequentemente a estrutura de acesso subjacente dela. Essa abordagem foi denominada como CP-ABE \emph{(Ciphertext-Policy Attribute-Based Encryption)} \cite{Bethencourt2007}.
 Embora sejam contrapartes de uma mesma construção teórica, elas diferem em seu uso, uma vez que a decisão da escrita de políticas de acesso e a consequente decisão sobre quem pode ou não pode descriptografar conteúdos é feita por partes diferentes.
@@ -289,12 +289,12 @@ A figura \ref{fig:diagramaDCPABE} descreve os principais elementos que compõem 
 Qualquer participante pode se tornar uma autoridade e criar atributos, gerando para cada atributo uma chave pública e uma chave privada, esta última usada para gerar chaves pessoais e intransferíveis aos usuários do sistema.
 Esse sistema suporta a escrita de políticas de acesso usando atributos emitidos por diferentes autoridades, tornando-se atrativo como a base fundacional de um sistema de integração criptograficamente seguro.
 A fim de impedir ambiguidades, a chave pública é considerada a concatenação de seu nome e valor, possibilitando a diferenciação entre dois atributos de mesmo nome gerados por entidades distintas, impedindo também ataques do tipo \emph{spoofing}\footnote{Em um ataque de \emph{Spoofing} um atacante tenta }.
-Para impedir ataques de colusão por parte dos usuários a geração das chaves é feita usando um identificador global \emph{(GID)} de usuário, que é utilizado para "vincular" os atributos de diferentes autoridades a um mesmo usuário.
+Para impedir ataques de colusão por parte dos usuários a geração das chaves é feita usando um identificador global \emph{(GID)} de usuário, que é utilizado para "vincular" os atributos de diferentes autoridades a um mesmo usuário. % TODO: padronizar e diferenciar chave dee identificador no texto todo.
 Este identificador GID é um parâmetro adicional usado durante o processo de verificação da satisfazibilidade da estrutura de acesso no mecanismo e descriptografia e assegura o fracasso da criptografia quando atributos emitidos com identificadores globais distintos forem utilizados em conjunto para satisfazer uma política de acesso, em complemento ao comportamento padrão da ABE que impede a criptografia caso não exista um subconjunto entre os atributos apresentados que satisfaça a estrutura de acesso subjacente à política de acesso.
 
 {\color{ForestGreen}Explicar um exemplo de uso (1 parágrafo). Pode usar algo assim: https://medium.com/asecuritysite-when-bob-met-alice/towards-true-security-attribute-based-encryption-20d5799aeda6}
 
-Com a DCPABE pode-se finalmente integrar com segurança bases de dados distintas sob controle de entidades separadas.
+Com a DCPABE pode-se finalmente integrar com segurança bases de dados distintas sob controle de entidades separadas. % TODO: bases de dados de que? explicar melhor
 Por exemplo, suponha que um serviço de consulta de dados médicos de pacientes entre múltiplos hospitais use um esquema DCPABE.
 Isso permitiria que hospitais criassem seu próprio esquema ABE com sua própria declaração e concessão de atributos.
 Criptografar os dados assegura o sigilo da informação, simplificando a implantação e manutenção de serviços Web de consulta aos dados.
@@ -541,7 +541,7 @@ A Figura \ref{fig:diagramaDCPABE} apresenta as responsabilidades dos módulos do
 Na figura: (1) cabe à autoridade usar o módulo Cliente para gerar tanto as chaves privadas e públicas dos usuários quanto as chaves pessoais dos atributos;
 (2) cabe à autoridade usar o módulo Cliente para aplicar as políticas de acesso nos PEPs - Prontuários Eletrônicos de Pacientes; %, tarefa que pode ser automatizada no caso de uma migração de bases de dados para o sistema proposto;
 (3) cabe ao módulo Cliente acionar um Smart Contract que reúne informações públicas sobre atributos recebe as novas chaves e as disponibiliza para consulta;
-(4) durante o envio de um arquivo ao servidor, cabe ao  módulo Cliente acionar um Smart Contract de gestão de arquivos cifrados e cadastrar os metadados referentes ao arquivo, entre eles o servidor de hospedagem e o código de acesso;
+(4) durante o envio de um arquivo ao servidor, cabe ao  módulo Cliente acionar um Smart Contract de gestão de arquivos cifrados e cadastrar os metadados referentes ao arquivo, entre eles o servidor de hospedagem e o código de acesso; % TODO: existe código de acesso, identificador, ficou confuso. Explicar melhor esses conceitos ou padronizar.
 (5) cabe ao módulo cliente enviar ao servidor os dados criptografados para armazenamento e consulta;
 (6) para consultar os metadados de um arquivo com suas chaves existentes de atributos, cabe ao cliente requisitar ao servidor o arquivo, descriptografá-lo e editá-lo localmente conforme a necessidade.
 Se um usuário alterar o documento, cabe ao módulo Cliente realizar a criptografia, enviar os novos dados ao servidor e atualizar o registro do arquivo no Smart Contract.
@@ -554,9 +554,9 @@ Para isso, Alice %ela utiliza um programa específico para editar seu prontuári
 utiliza o módulo cliente para criptografar o documento, usando o esquema ABE, de acordo com uma política de acesso que ela tenha escolhido usar.
 Vamos supor que a política escolhida seja a seguinte:
 
-\[paciente \vee (Hospital-X \wedge Hematologista)\]
+\[paciente \vee (Hospital-X \wedge Hematologista)\] % TODO: inserir um nome de um hospital (verificar todas as ocorrências de X)
 
-Essa política garante acesso ao próprio paciente e aos médicos da especialidade Hematologista que estejam vinculados ao Hospital-X. A política pode ser descrita trocando os símbolos dos operadores lógicos pelo seus nomes em inglês, ou seja, ``paciente OR (Hospital-X AND Hematologista)''.
+Essa política garante acesso ao próprio paciente e aos médicos da especialidade Hematologista que estejam vinculados ao Hospital-X. A política pode ser descrita trocando os símbolos dos operadores lógicos pelo seus nomes em inglês, ou seja, ``paciente OR (Hospital-X AND Hematologista)''. % TODO: a qualquer paciente? Explicar brevemente como o sistema sabe que é ela (Alice) e não qualquer paciente
 Repare que a aplicação da política é realizada pelo próprio usuário, efetivamente entregando o controle da segurança da informação ao paciente e respeitando seu direito à privacidade da informação.
 
 Após o cifrado do documento, ele está pronto para ser enviado ao servidor.
@@ -565,7 +565,7 @@ Após a obtenção do código, realiza o envio à Blockchain informando diversos
 Caso não seja o primeiro envio do arquivo\footnote{Os arquivos são considerados os mesmos se tiverem o mesmo nome.}, o cliente enviará somente a nova versão do mesmo ao servidor.
 Caso haja alguma atualização nos dados ({\color{magenta}por exemplo ...}), o módulo cliente também alterará a Blockchain.
 
-Em um segundo momento, o Hematologista do Hospital-X, ciente do agendamento da consulta de Alice e em posse da  ficha cadastral onde conste sua carteira Ethereum cadastrada no sistema, usa o módulo cliente para consultar na Blockchain os metadados do arquivo que contêm informações de acesso ao servidor.
+Em um segundo momento, o Hematologista do Hospital-X, ciente do agendamento da consulta de Alice e em posse da  ficha cadastral onde conste sua carteira Ethereum cadastrada no sistema, usa o módulo cliente para consultar na Blockchain os metadados do arquivo que contêm informações de acesso ao servidor. % TODO: existe uma relação entre a carteira e o identificador mencionado antes? explicar melhor.
 Ao recuperar esses metadados, o módulo cliente do Hematologista requisita o documento cifrado ao servidor e o decifra, utilizando as chaves pessoais dos atributos referidos na política de acesso.
 
 \subsection{Módulo Cliente}
@@ -580,7 +580,7 @@ A gestão de acesso a arquivos é realizada pelo usuário, combinando os operado
 No sistema, é denominado como autoridade ou certificador quem cria os atributos, publica na Blockchain e processa as requisições de concessão destes atributos.
 %Qualquer usuário pode se tornar um certificador, bastando publicar um atributo na Blockchain para que sejam registrados como tais em uma lista pública de certificadores mantida pelo contrato \emph{SmartDCPABEAuthority}.
 No sistema, entidades como o Ministério da Saúde, os Conselhos Federais e Regionais de Medicina, e todos os laboratórios, clínicas e hospitais se tornariam certificadores, passando a publicar atributos que seriam úteis para a escrita da política de acesso em um prontuário eletrônico do paciente.
-A identidade principal do certificador é seu endereço de carteira ao invés de seu nome, acrescentada ao sistema somente para facilitar a operação e prover um sistema de identificação básico na Blockchain sem a necessidade de terceiros.
+A identidade principal do certificador é seu endereço de carteira ao invés de seu nome, acrescentada ao sistema somente para facilitar a operação e prover um sistema de identificação básico na Blockchain sem a necessidade de terceiros. %TODO qual operação?
 
 % {\color{RoyalBlue} Professor, inicialmente comecei a descrever a forma com que uma autoridade se cadastrava no sistema, mas acabei entrando em detalhes técnicos. Estou pensando em mover isso para a seção \ref{sec:sub:ImplementacaoSmartContracts} na parte onde se fala do contrato \emph{SmartDCPABEAuthority}}
 
@@ -596,7 +596,7 @@ Atributos são gerados a partir de requisições feitas por usuários e publicad
 Para requisitar a concessão de um atributo é necessário que o usuário tenha previamente se registrado em um contrato específico, de gestão de usuários, informando sua carteira e alguns dados básicos de identificação.
 Após a autoridade gerar uma chave pessoal do atributo, esta é encaminhada ao usuário de forma externa ao sistema (e.g., via correio eletrônico, que terá no conteúdo um link seguro para baixá-la). %, eliminando desta forma a existência de outros algoritmos e chaves que não fossem relacionados ao trabalho.
 %Teoricamente seria possível criar um canal seguro entre usuários sem a adição de outros algoritmos e chaves distintas das já utilizadas uma vez que o Ethereum cria um par de chaves que poderiam ser usadas como chaves assimétricas em um sistema de criptografia de curva-elíptica \emph{(Elliptic-Curve Cryptography - ECC)}, porém tal investigação está além do escopo deste trabalho\footnote{O par de chaves pública e privada geradas pelo Ethereum pertence à curva secp256k1, que não é considerada segura.
-%Estudar um sistema com essa capacidade envolveria em primeiro lugar a escolha de uma blockchain alternativa compatível com as curvas consideradas seguradas para realizar a ECC \cite{Bernstein2017}.}.
+%Estudar um sistema com essa capacidade envolveria em primeiro lugar a escolha de uma blockchain alternativa compatível com as curvas consideradas seguradas para realizar a ECC \cite{Bernstein2017}.}. % TODO: por enquanto vamos deixar de lado essa parte da segurança, pois está fora do contexto da seção que fala de taxonomia.
 Desta forma, uma vez geradas as chaves, fica a critério do certificador escolher o método de envio das mesmas, utilizando uma infraestrutura de TI própria, serviços de terceiros ou mesmo a cópia em mídia física.
 
 % {\color{ForestGreen}Explicar que foi realizada uma taxonomia das possíveis permissões que seriam utilizadas no sistema para o contexto médico. (3 parágrafos explicando como foi realizado o levantamento, me lembro que tinha um artigo e uma lista gigante que foi filtrada por quantidade de médicos).}
@@ -609,9 +609,9 @@ Nesse sentido, a diferença das instituições na área da saúde, em suas compe
 Assim, um sistema que pretenda permitir o acesso a prontuários médicos distribuídos entre instituições com este esquema deve, portanto, propor também uma norma tanto para a criação e gestão de atributos quanto para a escrita das políticas de acesso.
 Para atingir este fim, buscou-se o denominador comum entre as exigências e restrições a que devem ser submetidos todas as instituições da área de saúde.
 
-{\color{magenta}Uma taxonomia permite ....(algumas linhas só)}. Assim, foi modelada uma taxonomia de acordo com os papéis envolvidos na gestão e uso dos dados médicos de paciente, partindo da análise das normas que regem o trabalho do profissional da saúde.
+{\color{magenta}Uma taxonomia permite ....(algumas linhas só)}. Assim, foi modelada uma taxonomia de acordo com os papéis envolvidos na gestão e uso dos dados médicos de paciente, partindo da análise das normas que regem o trabalho do profissional da saúde. % TODO: o texto em vermelho permitirá ao leitor entender o que é taxonomia.
 
-O Código de Ética Médica (CEM) trata da conduta médica em diversos casos e entre elas institui regras de conduta para o acesso e gestão de informações médicas. Ele provê os elementos necessários para a elaboração de uma taxonomia de condição de acesso a um prontuário médico, conforme mostra a Figura \ref{fig:taxonomiaPermissoes}.
+O Código de Ética Médica (CEM) trata da conduta médica em diversos casos e entre elas institui regras de conduta para o acesso e gestão de informações médicas. Ele provê os elementos necessários para a elaboração de uma taxonomia de condição de acesso a um prontuário médico, conforme mostra a Figura \ref{fig:taxonomiaPermissoes}. % TODO: usar PEPs (não usar prontuário médico pois é prontuário do paciente). Padronizar no texto todo
 A partir dessa taxonomia, é possível descrever qual será a política mínima padrão ao qual qualquer prontuário médico {\color{blue}no nosso sistema} deve se submeter:
 
 \[ CFM \vee CRM \vee Paciente \vee Terceiro\textnormal{-}Autorizado \]
@@ -630,12 +630,12 @@ Por exemplo a substituição dos elementos $Paciente$ em caso de prontuários de
 A taxonomia consegue estipular os diferentes papéis de acesso a um prontuário, mas ainda é necessário  categorizá-los nas diversas funções que terão acesso aos prontuários médicos (por exemplo, especialidades médicas, administrativas, etc).
 A estratégia para propor uma categorização abrangente e relevante envolveu obter dados do DATASUS (Órgão que administra a consulta de informações do Sistema de Saúde Pública) sobre todas as profissões registradas na área da Saúde relativas ao início do ano de 2019 no Brasil.
 Na pesquisa obteve-se mais de 400 profissões distintas, que foram agregadas pelo nível de ensino e pela área de atuação.
-Isso resultou em uma segunda taxonomia, disponível no Anexo \ref{etc:anexoI}, que serve como referência para a criação de atributos específicos para profissionais com escopos comuns entre os diversos certificadores.
+Isso resultou em uma segunda taxonomia, disponível no Anexo \ref{etc:anexoI}, que serve como referência para a criação de atributos específicos para profissionais com escopos comuns entre os diversos certificadores. % TODO: no pdf diz Anexo 7 (está errado, deveria dizer Anexo I). Ver como criar anexo (não é como section).
 
 No sistema, a entidade certificadora responsável por emitir o atributo a um médico de ser o CRM de sua região de atuação. As demais entidades (por exemplo, hospitais) emitiriam os atributos que descrevem outros grupos de profissionais que também precisam acessar os dados do paciente, tais como setor administrativo ou o corpo de funcionários técnico-hospitalar.
 Os usuários, por exemplo, um paciente, também podem gerar atributos pré-definidos, porém diferentemente dos certificadores, estes não são publicados na Blockchain.
-A função destes atributos pré-definidos é conceder o acesso dele próprio e de terceiros ao prontuário.
-Esses atributos são: $Paciente$, $Terceiro\textnormal{-}Autorizado$ e $Respons\acute{a}vel\textnormal{-}Legal$.
+A função destes atributos pré-definidos é conceder o acesso dele próprio e de terceiros ao prontuário. % TODO: esses atributos existem na figura da taxonomia? se não explicar melhor
+Esses atributos são: $Paciente$, $Terceiro\textnormal{-}Autorizado$ e $Respons\acute{a}vel\textnormal{-}Legal$. % TODO: representante legal?
 Como exemplo, este último, permite cifrar o prontuário de um outro usuário que não é juridicamente responsável por si mesmo (e.g., do filho recém-nascido).
 
 % {\color{ForestGreen}Figura da taxonomia}.
@@ -643,7 +643,7 @@ Como exemplo, este último, permite cifrar o prontuário de um outro usuário qu
 \begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{images/taxonomia-de-permissoes.png}
-  \caption{Taxonomia de permissões de acesso a prontuários segundo a norma do CEM}
+  \caption{Taxonomia de permissões de acesso a prontuários segundo a norma do CEM} % TODO: Essa taxonomia é sua ou do CEM? Se for do CEM, precisa referenciar de onde a obteve
   \label{fig:taxonomiaPermissoes}
 \end{figure}
 
@@ -660,7 +660,7 @@ Cabe destacar que as operações criptográficas sempre ocorrem localmente {\col
 
 % {\color{ForestGreen}Explicar como é realizado o passo-a-passo para o pedido/entrega das chaves (note que aqui a descrição é muito mais profunda que o que foi mencionado na visão geral) (1 parágrafo).}
 
-% O conjunto de chaves privadas pessoais deriva de uma chave privada secreta associada a um atributo público e de posse do certificador que a gerou. Para assegurar a unicidade da chave privada, também é necessário derivar a chave a partir de um identificador único (ID) associado ao usuário. Utilizar chaves privadas de atributos com ID distintos entre si causa uma falha na descriptografia, assegurando que atributos não sejam intercambiáveis entre os usuários.
+% O conjunto de chaves privadas pessoais deriva de uma chave privada secreta associada a um atributo público e de posse do certificador que a gerou. Para assegurar a unicidade da chave privada, também é necessário derivar a chave a partir de um identificador único (ID) associado ao usuário. Utilizar chaves privadas de atributos com ID distintos entre si causa uma falha na descriptografia, assegurando que atributos não sejam intercambiáveis entre os usuários. % TODO: Escondi pois está fora do contexto da taxonomia. Ver depois se vai ser inserido em outro lugar.
 
 % O mecanismo de derivação de chaves privadas pessoais implementado no cliente está atrelado ao processamento de requisições, impedindo o certificador de conceder chaves arbitrariamente sem uma requisição prévia.
 %Isso é uma estratégia para limitar o poder do certificador em criar atributos e dessa forma abusar de sua autoridade para conceder acesso indevido a agentes não autorizados e possivelmente levar a um acesso não autorizado de dados.
@@ -673,7 +673,7 @@ Cabe destacar que as operações criptográficas sempre ocorrem localmente {\col
 
 A biblioteca DCPABE desenvolvida em Java possui suporte à operações criptográficas do protocolo ABE em um ambiente com múltiplas autoridades, conforme descrito em \cite{Lewko2011}. Ela depende da biblioteca \emph{jPBC} (Java Pairing Based Cryptography) %biblioteca em Java, de código aberto,
 para realizar a criptografia baseada em emparelhamento~\footnote{mais informações em \href{https://crypto.stanford.edu/pbc/}{https://crypto.stanford.edu/pbc/}}. %, originalmente escrita em C, para código nativo em Java e oferecer uma interface para essa biblioteca \cite{DeCaro2011}.
-A DCPABE fornece todas as ferramentas necessárias para o uso do esquema ABE, incluindo a geração de parâmetros globais, geração de chaves privadas, públicas e pessoais dos atributos, cifra e deciframento de fluxos de dados.
+A DCPABE fornece todas as ferramentas necessárias para o uso do esquema ABE, incluindo a geração de parâmetros globais, geração de chaves privadas, públicas e pessoais dos atributos, cifra e deciframento de fluxos de dados. % TODO: manter (padronizar) a mesma palavra (decifrar, decriptar, descriptografar) no texto todo.
 Ao criptografar um documento, um objeto do tipo \emph{Ciphertext}, contendo os parâmetros necessários para a decifragem, é serializado e escrito no início de um arquivo que conterá os bytes criptografados. {\color{blue}Além disso, o processo de criptografia produz um JSON, com metadados da encriptação, o qual será publicado na Blockchain}.
 
 % {\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como realizar a encriptação. Explicar cada linha do código.}
@@ -780,7 +780,7 @@ A seguir serão explicados cada um deles.
 
 O contrato \emph{SmartDCPABEAuthority} registra na Blockchain as entidades certificadoras disponíveis no sistema, tornando público seu endereço na Ethereum, associando dados de identificação e a quantidade de atributos que a entidade já publicou.
 O identificador (ID) usado para derivar as chaves privadas dos atributos no esquema ABE é a chave privada que corresponde à chave pública do Ethereum.
-Esse esquema permite que uma entidade possa ser identificável de forma única sem a necessidade de controle centralizada sobre o cadastro de novas unidades.
+Esse esquema permite que uma entidade possa ser identificável de forma única sem a necessidade de controle centralizada sobre o cadastro de novas unidades. % TODO: unidades? que unidades? se for instituição ou entidade padronizar no texto todo
 %A escolha do ID visa impossibilitar um atacante de se passar pela entidade certificadora, uma vez que não há método computacionalmente viável para recuperar a chave privada de um endereço Ethereum a partir de uma chave pública.
 
 %{\color{Magenta} Inserir o código da linha 7 até 20.}
@@ -798,7 +798,7 @@ Esse esquema permite que uma entidade possa ser identificável de forma única s
 
  address[] public certifierAddresses;
  mapping (address => Certifier) certifiers;
-\end{lstlisting}
+\end{lstlisting} % TODO: parágrafo explicando cada um dos atributos. Exemplo: o atributo addr permite identificar unicamente o certificador que cria os atributos. O atributo name corresponde ao nome dele (e.g., ...)
 
 % {\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos. Exemplo. O struct X permite armazenar dados que servirão para Y. O atributo V armazena informações de W que servirão para Z.}
 
@@ -844,7 +844,7 @@ Por outro lado, não seria fácil implementar os protocolos de revogação e sub
 % {\color{Magenta} 1 parágrafo para explicar para que serve CADA UM dos structs, events e atributos.}
 
 A sessão do código \ref{cod:SmartDCPABEKeys} exibe os pontos mais relevantes do contrato.
-A estrutura \emph{Bytes127} foi criada como um contêiner que armazena os elementos gerados pela biblioteca jPBC \emph{(Java Pairing-Based Cryptography)} \cite{DeCaro2011}.
+A estrutura \emph{Bytes127} foi criada como um contêiner que armazena os elementos gerados pela biblioteca jPBC \emph{(Java Pairing-Based Cryptography)} \cite{DeCaro2011}. % TODO: que elementos? (explicar antes ou no capítulo correspondente)
 O tamanho dos elementos varia entre 120 a 124 bytes de informação e, embora o Solidity disponha da estrutura de dados \emph{bytes} para armazenar bytes em tamanho arbitrário, seu custo é maior.
 Dados consomem gas, e quando são utilizadas estruturas de dados de tamanho dinâmico, o valor é maior do que suas contrapartes estáticas, justificando a criação de uma estrutura que divida os dados em um conjunto de elementos de tamanho fixo.
 A estrutura \emph{PublicKey} armazena a chave pública gerada pela biblioteca \emph{DCPABE}\footnote{código fonte: \href{https://github.com/stefano81/dcpabe}{\texttt{https://github.com/stefano81/dcpabe}}. Para uma análise teórica, ver \cite{Lewko2011}}, que são representadas por duas sequências de bytes como mostra o código.
@@ -988,7 +988,7 @@ A lista \emph{userAddresses} armazena todos os endereços já cadastrados para p
 
 \paragraph{Contratos auxiliares}
 
-Além dos contratos citados, foram criados dois contratos auxiliares: o \emph{SmartDCPABEUtility} que atua como uma biblioteca para os outros contratos, oferecendo funções de conversão de dados do tipo bytes em string e vice-versa, e o \emph{SmartDCPABERoot}, responsável por automatizar a gestão de dependências entre os contratos.
+Além dos contratos citados, foram criados dois contratos auxiliares: o \emph{SmartDCPABEUtility} que atua como uma biblioteca para os outros contratos, oferecendo funções de conversão de dados do tipo bytes em string e vice-versa, e o \emph{SmartDCPABERoot}, responsável por automatizar a gestão de dependências entre os contratos. % TODO: Na Figura não está esse contrato. Ele é o contenedor? insira na figura e explique em algumas linhas o que significa "automatizar a gestão ...."
 
 \subsubsection{Integração com o ecossistema da Ethereum}
 
@@ -1013,7 +1013,7 @@ Das ferramentas, destacam-se:
 (2) Ganache, um programa que roda localmente, grava em disco o estado da simulação e expõe uma interface RPC para interação.
 
 Este trabalho utilizou ambas as ferramentas.
-O Ganache foi utilizado para gerar uma rede determinística em ambiente controlado, a fim de estudar o comportamento das sucessivas versões dos contratos e as interações entre eles.
+O Ganache foi utilizado para gerar uma rede determinística em ambiente controlado, a fim de estudar o comportamento das sucessivas versões dos contratos e as interações entre eles. % TODO: explicar melhor o ganache, não se entendeu para que serve (só algumas linhas)
 O Remix foi utilizado para realizar a implantação dos contratos e para realizar transações manuais.
 
 \subsubsection{Dependência dos Smart Contracts e publicação na Ethereum}
@@ -1033,7 +1033,7 @@ Quando um contrato é publicado na EVM do Ethereum, ele se torna um objeto imut�
 Portanto, para alterar a lógica do contrato ou a estrutura de dados, é necessário publicar um novo contrato e também todos os outros contratos que fizessem uma referência estática ao endereço deste contrato.
 O \emph{SmartDCPABERoot} auxilia o processo de injeção de novos valores de contrato e conta com uma trava de segurança em suas funções para somente aceitar como válidas as invocações feitas pelo dono do contrato, i.e., somente as transações cujo  endereço de carteira do autor coincidam com o usado na transação de criação do contrato.
 A Figura \ref{fig:dependenciasSmartContracts} mostra a dependência entre contratos gerenciados pelo contrato SmartDCPABERoot. % e que sem ele precisariam ser configurados manualmente a cada nova versão dos contratos durante o desenvolvimento.
-O endereço da carteira usado para implantação dos contratos foi 0x584cf84bcc601da596b4f12a4c976577b40e9970, e os endereços dos contratos na Blockchain testnet Rinkeby estão na tabela \ref{tbl:enderecosSmartContracts}.
+O endereço da carteira usado para implantação dos contratos foi 0x584cf84bcc601da596b4f12a4c976577b40e9970, e os endereços dos contratos na Blockchain testnet Rinkeby estão na tabela \ref{tbl:enderecosSmartContracts}. % TODO: da carteira de quem? associar com os módulos ou com algo
 Os endereços são links clicáveis e direcionam para a página do respectivo contrato no site Etherscan, um serviço de exploração e pesquisa de transações, endereços e outros dados tanto na rede principal Ethereum quanto nas testnets.
 
 \begin{table}[h]
@@ -1066,7 +1066,7 @@ Os endereços são links clicáveis e direcionam para a página do respectivo co
 
 {\color{red}Como explicado anteriormente, a interação com a rede Ethereum é possível usando uma interface preparada para interação com um nó local da rede ou serviço remoto compatível com RPC Ethereum.
 A biblioteca Web3, disponível para as linguagens de programação mais utilizadas, cumpre este propósito, porém sua implementação não conta com uma interface para interação com o usuário.
-O Metamask surge como uma extensão compatível com os navegadores modernos, implementando uma interface de usuário a uma biblioteca Web3 que é disponibilizada ao ambiente JavaScript para utilização dos sites.
+O Metamask surge como uma extensão compatível com os navegadores modernos, implementando uma interface de usuário a uma biblioteca Web3 que é disponibilizada ao ambiente JavaScript para utilização dos sites. % TODO: texto em vermelho poque não ficou claro para que serve especificamente o metamask e como foi utilizado no seu projeto. conversar com o prof antes de alterar essa parte (tal vez possa ser retirada)
 O Metamask introduz vantagens ao padronizar a forma com que usuários interagem e configuram a Web3 na internet e ao adotar o código aberto e a segurança proveniente deste método de desenvolvimento.
 Sem o Metamask, seria necessário a um serviço Web importar o Web3 diretamente em seu projeto e implementar os controles necessários ao uso do serviço, introduzindo custos e riscos adicionais ao projeto.
 A IDE Remix é um exemplo de site que usa a Web3 diretamente, além de ser compatível com a injeção da Web3 configurada pelo Metamask.
@@ -1197,7 +1197,7 @@ Eles usam um cliente Bitcoin modificado para conter transações que representem
 A proposta foca na preservação do anonimato do usuário e propõe a ABE como forma de escapar às possibilidades de ataque de inferência para descobrir possíveis identidades de usuários usando o Bitcoin, entretanto não trabalha a questão quanto ao sigilo do conteúdo dos prontuários.
 O trabalho proposto aqui difere do mencionado por dar enfoque ao sigilo da informação, não só propondo um esquema de criptografia como também elementos semânticos mínimos para que as múltiplas autoridades gerem atributos com hierarquia e escopos de atuação similares entre elas.
 
-No mesmo ano Zhang e Lin \cite{Zhang2018} propõem o esquema BSPP \emph{(Blockchain-based secure and privacy-preserving)}, que protege tanto a identidade do paciente quanto o conteúdo dos prontuários ao mesmo tempo que concede acesso a terceiros previamente autorizados por meio do esquema de re-cifragem por \emph{proxy} com termos de pesquisa \cite{Wang2012}.
+No mesmo ano Zhang e Lin \cite{Zhang2018} propõem o esquema BSPP \emph{(Blockchain-based secure and privacy-preserving)}, que protege tanto a identidade do paciente quanto o conteúdo dos prontuários ao mesmo tempo que concede acesso a terceiros previamente autorizados por meio do esquema de re-cifragem por \emph{proxy} com termos de pesquisa descrito em \cite{Wang2012}.
 O paciente, no papel de usuário, consegue controlar o acesso aos seus dados de forma granular ao assumir a função de \emph{proxy}, gerando chaves de re-cifragem pelas quais é possível alterar uma cifra já realizada a um documento de forma a poder descriptografar e obter a mensagem original.
 Esta chave é atrelada à chave pública de um terceiro de tal forma que somente o possuidor da chave privada correspondente poderá usá-la com sucesso.
 Semelhante modo, a chave também é atrelada à chave pública de quem a cria e só é válida para cifras desta chave pública.
@@ -1322,3 +1322,4 @@ PESSOAL ADMINISTRATIVO
 \end{enumerate}
 
 \end{document}
+% TODO: solicitar ao servidor? explicar melhor
