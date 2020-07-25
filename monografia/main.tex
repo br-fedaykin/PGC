@@ -232,7 +232,7 @@ Criar um sistema, com base em contratos inteligentes executados em uma Blockchai
 
 \subsection{Criptografia baseada em atributos (CBA)} \label{sec:sub:cba}
 
-{\color{ForestGreen}Explicar quando nasceu, quem a criou, e qual foi o problema que estava resolvendo (basicamente que a criptografia chaves publica/privada precisa ser criada para cada usuário que precisa de permissão e com a por atributos não). (2 parágrafos).} % TODO: padronizar acesso e permissão, fica confuso usar diferentes palavras para o mesmo conceito. Se forem diferentes, explicar
+{\color{ForestGreen}Explicar quando nasceu, quem a criou, e qual foi o problema que estava resolvendo (basicamente que a criptografia chaves publica/privada precisa ser criada para cada usuário que precisa de permissão e com a por atributos não). (2 parágrafos).} % TODO: (ok) padronizar acesso e permissão, fica confuso usar diferentes palavras para o mesmo conceito. Se forem diferentes, explicar
 
 A criptografia assimétrica pode ser vista como um mecanismo para que um usuário, Alice, codifique dados de forma confidencial e o aderece a um destinatário, Bob.
 Para que seja viável criptografar um conteúdo desta forma, geralmente é necessário que exista uma Infraestrutura de Chaves Pública \emph{(Public Key Infrastructure - PKI)} para incluir Bob ao sistema, atribuir-lhe uma chave pública de forma aleatória e manter um diretório de certificados com chaves públicas acessível à Alice e demais usuários do sistema para realização de operações de criptografia.
@@ -263,7 +263,7 @@ Desta forma a ABE consegue descrever políticas de acesso como fórmulas boolean
 % não estou certo deste conteúdo abaixo, então deixei como comentário
 % Por conta do uso de esquemas de compartilhamento de segredos em sua operação, é necessário que todos os atributos tenham uma identidade definida e fixa ao logo da execução do programa, e isso impõe uma etapa de inicialização ao esquema ABE onde o universo de atributos são criados, publicando-se seus dados como parâmetros públicos do sistema, e remove do sistema a capacidade de adicionar atributos após inicializado.
 
-As estruturas de acesso descritas anteriormente foram inicialmente construídas e distribuídas como parte das chaves privadas conferidas aos usuários, enquanto que o conjunto de atributos necessários à descriptografia era informado na cifra. % TODO: padronizar: ou usar cifra/decifra ou encripta/descripta. Ver em todos os lugares do texto
+As estruturas de acesso descritas anteriormente foram inicialmente construídas e distribuídas como parte das chaves privadas conferidas aos usuários, enquanto que o conjunto de atributos necessários à descriptografia era informado na cifra. % TODO: (ok) padronizar: ou usar cifra/decifra ou encripta/descripta. Ver em todos os lugares do texto
 Essa foi a primeira forma de construção de ABE e foi denominada como KP-ABE \emph{(Key-Policy Attribute-Based Encryption)} por definir nas chaves privadas as políticas de acesso que um usuário poderia cumprir e requerer e especificar os atributos na cifra \cite{Goyal2006}.
 Posteriormente reverteram essa construção de forma que chaves privadas de usuários fossem conjuntos de atributos e a cifra contivesse a política de acesso e consequentemente a estrutura de acesso subjacente dela. Essa abordagem foi denominada como CP-ABE \emph{(Ciphertext-Policy Attribute-Based Encryption)} \cite{Bethencourt2007}.
 Embora sejam contrapartes de uma mesma construção teórica, elas diferem em seu uso, uma vez que a decisão da escrita de políticas de acesso e a consequente decisão sobre quem pode ou não pode descriptografar conteúdos é feita por partes diferentes.
@@ -519,7 +519,7 @@ Para inserir um dado\footnote{O dado pode ser um arquivo}, cabe ao cliente reali
 (ii) publicar o identificador na Blockchain. No caso da recuperação do dado, o módulo cliente deve informar ao servidor o identificador.
 % Durante o desenvolvimento e experimentação este mesmo módulo armazenou, de forma temporária, as chaves pessoais de atributos gerados para usuários, mas isso de forma alguma é um requerimento desta solução. Estas chaves podem ser transferidas de maneira externa ao sistema, pela via que for considerada segura por ambos usuário e certificador, tais como mídia física, serviço de e-mail criptografado ou serviços de armazenamento em nuvem.
 
-O módulo Blockchain é responsável por armazenar de forma permanente e imutável {\color{blue}os metadados} dos documentos cifrados e suas respectivas políticas de acesso. Para impor verificações de acesso e validade de uma transação (seja uma inserção ou modificação de um dado), foi necessário adotar os Smart Contracts. %, descrita em termos de uma forma booleana composta por funções lógicas E e OU com atributos como predicados.
+O módulo Blockchain é responsável por armazenar de forma permanente e imutável {\color{blue}os metadados} dos documentos criptografados e suas respectivas políticas de acesso. Para impor verificações de acesso e validade de uma transação (seja uma inserção ou modificação de um dado), foi necessário adotar os Smart Contracts. %, descrita em termos de uma forma booleana composta por funções lógicas E e OU com atributos como predicados.
 Nesse sentido, foi escolhida a rede Ethereum por suportar nativamente a execução de Smart Contracts e porque é um projeto bem-sucedido entre as opções existentes, considerando tanto o tamanho da comunidade envolvida no desenvolvimento quanto sua posição de mercado. %A Blockchain na qual se baseia o sistema é uma versão privada da rede Ethereum gerada e processada por um programa específico para este fim, denominado Ganache\cite{ganache}.
 
 Para fornecer conectividade à Blockchain Ethereum foi utilizada a biblioteca Web3j.
@@ -541,7 +541,7 @@ A Figura \ref{fig:diagramaDCPABE} apresenta as responsabilidades dos módulos do
 Na figura: (1) cabe à autoridade usar o módulo Cliente para gerar tanto as chaves privadas e públicas dos usuários quanto as chaves pessoais dos atributos;
 (2) cabe à autoridade usar o módulo Cliente para aplicar as políticas de acesso nos PEPs - Prontuários Eletrônicos de Pacientes; %, tarefa que pode ser automatizada no caso de uma migração de bases de dados para o sistema proposto;
 (3) cabe ao módulo Cliente acionar um Smart Contract que reúne informações públicas sobre atributos recebe as novas chaves e as disponibiliza para consulta;
-(4) durante o envio de um arquivo ao servidor, cabe ao  módulo Cliente acionar um Smart Contract de gestão de arquivos cifrados e cadastrar os metadados referentes ao arquivo, entre eles o servidor de hospedagem e o código de acesso; % TODO: existe código de acesso, identificador, ficou confuso. Explicar melhor esses conceitos ou padronizar.
+(4) durante o envio de um arquivo ao servidor, cabe ao  módulo Cliente acionar um Smart Contract de gestão de arquivos criptografados e cadastrar os metadados referentes ao arquivo, entre eles o servidor de hospedagem e o código de acesso; % TODO: existe código de acesso, identificador, ficou confuso. Explicar melhor esses conceitos ou padronizar.
 (5) cabe ao módulo cliente enviar ao servidor os dados criptografados para armazenamento e consulta;
 (6) para consultar os metadados de um arquivo com suas chaves existentes de atributos, cabe ao cliente requisitar ao servidor o arquivo, descriptografá-lo e editá-lo localmente conforme a necessidade.
 Se um usuário alterar o documento, cabe ao módulo Cliente realizar a criptografia, enviar os novos dados ao servidor e atualizar o registro do arquivo no Smart Contract.
@@ -559,18 +559,18 @@ Vamos supor que a política escolhida seja a seguinte:
 Essa política garante acesso ao próprio paciente e aos médicos da especialidade Hematologista que estejam vinculados ao Hospital-X. A política pode ser descrita trocando os símbolos dos operadores lógicos pelo seus nomes em inglês, ou seja, ``paciente OR (Hospital-X AND Hematologista)''. % TODO: a qualquer paciente? Explicar brevemente como o sistema sabe que é ela (Alice) e não qualquer paciente
 Repare que a aplicação da política é realizada pelo próprio usuário, efetivamente entregando o controle da segurança da informação ao paciente e respeitando seu direito à privacidade da informação.
 
-Após o cifrado do documento, ele está pronto para ser enviado ao servidor.
+Após o documento ser criptografado ele está pronto para ser enviado ao servidor.
 Para isso, o usuário aciona o módulo cliente, quem solicita a reserva de um código de acesso de arquivos ao servidor, caso seja o primeiro envio deste documento.
-Após a obtenção do código, realiza o envio à Blockchain informando diversos dados, entre eles: o código de acesso, a identificação do servidor, o nome do arquivo, a política de acesso, o instante em que a transação está sendo feita e extratos de dados produzidos pela criptografia ABE necessários para decifrar o arquivo.
+Após a obtenção do código, realiza o envio à Blockchain informando diversos dados, entre eles: o código de acesso, a identificação do servidor, o nome do arquivo, a política de acesso, o instante em que a transação está sendo feita e extratos de dados produzidos pela criptografia ABE necessários para descriptografar o arquivo.
 Caso não seja o primeiro envio do arquivo\footnote{Os arquivos são considerados os mesmos se tiverem o mesmo nome.}, o cliente enviará somente a nova versão do mesmo ao servidor.
 Caso haja alguma atualização nos dados ({\color{magenta}por exemplo ...}), o módulo cliente também alterará a Blockchain.
 
 Em um segundo momento, o Hematologista do Hospital-X, ciente do agendamento da consulta de Alice e em posse da  ficha cadastral onde conste sua carteira Ethereum cadastrada no sistema, usa o módulo cliente para consultar na Blockchain os metadados do arquivo que contêm informações de acesso ao servidor. % TODO: existe uma relação entre a carteira e o identificador mencionado antes? explicar melhor.
-Ao recuperar esses metadados, o módulo cliente do Hematologista requisita o documento cifrado ao servidor e o decifra, utilizando as chaves pessoais dos atributos referidos na política de acesso.
+Ao recuperar esses metadados, o módulo cliente do Hematologista requisita o documento criptografado ao servidor e o descriptografa, utilizando as chaves pessoais dos atributos referidos na política de acesso.
 
 \subsection{Módulo Cliente}
 
-Nesta seção serão apresentadas as diferentes funcionalidades do módulo: geração da taxonomia dos atributos; como são criadas as permissões usando essa taxonomia; como são encriptados os arquivos usando essa taxonomia; como se conectar à Blockchain.
+Nesta seção serão apresentadas as diferentes funcionalidades do módulo: geração da taxonomia dos atributos; como são criadas as permissões usando essa taxonomia; como são criptografados os arquivos usando essa taxonomia; como se conectar à Blockchain.
 
 \subsubsection{Taxonomia e criação de permissões}
 \label{sec:sub:taxonomia-permissoes}
@@ -636,7 +636,7 @@ No sistema, a entidade certificadora responsável por emitir o atributo a um mé
 Os usuários, por exemplo, um paciente, também podem gerar atributos pré-definidos, porém diferentemente dos certificadores, estes não são publicados na Blockchain.
 A função destes atributos pré-definidos é conceder o acesso dele próprio e de terceiros ao prontuário. % TODO: esses atributos existem na figura da taxonomia? se não explicar melhor
 Esses atributos são: $Paciente$, $Terceiro\textnormal{-}Autorizado$ e $Respons\acute{a}vel\textnormal{-}Legal$. % TODO: representante legal?
-Como exemplo, este último, permite cifrar o prontuário de um outro usuário que não é juridicamente responsável por si mesmo (e.g., do filho recém-nascido).
+Como exemplo, este último, permite criptografar o prontuário de um outro usuário que não é juridicamente responsável por si mesmo (e.g., do filho recém-nascido).
 
 % {\color{ForestGreen}Figura da taxonomia}.
 
@@ -655,7 +655,7 @@ Já as chaves públicas são utilizadas para criptografar e as chaves pessoais s
 Um atributo precisa ser publicado na blockchain para ser utilizado pelos usuários.
 Nesse sentido, considera-se publicado o atributo que tenha seus parâmetros de chave pública disponíveis para consulta (especificamente utilizando o contrato SmartDCPABEKeys, como será analisado na próxima seção).
 
-De posse da chave pública, é possível criptografar um arquivo com uma política de acesso descrita em termos daqueles atributos. Caso o usuário possua as chaves privadas pessoais desses atributos, é possível descriptografar o conteúdo cifrado.
+De posse da chave pública, é possível criptografar um arquivo com uma política de acesso descrita em termos daqueles atributos. Caso o usuário possua as chaves privadas pessoais desses atributos, é possível descriptografar o conteúdo encerrado na cifra.
 Cabe destacar que as operações criptográficas sempre ocorrem localmente {\color{blue}(no módulo cliente)} para evitar a exposição de informação sensível à rede a qual está conectado.
 
 % {\color{ForestGreen}Explicar como é realizado o passo-a-passo para o pedido/entrega das chaves (note que aqui a descrição é muito mais profunda que o que foi mencionado na visão geral) (1 parágrafo).}
@@ -667,14 +667,14 @@ Cabe destacar que as operações criptográficas sempre ocorrem localmente {\col
 
 {\color{blue}Em resumo, a requisição por um atributo (i.e., as chaves) por parte do módulo cliente funciona da seguinte maneira. Primeiro, o módulo realiza uma requisição de um atributo via Blockchain. A seguir, o certificador desse atributo consulta a Blockchain para obter as requisições e decide se irá processá-la ou não. Após esse passo, o certificador atualiza a Blockchain assim que a chave é criada ou quando sua criação é negada, quer seja por decisão do certificação ou por falha devido a parâmetros incorretos. Finalmente, a resposta é obtida pelo módulo cliente.}
 
-\subsubsection{Encriptação com ABE}
+\subsubsection{Criptografia com ABE}
 
 % {\color{Magenta} 1 parágrafo para explicar que para encriptar um documento utilizando atributos usou a dcpabe.}
 
 A biblioteca DCPABE desenvolvida em Java possui suporte à operações criptográficas do protocolo ABE em um ambiente com múltiplas autoridades, conforme descrito em \cite{Lewko2011}. Ela depende da biblioteca \emph{jPBC} (Java Pairing Based Cryptography) %biblioteca em Java, de código aberto,
 para realizar a criptografia baseada em emparelhamento~\footnote{mais informações em \href{https://crypto.stanford.edu/pbc/}{https://crypto.stanford.edu/pbc/}}. %, originalmente escrita em C, para código nativo em Java e oferecer uma interface para essa biblioteca \cite{DeCaro2011}.
-A DCPABE fornece todas as ferramentas necessárias para o uso do esquema ABE, incluindo a geração de parâmetros globais, geração de chaves privadas, públicas e pessoais dos atributos, cifra e deciframento de fluxos de dados. % TODO: manter (padronizar) a mesma palavra (decifrar, decriptar, descriptografar) no texto todo.
-Ao criptografar um documento, um objeto do tipo \emph{Ciphertext}, contendo os parâmetros necessários para a decifragem, é serializado e escrito no início de um arquivo que conterá os bytes criptografados. {\color{blue}Além disso, o processo de criptografia produz um JSON, com metadados da encriptação, o qual será publicado na Blockchain}.
+A DCPABE fornece todas as ferramentas necessárias para o uso do esquema ABE, incluindo a geração de parâmetros globais, geração de chaves privadas, públicas e pessoais dos atributos e operações criptográficas. % TODO: (ok) manter (padronizar) a mesma palavra (decifrar, decriptar, descriptografar) no texto todo.
+Ao criptografar um documento, um objeto do tipo \emph{Ciphertext}, contendo os parâmetros necessários para a descriptografia, é serializado e escrito no início de um arquivo que conterá os bytes criptografados. {\color{blue}Além disso, o processo de criptografia produz um JSON, com metadados da cifra, o qual será publicado na Blockchain}.
 
 % {\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como realizar a encriptação. Explicar cada linha do código.}
 
@@ -691,9 +691,9 @@ Ao criptografar um documento, um objeto do tipo \emph{Ciphertext}, contendo os p
  }
 \end{lstlisting}
 
-No sistema, a classe \emph{Client} implementa a função que realiza a encriptação de um arquivo (função \emph{encrypt}), em parte exposto seção de código \ref{cod:metodoCriptografia}. A função encrypt exige os parâmetros \emph{file}, que corresponde ao nome do arquivo a ser criptografado; \emph{policy}, que corresponde à política de acesso; e o vetor \emph{authorities}, que corresponde aos IDs das autoridades dos atributos definidos em \emph{policy}. Na linha 3, o objeto \emph{as}, instância da classe \emph{AccessStructure}, armazena uma representação matricial gerada a partir da fórmula booleana descrita em \emph{policy}. %, tornando a fórmula em um elemento matricial vetorial compatível com a estrutura matemática necessária ao funcionamento dos algoritmos definidos pelo DCPABE.
+No sistema, a classe \emph{Client} implementa a função que realiza a criptografia de um arquivo (função \emph{encrypt}), em parte exposto seção de código \ref{cod:metodoCriptografia}. A função encrypt exige os parâmetros \emph{file}, que corresponde ao nome do arquivo a ser criptografado; \emph{policy}, que corresponde à política de acesso; e o vetor \emph{authorities}, que corresponde aos IDs das autoridades dos atributos definidos em \emph{policy}. Na linha 3, o objeto \emph{as}, instância da classe \emph{AccessStructure}, armazena uma representação matricial gerada a partir da fórmula booleana descrita em \emph{policy}. %, tornando a fórmula em um elemento matricial vetorial compatível com a estrutura matemática necessária ao funcionamento dos algoritmos definidos pelo DCPABE.
 Na linha 4 é definido como mensagem \emph{m} um elemento aleatório pertencente ao grupo do aparelhamento definido pelos parâmetros globais \emph{gp} -- o mesmo utilizado para a geração de chaves privas dos atributos. {\color{magenta} Essa mensagem, no DCPABE permite que (escrever 2 linhas caso não tenha sido explicada antes)...} Na linha 5 a mensagem m é ocultada sob a criptografia ABE utilizando a matriz \emph{as}, a mensagem \emph{m}, os parâmetros globais \emph{gp} e um vetor \emph{pks} com as chaves públicas de todos os atributos mencionados em \emph{policy}, retornando uma instância equivalente à da classe \emph{Ciphertext}. %, com a capacidade de ser serializada em JSON, e
-Na linha 7, o arquivo é cifrado usando um algoritmo AES\footnote{Especificamente, é usada a classe AESEngine da biblioteca Bouncy Castle com configuração padrão. Ver \href{https://people.eecs.berkeley.edu/~jonah/bc/org/bouncycastle/crypto/engines/AESEngine.html}{https://people.eecs.berkeley.edu/~jonah/bc/org/bouncycastle/crypto/engines/AESEngine.html}} e a mensagem \emph{m} como chave.
+Na linha 7, o arquivo é criptografado usando um algoritmo AES\footnote{Especificamente, é usada a classe AESEngine da biblioteca Bouncy Castle com configuração padrão. Ver \href{https://people.eecs.berkeley.edu/~jonah/bc/org/bouncycastle/crypto/engines/AESEngine.html}{https://people.eecs.berkeley.edu/~jonah/bc/org/bouncycastle/crypto/engines/AESEngine.html}} e a mensagem \emph{m} como chave.
 
 A descriptografia consiste em fornecer as chaves pessoais dos mesmos atributos usados na criptografia, aplicando o esquema ABE para obter a mensagem \emph{m} e usando-a como chave do algoritmo AES para descriptografar o conteúdo desejado.
 
@@ -900,7 +900,7 @@ A sessão do código \ref{cod:SmartDCPABEFiles} exibe os pontos mais relevantes 
 A estrutura \emph{Recording} informa a base de dados na qual o arquivo está hospedado e, no campo serverID, qual é a sua identificação no servidor.
 O campo hashing permite a verificação de integridade. O campo timestamp é uma marca temporal que mantém o momento de sua publicação na Blockchain. %Seria possível remover o campo timestamp e trabalhar somente com altura ou timestamp do bloco em que a transação foi validada, economizando o uso de gas, porém deixando de possuir uma data exata de publicação de um documento.
 
-A estrutura \emph{Ciphertext} contém a política de acesso utilizada para cifrar o arquivo e um conjunto de parâmetros (c0 a c3) que resultam do processo de criptografia e que são necessários para decifrar o documento.
+A estrutura \emph{Ciphertext} contém a política de acesso utilizada para criptografar o arquivo e um conjunto de parâmetros (c0 a c3) que resultam do processo de criptografia e que são necessários para descriptografar o documento.
 A estrutura \emph{FileServer} contém informações para conexão com uma base de dados na Internet.
 
 Além das estruturas, o contrato mantém uma lista de servidores \emph{servers} e um par de mapas \emph{files} e \emph{ciphertexts} com estrutura similar, mapeando endereços de usuários a submapas que associam, por sua vez, um nome de arquivo às estruturas de dados \emph{Recording} e \emph{Ciphertext} relacionadas àquele arquivo. %Disso segue-se que uma edição no conteúdo é mais barato que a alteração no nome do documento, uma vez que no caso do conteúdo somente o hashing e o timestamp são atualizados, enquanto que na renomeação o mapa armazena o arquivo como se fosse um novo, sendo necessário publicar os dados do arquivo e deletar aqueles que estavam disponibilizados.
@@ -1108,18 +1108,18 @@ A partir daí o cliente pode montar a URL da requisição do arquivo e obtê-lo 
 % {\color{Magenta} 1 parágrafo para explicar que o servidor insere e recupera os prontuários eletrônicos de pacientes diretamente do seu sistema de arquivos advindos das requisições web.}
 
 O servidor foi implementado para salvar os arquivos diretamente em seu sistema de arquivos local, sem criptografia adicional sobre o conteúdo uma vez que este já é enviado criptografado pelo cliente, o que restringe o acesso se não tiver a respectiva política.
-O fato do arquivo ser entregue sempre que requisitado a princípio não apresenta violações à privacidade e segurança dos dados, uma vez que está criptografado e só poderá ser decifrado por quem possua os atributos compatíveis com a política de acesso.
+O fato do arquivo ser entregue sempre que requisitado a princípio não apresenta violações à privacidade e segurança dos dados, uma vez que está criptografado e só poderá ser descriptografado por quem possua os atributos compatíveis com a política de acesso.
 Entretanto, é possível que um atacante escolha acumular arquivos sob sua posse e aguardar pela descoberta de vulnerabilidades críticas nas bibliotecas de criptografia que possibilitariam, no pior cenário possível, a quebra da criptografia.
-A fim de evitar isso, pode-se acrescentar desafios criptográficos que provem que o requisitante realmente possui os atributos necessários para decifrar o arquivo.
+A fim de evitar isso, pode-se acrescentar desafios criptográficos que provem que o requisitante realmente possui os atributos necessários para descriptografar o arquivo.
 Uma dessas técnicas é a Prova de Conhecimento-Zero \emph{(Zero Knowledge-Proof - ZPK)}, onde um verificador (o servidor) pode ser convencido que o cliente realmente possui um segredo~\cite{Rice2010,Buchanan2017}.
 
 %Pode-se recorrer a um esquema baseado no conceito da Prova de Conhecimento-Zero \emph{(Zero Knowledge-Proof - ZPK)}, onde um verificador (o servidor) pode ser "convencido" que um provador (o cliente) realmente possui um segredo, sem com isso ter de expor alguma informação que altere o nível de conhecimento prévio do verificador sobre aquele segredo \cite{Rice2010,Buchanan2017}.
 %Considere que o servidor deva se convencer da legitimidade da aquisição\footnote{interpretando uma aquisição legítima como aquela em que de fato o cliente possui a capacidade de descriptografar o conteúdo solicitado.} de um arquivo por um usuário, sem que o usuário tenha que revelar suas chaves ou sua identidade, evitando neste último caso o ônus ao servidor de verificar na Blockchain o histórico de concessões de atributos àquela identidade e testar a compatibilidade deles com a política de acesso do arquivo em questão, introduzindo estados intermediários e mutáveis entre requisições do cliente devido à consulta na Blockchain, que implicarão na quebra do princípio REST da comunicação sem estados.
 
-Outra solução viável é exigir ao cliente que, no ato do envio de um arquivo para ser armazenado, calcule o hashing deste arquivo, cifre este valor com a mesma política de acesso usada para o arquivo e então envie este par de arquivos cifrados ao servidor.
-Diante de uma requisição, o servidor devolveria somente o objeto cifrado que contém o valor do hashing do arquivo (e não o arquivo cifrado em si).
-Um usuário, com as credenciais necessárias seria capaz de decifrar esse objeto, realizando novamente a requisição do mesmo arquivo, desta vez informando o valor do hashing como parâmetro.
-Diante de uma requisição de arquivo com algum parâmetro adicionado, o servidor verifica se seu valor é equivalente ao valor do hashing do arquivo sob sua posse. Note que, caso os valores sejam iguais, o servidor evidencia que o usuário tem consigo os atributos necessários para decifrar o conteúdo do arquivo e o envia cifrado ao cliente, negando o envio caso contrário.
+Outra solução viável é exigir ao cliente que, no ato do envio de um arquivo para ser armazenado, calcule o hashing deste arquivo, cifre este valor com a mesma política de acesso usada para o arquivo e então envie este par de arquivos criptografados ao servidor.
+Diante de uma requisição, o servidor devolveria somente o objeto criptografado que contém o valor do hashing do arquivo (e não o arquivo criptografado em si).
+Um usuário, com as credenciais necessárias seria capaz de descriptografar esse objeto, realizando novamente a requisição do mesmo arquivo, desta vez informando o valor do hashing como parâmetro.
+Diante de uma requisição de arquivo com algum parâmetro adicionado, o servidor verifica se seu valor é equivalente ao valor do hashing do arquivo sob sua posse. Note que, caso os valores sejam iguais, o servidor evidencia que o usuário tem consigo os atributos necessários para descriptografar o conteúdo do arquivo e o envia criptografado ao cliente, negando o envio caso contrário.
 
 % -------------------------------------------------------------------- %
 \newpage
@@ -1197,18 +1197,18 @@ Eles usam um cliente Bitcoin modificado para conter transações que representem
 A proposta foca na preservação do anonimato do usuário e propõe a ABE como forma de escapar às possibilidades de ataque de inferência para descobrir possíveis identidades de usuários usando o Bitcoin, entretanto não trabalha a questão quanto ao sigilo do conteúdo dos prontuários.
 O trabalho proposto aqui difere do mencionado por dar enfoque ao sigilo da informação, não só propondo um esquema de criptografia como também elementos semânticos mínimos para que as múltiplas autoridades gerem atributos com hierarquia e escopos de atuação similares entre elas.
 
-No mesmo ano Zhang e Lin \cite{Zhang2018} propõem o esquema BSPP \emph{(Blockchain-based secure and privacy-preserving)}, que protege tanto a identidade do paciente quanto o conteúdo dos prontuários ao mesmo tempo que concede acesso a terceiros previamente autorizados por meio do esquema de re-cifragem por \emph{proxy} com termos de pesquisa descrito em \cite{Wang2012}.
-O paciente, no papel de usuário, consegue controlar o acesso aos seus dados de forma granular ao assumir a função de \emph{proxy}, gerando chaves de re-cifragem pelas quais é possível alterar uma cifra já realizada a um documento de forma a poder descriptografar e obter a mensagem original.
+No mesmo ano Zhang e Lin \cite{Zhang2018} propõem o esquema BSPP \emph{(Blockchain-based secure and privacy-preserving)}, que protege tanto a identidade do paciente quanto o conteúdo dos prontuários ao mesmo tempo que concede acesso a terceiros previamente autorizados por meio do esquema de re-criptografia por \emph{proxy} com termos de pesquisa descrito em \cite{Wang2012}.
+O paciente, no papel de usuário, consegue controlar o acesso aos seus dados de forma granular ao assumir a função de \emph{proxy}, gerando chaves de re-criptografia pelas quais é possível alterar uma cifra já realizada a um documento de forma a poder descriptografar e obter a mensagem original.
 Esta chave é atrelada à chave pública de um terceiro de tal forma que somente o possuidor da chave privada correspondente poderá usá-la com sucesso.
 Semelhante modo, a chave também é atrelada à chave pública de quem a cria e só é válida para cifras desta chave pública.
 Adicionalmente a chave também é atrelada a um termo de pesquisa, restringindo sua atuação para funcionar somente nas cifras em que o termo escolhido constar entre o conjunto de termos definidos no momento da criptografia.
 Embora não utilize explicitamente um esquema ABE, o resultado final é próximo a um sistema ABE se estabelecermos uma comparação onde termos de pesquisa sejam considerados chaves públicas de atributos.
-Nesta ótica, os termos de pesquisa atrelados à cifra de um documento seriam equivalentes a uma política de acesso monótona utilizando somente operadores conjuntivos (OR); o papel de \emph{proxy} nas mãos do usuário seria comparável ao de uma autoridade certificadora; e para finalizar a analogia, a chave de re-cifragem concedida para algum usuário e referindo-se a algum termo de pesquisa específico seria similar à chave pessoal de um atributo com de mesmo nome, concedida a este mesmo usuário.
+Nesta ótica, os termos de pesquisa atrelados à cifra de um documento seriam equivalentes a uma política de acesso monótona utilizando somente operadores conjuntivos (OR); o papel de \emph{proxy} nas mãos do usuário seria comparável ao de uma autoridade certificadora; e para finalizar a analogia, a chave de re-criptografia concedida para algum usuário e referindo-se a algum termo de pesquisa específico seria similar à chave pessoal de um atributo com de mesmo nome, concedida a este mesmo usuário.
 
 Visando a interoperabilidade entre instituições, Zhang e Lin sugerem o FHIR \emph{(Fast Healthcare Interoperability Resources)} \cite{HL72019} como um escopo comum de referência para a definição dos termos de pesquisa.
 O trabalho proposto aqui busca este mesmo objetivo e produz taxonomias de permissões e papeis médicos em um contexto específico do Brasil (seção \ref{sec:sub:taxonomia-permissoes}), visando definir um escopo semântico comum e facilitar a interoperabilidade de todos integrantes do sistema de saúde em uma escala nacional.
 Para assegurar a integridade e autenticidade dos dados médicos entre várias instituições os autores propõem o uso de dois tipos de blockchains.
-As blockchains do primeiro tipo são privadas (particulares a cada instituição) e registram hashes dos dados de prontuários cifrados, enquanto uma outra blockchain única e de acesso compartilhado serve para indexar todos os dados e possibilitar a pesquisa por meio dos termos de pesquisa e identidades de usuário, obtendo-se os dados ao contatar as instituições donas das blockchains encontradas na pesquisa.
+As blockchains do primeiro tipo são privadas (particulares a cada instituição) e registram hashes dos dados de prontuários criptografados, enquanto uma outra blockchain única e de acesso compartilhado serve para indexar todos os dados e possibilitar a pesquisa por meio dos termos de pesquisa e identidades de usuário, obtendo-se os dados ao contatar as instituições donas das blockchains encontradas na pesquisa.
 Em ambos os tipos de blockchains os autores adotam um mesmo mecanismo de consenso explícito e o denominam PoC \emph{(Proof of Conformity)}, aceitando a validade de novas transações e blocos somente quando estes forem declarados como válidos por no mínimo dois terços dos nós da rede, onde os nós utilizam trocas de mensagens via \emph{broadcast} para atingir este propósito.
 
 Nagasubramanian et al. \cite{Nagasubramanian2020} propõem o sistema PKIBC \emph{(Public Keyless Infrastructure Blockchain)} para garantir a segurança, privacidade e integridade de dados médicos, entretanto o trabalho só desenvolve o aspecto da integridade, que é garantida por um esquema de assinatura sem chaves.
@@ -1225,10 +1225,10 @@ Uma outra diferença é que o trabalho proposto modela Smart Contracts para inte
 Yang et al. \cite{Yang2020} usam esquemas de criptografia e assinatura baseados em atributos para assegurar a segurança da informação e privacidade dos usuários.
 Uma organização central gerencia a geração de atributos e concessão de chaves privadas às instituições que aderirem ao sistema.
 Os pacientes comunicam a política de acesso que desejam aplicar a seus dados médicos que são aplicadas pelas instituições e assina esta política usando ABS \emph{Attribute-Based Signature}.
-Os dados criptografados pelas instituições são enviados a um servidor temporário integrado a uma blockchain que assegura que somente arquivos com assinaturas válidas de pacientes e cifradas com as políticas indicadas por ele sejam enviadas ao provedor de serviço de nuvem, rejeitando o envio de dados que não se adequem a estas exigências.
+Os dados criptografados pelas instituições são enviados a um servidor temporário integrado a uma blockchain que assegura que somente arquivos com assinaturas válidas de pacientes e criptografadas com as políticas indicadas por ele sejam enviadas ao provedor de serviço de nuvem, rejeitando o envio de dados que não se adequem a estas exigências.
 Não se fala do tipo específico blockchain ou de sua estrutura de dados.
-O provedor de serviço utiliza tecnologia OD-ABE \emph{Attribute-Based Encryption with Outsourcing Decryption} para permitir transformações em dados cifrados em um estado intermediário de menor custo computacional para o deciframento de um usuário que possuir a chave correspondente a esta nova cifra.
-A organização central de atributos atua como \emph{proxy} neste esquema, entregando chaves de re-cifragem aos usuários que a requisitarem.
+O provedor de serviço utiliza tecnologia OD-ABE \emph{Attribute-Based Encryption with Outsourcing Decryption} para permitir transformações em dados criptografados para um estado intermediário de menor custo computacional de descriptografia para o usuário que possuir a chave correspondente a esta nova cifra.
+A organização central de atributos atua como \emph{proxy} neste esquema, entregando chaves de re-criptografia aos usuários que a requisitarem.
 O modelo deste sistema difere do trabalho proposto aqui por modelar uma solução centralizada em uma entidade apenas apesar de usar DCPABE e esta entidade não interage de forma alguma com a Blockchain, dificultando análises de auditoria.
 Por considerarem um modelo centralizado, os autores não exploram questões sobre interoperabilidade e padronização de atributos entre múltiplas instituições, o que o diferencia do trabalho apresentado aqui.
 
