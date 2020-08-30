@@ -21,6 +21,7 @@
 \usepackage{xcolor}
 \usepackage{array} % for custom space in table columns
 \usepackage{makecell}
+\usepackage{enumitem}
 \usepackage{amssymb}% http://ctan.org/pkg/amssymb
 \usepackage{pifont}% http://ctan.org/pkg/pifont
 
@@ -288,20 +289,20 @@ O esquema DCPABE \emph{(Decentralized Ciphertext-Policy Attribute Based Encrypti
 A figura \ref{fig:diagramaDCPABE} descreve os principais elementos que compõem o esquema DCPABE e a geração de chaves a dois usuários do sistema, Alice e Bob.
 Qualquer participante pode se tornar uma autoridade e criar atributos, gerando para cada atributo uma chave pública e uma chave privada, esta última usada para gerar chaves pessoais e intransferíveis aos usuários do sistema.
 Esse sistema suporta a escrita de políticas de acesso usando atributos emitidos por diferentes autoridades, tornando-se atrativo como a base fundacional de um sistema de integração criptograficamente seguro.
-A fim de impedir ambiguidades, a chave pública é considerada a concatenação de seu nome e valor, possibilitando a diferenciação entre dois atributos de mesmo nome gerados por entidades distintas, impedindo também ataques do tipo \emph{spoofing}\footnote{Em um ataque de \emph{Spoofing} um atacante tenta }.
-Para impedir ataques de colusão por parte dos usuários a geração das chaves é feita usando um identificador global \emph{(GID)} de usuário, que é utilizado para "vincular" os atributos de diferentes autoridades a um mesmo usuário. % TODO: padronizar e diferenciar chave dee identificador no texto todo.
-Este identificador GID é um parâmetro adicional usado durante o processo de verificação da satisfazibilidade da estrutura de acesso no mecanismo e descriptografia e assegura o fracasso da criptografia quando atributos emitidos com identificadores globais distintos forem utilizados em conjunto para satisfazer uma política de acesso, em complemento ao comportamento padrão da ABE que impede a criptografia caso não exista um subconjunto entre os atributos apresentados que satisfaça a estrutura de acesso subjacente à política de acesso.
+A fim de impedir ambiguidades, a chave pública é considerada a concatenação de seu nome e valor, possibilitando a diferenciação entre dois atributos de mesmo nome gerados por entidades distintas, impedindo também ataques do tipo \emph{spoofing}\footnote{Em um ataque de \emph{Spoofing} um atacante se passa por um terceiro falsificando informações com a finalidade de obter vantagens ilegítimas no sistema}.
+Para impedir ataques de colusão por parte dos usuários a geração das chaves é feita usando um identificador global \emph{(GID)} de usuário, que é utilizado para "vincular" os atributos de diferentes autoridades a um mesmo usuário. % TODO: (ok) padronizar e diferenciar chave dee identificador no texto todo.
+O GID é um parâmetro adicional usado durante o processo de verificação da satisfatibilidade da estrutura de acesso no mecanismo de descriptografia e assegura o fracasso do procedimento quando atributos emitidos com GID distintos forem utilizados em conjunto para satisfazer uma política de acesso.
 
 {\color{ForestGreen}Explicar um exemplo de uso (1 parágrafo). Pode usar algo assim: https://medium.com/asecuritysite-when-bob-met-alice/towards-true-security-attribute-based-encryption-20d5799aeda6}
 
 Com a DCPABE pode-se finalmente integrar com segurança bases de dados distintas sob controle de entidades separadas. % TODO: bases de dados de que? explicar melhor
 Por exemplo, suponha que um serviço de consulta de dados médicos de pacientes entre múltiplos hospitais use um esquema DCPABE.
-Isso permitiria que hospitais criassem seu próprio esquema ABE com sua própria declaração e concessão de atributos.
+Isso permitiria que hospitais criassem seu próprio esquema ABE com sua própria criação e concessão de atributos.
 Criptografar os dados assegura o sigilo da informação, simplificando a implantação e manutenção de serviços Web de consulta aos dados.
-Neste cenário, suponha que um centro de emergência receba um caso de um paciente em estado grave com identidade mas inconsciente.
+Neste cenário, suponha que um centro de emergência receba um caso de um paciente em estado grave que já foi identificado por seus documentos e que está inconsciente. % TODO: (b) 2 suponhas nesse parágrafo
 Rapidamente, o centro utiliza o sistema de consulta para obter mais dados deste paciente, e alguns hospitais confirmam possuir dados dele.
 Os dados informam cifras diferentes, mas sempre permitindo o acesso a quem possuir um atributo ``\emph{emergência}''.
-Este centro médico negociou o recebimento de uma chave pessoal deste atributo ``\emph{emergência}'' que foi concedida pelos hospitais individualmente, e desta maneira ganha o acesso ao prontuário.
+Este centro médico negociou o recebimento de uma chave pessoal deste atributo ``\emph{emergência}'', emitida pela autoridade certificadora de cada hospital que utiliza DCPABE e desta maneira ganha o acesso ao prontuário.
 Para evitar uma forma contínua de acesso irrestrito ao prontuário os hospitais poderiam adicionar este atributo ``\emph{emergência}''  sob demanda específicas de dados de um paciente e retornar à política anterior após a alta médica.
 
 \subsection{Blockchain Ethereum}
@@ -511,42 +512,51 @@ Ele acumula funcionalidades que atendem tanto a usuários do sistema, quanto a a
 Isso ocorre porque parte da lógica das políticas de acesso considera que o próprio cliente (i.e., o certificador) possa criar os próprios atributos e concedê-los a terceiros (outros clientes).
 
 O módulo servidor recebe, armazena e envia arquivos criptografados, operando como um serviço Web público na internet.
-A modelagem deste módulo considera um ambiente não-seguro de armazenamento dos dados, especificamente, que podem ser roubados.
-Em consequência disto, o módulo cliente deve enviar os dados criptografados e o servidor os armazenará.
-Para lidar com o mapeamento entre o usuário e seus dados, o servidor armazena um identificador único que funciona como uma chave-primária para recuperar os dados (evitando armazenar os metadados dos usuários, tais como, o nome).
-Para inserir um dado\footnote{O dado pode ser um arquivo}, cabe ao cliente realizar os seguintes passos:
-(i) solicitar o identificador antes do envio de dados,
-(ii) publicar o identificador na Blockchain. No caso da recuperação do dado, o módulo cliente deve informar ao servidor o identificador.
+Este módulo é tratado como um ambiente não-seguro de armazenamento dos dados e que pode estar sujeito a acesso não autorizado ou roubo de dados e em decorrência disso os dados enviados a ele sempre estão criptografados.
+Para impedir que um atacante ganhe informações por meio de um eventual acesso ilegítimo ao servidor, os arquivos não são indexados ou vinculados aos dados de identidade do dono, mas a um código gerado de forma aleatória que passa a ser usado como componente de uma URI para acesso do arquivo.
+O envio de um arquivo pelo cliente ao servidor se resume aos seguintes dois passos:
+solicitar a geração do código no primeiro envio de dados e publicar este mesmo código na Blockchain para assegurar e validar sua existência.
+A publicação do código garante que o usuário interessado possa realizar uma requisição do arquivo ao servidor sem ter que expor a identidade ou dados pessoais do dono dele.
+
 % Durante o desenvolvimento e experimentação este mesmo módulo armazenou, de forma temporária, as chaves pessoais de atributos gerados para usuários, mas isso de forma alguma é um requerimento desta solução. Estas chaves podem ser transferidas de maneira externa ao sistema, pela via que for considerada segura por ambos usuário e certificador, tais como mídia física, serviço de e-mail criptografado ou serviços de armazenamento em nuvem.
 
-O módulo Blockchain é responsável por armazenar de forma permanente e imutável {\color{blue}os metadados} dos documentos criptografados e suas respectivas políticas de acesso. Para impor verificações de acesso e validade de uma transação (seja uma inserção ou modificação de um dado), foi necessário adotar os Smart Contracts. %, descrita em termos de uma forma booleana composta por funções lógicas E e OU com atributos como predicados.
-Nesse sentido, foi escolhida a rede Ethereum por suportar nativamente a execução de Smart Contracts e porque é um projeto bem-sucedido entre as opções existentes, considerando tanto o tamanho da comunidade envolvida no desenvolvimento quanto sua posição de mercado. %A Blockchain na qual se baseia o sistema é uma versão privada da rede Ethereum gerada e processada por um programa específico para este fim, denominado Ganache\cite{ganache}.
-
-Para fornecer conectividade à Blockchain Ethereum foi utilizada a biblioteca Web3j.
-Por meio dela, o módulo Cliente pode conectar-se à Blockchain principal ou à de teste, sendo esta última utilizada para emular a execução da Blockchain principal. %A biblioteca também possui funcionalidades para gerar classes geradas dinamicamente baseadas no código de Smart Contracts, facilitando a integração do Ethereum com projetos Java.
+O módulo Blockchain é responsável por armazenar de forma permanente e imutável {\color{blue}os metadados} dos documentos criptografados e suas respectivas políticas de acesso.
+Smart Contracts são usados para impor verificações quanto à validade de transações que levem à inserção ou alteração de dados cadastrados na Blockchain, e fornecem também métodos para permitir a pesquisa e facilitar a recuperação dos dados armazenados.
+Nesse sentido, foi escolhida a rede Ethereum por ser o projeto pioneiro em suportar nativamente a execução de Smart Contracts e por ser o projeto mais bem-sucedido entre as opções existentes, considerando como métricas de sucesso o tamanho da comunidade de usuários e de desenvolvedores e a posição relevante e consolidada ao longo do tempo no mercado de criptomoedas. % A Blockchain na qual se baseia o sistema é uma versão privada da rede Ethereum gerada e processada por um programa específico para este fim, denominado Ganache\cite{ganache}.
+A biblioteca Web3j fornece ferramentas para conectar projetos desenvolvidos em Java com a Blockchain Ethereum.
+Por meio dela o módulo Cliente pode conectar-se às diferentes redes compatíveis com protocolo Ethereum, isto é, as redes públicas de teste, a rede principal ou mesmo uma conexão a uma blockchain privada local. %A biblioteca também possui funcionalidades para gerar classes geradas dinamicamente baseadas no código de Smart Contracts, facilitando a integração do Ethereum com projetos Java.
 
 % {\color{ForestGreen}Figura dos principais componentes em alto nível: programa cliente (exemplo celular ou notebook), servidor de armazenamento de arquivos; blockchain ethereum; contratos inteligentes; servidor de chaves de permissões.}
 
-A Figura \ref{fig:diagramaDCPABE} apresenta as responsabilidades dos módulos do sistema.
-
 \begin{figure}[H]
   \centering
-  \includesvg[width=1.1\linewidth]{images/diagrama-DCPABE.svg}
+  \includesvg[width=1.1\linewidth]{images/diagrama-SmartDCPABE.svg}
   \caption{Funcionamento geral e interação entre os módulos cliente, servidor de armazenamento de arquivos e Smart Contracts na Blockchain Ethereum.}
-  \label{fig:diagramaDCPABE}
+  \label{fig:diagramaSmartDCPABE}
 \end{figure}
 
 % {\color{ForestGreen}Explicar um cenário de uso passo-a-passo (exemplo, milestone 1, mas com permissões direcionadas ao contexto de saúde, por exemplo um paciente quer dar permissão de acesso a médicos cardiologistas) (2 parágrafos)}.
 
-Na figura: (1) cabe à autoridade usar o módulo Cliente para gerar tanto as chaves privadas e públicas dos usuários quanto as chaves pessoais dos atributos;
-(2) cabe à autoridade usar o módulo Cliente para aplicar as políticas de acesso nos PEPs - Prontuários Eletrônicos de Pacientes; %, tarefa que pode ser automatizada no caso de uma migração de bases de dados para o sistema proposto;
-(3) cabe ao módulo Cliente acionar um Smart Contract que reúne informações públicas sobre atributos recebe as novas chaves e as disponibiliza para consulta;
-(4) durante o envio de um arquivo ao servidor, cabe ao  módulo Cliente acionar um Smart Contract de gestão de arquivos criptografados e cadastrar os metadados referentes ao arquivo, entre eles o servidor de hospedagem e o código de acesso; % TODO: existe código de acesso, identificador, ficou confuso. Explicar melhor esses conceitos ou padronizar.
-(5) cabe ao módulo cliente enviar ao servidor os dados criptografados para armazenamento e consulta;
-(6) para consultar os metadados de um arquivo com suas chaves existentes de atributos, cabe ao cliente requisitar ao servidor o arquivo, descriptografá-lo e editá-lo localmente conforme a necessidade.
-Se um usuário alterar o documento, cabe ao módulo Cliente realizar a criptografia, enviar os novos dados ao servidor e atualizar o registro do arquivo no Smart Contract.
+A Figura \ref{fig:diagramaSmartDCPABE} apresenta a a relação entre os atores e os módulos em um fluxo de dados partindo da configuração inicial do sistema até o acesso a dados por um usuário.
+A linha tracejada entre o Hospital e o Usuário e indica a única transação que ocorre \emph{offline}, isto é, fora do sistema e representa a entrega da chave pessoal de um atributo a um usuário.
+As razões para isso são para conservar o escopo deste trabalho e para ater-se ao cenário de uso multi-institucional, cenário que pressupõe uma diversidade de políticas de segurança e privacidade possivelmente incompatíveis entre si, de forma que é sensato deixar esta questão em particular a cargo de cada autoridade certificadora, que então usará os canais que tiver à disposição e que considerar seguro para entrega das chaves.
 
-Na Figura, a linha tracejada indica que a entrega de uma chave pessoal de um atributo será realizada fora do sistema.
+\begin{enumerate}[label=(\arabic*)]
+  \item Um hospital usa o módulo Cliente para atuar como certificadora, gerando uma chave pública de atributo e uma secreta da qual serão derivadas todas as chaves pessoais emitidas aos usuários referente a este atributo.
+  \item O certificador utiliza as chaves públicas dos atributos geradas em (1) para aplicar políticas de acesso em um PEP e produz dois arquivos relacionados entre si:
+  o primeiro é o próprio PEP, cifrado com AES.
+  O segundo arquivo contém a chave utilizada na criptografia AES, que está guardada sob uma cifra ABE definida pela política de acesso associada ao PEP;%, tarefa que pode ser automatizada no caso de uma migração de bases de dados para o sistema proposto;
+  \item O certificador envia as chaves públicas dos atributos para o Smart Contract responsável por reunir e disponibilizar as chaves criadas por todas as autoridades em operação;
+  \item O arquivo com a cifra do PEP é enviado a um servidor web.
+  A confirmação de recebimento gera uma resposta informando um endereço único do arquivo naquele servidor
+  Esta confirmação é registrada, juntamente com a chave AES cifrada com ABE, no Smart Contract responsável pela inclusão, alteração e consulta de documentos disponíveis para os usuários. % TODO: (ok) existe código de acesso, identificador, ficou confuso. Explicar melhor esses conceitos ou padronizar.
+  \item O servidor armazena e atualiza os arquivos sem saber seu conteúdo.
+  O endereço único do arquivo é um valor aleatório, de forma a anonimizar os dados.
+  O servidor de maneira RESTful, sem armazenar estados intermediários nas requisições que está processando
+  \item Um usuário pesquisa por arquivos que precise acessar na Blockchain e obtém os metadados deles indicando a política de acesso e o servidor onde está hospedado.
+  O documento é recuperado e pode ser descriptografado se o usuário possuir as chaves pessoais dos atributos exigidos.
+  Caso o usuário queira salvar alterações no PEP ou a política de acesso, ele deve enviar o novo arquivo ao servidor para a substituição do anterior pelo mais atual e também efetuar a atualização dos metadados que estão registrados no Smart Contract de gestão de arquivos.
+\end{enumerate}
 
 A seguir será dado um exemplo de como funciona o sistema.
 A paciente Alice recebe um documento digital, correspondendo a seu exame laboratorial de sangue, e deseja adicioná-lo ao sistema.
@@ -772,15 +782,17 @@ Confirmado que os dados recebidos realmente existem, estes são processados no e
 Foram desenvolvidos cinco contratos inteligentes que que permitem realizar a autenticação, entrega de permissões e armazenamento de metadados dos prontuários eletrônicos dos pacientes.
 A seguir serão explicados cada um deles.
 
-\paragraph{Contrato SmartDCPABEAuthority}
+\textbf{Contrato SmartDCPABEAuthority}
 
 %{\color{ForestGreen} Explicação do  SmartDCPABEAuthority (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 
 % {\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
 
-O contrato \emph{SmartDCPABEAuthority} registra na Blockchain as entidades certificadoras disponíveis no sistema, tornando público seu endereço na Ethereum, associando dados de identificação e a quantidade de atributos que a entidade já publicou.
-O identificador (ID) usado para derivar as chaves privadas dos atributos no esquema ABE é a chave privada que corresponde à chave pública do Ethereum.
-Esse esquema permite que uma entidade possa ser identificável de forma única sem a necessidade de controle centralizada sobre o cadastro de novas unidades. % TODO: unidades? que unidades? se for instituição ou entidade padronizar no texto todo
+O contrato \emph{SmartDCPABEAuthority} registra na Blockchain as entidades certificadoras disponíveis no sistema, associando dados de identificação e a quantidade de atributos que a entidade já publicou a um endereço de carteira que será creditado como dela no ato do cadastro.
+A publicação na Blockchain garante um mecanismo descentralizado de cadastro e com disponibilidade contínua.
+A chave privada associada ao endereço de carteira Ethereum é utilizada como valor do GID na geração das chaves públicas e privadas dos atributos no esquema ABE.
+Essa escolha é feita para assegurar que toda autoridade possua um endereço Ethereum e para provocar um vínculo entre sua identidade na Blockchain e sua atuação como certificadora, de forma que não seja possível a um atacante forjar a identidade de um certificador sem com isso necessitar da chave privada de sua carteira.
+% TODO: unidades? que unidades? se for instituição ou entidade padronizar no texto todo
 %A escolha do ID visa impossibilitar um atacante de se passar pela entidade certificadora, uma vez que não há método computacionalmente viável para recuperar a chave privada de um endereço Ethereum a partir de uma chave pública.
 
 %{\color{Magenta} Inserir o código da linha 7 até 20.}
