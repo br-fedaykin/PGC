@@ -274,8 +274,8 @@ Na KP-ABE a entidade geradora de chaves define as políticas de acesso na emiss�
 
 A definição de uma autoridade central para gerar chaves pode representar um problema em um contexto de operação multi-institucional, uma vez que isso exige encontrar uma autoridade que seja confiável entre todas as instituições participantes.
 Ademais, uma única autoridade também se configura como um ponto de falha central, levando à suspensão do serviço em caso de problemas técnicos ou ataques de negação de serviço.
-Pode-se diluir esse problema ao espalhar o funcionamento do programa entre vários servidores, mas esta medida também expõem os parâmetros secretos de funcionamento do sistema a mais ambientes, aumentando o risco de vazamento de dados.
-O esquema DCPABE \emph{(Decentralized Ciphertext-Policy Attribute Based Encryption)} oferece as vantagens de uma arquitetura descentralizada, buscando resolver o problema da centralização ao propor uma plataforma com multi-autoridades com esquemas ABE independentes que podem ser criadas e operar sem necessidade de qualquer coordenação, além do uso de um mesmo conjunto de parâmetros iniciais de configuração \cite{Lewko2011}.
+Pode-se diluir esse problema ao espalhar o funcionamento do programa entre vários servidores, mas esta medida também expõe os parâmetros secretos de funcionamento do sistema a mais ambientes, aumentando o risco de vazamento.
+O esquema DCPABE \emph{(sigla em inglês para Decentralized Ciphertext-Policy Attribute Based Encryption)} oferece as vantagens de uma arquitetura descentralizada, buscando resolver o problema da centralização ao propor uma plataforma multi-autoridades, cada uma delas com um esquema ABE próprio que pode ser criado e posto em operação, sem necessidade de qualquer coordenação entre as autoridades além do uso de um mesmo conjunto de parâmetros iniciais de configuração \cite{Lewko2011}.
 
 \begin{figure}[!h]
   \centering
@@ -287,22 +287,36 @@ O esquema DCPABE \emph{(Decentralized Ciphertext-Policy Attribute Based Encrypti
 
 A figura \ref{fig:diagramaDCPABE} descreve os principais elementos que compõem o esquema DCPABE e a geração de chaves a dois usuários do sistema, Alice e Bob.
 Qualquer participante pode se tornar uma autoridade e criar atributos, gerando para cada atributo uma chave pública e uma chave privada, esta última usada para gerar chaves pessoais e intransferíveis aos usuários do sistema.
-Esse sistema suporta a escrita de políticas de acesso usando atributos emitidos por diferentes autoridades, tornando-se atrativo como a base fundacional de um sistema de integração criptograficamente seguro.
-A fim de impedir ambiguidades, a chave pública é considerada a concatenação de seu nome e valor, possibilitando a diferenciação entre dois atributos de mesmo nome gerados por entidades distintas, impedindo também ataques do tipo \emph{spoofing}\footnote{Em um ataque de \emph{Spoofing} um atacante se passa por um terceiro falsificando informações com a finalidade de obter vantagens ilegítimas no sistema}.
-Para impedir ataques de colusão por parte dos usuários a geração das chaves é feita usando um identificador global \emph{(GID)} de usuário, que é utilizado para "vincular" os atributos de diferentes autoridades a um mesmo usuário. % TODO: (ok) padronizar e diferenciar chave dee identificador no texto todo.
-O GID é um parâmetro adicional usado durante o processo de verificação da satisfatibilidade da estrutura de acesso no mecanismo de descriptografia e assegura o fracasso do procedimento quando atributos emitidos com GID distintos forem utilizados em conjunto para satisfazer uma política de acesso.
+Esse sistema suporta a escrita de políticas de acesso usando atributos emitidos por diferentes autoridades, tornando-se uma atrativa base fundacional para um sistema de integração criptograficamente seguro.
+A fim de impedir ambiguidades, a chave pública de um atributo é considerada a concatenação de seu nome e valor, possibilitando a diferenciação entre dois atributos de mesmo nome gerados por entidades distintas, impedindo também ataques do tipo \emph{spoofing}\footnote{Quando um atacante falsifica informações para se passar por um terceiro com a finalidade de obter acesso ilegítimo no sistema}.
+Para impedir ataques de colusão por parte dos usuários, a geração das chaves é feita usando um identificador global \emph{(GID)} de usuário, que é utilizado para "vincular" os atributos de diferentes autoridades a um mesmo usuário. % TODO: (ok) padronizar e diferenciar chave dee identificador no texto todo.
+O \emph{GID} é um parâmetro adicional usado durante o processo de verificação da satisfatibilidade da estrutura de acesso no mecanismo de descriptografia e assegura o fracasso do procedimento quando atributos emitidos com \emph{GID} distintos forem utilizados em conjunto para satisfazer uma política de acesso.
+
+A modelagem multi-autoridade da DCPABE é uma solução natural para o problema de compartilhar e integrar dados dispersos entre múltiplas instituições independentes, sem confiança mútua, onde a cooperação possa trazer benefício entre elas.
+O comprometimento das instituições participantes consiste somente em fazer a gestão de atributos e utilizar criptografia ABE nos dados passíveis de compartilhamento.
+Preserva-se a autonomia dos participantes, uma vez que cabe a eles decidirem as próprias políticas de segurança em termos de ABE e a própria solução para a hospedagem do conteúdo compartilhado. % TODO: bases de dados de que? explicar melhor
+A área da saúde descreve esse tipo cenário, formando uma intrincada rede de serviços ofertados por milhares de instituições no país com as mais variadas características, desde postos públicos de saúde com escopo reduzido a alguns bairros, até hospitais público ou privados, grandes centros de referências de especialidades clínicas, redes de clínicas de exames laboratoriais e centros de pesquisa que colhem dados destas instituições.
+A finalidade última é atender ao paciente, e o sucesso do atendimento depende, entre outros fatores, do acesso dos profissionais ao histórico médico deste paciente, entretanto tal histórico está disperso nos diversos prontuários das instituições pelas quais ele foi atendido no curso de suas vidas.
+A característica sensível dos dados em prontuários levaram instituições a não correrem o risco de compartilhá-los na internet, não obstante o benefício no atendimento e a obrigação legal de assegurar o acesso do prontuário ao seu dono.
+
+O compartilhamento do histórico de um paciente ocorre normalmente pelo relato oral do paciente quando inquirido pelo médico, sujeito às imprecisões inerentes deste método e, em parte, pela apresentação de alguns documentos aos quais o paciente teve acesso, como por exemplo resultados de exames e laudos.
+É comum conseguir o acesso à visualização destes documentos pela internet, mas estes documentos são acessíveis somente ao paciente e somente para visualização, isto é, não é possível que ele exerça controle sobre estes dados para permitir que outros possuam acesso, ou impedir o acesso de alguém a quem a instituição deu a permissão.
+Quem atua como a dona dos dados é a instituição, não o paciente, e desta forma é usurpado o direito de propriedade do dono do prontuário aos seus dados.
+Um tipo muito mais eficiente de compartilhamento seria obtido se as próprias instituições compartilhassem diretamente os dados dos pacientes, mas isto configuraria um abuso ao direito do paciente enquanto dono das informações contidas no seu prontuário, então seria necessário tornar esse processo sujeito à autorização do dono.
+A DCPABE pode devolver o direito de propriedade dos dados ao paciente e possibilitar o compartilhamento seguro de dados entre instituições ao mesmo tempo em que preserva as fronteiras e autonomia das instituições quanto às políticas internas de segurança e infraestrutura de dados.
 
 {\color{ForestGreen}Explicar um exemplo de uso (1 parágrafo). Pode usar algo assim: https://medium.com/asecuritysite-when-bob-met-alice/towards-true-security-attribute-based-encryption-20d5799aeda6}
 
-Com a DCPABE pode-se finalmente integrar com segurança bases de dados distintas sob controle de entidades separadas. % TODO: bases de dados de que? explicar melhor
-Por exemplo, suponha que um serviço de consulta de dados médicos de pacientes entre múltiplos hospitais use um esquema DCPABE.
-Isso permitiria que hospitais criassem seu próprio esquema ABE com sua própria criação e concessão de atributos.
-Criptografar os dados assegura o sigilo da informação, simplificando a implantação e manutenção de serviços Web de consulta aos dados.
-Neste cenário, suponha que um centro de emergência receba um caso de um paciente em estado grave que já foi identificado por seus documentos e que está inconsciente. % TODO: (b) 2 suponhas nesse parágrafo
-O centro utiliza o sistema de consulta para obter mais dados deste paciente, e alguns hospitais confirmam possuir dados dele.
-Os dados informam cifras diferentes, mas sempre permitindo o acesso a quem possuir um atributo ``\emph{emergência}''.
-Este centro médico negociou o recebimento de uma chave pessoal deste atributo ``\emph{emergência}'', emitida pela autoridade certificadora de cada hospital que utiliza DCPABE e desta maneira ganha o acesso ao prontuário.
-Para evitar uma forma contínua de acesso irrestrito ao prontuário os hospitais poderiam adicionar este atributo ``\emph{emergência}''  sob demanda específicas de dados de um paciente e retornar à política anterior após a alta médica.
+Para ilustrar o ponto acima, imagine que é firmado um consórcio entre hospitais e clínicas para disponibilizar consultas a dados de seus pacientes utilizando DCPABE.
+Cada hospital participante operaria um esquema ABE, divulgando os atributos que possam ser solicitados e concedendo chaves pessoais aos requerentes, conforme a necessidade.
+Neste cenário, suponha que um centro de emergência receba um paciente trazido às pressas resgatado de um acidente, sozinho, inconsciente e que pôde ser identificado a partir dos documentos que portava.
+O centro de emergência realiza a consulta em todos os hospitais parceiros do consórcio, e encontram alguns registros referentes ao acidentado.
+Cada registro representa um prontuário associado a uma política de acesso definida pela instituição que detém o armazenamento do documento.
+As políticas de acesso foram aplicadas pelo próprio usuário pela aplicação disponível a ele, mas poderia também ter sido aplicada pelo hospital com o aval do paciente nos casos em que há dificuldade.
+As políticas de acesso acabam todas usando atributos diferentes, emitidos por autoridades diferentes, mas um elemento em comum em todas elas é a presença do atributo ``\emph{emergência}'', conferindo o direito de acesso ao usuário que apresentar uma chave válida deste atributo.
+O administrador do centro de emergência tem posse da chave do atributo ``\emph{emergência}'' emitida por cada hospital parceiro e desta maneira tem o acesso aos prontuários que podem auxiliar na tomada de decisão quanto ao caso.
+Este cenário privilegia o atendimento de emergência ao considerar a presença prévia do atributo ``\emph{emergência}'' nas políticas de acesso, mas isto não constitui uma obrigatoriedade.
+Sem este atributo em um prontuário, este seria aplicado sob demanda, quando por exemplo um hospital recebesse um pedido de acesso ao prontuário junto a uma notificação de internação do paciente, sendo removido das condições de acesso quando tão logo fosse possível delegar a decisão ao paciente ou responsável legal que tenha a autorização de acesso ao prontuário.
 
 \subsection{Blockchain Ethereum}
 
@@ -789,7 +803,7 @@ A seguir serão explicados cada um deles.
 
 O contrato \emph{SmartDCPABEAuthority} registra na Blockchain as entidades certificadoras disponíveis no sistema, associando dados de identificação e a quantidade de atributos que a entidade já publicou a um endereço de carteira que será creditado como dela no ato do cadastro.
 A publicação na Blockchain garante um mecanismo descentralizado de cadastro e com disponibilidade contínua.
-A chave privada associada ao endereço de carteira Ethereum é utilizada como valor do GID na geração das chaves públicas e privadas dos atributos no esquema ABE.
+A chave privada associada ao endereço de carteira Ethereum é utilizada como valor do \emph{GID} na geração das chaves públicas e privadas dos atributos no esquema ABE.
 Essa escolha é feita para assegurar que toda autoridade possua um endereço Ethereum e para provocar um vínculo entre sua identidade na Blockchain e sua atuação como certificadora, de forma que não seja possível a um atacante forjar a identidade de um certificador sem com isso necessitar da chave privada de sua carteira.
 % TODO: unidades? que unidades? se for instituição ou entidade padronizar no texto todo
 %A escolha do ID visa impossibilitar um atacante de se passar pela entidade certificadora, uma vez que não há método computacionalmente viável para recuperar a chave privada de um endereço Ethereum a partir de uma chave pública.
