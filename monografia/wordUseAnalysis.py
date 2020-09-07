@@ -3,10 +3,14 @@ import itertools
 import operator
 import os
 import re
+import string
 import sys
 from collections import Counter
 
 FILEPATH = "monografia\main.tex"
+
+SYMBOLS = string.digits + string.punctuation
+
 TOKENS = [
     r'\begin{',
     r'\end{',
@@ -18,7 +22,25 @@ TOKENS = [
     r'{\color{ForestGreen}',
     r'{\color{RoyalBlue}',
     r'% ', r'%% ', r'%%% '
-    ]
+]
+
+ACCENT_MAPPING = {
+    'a':['a','à','á','ã','â'],
+    'e':['e','é','ê'],
+    'i':['i','í','î'],
+    'o':['o','ó','õ','ô'],
+    'u':['u','ú','û']
+}
+
+PLURAL_SUFIXES = [
+    's',
+    'm',
+    'es',
+    'os',
+    'is',
+    'ns',
+    'eis',
+]
 
 # criado a partir de consulta em https://www.wordandphrase.info/port/
 FREQUENT_WORDS = [
@@ -132,7 +154,12 @@ FREQUENT_WORDS = [
     'sua',
     'ao',
     'pelo',
-    'pela'
+    'pela',
+    'dela',
+    'dele',
+    'essa',
+    'esse',
+    'seja'
 ]
 
 def removeHeader(lines):
@@ -158,18 +185,70 @@ def removeLatexCommandTokens(lines):
 def textToTokenArray(text):
     text = " ".join(text)
     text = re.sub(r"[:\.,;`'()\[\]]", '', text)
-    return [x.lower() for x in text.split()]
+    return text.split()
 
-def countWords(text):
-    wordArray = textToTokenArray(text)
+def removeMeaninglessWords(words):
+    output = []
+    for word in words:
+        if not all([ch in SYMBOLS for ch in word]) and (len(word) > 3 or word.isupper()):
+            if word.lower() not in FREQUENT_WORDS and word.lower()[:-1] not in FREQUENT_WORDS:
+                output.append(word)
+    return output
+
+def joinPluralEntries(words):
+    words = sorted(words, key=lambda x: len(x))
+    output = {}
+    while len(words) != 0:
+        word = words.pop(0)
+        similar_index = []
+        key = None
+        for i in range(len(words)):
+            another_word = words[i]
+            is_similar, difference = isSimilarWord(word, another_word)
+            if difference is not None and key is None:
+                key = "{}({})".format(word, difference)
+            if is_similar:
+                similar_index.append(i)
+        similar_words = [words.pop(x) for x in reversed(similar_index)]
+        if key is None:
+            key = word
+        output[key] = similar_words + [word]
+    return output
+
+def isSimilarWord(word, another_word):
+    is_similar = word.lower() == another_word
+    difference = None
+    isAnyInitials = lambda x : any([y.replace('s','S').isupper() for y in x])
+    total_diff = len(another_word) - len(word)
+    if not isAnyInitials([word, another_word]) and 0 < total_diff <= 2:
+        similarity = [isEquivalent(word[i], another_word[i]) for i in range(len(word))]
+        if False in similarity:
+            total_diff = total_diff + len(word) - similarity.index(False)
+        if total_diff <= 3:
+            plural_particle = another_word[len(another_word) - total_diff:]
+            if plural_particle in PLURAL_SUFIXES:
+                is_similar = True
+                difference = plural_particle
+    return (is_similar, difference)
+
+def isEquivalent(letter, another_letter, ignore_accent = True):
+    same_letter = letter.lower() == another_letter.lower()
+    if ignore_accent and letter in ACCENT_MAPPING.keys():
+        for variations in ACCENT_MAPPING.values():
+            if letter in variations and another_letter in variations:
+                same_letter = True
+                break
+    return same_letter
+
+def countWords(wordArray):
     num_words = len(wordArray)
-    counter = Counter(wordArray)
     counting = {}
-    for word in set(wordArray):
-        if len(word) <= 20:
-            if word not in FREQUENT_WORDS:
-                if word[:-1] not in FREQUENT_WORDS:
-                    counting[word] = (counter[word], (counter[word] + 0.0)/num_words)
+    counter = Counter(wordArray)
+    important_words = removeMeaninglessWords(list(set(wordArray)))
+    unique_words = joinPluralEntries(important_words)
+    for (word, variations) in unique_words.items():
+        occurrences = sum([counter[x] for x in variations])
+        counting[word] = (occurrences, (occurrences + 0.0)/num_words)
     orderedCounting = {k: v for k, v in sorted(counting.items(), key=lambda item: item[1][0], reverse=True)}
     return orderedCounting
 
@@ -199,7 +278,7 @@ if __name__ == "__main__":
     lines = removeHeader(file.readlines())
     text = removeLatexCommandTokens(lines)
     words = textToTokenArray(text)
-    counting = countWords(text)
+    counting = countWords(words)
     n = 10
     if len(sys.argv) == 2:
         n = int(sys.argv[1])
