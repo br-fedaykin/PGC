@@ -303,7 +303,7 @@ O compartilhamento do histórico de um paciente ocorre normalmente pelo relato o
 É comum conseguir o acesso à visualização destes documentos pela internet, mas estes documentos são acessíveis somente ao paciente e somente para visualização, isto é, não é possível que ele exerça controle sobre estes dados para permitir que outros possuam acesso, ou impedir o acesso de alguém a quem a instituição deu a permissão.
 Quem atua como a dona dos dados é a instituição, não o paciente, e desta forma é usurpado o direito de propriedade do dono do prontuário aos seus dados.
 Um tipo muito mais eficiente de compartilhamento seria obtido se as próprias instituições compartilhassem diretamente os dados dos pacientes, mas isto configuraria um abuso ao direito do paciente enquanto dono das informações contidas no seu prontuário, então seria necessário tornar esse processo sujeito à autorização do dono.
-A DCPABE pode devolver o direito de propriedade dos dados ao paciente e possibilitar o compartilhamento seguro de dados entre instituições ao mesmo tempo em que preserva as fronteiras e autonomia das instituições quanto às políticas internas de segurança e infraestrutura de dados.
+A DCPABE pode devolver o direito de propriedade dos dados ao paciente e possibilitar o compartilhamento seguro de dados entre instituições ao mesmo tempo em que preserva as fronteiras e autonomia das instituições quanto às políticas internas de segurança e de infraestrutura de TI.
 
 {\color{ForestGreen}Explicar um exemplo de uso (1 parágrafo). Pode usar algo assim: https://medium.com/asecuritysite-when-bob-met-alice/towards-true-security-attribute-based-encryption-20d5799aeda6}
 
@@ -346,7 +346,7 @@ Entender o conceito de Blockchain é um passo necessário para compreender os fu
 
 {\color{ForestGreen}Explicar o que é (distributed ledger, cadeia de blocos, transação) e suas características (anonimato, imutabilidade, distribuição). (2 parágrafos).}
 
-Em seu cerne, a Blockchain é uma estrutura de dados com suporte somente à inserção de novos elementos, encadeados por referências ao hash de seu conteúdo, levando portanto a uma quebra da estrutura no ponto em que um elemento foi modificado, impedindo que a modificação passe despercebida e produzindo a propriedade de imutabilidade aos dados, na medida da segurança da função de hashing utilizada.
+Em seu cerne, a Blockchain é uma estrutura de dados com suporte somente à inserção de novos elementos, encadeados por referências ao hash de seu conteúdo, levando portanto a uma quebra da estrutura no ponto em que um elemento seja modificado, impedindo que a modificação passe despercebida e produzindo a propriedade de imutabilidade aos dados, na medida da segurança da função de hashing utilizada. % TODO: (b) redação dá pra ficar melhor
 Essa estrutura originalmente foi concebida como uma forma de impor uma ordem cronológica a documentos digitais sem depender da integridade do provedor deste serviço e preservando a privacidade de seus conteúdos \cite{Haber1991}.
 A Blockchain é composta por blocos, onde cada um deles referencia o bloco que o antecede, de forma recursiva, até que exista a referência a um bloco especial que inicia essa sequência, denominado como \emph{Bloco Genesis}.
 Um bloco é organizado em um cabeçalho e um corpo.
@@ -386,7 +386,7 @@ virtualmente negando o serviço a transações deste tipo, impondo ao seu propon
 Essa linguagem de script demonstra a preocupação desde o projeto do Bitcoin para abarcar, caso fosse necessário, complexidades e regras de transação para além do escopo de uma moeda ou de um sistema de pagamentos, tornando viável projetar por em prática transações de calção, execução de vínculos contratuais, mecanismos de arbitragem privada e transações com multi-assinaturas.
 As possibilidades se expandiram no início de 2014 \cite{Greenspan2015} com um \emph{Hard Fork}
 \footnote{Hard Fork é uma atualização no protocolo Bitcoin sem compatibilidade com as versões anteriores e que obriga a atualização do software para uma versão compatível com o novo formato dos dados na Blockchain.}
-que passou a permitir a adição de até 80 bytes de metadados arbitrários em uma transação, abrindo o caminho, mesmo que limitado, para a utilização da blockchain como um \textbf{livro-razão distribuído} (em inglês, \textbf{\textit{Distributed Ledger}}), isto é, uma fonte de dados onde seria possível registrar informações públicas, perenes e inalteráveis com alta disponibilidade e acessibilidade.
+que passou a permitir a adição de até 80 bytes de metadados arbitrários em uma transação, abrindo o caminho, mesmo que limitado, para a utilização da blockchain como um \textbf{livro-razão distribuído} (em inglês, \textbf{\textit{Distributed Ledger}}), isto é, uma fonte de dados capaz de registrar informações de forma imutável e indefinidamente permanente no tempo, com alta disponibilidade, visibilidade pública e acessibilidade.
 A \emph{Blockchain 2.0} surge para avançar o suporte a este conceito de livro-razão distribuído, trazendo novas tecnologias baseadas em blockchain, destacando-se as \emph{Smart Properties}, \emph{Smart Contracts} e \emph{DApps (Decentralized Applications)} \cite{Swan2015}.
 Essas ferramentas elevam a expressividade e capacidade da Blockchain como uma plataforma para a criação de aplicações financeiras, semi-financeiras, e até mesmo aplicações com ativos que não são financeiros.
 
@@ -454,12 +454,13 @@ Essa mecânica incentiva um uso consciente da capacidade computacional da rede, 
 {\color{ForestGreen}Explicar que a linguagem utilizada é denominada Solidity. Explicar o que é solidity. (1 parágrafo).}
 
 A linguagem na qual Smart Contracts são publicados na rede Ethereum se chama \emph{Ethereum Virtual Machine code (EVM code)} --- uma linguagem de baixo nível baseada em pilhas, similar à linguagem \emph{Forth}.
-Visando ampliar o acesso à tecnologia, a Fundação Ethereum desenvolveu também linguagens de programação de alto nível, com sintaxes similares às linguagens mais utilizadas no mercado, com compiladores para produzir EVM code a partir delas. O \emph{Solidity} é uma destas linguagens, com sintaxe similar a Java e C\texttt{++}, dispondo de um compilador com parâmetros configuráveis e um crescente ecossistema composto por padrões de desenvolvimento, bibliotecas e ferramentas de desenvolvimento\footnote{Para se inteirar do ecossistema Solidity, veja \href{https://github.com/bkrem/awesome-solidity}{https://github.com/bkrem/awesome-solidity} ou outras listas publicadas na internet. Entre as bibliotecas, destacam-se a \emph{\href{https://openzeppelin.com/}{OpenZeppelin}}, \emph{\href{https://github.com/dapphub/dappsys}{Dappsys}} e \emph{\href{https://github.com/modular-network/ethereum-libraries}{Modular Libraries}} por atualmente possuírem as maiores bases de usuários, segundo o site \emph{GitHub}.}, destacando-se o ambiente de desenvolvimento e implantação de Smart Contracts \emph{Remix}, utilizada para codificar, depurar e implantar os Smart Contracts do protótipo deste trabalho em redes de teste Ethereum.
+Visando ampliar o acesso à tecnologia, a Fundação Ethereum desenvolveu também linguagens de programação de alto nível, com sintaxes similares às linguagens mais utilizadas no mercado, com compiladores para produzir EVM code a partir delas. A \emph{Solidity} é uma destas linguagens, com sintaxe similar a Java e C\texttt{++}, dispondo de um compilador com parâmetros configuráveis e um crescente ecossistema composto por padrões de desenvolvimento, bibliotecas e ferramentas de desenvolvimento\footnote{Para se inteirar do ecossistema Solidity, veja \href{https://github.com/bkrem/awesome-solidity}{https://github.com/bkrem/awesome-solidity} ou outras listas publicadas na internet. Entre as bibliotecas, destacam-se a \emph{\href{https://openzeppelin.com/}{OpenZeppelin}}, \emph{\href{https://github.com/dapphub/dappsys}{Dappsys}} e \emph{\href{https://github.com/modular-network/ethereum-libraries}{Modular Libraries}} por atualmente possuírem as maiores bases de usuários, segundo o site \emph{GitHub}.}, destacando-se o ambiente de desenvolvimento e implantação de Smart Contracts \emph{Remix}, utilizada para codificar, depurar e implantar os Smart Contracts do protótipo deste trabalho em redes de teste Ethereum.
 
 {\color{ForestGreen}Explicar o código de um contrato simples que terá o atributo idPaciente, um map de urls de registros médicos e um método addUrl. (1 parágrafo). Explicar que esse contrato é escrito em um arquivo com extensão .sol}
 
-Com Solidity é possível descrever tanto funções quanto estruturas de dados temporárias ou armazenadas na blockchain.
-A coleção de dados armazenados na Blockchain compõe o que se denomina como estado da EVM. A Lista \ref{cod:exemploSmartContract} contém um exemplo de uso de Solidity, implementando um contrato que disponibiliza o acesso de resultado de exames a pacientes.
+Com Solidity é possível descrever funções e criar variáveis e estruturas de dados, temporárias ou permanentes, que são guardadas na própria blockchain e recuperadas pela EVM conforme a necessidade de uso dos contratos em execução.
+A coleção de dados armazenados na Blockchain compõe o que se denomina como estado da EVM.
+O código \ref{cod:exemploSmartContract} contém um exemplo de uso de Solidity, implementando um contrato que disponibiliza o acesso de resultado de exames a pacientes.
 
 \lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={cod:exemploSmartContract}, caption={Exemplo de Contrato Inteligente}}
 \begin{lstlisting}
@@ -489,9 +490,23 @@ A coleção de dados armazenados na Blockchain compõe o que se denomina como es
 
 {\color{ForestGreen}Explicar um exemplo passo-a-passo (Só TEXTO, Não Código) de um cliente que obtém o contrato do parágrafo anterior e o executa remotamente em uma máquina. (2 parágrafo).}
 
-As funções implementadas no contrato apontam a existência de dois tipos de papeis relacionados, um que provê informações e outro que as consulta. O Smart Contract armazena duas tabelas, uma associando endereços a uma lista de URLs e outra associando um URL a um objeto do tipo Registro, que contém as informações de um exame. Essas tabelas são alimentadas por meio da função \emph{addURL} do contrato, sendo utilizada pelo Hospital que deseja disponibilizar os exames para consulta, e os exames podem ser consultados usando-se a função \emph{getRegistro}. Ambos os papeis necessitam possuir uma identidade na blockchain Ethereum, ou seja, possuir um endereço válido e ser capaz de publicar transações. Também é necessário possuir um cliente capaz de se conectar a rede para poder publicar novas transações. Já para a consulta de dados, é possível utilizar serviços Web de terceiros, como sites de visualização de transação, para resgatar uma atualização particular ou obter o estado atual das variáveis do contrato.
+As funções implementadas no contrato apontam a existência de dois tipos de papeis relacionados, um que provê informações e outro que as consulta.
+O Smart Contract armazena duas tabelas, uma associando endereços a uma lista de URLs e outra associando um URL a um objeto do tipo Registro, que contém as informações de um exame.
+Essas tabelas são alimentadas por meio da função \emph{addURL} do contrato, sendo utilizada pelo Hospital que deseja disponibilizar os exames para consulta, e os exames podem ser consultados usando-se a função \emph{getRegistro}.
+Ambos os papeis necessitam possuir uma identidade na blockchain Ethereum, ou seja, possuir um endereço válido e ser capaz de publicar transações. Também é necessário possuir um cliente capaz de se conectar a rede para poder publicar novas transações.
+Já para a consulta de dados, é possível utilizar serviços Web de terceiros, como sites de visualização de transação, para resgatar uma atualização particular ou obter o estado atual das variáveis do contrato.
 
-Este exemplo, embora introduza a sintaxe do Solidity, também incorre em três situações problemáticas que podem precisar de conserto. Primeiro, Smart Contracts tem seu código tornado público à rede no momento de sua implantação e suas funções podem ser utilizadas por qualquer usuário da rede. A ausência de controle no uso da função é um risco à integridade dos dados, uma vez que pode estar sujeita a alterações maliciosas. Um contrato deve impor uma política de acesso a funções sensíveis, implementando nestas funções verificações internas do endereço responsável pela interação, permitindo ou não a execução de acordo com tal política. Segundo, dados publicados na Blockchain são sempre públicos em sua visibilidade, embora possam ter diferentes escopos de acesso. Isso quer dizer que os dados relacionados aos exames serão públicos, expondo informações privativas a quem tiver acesso à Blockchain. Uma maneira de mitigar este problema e ainda assim manter a segurança da informação é publicar assinaturas dos dados, que não conterão informação sensível mas ainda servirão para verificar a integridade e imutabilidade dos dados armazenados externamente, na web. Terceiro, mesmo que não configurasse problema de privacidade, este uso da Blockchain tornaria o custo de operação muito alto, uma vez que a cada exame médico haveria um custo para armazenar múltiplas informações, sendo as mais caras as informações de tamanho dinâmico como a variável de texto \emph{data}. Embora o exemplo exemplifique uma estrutura de dados, na prática a Blockchain tem restrições computacionais de uso baseada no alto custo de armazenamento e processamento, o que significa que mesmo em um cenário onde não seja necessário a privacidade, ainda assim há um incentivo para esvaziar as estruturas de dados de informação relativa ao domínio de aplicação e ao invés disso utilizar ela somente como um meio para se verificar estes dados que estarão alocados em bases de dados externas à Blockchain.
+Este exemplo, embora introduza a sintaxe da Solidity, também incorre em três situações problemáticas que podem precisar de conserto.
+Primeiro, Smart Contracts tem seu código tornado público à rede no momento de sua implantação e suas funções podem ser utilizadas por qualquer usuário com carteira.
+Por conta disso, o acesso a funções que alteram o estado do contrato devem impor restrições que verifiquem se o endereço responsável pela interação realmente tem esta prerrogativa.
+Geralmente isto se resolve guardando no contrato uma lista de endereços permitidos ou associando-se os dados inseridos no contrato com os endereços de origem e exigir que os dados sejam editados somente por aqueles mesmos endereços.
+Segundo, embora a linguagem Solidity disponha de modificadores de acesso para declaração de variáveis, esta modificação só afeta a visibilidade dela por outros contratos, sendo visível e público a quem tiver os da Blockchain Ethereum à disposição.
+Isto quer dizer que mesmo com modificadores de acesso privado, os dados não são secretos e podem ser lidos.
+No caso do campo \emph{data} no exemplo acima for passível de armazenar informações sensíveis,
+No exemplo, caso o campo \emph{data} armazene textos sobre atendimentos, certamente haverão casos em que a informação registrada ali será sensível.
+Para resolver este problema, pode-se usar uma função hashing no lugar dos dados, evitando exposição da informação e mantendo disponíveis na Blockchain um verificador para confirmar a integridade deles.
+Terceiro e último, mesmo que não configure um problema de privacidade, \emph{data} pode tornar o custo de operação muito alto, uma vez que a escrita de dados permanentes consomem \emph{gas} e as variáveis de tamanho dinâmico são as que mais custam \emph{gas} por cada byte, justamente o caso do campo \emph{data}.
+O projeto Ethereum em geral define esta mecânica de custos, junto a outras restrições computacionais, de forma a incentivar o esvaziamento das estruturas de dados nos contratos e a reduzir a quantidade de processamento usado nas funções, tornando vital a divisão de tarefas em módulos distintos, delegando o armazenamento e processamento intensivo de dados a componentes externos, interligados aos contratos.
 
 % -------------------------------------------------------------------- %
 \newpage
@@ -525,11 +540,11 @@ Ele acumula funcionalidades que atendem tanto a usuários do sistema, quanto a a
 Isso ocorre porque parte da lógica das políticas de acesso considera que o próprio cliente (i.e., o certificador) possa criar os próprios atributos e concedê-los a terceiros (outros clientes).
 
 O módulo servidor recebe, armazena e envia arquivos criptografados, operando como um serviço Web público na internet.
-Este módulo é tratado como um ambiente não-seguro de armazenamento dos dados e que pode estar sujeito a acesso não autorizado ou roubo de dados e em decorrência disso os dados enviados a ele sempre estão criptografados.
-Para impedir que um atacante ganhe informações por meio de um eventual acesso ilegítimo ao servidor, os arquivos não são indexados ou vinculados aos dados de identidade do dono, mas a um código gerado de forma aleatória que passa a ser usado como componente de uma URI para acesso do arquivo.
+Este módulo é tratado como um ambiente não-seguro de armazenamento dos dados, sujeito a um possível ataque que leve ao acesso não autorizado ou roubo de dados, por isto os arquivos enviados a ele sempre devem estar criptografados.
+Para impedir que um atacante ganhe informações por meio de um eventual acesso ilegítimo ao servidor, os arquivos não são vinculados aos dados de identidade do dono, mas a um código gerado de forma aleatória que passa a ser usado como componente de um endereço único para acesso do arquivo.
 O envio de um arquivo pelo cliente ao servidor se resume aos seguintes dois passos:
-solicitar a geração do código no primeiro envio de dados e publicar este mesmo código na Blockchain para assegurar e validar sua existência.
-A publicação do código garante que o usuário interessado possa realizar uma requisição do arquivo ao servidor sem ter que expor a identidade ou dados pessoais do dono dele.
+solicitar no primeiro envio de dados a geração de um endereço único no servidor e, em seguida, publicar este mesmo endereço na Blockchain junto aos metadados do arquivo para garantir e validar a existência e uso do endereço.
+A publicação garante que o usuário interessado possa realizar uma requisição do arquivo ao servidor sem ter que expor a identidade ou dados pessoais do dono dele.
 
 % Durante o desenvolvimento e experimentação este mesmo módulo armazenou, de forma temporária, as chaves pessoais de atributos gerados para usuários, mas isso de forma alguma é um requerimento desta solução. Estas chaves podem ser transferidas de maneira externa ao sistema, pela via que for considerada segura por ambos usuário e certificador, tais como mídia física, serviço de e-mail criptografado ou serviços de armazenamento em nuvem.
 
@@ -550,7 +565,7 @@ Por meio dela o módulo Cliente pode conectar-se às diferentes redes compatíve
 
 % {\color{ForestGreen}Explicar um cenário de uso passo-a-passo (exemplo, milestone 1, mas com permissões direcionadas ao contexto de saúde, por exemplo um paciente quer dar permissão de acesso a médicos cardiologistas) (2 parágrafos)}.
 
-A Figura \ref{fig:diagramaSmartDCPABE} apresenta a a relação entre os atores e os módulos em um fluxo de dados partindo da configuração inicial do sistema até o acesso a dados por um usuário.
+A Figura \ref{fig:diagramaSmartDCPABE} apresenta a a relação entre os atores e os módulos em um fluxo de dados partindo da configuração inicial do sistema até o acesso de um arquivo por um usuário.
 A linha tracejada entre o Hospital e o Usuário e indica a única transação que ocorre \emph{offline}, isto é, fora do sistema e representa a entrega da chave pessoal de um atributo a um usuário.
 As razões para isso são para conservar o escopo deste trabalho e para ater-se ao cenário de uso multi-institucional, cenário que pressupõe uma diversidade de políticas de segurança e privacidade possivelmente incompatíveis entre si, de forma que é sensato deixar esta questão em particular a cargo de cada autoridade certificadora, que então usará os canais que tiver à disposição e que considerar seguro para entrega das chaves.
 
@@ -565,7 +580,7 @@ As razões para isso são para conservar o escopo deste trabalho e para ater-se 
   Esta confirmação é registrada, juntamente com a chave AES cifrada com ABE, no Smart Contract responsável pela inclusão, alteração e consulta de documentos disponíveis para os usuários. % TODO: (ok) existe código de acesso, identificador, ficou confuso. Explicar melhor esses conceitos ou padronizar.
   \item O servidor armazena e atualiza os arquivos sem saber seu conteúdo.
   O endereço único do arquivo é um valor aleatório, de forma a anonimizar os dados.
-  O servidor de maneira RESTful, sem armazenar estados intermediários nas requisições que está processando
+  O servidor opera de maneira RESTful, sem armazenar estados intermediários nas requisições que está processando.
   \item Um usuário pesquisa por arquivos que precise acessar na Blockchain e obtém os metadados deles indicando a política de acesso e o servidor onde está hospedado.
   O documento é recuperado e pode ser descriptografado se o usuário possuir as chaves pessoais dos atributos exigidos.
   Caso o usuário queira salvar alterações no PEP ou a política de acesso, ele deve enviar o novo arquivo ao servidor para a substituição do anterior pelo mais atual e também efetuar a atualização dos metadados que estão registrados no Smart Contract de gestão de arquivos.
@@ -584,7 +599,7 @@ Repare que a aplicação da política é realizada pelo próprio usuário, efeti
 
 Após o documento ser criptografado ele está pronto para ser enviado ao servidor.
 Para isso, o usuário aciona o módulo cliente, quem solicita a reserva de um código de acesso de arquivos ao servidor, caso seja o primeiro envio deste documento.
-Após a obtenção do código, realiza o envio à Blockchain informando diversos dados, entre eles: o código de acesso, a identificação do servidor, o nome do arquivo, a política de acesso, o instante em que a transação está sendo feita e extratos de dados produzidos pela criptografia ABE necessários para descriptografar o arquivo.
+Após a obtenção do código, realiza o envio à Blockchain informando diversos dados: o código de acesso, a identificação do servidor, o nome do arquivo, a política de acesso, o instante em que a transação está sendo feita e dados produzidos pela criptografia ABE que são necessários no processo de descriptografia do arquivo.
 Caso não seja o primeiro envio do arquivo\footnote{Os arquivos são considerados os mesmos se tiverem o mesmo nome.}, o cliente enviará somente a nova versão do mesmo ao servidor.
 Caso haja alguma atualização nos dados ({\color{magenta}por exemplo ...}), o módulo cliente também alterará a Blockchain.
 
@@ -599,7 +614,7 @@ Nesta seção serão apresentadas as diferentes funcionalidades do módulo: gera
 \label{sec:sub:taxonomia-permissoes}
 % {\color{ForestGreen}Explicar que o servidor de permissões deverá ser responsabilidade de uma organização apta para entregar as permissões online (ex. Ministério de Saúde ou algúm conselho federal/regional de medicina) (1 parágrafo)}.
 
-A gestão de acesso a arquivos é realizada pelo usuário, combinando os operadores lógicos e atributos que representam credenciais de acesso por quem as possui.
+A gestão de acesso a prontuários é realizada pelo usuário, combinando os operadores lógicos e atributos que representam credenciais de acesso por quem as possui.
 No sistema, é denominado como autoridade ou certificador quem cria os atributos, publica na Blockchain e processa as requisições de concessão destes atributos.
 %Qualquer usuário pode se tornar um certificador, bastando publicar um atributo na Blockchain para que sejam registrados como tais em uma lista pública de certificadores mantida pelo contrato \emph{SmartDCPABEAuthority}.
 No sistema, entidades como o Ministério da Saúde, os Conselhos Federais e Regionais de Medicina, e todos os laboratórios, clínicas e hospitais se tornariam certificadores, passando a publicar atributos que seriam úteis para a escrita da política de acesso em um prontuário eletrônico do paciente.
@@ -882,7 +897,8 @@ O mapa \emph{ABEKeys} contém, para cada endereço cadastrado, um submapa relaci
 
 % {\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
 
-O contrato \emph{SmartDCPABEFiles} mantém disponível na Blockchain informações sobre a hospedagem (localização) do arquivo de prontuários e também os dados do objeto \emph{Ciphertext} produzido pela Biblioteca DCPABE, necessário para realizar a descriptografia. O contrato também gerencia informações sobre as bases de dados onde os arquivos estão hospedados.
+O contrato \emph{SmartDCPABEFiles} mantém disponível na Blockchain informações sobre a hospedagem (localização) do arquivo e também os dados do objeto \emph{Ciphertext} produzido pela Biblioteca DCPABE, necessário para realizar a descriptografia.
+O contrato também gerencia informações sobre as bases de dados onde os arquivos estão hospedados.
 
 % {\color{Magenta} Inserir o código da linha 6 até 39.}
 
@@ -923,7 +939,8 @@ O contrato \emph{SmartDCPABEFiles} mantém disponível na Blockchain informaçõ
 
 A sessão do código \ref{cod:SmartDCPABEFiles} exibe os pontos mais relevantes do contrato.
 A estrutura \emph{Recording} informa a base de dados na qual o arquivo está hospedado e, no campo serverID, qual é a sua identificação no servidor.
-O campo hashing permite a verificação de integridade. O campo timestamp é uma marca temporal que mantém o momento de sua publicação na Blockchain. %Seria possível remover o campo timestamp e trabalhar somente com altura ou timestamp do bloco em que a transação foi validada, economizando o uso de gas, porém deixando de possuir uma data exata de publicação de um documento.
+O campo hashing permite a verificação de integridade.
+O campo timestamp é uma marca temporal que mantém o momento de sua publicação na Blockchain. %Seria possível remover o campo timestamp e trabalhar somente com altura ou timestamp do bloco em que a transação foi validada, economizando o uso de gas, porém deixando de possuir uma data exata de publicação de um documento.
 
 A estrutura \emph{Ciphertext} contém a política de acesso utilizada para criptografar o arquivo e um conjunto de parâmetros (c0 a c3) que resultam do processo de criptografia e que são necessários para descriptografar o documento.
 A estrutura \emph{FileServer} contém informações para conexão com uma base de dados na Internet.
@@ -1244,7 +1261,7 @@ Em 2020 Guo et al. \cite{Guo2020} implementam um sistema seguro, confidencial e 
 A adoção do esquema DCPABE assegura a proteção dos dados hospedados em servidores na nuvem e fornece escalabilidade ao sistema ao permitir a criação de múltiplas autoridades que independem de coordenação para funcionamento.
 A ABMS é um módulo independente da DCPABE e permite elaborar mecanismos de autenticação anônimos por meio de atributos, associando um usuário a um conjunto de atributos e exigindo estes para verificação de uma assinatura digital.
 Os autores usam as blockchains Hyperledger Fabric e Hyperledger Ursa para implantar Smart Contracts que realizam controle de acesso aos dados criptografados via ABE, liberando acesso aos dados somente se as requisições obtiverem assinaturas válidas dos usuários donos dos prontuários.
-O trabalho proposto aqui também utiliza Smart Contracts para intermediar o acesso a arquivos criptografados em ABE mas utiliza a rede Ethereum, que não possui suporte ou biblioteca com as primitivas criptográficas necessárias para tornar possível (e viável) operações bilineares diretamente nos contratos, resultando em uma arquitetura diversa da apresentada no trabalho em análise.
+O trabalho proposto aqui também utiliza Smart Contracts para intermediar o acesso a prontuários criptografados em ABE mas utiliza a rede Ethereum, que não possui suporte ou biblioteca com as primitivas criptográficas necessárias para tornar possível (e viável) operações bilineares diretamente nos contratos, resultando em uma arquitetura diversa da apresentada no trabalho em análise.
 Uma outra diferença é que o trabalho proposto modela Smart Contracts para intermediar e lastrear a atividade de concessão de atributos, produzindo informações úteis para realização de auditoria das atividades das autoridades certificadoras.
 
 Yang et al. \cite{Yang2020} usam esquemas de criptografia e assinatura baseados em atributos para assegurar a segurança da informação e privacidade dos usuários.
