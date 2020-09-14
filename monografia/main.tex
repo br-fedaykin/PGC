@@ -294,9 +294,9 @@ O \emph{GID} é um parâmetro adicional usado durante o processo de verificaçã
 
 A modelagem multi-autoridade da DCPABE é uma solução natural para o problema de compartilhar e integrar dados dispersos entre múltiplas instituições independentes, sem confiança mútua, onde a cooperação possa trazer benefício entre elas.
 O comprometimento das instituições participantes consiste somente em fazer a gestão de atributos e utilizar criptografia ABE nos dados passíveis de compartilhamento.
-Preserva-se a autonomia dos participantes, uma vez que cabe a eles decidirem as próprias políticas de segurança em termos de ABE e a própria solução para a hospedagem do conteúdo compartilhado. % TODO: bases de dados de que? explicar melhor
+Preserva-se a autonomia dos participantes, uma vez que cabe a eles decidirem as próprias políticas de segurança em termos de ABE e a própria solução para a hospedagem do conteúdo compartilhado. % TODO: (ok) bases de dados de que? explicar melhor
 A área da saúde descreve esse tipo cenário, formando uma intrincada rede de serviços ofertados por milhares de instituições no país com as mais variadas características, desde postos públicos de saúde com escopo reduzido a alguns bairros, até hospitais público ou privados, grandes centros de referências de especialidades clínicas, redes de clínicas de exames laboratoriais e centros de pesquisa que colhem dados destas instituições.
-A finalidade última é atender ao paciente, e o sucesso do atendimento depende, entre outros fatores, do acesso dos profissionais ao histórico médico deste paciente, entretanto tal histórico está disperso nos diversos prontuários das instituições pelas quais ele foi atendido no curso de suas vidas.
+A finalidade última é atender ao paciente, e o sucesso do atendimento depende, entre outros fatores, do acesso dos profissionais ao histórico médico deste paciente, entretanto tal histórico está disperso nos diversos prontuários abertos nas instituições pelas quais ele foi atendido no curso de sua vida.
 A característica sensível dos dados em prontuários levaram instituições a não correrem o risco de compartilhá-los na internet, não obstante o benefício no atendimento e a obrigação legal de assegurar o acesso do prontuário ao seu dono.
 
 O compartilhamento do histórico de um paciente ocorre normalmente pelo relato oral do paciente quando inquirido pelo médico, sujeito às imprecisões inerentes deste método e, em parte, pela apresentação de alguns documentos aos quais o paciente teve acesso, como por exemplo resultados de exames e laudos.
@@ -554,7 +554,7 @@ Nesse sentido, foi escolhida a rede Ethereum por ser o projeto pioneiro em supor
 A biblioteca Web3j fornece ferramentas para conectar projetos desenvolvidos em Java com a Blockchain Ethereum.
 Por meio dela o módulo Cliente pode conectar-se às diferentes redes compatíveis com protocolo Ethereum, isto é, as redes públicas de teste, a rede principal ou mesmo uma conexão a uma blockchain privada local. %A biblioteca também possui funcionalidades para gerar classes geradas dinamicamente baseadas no código de Smart Contracts, facilitando a integração do Ethereum com projetos Java.
 
-% {\color{ForestGreen}Figura dos principais componentes em alto nível: programa cliente (exemplo celular ou notebook), servidor de armazenamento de arquivos; blockchain ethereum; contratos inteligentes; servidor de chaves de permissões.}
+% {\color{ForestGreen}Figura dos principais componentes em alto nível: programa cliente (exemplo celular ou notebook), servidor de armazenamento de arquivos; blockchain Ethereum; contratos inteligentes; servidor de chaves de permissões.}
 
 \begin{figure}[H]
   \centering
@@ -576,7 +576,7 @@ As razões para isso são para conservar o escopo deste trabalho e para ater-se 
   O segundo arquivo contém a chave utilizada na criptografia AES, que está guardada sob uma cifra ABE definida pela política de acesso associada ao PEP;%, tarefa que pode ser automatizada no caso de uma migração de bases de dados para o sistema proposto;
   \item O certificador envia as chaves públicas dos atributos para o Smart Contract responsável por reunir e disponibilizar as chaves criadas por todas as autoridades em operação;
   \item O arquivo com a cifra do PEP é enviado a um servidor web.
-  A confirmação de recebimento gera uma resposta informando um endereço único do arquivo naquele servidor
+  A confirmação de recebimento gera uma resposta informando um endereço único do arquivo naquele servidor;
   Esta confirmação é registrada, juntamente com a chave AES cifrada com ABE, no Smart Contract responsável pela inclusão, alteração e consulta de documentos disponíveis para os usuários. % TODO: (ok) existe código de acesso, identificador, ficou confuso. Explicar melhor esses conceitos ou padronizar.
   \item O servidor armazena e atualiza os arquivos sem saber seu conteúdo.
   O endereço único do arquivo é um valor aleatório, de forma a anonimizar os dados.
@@ -1295,7 +1295,69 @@ Uma vantagem do esquema apresentado pelos autores é a possibilidade de revocaç
 \newpage
 \section{Resultados Experimentais}
 
+\subsection{Plataforma de experimentação}
 
+Dados do seu computador, etc.
+
+\subsection{Módulo de instanciação de Variáveis globais}
+
+O módulo tem os seguintes passos.
+
+Passo 1, x ms.
+Passo 2, y ms.
+
+\subsection{Módulo de instanciação de usuário}
+
+O módulo tem os seguintes passos.
+
+Passo 1, x ms.
+Passo 2, y ms.
+Passo 3, y ms, ether consumido (envio de metadados do usuario).
+
+\subsection{Módulo de associação usuário-permissão}
+
+O módulo tem os seguintes passos.
+
+long ini = System.currentTimeInMillis();
+Passo 1, x ms.
+long delay = System.currentTimeInMillis() - ini;
+Passo 2, y ms.
+
+Para 1 permissão, 10 permissões, 100 permissões (todas com AND). As permissões podem ser A1, A2, A3 (não precisam ser especialidades.
+
+\subsection{Módulo de criptografia}
+
+O módulo tem os seguintes passos.
+
+Passo 1, x ms.
+Passo 2, y ms.
+
+Para 1 arquivo de 1KB, 1 MB, 10 MB, 100 MB (tudo com pdf).
+
+\subsection{Módulo de envio de metadados da PEP à Blockchain}
+
+O módulo tem os seguintes passos.
+
+Passo 1, x ms, ether consumido.
+Passo 2, y ms, ether consumido.
+
+\subsection{Módulo de recuperação de metadados da Blockchain}
+
+O módulo tem os seguintes passos.
+
+Passo 1, x ms, ether consumido.
+Passo 2, y ms, ether consumido.
+
+\subsection{Módulo de envio descriptografia}
+
+O módulo tem os seguintes passos.
+
+Passo 1, x ms.
+Passo 2, y ms.
+
+Os mesmos arquivos que foram criptografados.
+
+\subsection{VER SE FALTA ALGUM MÓDULO}
 
 % -------------------------------------------------------------------- %
 \newpage
