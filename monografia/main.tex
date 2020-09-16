@@ -614,11 +614,15 @@ Nesta seção serão apresentadas as diferentes funcionalidades do módulo: gera
 \label{sec:sub:taxonomia-permissoes}
 % {\color{ForestGreen}Explicar que o servidor de permissões deverá ser responsabilidade de uma organização apta para entregar as permissões online (ex. Ministério de Saúde ou algúm conselho federal/regional de medicina) (1 parágrafo)}.
 
-A gestão de acesso a prontuários é realizada pelo usuário, combinando os operadores lógicos e atributos que representam credenciais de acesso por quem as possui.
-No sistema, é denominado como autoridade ou certificador quem cria os atributos, publica na Blockchain e processa as requisições de concessão destes atributos.
+A política de acesso a prontuários é aplicada primariamente pelo paciente usando fórmulas lógicas em termos de atributos.
+Certificadores são os atores do sistema responsáveis pela criação e publicação de atributos, bem como a concessão de atributos sob sua posse aos usuários que necessitem delas e tenham, claro, o direito de solicitá-las.
+Os certificadores usam um Smart Contract para disponibilizar os atributos criados por eles aos usuários.
+Os usuários consultam por um endereço de carteira Ethereum neste mesmo Smart Contract e obtêm uma lista de atributos publicados em transações usando o endereço consultado, que pode ser uma lista vazia se ainda não existirem atributos publicados por aquele endereço.
+Desta forma, o endereço de carteira atua como a identificação primária de uma instituição certificadora e os atributos são reconhecidos como propriedade do dono do endereço da carteira responsável pelas suas publicações.
+A fim de permitir a identificação das instituições sem a necessidade de fontes de consulta externas à Blockchain, um Smart Contract próprio para a gestão de certificadores cataloga estas instituições, associando os endereços de carteira a um nome e contato de e-mail. % (ok) TODO qual operação?
+Instituições como o Ministério da Saúde, os Conselhos Federais e Regionais de Medicina, laboratórios, clínicas e hospitais se tornariam certificadores, passando a publicar atributos criados por eles.
+
 %Qualquer usuário pode se tornar um certificador, bastando publicar um atributo na Blockchain para que sejam registrados como tais em uma lista pública de certificadores mantida pelo contrato \emph{SmartDCPABEAuthority}.
-No sistema, entidades como o Ministério da Saúde, os Conselhos Federais e Regionais de Medicina, e todos os laboratórios, clínicas e hospitais se tornariam certificadores, passando a publicar atributos que seriam úteis para a escrita da política de acesso em um prontuário eletrônico do paciente.
-A identidade principal do certificador é seu endereço de carteira ao invés de seu nome, acrescentada ao sistema somente para facilitar a operação e prover um sistema de identificação básico na Blockchain sem a necessidade de terceiros. %TODO qual operação?
 
 % {\color{RoyalBlue} Professor, inicialmente comecei a descrever a forma com que uma autoridade se cadastrava no sistema, mas acabei entrando em detalhes técnicos. Estou pensando em mover isso para a seção \ref{sec:sub:ImplementacaoSmartContracts} na parte onde se fala do contrato \emph{SmartDCPABEAuthority}}
 
@@ -649,8 +653,8 @@ Para atingir este fim, buscou-se o denominador comum entre as exigências e rest
 
 {\color{magenta}Uma taxonomia permite ....(algumas linhas só)}. Assim, foi modelada uma taxonomia de acordo com os papéis envolvidos na gestão e uso dos dados médicos de paciente, partindo da análise das normas que regem o trabalho do profissional da saúde. % TODO: o texto em vermelho permitirá ao leitor entender o que é taxonomia.
 
-O Código de Ética Médica (CEM) trata da conduta médica em diversos casos e entre elas institui regras de conduta para o acesso e gestão de informações médicas. Ele provê os elementos necessários para a elaboração de uma taxonomia de condição de acesso a um prontuário médico, conforme mostra a Figura \ref{fig:taxonomiaPermissoes}. % TODO: usar PEPs (não usar prontuário médico pois é prontuário do paciente). Padronizar no texto todo
-A partir dessa taxonomia, é possível descrever qual será a política mínima padrão ao qual qualquer prontuário médico {\color{blue}no nosso sistema} deve se submeter:
+O Código de Ética Médica (CEM) trata da conduta médica em diversos casos e entre elas institui regras de conduta para o acesso e gestão de informações médicas. Ele provê os elementos necessários para a elaboração de uma taxonomia de condição de acesso a um prontuário do paciente, conforme mostra a Figura \ref{fig:taxonomiaPermissoes}. % TODO: usar PEPs (não usar prontuário médico pois é prontuário do paciente). Padronizar no texto todo
+A partir dessa taxonomia, é possível descrever qual será a política mínima padrão ao qual qualquer prontuário {\color{blue}no nosso sistema} deve se submeter:
 
 \[ CFM \vee CRM \vee Paciente \vee Terceiro\textnormal{-}Autorizado \]
 
@@ -665,7 +669,7 @@ Por exemplo a substituição dos elementos $Paciente$ em caso de prontuários de
 
 \[ CFM \vee CRM \vee Respons\acute{a}vel\textnormal{-}Legal \vee Terceiro\textnormal{-}Autorizado \]
 
-A taxonomia consegue estipular os diferentes papéis de acesso a um prontuário, mas ainda é necessário  categorizá-los nas diversas funções que terão acesso aos prontuários médicos (por exemplo, especialidades médicas, administrativas, etc).
+A taxonomia consegue estipular os diferentes papéis de acesso a um prontuário, mas ainda é necessário categorizá-los nas diversas funções que terão acesso aos prontuários médicos (por exemplo, especialidades médicas, administrativas, etc).
 A estratégia para propor uma categorização abrangente e relevante envolveu obter dados do DATASUS (Órgão que administra a consulta de informações do Sistema de Saúde Pública) sobre todas as profissões registradas na área da Saúde relativas ao início do ano de 2019 no Brasil.
 Na pesquisa obteve-se mais de 400 profissões distintas, que foram agregadas pelo nível de ensino e pela área de atuação.
 Isso resultou em uma segunda taxonomia, disponível no Anexo \ref{app:anexoI}, que serve como referência para a criação de atributos específicos para profissionais com escopos comuns entre os diversos certificadores. % TODO: (ok) no pdf diz Anexo 7 (está errado, deveria dizer Anexo I). Ver como criar anexo (não é como section).
