@@ -610,29 +610,31 @@ Ao recuperar esses metadados, o módulo cliente do Hematologista requisita o doc
 
 Nesta seção serão apresentadas as diferentes funcionalidades do módulo: geração da taxonomia dos atributos; como são criadas as permissões usando essa taxonomia; como são criptografados os arquivos usando essa taxonomia; como se conectar à Blockchain.
 
-\subsubsection{Taxonomia e criação de permissões}
+\subsubsection{Taxonomia e administração de permissões}
 \label{sec:sub:taxonomia-permissoes}
 % {\color{ForestGreen}Explicar que o servidor de permissões deverá ser responsabilidade de uma organização apta para entregar as permissões online (ex. Ministério de Saúde ou algúm conselho federal/regional de medicina) (1 parágrafo)}.
 
 A política de acesso a prontuários é aplicada primariamente pelo paciente usando fórmulas lógicas em termos de atributos.
-Certificadores são os atores do sistema responsáveis pela criação e publicação de atributos, bem como a concessão de atributos sob sua posse aos usuários que necessitem delas e tenham, claro, o direito de solicitá-las.
+Certificadores são os atores do sistema responsáveis pela criação, publicação e concessão de atributos criados aos usuários que necessitem deles (e tenham, claro, o direito de solicitá-los).
 Os certificadores usam um Smart Contract para disponibilizar os atributos criados por eles aos usuários.
-Os usuários consultam por um endereço de carteira Ethereum neste mesmo Smart Contract e obtêm uma lista de atributos publicados em transações usando o endereço consultado, que pode ser uma lista vazia se ainda não existirem atributos publicados por aquele endereço.
-Desta forma, o endereço de carteira atua como a identificação primária de uma instituição certificadora e os atributos são reconhecidos como propriedade do dono do endereço da carteira responsável pelas suas publicações.
-A fim de permitir a identificação das instituições sem a necessidade de fontes de consulta externas à Blockchain, um Smart Contract próprio para a gestão de certificadores cataloga estas instituições, associando os endereços de carteira a um nome e contato de e-mail. % (ok) TODO qual operação?
+Os usuários consultam por um endereço de carteira Ethereum neste mesmo Smart Contract e obtêm uma lista dos atributos publicados por meio do endereço consultado, que pode ser inclusive uma lista vazia, no caso de ainda não existirem atributos publicados por aquele endereço.
+Essa estruturação do Smart Contract faz do endereço de carteira Ethereum a identificação primária de uma instituição certificadora, já que é o meio utilizado para determinar quem é o proprietário de um atributo publicado no sistema.
+A fim de permitir a identificação das instituições sem a necessidade de fontes de consulta externas à Blockchain, também há um Smart Contract próprio para a gestão de certificadores e que cataloga estas instituições, associando os endereços de carteira a um nome e contato de e-mail. % (ok) TODO qual operação?
 Instituições como o Ministério da Saúde, os Conselhos Federais e Regionais de Medicina, laboratórios, clínicas e hospitais se tornariam certificadores, passando a publicar atributos criados por eles.
 
-%Qualquer usuário pode se tornar um certificador, bastando publicar um atributo na Blockchain para que sejam registrados como tais em uma lista pública de certificadores mantida pelo contrato \emph{SmartDCPABEAuthority}.
-
-% {\color{RoyalBlue} Professor, inicialmente comecei a descrever a forma com que uma autoridade se cadastrava no sistema, mas acabei entrando em detalhes técnicos. Estou pensando em mover isso para a seção \ref{sec:sub:ImplementacaoSmartContracts} na parte onde se fala do contrato \emph{SmartDCPABEAuthority}}
-
 Usar endereços de carteira Ethereum como a identidade principal de certificadores evita que um agente mal intencionado forje a identidade de um certificador já cadastrado, uma vez que para se passar por ele o atacante teria que derivar a chave privada a partir do endereço da carteira, o que computacionalmente é muito difícil.
-%Ainda resta o cenário onde um atacante se cadastra no sistema antes mesmo do certificador e usufrui desta posição até ser descoberto, lançando atributos que serviriam como backdoor nas políticas de acesso definidas pelo usuário, podendo acessar arquivos onde seus atributos fossem condição suficiente para a descriptografia.
-%Isso também poderia ser evitado ao assumir um esquema de consumo de tokens no ato do registro de uma autoridade no sistema, como por exemplo o hashing do nome da instituição e um endereço de carteira informado previamente ao responsável pela implantação do sistema.
-%A verificação da validade de uma solicitação de cadastro de uma autoridade seria simplesmente calcular o hashing da carteira e seu nome e verificar com essa lista de hashes disponíveis ao contrato.
-%Por não exporem informação sensível, esses hashes poderiam ser uma estrutura de dados no contrato que gerencia as autoridades ou constituir um contrato auxiliar próprio, que seria atualizado pelos administradores da implantação e utilizado pelo contrato principal.
+Para publicar atributos, a instituição precisa primeiro ter se registrado junto ao Smart Contract que administra os certificadores.
+O sistema proposto trabalha com um cenário sem impedimentos para o registro de novos certificadores no sistema por se tratar de uma prova de conceito.
+Em um cenário de produção, seria prudente aplicar restrições ao cadastro de novas instituições, adicionando por exemplo uma lista de endereços de administradores do sistema.
+\footnote{Todos os Smart Contracts já contam com funções de uso restrito a um administrador do sistema. Veja a sessão \ref{sec:sub:ImplementacaoSmartContracts:ContratosAuxiliares}, sobre o contrato SmartDCPABERoot}
+Em uma solução mais radical, os endereços de administrador seriam os únicos permitidos a usar a função de inclusão de novas instituições.
+Uma outra solução, menos restritiva e igualmente viável, é continuar permitindo que as instituições se cadastrem, mas exigir a apresentação de uma mensagem assinada por algum dos endereços de administração \cite{Marx2018}, contendo na mensagem um hash de um dado exclusivo daquela instituição, como o nome ou endereço de carteira dela.
+Nesse cenário, a instituição primeiro procuraria a administração do sistema e receberia dela uma assinatura e a informação do endereço assinante.
+Depois disso, a instituição encaminharia seus dados ao Smart Contract juntamente com a assinatura, que seria verificada pelo Smart Contract para confirmar que a assinatura é válida e que o endereço assinante também consta na lista de administradores.
 
 %{\color{ForestGreen}Explicar que a autenticação de uma pessoa para obter a permissão deverá ser realizada de forma externa ao sistema proposto (1 parágrafo).}
+
+%Qualquer usuário pode se tornar um certificador, bastando publicar um atributo na Blockchain para que sejam registrados como tais em uma lista pública de certificadores mantida pelo contrato \emph{SmartDCPABEAuthority}.
 
 Atributos são gerados a partir de requisições feitas por usuários e publicadas na Blockchain, por meio de um Smart Contract específico para armazená-las e atualizar o seu estado (e.g., se foi processada ou rejeitada).
 Para requisitar a concessão de um atributo é necessário que o usuário tenha previamente se registrado em um contrato específico, de gestão de usuários, informando sua carteira e alguns dados básicos de identificação.
@@ -851,7 +853,7 @@ A estrutura (\textit{struct}) Certifier armazena dados informações da autorida
 Além do endereço Ethereum, também é armazenado seu nome, e-mail e a quantidade de chaves que ele já publicou.
 Tal unidade de controle é necessária porque as chaves são armazenadas em \emph{mappings}, conforme explicitado na Sessão \ref{sec:sub:contratos-ethereum}.
 
-\paragraph{Contrato SmartDCPABEKeys}
+\textbf{Contrato SmartDCPABEKeys}
 
 %{\color{ForestGreen} Explicação do  SmartDCPABEKeys (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 
@@ -895,7 +897,7 @@ A estrutura \emph{PublicKey} armazena a chave pública gerada pela biblioteca \e
 O mapa \emph{publicKeyNames} mapeia um endereço de uma autoridade a uma lista de nomes de atributos, representados como bytes.
 O mapa \emph{ABEKeys} contém, para cada endereço cadastrado, um submapa relacionando o nome do atributo, representado em bytes, com uma chave pública.
 
-\paragraph{Contrato SmartDCPABEFiles}
+\textbf{Contrato SmartDCPABEFiles}
 
 %{\color{ForestGreen} Explicação do  SmartDCPABEFiles  (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 
@@ -951,7 +953,7 @@ A estrutura \emph{FileServer} contém informações para conexão com uma base d
 
 Além das estruturas, o contrato mantém uma lista de servidores \emph{servers} e um par de mapas \emph{files} e \emph{ciphertexts} com estrutura similar, mapeando endereços de usuários a submapas que associam, por sua vez, um nome de arquivo às estruturas de dados \emph{Recording} e \emph{Ciphertext} relacionadas àquele arquivo. %Disso segue-se que uma edição no conteúdo é mais barato que a alteração no nome do documento, uma vez que no caso do conteúdo somente o hashing e o timestamp são atualizados, enquanto que na renomeação o mapa armazena o arquivo como se fosse um novo, sendo necessário publicar os dados do arquivo e deletar aqueles que estavam disponibilizados.
 
-\paragraph{Contrato SmartDCPABERequests}
+\textbf{Contrato SmartDCPABERequests}
 
 %{\color{ForestGreen} Explicação do  SmartDCPABERequests  (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 
@@ -999,7 +1001,7 @@ O mapa \emph{requests} usa endereços de certificadores como chave primária par
 O mapa \emph{pendingRequests} segue esta mesma estrutura, com a diferença de apenas armazenar os índices das listas de requisições em \emph{requests} que estão pendentes de processamento.
 O mapa \emph{pendingRequesters} mantém os endereços de usuários com requisições pendentes em listas agregadas por certificador, possibilitando que estes possam iterar pelo mapa \emph{pendingRequests}, obtendo os índices de acesso das requisições de interesse gravadas em \emph{requests}.
 
-\paragraph{Contrato SmartDCPABEUsers}
+\textbf{Contrato SmartDCPABEUsers}
 
 %{\color{ForestGreen} Explicação do  SmartDCPABEUsers  (3 parágrafos). Ver abaixo os 3 parágrafos destrinchados.}
 
@@ -1032,9 +1034,12 @@ A lista \emph{userAddresses} armazena todos os endereços já cadastrados para p
 
 % {\color{RoyalBlue} esse parágrafo foi agregado ao anterior porque os dois são pequenos, afinal o código deste contrato é pequeno.}
 
-\paragraph{Contratos auxiliares}
+\textbf{Contratos auxiliares}
+\label{sec:sub:ImplementacaoSmartContracts:ContratosAuxiliares}
 
 Além dos contratos citados, foram criados dois contratos auxiliares: o \emph{SmartDCPABEUtility} que atua como uma biblioteca para os outros contratos, oferecendo funções de conversão de dados do tipo bytes em string e vice-versa, e o \emph{SmartDCPABERoot}, responsável por automatizar a gestão de dependências entre os contratos. % TODO: Na Figura não está esse contrato. Ele é o contenedor? insira na figura e explique em algumas linhas o que significa "automatizar a gestão ...."
+
+% TODO: (b) falar sobre o papel de administrador do SmartDCPABERoot
 
 \subsubsection{Integração com o ecossistema da Ethereum}
 
