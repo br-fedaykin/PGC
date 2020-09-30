@@ -615,22 +615,21 @@ Nesta seção serão apresentadas as diferentes funcionalidades do módulo: gera
 % {\color{ForestGreen}Explicar que o servidor de permissões deverá ser responsabilidade de uma organização apta para entregar as permissões online (ex. Ministério de Saúde ou algúm conselho federal/regional de medicina) (1 parágrafo)}.
 
 A política de acesso a prontuários é aplicada primariamente pelo paciente usando fórmulas lógicas em termos de atributos.
-Certificadores são os atores do sistema responsáveis pela criação, publicação e concessão de atributos criados aos usuários que necessitem deles (e tenham, claro, o direito de solicitá-los).
+Certificadores são os atores do sistema responsáveis pela criação, publicação e concessão de atributos aos usuários que necessitem deles (e tenham, claro, o direito de solicitá-los).
 Os certificadores usam um Smart Contract para disponibilizar os atributos criados por eles aos usuários.
-Os usuários consultam por um endereço de carteira Ethereum neste mesmo Smart Contract e obtêm uma lista dos atributos publicados por meio do endereço consultado, que pode ser inclusive uma lista vazia, no caso de ainda não existirem atributos publicados por aquele endereço.
+Os usuários consultam por um endereço de carteira Ethereum neste mesmo Smart Contract e obtêm uma lista dos atributos publicados pelo endereço consultado, que pode ser inclusive uma lista vazia, no caso de ainda não existirem atributos publicados por aquele endereço.
 Essa estruturação do Smart Contract faz do endereço de carteira Ethereum a identificação primária de uma instituição certificadora, já que é o meio utilizado para determinar quem é o proprietário de um atributo publicado no sistema.
 A fim de permitir a identificação das instituições sem a necessidade de fontes de consulta externas à Blockchain, também há um Smart Contract próprio para a gestão de certificadores e que cataloga estas instituições, associando os endereços de carteira a um nome e contato de e-mail. % (ok) TODO qual operação?
 Instituições como o Ministério da Saúde, os Conselhos Federais e Regionais de Medicina, laboratórios, clínicas e hospitais se tornariam certificadores, passando a publicar atributos criados por eles.
 
 Usar endereços de carteira Ethereum como a identidade principal de certificadores evita que um agente mal intencionado forje a identidade de um certificador já cadastrado, uma vez que para se passar por ele o atacante teria que derivar a chave privada a partir do endereço da carteira, o que computacionalmente é muito difícil.
 Para publicar atributos, a instituição precisa primeiro ter se registrado junto ao Smart Contract que administra os certificadores.
-O sistema proposto trabalha com um cenário sem impedimentos para o registro de novos certificadores no sistema por se tratar de uma prova de conceito.
-Em um cenário de produção, seria prudente aplicar restrições ao cadastro de novas instituições, adicionando por exemplo uma lista de endereços de administradores do sistema.
+O sistema proposto trabalha com um cenário sem impedimentos para o registro de novos certificadores.
+Entretanto, em um cenário de produção, seria prudente aplicar restrições ao cadastro de novas instituições, adicionando por exemplo uma lista de endereços de administradores para exercer algum tipo de controle nos contratos.
 \footnote{Todos os Smart Contracts já contam com funções de uso restrito a um administrador do sistema. Veja a sessão \ref{sec:sub:ImplementacaoSmartContracts:ContratosAuxiliares}, sobre o contrato SmartDCPABERoot}
 Em uma solução mais radical, os endereços de administrador seriam os únicos permitidos a usar a função de inclusão de novas instituições.
-Uma outra solução, menos restritiva e igualmente viável, é continuar permitindo que as instituições se cadastrem, mas exigir a apresentação de uma mensagem assinada por algum dos endereços de administração \cite{Marx2018}, contendo na mensagem um hash de um dado exclusivo daquela instituição, como o nome ou endereço de carteira dela.
-Nesse cenário, a instituição primeiro procuraria a administração do sistema e receberia dela uma assinatura e a informação do endereço assinante.
-Depois disso, a instituição encaminharia seus dados ao Smart Contract juntamente com a assinatura, que seria verificada pelo Smart Contract para confirmar que a assinatura é válida e que o endereço assinante também consta na lista de administradores.
+Uma outra solução, menos restritiva e igualmente viável, é manter a função de cadastro irrestrita, mas exigir a apresentação de uma mensagem assinada por algum dos endereços de administração \cite{Marx2018}, autorizando a entidade a realizar o cadastro.
+A mensagem seria pequena, contendo somente o hash de algum dado da instituição, como nome ou endereço de carteira, e o contrato verificaria se a assinatura da mensagem é válida e se o signatário é um dos administradores, efetivando o cadastro da instituição se a entrada estiver correta ou rejeitando, caso contrário.
 
 %{\color{ForestGreen}Explicar que a autenticação de uma pessoa para obter a permissão deverá ser realizada de forma externa ao sistema proposto (1 parágrafo).}
 
