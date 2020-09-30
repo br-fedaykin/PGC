@@ -594,7 +594,7 @@ Vamos supor que a política escolhida seja a seguinte:
 
 \[paciente \vee (Hospital\textnormal{-}Mario\textnormal{-}Covas \wedge Hematologista)\] % (ok) TODO: inserir um nome de um hospital (verificar todas as ocorrências de X)
 
-Essa política garante acesso ao próprio paciente e aos médicos da especialidade Hematologista que estejam vinculados ao Hospital Mário Covas\footnote{O Hospital foi referenciado neste texto somente para fins ilustrativos, e foi escolhido como exemplo pela proximidade geográfica, por ser de gestão pública e pela qualidade dos serviços, certificada pela ONA \cite{ONA2020}.}.
+Essa política garante acesso ao próprio paciente e aos médicos da especialidade Hematologista que estejam vinculados ao Hospital Mário Covas\footnote{O Hospital foi referenciado neste texto somente para fins ilustrativos, e foi escolhido como exemplo pela proximidade geográfica, por ser de gestão pública e pela qualidade dos serviços, conforme certificado pela ONA \cite{ONA2020}.}.
 A política pode ser descrita trocando os símbolos dos operadores lógicos pelo seus nomes em inglês, ou seja, ``paciente OR (Hospital-Mario-Covas AND Hematologista)''. % TODO: a qualquer paciente? Explicar brevemente como o sistema sabe que é ela (Alice) e não qualquer paciente
 Repare que a aplicação da política é realizada pelo próprio usuário, efetivamente entregando o controle da segurança da informação ao paciente e respeitando seu direito à privacidade da informação.
 
@@ -634,14 +634,18 @@ A mensagem seria pequena, contendo somente o hash de algum dado da instituição
 
 %{\color{ForestGreen}Explicar que a autenticação de uma pessoa para obter a permissão deverá ser realizada de forma externa ao sistema proposto (1 parágrafo).}
 
-%Qualquer usuário pode se tornar um certificador, bastando publicar um atributo na Blockchain para que sejam registrados como tais em uma lista pública de certificadores mantida pelo contrato \emph{SmartDCPABEAuthority}.
+Conceder um atributo a um usuário consiste em gerar uma chave única a partir da chave secreta do atributo, em posse do certificador, e do \emph{GID} do usuário.
+O módulo cliente permite a geração desta chave somente se for detectada a existência de um pedido registrado na Blockchain por parte do usuário.
+O usuário precisa publicar sua requisição de atributos (de um mesmo certificador) em um Smart Contract específico para a gestão de requisições, sendo classificadas como ``pendente'' até que o certificador atualize a situação do pedido.
+Só é possível alterar a situação de requisições quando pendentes, efetivamente consumindo a requisição no processo de atualização da situação.
+As situações refletem os possíveis resultados de uma requisição e foram padronizadas no mesmo Smart Contract que gerencia as requisições.
+Foram definidas as situações ``aprovado'' e ``rejeitado'', de acordo com as possíveis decisões do certificador, e outras poderiam ser criadas para descrever outros cenários a serem implementados como, por exemplo, o caso de uma concessão parcial dos atributos requisitados, ou para detalhar as condições em que uma requisição foi aprovada ou o motivo da rejeição.
+A uniformização das situações, o registro público das requisições na Blockchain e a obrigatoriedade da concessão ser feita somente mediante requisição do usuário constituem medidas preventivas visando dificultar a emissão indevida de atributos por parte da instituição certificadora.
+Após a geração da chave pessoal de um atributo, cabe ao certificador realizar a entrega de forma \emph{offline} (i.e, fora do sistema), pelas vias que ambos certificador e usuário concordarem ser seguro, como por exemplo e-mail criptografado, serviços web de envio de arquivos ou mesmo pela entrega pessoal da chave em mídia física.
 
-Atributos são gerados a partir de requisições feitas por usuários e publicadas na Blockchain, por meio de um Smart Contract específico para armazená-las e atualizar o seu estado (e.g., se foi processada ou rejeitada).
-Para requisitar a concessão de um atributo é necessário que o usuário tenha previamente se registrado em um contrato específico, de gestão de usuários, informando sua carteira e alguns dados básicos de identificação.
-Após a autoridade gerar uma chave pessoal do atributo, esta é encaminhada ao usuário de forma externa ao sistema (e.g., via correio eletrônico, que terá no conteúdo um link seguro para baixá-la). %, eliminando desta forma a existência de outros algoritmos e chaves que não fossem relacionados ao trabalho.
+% Após a autoridade gerar uma chave pessoal do atributo, esta é encaminhada ao usuário de forma externa ao sistema (e.g., via correio eletrônico, que terá no conteúdo um link seguro para baixá-la)., eliminando desta forma a existência de outros algoritmos e chaves que não fossem relacionados ao trabalho.
 %Teoricamente seria possível criar um canal seguro entre usuários sem a adição de outros algoritmos e chaves distintas das já utilizadas uma vez que o Ethereum cria um par de chaves que poderiam ser usadas como chaves assimétricas em um sistema de criptografia de curva-elíptica \emph{(Elliptic-Curve Cryptography - ECC)}, porém tal investigação está além do escopo deste trabalho\footnote{O par de chaves pública e privada geradas pelo Ethereum pertence à curva secp256k1, que não é considerada segura.
 %Estudar um sistema com essa capacidade envolveria em primeiro lugar a escolha de uma blockchain alternativa compatível com as curvas consideradas seguradas para realizar a ECC \cite{Bernstein2017}.}. % TODO: por enquanto vamos deixar de lado essa parte da segurança, pois está fora do contexto da seção que fala de taxonomia.
-Desta forma, uma vez geradas as chaves, fica a critério do certificador escolher o método de envio das mesmas, utilizando uma infraestrutura de TI própria, serviços de terceiros ou mesmo a cópia em mídia física.
 
 % {\color{ForestGreen}Explicar que foi realizada uma taxonomia das possíveis permissões que seriam utilizadas no sistema para o contexto médico. (3 parágrafos explicando como foi realizado o levantamento, me lembro que tinha um artigo e uma lista gigante que foi filtrada por quantidade de médicos).}
 
