@@ -592,9 +592,10 @@ Para isso, Alice %ela utiliza um programa específico para editar seu prontuári
 utiliza o módulo cliente para criptografar o documento, usando o esquema ABE, de acordo com uma política de acesso que ela tenha escolhido usar.
 Vamos supor que a política escolhida seja a seguinte:
 
-\[paciente \vee (Hospital-X \wedge Hematologista)\] % TODO: inserir um nome de um hospital (verificar todas as ocorrências de X)
+\[paciente \vee (Hospital\textnormal{-}Mario\textnormal{-}Covas \wedge Hematologista)\] % (ok) TODO: inserir um nome de um hospital (verificar todas as ocorrências de X)
 
-Essa política garante acesso ao próprio paciente e aos médicos da especialidade Hematologista que estejam vinculados ao Hospital-X. A política pode ser descrita trocando os símbolos dos operadores lógicos pelo seus nomes em inglês, ou seja, ``paciente OR (Hospital-X AND Hematologista)''. % TODO: a qualquer paciente? Explicar brevemente como o sistema sabe que é ela (Alice) e não qualquer paciente
+Essa política garante acesso ao próprio paciente e aos médicos da especialidade Hematologista que estejam vinculados ao Hospital Mário Covas\footnote{O Hospital foi referenciado neste texto somente para fins ilustrativos, e foi escolhido como exemplo pela proximidade geográfica, por ser de gestão pública e pela qualidade dos serviços, certificada pela ONA \cite{ONA2020}.}.
+A política pode ser descrita trocando os símbolos dos operadores lógicos pelo seus nomes em inglês, ou seja, ``paciente OR (Hospital-Mario-Covas AND Hematologista)''. % TODO: a qualquer paciente? Explicar brevemente como o sistema sabe que é ela (Alice) e não qualquer paciente
 Repare que a aplicação da política é realizada pelo próprio usuário, efetivamente entregando o controle da segurança da informação ao paciente e respeitando seu direito à privacidade da informação.
 
 Após o documento ser criptografado ele está pronto para ser enviado ao servidor.
@@ -603,7 +604,7 @@ Após a obtenção do código, realiza o envio à Blockchain informando diversos
 Caso não seja o primeiro envio do arquivo\footnote{Os arquivos são considerados os mesmos se tiverem o mesmo nome.}, o cliente enviará somente a nova versão do mesmo ao servidor.
 Caso haja alguma atualização nos dados ({\color{magenta}por exemplo ...}), o módulo cliente também alterará a Blockchain.
 
-Em um segundo momento, o Hematologista do Hospital-X, ciente do agendamento da consulta de Alice e em posse da  ficha cadastral onde conste sua carteira Ethereum cadastrada no sistema, usa o módulo cliente para consultar na Blockchain os metadados do arquivo que contêm informações de acesso ao servidor. % TODO: existe uma relação entre a carteira e o identificador mencionado antes? explicar melhor.
+Em um segundo momento, o Hematologista do Hospital Mário Covas, ciente do agendamento da consulta de Alice e em posse da  ficha cadastral onde conste sua carteira Ethereum cadastrada no sistema, usa o módulo cliente para consultar na Blockchain os metadados do arquivo que contêm informações de acesso ao servidor. % TODO: existe uma relação entre a carteira e o identificador mencionado antes? explicar melhor.
 Ao recuperar esses metadados, o módulo cliente do Hematologista requisita o documento criptografado ao servidor e o descriptografa, utilizando as chaves pessoais dos atributos referidos na política de acesso.
 
 \subsection{Módulo Cliente}
