@@ -316,7 +316,7 @@ As políticas de acesso foram aplicadas pelo próprio usuário pela aplicação 
 As políticas de acesso acabam todas usando atributos diferentes, emitidos por autoridades diferentes, mas um elemento em comum em todas elas é a presença do atributo ``\emph{emergência}'', conferindo o direito de acesso ao usuário que apresentar uma chave válida deste atributo.
 O administrador do centro de emergência tem posse da chave do atributo ``\emph{emergência}'' emitida por cada hospital parceiro e desta maneira tem o acesso aos prontuários que podem auxiliar na tomada de decisão quanto ao caso.
 Este cenário privilegia o atendimento de emergência ao considerar a presença prévia do atributo ``\emph{emergência}'' nas políticas de acesso, mas isto não constitui uma obrigatoriedade.
-Sem este atributo em um prontuário, este seria aplicado sob demanda, quando por exemplo um hospital recebesse um pedido de acesso ao prontuário junto a uma notificação de internação do paciente, sendo removido das condições de acesso quando tão logo fosse possível delegar a decisão ao paciente ou responsável legal que tenha a autorização de acesso ao prontuário.
+Sem este atributo em um prontuário, este seria aplicado sob demanda, quando por exemplo um hospital recebesse um pedido de acesso ao prontuário junto a uma notificação de internação do paciente, sendo removido das condições de acesso quando tão logo fosse possível delegar a decisão ao paciente ou seu representante legal.
 
 \subsection{Blockchain Ethereum}
 
@@ -685,7 +685,7 @@ Isso resultou em uma segunda taxonomia, disponível no Anexo \ref{app:anexoI}, q
 No sistema, a entidade certificadora responsável por emitir o atributo a um médico de ser o CRM de sua região de atuação. As demais entidades (por exemplo, hospitais) emitiriam os atributos que descrevem outros grupos de profissionais que também precisam acessar os dados do paciente, tais como setor administrativo ou o corpo de funcionários técnico-hospitalar.
 Os usuários, por exemplo, um paciente, também podem gerar atributos pré-definidos, porém diferentemente dos certificadores, estes não são publicados na Blockchain.
 A função destes atributos pré-definidos é conceder o acesso dele próprio e de terceiros ao prontuário. % TODO: esses atributos existem na figura da taxonomia? se não explicar melhor
-Esses atributos são: $Paciente$, $Terceiro\textnormal{-}Autorizado$ e $Respons\acute{a}vel\textnormal{-}Legal$. % TODO: representante legal?
+Esses atributos são: $Paciente$, $Terceiro\textnormal{-}Autorizado$ e $Representante\textnormal{-}Legal$. % TODO: (ok) representante legal?
 Como exemplo, este último, permite criptografar o prontuário de um outro usuário que não é juridicamente responsável por si mesmo (e.g., do filho recém-nascido).
 
 % {\color{ForestGreen}Figura da taxonomia}.
