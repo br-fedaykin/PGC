@@ -526,27 +526,36 @@ O projeto Ethereum em geral define esta mecânica de custos, junto a outras rest
 
 % {\color{ForestGreen}Explicar que o sistema é composto por X componentes (1 parágrafo).}
 
-A arquitetura do sistema proposto é constituída por 3 módulos: Cliente, Blockchain e Servidor.  Em linhas gerais, o módulo cliente, % que é o maior módulo,
-destinado para o uso tanto de autoridades (quem cria os atributos de acesso) quanto de usuários (quem usa o sistema), é responsável por %coordenar e integrar os demais módulos do sistema, incluindo os Smart Contracts implantados na EVM. Já o módulo cliente também oferece a funcionalidade de
-realizar operações criptográficas, utilizando o esquema ABE, e por se conectar com a Blockchain Ethereum.
-O módulo Blockchain é responsável pelo gerenciamento dos Smart Contracts, operando de forma autônoma e contínua, o que permite executar a lógica do sistema (e.g., verificação de inconsistência nos dados).
-Finalmente, o módulo servidor é responsável por armazenar e distribuir os arquivos criptografados pelo cliente.
-A seguir serão detalhados os módulos.
+A arquitetura do sistema proposto é constituída por 3 módulos: Cliente, Blockchain e Servidor.
+Em linhas gerais, o módulo Cliente oferece uma série de funções por linha de comando para a operação do sistema por parte de usuários comuns e certificadores.
+O módulo é usado tanto pelos certificadores para criação, publicação e concessão de atributos, quanto pelos usuários para aplicar operações criptográficas utilizando ABE, para publicação dos documentos criptografados na Blockchain e finalmente para realizar o envio e recuperação de dados ao servidor.
+O módulo Blockchain é constituído por Smart Contracts que operam de forma autônoma e contínua na Blockchain Ethereum, armazenando diversos dados relacionados a usuários, certificadores, atributos e documentos, processando todas as transações encaminhadas pelo módulo Cliente e realizando verificações adicionais em algumas delas, a fim de garantir a consistência interna dos dados armazenados.
+Finalmente, o módulo servidor é responsável por armazenar e distribuir os arquivos criptografados pelo módulo Cliente.
 
 % {\color{ForestGreen}Explicar a função de cada componente (1-2 parágrafos para cada um).}
 
 O módulo cliente é responsável por definir a lógica de funcionamento do sistema, coordenando as atividades dos demais componentes.
-Ele acumula funcionalidades que atendem tanto a usuários do sistema, quanto a autoridades certificadoras que outorgam atributos (tais como a profissão, e.g., se é enfermeiro ou radiologista).
-Isso ocorre porque parte da lógica das políticas de acesso considera que o próprio cliente (i.e., o certificador) possa criar os próprios atributos e concedê-los a terceiros (outros clientes).
+Ele acumula funcionalidades que atendem tanto aos usuários do sistema, quanto aos certificadores que outorgam atributos, atributos estes que vão representar basicamente categorias de profissões e instituições as quais os usuários estejam atrelados.
+O acúmulo das funções em um único módulo é proposital e objetiva permitir que um usuário possa se tornar um certificador, mas em um escopo reduzido onde não é permitido que os atributos criados por ele possam ser publicados na Blockchain, mas permite-se aplicá-los nos documentos nos quais o usuário for o dono, bem como emitir tais atributos a outros usuários, a fim de possibilitar ao paciente a liberação do acesso de outros usuários não relacionados com o serviço médico (i.e., terceiros de qualquer espécie como conhecidos, familiares, prestadores de serviços como convênios, seguradoras, peritos, etc) ao Prontuário Eletrônico do Paciente (PEP) dele, como será explicado mais adiante na seção \ref{sec:sub:taxonomia-permissoes}.
 
 O módulo servidor recebe, armazena e envia arquivos criptografados, operando como um serviço Web público na internet.
-Este módulo é tratado como um ambiente não-seguro de armazenamento dos dados, sujeito a um possível ataque que leve ao acesso não autorizado ou roubo de dados, por isto os arquivos enviados a ele sempre devem estar criptografados.
-Para impedir que um atacante ganhe informações por meio de um eventual acesso ilegítimo ao servidor, os arquivos não são vinculados aos dados de identidade do dono, mas a um código gerado de forma aleatória que passa a ser usado como componente de um endereço único para acesso do arquivo.
-O envio de um arquivo pelo cliente ao servidor se resume aos seguintes dois passos:
-solicitar no primeiro envio de dados a geração de um endereço único no servidor e, em seguida, publicar este mesmo endereço na Blockchain junto aos metadados do arquivo para garantir e validar a existência e uso do endereço.
-A publicação garante que o usuário interessado possa realizar uma requisição do arquivo ao servidor sem ter que expor a identidade ou dados pessoais do dono dele.
+Este módulo é tratado como um ambiente não-seguro de armazenamento dos dados, sujeito a um possível ataque que leve a acesso não autorizado e roubo de dados, e por esta razão os arquivos enviados a ele estão criptografados.
+Para impedir que um atacante ganhe informações por meio de um eventual acesso ilegítimo ao servidor, os arquivos não são vinculados aos dados de identidade do dono, mas a um código gerado de forma aleatória que passa a ser usado como componente de caminho de uma URI para o arquivo.
+A comunicação entre cliente e servidor de arquivos segue as seguintes etapas:
+\begin{itemize}
+  \item solicitar ao servidor, no primeiro envio de um arquivo, a geração de um endereço único para a composição de uma URI;
+  \item publicar o endereço da etapa anterior na Blockchain junto aos metadados do arquivo para indicar que o endereço será realmente utilizado pelo usuário para enviar o documento que passa a estar associado a ele pela publicação;
+  \item posteriormente, o cliente pode usar o endereço para requisitar o arquivo do servidor e enviar atualizações.
+\end{itemize}
 
-% Durante o desenvolvimento e experimentação este mesmo módulo armazenou, de forma temporária, as chaves pessoais de atributos gerados para usuários, mas isso de forma alguma é um requerimento desta solução. Estas chaves podem ser transferidas de maneira externa ao sistema, pela via que for considerada segura por ambos usuário e certificador, tais como mídia física, serviço de e-mail criptografado ou serviços de armazenamento em nuvem.
+O módulo Blockchain consiste em um conjunto de Smart Contracts responsáveis por armazenar diversas estruturas de dados e para impor mecanismos de verificações quanto à validade de transações que levem à inserção ou alteração dos dados lá armazenados.
+Existem ao todo oito contratos, descritos na subseção \ref{sec:sub:ImplementacaoSmartContracts}, que conjuntamente tratam da gestão de usuários, certificadores, atributos, requisições para concessão de atributos e documentos.
+Os contratos também possuem funções de pesquisa e a recuperação de dados que são utilizados em determinadas operações pelo módulo Cliente para manter a consistência de seu cache local.
+Os contratos foram desenvolvidos para operar na rede Ethereum, escolhida principalmente por ser o projeto de criptomoeda pioneiro no suporte nativo à execução de Smart Contracts e por ser o mais bem-sucedido entre as alternativas, considerando como métricas de sucesso o tamanho da comunidade de usuários, de desenvolvedores e a posição relevante ao longo do tempo no mercado de criptomoedas
+\footnote{O anexo \ref{app:outrasCriptomoedasSmartContracts} contém uma análise que fundamenta esta afirmação.}.
+O ecossistema Ethereum conta com diversas ferramentas, entre elas a biblioteca Web3j, usada nesta trabalho para conectar o código Java com a Blockchain do Ethereum.
+A Web3j oferece uma interface Java para o acesso e interação com a Blockchain e permite a geração de classes Java compatíveis com essa interface a partir dos artefatos provenientes da compilação de Smart Contracts.
+A Web3j também permite a configuração de diferentes redes compatíveis com o protocolo Ethereum, incluindo a rede principal, as redes públicas de teste ou mesmo uma conexão com uma Blockchain privada local.
 
 O módulo Blockchain é responsável por armazenar de forma permanente e imutável {\color{blue}os metadados} dos documentos criptografados e suas respectivas políticas de acesso.
 Smart Contracts são usados para impor verificações quanto à validade de transações que levem à inserção ou alteração de dados cadastrados na Blockchain, e fornecem também métodos para permitir a pesquisa e facilitar a recuperação dos dados armazenados.
@@ -682,7 +691,7 @@ Por exemplo a substituição dos elementos $Paciente$ em caso de prontuários de
 A taxonomia consegue estipular os diferentes papéis de acesso a um prontuário, mas ainda é necessário categorizá-los nas diversas funções que terão acesso aos prontuários médicos (por exemplo, especialidades médicas, administrativas, etc).
 A estratégia para propor uma categorização abrangente e relevante envolveu obter dados do DATASUS (Órgão que administra a consulta de informações do Sistema de Saúde Pública) sobre todas as profissões registradas na área da Saúde relativas ao início do ano de 2019 no Brasil.
 Na pesquisa obteve-se mais de 400 profissões distintas, que foram agregadas pelo nível de ensino e pela área de atuação.
-Isso resultou em uma segunda taxonomia, disponível no Anexo \ref{app:anexoI}, que serve como referência para a criação de atributos específicos para profissionais com escopos comuns entre os diversos certificadores. % TODO: (ok) no pdf diz Anexo 7 (está errado, deveria dizer Anexo I). Ver como criar anexo (não é como section).
+Isso resultou em uma segunda taxonomia, disponível no Anexo \ref{app:taxonomiaProfissões}, que serve como referência para a criação de atributos específicos para profissionais com escopos comuns entre os diversos certificadores. % TODO: (ok) no pdf diz Anexo 7 (está errado, deveria dizer Anexo I). Ver como criar anexo (não é como section).
 
 No sistema, a entidade certificadora responsável por emitir o atributo a um médico de ser o CRM de sua região de atuação. As demais entidades (por exemplo, hospitais) emitiriam os atributos que descrevem outros grupos de profissionais que também precisam acessar os dados do paciente, tais como setor administrativo ou o corpo de funcionários técnico-hospitalar.
 Os usuários, por exemplo, um paciente, também podem gerar atributos pré-definidos, porém diferentemente dos certificadores, estes não são publicados na Blockchain.
@@ -1386,7 +1395,7 @@ Os mesmos arquivos que foram criptografados.
 % -------------------------------------------------------------------- %
 \appendix
 \section{Taxonomia de profissões na área da saúde}
-\label{app:anexoI}
+\label{app:taxonomiaProfissões}
 PESSOAL DE SAÚDE - NÍVEL SUPERIOR
 \begin{enumerate}
     \item ANESTESISTA
@@ -1443,7 +1452,12 @@ PESSOAL ADMINISTRATIVO
 \end{enumerate}
 
 \newpage
+\section{Projetos de Criptomoedas com suporte nativo à execução de Smart Contracts}
+\label{app:outrasCriptomoedasSmartContracts}
+
+\newpage
 \section{Código fonte dos Smart Contracts}
+\label{app:codigoSmartContracts}
 
 \end{document}
 % TODO: solicitar ao servidor? explicar melhor
