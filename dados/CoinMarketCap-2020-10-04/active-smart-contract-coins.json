@@ -1,0 +1,1928 @@
+{
+    "512": {
+        "id": 512,
+        "name": "Stellar",
+        "symbol": "XLM",
+        "category": "coin",
+        "description": "Stellar (XLM) is a cryptocurrency . Stellar has a current supply of 50,001,803,716.87172 with 20,762,228,212.97236 in circulation. The last known price of Stellar is 0.0722012 USD and is up 1.38 over the last 24 hours. It is currently trading on 309 active market(s) with $105,644,835.04 traded over the last 24 hours. More information can be found at https://www.stellar.org.",
+        "slug": "stellar",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/512.png",
+        "subreddit": "stellar",
+        "notice": "",
+        "tags": [
+            "medium-of-exchange",
+            "enterprise-solutions",
+            "decentralized-exchange",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "Medium of Exchange",
+            "Enterprise solutions",
+            "Decentralized exchange",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://www.stellar.org"
+            ],
+            "twitter": [
+                "https://twitter.com/StellarOrg"
+            ],
+            "message_board": [
+                "https://stellarcommunity.org/",
+                "https://galactictalk.org/"
+            ],
+            "chat": [
+                "http://slack.stellar.org/"
+            ],
+            "explorer": [
+                "https://dashboard.stellar.org/",
+                "https://stellar.expert/explorer/public/",
+                "https://steexp.com/",
+                "https://blockchair.com/stellar"
+            ],
+            "reddit": [
+                "https://reddit.com/r/stellar"
+            ],
+            "technical_doc": [
+                "https://www.stellar.org/papers/stellar-consensus-protocol.pdf"
+            ],
+            "source_code": [
+                "https://github.com/stellar"
+            ],
+            "announcement": [
+                "https://bitcointalk.org/index.php?topic=1428573.0"
+            ]
+        },
+        "platform": null,
+        "date_added": "2014-08-05T00:00:00.000Z",
+        "twitter_username": "StellarOrg",
+        "is_hidden": 0,
+        "rank": 18,
+        "is_active": 1,
+        "first_historical_data": "2014-08-05T05:44:19.000Z",
+        "last_historical_data": "2020-10-04T16:14:23.000Z"
+    },
+    "873": {
+        "id": 873,
+        "name": "NEM",
+        "symbol": "XEM",
+        "category": "coin",
+        "description": "NEM (XEM) is a cryptocurrency . NEM has a current supply of 8,999,999,999. The last known price of NEM is 0.11356386 USD and is down -0.71 over the last 24 hours. It is currently trading on 96 active market(s) with $18,384,809.96 traded over the last 24 hours. More information can be found at http://nem.io.",
+        "slug": "nem",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/873.png",
+        "subreddit": "nem",
+        "notice": "",
+        "tags": [
+            "poi",
+            "medium-of-exchange",
+            "payments",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "PoI",
+            "Medium of Exchange",
+            "Payments",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "CONSENSUS_ALGORITHM",
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "http://nem.io"
+            ],
+            "twitter": [
+                "https://twitter.com/NEMofficial"
+            ],
+            "message_board": [
+                "https://forum.nem.io/"
+            ],
+            "chat": [
+                "https://t.me/nemred"
+            ],
+            "explorer": [
+                "http://chain.nem.ninja/",
+                "http://explorer.nemtool.com/"
+            ],
+            "reddit": [
+                "https://reddit.com/r/nem"
+            ],
+            "technical_doc": [
+                "https://nem.io/wp-content/themes/nem/files/NEM_techRef.pdf"
+            ],
+            "source_code": [
+                "https://github.com/nemtech"
+            ],
+            "announcement": [
+                "https://bitcointalk.org/index.php?topic=654845.0"
+            ]
+        },
+        "platform": null,
+        "date_added": "2015-04-01T00:00:00.000Z",
+        "twitter_username": "NEMofficial",
+        "is_hidden": 0,
+        "rank": 22,
+        "is_active": 1,
+        "first_historical_data": "2015-04-01T00:29:41.000Z",
+        "last_historical_data": "2020-10-04T16:14:24.000Z"
+    },
+    "1027": {
+        "id": 1027,
+        "name": "Ethereum",
+        "symbol": "ETH",
+        "category": "coin",
+        "description": "Ethereum (ETH) is a cryptocurrency . Users are able to generate ETH through the process of mining. Ethereum has a current supply of 112,867,671.1865. The last known price of Ethereum is 348.77088888 USD and is up 0.28 over the last 24 hours. It is currently trading on 6215 active market(s) with $9,858,783,981.00 traded over the last 24 hours. More information can be found at https://www.ethereum.org/.",
+        "slug": "ethereum",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
+        "subreddit": "ethereum",
+        "notice": "",
+        "tags": [
+            "mineable",
+            "pow",
+            "smart-contracts",
+            "binance-chain"
+        ],
+        "tag-names": [
+            "Mineable",
+            "PoW",
+            "Smart Contracts",
+            "Binance Chain"
+        ],
+        "tag-groups": [
+            "OTHER",
+            "CONSENSUS_ALGORITHM",
+            "PROPERTY",
+            "PLATFORM"
+        ],
+        "urls": {
+            "website": [
+                "https://www.ethereum.org/"
+            ],
+            "twitter": [
+                "https://twitter.com/ethereum"
+            ],
+            "message_board": [
+                "https://forum.ethereum.org/"
+            ],
+            "chat": [
+                "https://gitter.im/orgs/ethereum/rooms"
+            ],
+            "explorer": [
+                "https://blockchain.coinmarketcap.com/chain/ethereum",
+                "https://etherscan.io/",
+                "https://ethplorer.io/",
+                "https://blockchair.com/ethereum",
+                "https://eth.tokenview.com/en/blocklist"
+            ],
+            "reddit": [
+                "https://reddit.com/r/ethereum"
+            ],
+            "technical_doc": [
+                "https://github.com/ethereum/wiki/wiki/White-Paper"
+            ],
+            "source_code": [
+                "https://github.com/ethereum"
+            ],
+            "announcement": [
+                "https://bitcointalk.org/index.php?topic=428589.0"
+            ]
+        },
+        "platform": null,
+        "date_added": "2015-08-07T00:00:00.000Z",
+        "twitter_username": "ethereum",
+        "is_hidden": 0,
+        "rank": 2,
+        "is_active": 1,
+        "first_historical_data": "2015-08-07T14:49:30.000Z",
+        "last_historical_data": "2020-10-04T16:14:39.000Z"
+    },
+    "1214": {
+        "id": 1214,
+        "name": "Lisk",
+        "symbol": "LSK",
+        "category": "coin",
+        "description": "Lisk (LSK) is a cryptocurrency . Lisk has a current supply of 142,056,992 with 126,024,936.48207629 in circulation. The last known price of Lisk is 1.10861089 USD and is up 0.08 over the last 24 hours. It is currently trading on 63 active market(s) with $1,542,805.26 traded over the last 24 hours. More information can be found at https://lisk.io/.",
+        "slug": "lisk",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1214.png",
+        "subreddit": "lisk",
+        "notice": "",
+        "tags": [
+            "dpos",
+            "platform",
+            "enterprise-solutions",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "DPoS",
+            "Platform",
+            "Enterprise solutions",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "CONSENSUS_ALGORITHM",
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://lisk.io/"
+            ],
+            "twitter": [
+                "https://twitter.com/LiskHQ"
+            ],
+            "message_board": [
+                "https://blog.lisk.io/"
+            ],
+            "chat": [
+                "https://lisk.chat/"
+            ],
+            "explorer": [
+                "https://explorer.lisk.io/"
+            ],
+            "reddit": [
+                "https://reddit.com/r/lisk"
+            ],
+            "technical_doc": [
+                "https://lisk.io/documentation/home"
+            ],
+            "source_code": [
+                "https://github.com/LiskHQ/"
+            ],
+            "announcement": [
+                "https://bitcointalk.org/index.php?topic=1346646"
+            ]
+        },
+        "platform": null,
+        "date_added": "2016-04-06T00:00:00.000Z",
+        "twitter_username": "LiskHQ",
+        "is_hidden": 0,
+        "rank": 69,
+        "is_active": 1,
+        "first_historical_data": "2016-04-06T20:19:57.000Z",
+        "last_historical_data": "2020-10-04T16:14:25.000Z"
+    },
+    "1274": {
+        "id": 1274,
+        "name": "Waves",
+        "symbol": "WAVES",
+        "category": "coin",
+        "description": "Waves (WAVES) is a cryptocurrency . Waves has a current supply of 103,176,850. The last known price of Waves is 2.36299836 USD and is down -3.72 over the last 24 hours. It is currently trading on 162 active market(s) with $29,183,343.38 traded over the last 24 hours. More information can be found at https://waves.tech/.",
+        "slug": "waves",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1274.png",
+        "subreddit": "Wavesplatform",
+        "notice": "",
+        "tags": [
+            "lpos",
+            "platform",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "LPoS",
+            "Platform",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "CONSENSUS_ALGORITHM",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://waves.tech/",
+                "https://medium.com/wavesprotocol"
+            ],
+            "twitter": [
+                "https://twitter.com/wavesprotocol"
+            ],
+            "message_board": [
+                "https://forum.wavesplatform.com/",
+                "https://wavestalk.org/"
+            ],
+            "chat": [
+                "https://t.me/Wavescommunity",
+                "https://discordapp.com/invite/cnFmDyA"
+            ],
+            "explorer": [
+                "http://wavesexplorer.com/",
+                "http://wavesgo.com/"
+            ],
+            "reddit": [
+                "https://reddit.com/r/Wavesplatform"
+            ],
+            "technical_doc": [
+                "https://docs.wavesprotocol.org/en/"
+            ],
+            "source_code": [
+                "https://github.com/wavesplatform/"
+            ],
+            "announcement": [
+                "https://bitcointalk.org/index.php?topic=3223136.0"
+            ]
+        },
+        "platform": null,
+        "date_added": "2016-06-02T00:00:00.000Z",
+        "twitter_username": "wavesprotocol",
+        "is_hidden": 0,
+        "rank": 56,
+        "is_active": 1,
+        "first_historical_data": "2016-06-02T21:14:30.000Z",
+        "last_historical_data": "2020-10-04T16:14:25.000Z"
+    },
+    "1321": {
+        "id": 1321,
+        "name": "Ethereum Classic",
+        "symbol": "ETC",
+        "category": "coin",
+        "description": "Ethereum Classic (ETC) is a cryptocurrency . Users are able to generate ETC through the process of mining. Ethereum Classic has a current supply of 116,313,299. The last known price of Ethereum Classic is 5.14876658 USD and is down -0.26 over the last 24 hours. It is currently trading on 267 active market(s) with $761,528,415.91 traded over the last 24 hours. More information can be found at https://ethereumclassic.org/.",
+        "slug": "ethereum-classic",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1321.png",
+        "subreddit": "EthereumClassic",
+        "notice": "",
+        "tags": [
+            "mineable",
+            "pow",
+            "ethash",
+            "platform",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "Mineable",
+            "PoW",
+            "Ethash",
+            "Platform",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "OTHER",
+            "CONSENSUS_ALGORITHM",
+            "CONSENSUS_ALGORITHM",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://ethereumclassic.org/"
+            ],
+            "twitter": [
+                "https://twitter.com/eth_classic"
+            ],
+            "message_board": [
+                "https://forum.ethereumclassic.org/"
+            ],
+            "chat": [
+                "https://discord.gg/HW4GckH",
+                "https://telegram.me/ethclassic"
+            ],
+            "explorer": [
+                "https://blockscout.com/etc/mainnet/",
+                "https://expedition.dev/?network=mainnet",
+                "https://etc.tokenview.com/en",
+                "https://etcblockexplorer.com/home"
+            ],
+            "reddit": [
+                "https://reddit.com/r/EthereumClassic"
+            ],
+            "technical_doc": [],
+            "source_code": [
+                "https://github.com/ethereumclassic"
+            ],
+            "announcement": [
+                "https://bitcointalk.org/index.php?topic=1559630.0"
+            ]
+        },
+        "platform": null,
+        "date_added": "2016-07-24T00:00:00.000Z",
+        "twitter_username": "eth_classic",
+        "is_hidden": 0,
+        "rank": 32,
+        "is_active": 1,
+        "first_historical_data": "2016-07-24T13:44:30.000Z",
+        "last_historical_data": "2020-10-04T16:14:26.000Z"
+    },
+    "1376": {
+        "id": 1376,
+        "name": "Neo",
+        "symbol": "NEO",
+        "category": "coin",
+        "description": "Neo (NEO) is a cryptocurrency . Neo has a current supply of 100,000,000 with 70,538,831 in circulation. The last known price of Neo is 17.78540651 USD and is down -1.81 over the last 24 hours. It is currently trading on 252 active market(s) with $312,370,414.44 traded over the last 24 hours. More information can be found at https://neo.org/.",
+        "slug": "neo",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1376.png",
+        "subreddit": "NEO",
+        "notice": "",
+        "tags": [
+            "platform",
+            "enterprise-solutions",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "Platform",
+            "Enterprise solutions",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://neo.org/"
+            ],
+            "twitter": [
+                "https://twitter.com/neo_blockchain"
+            ],
+            "message_board": [],
+            "chat": [],
+            "explorer": [
+                "https://neoscan.io/",
+                "https://explorer.o3.network/",
+                "https://neo.tokenview.com/"
+            ],
+            "reddit": [
+                "https://reddit.com/r/NEO"
+            ],
+            "technical_doc": [
+                "https://docs.neo.org/docs/en-us/index.html"
+            ],
+            "source_code": [
+                "https://github.com/neo-project"
+            ],
+            "announcement": [
+                "https://bitcointalk.org/index.php?topic=2057932.0"
+            ]
+        },
+        "platform": null,
+        "date_added": "2016-09-08T00:00:00.000Z",
+        "twitter_username": "neo_blockchain",
+        "is_hidden": 0,
+        "rank": 19,
+        "is_active": 1,
+        "first_historical_data": "2016-09-09T03:09:33.000Z",
+        "last_historical_data": "2020-10-04T16:14:26.000Z"
+    },
+    "1684": {
+        "id": 1684,
+        "name": "Qtum",
+        "symbol": "QTUM",
+        "category": "coin",
+        "description": "Qtum (QTUM) is a cryptocurrency . Qtum has a current supply of 102,799,104 with 97,279,683.6605668 in circulation. The last known price of Qtum is 2.28736897 USD and is down -1.59 over the last 24 hours. It is currently trading on 187 active market(s) with $190,444,860.45 traded over the last 24 hours. More information can be found at https://qtum.org/.",
+        "slug": "qtum",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1684.png",
+        "subreddit": "Qtum",
+        "notice": "",
+        "tags": [
+            "platform",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "Platform",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://qtum.org/"
+            ],
+            "twitter": [
+                "https://twitter.com/qtum"
+            ],
+            "message_board": [],
+            "chat": [
+                "https://t.me/joinchat/D5oBaw29NeOdpw6qqqf2lw"
+            ],
+            "explorer": [
+                "https://qtum.info/",
+                "https://qtumexplorer.io/"
+            ],
+            "reddit": [
+                "https://reddit.com/r/Qtum"
+            ],
+            "technical_doc": [
+                "https://qtum.org/uploads/files/a2772efe4dc8ed1100319c6480195fb1.pdf"
+            ],
+            "source_code": [
+                "https://github.com/qtumproject/qtum/"
+            ],
+            "announcement": [
+                "https://bitcointalk.org/index.php?topic=1720632.0"
+            ]
+        },
+        "platform": null,
+        "date_added": "2017-05-24T00:00:00.000Z",
+        "twitter_username": "qtum",
+        "is_hidden": 0,
+        "rank": 61,
+        "is_active": 1,
+        "first_historical_data": "2017-05-24T15:19:53.000Z",
+        "last_historical_data": "2020-10-04T16:14:28.000Z"
+    },
+    "1703": {
+        "id": 1703,
+        "name": "Metaverse ETP",
+        "symbol": "ETP",
+        "category": "coin",
+        "description": "Metaverse ETP (ETP) is a cryptocurrency . Users are able to generate ETP through the process of mining. Metaverse ETP has a current supply of 79,051,837.72953716 with 79,051,733.16523714 in circulation. The last known price of Metaverse ETP is 0.1716946 USD and is down -0.10 over the last 24 hours. It is currently trading on 20 active market(s) with $143,797.56 traded over the last 24 hours. More information can be found at https://mvs.org/.",
+        "slug": "metaverse",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1703.png",
+        "subreddit": "Metaverse_Blockchain",
+        "notice": "",
+        "tags": [
+            "mineable",
+            "asset-management",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "Mineable",
+            "Asset management",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "OTHER",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://mvs.org/"
+            ],
+            "twitter": [
+                "https://twitter.com/mvs_org"
+            ],
+            "message_board": [
+                "http://blog.mvs.org/"
+            ],
+            "chat": [
+                "https://t.me/Metaverse_Blockchain",
+                "https://discordapp.com/invite/ubgMRts"
+            ],
+            "explorer": [
+                "https://explorer.mvs.org/",
+                "http://explorer.mvs.live/",
+                "http://mymvs.info/"
+            ],
+            "reddit": [
+                "https://reddit.com/r/Metaverse_Blockchain"
+            ],
+            "technical_doc": [
+                "http://newmetaverse.org/white-paper/Metaverse-white-paper-v2.1-EN.pdf"
+            ],
+            "source_code": [
+                "http://github.com/mvs-org"
+            ],
+            "announcement": [
+                "https://bitcointalk.org/index.php?topic=2134505.0"
+            ]
+        },
+        "platform": null,
+        "date_added": "2017-06-05T00:00:00.000Z",
+        "twitter_username": "mvs_org",
+        "is_hidden": 0,
+        "rank": 410,
+        "is_active": 1,
+        "first_historical_data": "2017-06-05T19:09:56.000Z",
+        "last_historical_data": "2020-10-04T16:14:28.000Z"
+    },
+    "1765": {
+        "id": 1765,
+        "name": "EOS",
+        "symbol": "EOS",
+        "category": "coin",
+        "description": "EOS (EOS) is a cryptocurrency . EOS has a current supply of 1,023,308,483.5619 with 936,608,472.3965 in circulation. The last known price of EOS is 2.51996644 USD and is up 0.89 over the last 24 hours. It is currently trading on 451 active market(s) with $1,899,616,836.55 traded over the last 24 hours. More information can be found at https://eos.io/.",
+        "slug": "eos",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1765.png",
+        "subreddit": "EOS",
+        "notice": "",
+        "tags": [
+            "medium-of-exchange",
+            "enterprise-solutions",
+            "smart-contracts",
+            "binance-chain"
+        ],
+        "tag-names": [
+            "Medium of Exchange",
+            "Enterprise solutions",
+            "Smart Contracts",
+            "Binance Chain"
+        ],
+        "tag-groups": [
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY",
+            "PLATFORM"
+        ],
+        "urls": {
+            "website": [
+                "https://eos.io/"
+            ],
+            "twitter": [
+                "https://twitter.com/block_one_"
+            ],
+            "message_board": [],
+            "chat": [
+                "https://t.me/joinchat/AAAAAEQbOeucnaMWN0A9dQ"
+            ],
+            "explorer": [
+                "https://bloks.io/",
+                "https://eosflare.io/",
+                "https://eospark.com/",
+                "https://www.eosx.io/?partner=coinmarketcap"
+            ],
+            "reddit": [
+                "https://reddit.com/r/EOS"
+            ],
+            "technical_doc": [
+                "https://github.com/EOSIO/Documentation/blob/master/TechnicalWhitePaper.md"
+            ],
+            "source_code": [
+                "https://github.com/eosio"
+            ],
+            "announcement": [
+                "https://bitcointalk.org/index.php?topic=1904415.0"
+            ]
+        },
+        "platform": null,
+        "date_added": "2017-07-01T00:00:00.000Z",
+        "twitter_username": "block_one_",
+        "is_hidden": 0,
+        "rank": 14,
+        "is_active": 1,
+        "first_historical_data": "2017-07-01T19:14:14.000Z",
+        "last_historical_data": "2020-10-04T16:14:29.000Z"
+    },
+    "1866": {
+        "id": 1866,
+        "name": "Bytom",
+        "symbol": "BTM",
+        "category": "coin",
+        "description": "Bytom (BTM) is a cryptocurrency . Users are able to generate BTM through the process of mining. Bytom has a current supply of 1,624,494,337.5 with 1,377,209,406.503 in circulation. The last known price of Bytom is 0.06604029 USD and is down -0.41 over the last 24 hours. It is currently trading on 53 active market(s) with $9,057,146.11 traded over the last 24 hours. More information can be found at http://bytom.io/.",
+        "slug": "bytom",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1866.png",
+        "subreddit": "BytomBlockchain",
+        "notice": "",
+        "tags": [
+            "mineable",
+            "platform",
+            "payments",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "Mineable",
+            "Platform",
+            "Payments",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "OTHER",
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "http://bytom.io/"
+            ],
+            "twitter": [
+                "https://twitter.com/Bytom_Official"
+            ],
+            "message_board": [],
+            "chat": [
+                "https://t.me/BytomInternational",
+                "https://t.me/bytomchinese"
+            ],
+            "explorer": [
+                "https://blockmeta.com/",
+                "https://btm.tokenview.com/"
+            ],
+            "reddit": [
+                "https://reddit.com/r/BytomBlockchain"
+            ],
+            "technical_doc": [
+                "https://github.com/Bytom/wiki"
+            ],
+            "source_code": [
+                "https://github.com/Bytom/bytom"
+            ],
+            "announcement": [
+                "https://bitcointalk.org/index.php?topic=1975390.0"
+            ]
+        },
+        "platform": null,
+        "date_added": "2017-08-08T00:00:00.000Z",
+        "twitter_username": "Bytom_Official",
+        "is_hidden": 0,
+        "rank": 103,
+        "is_active": 1,
+        "first_historical_data": "2017-08-08T21:39:25.000Z",
+        "last_historical_data": "2020-10-04T16:14:30.000Z"
+    },
+    "1918": {
+        "id": 1918,
+        "name": "Achain",
+        "symbol": "ACT",
+        "category": "coin",
+        "description": "Achain (ACT) is a cryptocurrency . Achain has a current supply of 1,000,000,000 with 973,999,997.93063 in circulation. The last known price of Achain is 0.00838883 USD and is up 0.45 over the last 24 hours. It is currently trading on 24 active market(s) with $9,412,131.51 traded over the last 24 hours. More information can be found at https://www.achain.com/.",
+        "slug": "achain",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1918.png",
+        "subreddit": "Achain_Official",
+        "notice": "",
+        "tags": [
+            "dpos",
+            "platform",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "DPoS",
+            "Platform",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "CONSENSUS_ALGORITHM",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://www.achain.com/"
+            ],
+            "twitter": [
+                "https://twitter.com/achainofficial"
+            ],
+            "message_board": [],
+            "chat": [
+                "https://t.me/joinchat/GbZKzQ5-wexioFquTyAXmg"
+            ],
+            "explorer": [
+                "https://browser.achain.com/"
+            ],
+            "reddit": [
+                "https://reddit.com/r/Achain_Official"
+            ],
+            "technical_doc": [
+                "https://www.achain.com/Achain%20Whitepaper%202.0_EN.pdf"
+            ],
+            "source_code": [
+                "https://github.com/Achain-Dev/Achain"
+            ],
+            "announcement": [
+                "https://cryptomaa.com/coin/ACT/"
+            ]
+        },
+        "platform": null,
+        "date_added": "2017-08-27T00:00:00.000Z",
+        "twitter_username": "achainofficial",
+        "is_hidden": 0,
+        "rank": 532,
+        "is_active": 1,
+        "first_historical_data": "2017-08-27T19:45:10.000Z",
+        "last_historical_data": "2020-10-04T16:14:31.000Z"
+    },
+    "1993": {
+        "id": 1993,
+        "name": "Kin",
+        "symbol": "KIN",
+        "category": "coin",
+        "description": "Kin (KIN) is a cryptocurrency . Kin has a current supply of 10,000,000,000,000 with 1,518,114,145,968 in circulation. The last known price of Kin is 0.0000054 USD and is down -24.18 over the last 24 hours. It is currently trading on 24 active market(s) with $67,383.88 traded over the last 24 hours. More information can be found at https://www.kin.org/.",
+        "slug": "kin",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1993.png",
+        "subreddit": "KinFoundation",
+        "notice": "",
+        "tags": [
+            "media",
+            "content-creation",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "Media",
+            "Content Creation",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://www.kin.org/",
+                "https://kin.kik.com"
+            ],
+            "twitter": [
+                "https://twitter.com/kin_foundation"
+            ],
+            "message_board": [
+                "https://medium.com/kinfoundation"
+            ],
+            "chat": [
+                "https://t.me/kincurrency"
+            ],
+            "explorer": [
+                "https://www.kin.org/blockchainExplorer/"
+            ],
+            "reddit": [
+                "https://reddit.com/r/KinFoundation"
+            ],
+            "technical_doc": [
+                "https://kinecosystem.org/static/files/Kin_Whitepaper_V1_English.pdf"
+            ],
+            "source_code": [],
+            "announcement": []
+        },
+        "platform": null,
+        "date_added": "2017-09-27T00:00:00.000Z",
+        "twitter_username": "kin_foundation",
+        "is_hidden": 0,
+        "rank": 561,
+        "is_active": 1,
+        "first_historical_data": "2017-09-27T19:29:34.000Z",
+        "last_historical_data": "2020-10-04T16:14:32.000Z"
+    },
+    "2010": {
+        "id": 2010,
+        "name": "Cardano",
+        "symbol": "ADA",
+        "category": "coin",
+        "description": "Cardano (ADA) is a cryptocurrency . Users are able to generate ADA through the process of mining. Cardano has a current supply of 45,000,000,000 with 31,112,484,646 in circulation. The last known price of Cardano is 0.09522491 USD and is up 0.87 over the last 24 hours. It is currently trading on 186 active market(s) with $684,357,660.39 traded over the last 24 hours. More information can be found at https://www.cardano.org.",
+        "slug": "cardano",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png",
+        "subreddit": "cardano",
+        "notice": "",
+        "tags": [
+            "mineable",
+            "platform",
+            "research",
+            "smart-contracts",
+            "binance-chain"
+        ],
+        "tag-names": [
+            "Mineable",
+            "Platform",
+            "Research",
+            "Smart Contracts",
+            "Binance Chain"
+        ],
+        "tag-groups": [
+            "OTHER",
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY",
+            "PLATFORM"
+        ],
+        "urls": {
+            "website": [
+                "https://www.cardano.org"
+            ],
+            "twitter": [
+                "https://twitter.com/cardano"
+            ],
+            "message_board": [
+                "https://medium.com/feed/cardanorss",
+                "https://forum.cardano.org/"
+            ],
+            "chat": [
+                "https://t.me/Cardano"
+            ],
+            "explorer": [
+                "https://cardanoexplorer.com/",
+                "https://ada.tokenview.com/en",
+                "https://adascan.net/",
+                "https://blockchair.com/cardano"
+            ],
+            "reddit": [
+                "https://reddit.com/r/cardano"
+            ],
+            "technical_doc": [
+                "https://www.cardano.org/en/academic-papers/"
+            ],
+            "source_code": [
+                "https://cardanoupdates.com/"
+            ],
+            "announcement": [
+                "https://t.me/CardanoAnnouncements"
+            ]
+        },
+        "platform": null,
+        "date_added": "2017-10-01T00:00:00.000Z",
+        "twitter_username": "cardano",
+        "is_hidden": 0,
+        "rank": 12,
+        "is_active": 1,
+        "first_historical_data": "2017-10-01T20:34:25.000Z",
+        "last_historical_data": "2020-10-04T16:14:49.000Z"
+    },
+    "2011": {
+        "id": 2011,
+        "name": "Tezos",
+        "symbol": "XTZ",
+        "category": "coin",
+        "description": "Tezos (XTZ) is a cryptocurrency launched in 2018. Tezos has a current supply of 745,427,803.71392. The last known price of Tezos is 2.12636171 USD and is down -3.03 over the last 24 hours. It is currently trading on 158 active market(s) with $94,813,871.44 traded over the last 24 hours. More information can be found at https://www.tezos.com/.",
+        "slug": "tezos",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2011.png",
+        "subreddit": "tezos",
+        "notice": "",
+        "tags": [
+            "platform",
+            "enterprise-solutions",
+            "smart-contracts",
+            "binance-chain"
+        ],
+        "tag-names": [
+            "Platform",
+            "Enterprise solutions",
+            "Smart Contracts",
+            "Binance Chain"
+        ],
+        "tag-groups": [
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY",
+            "PLATFORM"
+        ],
+        "urls": {
+            "website": [
+                "https://www.tezos.com/"
+            ],
+            "twitter": [
+                "https://twitter.com/tezos"
+            ],
+            "message_board": [
+                "https://www.tezos.ch/"
+            ],
+            "chat": [
+                "https://t.me/tezosplatform",
+                "https://riot.tzchat.org/"
+            ],
+            "explorer": [
+                "https://tzstats.com/",
+                "https://tezblock.io/",
+                "https://tezos.id/",
+                "https://tzkt.io/",
+                "https://t.me/TezosNotifierBot"
+            ],
+            "reddit": [
+                "https://reddit.com/r/tezos"
+            ],
+            "technical_doc": [
+                "https://tezos.gitlab.io/"
+            ],
+            "source_code": [
+                "https://gitlab.com/tezos/tezos"
+            ],
+            "announcement": []
+        },
+        "platform": null,
+        "date_added": "2017-10-06T00:00:00.000Z",
+        "twitter_username": "tezos",
+        "is_hidden": 0,
+        "rank": 17,
+        "is_active": 1,
+        "first_historical_data": "2017-10-02T15:59:43.000Z",
+        "last_historical_data": "2020-10-04T16:14:49.000Z"
+    },
+    "2021": {
+        "id": 2021,
+        "name": "RChain",
+        "symbol": "REV",
+        "category": "coin",
+        "description": "RChain (REV) is a cryptocurrency . RChain has a current supply of 870,663,574 with 482,890,385.8347925 in circulation. The last known price of RChain is 0.01984247 USD and is up 2.08 over the last 24 hours. It is currently trading on 3 active market(s) with $216,652.26 traded over the last 24 hours. More information can be found at https://www.rchain.coop/.",
+        "slug": "rchain",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2021.png",
+        "subreddit": "RChain",
+        "notice": "",
+        "tags": [
+            "platform",
+            "distributed-computing",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "Platform",
+            "Distributed Computing",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://www.rchain.coop/"
+            ],
+            "twitter": [
+                "https://twitter.com/rchain_coop"
+            ],
+            "message_board": [
+                "https://medium.com/rchain-cooperative"
+            ],
+            "chat": [],
+            "explorer": [
+                "https://revdefine.io/#/explorer/front"
+            ],
+            "reddit": [
+                "https://reddit.com/r/RChain"
+            ],
+            "technical_doc": [
+                "https://media.readthedocs.org/pdf/rchain-architecture/stable/rchain-architecture.pdf"
+            ],
+            "source_code": [
+                "https://github.com/rchain/"
+            ],
+            "announcement": [
+                "https://bitcointalk.org/index.php?topic=1747033.0"
+            ]
+        },
+        "platform": null,
+        "date_added": "2017-10-06T00:00:00.000Z",
+        "twitter_username": "rchain_coop",
+        "is_hidden": 0,
+        "rank": 489,
+        "is_active": 1,
+        "first_historical_data": "2017-10-06T22:39:24.000Z",
+        "last_historical_data": "2020-10-04T16:14:49.000Z"
+    },
+    "2027": {
+        "id": 2027,
+        "name": "Cryptonex",
+        "symbol": "CNX",
+        "category": "coin",
+        "description": "Cryptonex (CNX) is a cryptocurrency . Users are able to generate CNX through the process of mining. Cryptonex has a current supply of 107,135,053.92192511 with 55,686,328.96192511 in circulation. The last known price of Cryptonex is 1.60222579 USD and is up 0.36 over the last 24 hours. It is currently trading on 11 active market(s) with $1,204,368.56 traded over the last 24 hours. More information can be found at https://cryptonex.org/.",
+        "slug": "cryptonex",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2027.png",
+        "subreddit": "",
+        "notice": "",
+        "tags": [
+            "mineable",
+            "medium-of-exchange",
+            "centralized-exchange",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "Mineable",
+            "Medium of Exchange",
+            "Centralized exchange",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "OTHER",
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://cryptonex.org/"
+            ],
+            "twitter": [
+                "https://twitter.com/Cryptonex_CNX"
+            ],
+            "message_board": [],
+            "chat": [],
+            "explorer": [
+                "https://explorer.cryptonex.org/",
+                "https://cnx.tokenview.com/en"
+            ],
+            "reddit": [],
+            "technical_doc": [
+                "https://cryptonex.org/pdf/whitepaper.pdf"
+            ],
+            "source_code": [
+                "https://github.com/Cryptonex"
+            ],
+            "announcement": [
+                "https://bitcointalk.org/index.php?topic=2087904.0"
+            ]
+        },
+        "platform": null,
+        "date_added": "2017-10-07T00:00:00.000Z",
+        "twitter_username": "Cryptonex_CNX",
+        "is_hidden": 0,
+        "rank": 221,
+        "is_active": 1,
+        "first_historical_data": "2017-10-07T18:24:25.000Z",
+        "last_historical_data": "2020-10-04T16:14:49.000Z"
+    },
+    "2345": {
+        "id": 2345,
+        "name": "High Performance Blockchain",
+        "symbol": "HPB",
+        "category": "coin",
+        "description": "High Performance Blockchain (HPB) is a cryptocurrency . High Performance Blockchain has a current supply of 101,119,949.75 with 73,069,950 in circulation. The last known price of High Performance Blockchain is 0.11949604 USD and is down -3.06 over the last 24 hours. It is currently trading on 12 active market(s) with $567,405.67 traded over the last 24 hours. More information can be found at https://www.hpb.io/.",
+        "slug": "high-performance-blockchain",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2345.png",
+        "subreddit": "HPB_Global",
+        "notice": "",
+        "tags": [
+            "dpos",
+            "hardware",
+            "enterprise-solutions",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "DPoS",
+            "Hardware",
+            "Enterprise solutions",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "CONSENSUS_ALGORITHM",
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://www.hpb.io/"
+            ],
+            "twitter": [
+                "https://twitter.com/HPB_Global"
+            ],
+            "message_board": [],
+            "chat": [
+                "https://telegram.me/hpbglobal"
+            ],
+            "explorer": [
+                "https://hpbscan.org/"
+            ],
+            "reddit": [
+                "https://reddit.com/r/HPB_Global"
+            ],
+            "technical_doc": [
+                "https://www.hpb.io/static/file/whitepaper/HPB_Whitepaper_English.pdf"
+            ],
+            "source_code": [],
+            "announcement": []
+        },
+        "platform": null,
+        "date_added": "2018-01-09T00:00:00.000Z",
+        "twitter_username": "HPB_Global",
+        "is_hidden": 0,
+        "rank": 516,
+        "is_active": 1,
+        "first_historical_data": "2018-01-09T05:49:18.000Z",
+        "last_historical_data": "2020-10-04T16:14:51.000Z"
+    },
+    "2403": {
+        "id": 2403,
+        "name": "MOAC",
+        "symbol": "MOAC",
+        "category": "coin",
+        "description": "MOAC (MOAC) is a cryptocurrency . MOAC has a current supply of 151,205,864 with 62,463,333.6041915 in circulation. The last known price of MOAC is 0.08439991 USD and is down -2.42 over the last 24 hours. It is currently trading on 3 active market(s) with $21,099.28 traded over the last 24 hours. More information can be found at http://moac.io/.",
+        "slug": "moac",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2403.png",
+        "subreddit": "MOAC",
+        "notice": "",
+        "tags": [
+            "pow",
+            "platform",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "PoW",
+            "Platform",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "CONSENSUS_ALGORITHM",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "http://moac.io/"
+            ],
+            "twitter": [
+                "https://twitter.com/moac_io"
+            ],
+            "message_board": [
+                "https://medium.com/@moac_io"
+            ],
+            "chat": [
+                "https://moac-chain.slack.com/",
+                "https://t.me/moacblockchain"
+            ],
+            "explorer": [
+                "http://explorer.moac.io"
+            ],
+            "reddit": [
+                "https://reddit.com/r/MOAC"
+            ],
+            "technical_doc": [
+                "https://github.com/MOACChain/moac-core/blob/master/doc/MOACWhitePaper_UPDATE_0709.pdf"
+            ],
+            "source_code": [
+                "https://github.com/MOACChain/moac-core"
+            ],
+            "announcement": []
+        },
+        "platform": null,
+        "date_added": "2018-01-15T00:00:00.000Z",
+        "twitter_username": "moac_io",
+        "is_hidden": 0,
+        "rank": 661,
+        "is_active": 1,
+        "first_historical_data": "2018-01-16T01:19:18.000Z",
+        "last_historical_data": "2020-10-04T16:14:52.000Z"
+    },
+    "2638": {
+        "id": 2638,
+        "name": "Cortex",
+        "symbol": "CTXC",
+        "category": "coin",
+        "description": "Cortex (CTXC) is a cryptocurrency . Users are able to generate CTXC through the process of mining. Cortex has a current supply of 299,792,458 with 249,938,725.35 in circulation. The last known price of Cortex is 0.08944275 USD and is down -1.14 over the last 24 hours. It is currently trading on 26 active market(s) with $2,948,495.57 traded over the last 24 hours. More information can be found at http://www.cortexlabs.ai/.",
+        "slug": "cortex",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2638.png",
+        "subreddit": "Cortex_Official",
+        "notice": "",
+        "tags": [
+            "mineable",
+            "platform",
+            "iot",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "Mineable",
+            "Platform",
+            "IoT",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "OTHER",
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "http://www.cortexlabs.ai/"
+            ],
+            "twitter": [
+                "https://twitter.com/CTXCBlockchain"
+            ],
+            "message_board": [
+                "https://medium.com/cortexlabs",
+                "https://medium.com/@CTXCBlockchain"
+            ],
+            "chat": [
+                "https://t.me/CortexOfficialEN"
+            ],
+            "explorer": [
+                "https://cerebro.cortexlabs.ai/"
+            ],
+            "reddit": [
+                "https://reddit.com/r/Cortex_Official"
+            ],
+            "technical_doc": [
+                "http://www.cortexlabs.ai/Cortex_AI_on_Blockchain_EN.pdf"
+            ],
+            "source_code": [
+                "https://github.com/CortexFoundation"
+            ],
+            "announcement": []
+        },
+        "platform": null,
+        "date_added": "2018-04-16T00:00:00.000Z",
+        "twitter_username": "CTXCBlockchain",
+        "is_hidden": 0,
+        "rank": 311,
+        "is_active": 1,
+        "first_historical_data": "2018-04-16T20:19:25.000Z",
+        "last_historical_data": "2020-10-04T16:14:55.000Z"
+    },
+    "2838": {
+        "id": 2838,
+        "name": "PCHAIN",
+        "symbol": "PI",
+        "category": "coin",
+        "description": "PCHAIN (PI) is a cryptocurrency . PCHAIN has a current supply of 1,911,546,868 with 787,662,330.1664073 in circulation. The last known price of PCHAIN is 0.0105337 USD and is up 6.95 over the last 24 hours. It is currently trading on 10 active market(s) with $14,025.88 traded over the last 24 hours. More information can be found at https://www.pchain.org/.",
+        "slug": "pchain",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2838.png",
+        "subreddit": "",
+        "notice": "",
+        "tags": [
+            "platform",
+            "interoperability",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "Platform",
+            "Interoperability",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://www.pchain.org/"
+            ],
+            "twitter": [
+                "https://twitter.com/pchain_org"
+            ],
+            "message_board": [
+                "https://medium.com/@PCHAIN"
+            ],
+            "chat": [
+                "https://t.me/pchain_org"
+            ],
+            "explorer": [
+                "https://piscan.pchain.org/index.html"
+            ],
+            "reddit": [],
+            "technical_doc": [],
+            "source_code": [
+                "https://github.com/pchain-org"
+            ],
+            "announcement": []
+        },
+        "platform": null,
+        "date_added": "2018-06-04T00:00:00.000Z",
+        "twitter_username": "pchain_org",
+        "is_hidden": 0,
+        "rank": 518,
+        "is_active": 1,
+        "first_historical_data": "2018-06-04T15:14:49.000Z",
+        "last_historical_data": "2020-10-04T16:14:56.000Z"
+    },
+    "2868": {
+        "id": 2868,
+        "name": "Constellation",
+        "symbol": "DAG",
+        "category": "coin",
+        "description": "Constellation (DAG) is a cryptocurrency . Constellation has a current supply of 3,711,998,690.36 with 1,266,911,931.0440836 in circulation. The last known price of Constellation is 0.01112889 USD and is up 3.14 over the last 24 hours. It is currently trading on 7 active market(s) with $80,213.06 traded over the last 24 hours. More information can be found at https://www.constellationlabs.io/.",
+        "slug": "constellation",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2868.png",
+        "subreddit": "constellation",
+        "notice": "",
+        "tags": [
+            "dag",
+            "platform",
+            "payments",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "DAG",
+            "Platform",
+            "Payments",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "CONSENSUS_ALGORITHM",
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://www.constellationlabs.io/"
+            ],
+            "twitter": [
+                "https://twitter.com/Conste11ation"
+            ],
+            "message_board": [
+                "https://constellationlabs.io/blog"
+            ],
+            "chat": [
+                "https://t.me/constellationcommunity"
+            ],
+            "explorer": [
+                "https://www.dagexplorer.io/"
+            ],
+            "reddit": [
+                "https://reddit.com/r/constellation"
+            ],
+            "technical_doc": [],
+            "source_code": [
+                "https://github.com/Constellation-Labs/constellation"
+            ],
+            "announcement": []
+        },
+        "platform": null,
+        "date_added": "2018-06-20T00:00:00.000Z",
+        "twitter_username": "Conste11ation",
+        "is_hidden": 0,
+        "rank": 401,
+        "is_active": 1,
+        "first_historical_data": "2018-06-20T19:59:49.000Z",
+        "last_historical_data": "2020-10-04T16:14:56.000Z"
+    },
+    "3077": {
+        "id": 3077,
+        "name": "VeChain",
+        "symbol": "VET",
+        "category": "coin",
+        "description": "VeChain (VET) is a cryptocurrency . VeChain has a current supply of 86,712,634,466 with 64,315,576,989 in circulation. The last known price of VeChain is 0.01144449 USD and is down -5.07 over the last 24 hours. It is currently trading on 116 active market(s) with $111,998,443.36 traded over the last 24 hours. More information can be found at https://www.vechain.org/.",
+        "slug": "vechain",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3077.png",
+        "subreddit": "vechain",
+        "notice": "",
+        "tags": [
+            "logistics",
+            "data-provenance",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "Logistics",
+            "Data Provenance",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://www.vechain.org/",
+                "https://www.vechain.com/"
+            ],
+            "twitter": [
+                "https://twitter.com/vechainofficial"
+            ],
+            "message_board": [],
+            "chat": [
+                "https://t.me/vechain_official_english",
+                "https://t.me/joinchat/GG4BlQwm19czcBGOewv40Q"
+            ],
+            "explorer": [
+                "http://explore.vechain.org/",
+                "https://insight.vecha.in",
+                "https://explorer.vtho.net/"
+            ],
+            "reddit": [
+                "https://reddit.com/r/vechain"
+            ],
+            "technical_doc": [],
+            "source_code": [],
+            "announcement": []
+        },
+        "platform": null,
+        "date_added": "2017-08-22T00:00:00.000Z",
+        "twitter_username": "vechainofficial",
+        "is_hidden": 0,
+        "rank": 27,
+        "is_active": 1,
+        "first_historical_data": "2018-08-03T17:04:23.000Z",
+        "last_historical_data": "2020-10-04T16:14:58.000Z"
+    },
+    "3704": {
+        "id": 3704,
+        "name": "v.systems",
+        "symbol": "VSYS",
+        "category": "coin",
+        "description": "v.systems (VSYS) is a cryptocurrency . v.systems has a current supply of 4,018,305,140 with 2,103,446,676 in circulation. The last known price of v.systems is 0.02227089 USD and is up 7.53 over the last 24 hours. It is currently trading on 40 active market(s) with $5,709,732.83 traded over the last 24 hours. More information can be found at https://www.v.systems/.",
+        "slug": "v-systems",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3704.png",
+        "subreddit": "V_SYSTEMS",
+        "notice": "",
+        "tags": [
+            "platform",
+            "discount-token",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "Platform",
+            "Discount token",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://www.v.systems/"
+            ],
+            "twitter": [
+                "https://twitter.com/VSYSCoin"
+            ],
+            "message_board": [
+                "https://medium.com/vsystems"
+            ],
+            "chat": [
+                "https://t.me/VSYSOfficialGroup"
+            ],
+            "explorer": [
+                "https://explorer.v.systems/"
+            ],
+            "reddit": [
+                "https://reddit.com/r/V_SYSTEMS"
+            ],
+            "technical_doc": [
+                "https://v.systems/pdf/sposwhitepaper.pdf"
+            ],
+            "source_code": [
+                "https://github.com/virtualeconomy/v-systems"
+            ],
+            "announcement": [
+                "https://bitcointalk.org/index.php?topic=5095853.0"
+            ]
+        },
+        "platform": null,
+        "date_added": "2019-03-05T00:00:00.000Z",
+        "twitter_username": "VSYSCoin",
+        "is_hidden": 0,
+        "rank": 151,
+        "is_active": 1,
+        "first_historical_data": "2019-03-05T16:34:05.000Z",
+        "last_historical_data": "2020-10-04T16:09:03.000Z"
+    },
+    "3716": {
+        "id": 3716,
+        "name": "Amoveo",
+        "symbol": "VEO",
+        "category": "coin",
+        "description": "Amoveo (VEO) is a cryptocurrency . Users are able to generate VEO through the process of mining. Amoveo has a current supply of 69,838.17744715 with 68,033.17744715 in circulation. The last known price of Amoveo is 29.50135412 USD and is down -11.15 over the last 24 hours. It is currently trading on 2 active market(s) with $476.34 traded over the last 24 hours. More information can be found at https://amoveo.io.",
+        "slug": "amoveo",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3716.png",
+        "subreddit": "Amoveo",
+        "notice": "",
+        "tags": [
+            "mineable",
+            "sha-256",
+            "platform",
+            "state-channels",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "Mineable",
+            "SHA-256",
+            "Platform",
+            "State channels",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "OTHER",
+            "CONSENSUS_ALGORITHM",
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://amoveo.io"
+            ],
+            "twitter": [
+                "https://twitter.com/zack_bitcoin"
+            ],
+            "message_board": [],
+            "chat": [
+                "https://t.me/amoveo",
+                "https://discordapp.com/invite/a52szJw"
+            ],
+            "explorer": [
+                "https://veoscan.io/topblock/"
+            ],
+            "reddit": [
+                "https://reddit.com/r/Amoveo"
+            ],
+            "technical_doc": [
+                "https://github.com/zack-bitcoin/amoveo/blob/master/docs/white_paper.md"
+            ],
+            "source_code": [
+                "https://github.com/zack-bitcoin/amoveo/"
+            ],
+            "announcement": [
+                "https://bitcointalk.org/index.php?topic=3440182.0"
+            ]
+        },
+        "platform": null,
+        "date_added": "2019-02-05T00:00:00.000Z",
+        "twitter_username": "zack_bitcoin",
+        "is_hidden": 0,
+        "rank": 928,
+        "is_active": 1,
+        "first_historical_data": "2019-02-05T18:24:09.000Z",
+        "last_historical_data": "2020-10-04T16:09:03.000Z"
+    },
+    "4245": {
+        "id": 4245,
+        "name": "Enecuum",
+        "symbol": "ENQ",
+        "category": "coin",
+        "description": "Enecuum (ENQ) is a cryptocurrency . Users are able to generate ENQ through the process of mining. Enecuum has a current supply of 126,880,563.75. The last known price of Enecuum is 0.01942541 USD and is up 15.78 over the last 24 hours. It is currently trading on 4 active market(s) with $33,527.12 traded over the last 24 hours. More information can be found at https://enecuum.com/.",
+        "slug": "enecuum",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/4245.png",
+        "subreddit": "",
+        "notice": "",
+        "tags": [
+            "mineable",
+            "pos",
+            "pow",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "Mineable",
+            "PoS",
+            "PoW",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "OTHER",
+            "CONSENSUS_ALGORITHM",
+            "CONSENSUS_ALGORITHM",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://enecuum.com/"
+            ],
+            "twitter": [
+                "https://twitter.com/enq_enecuum"
+            ],
+            "message_board": [
+                "https://medium.com/@EnqBlockchain"
+            ],
+            "chat": [
+                "https://t.me/Enecuum_EN",
+                "https://t.me/EnecuumVietnam"
+            ],
+            "explorer": [
+                "https://neuro.enecuum.com/",
+                "https://etherscan.io/token/0x16ea01acb4b0bca2000ee5473348b6937ee6f72f",
+                "https://ethplorer.io/address/0x16ea01acb4b0bca2000ee5473348b6937ee6f72f"
+            ],
+            "reddit": [],
+            "technical_doc": [
+                "https://enecuum.com/pdf/tp_en.pdf"
+            ],
+            "source_code": [
+                "https://github.com/Enecuum"
+            ],
+            "announcement": [
+                "https://bitcointalk.org/index.php?topic=2939909.0"
+            ]
+        },
+        "platform": null,
+        "date_added": "2019-08-13T00:00:00.000Z",
+        "twitter_username": "enq_enecuum",
+        "is_hidden": 0,
+        "rank": 877,
+        "is_active": 1,
+        "first_historical_data": "2019-08-13T23:09:04.000Z",
+        "last_historical_data": "2020-10-04T16:14:03.000Z"
+    },
+    "5274": {
+        "id": 5274,
+        "name": "Edgeware",
+        "symbol": "EDG",
+        "category": "coin",
+        "description": "Edgeware (EDG) is a cryptocurrency . Edgeware has a current supply of 5,058,198,342 with 0 in circulation. The last known price of Edgeware is 0.00951766 USD and is up 5.78 over the last 24 hours. It is currently trading on 4 active market(s) with $506,081.38 traded over the last 24 hours. More information can be found at https://edgewa.re.",
+        "slug": "edgeware",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5274.png",
+        "subreddit": "edgeware",
+        "notice": "",
+        "tags": [
+            "smart-contracts",
+            "dao",
+            "substrate",
+            "polkadot"
+        ],
+        "tag-names": [
+            "Smart Contracts",
+            "DAO",
+            "Substrate",
+            "Polkadot"
+        ],
+        "tag-groups": [
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY",
+            "PLATFORM"
+        ],
+        "urls": {
+            "website": [
+                "https://edgewa.re"
+            ],
+            "twitter": [
+                "https://twitter.com/HeyEdgeware"
+            ],
+            "message_board": [
+                "https://commonwealth.im/edgeware/"
+            ],
+            "chat": [
+                "https://discordapp.com/invite/bDktqyj",
+                "https://t.me/heyedgeware"
+            ],
+            "explorer": [
+                "https://polkascan.io/pre/edgeware",
+                "https://edgeware.subscan.io/"
+            ],
+            "reddit": [
+                "https://reddit.com/r/edgeware"
+            ],
+            "technical_doc": [
+                "http://docs.edgewa.re"
+            ],
+            "source_code": [
+                "https://github.com/hicommonwealth/edgeware-node"
+            ],
+            "announcement": []
+        },
+        "platform": null,
+        "date_added": "2020-03-09T00:00:00.000Z",
+        "twitter_username": "HeyEdgeware",
+        "is_hidden": 0,
+        "rank": 2417,
+        "is_active": 1,
+        "first_historical_data": "2020-03-09T21:29:08.000Z",
+        "last_historical_data": "2020-10-04T16:14:34.000Z"
+    },
+    "5836": {
+        "id": 5836,
+        "name": "Idena",
+        "symbol": "IDNA",
+        "category": "coin",
+        "description": "Idena (IDNA) is a cryptocurrency . Idena has a current supply of 58,713,908.26275041 with 31,403,617.5588276 in circulation. The last known price of Idena is 0.11912138 USD and is up 1.96 over the last 24 hours. It is currently trading on 3 active market(s) with $39,671.90 traded over the last 24 hours. More information can be found at https://idena.io/.",
+        "slug": "idena",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5836.png",
+        "subreddit": "Idena",
+        "notice": "",
+        "tags": [
+            "identity",
+            "oracles",
+            "sharding",
+            "smart-contracts"
+        ],
+        "tag-names": [
+            "Identity",
+            "Oracles",
+            "Sharding",
+            "Smart Contracts"
+        ],
+        "tag-groups": [
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://idena.io/",
+                "https://idena-ar.com/"
+            ],
+            "twitter": [
+                "https://twitter.com/IdenaNetwork"
+            ],
+            "message_board": [
+                "https://medium.com/@idena.network",
+                "https://t.me/IdenaNetworkPublic"
+            ],
+            "chat": [
+                "https://t.me/IdenaAnnouncements",
+                "https://discord.gg/8BusRj7"
+            ],
+            "explorer": [
+                "https://scan.idena.io"
+            ],
+            "reddit": [
+                "https://reddit.com/r/Idena"
+            ],
+            "technical_doc": [
+                "https://idena.io/IdenaOnePager.pdf"
+            ],
+            "source_code": [
+                "https://github.com/idena-network"
+            ],
+            "announcement": [
+                "https://bitcointalk.org/index.php?topic=5194871.0"
+            ]
+        },
+        "platform": null,
+        "date_added": "2020-08-11T00:00:00.000Z",
+        "twitter_username": "IdenaNetwork",
+        "is_hidden": 0,
+        "rank": 744,
+        "is_active": 1,
+        "first_historical_data": "2020-08-11T19:09:15.000Z",
+        "last_historical_data": "2020-10-04T16:14:40.000Z"
+    },
+    "6187": {
+        "id": 6187,
+        "name": "Serum",
+        "symbol": "SRM",
+        "category": "coin",
+        "description": "Serum (SRM) is a cryptocurrency . Serum has a current supply of 161,000,001 with 50,000,000 in circulation. The last known price of Serum is 1.56836608 USD and is down -4.58 over the last 24 hours. It is currently trading on 53 active market(s) with $39,791,519.50 traded over the last 24 hours. More information can be found at https://projectserum.com/.",
+        "slug": "serum",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6187.png",
+        "subreddit": "",
+        "notice": "",
+        "tags": [
+            "decentralized-exchange",
+            "defi",
+            "derivatives",
+            "smart-contracts",
+            "staking"
+        ],
+        "tag-names": [
+            "Decentralized exchange",
+            "DeFi",
+            "Derivatives",
+            "Smart Contracts",
+            "Staking"
+        ],
+        "tag-groups": [
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://projectserum.com/"
+            ],
+            "twitter": [],
+            "message_board": [],
+            "chat": [],
+            "explorer": [
+                "https://etherscan.io/token/0x476c5e26a75bd202a9683ffd34359c0cc15be0ff",
+                "https://ethplorer.io/address/0x476c5e26a75bd202a9683ffd34359c0cc15be0ff",
+                "https://explorer.solana.com/address/SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt"
+            ],
+            "reddit": [],
+            "technical_doc": [
+                "https://projectserum.com/serum_white_paper.pdf"
+            ],
+            "source_code": [
+                "https://docs.google.com/document/d/1v7NPdmotyetkytr1sVI6cQ1EV4D1ZILs9F6IDO5BkB0/edit"
+            ],
+            "announcement": []
+        },
+        "platform": null,
+        "date_added": "2020-08-04T00:00:00.000Z",
+        "twitter_username": "",
+        "is_hidden": 0,
+        "rank": 112,
+        "is_active": 1,
+        "first_historical_data": "2020-08-11T13:14:16.000Z",
+        "last_historical_data": "2020-10-04T16:14:42.000Z"
+    },
+    "6507": {
+        "id": 6507,
+        "name": "Kulupu",
+        "symbol": "KLP",
+        "category": "coin",
+        "description": "Kulupu (KLP) is a cryptocurrency . Kulupu has a current supply of 28,857,458 with 0 in circulation. The last known price of Kulupu is 0.38659655 USD and is down -11.60 over the last 24 hours. It is currently trading on 5 active market(s) with $2,306,234.82 traded over the last 24 hours. More information can be found at https://corepaper.org/kulupu/.",
+        "slug": "kulupu",
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6507.png",
+        "subreddit": "kulupu",
+        "notice": "",
+        "tags": [
+            "smart-contracts",
+            "substrate"
+        ],
+        "tag-names": [
+            "Smart Contracts",
+            "Substrate"
+        ],
+        "tag-groups": [
+            "PROPERTY",
+            "PROPERTY"
+        ],
+        "urls": {
+            "website": [
+                "https://corepaper.org/kulupu/"
+            ],
+            "twitter": [
+                "https://twitter.com/kulupunetwork"
+            ],
+            "message_board": [],
+            "chat": [
+                "https://t.me/KulupuOfficial"
+            ],
+            "explorer": [
+                "https://kulupu.subscan.io/"
+            ],
+            "reddit": [
+                "https://reddit.com/r/kulupu"
+            ],
+            "technical_doc": [],
+            "source_code": [],
+            "announcement": []
+        },
+        "platform": null,
+        "date_added": "2020-08-11T00:00:00.000Z",
+        "twitter_username": "kulupunetwork",
+        "is_hidden": 0,
+        "rank": 2325,
+        "is_active": 1,
+        "first_historical_data": "2020-08-28T10:19:15.000Z",
+        "last_historical_data": "2020-10-04T16:14:01.000Z"
+    }
+}
