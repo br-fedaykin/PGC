@@ -689,7 +689,7 @@ A partir dessa taxonomia, é possível descrever qual será a política mínima 
 A partir da taxonomia apresentada, outras regras podem ser abstraídas.
 Por exemplo a substituição dos elementos $Paciente$ em caso de prontuários de menores de idade, uma vez que este não deveria ter a autonomia sobre a gestão dos próprios dados, produzindo a seguinte política de acesso:
 
-\[ CFM \vee CRM \vee Respons\acute{a}vel\textnormal{-}Legal \vee Terceiro\textnormal{-}Autorizado \]
+\[ CFM \vee CRM \vee Representante\textnormal{-}Legal \vee Terceiro\textnormal{-}Autorizado \]
 
 A taxonomia consegue estipular os diferentes papéis de acesso a um prontuário, mas ainda é necessário categorizá-los nas diversas funções que terão acesso aos prontuários médicos (por exemplo, especialidades médicas, administrativas, etc).
 A estratégia para propor uma categorização abrangente e relevante envolveu obter dados do DATASUS (Órgão que administra a consulta de informações do Sistema de Saúde Pública) sobre todas as profissões registradas na área da Saúde relativas ao início do ano de 2019 no Brasil.
@@ -735,8 +735,9 @@ Cabe destacar que as operações criptográficas sempre ocorrem localmente {\col
 
 % {\color{Magenta} 1 parágrafo para explicar que para encriptar um documento utilizando atributos usou a dcpabe.}
 
-A biblioteca DCPABE desenvolvida em Java possui suporte à operações criptográficas do protocolo ABE em um ambiente com múltiplas autoridades, conforme descrito em \cite{Lewko2011}. Ela depende da biblioteca \emph{jPBC} (Java Pairing Based Cryptography) %biblioteca em Java, de código aberto,
-para realizar a criptografia baseada em emparelhamento~\footnote{mais informações em \href{https://crypto.stanford.edu/pbc/}{https://crypto.stanford.edu/pbc/}}. %, originalmente escrita em C, para código nativo em Java e oferecer uma interface para essa biblioteca \cite{DeCaro2011}.
+A biblioteca DCPABE desenvolvida em Java possui suporte à operações criptográficas do protocolo ABE em um ambiente com múltiplas autoridades, conforme descrito em \cite{Lewko2011}.
+Por sua vez, ela depende da biblioteca \emph{jPBC} (Java Pairing Based Cryptography) \cite{DeCaro2011} para realizar a criptografia baseada em emparelhamento
+\footnote{mais informações em \href{https://crypto.stanford.edu/pbc/}{https://crypto.stanford.edu/pbc/}}.
 A DCPABE fornece todas as ferramentas necessárias para o uso do esquema ABE, incluindo a geração de parâmetros globais, geração de chaves privadas, públicas e pessoais dos atributos e operações criptográficas. % TODO: (ok) manter (padronizar) a mesma palavra (decifrar, decriptar, descriptografar) no texto todo.
 Ao criptografar um documento, um objeto do tipo \emph{Ciphertext}, contendo os parâmetros necessários para a descriptografia, é serializado e escrito no início de um arquivo que conterá os bytes criptografados. {\color{blue}Além disso, o processo de criptografia produz um JSON, com metadados da cifra, o qual será publicado na Blockchain}.
 
@@ -843,11 +844,11 @@ A seguir serão explicados cada um deles.
 % {\color{Magenta} 1 parágrafo para explicar o que faz o contrato (em linhas gerais).}
 
 O contrato \emph{SmartDCPABEAuthority} registra na Blockchain as entidades certificadoras disponíveis no sistema, associando dados de identificação e a quantidade de atributos que a entidade já publicou a um endereço de carteira que será creditado como dela no ato do cadastro.
-A publicação na Blockchain garante um mecanismo descentralizado de cadastro e com disponibilidade contínua.
+A publicação na Blockchain garante um mecanismo descentralizado de cadastro, com disponibilidade contínua.
 A chave privada associada ao endereço de carteira Ethereum é utilizada como valor do \emph{GID} na geração das chaves públicas e privadas dos atributos no esquema ABE.
-Essa escolha é feita para assegurar que toda autoridade possua um endereço Ethereum e para provocar um vínculo entre sua identidade na Blockchain e sua atuação como certificadora, de forma que não seja possível a um atacante forjar a identidade de um certificador sem com isso necessitar da chave privada de sua carteira.
-% TODO: unidades? que unidades? se for instituição ou entidade padronizar no texto todo
-%A escolha do ID visa impossibilitar um atacante de se passar pela entidade certificadora, uma vez que não há método computacionalmente viável para recuperar a chave privada de um endereço Ethereum a partir de uma chave pública.
+Essa escolha é feita para assegurar que todo certificador possua um endereço Ethereum e para provocar um vínculo entre sua identidade na Blockchain e sua atuação como certificador, de forma que não seja possível a um atacante forjar a identidade de um certificador pela cópia de dados públicos de identificação, sendo necessário que descubra a chave privada associada à carteira, ou que a derive a partir do endereço de carteira, tarefa que até o momento se demonstra computacional inviável
+\footnote{Essa inviabilidade computacional presume que a chave foi gerada usando um processo aleatório seguro. Caso não use, a chave estará suscetível a ataques, veja por exemplo \cite{Bednarek2019}.}.
+% TODO: (ok) unidades? que unidades? se for instituição ou entidade padronizar no texto todo
 
 %{\color{Magenta} Inserir o código da linha 7 até 20.}
 
