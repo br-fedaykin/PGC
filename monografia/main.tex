@@ -590,24 +590,34 @@ As razões para isso são para conservar o escopo deste trabalho e para ater-se 
 
 A seguir será dado um exemplo de como funciona o sistema.
 A paciente Alice recebe um documento digital, correspondendo a seu exame laboratorial de sangue, e deseja adicioná-lo ao sistema.
-Para isso, Alice %ela utiliza um programa específico para editar seu prontuário, adicionando este documento digital à estrutura de dados do prontuário e
-utiliza o módulo cliente para criptografar o documento, usando o esquema ABE, de acordo com uma política de acesso que ela tenha escolhido usar.
+Para isso, Alice utiliza o módulo cliente para criptografar o documento, usando o esquema ABE, de acordo com uma política de acesso que ela tenha escolhido usar.
 Vamos supor que a política escolhida seja a seguinte:
 
 \[paciente \vee (Hospital\textnormal{-}Mario\textnormal{-}Covas \wedge Hematologista)\] % (ok) TODO: inserir um nome de um hospital (verificar todas as ocorrências de X)
 
-Essa política garante acesso ao próprio paciente e aos médicos da especialidade Hematologista que estejam vinculados ao Hospital Mário Covas\footnote{O Hospital foi referenciado neste texto somente para fins ilustrativos, e foi escolhido como exemplo pela proximidade geográfica, por ser de gestão pública e pela qualidade dos serviços, conforme certificado pela ONA \cite{ONA2020}.}.
-A política pode ser descrita trocando os símbolos dos operadores lógicos pelo seus nomes em inglês, ou seja, ``paciente OR (Hospital-Mario-Covas AND Hematologista)''. % TODO: a qualquer paciente? Explicar brevemente como o sistema sabe que é ela (Alice) e não qualquer paciente
-Repare que a aplicação da política é realizada pelo próprio usuário, efetivamente entregando o controle da segurança da informação ao paciente e respeitando seu direito à privacidade da informação.
+A política pode ser descrita trocando os símbolos dos operadores lógicos pelo seus nomes em inglês, ou seja, ``paciente OR (Hospital-Mario-Covas AND Hematologista)''.
+Ela garante o acesso ao próprio paciente e aos médicos da especialidade Hematologista que estejam vinculados ao Hospital Mário Covas
+\footnote{O Hospital foi referenciado neste texto somente para fins ilustrativos, e foi escolhido como exemplo pela proximidade geográfica, por ser de gestão pública e pela qualidade dos serviços, conforme certificado pela ONA \cite{ONA2020}.}.
+Os atributos possuem múltiplas fontes: o atributo Hematologista foi criado pelo CRM do estado de São Paulo, o atributo Hospital-Mário-Covas foi criado pelo próprio hospital e o atributo paciente foi criado por Alice.
+Alice pôde encontrar os dois primeiros atributos porque eles estão publicados na Blockchain.
+O terceiro atributo (paciente) é gerado por todo usuário do sistema e não é publicado como outros atributos criados por certificadores, sendo usado pelo usuário para adicionar à política de acesso uma cláusula que contemple a si mesmo, a fim de permitir o acesso do dono aos próprios documentos.
+Embora todo usuário crie e use um atributo de mesmo nome, não existe conflito entre eles porque um atributo é a conjunção de um rótulo e uma chave pública, de forma que a descriptografia só é possível mediante a posse de uma chave pessoal de atributo emitida pelo dono da chave privada usada para a derivação da chave pública gravada no atributo, i.e., somente o emissor do atributo ``paciente'' tem as credenciais compatíveis para satisfazer a política de acesso onde o atributo for usado.
+% TODO: (ok) a qualquer paciente? Explicar brevemente como o sistema sabe que é ela (Alice) e não qualquer paciente
+Repare que a aplicação da política é realizada pelo próprio usuário, efetivamente entregando o controle da segurança da informação ao paciente e respeitando o direito à privacidade da informação.
 
 Após o documento ser criptografado ele está pronto para ser enviado ao servidor.
-Para isso, o usuário aciona o módulo cliente, quem solicita a reserva de um código de acesso de arquivos ao servidor, caso seja o primeiro envio deste documento.
-Após a obtenção do código, realiza o envio à Blockchain informando diversos dados: o código de acesso, a identificação do servidor, o nome do arquivo, a política de acesso, o instante em que a transação está sendo feita e dados produzidos pela criptografia ABE que são necessários no processo de descriptografia do arquivo.
-Caso não seja o primeiro envio do arquivo\footnote{Os arquivos são considerados os mesmos se tiverem o mesmo nome.}, o cliente enviará somente a nova versão do mesmo ao servidor.
-Caso haja alguma atualização nos dados ({\color{magenta}por exemplo ...}), o módulo cliente também alterará a Blockchain.
+Para isso, o usuário aciona o módulo cliente, que por sua vez solicita ao servidor de arquivos a geração de um endereço único.
+Após a obtenção do endereço, o Cliente envia à Blockchain diversos dados sobre o documento: a identificação do servidor, o endereço único naquele servidor, nome do arquivo, política de acesso, o instante em que a transação está sendo feita e dados produzidos pela criptografia ABE que são necessários no processo de descriptografia do arquivo.
+Feita a publicação, o cliente envia o arquivo ao servidor.
+Caso não seja o primeiro envio do arquivo\footnote{Um arquivo já existe no servidor se já houver um outro ocupando o endereço informado.}, as etapas de solicitação de endereço e de publicação na Blockchain são puladas, sendo feito somente o envido da nova versão ao servidor, que substitui o arquivo anterior.
+Caso a nova versão contenha uma nova política de acesso, o módulo cliente também atualiza a Blockchain para corresponder ao arquivo enviado ao servidor.
+Caso o arquivo continue inalterado mas dados a seu respeito na Blockchain precisem de atualização, por exemplo para registrar a migração do arquivo para outro servidor, o módulo cliente também atualizará a Blockchain.
 
-Em um segundo momento, o Hematologista do Hospital Mário Covas, ciente do agendamento da consulta de Alice e em posse da  ficha cadastral onde conste sua carteira Ethereum cadastrada no sistema, usa o módulo cliente para consultar na Blockchain os metadados do arquivo que contêm informações de acesso ao servidor. % TODO: existe uma relação entre a carteira e o identificador mencionado antes? explicar melhor.
-Ao recuperar esses metadados, o módulo cliente do Hematologista requisita o documento criptografado ao servidor e o descriptografa, utilizando as chaves pessoais dos atributos referidos na política de acesso.
+Alice então envia o documento para o servidor de arquivos do Mário Covas e por consequência publica informações sobre o arquivo na Blockchain, entre elas a política de acesso para poder acessar o documento.
+Em um segundo momento o Dr. Bob, Hematologista do Hospital Mário Covas, ciente de sua agenda com a paciente Alice, está em posse da ficha cadastral dela, onde consta sua carteira Ethereum cadastrada no sistema.
+Dr. Bob usa o módulo cliente para consultar por arquivos relacionados ao endereço de carteira Ethereum de Alice e descobre que existe um arquivo compartilhado por ela.
+Ele dá o comando para obter o arquivo, levando o módulo cliente a salvar os metadados da Blockchain localmente e realizar uma requisição pelo arquivo em questão ao servidor apontado nos metadados. % TODO: (ok) existe uma relação entre a carteira e o identificador mencionado antes? explicar melhor.
+Por último, o Dr. Bob insere o comando para poder acessar o documento e então o módulo cliente usa as chaves pessoais dos atributos possuídos pelo médico para a descriptografia e, uma vez que eles satisfazem a política de acesso, obtém sucesso e o arquivo pode ser visualizado pelo médico.
 
 \subsection{Módulo Cliente}
 
