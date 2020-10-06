@@ -1,0 +1,1768 @@
+{
+    "taxonomia": [
+        {
+            "nível de especialização": "PESSOAL DE SAÚDE - NÍVEL SUPERIOR",
+            "áreas": [
+                {
+                    "especialidade": "ANESTESISTA",
+                    "total": 14427,
+                    "profissões": [
+                        {
+                            "profissão": "Médico Anestesiologista",
+                            "total": 14427
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "ASSISTENTE SOCIAL",
+                    "total": 32764,
+                    "profissões": [
+                        {
+                            "profissão": "Assistente Social",
+                            "total": 32764
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "BIOQUÍMICO/FARMACÊUTICO",
+                    "total": 32951,
+                    "profissões": [
+                        {
+                            "profissão": "Farmacêutico",
+                            "total": 32951
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "CIRURGIÃO GERAL",
+                    "total": 9739,
+                    "profissões": [
+                        {
+                            "profissão": "Médico Cirurgião Geral",
+                            "total": 9739
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "CLÍNICO GERAL",
+                    "total": 112717,
+                    "profissões": [
+                        {
+                            "profissão": "Médico Clínico",
+                            "total": 111343
+                        },
+                        {
+                            "profissão": "Médico Generalista Alopata",
+                            "total": 1374
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "ENFERMEIRO",
+                    "total": 200883,
+                    "profissões": [
+                        {
+                            "profissão": "Outros enfermeiros",
+                            "total": 370
+                        },
+                        {
+                            "profissão": "Enfermeiro",
+                            "total": 200883
+                        },
+                        {
+                            "profissão": "Enfermeiro Estomaterapeuta",
+                            "total": 42
+                        },
+                        {
+                            "profissão": "Enfermeiro auditor",
+                            "total": 1028
+                        },
+                        {
+                            "profissão": "Enfermeiro da estratégia de saúde da família",
+                            "total": 42120
+                        },
+                        {
+                            "profissão": "Enfermeiro de bordo",
+                            "total": 9
+                        },
+                        {
+                            "profissão": "Enfermeiro de centro cirúrgico",
+                            "total": 614
+                        },
+                        {
+                            "profissão": "Enfermeiro de terapia intensiva",
+                            "total": 1796
+                        },
+                        {
+                            "profissão": "Enfermeiro do trabalho",
+                            "total": 813
+                        },
+                        {
+                            "profissão": "Enfermeiro nefrologista",
+                            "total": 869
+                        },
+                        {
+                            "profissão": "Enfermeiro neonatologista",
+                            "total": 342
+                        },
+                        {
+                            "profissão": "Enfermeiro obstétrico",
+                            "total": 3263
+                        },
+                        {
+                            "profissão": "Enfermeiro psiquiátrico",
+                            "total": 275
+                        },
+                        {
+                            "profissão": "Enfermeiro puericultor e pediátrico",
+                            "total": 146
+                        },
+                        {
+                            "profissão": "Enfermeiro sanitarista",
+                            "total": 560
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "FISIOTERAPEUTA",
+                    "total": 79240,
+                    "profissões": [
+                        {
+                            "profissão": "Fisioterapeuta do trabalho",
+                            "total": 68
+                        },
+                        {
+                            "profissão": "Fisioterapeuta acupunturista",
+                            "total": 368
+                        },
+                        {
+                            "profissão": "Fisioterapeuta esportivo",
+                            "total": 39
+                        },
+                        {
+                            "profissão": "Fisioterapeuta geral",
+                            "total": 77791
+                        },
+                        {
+                            "profissão": "Fisioterapeuta neurofuncional",
+                            "total": 121
+                        },
+                        {
+                            "profissão": "Fisioterapeuta osteopata",
+                            "total": 30
+                        },
+                        {
+                            "profissão": "Fisioterapeuta quiropraxista",
+                            "total": 16
+                        },
+                        {
+                            "profissão": "Fisioterapeuta respiratório",
+                            "total": 476
+                        },
+                        {
+                            "profissão": "Fisioterapeuta traumato-ortopédica funcional",
+                            "total": 331
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "FONOAUDIÓLOGO",
+                    "total": 21958,
+                    "profissões": [
+                        {
+                            "profissão": "Fonoaudiólogo",
+                            "total": 21958
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "GINECO OBSTETRA",
+                    "total": 21777,
+                    "profissões": [
+                        {
+                            "profissão": "Médico Ginecologista Obstetra",
+                            "total": 21777
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "MÉDICO DE FAMÍLIA",
+                    "total": 27575,
+                    "profissões": [
+                        {
+                            "profissão": "Médico da estratégia de Saúde da Família",
+                            "total": 26883
+                        },
+                        {
+                            "profissão": "Médico de família e comunidade",
+                            "total": 692
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "NUTRICIONISTA",
+                    "total": 29836,
+                    "profissões": [
+                        {
+                            "profissão": "Nutricionista",
+                            "total": 29836
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "ODONTÓLOGO",
+                    "total": 134914,
+                    "profissões": [
+                        {
+                            "profissão": "Cirurgião dentista - auditor",
+                            "total": 158
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - clínico geral",
+                            "total": 86970
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - dentística",
+                            "total": 1351
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - disfunção temporomandibular e",
+                            "total": 19
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - endodontista",
+                            "total": 4723
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - epidemiologista",
+                            "total": 17
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - estomatologista",
+                            "total": 303
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - implantodontista",
+                            "total": 1031
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - odontogeriatra",
+                            "total": 38
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - odontologia do trabalho",
+                            "total": 77
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - odontologia para pacientes co",
+                            "total": 610
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - odontologista legal",
+                            "total": 425
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - odontopediatra",
+                            "total": 2039
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - ortopedista e ortodontista",
+                            "total": 4178
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - patologista bucal",
+                            "total": 223
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - periodontista",
+                            "total": 2394
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - protesista",
+                            "total": 2206
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - protesiólogo bucomaxilofacial",
+                            "total": 284
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - radiologista",
+                            "total": 1210
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - reabilitador oral",
+                            "total": 49
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - traumatologista bucomaxilofac",
+                            "total": 2644
+                        },
+                        {
+                            "profissão": "Cirurgião dentista de saúde coletiva",
+                            "total": 375
+                        },
+                        {
+                            "profissão": "Cirurgião-dentista da estratégia de saúde da família",
+                            "total": 23590
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "PEDIATRA",
+                    "total": 39394,
+                    "profissões": [
+                        {
+                            "profissão": "Médico Pediatra",
+                            "total": 39394
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "PSICÓLOGO",
+                    "total": 64019,
+                    "profissões": [
+                        {
+                            "profissão": "Psicólogo Clínico",
+                            "total": 61013
+                        },
+                        {
+                            "profissão": "Psicólogo do Esporte",
+                            "total": 18
+                        },
+                        {
+                            "profissão": "Psicólogo do Trabalho",
+                            "total": 248
+                        },
+                        {
+                            "profissão": "Psicólogo Social",
+                            "total": 333
+                        },
+                        {
+                            "profissão": "Psicólogo Educacional",
+                            "total": 244
+                        },
+                        {
+                            "profissão": "Psicólogo Hospitalar",
+                            "total": 1939
+                        },
+                        {
+                            "profissão": "Psicólogo Jurídico",
+                            "total": 35
+                        },
+                        {
+                            "profissão": "Psicólogo do trânsito",
+                            "total": 130
+                        },
+                        {
+                            "profissão": "Psicólogo acupunturista",
+                            "total": 59
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "PSIQUIATRA",
+                    "total": 8319,
+                    "profissões": [
+                        {
+                            "profissão": "Médico psiquiatra",
+                            "total": 8319
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "RADIOLOGISTA",
+                    "total": 12039,
+                    "profissões": [
+                        {
+                            "profissão": "Médico em radiologia e diagnóstico por imagem",
+                            "total": 12039
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "SANITARISTA",
+                    "total": 319,
+                    "profissões": [
+                        {
+                            "profissão": "Médico sanitarista",
+                            "total": 319
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "OUTRAS ESPECIALIDADES MÉDICAS",
+                    "total": 151839,
+                    "profissões": [
+                        {
+                            "profissão": "Médico acupunturista",
+                            "total": 1602
+                        },
+                        {
+                            "profissão": "Médico alergista e imunologista",
+                            "total": 1590
+                        },
+                        {
+                            "profissão": "Médico anatomopatologista",
+                            "total": 1528
+                        },
+                        {
+                            "profissão": "Médico angiologista",
+                            "total": 2996
+                        },
+                        {
+                            "profissão": "Médico broncoesofalogista",
+                            "total": 142
+                        },
+                        {
+                            "profissão": "Médico Cardiologista Intervencionista",
+                            "total": 821
+                        },
+                        {
+                            "profissão": "Médico cancerologista cirúrgico",
+                            "total": 65
+                        },
+                        {
+                            "profissão": "Médico cancerologista pediátrico",
+                            "total": 279
+                        },
+                        {
+                            "profissão": "Médico cardiologista",
+                            "total": 19563
+                        },
+                        {
+                            "profissão": "Médico cirurgião cardiovascular",
+                            "total": 607
+                        },
+                        {
+                            "profissão": "Médico cirurgião da mão",
+                            "total": 8
+                        },
+                        {
+                            "profissão": "Médico cirurgião de cabeça e pescoço",
+                            "total": 679
+                        },
+                        {
+                            "profissão": "Médico cirurgião do aparelho digestivo",
+                            "total": 1043
+                        },
+                        {
+                            "profissão": "Médico cirurgião pediátrico",
+                            "total": 647
+                        },
+                        {
+                            "profissão": "Médico cirurgião plástico",
+                            "total": 2636
+                        },
+                        {
+                            "profissão": "Médico cirurgião torácico",
+                            "total": 192
+                        },
+                        {
+                            "profissão": "Médico citopatologista",
+                            "total": 192
+                        },
+                        {
+                            "profissão": "Médico coloproctologista",
+                            "total": 397
+                        },
+                        {
+                            "profissão": "Médico dermatologista",
+                            "total": 8030
+                        },
+                        {
+                            "profissão": "Médico do trabalho",
+                            "total": 2727
+                        },
+                        {
+                            "profissão": "Médico em cirurgia vascular",
+                            "total": 1419
+                        },
+                        {
+                            "profissão": "Médico em endoscopia",
+                            "total": 588
+                        },
+                        {
+                            "profissão": "Médico em medicina de tráfego",
+                            "total": 133
+                        },
+                        {
+                            "profissão": "Médico em medicina intensiva",
+                            "total": 2878
+                        },
+                        {
+                            "profissão": "Médico em medicina nuclear",
+                            "total": 493
+                        },
+                        {
+                            "profissão": "Médico em medicina preventiva e social",
+                            "total": 102
+                        },
+                        {
+                            "profissão": "Médico endocrinologista e metabologista",
+                            "total": 3785
+                        },
+                        {
+                            "profissão": "Médico fisiatra",
+                            "total": 408
+                        },
+                        {
+                            "profissão": "Médico foniatra",
+                            "total": 4
+                        },
+                        {
+                            "profissão": "Médico gastroenterologista",
+                            "total": 3553
+                        },
+                        {
+                            "profissão": "Médico geneticista",
+                            "total": 172
+                        },
+                        {
+                            "profissão": "Médico geriatra",
+                            "total": 866
+                        },
+                        {
+                            "profissão": "Médico hansenologista",
+                            "total": 62
+                        },
+                        {
+                            "profissão": "Médico hematologista",
+                            "total": 1212
+                        },
+                        {
+                            "profissão": "Médico hiperbarista",
+                            "total": 6
+                        },
+                        {
+                            "profissão": "Médico homeopata",
+                            "total": 549
+                        },
+                        {
+                            "profissão": "Médico infectologista",
+                            "total": 3325
+                        },
+                        {
+                            "profissão": "Médico legista",
+                            "total": 71
+                        },
+                        {
+                            "profissão": "Médico mastologista",
+                            "total": 435
+                        },
+                        {
+                            "profissão": "Médico nefrologista",
+                            "total": 4715
+                        },
+                        {
+                            "profissão": "Médico neurocirurgião",
+                            "total": 1202
+                        },
+                        {
+                            "profissão": "Médico neurofisiologista clínico",
+                            "total": 34
+                        },
+                        {
+                            "profissão": "Médico neurologista",
+                            "total": 7627
+                        },
+                        {
+                            "profissão": "Médico nutrologista",
+                            "total": 738
+                        },
+                        {
+                            "profissão": "Médico oftalmologista",
+                            "total": 13033
+                        },
+                        {
+                            "profissão": "Médico oncologista clínico",
+                            "total": 4829
+                        },
+                        {
+                            "profissão": "Médico ortopedista e traumatologista",
+                            "total": 11711
+                        },
+                        {
+                            "profissão": "Médico otorrinolaringologista",
+                            "total": 4901
+                        },
+                        {
+                            "profissão": "Médico patologista",
+                            "total": 235
+                        },
+                        {
+                            "profissão": "Médico patologista clínico / medicina laboratorial",
+                            "total": 441
+                        },
+                        {
+                            "profissão": "Médico pneumologista",
+                            "total": 1693
+                        },
+                        {
+                            "profissão": "Médico radioterapeuta",
+                            "total": 411
+                        },
+                        {
+                            "profissão": "Médico residente",
+                            "total": 30644
+                        },
+                        {
+                            "profissão": "Médico reumatologista",
+                            "total": 1416
+                        },
+                        {
+                            "profissão": "Médico urologista",
+                            "total": 2404
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE",
+                    "total": 41084,
+                    "profissões": [
+                        {
+                            "profissão": "Médico veterinário",
+                            "total": 4015
+                        },
+                        {
+                            "profissão": "Biólogo",
+                            "total": 7543
+                        },
+                        {
+                            "profissão": "BioMédico",
+                            "total": 11768
+                        },
+                        {
+                            "profissão": "Coordenador Pedagógico",
+                            "total": 158
+                        },
+                        {
+                            "profissão": "Engenheiro Agrícola",
+                            "total": 1
+                        },
+                        {
+                            "profissão": "Engenheiro Agrônomo",
+                            "total": 67
+                        },
+                        {
+                            "profissão": "Físico",
+                            "total": 102
+                        },
+                        {
+                            "profissão": "Físico (medicina)",
+                            "total": 233
+                        },
+                        {
+                            "profissão": "Físico (nuclear e reatores)",
+                            "total": 284
+                        },
+                        {
+                            "profissão": "Musicólogo",
+                            "total": 11
+                        },
+                        {
+                            "profissão": "Neuropsicólogo",
+                            "total": 101
+                        },
+                        {
+                            "profissão": "Orientador Educacional",
+                            "total": 172
+                        },
+                        {
+                            "profissão": "Ortoptista",
+                            "total": 143
+                        },
+                        {
+                            "profissão": "Pedagogo",
+                            "total": 3577
+                        },
+                        {
+                            "profissão": "Professor de alunos com deficiência auditiva e sur",
+                            "total": 70
+                        },
+                        {
+                            "profissão": "Professor de alunos com deficiência física",
+                            "total": 51
+                        },
+                        {
+                            "profissão": "Professor de alunos com deficiência múltipla",
+                            "total": 351
+                        },
+                        {
+                            "profissão": "Professor de alunos com deficiência visual",
+                            "total": 128
+                        },
+                        {
+                            "profissão": "Pesquisador de Clinica Médica",
+                            "total": 72
+                        },
+                        {
+                            "profissão": "Pesquisador de Medicina Básica",
+                            "total": 25
+                        },
+                        {
+                            "profissão": "Pesquisador em Biologia Ambiental Ecologi",
+                            "total": 13
+                        },
+                        {
+                            "profissão": "Pesquisador em Biologia Animal",
+                            "total": 15
+                        },
+                        {
+                            "profissão": "Pesquisador em Biologia de Microorg e Para",
+                            "total": 275
+                        },
+                        {
+                            "profissão": "Pesquisador em Biologia Humana",
+                            "total": 162
+                        },
+                        {
+                            "profissão": "Pesquisador em Ciências Sociais e Humanas",
+                            "total": 18
+                        },
+                        {
+                            "profissão": "Pesquisador em Psicologia",
+                            "total": 18
+                        },
+                        {
+                            "profissão": "Pesquisador em Saúde Coletiva",
+                            "total": 57
+                        },
+                        {
+                            "profissão": "Preparador Físico",
+                            "total": 238
+                        },
+                        {
+                            "profissão": "Professor da Educação de Jovens e Adulto",
+                            "total": 43
+                        },
+                        {
+                            "profissão": "Professor de Artes no Ensino Médio",
+                            "total": 31
+                        },
+                        {
+                            "profissão": "Professor de Educação Física Ensino Fund",
+                            "total": 123
+                        },
+                        {
+                            "profissão": "Professor de Educação Física Ensino Superior",
+                            "total": 228
+                        },
+                        {
+                            "profissão": "Professor de Educação Física Ensino Médio",
+                            "total": 141
+                        },
+                        {
+                            "profissão": "Professor de Nutricao",
+                            "total": 10
+                        },
+                        {
+                            "profissão": "Professor de técnicas e Recursos Audiovisuais",
+                            "total": 4
+                        },
+                        {
+                            "profissão": "Professor de Terapia Ocupacional",
+                            "total": 10
+                        },
+                        {
+                            "profissão": "Psicanalista",
+                            "total": 169
+                        },
+                        {
+                            "profissão": "Psicopedagogo",
+                            "total": 946
+                        },
+                        {
+                            "profissão": "Químico",
+                            "total": 160
+                        },
+                        {
+                            "profissão": "Terapeuta ocupacional",
+                            "total": 9551
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nível de especialização": "PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR",
+            "áreas": [
+                {
+                    "especialidade": "AUXILIAR DE ENFERMAGEM",
+                    "total": 177915,
+                    "profissões": [
+                        {
+                            "profissão": "Auxiliar de Enfermagem",
+                            "total": 177915
+                        },
+                        {
+                            "profissão": "Auxiliar de Enfermagem do Trabalho",
+                            "total": 437
+                        },
+                        {
+                            "profissão": "Auxiliar de enfermagem da estratégia de saúde da f",
+                            "total": 21752
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "FISCAL SANITÁRIO",
+                    "total": 8457,
+                    "profissões": [
+                        {
+                            "profissão": "Visitador Sanitário",
+                            "total": 8457
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "TÉCNICO DE ENFERMAGEM",
+                    "total": 436009,
+                    "profissões": [
+                        {
+                            "profissão": "Técnico de enfermagem",
+                            "total": 436009
+                        },
+                        {
+                            "profissão": "Técnico de enfermagem de saúde da família",
+                            "total": 43144
+                        },
+                        {
+                            "profissão": "Técnico de enfermagem de terapia intensiva",
+                            "total": 3092
+                        },
+                        {
+                            "profissão": "Técnico de enfermagem do trabalho",
+                            "total": 1045
+                        },
+                        {
+                            "profissão": "Técnico de enfermagem psiquiátrica",
+                            "total": 664
+                        },
+                        {
+                            "profissão": "Socorrista (exceto médicos e enfermeiros) habilita",
+                            "total": 18173
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "TÉCNICO E AUXILIAR DE FARMÁCIA",
+                    "total": 12322,
+                    "profissões": [
+                        {
+                            "profissão": "Auxiliar de Farmácia de Manipulação",
+                            "total": 4555
+                        },
+                        {
+                            "profissão": "Auxiliar de Produção Farmacêutica",
+                            "total": 346
+                        },
+                        {
+                            "profissão": "Auxiliar técnico em laboratório de farmácia",
+                            "total": 1214
+                        },
+                        {
+                            "profissão": "Mestre de produção farmacêutica",
+                            "total": 2
+                        },
+                        {
+                            "profissão": "Técnico em Farmácia",
+                            "total": 6185
+                        },
+                        {
+                            "profissão": "Técnico em Imunobiológicos",
+                            "total": 20
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "TÉCNICO E AUXILIAR DE LABORATÓRIO",
+                    "total": 45395,
+                    "profissões": [
+                        {
+                            "profissão": "Auxiliar de Laboratório de Análises Clínicas",
+                            "total": 14439
+                        },
+                        {
+                            "profissão": "Auxiliar de laboratório de análises físico-química",
+                            "total": 159
+                        },
+                        {
+                            "profissão": "Auxiliar de Laboratório de Imunobiológico",
+                            "total": 290
+                        },
+                        {
+                            "profissão": "Auxiliar Técnico em Patologia Clínica",
+                            "total": 6386
+                        },
+                        {
+                            "profissão": "Técnico de laboratório de análises físico-químicas",
+                            "total": 888
+                        },
+                        {
+                            "profissão": "Técnico em Laboratório de Farmácia",
+                            "total": 1240
+                        },
+                        {
+                            "profissão": "Técnico em patologia clínica",
+                            "total": 21993
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "TÉCNICO E AUXILIAR EM NUTRIÇÃO E DIETÉTICA",
+                    "total": 108,
+                    "profissões": [
+                        {
+                            "profissão": "Dietista",
+                            "total": 108
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "TÉCNICO E AUXILIAR EM FISIOTERAPIA E REABILITAÇÃO",
+                    "total": 3196,
+                    "profissões": [
+                        {
+                            "profissão": "Técnico de imobilização ortopédica",
+                            "total": 2119
+                        },
+                        {
+                            "profissão": "Técnico de ortopedia",
+                            "total": 867
+                        },
+                        {
+                            "profissão": "Técnico em reabilitação",
+                            "total": 210
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "TÉCNICO E AUXILIAR EM SAÚDE ORAL",
+                    "total": 7017,
+                    "profissões": [
+                        {
+                            "profissão": "Auxiliar de Prótese Dentária",
+                            "total": 600
+                        },
+                        {
+                            "profissão": "Protético Dentário",
+                            "total": 2125
+                        },
+                        {
+                            "profissão": "Técnico em saúde bucal",
+                            "total": 4292
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "TÉCNICO E AUXILIAR EM VIG SANITÁRIA E AMBIENTAL",
+                    "total": 192,
+                    "profissões": [
+                        {
+                            "profissão": "Agente de defesa ambiental",
+                            "total": 192
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "TÉCNICO E AUXILIAR EM EQUIP MÉDICO-HOSPITALARES",
+                    "total": 304,
+                    "profissões": [
+                        {
+                            "profissão": "Técnico em equipamento médico hospitalar",
+                            "total": 304
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "TÉCNICO E AUXILIAR EM RADIOLOGIA MÉDICA",
+                    "total": 35595,
+                    "profissões": [
+                        {
+                            "profissão": "Auxiliar de Radiologia (Revelação Fotográfica)",
+                            "total": 791
+                        },
+                        {
+                            "profissão": "Técnico em radiologia e imagenologia",
+                            "total": 34804
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "TÉCNICO E AUXILIAR EM HEMATOLOGIA/HEMOTERAPIA",
+                    "total": 967,
+                    "profissões": [
+                        {
+                            "profissão": "Auxiliar de banco de sangue",
+                            "total": 967
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "TÉCNICO E AUXILIAR EM HISTOLOGIA",
+                    "total": 139,
+                    "profissões": [
+                        {
+                            "profissão": "Técnico em Histologia",
+                            "total": 139
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE",
+                    "total": 5010,
+                    "profissões": [
+                        {
+                            "profissão": "Técnico em acupuntura",
+                            "total": 118
+                        },
+                        {
+                            "profissão": "Artista de Circo Outros",
+                            "total": 1
+                        },
+                        {
+                            "profissão": "Auxiliar de Desenvolvimento Infantil",
+                            "total": 243
+                        },
+                        {
+                            "profissão": "Auxiliar de Saúde Navegação Marítima",
+                            "total": 76
+                        },
+                        {
+                            "profissão": "Auxiliar Geral de Conservação de Vias Per",
+                            "total": 481
+                        },
+                        {
+                            "profissão": "Instrumentador Cirúrgico",
+                            "total": 1252
+                        },
+                        {
+                            "profissão": "Instrutor de Cursos Livres",
+                            "total": 59
+                        },
+                        {
+                            "profissão": "Mecânico de Manutenção de Automóveis Moto",
+                            "total": 16
+                        },
+                        {
+                            "profissão": "Mecânico de Manutenção de Máquinas em Ger",
+                            "total": 147
+                        },
+                        {
+                            "profissão": "Mecânico de Manutenção e Instalação Apare",
+                            "total": 44
+                        },
+                        {
+                            "profissão": "Ministro de Culto Religioso",
+                            "total": 42
+                        },
+                        {
+                            "profissão": "Musico Intérprete Cantor",
+                            "total": 6
+                        },
+                        {
+                            "profissão": "Musico Intérprete Instrumentista",
+                            "total": 5
+                        },
+                        {
+                            "profissão": "Professor de Alunos Com Deficiência Menta",
+                            "total": 519
+                        },
+                        {
+                            "profissão": "Professor de Nível Médio Na Educação Inf",
+                            "total": 26
+                        },
+                        {
+                            "profissão": "Professor de Nível Médio No Ensino Profis",
+                            "total": 9
+                        },
+                        {
+                            "profissão": "Quiropraxista Cinesoterapeuta Eutonista",
+                            "total": 34
+                        },
+                        {
+                            "profissão": "Recreador",
+                            "total": 242
+                        },
+                        {
+                            "profissão": "Técnico de Alimentos",
+                            "total": 145
+                        },
+                        {
+                            "profissão": "Técnico de Desporto Individual e Coletivo",
+                            "total": 38
+                        },
+                        {
+                            "profissão": "Técnico de Saneamento",
+                            "total": 340
+                        },
+                        {
+                            "profissão": "Técnico em Laboratório Óptico",
+                            "total": 27
+                        },
+                        {
+                            "profissão": "Técnico em Métodos Eletrográficos em Ence",
+                            "total": 428
+                        },
+                        {
+                            "profissão": "Técnico em Métodos Gráficos em Cardiologia",
+                            "total": 311
+                        },
+                        {
+                            "profissão": "Técnico em Óptica e Optometria Contatólog",
+                            "total": 210
+                        },
+                        {
+                            "profissão": "Técnico Químico",
+                            "total": 191
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nível de especialização": "PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR",
+            "áreas": [
+                {
+                    "especialidade": "AGENTE COMUNITÁRIO DE SAÚDE",
+                    "total": 282408,
+                    "profissões": [
+                        {
+                            "profissão": "Agente comunitário de saúde",
+                            "total": 282408
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "AGENTE DE SAÚDE PÚBLICA",
+                    "total": 15743,
+                    "profissões": [
+                        {
+                            "profissão": "Agente de saúde pública agente de saneam",
+                            "total": 15743
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "ATENDENTE DE ENFERMAGEM/AUX OPER SERV DIV E ASSEM",
+                    "total": 35486,
+                    "profissões": [
+                        {
+                            "profissão": "Atendente de consultório dentário",
+                            "total": 18488
+                        },
+                        {
+                            "profissão": "Atendente de enfermagem atend berçário",
+                            "total": 5991
+                        },
+                        {
+                            "profissão": "Atendente de farmácia balconista",
+                            "total": 11007
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "PARTEIRA",
+                    "total": 251,
+                    "profissões": [
+                        {
+                            "profissão": "Parteira leiga assistente de parto",
+                            "total": 251
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "OUTRAS OCUPAÇÕES NÍVEL ELEMENTAR EM SAÚDE",
+                    "total": 659958,
+                    "profissões": [
+                        {
+                            "profissão": "Artesão modelador vidros",
+                            "total": 13
+                        },
+                        {
+                            "profissão": "Gesseiro",
+                            "total": 81
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "nível de especialização": "PESSOAL ADMINISTRATIVO",
+            "áreas": [
+                {
+                    "especialidade": "ADMINISTRAÇÃO",
+                    "total": 341468,
+                    "profissões": [
+                        {
+                            "profissão": "Administrador",
+                            "total": 6135
+                        },
+                        {
+                            "profissão": "Administrador de banco de dados",
+                            "total": 179
+                        },
+                        {
+                            "profissão": "Administrador de sistemas operacionais",
+                            "total": 881
+                        },
+                        {
+                            "profissão": "Advogado",
+                            "total": 498
+                        },
+                        {
+                            "profissão": "Advogado de empresa",
+                            "total": 34
+                        },
+                        {
+                            "profissão": "Almoxarife",
+                            "total": 2579
+                        },
+                        {
+                            "profissão": "Analista de redes e de comunicação dados",
+                            "total": 150
+                        },
+                        {
+                            "profissão": "Analista de suporte computacional",
+                            "total": 522
+                        },
+                        {
+                            "profissão": "Analista financeiro instituições financeiras",
+                            "total": 247
+                        },
+                        {
+                            "profissão": "Arquiteto de edificações",
+                            "total": 125
+                        },
+                        {
+                            "profissão": "Arquivista",
+                            "total": 379
+                        },
+                        {
+                            "profissão": "Arquivista de documentos",
+                            "total": 296
+                        },
+                        {
+                            "profissão": "Assistente técnico administrativo",
+                            "total": 104238
+                        },
+                        {
+                            "profissão": "Atendente de agencia",
+                            "total": 64
+                        },
+                        {
+                            "profissão": "Atendente de ambulatório ou clínica",
+                            "total": 11507
+                        },
+                        {
+                            "profissão": "Auditor contadores e afins",
+                            "total": 325
+                        },
+                        {
+                            "profissão": "Auxiliar de contabilidade",
+                            "total": 717
+                        },
+                        {
+                            "profissão": "Auxiliar de escritório em geral auxiliar",
+                            "total": 64553
+                        },
+                        {
+                            "profissão": "Auxiliar de estatística",
+                            "total": 159
+                        },
+                        {
+                            "profissão": "Auxiliar de faturamento",
+                            "total": 6393
+                        },
+                        {
+                            "profissão": "Auxiliar de pessoal",
+                            "total": 1632
+                        },
+                        {
+                            "profissão": "Chefe de contabilidade técnico",
+                            "total": 39
+                        },
+                        {
+                            "profissão": "Cobrador externo",
+                            "total": 20
+                        },
+                        {
+                            "profissão": "Comprador",
+                            "total": 482
+                        },
+                        {
+                            "profissão": "Contador",
+                            "total": 840
+                        },
+                        {
+                            "profissão": "Continuo",
+                            "total": 1387
+                        },
+                        {
+                            "profissão": "Datilografo",
+                            "total": 304
+                        },
+                        {
+                            "profissão": "Digitador",
+                            "total": 13252
+                        },
+                        {
+                            "profissão": "Diretor administrativo",
+                            "total": 7427
+                        },
+                        {
+                            "profissão": "Diretor administrativo e financeiro",
+                            "total": 626
+                        },
+                        {
+                            "profissão": "Diretor comercial",
+                            "total": 27
+                        },
+                        {
+                            "profissão": "Diretor de manutenção",
+                            "total": 71
+                        },
+                        {
+                            "profissão": "Diretor de marketing",
+                            "total": 6
+                        },
+                        {
+                            "profissão": "Diretor de pesquisa e desenvolvimento pd",
+                            "total": 11
+                        },
+                        {
+                            "profissão": "Diretor de recursos humanos",
+                            "total": 86
+                        },
+                        {
+                            "profissão": "Diretor de relações de trabalho",
+                            "total": 7
+                        },
+                        {
+                            "profissão": "Diretor de serviços culturais",
+                            "total": 3
+                        },
+                        {
+                            "profissão": "Diretor de serviços de informática",
+                            "total": 152
+                        },
+                        {
+                            "profissão": "Diretor de serviços de saúde diretor cli",
+                            "total": 9355
+                        },
+                        {
+                            "profissão": "Diretor de serviços sociais",
+                            "total": 34
+                        },
+                        {
+                            "profissão": "Diretor de suprimentos",
+                            "total": 12
+                        },
+                        {
+                            "profissão": "Diretor de suprimentos no serviço publico",
+                            "total": 5
+                        },
+                        {
+                            "profissão": "Diretor financeiro",
+                            "total": 119
+                        },
+                        {
+                            "profissão": "Economista domestico",
+                            "total": 14
+                        },
+                        {
+                            "profissão": "Engenheiro civil",
+                            "total": 513
+                        },
+                        {
+                            "profissão": "Engenheiro civil saneamento",
+                            "total": 85
+                        },
+                        {
+                            "profissão": "Engenheiro de segurança do trabalho",
+                            "total": 379
+                        },
+                        {
+                            "profissão": "Fiscal de tributos municipal",
+                            "total": 104
+                        },
+                        {
+                            "profissão": "Gerente administrativo",
+                            "total": 10443
+                        },
+                        {
+                            "profissão": "Gerente comercial",
+                            "total": 121
+                        },
+                        {
+                            "profissão": "Gerente de almoxarifado",
+                            "total": 145
+                        },
+                        {
+                            "profissão": "Gerente de compras",
+                            "total": 141
+                        },
+                        {
+                            "profissão": "Gerente de comunicação",
+                            "total": 61
+                        },
+                        {
+                            "profissão": "Gerente de departamento pessoal",
+                            "total": 229
+                        },
+                        {
+                            "profissão": "Gerente de desenvolvimento de sistemas",
+                            "total": 22
+                        },
+                        {
+                            "profissão": "Gerente de marketing",
+                            "total": 43
+                        },
+                        {
+                            "profissão": "Gerente de pesquisa e desenvolvimento pd",
+                            "total": 25
+                        },
+                        {
+                            "profissão": "Gerente de produção de tecnologia da info",
+                            "total": 44
+                        },
+                        {
+                            "profissão": "Gerente de produção e operações",
+                            "total": 38
+                        },
+                        {
+                            "profissão": "Gerente de projetos de tecnologia da info",
+                            "total": 30
+                        },
+                        {
+                            "profissão": "Gerente de projetos e serviços de manutenção",
+                            "total": 109
+                        },
+                        {
+                            "profissão": "Gerente de recursos humanos",
+                            "total": 397
+                        },
+                        {
+                            "profissão": "Gerente de rede",
+                            "total": 18
+                        },
+                        {
+                            "profissão": "Gerente de riscos",
+                            "total": 4
+                        },
+                        {
+                            "profissão": "Gerente de segurança de tecnologia da inf",
+                            "total": 7
+                        },
+                        {
+                            "profissão": "Gerente de serviços culturais",
+                            "total": 7
+                        },
+                        {
+                            "profissão": "Gerente de serviços de saúde administrado",
+                            "total": 15080
+                        },
+                        {
+                            "profissão": "Gerente de serviços sociais",
+                            "total": 54
+                        },
+                        {
+                            "profissão": "Gerente de suporte técnico de tecnologia",
+                            "total": 178
+                        },
+                        {
+                            "profissão": "Gerente de suprimentos",
+                            "total": 78
+                        },
+                        {
+                            "profissão": "Gerente de vendas",
+                            "total": 12
+                        },
+                        {
+                            "profissão": "Gerente financeiro",
+                            "total": 357
+                        },
+                        {
+                            "profissão": "Matemático",
+                            "total": 4
+                        },
+                        {
+                            "profissão": "Operador de computador inclusive microcom",
+                            "total": 804
+                        },
+                        {
+                            "profissão": "Operador de rádiochamada",
+                            "total": 1243
+                        },
+                        {
+                            "profissão": "Operador de telemarketing ativo e recepti",
+                            "total": 501
+                        },
+                        {
+                            "profissão": "Operador de telemarketing técnico",
+                            "total": 21
+                        },
+                        {
+                            "profissão": "Professor de computação no ensino superior",
+                            "total": 1
+                        },
+                        {
+                            "profissão": "Programador de sistemas de informação",
+                            "total": 234
+                        },
+                        {
+                            "profissão": "Recepcionista em geral",
+                            "total": 52025
+                        },
+                        {
+                            "profissão": "Secretaria executiva",
+                            "total": 1690
+                        },
+                        {
+                            "profissão": "Supervisor administrativo",
+                            "total": 5505
+                        },
+                        {
+                            "profissão": "Supervisor de almoxarifado",
+                            "total": 218
+                        },
+                        {
+                            "profissão": "Supervisor de andar",
+                            "total": 17
+                        },
+                        {
+                            "profissão": "Supervisor de compras",
+                            "total": 108
+                        },
+                        {
+                            "profissão": "Supervisor de contas a pagar",
+                            "total": 33
+                        },
+                        {
+                            "profissão": "Supervisor de controle patrimonial",
+                            "total": 85
+                        },
+                        {
+                            "profissão": "Supervisor de recepcionistas",
+                            "total": 728
+                        },
+                        {
+                            "profissão": "Supervisor de tesouraria",
+                            "total": 156
+                        },
+                        {
+                            "profissão": "Supervisor de transportes",
+                            "total": 60
+                        },
+                        {
+                            "profissão": "Técnico de apoio usuário inform helpdesk",
+                            "total": 667
+                        },
+                        {
+                            "profissão": "Técnico de contabilidade",
+                            "total": 366
+                        },
+                        {
+                            "profissão": "Técnico de manutenção de sistemas e instr",
+                            "total": 62
+                        },
+                        {
+                            "profissão": "Técnico eletrônico",
+                            "total": 229
+                        },
+                        {
+                            "profissão": "Técnico em administração",
+                            "total": 2871
+                        },
+                        {
+                            "profissão": "Técnico em manutenção de equip informática",
+                            "total": 938
+                        },
+                        {
+                            "profissão": "Técnico em secretariado",
+                            "total": 695
+                        },
+                        {
+                            "profissão": "Técnico em segurança no trabalho",
+                            "total": 2044
+                        },
+                        {
+                            "profissão": "Telefonista",
+                            "total": 5547
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "SERVIÇO DE LIMPEZA/CONSERVAÇÃO",
+                    "total": 17403,
+                    "profissões": [
+                        {
+                            "profissão": "de higiene e segurança",
+                            "total": 3072
+                        },
+                        {
+                            "profissão": "Ajustador mecânico",
+                            "total": 25
+                        },
+                        {
+                            "profissão": "Atendente de lavanderia",
+                            "total": 211
+                        },
+                        {
+                            "profissão": "Auxiliar de lavanderia",
+                            "total": 3734
+                        },
+                        {
+                            "profissão": "Eletricista de instalações",
+                            "total": 466
+                        },
+                        {
+                            "profissão": "Empregado doméstico nos serviços gerais",
+                            "total": 4225
+                        },
+                        {
+                            "profissão": "Encanador",
+                            "total": 181
+                        },
+                        {
+                            "profissão": "Jardineiro",
+                            "total": 198
+                        },
+                        {
+                            "profissão": "Lavadeiro em geral",
+                            "total": 623
+                        },
+                        {
+                            "profissão": "Lavador de roupas à máquina",
+                            "total": 481
+                        },
+                        {
+                            "profissão": "Marceneiro",
+                            "total": 161
+                        },
+                        {
+                            "profissão": "Operador de caldeira",
+                            "total": 141
+                        },
+                        {
+                            "profissão": "Passador de roupas em geral",
+                            "total": 117
+                        },
+                        {
+                            "profissão": "Pedreiro",
+                            "total": 521
+                        },
+                        {
+                            "profissão": "Pintor a pincel e rolo exceto obras e est",
+                            "total": 40
+                        },
+                        {
+                            "profissão": "Servente de obras",
+                            "total": 436
+                        },
+                        {
+                            "profissão": "Zelador de edifício",
+                            "total": 2771
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "SEGURANÇA",
+                    "total": 15449,
+                    "profissões": [
+                        {
+                            "profissão": "Agente de pátio",
+                            "total": 137
+                        },
+                        {
+                            "profissão": "Agente de segurança",
+                            "total": 1109
+                        },
+                        {
+                            "profissão": "Agente de segurança penitenciária",
+                            "total": 61
+                        },
+                        {
+                            "profissão": "Guarda civil municipal",
+                            "total": 269
+                        },
+                        {
+                            "profissão": "Guardador de veículos",
+                            "total": 9
+                        },
+                        {
+                            "profissão": "Porteiro de edifícios",
+                            "total": 3767
+                        },
+                        {
+                            "profissão": "Vigia",
+                            "total": 7233
+                        },
+                        {
+                            "profissão": "Vigilante",
+                            "total": 2864
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "OUTRAS OCUPAÇÕES ADMINISTRATIVAS",
+                    "total": 285544,
+                    "profissões": [
+                        {
+                            "profissão": "Acabador de calçados",
+                            "total": 1
+                        },
+                        {
+                            "profissão": "Ascensorista",
+                            "total": 341
+                        },
+                        {
+                            "profissão": "Copeiro",
+                            "total": 2892
+                        },
+                        {
+                            "profissão": "Copeiro de hospital",
+                            "total": 6292
+                        },
+                        {
+                            "profissão": "Costureira de reparação de roupas",
+                            "total": 238
+                        },
+                        {
+                            "profissão": "Costureiro na confecção em serie",
+                            "total": 124
+                        },
+                        {
+                            "profissão": "Cozinhador conservação de alimentos",
+                            "total": 243
+                        },
+                        {
+                            "profissão": "Cozinheiro de embarcações",
+                            "total": 5
+                        },
+                        {
+                            "profissão": "Cozinheiro de hospital",
+                            "total": 4158
+                        },
+                        {
+                            "profissão": "Cozinheiro geral",
+                            "total": 2023
+                        },
+                        {
+                            "profissão": "Motorista de carro de passeio",
+                            "total": 7762
+                        },
+                        {
+                            "profissão": "Motorista de furgão ou veículo similar",
+                            "total": 8453
+                        },
+                        {
+                            "profissão": "Trabalhador de serviços de manutenção",
+                            "total": 253012
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

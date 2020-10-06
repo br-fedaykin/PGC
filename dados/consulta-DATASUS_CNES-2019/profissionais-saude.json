@@ -2,37 +2,37 @@
     "PESSOAL DE SAÚDE - NÍVEL SUPERIOR": [
         {
             "ANESTESISTA":
-            [	
+            [
                 "Médico Anestesiologista"
             ]
         },
         {
-            "ASSISTENTE SOCIAL": 	
+            "ASSISTENTE SOCIAL":
             [
                 "Assistente Social"
             ]
         },
         {
-            "BIOQUÍMICO/FARMACÊUTICO":	
+            "BIOQUÍMICO/FARMACÊUTICO":
             [
                 "Farmacêutico"
             ]
         },
         {
-            "CIRURGIÃO GERAL":	
+            "CIRURGIÃO GERAL":
             [
                 "Médico Cirurgião Geral"
             ]
         },
         {
-            "CLÍNICO GERAL":	
+            "CLÍNICO GERAL":
             [
                 "Médico Clínico",
                 "Médico Generalista Alopata"
             ]
         },
         {
-            "ENFERMEIRO":	
+            "ENFERMEIRO":
             [
                 "Outros enfermeiros",
                 "Enfermeiro",
@@ -52,7 +52,7 @@
             ]
         },
         {
-            "FISIOTERAPEUTA":	
+            "FISIOTERAPEUTA":
             [
                 "Fisioterapeuta do trabalho",
                 "Fisioterapeuta acupunturista",
@@ -61,37 +61,37 @@
                 "Fisioterapeuta neurofuncional",
                 "Fisioterapeuta osteopata",
                 "Fisioterapeuta quiropraxista",
-                "Fisioterapeuta respiratória",
+                "Fisioterapeuta respiratório",
                 "Fisioterapeuta traumato-ortopédica funcional"
             ]
         },
         {
-            "FONOAUDIÓLOGO":	
+            "FONOAUDIÓLOGO":
             [
                 "Fonoaudiólogo"
             ]
         },
         {
-            "GINECO OBSTETRA":	
+            "GINECO OBSTETRA":
             [
                 "Médico Ginecologista Obstetra"
             ]
         },
         {
-            "MÉDICO DE FAMÍLIA":	
+            "MÉDICO DE FAMÍLIA":
             [
                 "Médico da estratégia de Saúde da Família",
                 "Médico de família e comunidade"
             ]
         },
         {
-            "NUTRICIONISTA":	
+            "NUTRICIONISTA":
             [
                 "Nutricionista"
             ]
         },
         {
-            "ODONTÓLOGO":	
+            "ODONTÓLOGO":
             [
                 "Cirurgião dentista - auditor",
                 "Cirurgião dentista - clínico geral",
@@ -119,13 +119,13 @@
             ]
         }
         ,{
-            "PEDIATRA":	
+            "PEDIATRA":
             [
                 "Médico Pediatra"
             ]
         },
         {
-            "PSICÓLOGO":	
+            "PSICÓLOGO":
             [
                 "Psicólogo Clínico",
                 "Psicólogo do Esporte",
@@ -139,25 +139,25 @@
             ]
         },
         {
-            "PSIQUIATRA":	
+            "PSIQUIATRA":
             [
                 "Médico psiquiatra"
             ]
         }
         ,{
-            "RADIOLOGISTA":	
+            "RADIOLOGISTA":
             [
                 "Médico em radiologia e diagnóstico por imagem"
             ]
         },
         {
-            "SANITARISTA":	
+            "SANITARISTA":
             [
                 "Médico sanitarista"
             ]
         },
         {
-            "OUTRAS ESPECIALIDADES MÉDICAS":	
+            "OUTRAS ESPECIALIDADES MÉDICAS":
             [
                 "Médico acupunturista",
                 "Médico alergista e imunologista",
@@ -218,7 +218,7 @@
         }
         ,
         {
-            "OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE":	
+            "OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE":
             [
                 "Médico veterinário",
                 "Biólogo",
@@ -263,7 +263,7 @@
             ]
         }
     ],
-    "PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR": 
+    "PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR":
     [
         {
             "AUXILIAR DE ENFERMAGEM":
@@ -280,7 +280,7 @@
             ]
         },
         {
-            "TÉCNICO DE ENFERMAGEM":	
+            "TÉCNICO DE ENFERMAGEM":
             [
                 "Técnico de enfermagem",
                 "Técnico de enfermagem de saúde da família",
@@ -291,7 +291,7 @@
             ]
         },
         {
-            "TÉCNICO E AUXILIAR DE FARMÁCIA":	
+            "TÉCNICO E AUXILIAR DE FARMÁCIA":
             [
                 "Auxiliar de Farmácia de Manipulação",
                 "Auxiliar de Produção Farmacêutica",
@@ -302,7 +302,7 @@
             ]
         },
         {
-            "TÉCNICO E AUXILIAR DE LABORATÓRIO":	
+            "TÉCNICO E AUXILIAR DE LABORATÓRIO":
             [
                 "Auxiliar de Laboratório de Análises Clínicas",
                 "Auxiliar de laboratório de análises físico-química",
@@ -314,13 +314,13 @@
             ]
         },
         {
-            "TÉCNICO E AUXILIAR EM NUTRIÇÃO E DIETÉTICA":	
+            "TÉCNICO E AUXILIAR EM NUTRIÇÃO E DIETÉTICA":
             [
                 "Dietista"
             ]
         },
         {
-            "TÉCNICO E AUXILIAR EM FISIOTERAPIA E REABILITAÇÃO":	
+            "TÉCNICO E AUXILIAR EM FISIOTERAPIA E REABILITAÇÃO":
             [
                 "Técnico de imobilização ortopédica",
                 "Técnico de ortopedia",
@@ -328,7 +328,7 @@
             ]
         },
         {
-            "TÉCNICO E AUXILIAR EM SAÚDE ORAL":	
+            "TÉCNICO E AUXILIAR EM SAÚDE ORAL":
             [
                 "Auxiliar de Prótese Dentária",
                 "Protético Dentário",
@@ -336,38 +336,38 @@
             ]
         },
         {
-            "TÉCNICO E AUXILIAR EM VIG SANITÁRIA E AMBIENTAL":	
+            "TÉCNICO E AUXILIAR EM VIG SANITÁRIA E AMBIENTAL":
             [
                 "Agente de defesa ambiental"
             ]
         },
         {
-            "TÉCNICO E AUXILIAR EM EQUIP MÉDICO-HOSPITALARES":	
+            "TÉCNICO E AUXILIAR EM EQUIP MÉDICO-HOSPITALARES":
             [
                 "Técnico em equipamento médico hospitalar"
             ]
         },
         {
-            "TÉCNICO E AUXILIAR EM RADIOLOGIA MÉDICA":	
+            "TÉCNICO E AUXILIAR EM RADIOLOGIA MÉDICA":
             [
                 "Auxiliar de Radiologia (Revelação Fotográfica)",
                 "Técnico em radiologia e imagenologia"
             ]
         }
         ,{
-            "TÉCNICO E AUXILIAR EM HEMATOLOGIA/HEMOTERAPIA":	
+            "TÉCNICO E AUXILIAR EM HEMATOLOGIA/HEMOTERAPIA":
             [
                 "Auxiliar de banco de sangue"
             ]
         },
         {
-            "TÉCNICO E AUXILIAR EM HISTOLOGIA":	
+            "TÉCNICO E AUXILIAR EM HISTOLOGIA":
             [
                 "Técnico em Histologia"
             ]
         },
         {
-            "OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE":	
+            "OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE":
             [
                 "Técnico em acupuntura",
                 "Artista de Circo Outros",
@@ -398,7 +398,7 @@
             ]
         }
     ],
-    "PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR":		
+    "PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR":
     [
         {
             "AGENTE COMUNITÁRIO DE SAÚDE":
@@ -512,7 +512,7 @@
                 "Gerente financeiro",
                 "Matemático",
                 "Operador de computador inclusive microcom",
-                "Operador de rádio-chamada",
+                "Operador de rádiochamada",
                 "Operador de telemarketing ativo e recepti",
                 "Operador de telemarketing técnico",
                 "Professor de computação no ensino superior",
@@ -567,7 +567,7 @@
                 "Agente de pátio",
                 "Agente de segurança",
                 "Agente de segurança penitenciária",
-                "Guarda-civil municipal",
+                "Guarda civil municipal",
                 "Guardador de veículos",
                 "Porteiro de edifícios",
                 "Vigia",
