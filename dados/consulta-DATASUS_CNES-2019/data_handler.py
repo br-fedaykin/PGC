@@ -12,6 +12,9 @@ ACCENT_MAPPING = {
     'u':['u','ú','û'],
     'c':['c', 'ç']
 }
+
+taxonomia = {}
+
 def isSameText(word, another_word):
     is_the_same = word.lower() == another_word
     if not is_the_same and len(word) == len(another_word):
@@ -28,17 +31,14 @@ def isSameText(word, another_word):
         is_the_same = all(comparison)
     return is_the_same
 
-def main():
+def construir_taxonomia():
+    global taxonomia
     # CSV data extracted manually from DATASUS
-
-    csv_file = open('profissionais-saúde-2019-geral.csv', 'r', encoding='utf-8-sig')
-    profissões_contagem = csv.DictReader(csv_file, delimiter=';')
 
     json_file = open('profissionais-saude.json', 'r', encoding='utf-8')
     profissões_categorias = json.load(json_file)
     json_file.close()
 
-    taxonomia = {}
     níveis =  []
     for escolaridade in profissões_categorias:
         nível_escolaridade = {}
@@ -53,10 +53,18 @@ def main():
                 profissão_ = {}
                 profissão_['profissão'] = profissão
                 profissão_['total'] = 0
+                profissão_['código CBO'] = ""
                 especialidade['profissões'].append(profissão_)
             nível_escolaridade['áreas'].append(especialidade)
         níveis.append(nível_escolaridade)
     taxonomia['taxonomia'] = níveis
+
+def acrescentarContagem():
+    global taxonomia
+
+    csv_file = open('profissionais-saúde-2019-geral.csv', 'r', encoding='utf-8-sig')
+    profissões_contagem = csv.DictReader(csv_file, delimiter=';')
+
     for linha in profissões_contagem:
         ocupação = linha['Ocupações em geral'].strip()
         total = int(linha['Total'])
@@ -65,14 +73,31 @@ def main():
                 if isSameText(ocupação, área['especialidade']):
                     área['total'] = total
                 for profissão in área['profissões']:
-                    if 'jurídico' in ocupação.lower() and 'jurídico' in profissão['profissão'].lower():
-                        print('debug')
                     if isSameText(ocupação, profissão['profissão']):
                         profissão['total'] = total
     csv_file.close()
 
-    with open('taxonomia.json', 'w+', encoding='utf-8') as taxonomy_file:
-        json.dump(taxonomia, taxonomy_file, indent=4, ensure_ascii=False)
+def acrescentarCBO(filename):
+    global taxonomia
+
+    csv_file = open(filename, 'r', encoding='utf-8-sig')
+    cbo = csv.DictReader(csv_file, delimiter=';')
+
+    for linha in cbo:
+        código_cbo = str(linha['Código do Termo'])
+        ocupação = linha['Termo']
+        for nível in taxonomia['taxonomia']:
+            for área in nível['áreas']:
+                for profissão in área['profissões']:
+                    if isSameText(ocupação, profissão['profissão']):
+                        profissão['código CBO'] = código_cbo
+    csv_file.close()
 
 if __name__ == "__main__":
-    main()
+    construir_taxonomia()
+    acrescentarContagem()
+    acrescentarCBO('../TISS/tabela24_CBO.csv')
+    acrescentarCBO('../TISS/tabelaCBO_auxiliar.csv')
+
+    with open('taxonomia.json', 'w+', encoding='utf-8') as taxonomy_file:
+        json.dump(taxonomia, taxonomy_file, indent=4, ensure_ascii=False)

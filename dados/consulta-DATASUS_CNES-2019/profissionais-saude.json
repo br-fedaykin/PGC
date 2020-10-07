@@ -74,7 +74,7 @@
         {
             "GINECO OBSTETRA":
             [
-                "Médico Ginecologista Obstetra"
+                "Médico Ginecologista e Obstetra"
             ]
         },
         {
@@ -234,15 +234,15 @@
                 "Orientador Educacional",
                 "Ortoptista",
                 "Pedagogo",
-                "Professor de alunos com deficiência auditiva e sur",
+                "Professor de alunos com deficiência auditiva e surdos",
                 "Professor de alunos com deficiência física",
                 "Professor de alunos com deficiência múltipla",
                 "Professor de alunos com deficiência visual",
                 "Pesquisador de Clinica Médica",
                 "Pesquisador de Medicina Básica",
-                "Pesquisador em Biologia Ambiental Ecologi",
+                "Pesquisador em Biologia Ambiental",
                 "Pesquisador em Biologia Animal",
-                "Pesquisador em Biologia de Microorg e Para",
+                "Pesquisador em biologia de Microorganismos e Parasitas",
                 "Pesquisador em Biologia Humana",
                 "Pesquisador em Ciências Sociais e Humanas",
                 "Pesquisador em Psicologia",
@@ -250,10 +250,10 @@
                 "Preparador Físico",
                 "Professor da Educação de Jovens e Adulto",
                 "Professor de Artes no Ensino Médio",
-                "Professor de Educação Física Ensino Fund",
-                "Professor de Educação Física Ensino Superior",
-                "Professor de Educação Física Ensino Médio",
-                "Professor de Nutricao",
+                "Professor de educação física do ensino fundamental",
+                "Professor de educação física no ensino superior",
+                "Professor de Artes no Ensino Médio",
+                "Professor de Nutrição",
                 "Professor de técnicas e Recursos Audiovisuais",
                 "Professor de Terapia Ocupacional",
                 "Psicanalista",
@@ -270,7 +270,7 @@
             [
                 "Auxiliar de Enfermagem",
                 "Auxiliar de Enfermagem do Trabalho",
-                "Auxiliar de enfermagem da estratégia de saúde da f"
+                "Auxiliar de enfermagem da estratégia de saúde da família"
             ]
         },
         {
@@ -306,7 +306,7 @@
             [
                 "Auxiliar de Laboratório de Análises Clínicas",
                 "Auxiliar de laboratório de análises físico-química",
-                "Auxiliar de Laboratório de Imunobiológico",
+                "Auxiliar de Laboratório de Imunobiológicos",
                 "Auxiliar Técnico em Patologia Clínica",
                 "Técnico de laboratório de análises físico-químicas",
                 "Técnico em Laboratório de Farmácia",
@@ -370,15 +370,15 @@
             "OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE":
             [
                 "Técnico em acupuntura",
-                "Artista de Circo Outros",
+                "Artista de Circo (Outros)",
                 "Auxiliar de Desenvolvimento Infantil",
-                "Auxiliar de Saúde Navegação Marítima",
-                "Auxiliar Geral de Conservação de Vias Per",
+                "Auxiliar de Saúde (Navegação Marítima)",
+                "Auxiliar geral de conservação de vias permanentes (exceto trilhos)",
                 "Instrumentador Cirúrgico",
                 "Instrutor de Cursos Livres",
-                "Mecânico de Manutenção de Automóveis Moto",
-                "Mecânico de Manutenção de Máquinas em Ger",
-                "Mecânico de Manutenção e Instalação Apare",
+                "Mecânico de manutenção de automóveis, motocicletas e veículos similares",
+                "Mecânico de manutenção de máquinas, em geral",
+                "Mecânico de manutenção e instalação de aparelhos de climatização e refrigeração",
                 "Ministro de Culto Religioso",
                 "Musico Intérprete Cantor",
                 "Musico Intérprete Instrumentista",
@@ -409,27 +409,27 @@
         {
             "AGENTE DE SAÚDE PÚBLICA":
             [
-                "Agente de saúde pública agente de saneam"
+                "Agente de saúde pública"
             ]
         },
         {
             "ATENDENTE DE ENFERMAGEM/AUX OPER SERV DIV E ASSEM":
             [
                 "Atendente de consultório dentário",
-                "Atendente de enfermagem atend berçário",
-                "Atendente de farmácia balconista"
+                "Atendente de enfermagem",
+                "Atendente de farmácia - balconista"
             ]
         },
         {
             "PARTEIRA":
             [
-                "Parteira leiga assistente de parto"
+                "Parteira leiga"
             ]
         },
         {
             "OUTRAS OCUPAÇÕES NÍVEL ELEMENTAR EM SAÚDE":
             [
-                "Artesão modelador vidros",
+                "Artesão modelador (vidros)",
                 "Gesseiro"
             ]
         }
@@ -444,22 +444,22 @@
                 "Advogado",
                 "Advogado de empresa",
                 "Almoxarife",
-                "Analista de redes e de comunicação dados",
+                "Analista de redes e de comunicação de dados",
                 "Analista de suporte computacional",
-                "Analista financeiro instituições financeiras",
+                "Analista financeiro (instituições financeiras)",
                 "Arquiteto de edificações",
                 "Arquivista",
                 "Arquivista de documentos",
                 "Assistente técnico administrativo",
                 "Atendente de agencia",
                 "Atendente de ambulatório ou clínica",
-                "Auditor contadores e afins",
+                "Auditor (contadores e afins)",
                 "Auxiliar de contabilidade",
-                "Auxiliar de escritório em geral auxiliar",
+                "Auxiliar de escritório",
                 "Auxiliar de estatística",
                 "Auxiliar de faturamento",
                 "Auxiliar de pessoal",
-                "Chefe de contabilidade técnico",
+                "Chefe de contabilidade (técnico)",
                 "Cobrador externo",
                 "Comprador",
                 "Contador",
@@ -471,19 +471,19 @@
                 "Diretor comercial",
                 "Diretor de manutenção",
                 "Diretor de marketing",
-                "Diretor de pesquisa e desenvolvimento pd",
+                "Diretor de pesquisa e desenvolvimento (p&d)",
                 "Diretor de recursos humanos",
                 "Diretor de relações de trabalho",
                 "Diretor de serviços culturais",
                 "Diretor de serviços de informática",
-                "Diretor de serviços de saúde diretor cli",
+                "Diretor de serviços de saúde",
                 "Diretor de serviços sociais",
                 "Diretor de suprimentos",
                 "Diretor de suprimentos no serviço publico",
                 "Diretor financeiro",
                 "Economista domestico",
                 "Engenheiro civil",
-                "Engenheiro civil saneamento",
+                "Engenheiro civil (saneamento)",
                 "Engenheiro de segurança do trabalho",
                 "Fiscal de tributos municipal",
                 "Gerente administrativo",
@@ -494,31 +494,31 @@
                 "Gerente de departamento pessoal",
                 "Gerente de desenvolvimento de sistemas",
                 "Gerente de marketing",
-                "Gerente de pesquisa e desenvolvimento pd",
-                "Gerente de produção de tecnologia da info",
+                "Gerente de pesquisa e desenvolvimento (p&d)",
+                "Gerente de operação de tecnologia da informação",
                 "Gerente de produção e operações",
-                "Gerente de projetos de tecnologia da info",
+                "Gerente de projetos de tecnologia da informação",
                 "Gerente de projetos e serviços de manutenção",
                 "Gerente de recursos humanos",
                 "Gerente de rede",
                 "Gerente de riscos",
-                "Gerente de segurança de tecnologia da inf",
+                "Gerente de segurança da informação",
                 "Gerente de serviços culturais",
-                "Gerente de serviços de saúde administrado",
+                "Gerente de serviços de saúde",
                 "Gerente de serviços sociais",
-                "Gerente de suporte técnico de tecnologia",
+                "Gerente de suporte técnico de tecnologia da informação",
                 "Gerente de suprimentos",
                 "Gerente de vendas",
                 "Gerente financeiro",
                 "Matemático",
-                "Operador de computador inclusive microcom",
+                "Operador de computador",
                 "Operador de rádiochamada",
-                "Operador de telemarketing ativo e recepti",
+                "Operador de telemarketing ativo e receptivo",
                 "Operador de telemarketing técnico",
-                "Professor de computação no ensino superior",
+                "Professor de computação (no ensino superior)",
                 "Programador de sistemas de informação",
-                "Recepcionista em geral",
-                "Secretaria executiva",
+                "Recepcionista, em geral",
+                "Secretário executivo",
                 "Supervisor administrativo",
                 "Supervisor de almoxarifado",
                 "Supervisor de andar",
@@ -528,21 +528,21 @@
                 "Supervisor de recepcionistas",
                 "Supervisor de tesouraria",
                 "Supervisor de transportes",
-                "Técnico de apoio usuário inform helpdesk",
+                "Técnico de suporte ao usuário de tecnologia da informação",
                 "Técnico de contabilidade",
-                "Técnico de manutenção de sistemas e instr",
+                "Técnico de manutenção de sistemas e instrumentos",
                 "Técnico eletrônico",
                 "Técnico em administração",
-                "Técnico em manutenção de equip informática",
+                "Técnico em manutenção de equipamentos de informática",
                 "Técnico em secretariado",
-                "Técnico em segurança no trabalho",
+                "Técnico em segurança do trabalho",
                 "Telefonista"
             ]
         },
         {
             "SERVIÇO DE LIMPEZA/CONSERVAÇÃO":
             [
-                "de higiene e segurança",
+                "Agente de higiene e segurança",
                 "Ajustador mecânico",
                 "Atendente de lavanderia",
                 "Auxiliar de lavanderia",
@@ -550,13 +550,13 @@
                 "Empregado doméstico nos serviços gerais",
                 "Encanador",
                 "Jardineiro",
-                "Lavadeiro em geral",
+                "Lavadeiro, em geral",
                 "Lavador de roupas à máquina",
                 "Marceneiro",
                 "Operador de caldeira",
                 "Passador de roupas em geral",
                 "Pedreiro",
-                "Pintor a pincel e rolo exceto obras e est",
+                "Pintor a pincel e rolo (exceto obras e estruturas metálicas)",
                 "Servente de obras",
                 "Zelador de edifício"
             ]
@@ -567,7 +567,7 @@
                 "Agente de pátio",
                 "Agente de segurança",
                 "Agente de segurança penitenciária",
-                "Guarda civil municipal",
+                "Guarda-civil municipal",
                 "Guardador de veículos",
                 "Porteiro de edifícios",
                 "Vigia",
