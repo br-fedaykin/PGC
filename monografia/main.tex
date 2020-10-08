@@ -231,7 +231,7 @@ Criar um sistema, com base em contratos inteligentes executados em uma Blockchai
     \item {\color{red}Não mostrar código.}
 \end{itemize}
 
-\subsection{Criptografia baseada em atributos (CBA)} \label{sec:sub:cba}
+\subsection{Criptografia Baseada em Atributos} \label{sec:sub:cba}
 
 {\color{ForestGreen}Explicar quando nasceu, quem a criou, e qual foi o problema que estava resolvendo (basicamente que a criptografia chaves publica/privada precisa ser criada para cada usuário que precisa de permissão e com a por atributos não). (2 parágrafos).} % TODO: (ok) padronizar acesso e permissão, fica confuso usar diferentes palavras para o mesmo conceito. Se forem diferentes, explicar
 
@@ -318,7 +318,7 @@ O administrador do centro de emergência tem posse da chave do atributo ``\emph{
 Este cenário privilegia o atendimento de emergência ao considerar a presença prévia do atributo ``\emph{emergência}'' nas políticas de acesso, mas isto não constitui uma obrigatoriedade.
 Sem este atributo em um prontuário, este seria aplicado sob demanda, quando por exemplo um hospital recebesse um pedido de acesso ao prontuário junto a uma notificação de internação do paciente, sendo removido das condições de acesso quando tão logo fosse possível delegar a decisão ao paciente ou seu representante legal.
 
-\subsection{Blockchain Ethereum}
+\subsection{Blockchain, \emph{Distributed Ledger} e o Ethereum}
 
 {\color{ForestGreen}Explicar quando nasceu, quem a criou e que resolve o problema de não estar atrelada somente a transações financeiras, tendo um uso mais abrangente para qualquer domínio de aplicação. (2 parágrafos).}
 
@@ -437,7 +437,7 @@ A distribuição do novo bloco e sua referência em novas propostas de blocos s�
 Por isso pode-se dizer que o consenso ocorre \textbf{implicitamente}, ou seja, não há coordenação de mensagens para desencadear um processo de decisão formal para que um determinado bloco seja aceito ou rejeitado.
 Ao invés disso, o consenso se dá pela inclusão, por meio de sua referência, na cadeia de blocos.
 
-\subsection{Contratos inteligentes no Ethereum} \label{sec:sub:contratos-ethereum}
+\subsection{Contratos Inteligentes no Ethereum} \label{sec:sub:contratos-ethereum}
 
 {\color{ForestGreen}Explicar para que servem e listar benefícios. (1 parágrafo).}
 
@@ -623,8 +623,8 @@ Por último, o Dr. Bob insere o comando para poder acessar o documento e então 
 
 Nesta seção serão apresentadas as diferentes funcionalidades do módulo: geração da taxonomia dos atributos; como são criadas as permissões usando essa taxonomia; como são criptografados os arquivos usando essa taxonomia; como se conectar à Blockchain.
 
-\subsubsection{Taxonomia e administração de permissões}
-\label{sec:sub:taxonomia-permissoes}
+\subsubsection{Administração de Atributos}
+\label{sec:sub:administracao-permissoes}
 % {\color{ForestGreen}Explicar que o servidor de permissões deverá ser responsabilidade de uma organização apta para entregar as permissões online (ex. Ministério de Saúde ou algúm conselho federal/regional de medicina) (1 parágrafo)}.
 
 A política de acesso a prontuários é aplicada primariamente pelo paciente usando fórmulas lógicas em termos de atributos.
@@ -832,7 +832,7 @@ Confirmado que os dados recebidos realmente existem, estes são processados no e
 
 {\color{magenta}Nesta seção serão apresentadas bla bla bla igual que na seção do módulo do cliente.}
 
-\subsubsection{Contratos inteligentes}
+\subsubsection{Contratos Inteligentes}
 \label{sec:sub:ImplementacaoSmartContracts}
 
 Foram desenvolvidos cinco contratos inteligentes que que permitem realizar a autenticação, entrega de permissões e armazenamento de metadados dos prontuários eletrônicos dos pacientes.
@@ -1279,7 +1279,7 @@ Embora não utilize explicitamente um esquema ABE, o resultado final é próximo
 Nesta ótica, os termos de pesquisa atrelados à cifra de um documento seriam equivalentes a uma política de acesso monótona utilizando somente operadores conjuntivos (OR); o papel de \emph{proxy} nas mãos do usuário seria comparável ao de uma autoridade certificadora; e para finalizar a analogia, a chave de re-criptografia concedida para algum usuário e referindo-se a algum termo de pesquisa específico seria similar à chave pessoal de um atributo com de mesmo nome, concedida a este mesmo usuário.
 
 Visando a interoperabilidade entre instituições, Zhang e Lin sugerem o FHIR \emph{(Fast Healthcare Interoperability Resources)} \cite{HL72019} como um escopo comum de referência para a definição dos termos de pesquisa.
-O trabalho proposto aqui busca este mesmo objetivo e produz taxonomias de permissões e papeis médicos em um contexto específico do Brasil (seção \ref{sec:sub:taxonomia-permissoes}), visando definir um escopo semântico comum e facilitar a interoperabilidade de todos integrantes do sistema de saúde em uma escala nacional.
+O trabalho proposto aqui busca este mesmo objetivo e produz taxonomias de permissões e papeis médicos em um contexto específico do Brasil (seção \ref{sec:sub:administracao-permissoes}), visando definir um escopo semântico comum e facilitar a interoperabilidade de todos integrantes do sistema de saúde em uma escala nacional.
 Para assegurar a integridade e autenticidade dos dados médicos entre várias instituições os autores propõem o uso de dois tipos de blockchains.
 As blockchains do primeiro tipo são privadas (particulares a cada instituição) e registram hashes dos dados de prontuários criptografados, enquanto uma outra blockchain única e de acesso compartilhado serve para indexar todos os dados e possibilitar a pesquisa por meio dos termos de pesquisa e identidades de usuário, obtendo-se os dados ao contatar as instituições donas das blockchains encontradas na pesquisa.
 Em ambos os tipos de blockchains os autores adotam um mesmo mecanismo de consenso explícito e o denominam PoC \emph{(Proof of Conformity)}, aceitando a validade de novas transações e blocos somente quando estes forem declarados como válidos por no mínimo dois terços dos nós da rede, onde os nós utilizam trocas de mensagens via \emph{broadcast} para atingir este propósito.
