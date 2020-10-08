@@ -99,5 +99,5 @@ if __name__ == "__main__":
     acrescentarCBO('../TISS/tabela24_CBO.csv')
     acrescentarCBO('../TISS/tabelaCBO_auxiliar.csv')
 
-    with open('taxonomia.json', 'w+', encoding='utf-8') as taxonomy_file:
+    with open('../taxonomia.json', 'w+', encoding='utf-8') as taxonomy_file:
         json.dump(taxonomia, taxonomy_file, indent=4, ensure_ascii=False)
