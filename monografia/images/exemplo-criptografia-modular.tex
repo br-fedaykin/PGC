@@ -1,0 +1,35 @@
+\tikzset{
+  basic/.style = {draw=none, text width=4.5cm, font=\sffamily, align=left, node distance=-1pt, outer sep=-1pt},
+  tab/.style = {basic, xshift=15pt},
+  untab/.style = {basic, xshift=-15pt}
+}
+
+\begin{tikzpicture}[every node/.style={basic}]
+  \node (topen) {<RES>};
+    \node [tab] [below=of topen, yshift=-2pt] (tetc1) {...};
+    \node [below=of tetc1] (t1open) {<Diagnósticos>};
+      \node [tab] [below=of t1open] (t1aopen) {<Diagnóstico A>};
+        \node [tab] [below=of t1aopen] (t1acontent) {... nós com dados ...};
+      \node [untab] [below=of t1acontent] (t1aclosing) {</Diagnóstico A>};
+      \node [below=of t1aclosing] (t1bopen) {<Diagnóstico B>};
+        \node [tab] [below=of t1bopen] (t1bcontent) {... nós com dados ...};
+      \node [untab] [below=of t1bcontent] (t1bclosing) {</Diagnóstico B>};
+    \node [untab] [below=of t1bclosing] (t1closing) {</Diagnósticos>};
+    \node [below=of t1closing, yshift=-2pt] (tetc2) {...};
+    \node [untab] [below=of tetc2] (tclosing) {</RES>};
+    \node [below=of tclosing, xshift=2cm, yshift=-5pt] (labela) {(a)};
+
+    \node [right=of topen, xshift=30pt] (t2open) {<RES>};
+    \node [tab] [below=of t2open, yshift=-2pt] (t2etc1) {...};
+    \node [below=of t2etc1] (t21open) {<Diagnósticos>};
+      \node [tab] [below=of t21open] (t21aopen) {<Diagnóstico A>};
+        \node [tab] [below=of t21aopen] (t21acontent) {... nós com dados ...};
+      \node [untab] [below=of t21acontent] (t21aclosing) {</Diagnóstico A>};
+      \node [below=of t21aclosing] (t21bopen) {<Dados Criptografados>};
+        \node [tab] [below=of t21bopen] (t21bcontent) {... cifra ...};
+      \node [untab] [below=of t21bcontent] (t21bclosing) {</Dados Criptografados>};
+    \node [untab] [below=of t21bclosing] (t21closing) {</Diagnósticos>};
+    \node [below=of t21closing, yshift=-2pt] (t2etc2) {...};
+    \node [untab] [below=of t2etc2] (t2closing) {</RES>};
+    \node [below=of t2closing, xshift=2cm, yshift=-5pt] (labelb) {(b)};
+\end{tikzpicture}

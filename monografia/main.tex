@@ -535,7 +535,7 @@ Finalmente, o módulo servidor é responsável por armazenar e distribuir os arq
 
 O módulo cliente é responsável por definir a lógica de funcionamento do sistema, coordenando as atividades dos demais componentes.
 Ele acumula funcionalidades que atendem tanto aos usuários do sistema, quanto aos certificadores que outorgam atributos, atributos estes que vão representar basicamente categorias de profissões e instituições as quais os usuários estejam atrelados.
-O acúmulo das funções em um único módulo é proposital e objetiva permitir que um usuário possa se tornar um certificador, mas em um escopo reduzido onde não é permitido que os atributos criados por ele possam ser publicados na Blockchain, mas permite-se aplicá-los nos documentos nos quais o usuário for o dono, bem como emitir tais atributos a outros usuários, a fim de possibilitar ao paciente a liberação do acesso de outros usuários não relacionados com o serviço médico (i.e., terceiros de qualquer espécie como conhecidos, familiares, prestadores de serviços como convênios, seguradoras, peritos, etc) ao Prontuário Eletrônico do Paciente (PEP) dele, como será explicado mais adiante na seção \ref{sec:sub:taxonomia-permissoes}.
+O acúmulo das funções em um único módulo é proposital e objetiva permitir que um usuário possa se tornar um certificador, mas em um escopo reduzido onde não é permitido que os atributos criados por ele possam ser publicados na Blockchain, mas permite-se aplicá-los nos documentos nos quais o usuário for o dono, bem como emitir tais atributos a outros usuários, a fim de possibilitar ao paciente a liberação do acesso de outros usuários não relacionados com o serviço médico (i.e., terceiros de qualquer espécie como conhecidos, familiares, prestadores de serviços como convênios, seguradoras, peritos, etc) ao Prontuário Eletrônico do Paciente (PEP) dele, como será explicado mais adiante na seção \ref{sec:sub:administracao-permissoes}.
 
 O módulo servidor recebe, armazena e envia arquivos criptografados, operando como um serviço Web público na internet.
 Este módulo é tratado como um ambiente não-seguro de armazenamento dos dados, sujeito a um possível ataque que leve a acesso não autorizado e roubo de dados, e por esta razão os arquivos enviados a ele estão criptografados.
@@ -593,15 +593,15 @@ A paciente Alice recebe um documento digital, correspondendo a seu exame laborat
 Para isso, Alice utiliza o módulo cliente para criptografar o documento, usando o esquema ABE, de acordo com uma política de acesso que ela tenha escolhido usar.
 Vamos supor que a política escolhida seja a seguinte:
 
-\[paciente \vee (Hospital\textnormal{-}Mario\textnormal{-}Covas \wedge Hematologista)\] % (ok) TODO: inserir um nome de um hospital (verificar todas as ocorrências de X)
+\[paciente \vee (Hospital\textnormal{-}Mario\textnormal{-}Covas \wedge M\acute{e}dico\textnormal{-}Cl\acute{i}nico)\] % (ok) TODO: inserir um nome de um hospital (verificar todas as ocorrências de X)
 
-A política pode ser descrita trocando os símbolos dos operadores lógicos pelo seus nomes em inglês, ou seja, ``paciente OR (Hospital-Mario-Covas AND Hematologista)''.
-Ela garante o acesso ao próprio paciente e aos médicos da especialidade Hematologista que estejam vinculados ao Hospital Mário Covas
+A política pode ser descrita trocando os símbolos dos operadores lógicos pelo seus nomes em inglês, ou seja, ``paciente OR (Hospital-Mario-Covas AND Médico-Clínico)''.
+Ela garante o acesso ao próprio paciente e aos médicos da especialidade Médico Clínico que estejam vinculados ao Hospital Mário Covas
 \footnote{O Hospital foi referenciado neste texto somente para fins ilustrativos, e foi escolhido como exemplo pela proximidade geográfica, por ser de gestão pública e pela qualidade dos serviços, conforme certificado pela ONA \cite{ONA2020}.}.
-Os atributos possuem múltiplas fontes: o atributo Hematologista foi criado pelo CRM do estado de São Paulo, o atributo Hospital-Mário-Covas foi criado pelo próprio hospital e o atributo paciente foi criado por Alice.
+Os atributos possuem múltiplas fontes: o atributo $M\acute{e}dico\textnormal{-}Cl\acute{i}nico$ foi criado pelo CRM do estado de São Paulo, o atributo $Hospital\textnormal{-}Mario\textnormal{-}Covas$ foi criado pelo próprio hospital e o atributo $paciente$ foi criado por Alice.
 Alice pôde encontrar os dois primeiros atributos porque eles estão publicados na Blockchain.
 O terceiro atributo (paciente) é gerado por todo usuário do sistema e não é publicado como outros atributos criados por certificadores, sendo usado pelo usuário para adicionar à política de acesso uma cláusula que contemple a si mesmo, a fim de permitir o acesso do dono aos próprios documentos.
-Embora todo usuário crie e use um atributo de mesmo nome, não existe conflito entre eles porque um atributo é a conjunção de um rótulo e uma chave pública, de forma que a descriptografia só é possível mediante a posse de uma chave pessoal de atributo emitida pelo dono da chave privada usada para a derivação da chave pública gravada no atributo, i.e., somente o emissor do atributo ``paciente'' tem as credenciais compatíveis para satisfazer a política de acesso onde o atributo for usado.
+Embora todo usuário crie e use um atributo de mesmo nome, não existe conflito entre eles porque um atributo é a conjunção de um rótulo e uma chave pública, de forma que a descriptografia só é possível mediante a posse de uma chave pessoal de atributo emitida pelo dono da chave privada usada para a derivação da chave pública gravada no atributo, i.e., somente o emissor do atributo $paciente$ tem as credenciais compatíveis para satisfazer a política de acesso onde o atributo for usado.
 % TODO: (ok) a qualquer paciente? Explicar brevemente como o sistema sabe que é ela (Alice) e não qualquer paciente
 Repare que a aplicação da política é realizada pelo próprio usuário, efetivamente entregando o controle da segurança da informação ao paciente e respeitando o direito à privacidade da informação.
 
@@ -614,10 +614,170 @@ Caso a nova versão contenha uma nova política de acesso, o módulo cliente tam
 Caso o arquivo continue inalterado mas dados a seu respeito na Blockchain precisem de atualização, por exemplo para registrar a migração do arquivo para outro servidor, o módulo cliente também atualizará a Blockchain.
 
 Alice então envia o documento para o servidor de arquivos do Mário Covas e por consequência publica informações sobre o arquivo na Blockchain, entre elas a política de acesso para poder acessar o documento.
-Em um segundo momento o Dr. Bob, Hematologista do Hospital Mário Covas, ciente de sua agenda com a paciente Alice, está em posse da ficha cadastral dela, onde consta sua carteira Ethereum cadastrada no sistema.
+Em um segundo momento o Dr. Bob, Médico Clínico do Hospital Mário Covas, ciente de sua agenda com a paciente Alice, está em posse da ficha cadastral dela, onde consta sua carteira Ethereum cadastrada no sistema.
 Dr. Bob usa o módulo cliente para consultar por arquivos relacionados ao endereço de carteira Ethereum de Alice e descobre que existe um arquivo compartilhado por ela.
 Ele dá o comando para obter o arquivo, levando o módulo cliente a salvar os metadados da Blockchain localmente e realizar uma requisição pelo arquivo em questão ao servidor apontado nos metadados. % TODO: (ok) existe uma relação entre a carteira e o identificador mencionado antes? explicar melhor.
 Por último, o Dr. Bob insere o comando para poder acessar o documento e então o módulo cliente usa as chaves pessoais dos atributos possuídos pelo médico para a descriptografia e, uma vez que eles satisfazem a política de acesso, obtém sucesso e o arquivo pode ser visualizado pelo médico.
+
+\subsection{Padronização de Atributos e de Políticas de Acesso}
+\label{sec:sub:padronizacao-permissoes}
+
+O sistema proposto oferece aos certificadores a autonomia para a concessão e geração de atributos.
+Embora esse modelo descentralizador traga benefícios, também oferece riscos à qualidade da gestão do sistema e da interação entre diferentes instituições.
+Sem uma padronização dos atributos, fica a cargo dos usuários compreender a estrutura dos atributos particulares a uma instituição e não há garantia de reaproveitamento deste conhecimento para as outras instituições, porque atributos similares podem ser diferentes entre si no conceito, escopo ou especialização dentro hierarquia definida pelas diferentes profissões exercidas nas instituições e, por outro lado, podem ser similares em tudo isto e diferir apenas no nome.
+Por exemplo, enquanto um hospital cria atributos para cada profissão do corpo administrativo do hospital, um outro pode agrupar todos eles em um único atributo ``administrativo''.
+Ou, enquanto um emite atributos específicos para cada uma das especialidades médicas existentes, um outro as agrupa em alguns poucos atributos generalizantes.
+Em suma, caberiam às instituições decidirem arbitrariamente com quais atributos deveriam trabalhar.
+Diferenças quanto às suas competências, especialidades, políticas próprias de acesso à informação e outras normas internas certamente poderiam implicar em arranjos de atributos conflitantes, ao invés de complementares.
+
+Evidencia-se portanto a necessidade de um arcabouço semântico que sirva para coordenar a criação de atributos entre instituições, de forma a assegurar que as políticas de acesso construídas com eles tenham previsibilidade, semântica e funcionalidade preservadas ao longo do tempo.
+Para estabelecer este padrão, podemos aproveitar os conteúdos dispostos nas normas que padronizam os Sistemas de Registro Eletrônico de Saúde (S-RES), a forma como são denominados na lei os sistemas de informação na área da saúde.
+Esta lista de requisitos é extensa e pode ser encontrada no Manual de Certificação para Sistemas de Registro Eletrônico em Saúde \cite{SBIS2016}.
+Em particular, nota-se os requisitos de código \emph{ESTR.09} deste manual preveem que um S-RES deve se submeter aos padrões nacionais e internacionais de representação da informação na área da saúde, definidos como padrão por meio de ato do Ministério da Saúde \cite{MinisteriodaSaude2011}.
+Dentre os padrões reconhecidos em lei, o padrão de Troca de Informação em Saúde Suplementar (TISS) \cite{ANS2020} apresenta, entre seus componentes, uma padronização das ocupações na área da saúde, obtidas por sua vez da Classificação Brasileira de Ocupações (CBO) \cite{MTE2010}.
+
+Embora tais normas não tratem diretamente de um cenário onde o controle de acesso à informação seja regido por atributos, pode-se aproveitar a estrutura descrita nelas para desenvolver uma taxonomia das ocupações na área da saúde que se aproxime tanto quanto possível dos padrões em vigor.
+Uma taxonomia é uma estrutura classificatória indicando relações lógicas e hierárquicas entre termos de um determinado domínio semântico.
+A taxonomia define um vocabulário padrão, o que é útil para a organização da informação, além de permitir que se estabeleçam padrões para alocar, recuperar e comunicar de informações dentro de um sistema de maneira lógica, diminuindo esforços na produção do conhecimento e na sua reutilização \cite{Campos2007}. % TODO: (ok) o texto em vermelho permitirá ao leitor entender o que é taxonomia.
+Fez parte deste trabalho propor uma categorização plausível e relevante à área da saúde, que envolveu a análise e agregação de diferentes fontes, tais como o padrão TISS, a CBO e consultas realizadas em sites associados ao Sistema Universal de Saúde (SUS).
+A taxonomia fruto deste trabalho consta no Anexo \ref{app:taxonomiaProfissões} e é apresentada de forma resumida na Figura \ref{fig:taxonomiaPermissoes}. % TODO: (ok) no pdf diz Anexo 7 (está errado, deveria dizer Anexo I). Ver como criar anexo (não é como section).
+Ela considera mais de 400 profissões distintas, da área da saúde ou fora dela mas relacionadas ao SUS, agrupadas pelo nível de ensino e pelas famílias ocupacionais descritas na CBO.
+
+\begin{figure}[h]
+  \centering
+  \import{images/}{taxonomia-profissões.tex}
+  \caption{Estrutura resumida da taxonomia de profissões da área da Saúde ou relacionadas aos serviços de Saúde}
+  \label{fig:taxonomiaPermissoes}
+\end{figure}
+
+Pensando em um aspecto ideal de desempenho, deve-se minimizar a quantidade de atributos necessários para representar um papel de um usuário no sistema, ou em outras palavras, deve-se reduzir ao máximo a redundância entre atributos, de forma que haja uma correspondência bijetora entre papéis (profissões) e atributos.
+Esta redução de redundância é atingida ao particionar o universo de atributos entre os certificadores, de uma forma tal que não exista superposições entre os papeis representados nestes atributos.
+O controle exercido por conselhos profissionais pode servir como base deste particionamento, e assim os atributos descritos na taxonomia que se referem a ocupações regulamentadas por lei seriam administrados pelos conselhos de classe onde tais profissionais precisam ser credenciados ou, na ausência deste tipo de obrigação, pela instituição contratante.
+Por exemplo, é obrigatório ao médico possuir credenciamento junto ao CRM da região onde foi formado, portanto o CRM é a indicação natural para se responsabilizar pela emissão de atributos aos médicos formados na região.
+Profissionais sem registro em associações de classe (e.g. técnicos administrativos), ou registrados em associações sem cadastro no sistema por não se enquadrarem estritamente na área da saúde (e.g. a CFBio para biólogos ou a CFEP para pedagogos), poderiam ter os atributos referentes às suas ocupações emitidas pelas instituições onde trabalham.
+
+A taxonomia no Anexo \ref{app:taxonomiaProfissões} fornece uma lista exaustiva de todas as ocupações e as agrupa de acordo com as classificações da CBO, onde tanto as ocupações quanto seus agrupamentos podem ser usados como referências para a criação de atributos.
+Ainda que isto colabore para a interoperabilidade, não resolve de todo o problema do esquema ABE entre instituições, porque as próprias políticas de acesso carecem de padronização, abrindo margem para a aplicação de condições de acesso arbitrárias, imprevisíveis ou mesmo ilegais.
+Além do mais, sem uma normalização das políticas de acesso aos RES, a produtividade dos usuários operando o sistema será prejudicada devido à heterogeneidade das condições de acesso entre instituições, e os custos de automação do sistema serão afetados e aumentarão, porque precisam atuar em muito mais configurações do que quando comparado a um cenário onde existe um conjunto fixo e bem definido de possibilidades.
+Por conta disto, além da taxonomia foi desenvolvida um diagrama de condições de acesso ao RES a partir do Código de Ética Médica (CEM) \cite{ConselhoFederaldeMedicina2019}, onde se descreve várias regras e deveres a serem cumpridos por médicos e instituições onde prestam serviço em vários aspectos, entre eles sobre o sigilo do prontuário e das condições de acesso.
+
+% {\color{ForestGreen}Figura da taxonomia}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{images/diagrama-de-permissoes.png}
+  \caption{Diagrama de permissões de acesso ao Prontuário do Paciente} % TODO: (ok) Essa taxonomia é sua ou do CEM? Se for do CEM, precisa referenciar de onde a obteve
+  \label{fig:diagramaPermissoes}
+\end{figure}
+
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{ |c|c|c| }
+      \hline
+      Condição & Escopo & Atores\\
+      \hline
+      transitória & irrestrito & perito, médico, familiares de 1º grau, pesquisador \\
+      \hline
+      transitória & restrito & paciente\tablefootnote{Para fins de exemplificação considera-se que o paciente e seu autorizado possuem acesso irrestrito, uma vez que a restrição de acesso para eles provêm de uma exceção à regra, tratada mais adiante no texto}, terceiros, seguradora, pesquisador \\
+      \hline
+      permanente & irrestrito & CFM, CRM, Representante Legal \\
+      \hline
+      permanente & restrito & - \\
+      \hline
+    \end{tabular}
+  \caption{Diferentes atores identificados no CEM que podem ter acesso a um prontuário médico.}
+  \label{tbl:atores-diagrama-de-permissao}
+\end{center}
+\end{table}
+
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{ |c|l| }
+      \hline
+      Natureza da informação & \centerhead{Descrição do conteúdo} \\
+      \hline
+      comum & dados pessoais e histórico médico em geral. \\
+      \hline
+      sensível & doenças, medicamentos ou tratamentos estigmatizados socialmente. \\
+      \hline
+      danosa  & hipóteses ou prognósticos que o paciente pode não suportar saber. \\
+      \hline
+      legal & atestados e laudo de óbito, podem ser obtidas por terceiros. \\
+      \hline
+    \end{tabular}
+  \caption{Segmentações de um prontuário, derivadas a partir da análise das regras do CEM para acesso ao prontuário médico.}
+  \label{tbl:segmentacoes-prontuario}
+\end{center}
+\end{table}
+
+Foram consideradas nesta análise todas as regras do CEM estipulando condições de acesso a prontuários, resultando no diagrama da Figura \ref{fig:diagramaPermissoes}.
+Os atores mencionados no CEM com acesso ao prontuário estão listados na tabela \ref{tbl:atores-diagrama-de-permissao}, agrupados de acordo com a temporalidade e escopo de visualização do prontuário.
+O CEM também distingue a naturezas de certas informações dentro do prontuários, aplicando regras diferentes a certos conteúdos, entretanto sem apresentar um modelo formal ou explicitar alguma sistematização quanto a essas partes que compõem o prontuário.
+Por isso foi feita a tabela \ref{tbl:segmentacoes-prontuario}, que lista os segmentos observados a partir da diferenciação feita pelos regramentos para o acesso de conteúdos do prontuário, evidenciando naturezas diferenciadas das informações.
+Finalmente, o diagrama na figura \ref{fig:diagramaPermissoes} relaciona os agentes da tabela \ref{tbl:atores-diagrama-de-permissao} com o prontuário do um paciente, ou alguma parte dele, representando em suas arestas as condições de acesso às quais os atores estão submetidos.
+A partir do diagrama fica claro que as condições de acesso a um prontuário formam um conjunto fixo de regras, a partir do qual pode-se formar, de modo análogo, um conjunto equivalente de políticas de acesso no esquema ABE.
+A primeira e mais fundamental política de acesso a ser derivada do diagrama se baseia em todas as regras que instituem acesso irrestrito ao prontuário:
+
+\[ CFM \vee CRM \vee Paciente \vee Terceiro\textnormal{-}Autorizado \]
+
+A justificativa de sua estrutura é simples, afinal usuários como CFM, CRMs, o paciente (dono) e quem for autorizado pelo paciente, por possuírem acesso irrestrito, não devem aguardar a permissão de terceiros ou por acontecimentos que acarretem ao direito de acesso.
+A aplicação de uma política de acesso com os atributos ligados de forma disjuntiva garante ao usuário com qualquer dos atributos o acesso imediato aos dados, independente de outras variáveis ou condições, cumprindo efetivamente as condições de acesso irrestrito descritas pelo CEM.
+Todas as outras regras definidas pelo CEM são transitórias, como é o caso de um Perito ou Pesquisador, dependentes de algum acontecimento, como é o caso de terceiros que precisam aguardar a autorização do paciente, ou somente se aplicar a uma parte do prontuário, como é o caso de seguradoras e de familiares, que por lei só teriam direito a acessar o atestado e o laudo de óbito
+\footnote{Embora a lei não preveja o acesso irrestrito dos familiares ao prontuário do familiar falecido, o diagrama considera esta possibilidade devido a notícias de decisões judiciais em favor disso \cite{G1SE2013}.}.
+
+As regras transitórias de acesso irrestrito diferem do caso anterior somente pela sua restrição temporal, isto é, devem valer somente durante determinado período.
+Nesta condição, o usuário buscando autorização de acesso deve comunicar sua necessidade a algum dos atores de acesso irrestrito ao prontuário.
+Por exemplo, um perito necessita do acesso ao prontuário para exarar um parecer e pode haver conflitos de interesse do paciente quanto ao resultado da perícia, levando a uma situação onde o paciente ignore a solicitação de acesso feita pelo perito, efetivamente negando o acesso ao prontuário por meio da omissão dele.
+Nesta situação, o perito pode solicitar o acesso ao CRM de seu estado, ou ao CFM, que poderão alterar a política de acesso anteriormente descrita para esta:
+
+\[ (Perito \wedge Autorizada\textnormal{-}Per\acute{i}cia\textnormal{-}1) \vee CFM \vee CRM \vee Paciente \vee Terceiro\textnormal{-}Autorizado \]
+
+O perito já possui o atributo $Perito$, emitido a ele pelo certificador representando a Associação onde ele fez credenciamento, por exemplo, a Associação dos Peritos Judiciais do Estado de São Paulo (APEJESP).
+Entretanto, se o CRM utilizar somente o atributo $Perito$ na escrita da nova política de acesso, permitirá o acesso não só a ele mas a todos os peritos credenciados na APEJESP.
+A solução neste caso consiste em ligar este atributo a um outro específico para esta perícia, neste caso, $Autorizada\textnormal{-}Per\acute{i}cia\textnormal{-}1$.
+Desta forma, somente o perito a quem for dada a chave pessoal deste atributo conseguirá ter acesso ao RES.
+Cada nova perícia exigiria a publicação de um atributo com numeração específica da perícia, e dependendo da quantidade destas perícias isto pode vir a se tornar a maior parte dos atributos emitidos pelo CRM, que é a instituição responsável por conceder os atributos aos médicos cadastrados no sistema.
+Considerando que a quantidade de perícias supera a quantidade de peritos ao longo do tempo, uma alternativa mais eficaz seria criar atributos para identificar os próprios peritos ao invés da perícia, remetendo a ABE a um esquema de uso híbrido, similar à IBE (ver seção \ref{sec:sub:abe}).
+Para alcançar uma melhor separação entre conceitos, o CRM deixaria de emitir estes atributos e eles passariam a ser de responsabilidade da Associação de peritos.
+Neste cenário onde os atributos identificam os peritos, caberia ao paciente (ou, na omissão deste, ao CRM ou outra autoridade) adicionar o atributo na política de acesso, que ficaria na seguinte forma:
+
+\[ Perito\textnormal{-}1 \vee CFM \vee CRM \vee Paciente \vee Terceiro\textnormal{-}Autorizado \]
+
+Caso $n$ peritos precisem de acesso, podem-se ser acrescentados de forma conjuntiva na fórmula (e.g. $Perito\textnormal{-}1 \vee ... \vee Perito\textnormal{-}n$).
+Outro cenário onde há restrição do acesso ao prontuário diz respeito a menores de idade.
+A este ponto, é útil salientar que usuários também podem criar e conceder atributos como se fossem certificadores, conforme indicado no exemplo dado ao fim da seção \ref{sec:sub:visaogeral}.
+Entretanto, diferentemente dos certificadores, um usuário não publica atributos na Blockchain porque o atributo emitido por ele deve ser usado somente nos próprios documentos, isto é, somente em um escopo de uso local.
+É por meio da utilização destes atributos que o usuário garante o acesso ao próprio RES, e também por meio deles que consegue garantir o acesso a terceiros, como está descrito mais a seguir.
+Entretanto, para o caso de um menor de idade, não é possível conferir a ele a autonomia sobre a gestão dos próprios dados.
+Nesse caso quem fica incumbido da administração do prontuário é o representante legal dele e, para manter a consistência entre nomenclaturas, o atributo criado e usado por ele para esta situação não será $Paciente$, mas sim $Representante\textnormal{-}Legal$. % TODO: (ok) representante legal?
+O Representante Legal tem acesso irrestrito ao prontuário do paciente menor de idade, ao menos até a sua emancipação, e a política de acesso nessa situação pode ser escrita na seguinte forma:
+
+\[ CFM \vee CRM \vee Representante\textnormal{-}Legal \vee Terceiro\textnormal{-}Autorizado \]
+
+As políticas de acesso escritas anteriormente consideravam somente o acesso irrestrito ao prontuário, quer seja ele permanente ou temporário.
+Um outro tipo de regra prevê acesso parcial ao prontuário, como ocorre com seguradoras, que só podem ver dois documentos específicos, e nada além.
+Este tipo de condição de acesso só é possível de ser alcançado se o arquivo do RES possuir uma estrutura modular, onde seja possível percorrer e aplicar diferentes políticas de acesso às suas partes.
+Os diversos padrões de sistemas de informação na área da saúde, nacionais e internacionais, exigem que as estruturas de dados de prontuários ou dados clínicos sejam construídas em uma estrutura de árvore \cite{Munoz2011, Dolin2000, SBIS2016, openEHRFoundation2020}, compatível com XML, JSON e outras tecnologias de transmissão e exportação de dados compatíveis com tecnologias Web.
+A solução para acessos restritos consiste em aplicar a criptografia não ao arquivo todo, mas às partes que devem conter a permissão específica para o usuário, conforme proposto por \cite{Akinyele2010}.
+
+\begin{figure}[h]
+  \centering
+  \import{images/}{exemplo-criptografia-modular.tex}
+  \caption{Aplicação de políticas de acesso a subelementos de um prontuário}
+  \label{fig:exemplo-criptografia-modular}
+\end{figure}
+
+O Art. 34 do CEM proíbe que o médico deixe de informar ao paciente sobre o diagnóstico, mas prevê uma única exceção à regra para os casos onde a comunicação direta possa trazer danos ao paciente, como indica o diagrama de condições de acesso na Figura \ref{fig:diagramaPermissoes}.
+Suponha por exemplo que um médico evidencia uma piora na saúde mental de um paciente sob seu acompanhamento, a quem deve noticiar sobre um diagnóstico de doença terminal.
+O médico julga haver um risco alto e significativo de suicídio frente e decide reter a informação para dá-la a um familiar, ou até que o paciente demonstre condições de suportar toda a verdade.
+Para proteger o paciente da informação danosa, o médico precisaria usar o módulo cliente para executar uma transformação nos dados conforme ilustrado na Figura \ref{fig:exemplo-criptografia-modular}.
+A seção do arquivo contendo os dados em questão (Fig. \ref{fig:exemplo-criptografia-modular}.a) seria criptografada com uma política de acesso que excluísse o acesso ao paciente, e a cifra resultante do processo seria escrita um nó especial indicando que há conteúdo criptografado (Fig. \ref{fig:exemplo-criptografia-modular}.b).
+A descriptografia seria executada de forma recursiva a partir da raíz desta estrutura de dados até suas folhas, e o documento resultante seria o RES composto de nós vazios onde não foi possível o acesso, e de nós com conteúdo, nos elementos onde foi possível realizar a descriptografia por meio dos atributos fornecidos pelo usuário.
+
+Já foi descrito como um usuário pode criar os atributos $Paciente$ e $Representante\textnormal{-}Legal$ para garantir o próprio acesso a um RES dele próprio ou de alguém sob sua tutela. % TODO: esses atributos existem na figura da taxonomia? se não explicar melhor
+Para complementar este mecanismo, é possível que um usuário dê acesso a terceiros ao emitir o atributo $Terceiro\textnormal{-}Autorizado$ para eles.
+O usuário poderia aplicar este atributo nos mesmos lugares onde aplica o atributo $Paciente$, de forma a garantir o acesso completo ao prontuário, ou aplicar nos mesmos moldes explicados na situação de acesso restrito, onde ele poderia escolher quais partes do prontuário devem ser disponibilizadas aos terceiros.
+Estes atributos são geridos pelo usuário porque dizem respeito ao universo pessoal de relações, sendo direito dele exercer seu juízo dos riscos e benefícios do sigilo ou abertura dos próprios dados para outras pessoas ou para conexão com aplicações e serviços de terceiros.
 
 \subsection{Módulo Cliente}
 
@@ -663,54 +823,6 @@ Após a geração da chave pessoal de um atributo, cabe ao certificador realizar
 % {\color{ForestGreen}Explicar que foi realizada uma taxonomia das possíveis permissões que seriam utilizadas no sistema para o contexto médico. (3 parágrafos explicando como foi realizado o levantamento, me lembro que tinha um artigo e uma lista gigante que foi filtrada por quantidade de médicos).}
 
 %O sistema proposto integra bases de dados de diferentes órgãos que, quando tornados  certificadores, serão providos com a capacidade de publicar tantos atributos quanto considerarem necessários.
-No sistema proposto, a autonomia dos certificadores para criar atributos pode se tornar um risco à gestão do sistema, evidenciando a necessidade de coordenação na publicação de atributos para que as políticas de acesso se demonstrem funcionais e previsíveis ao longo do tempo. %, podendo ser acessadas e compreendidas por entidades distintas.
-Sem uma proposta de padronização, corre-se o risco das entidades desenvolverem atributos distintos e provavelmente conflitantes no que diz respeito ao escopo, uso e descrição textual deste.
-
-Nesse sentido, a diferença das instituições na área da saúde, em suas competências e especialidades,  suas políticas de acesso à informação e suas normas internas, certamente resultariam em configurações dos atributos usando o esquema ABE.
-Assim, um sistema que pretenda permitir o acesso a prontuários médicos distribuídos entre instituições com este esquema deve, portanto, propor também uma norma tanto para a criação e gestão de atributos quanto para a escrita das políticas de acesso.
-Para atingir este fim, buscou-se o denominador comum entre as exigências e restrições a que devem ser submetidos todas as instituições da área de saúde.
-
-Uma taxonomia é uma estrutura classificatória indicando relações lógicas e hierárquicas entre termos de um determinado domínio semântico.
-A taxonomia define um vocabulário padrão, o que é útil para a organização da informação, além de permitir que se estabeleçam padrões para alocar, recuperar e comunicar de informações dentro de um sistema de maneira lógica, diminuindo esforços na produção do conhecimento e na sua reutilização \cite{Campos2007}.
-Assim, foi modelada uma taxonomia de acordo com os papéis envolvidos na gestão e uso dos dados médicos de paciente, partindo da análise das normas que regem o trabalho do profissional da saúde. % TODO: (ok) o texto em vermelho permitirá ao leitor entender o que é taxonomia.
-
-O Código de Ética Médica (CEM) trata da conduta médica em diversos casos e entre elas institui regras de conduta para o acesso e gestão de informações médicas \cite{ConselhoFederaldeMedicina2019}.
-Ele provê os elementos necessários para a elaboração de uma taxonomia de condição de acesso a um prontuário do paciente.
-A taxonomia criada nesse trabalho é mostrada na Figura \ref{fig:taxonomiaPermissoes}. % TODO: usar PEPs (não usar prontuário médico pois é prontuário do paciente). Padronizar no texto todo
-A partir dessa taxonomia, é possível descrever qual será a política mínima padrão ao qual qualquer prontuário {\color{blue}no nosso sistema} deve se submeter:
-
-\[ CFM \vee CRM \vee Paciente \vee Terceiro\textnormal{-}Autorizado \]
-
-%A política padrão acima se refere à criptografia {\color{blue} das condições mínimas de acesso} que será aplicada ao PEP.
-
-%Em se tratando do formato do PEP, ele é baseado em uma estrutura de árvore compatível com XML. A adoção de XML (ou JSON), como veículo de representação, transmissão e exportação de dados, tem sido utilizada por diversas fontes. Além da norma nacional \cite{SociedadeBrasileiradeInformaticaemSaude2016} e normas internacionais ISO/EN 13.606 e HL7 previrem essa estrutura \cite{Munoz2011, Dolin2000}, projetos de especificação aberta como a iniciativa OpenEHR \cite{openEHRFoundation2020} também a utilizam.
-
-%O interessante do uso de uma estrutura em árvore é que possibilita a aplicação de criptografia a seus subelementos, oferecendo assim o controle personalizado pelo paciente da granularidade das políticas de acesso sobre seus dados por terceiros.Por outro lado, qualquer elemento do prontuário deverá obrigatoriamente conceder o acesso ao menos aos Conselhos de Medicina Federal e Regional.
-
-A partir da taxonomia apresentada, outras regras podem ser abstraídas.
-Por exemplo a substituição dos elementos $Paciente$ em caso de prontuários de menores de idade, uma vez que este não deveria ter a autonomia sobre a gestão dos próprios dados, produzindo a seguinte política de acesso:
-
-\[ CFM \vee CRM \vee Representante\textnormal{-}Legal \vee Terceiro\textnormal{-}Autorizado \]
-
-A taxonomia consegue estipular os diferentes papéis de acesso a um prontuário, mas ainda é necessário categorizá-los nas diversas funções que terão acesso aos prontuários médicos (por exemplo, especialidades médicas, administrativas, etc).
-A estratégia para propor uma categorização abrangente e relevante envolveu obter dados do DATASUS (Órgão que administra a consulta de informações do Sistema de Saúde Pública) sobre todas as profissões registradas na área da Saúde relativas ao início do ano de 2019 no Brasil.
-Na pesquisa obteve-se mais de 400 profissões distintas, que foram agregadas pelo nível de ensino e pela área de atuação.
-Isso resultou em uma segunda taxonomia, disponível no Anexo \ref{app:taxonomiaProfissões}, que serve como referência para a criação de atributos específicos para profissionais com escopos comuns entre os diversos certificadores. % TODO: (ok) no pdf diz Anexo 7 (está errado, deveria dizer Anexo I). Ver como criar anexo (não é como section).
-
-No sistema, a entidade certificadora responsável por emitir o atributo a um médico de ser o CRM de sua região de atuação. As demais entidades (por exemplo, hospitais) emitiriam os atributos que descrevem outros grupos de profissionais que também precisam acessar os dados do paciente, tais como setor administrativo ou o corpo de funcionários técnico-hospitalar.
-Os usuários, por exemplo, um paciente, também podem gerar atributos pré-definidos, porém diferentemente dos certificadores, estes não são publicados na Blockchain.
-A função destes atributos pré-definidos é conceder o acesso dele próprio e de terceiros ao prontuário. % TODO: esses atributos existem na figura da taxonomia? se não explicar melhor
-Esses atributos são: $Paciente$, $Terceiro\textnormal{-}Autorizado$ e $Representante\textnormal{-}Legal$. % TODO: (ok) representante legal?
-Como exemplo, este último, permite criptografar o prontuário de um outro usuário que não é juridicamente responsável por si mesmo (e.g., do filho recém-nascido).
-
-% {\color{ForestGreen}Figura da taxonomia}.
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=\textwidth]{images/taxonomia-de-permissoes.png}
-  \caption{Taxonomia de permissões de acesso ao Prontuário do Paciente} % TODO: (ok) Essa taxonomia é sua ou do CEM? Se for do CEM, precisa referenciar de onde a obteve
-  \label{fig:taxonomiaPermissoes}
-\end{figure}
 
 % {\color{ForestGreen}Explicar que no sistema proposto existe um servidor de atributos ao qual se pedem as chaves públicas/privadas para realizar a encriptação/decriptação (1 parágrafo).}
 
@@ -725,7 +837,7 @@ Cabe destacar que as operações criptográficas sempre ocorrem localmente {\col
 
 % {\color{ForestGreen}Explicar como é realizado o passo-a-passo para o pedido/entrega das chaves (note que aqui a descrição é muito mais profunda que o que foi mencionado na visão geral) (1 parágrafo).}
 
-% O conjunto de chaves privadas pessoais deriva de uma chave privada secreta associada a um atributo público e de posse do certificador que a gerou. Para assegurar a unicidade da chave privada, também é necessário derivar a chave a partir de um identificador único (ID) associado ao usuário. Utilizar chaves privadas de atributos com ID distintos entre si causa uma falha na descriptografia, assegurando que atributos não sejam intercambiáveis entre os usuários. % TODO: Escondi pois está fora do contexto da taxonomia. Ver depois se vai ser inserido em outro lugar.
+% O conjunto de chaves privadas pessoais deriva de uma chave privada secreta associada a um atributo público e de posse do certificador que a gerou. Para assegurar a unicidade da chave privada, também é necessário derivar a chave a partir de um identificador único (ID) associado ao usuário. Utilizar chaves privadas de atributos com ID distintos entre si causa uma falha na descriptografia, assegurando que atributos não sejam intercambiáveis entre os usuários. % TODO: (ok) Escondi pois está fora do contexto da taxonomia. Ver depois se vai ser inserido em outro lugar.
 
 % O mecanismo de derivação de chaves privadas pessoais implementado no cliente está atrelado ao processamento de requisições, impedindo o certificador de conceder chaves arbitrariamente sem uma requisição prévia.
 %Isso é uma estratégia para limitar o poder do certificador em criar atributos e dessa forma abusar de sua autoridade para conceder acesso indevido a agentes não autorizados e possivelmente levar a um acesso não autorizado de dados.

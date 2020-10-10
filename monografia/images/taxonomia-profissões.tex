@@ -1,0 +1,118 @@
+\tikzset{
+  basic-no-shadow/.style = {draw, text width=2cm, font=\sffamily, rectangle},
+  basic/.style  = {basic-no-shadow, drop shadow},
+  root/.style   = {basic, rounded corners=2pt, thin, align=center, fill=white},
+  level-2/.style = {basic, rounded corners=6pt, thin,align=center, fill=white, text width=3.5cm},
+  level-3/.style = {basic, thin, align=center, fill=white, text width=2.5cm},
+  level-3-no-shadows/.style = {basic-no-shadow, thin, align=center, fill=white, text width=2.5cm},
+  level-4/.style = {basic, thin, align=center, fill=white, text width=3cm},
+  level-4-no-shadows/.style = {basic-no-shadow, thin, align=center, fill=white, text width=3cm}
+}
+
+\begin{tikzpicture}[
+  level 1/.style={sibling distance=12em, level distance=5em},
+  % {edge from parent fork down},
+  edge from parent/.style={->,solid,black,thick,sloped,draw},
+  edge from parent path={(\tikzparentnode.south) -- (\tikzchildnode.north)},
+  >=latex, node distance=1.2cm, edge from parent fork down]
+
+  % root of the the initial tree, level 1
+  \node[root] {\textbf{Taxonomia}}
+  % The first level, as children of the initial tree
+  child {node[level-2] (c1) {\textbf{Nível Superior}}}
+  child {node[level-2] (c2) {\textbf{Nível Técnico}}}
+  child {node[level-2] (c3) {\textbf{Nível Fundamental}}}
+  child {node[level-2] (c4) {\textbf{Administração}}};
+
+  % The second level, relatively positioned nodes
+  \begin{scope}[every node/.style={level-3}]
+    \begin{scope}[every node/.style={level-3-no-shadows}]
+      \node [draw=none, below of = c1, xshift=15pt] (c11) {...};
+    \end{scope}
+    \node [below of = c11] (c12) {Clínico geral};
+    \begin{scope}[every node/.style={level-4}]
+      \node [below = of c12, xshift=25pt, yshift=20] (c121) {225125: Médico Clínico};
+      \node [below = of c121, yshift=20] (c122) {223129: Médico Generalista Alopata};
+    \end{scope}
+    \begin{scope}[every node/.style={level-3-no-shadows}]
+      \node [draw=none, below = of c122, xshift=-25pt, yshift=20] (c13) {...};
+    \end{scope}
+    \node [below of = c13] (c14) {Outras ocupações rel. à Saúde};
+    \begin{scope}[every node/.style={level-4}]
+      \node [below = of c14, xshift=25pt, yshift=20] (c141) {221205: Biomédico};
+    \end{scope}
+    \begin{scope}[every node/.style={level-4-no-shadows}]
+      \node [draw=none, below of = c141] (c142) {...};
+    \end{scope}
+
+    \begin{scope}[every node/.style={level-3-no-shadows}]
+      \node [draw=none, below of = c2, xshift=15pt] (c21) {...};
+    \end{scope}
+    \node [below of = c21] (c22) {Técnico de Enfermagem};
+    \begin{scope}[every node/.style={level-4}]
+      \node [below = of c22, xshift=25pt, yshift=20] (c221) {322205: Técnico de Enfermagem};
+      \node [below = of c221, yshift=20] (c222) {322210: Técnico de enfermagem de saúde da família};
+      \begin{scope}[every node/.style={level-4-no-shadows}]
+        \node [draw=none, below of = c222] (c223) {...};
+      \end{scope}
+    \end{scope}
+    \begin{scope}[every node/.style={level-3-no-shadows}]
+      \node [draw=none, below = of c223, xshift=-15pt, yshift=20] (c23) {...};
+    \end{scope}
+
+
+    \begin{scope}[every node/.style={level-3-no-shadows}]
+      \node [draw=none, below of = c3, xshift=15pt] (c31) {...};
+    \end{scope}
+    \node [below of = c31] (c32) {Agente Comunitário de Saúde};
+    \begin{scope}[every node/.style={level-4}]
+      \node [below = of c32, xshift=25pt, yshift=20] (c321) {515105: Agente Comunitário de Saúde};
+    \end{scope}
+    \begin{scope}[every node/.style={level-3-no-shadows}]
+      \node [draw=none, below = of c321, xshift=-25pt, yshift=20] (c33) {...};
+    \end{scope}
+
+    \begin{scope}[every node/.style={level-3-no-shadows}]
+      \node [draw=none, below of = c4, xshift=15pt] (c41) {...};
+    \end{scope}
+    \node [below of = c41] (c42) {Outras ocupações Administrativas};
+    \begin{scope}[every node/.style={level-4}]
+      \node [below = of c42, xshift=25pt, yshift=20] (c421) {514225: Trabalhador de serviços de manutenção};
+    \end{scope}
+    \begin{scope}[every node/.style={level-4-no-shadows}]
+      \node [draw=none, below of = c421] (c422) {...};
+    \end{scope}
+    \begin{scope}[every node/.style={level-4-no-shadows}]
+      \node [draw=none, below = of c422, xshift=-15pt, yshift=20] (c43) {...};
+    \end{scope}
+
+  \end{scope}
+
+  % lines from each level 1 node to every one of its "children"
+  \foreach \value in {1,2,3,4}
+  \draw[->] (c1.192) |- (c1\value.west);
+
+  \foreach \value in {1,2}
+  \draw[->] (c12.198) |- (c12\value.west);
+
+  \foreach \value in {1,2}
+  \draw[->] (c14.198) |- (c14\value.west);
+
+  \foreach \value in {1,2,3}
+  \draw[->] (c2.192) |- (c2\value.west);
+
+  \foreach \value in {1,2,3}
+  \draw[->] (c22.198) |- (c22\value.west);
+
+  \foreach \value in {1,2,3}
+  \draw[->] (c3.192) |- (c3\value.west);
+
+  \draw[->] (c32.192) |- (c321.west);
+
+  \foreach \value in {1,2,3}
+  \draw[->] (c4.192) |- (c4\value.west);
+
+  \foreach \value in {1,2}
+  \draw[->] (c42.192) |- (c42\value.west);
+
+\end{tikzpicture}
