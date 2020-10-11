@@ -103,6 +103,8 @@
 322115;Quiropraxista Cinesoterapeuta Eutonista;;;;;;;;;;
 142505;Gerente de rede;;;;;;;;;;
 213105;Físico;;;;;;;;;;
+213155;Físico (nuclear e reatores);;;;;;;;;;
+213150;Físico (medicina);;;;;;;;;;
 223129;Médico Generalista Alopata;;;;;;;;;;
 223625;Fisioterapeuta respiratória;;;;;;;;;;
 225250;Médico Ginecologista e Obstetra;;;;;;;;;;
@@ -115,13 +117,13 @@
 251535;Psicólogo do trânsito;;;;;;;;;;
 251555;Psicólogo acupunturista;;;;;;;;;;
 2231A1;Médico broncoesofalogista;;;;;;;;;;
-#N/A;Médico Cardiologista Intervencionista;;;;;;;;;;
+;Médico Cardiologista Intervencionista;;;;;;;;;;
 225280;Médico coloproctologista;;;;;;;;;;
-#N/A;Médico em medicina preventiva e social;;;;;;;;;;
+;Médico em medicina preventiva e social;;;;;;;;;;
 223127;Médico foniatra;;;;;;;;;;
 2231A2;Médico hansenologista;;;;;;;;;;
 225350;Médico neurofisiologista clínico;;;;;;;;;;
-#N/A;Médico residente;;;;;;;;;;
+;Médico residente;;;;;;;;;;
 223305;Médico veterinário;;;;;;;;;;
 221205;BioMédico;;;;;;;;;;
 239405;Coordenador Pedagógico;;;;;;;;;;
@@ -147,7 +149,7 @@
 213205;Químico;;;;;;;;;;
 322250;Auxiliar de enfermagem da estratégia de saúde da família;;;;;;;;;;
 515120;Visitador Sanitário;;;;;;;;;;
-3,22E+04;Técnico de enfermagem de saúde da família;;;;;;;;;;
+3222E1;Técnico de enfermagem de saúde da família;;;;;;;;;;
 322210;Técnico de enfermagem de terapia intensiva;;;;;;;;;;
 322215;Técnico de enfermagem do trabalho;;;;;;;;;;
 515210;Auxiliar de Farmácia de Manipulação;;;;;;;;;;

@@ -43,7 +43,7 @@ def construir_taxonomia():
     for escolaridade in profissões_categorias:
         nível_escolaridade = {}
         nível_escolaridade['nível de especialização'] = escolaridade
-        nível_escolaridade['áreas'] = []
+        nível_escolaridade['grupos'] = []
         for grupo in profissões_categorias[escolaridade]:
             especialidade = {}
             especialidade['especialidade'] = list(grupo.keys())[0]
@@ -55,7 +55,7 @@ def construir_taxonomia():
                 profissão_['total'] = 0
                 profissão_['código CBO'] = ""
                 especialidade['profissões'].append(profissão_)
-            nível_escolaridade['áreas'].append(especialidade)
+            nível_escolaridade['grupos'].append(especialidade)
         níveis.append(nível_escolaridade)
     taxonomia['taxonomia'] = níveis
 
@@ -69,7 +69,7 @@ def acrescentarContagem():
         ocupação = linha['Ocupações em geral'].strip()
         total = int(linha['Total'])
         for nível in taxonomia['taxonomia']:
-            for área in nível['áreas']:
+            for área in nível['grupos']:
                 if isSameText(ocupação, área['especialidade']):
                     área['total'] = total
                 for profissão in área['profissões']:
@@ -87,7 +87,7 @@ def acrescentarCBO(filename):
         código_cbo = str(linha['Código do Termo'])
         ocupação = linha['Termo']
         for nível in taxonomia['taxonomia']:
-            for área in nível['áreas']:
+            for área in nível['grupos']:
                 for profissão in área['profissões']:
                     if isSameText(ocupação, profissão['profissão']):
                         profissão['código CBO'] = código_cbo
@@ -99,5 +99,5 @@ if __name__ == "__main__":
     acrescentarCBO('../TISS/tabela24_CBO.csv')
     acrescentarCBO('../TISS/tabelaCBO_auxiliar.csv')
 
-    with open('../taxonomia.json', 'w+', encoding='utf-8') as taxonomy_file:
+    with open('../taxonomia_grupos.json', 'w+', encoding='utf-8') as taxonomy_file:
         json.dump(taxonomia, taxonomy_file, indent=4, ensure_ascii=False)

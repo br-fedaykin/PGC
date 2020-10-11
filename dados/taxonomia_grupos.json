@@ -5,7 +5,7 @@
             "grupos": [
                 {
                     "especialidade": "ANESTESISTA",
-                    "total": 14427,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Médico Anestesiologista",
@@ -27,7 +27,7 @@
                 },
                 {
                     "especialidade": "BIOQUÍMICO/FARMACÊUTICO",
-                    "total": 32951,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Farmacêutico",
@@ -38,7 +38,7 @@
                 },
                 {
                     "especialidade": "CIRURGIÃO GERAL",
-                    "total": 9739,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Médico Cirurgião Geral",
@@ -49,7 +49,7 @@
                 },
                 {
                     "especialidade": "CLÍNICO GERAL",
-                    "total": 112717,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Médico Clínico",
@@ -146,7 +146,7 @@
                 },
                 {
                     "especialidade": "FISIOTERAPEUTA",
-                    "total": 79240,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Fisioterapeuta do trabalho",
@@ -246,7 +246,7 @@
                 },
                 {
                     "especialidade": "ODONTÓLOGO",
-                    "total": 134914,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Cirurgião dentista - auditor",
@@ -367,7 +367,7 @@
                 },
                 {
                     "especialidade": "PEDIATRA",
-                    "total": 39394,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Médico Pediatra",
@@ -378,7 +378,7 @@
                 },
                 {
                     "especialidade": "PSICÓLOGO",
-                    "total": 64019,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Psicólogo Clínico",
@@ -429,7 +429,7 @@
                 },
                 {
                     "especialidade": "PSIQUIATRA",
-                    "total": 8319,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Médico psiquiatra",
@@ -440,7 +440,7 @@
                 },
                 {
                     "especialidade": "RADIOLOGISTA",
-                    "total": 12039,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Médico em radiologia e diagnóstico por imagem",
@@ -451,7 +451,7 @@
                 },
                 {
                     "especialidade": "SANITARISTA",
-                    "total": 319,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Médico sanitarista",
@@ -462,7 +462,7 @@
                 },
                 {
                     "especialidade": "OUTRAS ESPECIALIDADES MÉDICAS",
-                    "total": 151839,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Médico acupunturista",
@@ -743,7 +743,7 @@
                 },
                 {
                     "especialidade": "OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE",
-                    "total": 41084,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Médico veterinário",
@@ -783,12 +783,12 @@
                         {
                             "profissão": "Físico (medicina)",
                             "total": 233,
-                            "código CBO": ""
+                            "código CBO": "213150"
                         },
                         {
                             "profissão": "Físico (nuclear e reatores)",
                             "total": 284,
-                            "código CBO": ""
+                            "código CBO": "213155"
                         },
                         {
                             "profissão": "Musicólogo",
@@ -975,7 +975,7 @@
                 },
                 {
                     "especialidade": "FISCAL SANITÁRIO",
-                    "total": 8457,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Visitador Sanitário",
@@ -996,7 +996,7 @@
                         {
                             "profissão": "Técnico de enfermagem de saúde da família",
                             "total": 43144,
-                            "código CBO": "322245"
+                            "código CBO": "3222E1"
                         },
                         {
                             "profissão": "Técnico de enfermagem de terapia intensiva",
@@ -1022,7 +1022,7 @@
                 },
                 {
                     "especialidade": "TÉCNICO E AUXILIAR DE FARMÁCIA",
-                    "total": 12322,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Auxiliar de Farmácia de Manipulação",
@@ -1058,7 +1058,7 @@
                 },
                 {
                     "especialidade": "TÉCNICO E AUXILIAR DE LABORATÓRIO",
-                    "total": 45395,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Auxiliar de Laboratório de Análises Clínicas",
@@ -1099,7 +1099,7 @@
                 },
                 {
                     "especialidade": "TÉCNICO E AUXILIAR EM NUTRIÇÃO E DIETÉTICA",
-                    "total": 108,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Dietista",
@@ -1110,7 +1110,7 @@
                 },
                 {
                     "especialidade": "TÉCNICO E AUXILIAR EM FISIOTERAPIA E REABILITAÇÃO",
-                    "total": 3196,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Técnico de imobilização ortopédica",
@@ -1131,7 +1131,7 @@
                 },
                 {
                     "especialidade": "TÉCNICO E AUXILIAR EM SAÚDE ORAL",
-                    "total": 7017,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Auxiliar de Prótese Dentária",
@@ -1152,7 +1152,7 @@
                 },
                 {
                     "especialidade": "TÉCNICO E AUXILIAR EM VIG SANITÁRIA E AMBIENTAL",
-                    "total": 192,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Agente de defesa ambiental",
@@ -1163,7 +1163,7 @@
                 },
                 {
                     "especialidade": "TÉCNICO E AUXILIAR EM EQUIP MÉDICO-HOSPITALARES",
-                    "total": 304,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Técnico em equipamento médico hospitalar",
@@ -1174,7 +1174,7 @@
                 },
                 {
                     "especialidade": "TÉCNICO E AUXILIAR EM RADIOLOGIA MÉDICA",
-                    "total": 35595,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Auxiliar de Radiologia (Revelação Fotográfica)",
@@ -1190,7 +1190,7 @@
                 },
                 {
                     "especialidade": "TÉCNICO E AUXILIAR EM HEMATOLOGIA/HEMOTERAPIA",
-                    "total": 967,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Auxiliar de banco de sangue",
@@ -1201,7 +1201,7 @@
                 },
                 {
                     "especialidade": "TÉCNICO E AUXILIAR EM HISTOLOGIA",
-                    "total": 139,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Técnico em Histologia",
@@ -1212,7 +1212,7 @@
                 },
                 {
                     "especialidade": "OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE",
-                    "total": 5010,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Técnico em acupuntura",
@@ -1364,18 +1364,18 @@
                 },
                 {
                     "especialidade": "AGENTE DE SAÚDE PÚBLICA",
-                    "total": 15743,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Agente de saúde pública",
-                            "total": 15743,
+                            "total": 0,
                             "código CBO": "352210"
                         }
                     ]
                 },
                 {
                     "especialidade": "ATENDENTE DE ENFERMAGEM/AUX OPER SERV DIV E ASSEM",
-                    "total": 35486,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Atendente de consultório dentário",
@@ -1396,7 +1396,7 @@
                 },
                 {
                     "especialidade": "PARTEIRA",
-                    "total": 251,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Parteira leiga",
@@ -1407,7 +1407,7 @@
                 },
                 {
                     "especialidade": "OUTRAS OCUPAÇÕES NÍVEL ELEMENTAR EM SAÚDE",
-                    "total": 659958,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Artesão modelador (vidros)",
@@ -1428,7 +1428,7 @@
             "grupos": [
                 {
                     "especialidade": "ADMINISTRAÇÃO",
-                    "total": 341468,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Administrador",
@@ -1929,7 +1929,7 @@
                 },
                 {
                     "especialidade": "SERVIÇO DE LIMPEZA/CONSERVAÇÃO",
-                    "total": 17403,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Agente de higiene e segurança",
@@ -2020,7 +2020,7 @@
                 },
                 {
                     "especialidade": "SEGURANÇA",
-                    "total": 15449,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Agente de pátio",
@@ -2066,7 +2066,7 @@
                 },
                 {
                     "especialidade": "OUTRAS OCUPAÇÕES ADMINISTRATIVAS",
-                    "total": 285544,
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Acabador de calçados",
