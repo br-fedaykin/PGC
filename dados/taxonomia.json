@@ -2,7 +2,7 @@
     "taxonomia": [
         {
             "nível de especialização": "PESSOAL DE SAÚDE - NÍVEL SUPERIOR",
-            "áreas": [
+            "grupos": [
                 {
                     "especialidade": "ANESTESISTA",
                     "total": 14427,
@@ -492,7 +492,7 @@
                         {
                             "profissão": "Médico Cardiologista Intervencionista",
                             "total": 821,
-                            "código CBO": "#N/A"
+                            "código CBO": ""
                         },
                         {
                             "profissão": "Médico cancerologista cirúrgico",
@@ -592,7 +592,7 @@
                         {
                             "profissão": "Médico em medicina preventiva e social",
                             "total": 102,
-                            "código CBO": "#N/A"
+                            "código CBO": ""
                         },
                         {
                             "profissão": "Médico endocrinologista e metabologista",
@@ -727,7 +727,7 @@
                         {
                             "profissão": "Médico residente",
                             "total": 30644,
-                            "código CBO": "#N/A"
+                            "código CBO": ""
                         },
                         {
                             "profissão": "Médico reumatologista",
@@ -951,7 +951,7 @@
         },
         {
             "nível de especialização": "PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR",
-            "áreas": [
+            "grupos": [
                 {
                     "especialidade": "AUXILIAR DE ENFERMAGEM",
                     "total": 177915,
@@ -996,7 +996,7 @@
                         {
                             "profissão": "Técnico de enfermagem de saúde da família",
                             "total": 43144,
-                            "código CBO": "3,22E+04"
+                            "código CBO": "322245"
                         },
                         {
                             "profissão": "Técnico de enfermagem de terapia intensiva",
@@ -1350,7 +1350,7 @@
         },
         {
             "nível de especialização": "PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR",
-            "áreas": [
+            "grupos": [
                 {
                     "especialidade": "AGENTE COMUNITÁRIO DE SAÚDE",
                     "total": 282408,
@@ -1425,7 +1425,7 @@
         },
         {
             "nível de especialização": "PESSOAL ADMINISTRATIVO",
-            "áreas": [
+            "grupos": [
                 {
                     "especialidade": "ADMINISTRAÇÃO",
                     "total": 341468,
