@@ -1452,20 +1452,21 @@ Uma vantagem do esquema apresentado pelos autores é a possibilidade de revocaç
 
 % -------------------------------------------------------------------- %
 \newpage
-\section{Resultados Experimentais}
+\section{Resultados Experimentais e Discussão}
 
 Hipótese Principal: É possível (i.e, viável) aplicar ABE a um sistema de distribuição de arquivos gerenciados por Smart Contracts.
 
 A hipótese principal pode ser destrinchada em uma série de hipóteses mais específicas:
 
+% HIPÓTESES
 \begin{enumerate}
   \item Cifras (ciphertexts) ABE podem ser colocadas dentro de transações na Blockchain, mas até um certo limite devido à estrutura do Protocolo Ethereum.
   \begin{enumerate}[label*=\arabic*.]
-    \item O limite de uso de gas em um bloco acabam impondo limites ao tamanho das transações e, por decorrência, ao tamanho da Cifra.
+    \item Isto porque o limite de uso de gas em um bloco acaba impondo limites ao tamanho das transações e, por decorrência, ao tamanho da Cifra.
     \begin{enumerate}[label*=\arabic*.]
-      \item Podemos calcular o tamanho máximo da cifra de acordo com o limite de gás imposto ao bloco.
+      \item Logo, Podemos calcular o tamanho máximo da cifra de acordo com o limite de gás imposto ao bloco.
       \begin{enumerate}[label*=\arabic*.]
-        \item O limite máximo da cifra mensurado em testes será inferior ao calculado pelo limite de gás, porque a conta não considera o custo de gas das outras instruções executadas pela função que armazena a cifra ou pela função que recupera a cifra.
+        \item Entretanto, o limite máximo da cifra mensurado em testes será inferior ao calculado pelo limite de gás, porque a conta não considera o custo de gas das outras instruções executadas pela função que armazena a cifra ou pela função que recupera a cifra.
       \end{enumerate}
       \item Não há outros fatores que limitem o tamanho da cifra na Blockchain além do limite de gas usado.
       \item O custo da transação de publicação da cifra terá um crescimento não-linear (superior a linear) em relação ao seu tamanho em bytes, porque a rede Ethereum impõe que custo de armazenamento permanente de variáveis de tamanho dinâmico aumente em relação ao seu tamanho.
@@ -1473,25 +1474,24 @@ A hipótese principal pode ser destrinchada em uma série de hipóteses mais esp
   \end{enumerate}
   \item Atributos podem ser colocadas dentro de transações na Blockchain sem limitações.
   \begin{enumerate}[label*=\arabic*.]
-    \item chaves públicas de atributos são constituídas por um par com nome e um valor de chave.
+    \item isto porque chaves públicas de atributos são constituídas por um par com nome e um valor de chave.
     \item Pela experimentação, verificou-se que o valor da chave pública de um atributo tem um tamanho entre 125 e 127 bytes, e portanto, é possível de ser representado em uma estrutura de tamanho fixo. O nome do atributo também foi restringido a um tamanho fixo.
-    \item A publicação de um atributo tem um custo constante devido ao tamanho aproximadamente constante que seus elementos constituintes assumem.
+    \item Logo, a publicação de um atributo tem um custo constante devido ao tamanho aproximadamente constante que seus elementos constituintes assumem.
   \end{enumerate}
   \item Requisições por atributos também dependem de uma variável com tamanho dinâmico, entretanto não apresentam a mesma limitação da cifra.
   \begin{enumerate}[label*=\arabic*.]
-    \item É possível calcular quantas requisições podem ser solicitadas de forma teórica, da mesma forma que foi feita com a cifra. O número será muito superior à quantidade possível de especializações que um ser humano poderia obter ao longo de sua vida.
+    \item É possível calcular de forma teórica quantos atributos podem ser solicitados em uma mesma requisição, seguindo o exemplo de estimativa do tamanho da cifra. O número será muito superior à quantidade possível de especializações que um ser humano poderia obter ao longo de sua vida.
     \item Mesmo que esse limite seja um problema, uma requisição com uma lista grande de atributos pode ser dividida em algumas requisições com subdivisões da lista de atributos.
-    \item o custo em gas da requisição por atributos vai crescer de forma não-linear (mais que linear) devido ao campo de tamanho dinâmico que contém a lista de nomes de atributos requeridos.
+    \item É esperado que o custo em gas da requisição por atributos vai crescer de forma não-linear (mais que linear) devido à presença do campo de tamanho dinâmico que contém a lista de nomes de atributos requeridos.
   \end{enumerate}
-  \begin{enumerate}[label*=\arabic*.]
-    \item os custos associados à operação do sistema e aquisição de Ether tornam viável a implantação de uma rede privada
+  \item os custos associados à operação do sistema e aquisição de Ether tornam inviável o uso da rede principal e sugerem a implantação de uma rede privada
     \begin{enumerate}[label*=\arabic*.]
-      \item as operações relacionadas à cifra são as que podem custar mais gas e as que vão incorrer em mais custo para os usuários.
+      \item isto porque as operações relacionadas à cifra são as que podem custar mais gas, as que vão incorrer em mais custo para os usuários e as mais frequentes.
       \begin{enumerate}[label*=\arabic*.]
-        \item alterar as condições de acesso do prontuário significa republicar uma nova cifra para o prontuário em questão. A alteração será necessária a cada novo ciclo de atendimentos por uma especialidade de um hospital, impondo custos proporcionais à frequência de encaminhamento entre hospitais e especialidades.
-        \item a aplicação das políticas descritas na seção \ref{sec:sub:padronizacao-permissoes} impõem, na prática, um custo mínimo associado à publicação de um arquivo.
+        \item Isto porque alterar as condições de acesso do prontuário significa republicar uma nova cifra para o prontuário em questão. A alteração será necessária a cada novo ciclo de atendimentos por uma especialidade de um hospital, impondo custos proporcionais à frequência de encaminhamento entre hospitais e especialidades.
+        \item Lembrar também que a aplicação das políticas descritas na seção \ref{sec:sub:padronizacao-permissoes} impõem, na prática, um tamanho mínimo à cifra e, consequentemente, um custo mínimo para a publicação de um arquivo.
       \end{enumerate}
-      \item a flutuação da cotação do Ether dificuldade a previsibilidade do custo de operação do sistema
+      \item a flutuação da cotação do Ether dificulta a previsibilidade do custo de operação do sistema
       \item uma rede privada de nós compatíveis com o protocolo Ethereum ofereceria mais previsibilidade aos custos, que seriam basicamente equipamento, manutenção e energia.
       \item a ausência de um mecanismo de revocação de chaves de atributos pessoais de usuários em ABE também implicam em formas ineficientes (em tempo de processamento e gas em transações) para impedir o acesso de um usuário removido.
       \begin{enumerate}[label*=\arabic*.]
@@ -1499,12 +1499,13 @@ A hipótese principal pode ser destrinchada em uma série de hipóteses mais esp
         \item uma solução mais econômica (porém incompleta) para remoção do acesso de um usuário consiste em
         criar uma ``lista negra'' para listar os usuários removidos da plataforma, entretanto esta solução permite que o usuário removido continue com um conjunto válido de atributos, de forma que ele possa continuar tendo acesso ilegítimo a arquivos mesmo após sua exclusão nos casos em que ele consegue realizar um cadastro de usuário falso, ou se ele operar em conluio com outro usuário válido no sistema.
       \end{enumerate}
-    \end{enumerate}
   \end{enumerate}
 \end{enumerate}
+% FIM DAS HIPÓTESES
 
 Para testar a validade das hipóteses acima, será preciso recolher os dados abaixo e providenciar a seguintes análises:
 
+% DADOS E ANÁLISES
 \begin{enumerate}
   \item (vide subitens)
   \begin{enumerate}[label*=\arabic*.]
@@ -1512,7 +1513,7 @@ Para testar a validade das hipóteses acima, será preciso recolher os dados aba
     \begin{enumerate}[label*=\arabic*.]
       \item \label{enum:custo-teorico-de-gas-ciphertext} Descobrir o limite de gás atual e o histórico de limites. Calcular a partir disso o tamanho máximo da cifra. Mostrar em um gráfico o histórico do limite de gás ou, ao invés do gráfico, mostrar a fórmula que influencia o cálculo do limite de gás ao longo do tempo no Ethereum.
       \begin{enumerate}[label*=\arabic*.]
-        \item \label{enum:custo-de-gas-ciphertext} Mensurar o gasto de gas das transações de armazenamento e recuperação de ciphertexts da blockchain. Mostrar um gráfico com o crescimento do gasto de gas de acordo com um aumento do tamanho do ciphertext (ou seja, do aumento da política de acesso), até o limite da falha (i.e, até as transações irem acima do limite de gas do Ethereum). Demonstrar que o gasto de gas das transações pode ser medido pela diferença entre o tamanho calculado que o ciphertext poderia assumir e o limite real em que ele chegou nos testes.
+        \item \label{enum:custo-de-gas-ciphertext} Mensurar o gasto de gas das transações de armazenamento e recuperação de ciphertexts da blockchain. Mostrar um gráfico com o crescimento do gasto de gas de acordo com um aumento do tamanho do ciphertext (ou seja, do aumento da política de acesso), até o limite da falha (i.e, até as transações irem acima do limite de gas do Ethereum). Obter o gasto de gas das transações pela diferença entre o custo de uma transação com um ciphertext em seu tamanho teórico máximo e o tamanho máximo em que ele chegou nos testes.
       \end{enumerate}
       \item não sei bem como demonstrar que o limite de gas é a única limitação ao tamanho da cifra.
       \item usar os dados de \ref{enum:custo-de-gas-ciphertext} para demonstrar que o crescimento do gasto de gas não é linear. Explicar a razão disso citando a definição do protocolo Ethereum e do custo associado ao armazenamento de variáveis de tamanho variável.
@@ -1520,47 +1521,48 @@ Para testar a validade das hipóteses acima, será preciso recolher os dados aba
   \end{enumerate}
   \item Atributos podem ser colocadas dentro de transações na Blockchain sem limitações.
   \begin{enumerate}[label*=\arabic*.]
-    \item Exibir um exemplo de chave pública de atributo, contendo nome e valor da chave.
-    \item fazer uma tabela de geração de atributos para demonstrar que os dois vetores de bytes que compõem o valor de uma chave pública apresentam um tamanho variável, mas que variam em um intervalo específico, entre 125 e 127 bytes. Informar que a observação de limite inferior e superior para o valor da chave de um atributo motivou a criação de uma estrutura denominada ``bytes127'' no SmartDCPABEKeys, que é utilizada no lugar de uma variável do tipo ``bytes'', que é de tamanho variável e poderia trazer custos maiores na publicação de atributos.
-    \item fazer um gráfico com a distribuição das transações de publicação de atributos na blockchain e mostrar que há uma concentração entre. Informar que a amostra de atributos foi gerada com a mesma semente global de inicialização do DCPABE, mas com um conjunto aleatório de nomes e de GID de autoridades (esses são os 3 elementos que influenciam a derivação da chave).
+    \item Explicar que uma chave pública de atributo é feita por um par de nome e valor da chave, e exibir como exemplo os dados de um atributo gerado durante os testes.
+    \item fazer uma tabela (ou um gráfico de distribuição de probabilidade) para demonstrar que os dois campos em bytes que compõem o valor de uma chave pública de atributo apresentam um tamanho variável, mas que variam em um intervalo específico, entre 125 e 127 bytes. Explicar que a observação de limite inferior e superior para o valor da chave de um atributo motivou a criação de uma estrutura denominada como ``bytes127'' no SmartDCPABEKeys, que é utilizada no lugar de uma variável do tipo ``bytes'', que é de tamanho variável e poderia trazer custos maiores na publicação de atributos. Desta maneira este campo usa uma estrutura personalizada, definida usando somente dados de tamanho fixo, para evitar o uso de um tipo de dados de tamanho dinâmico, que é mais versátil, porém mais caro.
+    \item fazer uma tabela com desvio padrão (um gráfico de distribuição de probabilidade) de custo das transações de publicação de atributos na blockchain e mostrar que há, aproximadamente, um custo constante. Deixar claro que a amostra de atributos foi gerada com a mesma semente global de inicialização do DCPABE, mas com um conjunto aleatório de nomes e de GID de autoridades (esses são os 3 elementos que influenciam a derivação da chave).
   \end{enumerate}
-  \item Requisições por atributos também dependem de uma variável com tamanho dinâmico, entretanto não apresentam a mesma limitação da cifra.
+  \item (vide subitens)
   \begin{enumerate}[label*=\arabic*.]
     \item fazer um raciocínio análogo aos itens \ref{enum:custo-teorico-de-gas-ciphertext} e \ref{enum:custo-de-gas-ciphertext}, aplicado à requisição de atributos. Se uma requisição de atributos permitir muitos atributos (mais de 80 por exemplo), argumentar que uma requisição tem capacidade suficiente para listar mais papéis do que um ser humano poderia ter.
     \item Caso o cálculo da requisição aponte uma baixa capacidade quanto à lista de atributos, argumentar que o problema é automaticamente mitigado pela divisão de uma requisição com uma lista grande de atributos em um conjunto de requisições, cada uma com um subconjunto de atributos.
     \item Fazer um gráfico demonstrando que o custo em gas da requisição cresce de forma não linear em relação ao número de atributos, devido, mais uma vez, à existência de um campo com tamanho dinâmico.
   \end{enumerate}
-  \begin{enumerate}[label*=\arabic*.]
-    \item (vide subitens)
+  \item (vide subitens)
     \begin{enumerate}[label*=\arabic*.]
       \item fazer um gráfico com as curvas de crescimento de gasto de todas as funções nos Smart Contracts cujo custo aumenta conforme a entrada. Demonstrar que a curva associada à publicação da cifra é a mais acentuada. Informar também ao leitor quais funções tem um comportamento constante em relação à entrada para justificar a sua ausência no gráfico.
       \begin{enumerate}[label*=\arabic*.]
-        \item referenciar o código no SmartDCPABEFiles e explicar que os dados relacionados a um documento na blockchain excedem a capacidade da pilha da EVM, sendo necessário dividir as informações em duas partes, e uma destas partes contém metadados do arquivo, enquanto a outra parte contém somente a cifra. Explicar que uma alteração na cifra não leva à alteração completa do registro do arquivo, mas somente a uma substituição da estrutura de dados no Smart Contract referente à cifra.
+        \item referenciar o código no SmartDCPABEFiles e explicar que os dados relacionados a um documento na blockchain excedem a capacidade da pilha da EVM, sendo necessário dividir as informações em duas partes, e uma destas partes contém metadados do arquivo, enquanto a outra parte contém somente a cifra. Explicar que uma alteração na cifra não leva à alteração completa do registro do arquivo, mas somente a uma substituição daquela parte que representa a cifra, no Smart Contract.
         \item listar em uma tabela (ou em um gráfico de barras) o custo de publicação para cada uma das regras descritas subseção \ref{sec:sub:padronizacao-permissoes}.
       \end{enumerate}
       \item mostrar um gráfico de linha com a cotação do Ether dos últimos 12 meses. Citar a alta histórica de dezembro de 2017 e descobrir qual foi a maior variação da cotação do ethereum em um único dia (citar fonte).
-      \item não sei o que informar nessa hipótese pra validar a afirmação dela. Talvez eu precise remover essa parte do texto.
+      \item não sei o que informar nessa hipótese pra validar a afirmação dela. Talvez eu não desenvolva um texto sobre isso.
       \item explicar que a construção criptográfica da DCPABE, até o momento, não admite a revocação de chaves pessoais de atributos de um determinado usuário.
       \begin{enumerate}[label*=\arabic*.]
-        \item Relacionar em uma fórmula todos os fatores que podem influenciar no custo (tanto em tempo, quanto em ether) para proceder a substituição de um atributo por outro.
-        \item fazer um gráfico em barras com as atividades de um usuário (consultar usuário, consultar certificador, emitir atributo, publicar arquivo, etc) em uma aplicação de uso mínimo (descrever este ``uso mínimo'' como a criação de um atributo, criptografia e publicação de um arquivo da pessoa A, requisição do atributo de uma pessoa B e obtenção do arquivo publicado por A). Mensurar a diferença de execução dos contratos com e sem verificação e colocar essa diferença em um gráfico de barras (Obs: leva pouquíssimo tempo para adequar as funções a esse tipo de verificação, então é viável mensurar essas diferenças)
+        \item Descrever todos os fatores que podem influenciar nos custos (em tempo e Ether) de substituição de um atributo por outro.
+        \item fazer um gráfico em barras, onde cada barra representa uma atividade do usuário (consultar usuário, consultar certificador, emitir atributo, publicar arquivo, etc) usando um cenário de uso mínimo (descrever este ``uso mínimo'' como a criação de somente um atributo, criptografia e publicação de um arquivo da pessoa A, requisição do atributo de uma pessoa B e obtenção do arquivo publicado por A). Mensurar a diferença de execução dos contratos com e sem verificação e colocar essa diferença em um gráfico de barras (Obs: leva pouquíssimo tempo para adequar as funções a esse tipo de verificação, então é viável mensurar essas diferenças).
       \end{enumerate}
-    \end{enumerate}
   \end{enumerate}
 \end{enumerate}
+% FIM DOS DADOS E ANÁLISES
 
 \subsection{Plataforma de experimentação}
 
-Dados do seu computador, etc.
+Os testes foram obtidos em um PC rodando em Windows 10 x64, 16GB de memória Ram, processador intel i5-4670 @ 3.40 GHz, executados utilizando Java versão 14.0.2, Solidity Compiler 0.5.10+commit.5a6ea5b1, Web3j 4.3.0 e versão \emph{petersburg} da EVM Ethereum.
 
-\subsection{Módulo de instanciação de Variáveis globais}
+\subsection{Resultados Experimentais}
+
+\subsubsection{Inicialização do sistema}
 
 O módulo tem os seguintes passos.
 
-Passo 1, x ms.
-Passo 2, y ms.
+Instanciação de variáveis globais.
+Carregamento de dados de cache
 
-\subsection{Módulo de instanciação de usuário}
+\subsubsection{Criação de Usuário e de atributos}
 
 O módulo tem os seguintes passos.
 
@@ -1568,18 +1570,16 @@ Passo 1, x ms.
 Passo 2, y ms.
 Passo 3, y ms, ether consumido (envio de metadados do usuario).
 
-\subsection{Módulo de associação usuário-permissão}
+\subsubsection{Requisição e concessão de atributos a usuários}
 
 O módulo tem os seguintes passos.
 
-long ini = System.currentTimeInMillis();
 Passo 1, x ms.
-long delay = System.currentTimeInMillis() - ini;
 Passo 2, y ms.
 
 Para 1 permissão, 10 permissões, 100 permissões (todas com AND). As permissões podem ser A1, A2, A3 (não precisam ser especialidades.
 
-\subsection{Módulo de criptografia}
+\subsubsection{Operações criptográficas com ABE}
 
 O módulo tem os seguintes passos.
 
@@ -1588,30 +1588,29 @@ Passo 2, y ms.
 
 Para 1 arquivo de 1KB, 1 MB, 10 MB, 100 MB (tudo com pdf).
 
-\subsection{Módulo de envio de metadados da PEP à Blockchain}
+\subsubsection{Envio e recuperação de arquivos criptografados do servidor}
 
 O módulo tem os seguintes passos.
 
 Passo 1, x ms, ether consumido.
 Passo 2, y ms, ether consumido.
 
-\subsection{Módulo de recuperação de metadados da Blockchain}
+\subsubsection{Publicação e consulta de arquivos na Blockchain}
 
 O módulo tem os seguintes passos.
 
 Passo 1, x ms, ether consumido.
 Passo 2, y ms, ether consumido.
 
-\subsection{Módulo de envio descriptografia}
+\subsection{Discussão}
 
-O módulo tem os seguintes passos.
+\subsubsection{Codificação da ABE na Blockchain}
 
-Passo 1, x ms.
-Passo 2, y ms.
+espaço para texto sobre as hipóteses 1, 2 e 3.
 
-Os mesmos arquivos que foram criptografados.
+\subsubsection{Custos de transação no Ethereum}
 
-\subsection{VER SE FALTA ALGUM MÓDULO}
+espaço para texto sobre a hipótese 4.
 
 % -------------------------------------------------------------------- %
 \newpage
