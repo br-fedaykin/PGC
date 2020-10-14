@@ -1454,6 +1454,55 @@ Uma vantagem do esquema apresentado pelos autores é a possibilidade de revocaç
 \newpage
 \section{Resultados Experimentais}
 
+Hipótese Principal: É possível (i.e, viável) aplicar ABE a um sistema de distribuição de arquivos gerenciados por Smart Contracts.
+
+A hipótese principal pode ser destrinchada em uma série de hipóteses mais específicas:
+
+\begin{enumerate}
+  \item Cifras (ciphertexts) ABE podem ser colocadas dentro de transações na Blockchain, mas até um certo limite devido à estrutura do Protocolo Ethereum.
+  \begin{enumerate}[label*=\arabic*.]
+    \item O limite de uso de gas em um bloco acabam impondo limites ao tamanho das transações e, por decorrência, ao tamanho da Cifra.
+    \begin{enumerate}[label*=\arabic*.]
+      \item Podemos calcular o tamanho máximo da cifra de acordo com o limite de gás imposto ao bloco.
+      \begin{enumerate}[label*=\arabic*.]
+        \item O limite máximo da cifra mensurado em testes será inferior ao calculado pelo limite de gás, porque a conta não considera o custo de gas das outras instruções executadas pela função que armazena a cifra ou pela função que recupera a cifra.
+      \end{enumerate}
+      \item Não há outros fatores que limitem o tamanho da cifra na Blockchain além do limite de gas usado.
+      \item O custo da transação de publicação da cifra terá um crescimento não-linear (superior a linear) em relação ao seu tamanho em bytes, porque a rede Ethereum impõe que custo de armazenamento permanente de variáveis de tamanho dinâmico aumente em relação ao seu tamanho.
+    \end{enumerate}
+  \end{enumerate}
+  \item Atributos podem ser colocadas dentro de transações na Blockchain sem limitações.
+  \begin{enumerate}[label*=\arabic*.]
+    \item chaves públicas de atributos são constituídas por um par com nome e um valor de chave.
+    \item Pela experimentação, verificou-se que o valor da chave pública de um atributo tem um tamanho entre 125 e 127 bytes, e portanto, é possível de ser representado em uma estrutura de tamanho fixo. O nome do atributo também foi restringido a um tamanho fixo.
+    \item A publicação de um atributo tem um custo constante devido ao tamanho aproximadamente constante que seus elementos constituintes assumem.
+  \end{enumerate}
+  \item Requisições por atributos também dependem de uma variável com tamanho dinâmico, entretanto não apresentam a mesma limitação da cifra.
+  \begin{enumerate}[label*=\arabic*.]
+    \item É possível calcular quantas requisições podem ser solicitadas de forma teórica, da mesma forma que foi feita com a cifra. O número será muito superior à quantidade possível de especializações que um ser humano poderia obter ao longo de sua vida.
+    \item Mesmo que esse limite seja um problema, uma requisição com uma lista grande de atributos pode ser dividida em algumas requisições com subdivisões da lista de atributos.
+    \item o custo em gas da requisição por atributos vai crescer de forma não-linear (mais que linear) devido ao campo de tamanho dinâmico que contém a lista de nomes de atributos requeridos.
+  \end{enumerate}
+  \begin{enumerate}[label*=\arabic*.]
+    \item os custos associados à operação do sistema e aquisição de Ether tornam viável a implantação de uma rede privada
+    \begin{enumerate}[label*=\arabic*.]
+      \item as operações relacionadas à cifra são as que podem custar mais gas e as que vão incorrer em mais custo para os usuários.
+      \begin{enumerate}[label*=\arabic*.]
+        \item alterar as condições de acesso do prontuário significa republicar uma nova cifra para o prontuário em questão. A alteração será necessária a cada novo ciclo de atendimentos por uma especialidade de um hospital, impondo custos proporcionais à frequência de encaminhamento entre hospitais e especialidades.
+        \item a aplicação das políticas descritas na seção \ref{sec:sub:padronizacao-permissoes} impõem, na prática, um custo mínimo associado à publicação de um arquivo.
+      \end{enumerate}
+      \item a flutuação da cotação do Ether dificuldade a previsibilidade do custo de operação do sistema
+      \item uma rede privada de nós compatíveis com o protocolo Ethereum ofereceria mais previsibilidade aos custos, que seriam basicamente equipamento, manutenção e energia.
+      \item a ausência de um mecanismo de revocação de chaves de atributos pessoais de usuários em ABE também implicam em formas ineficientes (em tempo de processamento e gas em transações) para impedir o acesso de um usuário removido.
+      \begin{enumerate}[label*=\arabic*.]
+        \item a solução mais efetiva (porém ineficiente) para remoção do acesso de um usuário consiste em identificar todos os atributos concedidos a ele ao longo do tempo, e promover uma substituição destes atributos por novos. A autoridade certificadora deveria emitir novos atributos pessoais para todos os demais usuários afetados pela substituição de chaves, e cada arquivo no sistema utilizando os atributos substituídos deveria ter sua cifra atualizada pela realização de nova criptografia utilizando o conjunto de atributos recém criados.
+        \item uma solução mais econômica (porém incompleta) para remoção do acesso de um usuário consiste em
+        criar uma ``lista negra'' para listar os usuários removidos da plataforma, entretanto esta solução permite que o usuário removido continue com um conjunto válido de atributos, de forma que ele possa continuar tendo acesso ilegítimo a arquivos mesmo após sua exclusão nos casos em que ele consegue realizar um cadastro de usuário falso, ou se ele operar em conluio com outro usuário válido no sistema.
+      \end{enumerate}
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
+
 \subsection{Plataforma de experimentação}
 
 Dados do seu computador, etc.
