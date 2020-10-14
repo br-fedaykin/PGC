@@ -1503,6 +1503,52 @@ A hipótese principal pode ser destrinchada em uma série de hipóteses mais esp
   \end{enumerate}
 \end{enumerate}
 
+Para testar a validade das hipóteses acima, será preciso recolher os dados abaixo e providenciar a seguintes análises:
+
+\begin{enumerate}
+  \item (vide subitens)
+  \begin{enumerate}[label*=\arabic*.]
+    \item (vide subitens)
+    \begin{enumerate}[label*=\arabic*.]
+      \item \label{enum:custo-teorico-de-gas-ciphertext} Descobrir o limite de gás atual e o histórico de limites. Calcular a partir disso o tamanho máximo da cifra. Mostrar em um gráfico o histórico do limite de gás ou, ao invés do gráfico, mostrar a fórmula que influencia o cálculo do limite de gás ao longo do tempo no Ethereum.
+      \begin{enumerate}[label*=\arabic*.]
+        \item \label{enum:custo-de-gas-ciphertext} Mensurar o gasto de gas das transações de armazenamento e recuperação de ciphertexts da blockchain. Mostrar um gráfico com o crescimento do gasto de gas de acordo com um aumento do tamanho do ciphertext (ou seja, do aumento da política de acesso), até o limite da falha (i.e, até as transações irem acima do limite de gas do Ethereum). Demonstrar que o gasto de gas das transações pode ser medido pela diferença entre o tamanho calculado que o ciphertext poderia assumir e o limite real em que ele chegou nos testes.
+      \end{enumerate}
+      \item não sei bem como demonstrar que o limite de gas é a única limitação ao tamanho da cifra.
+      \item usar os dados de \ref{enum:custo-de-gas-ciphertext} para demonstrar que o crescimento do gasto de gas não é linear. Explicar a razão disso citando a definição do protocolo Ethereum e do custo associado ao armazenamento de variáveis de tamanho variável.
+    \end{enumerate}
+  \end{enumerate}
+  \item Atributos podem ser colocadas dentro de transações na Blockchain sem limitações.
+  \begin{enumerate}[label*=\arabic*.]
+    \item Exibir um exemplo de chave pública de atributo, contendo nome e valor da chave.
+    \item fazer uma tabela de geração de atributos para demonstrar que os dois vetores de bytes que compõem o valor de uma chave pública apresentam um tamanho variável, mas que variam em um intervalo específico, entre 125 e 127 bytes. Informar que a observação de limite inferior e superior para o valor da chave de um atributo motivou a criação de uma estrutura denominada ``bytes127'' no SmartDCPABEKeys, que é utilizada no lugar de uma variável do tipo ``bytes'', que é de tamanho variável e poderia trazer custos maiores na publicação de atributos.
+    \item fazer um gráfico com a distribuição das transações de publicação de atributos na blockchain e mostrar que há uma concentração entre. Informar que a amostra de atributos foi gerada com a mesma semente global de inicialização do DCPABE, mas com um conjunto aleatório de nomes e de GID de autoridades (esses são os 3 elementos que influenciam a derivação da chave).
+  \end{enumerate}
+  \item Requisições por atributos também dependem de uma variável com tamanho dinâmico, entretanto não apresentam a mesma limitação da cifra.
+  \begin{enumerate}[label*=\arabic*.]
+    \item fazer um raciocínio análogo aos itens \ref{enum:custo-teorico-de-gas-ciphertext} e \ref{enum:custo-de-gas-ciphertext}, aplicado à requisição de atributos. Se uma requisição de atributos permitir muitos atributos (mais de 80 por exemplo), argumentar que uma requisição tem capacidade suficiente para listar mais papéis do que um ser humano poderia ter.
+    \item Caso o cálculo da requisição aponte uma baixa capacidade quanto à lista de atributos, argumentar que o problema é automaticamente mitigado pela divisão de uma requisição com uma lista grande de atributos em um conjunto de requisições, cada uma com um subconjunto de atributos.
+    \item Fazer um gráfico demonstrando que o custo em gas da requisição cresce de forma não linear em relação ao número de atributos, devido, mais uma vez, à existência de um campo com tamanho dinâmico.
+  \end{enumerate}
+  \begin{enumerate}[label*=\arabic*.]
+    \item (vide subitens)
+    \begin{enumerate}[label*=\arabic*.]
+      \item fazer um gráfico com as curvas de crescimento de gasto de todas as funções nos Smart Contracts cujo custo aumenta conforme a entrada. Demonstrar que a curva associada à publicação da cifra é a mais acentuada. Informar também ao leitor quais funções tem um comportamento constante em relação à entrada para justificar a sua ausência no gráfico.
+      \begin{enumerate}[label*=\arabic*.]
+        \item referenciar o código no SmartDCPABEFiles e explicar que os dados relacionados a um documento na blockchain excedem a capacidade da pilha da EVM, sendo necessário dividir as informações em duas partes, e uma destas partes contém metadados do arquivo, enquanto a outra parte contém somente a cifra. Explicar que uma alteração na cifra não leva à alteração completa do registro do arquivo, mas somente a uma substituição da estrutura de dados no Smart Contract referente à cifra.
+        \item listar em uma tabela (ou em um gráfico de barras) o custo de publicação para cada uma das regras descritas subseção \ref{sec:sub:padronizacao-permissoes}.
+      \end{enumerate}
+      \item mostrar um gráfico de linha com a cotação do Ether dos últimos 12 meses. Citar a alta histórica de dezembro de 2017 e descobrir qual foi a maior variação da cotação do ethereum em um único dia (citar fonte).
+      \item não sei o que informar nessa hipótese pra validar a afirmação dela. Talvez eu precise remover essa parte do texto.
+      \item explicar que a construção criptográfica da DCPABE, até o momento, não admite a revocação de chaves pessoais de atributos de um determinado usuário.
+      \begin{enumerate}[label*=\arabic*.]
+        \item Relacionar em uma fórmula todos os fatores que podem influenciar no custo (tanto em tempo, quanto em ether) para proceder a substituição de um atributo por outro.
+        \item fazer um gráfico em barras com as atividades de um usuário (consultar usuário, consultar certificador, emitir atributo, publicar arquivo, etc) em uma aplicação de uso mínimo (descrever este ``uso mínimo'' como a criação de um atributo, criptografia e publicação de um arquivo da pessoa A, requisição do atributo de uma pessoa B e obtenção do arquivo publicado por A). Mensurar a diferença de execução dos contratos com e sem verificação e colocar essa diferença em um gráfico de barras (Obs: leva pouquíssimo tempo para adequar as funções a esse tipo de verificação, então é viável mensurar essas diferenças)
+      \end{enumerate}
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
+
 \subsection{Plataforma de experimentação}
 
 Dados do seu computador, etc.
