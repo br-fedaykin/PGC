@@ -1,421 +1,421 @@
-﻿NÍVEL DE ESCOLARIDADE;FAMÍLIA;Ocupações em geral;ACADEMIA DA SAÚDE;CENTRAL DE REGUALAÇÃO;CENTRAL DE REGULAÇÃO MÉDICA DAS URGÊNCIAS;CENTRO DE APOIO A SAÚDE DA FAMÍLIA-CASF;CENTRO DE ATENÇÃO HEMOTERÁPICA E/OU HEMATOLÓGICA;CENTRO DE ATENÇÃO PSICOSSOCIAL-CAPS;CENTRO DE PARTO NORMAL;CENTRO DE SAUDE/UNIDADE BASICA DE SAUDE;CENTRAL DE NOTIF. CAPTAÇÃO E DISTR. ÓRGÃOS ESTADUA;CLINICA ESPECIALIZADA/AMBULATORIO ESPECIALIZADO;CONSULTORIO;COOPERATIVA;FARMACIA;HOSPITAL ESPECIALIZADO;HOSPITAL GERAL;HOSPITAL DIA;LABORATORIO CENTRAL DE SAUDE PUBLICA - LACEN;LABORATORIO DE SAUDE PUBLICA;POLICLINICA;OFICINA ORTOPEDICA;POSTO DE SAUDE;PRONTO ANTEDIMENTO;PRONTO SOCORRO ESPECIALIZADO;PRONTO SOCORRO GERAL;SECRETARIA DE SAUDE;SERVICO DE ATENCAO DOMICILIAR ISOLADO(HOME CARE);UNIDADE DE ATENÇÃO À SAÚDE INDÍGENA;UNIDADE DE ATENCAO EM REGIME RESIDENCIAL;UNIDADE DE SERVICO DE APOIO DE DIAGNOSE E TERAPIA;UNIDADE DE VIGILANCIA EM SAUDE;UNIDADE MISTA;UNIDADE MOVEL DE NIVEL PRE-HOSP-URGENCIA/EMERGENCI;UNIDADE MOVEL FLUVIAL;UNIDADE MOVEL TERRESTRE;TELESAÚDE;Total
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR;;;706;2439;1892;4713;1968;20512;98;176487;820;126903;120401;8497;4346;58718;386321;5167;239;874;42881;14;11154;31340;3984;7844;18763;2310;1992;124;27222;5041;6359;6403;107;1232;170;1088041
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR;ANESTESISTA;;-;5;-;-;2;-;-;5;21;261;225;1435;-;1783;10149;212;-;-;70;-;1;1;109;32;14;4;-;-;55;1;34;6;-;2;-;14427
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR;ANESTESISTA;Médico Anestesiologista;-;5;-;-;2;-;-;5;21;261;225;1435;-;1783;10149;212;-;-;70;-;1;1;109;32;14;4;-;-;55;1;34;6;-;2;-;14427
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ASSISTENTE SOCIAL;;38;275;8;698;210;3384;1;7101;49;4527;455;16;26;2256;8176;147;1;16;1181;1;280;1288;141;218;1371;73;99;35;366;84;211;3;4;22;3;32764
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ASSISTENTE SOCIAL;Assistente Social;38;275;8;698;210;3384;1;7101;49;4527;455;16;26;2256;8176;147;1;16;1181;1;280;1288;141;218;1371;73;99;35;366;84;211;3;4;22;3;32764
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; BIOQUÍMICO/FARMACÊUTICO;;1;25;41;225;168;742;1;5986;29;1387;171;24;4203;1944;10998;205;29;115;794;-;203;1266;115;213;2017;91;95;1;1241;362;206;34;3;13;3;32951
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; BIOQUÍMICO/FARMACÊUTICO;Farmacêutico;1;25;41;225;168;742;1;5986;29;1387;171;24;4203;1944;10998;205;29;115;794;-;203;1266;115;213;2017;91;95;1;1241;362;206;34;3;13;3;32951
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; CIRURGIÃO GERAL;;-;21;24;-;-;-;-;26;30;348;356;288;-;589;7338;74;-;-;240;-;2;124;74;99;12;13;1;-;41;1;28;9;-;1;-;9739
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; CIRURGIÃO GERAL;Médico Cirurgião Geral;-;21;24;-;-;-;-;26;30;348;356;288;-;589;7338;74;-;-;240;-;2;124;74;99;12;13;1;-;41;1;28;9;-;1;-;9739
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; CLÍNICO GERAL;;-;884;1283;20;215;605;6;10254;61;4995;5890;1515;29;3115;57584;303;1;7;4602;-;591;11605;722;2467;1077;227;184;5;798;71;1600;1818;9;149;25;112717
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; CLÍNICO GERAL;Médico Clínico;-;878;1270;20;214;602;6;9664;61;4955;5859;1497;29;3106;57108;297;1;7;4578;-;571;11555;722;2451;1054;217;174;5;781;70;1599;1812;9;146;25;111343
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; CLÍNICO GERAL;Médico Generalista Alopata;-;6;13;-;1;3;-;590;-;40;31;18;-;9;476;6;-;-;24;-;20;50;-;16;23;10;10;-;17;1;1;6;-;3;-;1374
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ENFERMEIRO;;36;656;499;85;639;4855;85;53941;258;9387;1238;1392;34;17705;115744;1017;8;18;4788;2;4382;11578;1327;2682;8029;942;1105;12;1783;1616;2462;4436;40;302;47;253130
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ENFERMEIRO;Outros enfermeiros;-;-;-;-;-;-;-;-;-;2;-;46;-;57;265;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;370
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ENFERMEIRO;Enfermeiro;33;608;498;76;620;4769;13;15394;227;8581;1106;1129;33;16200;109724;989;6;18;4591;2;1225;11539;1283;2659;7254;927;1104;12;1696;1465;2338;4422;9;294;39;200883
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ENFERMEIRO;Enfermeiro Estomaterapeuta;-;-;-;-;-;-;-;2;-;13;3;1;-;-;13;1;-;-;7;-;-;-;1;-;-;1;-;-;-;-;-;-;-;-;-;42
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ENFERMEIRO;Enfermeiro auditor;-;40;1;-;-;-;-;4;4;19;4;4;-;76;626;4;-;-;26;-;-;3;1;2;195;11;-;-;6;-;1;-;-;1;-;1028
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ENFERMEIRO;Enfermeiro da estratégia de saúde da família;-;3;-;4;1;20;-;38447;-;17;-;-;-;3;25;-;-;-;29;-;3147;18;-;3;292;-;-;-;3;14;56;3;31;1;3;42120
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ENFERMEIRO;Enfermeiro de bordo;-;-;-;-;-;-;-;-;-;3;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;6;-;-;-;9
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ENFERMEIRO;Enfermeiro de centro cirúrgico;-;-;-;-;-;-;-;-;10;19;5;-;-;74;484;13;-;-;5;-;-;-;2;-;-;-;-;-;-;-;2;-;-;-;-;614
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ENFERMEIRO;Enfermeiro de terapia intensiva;-;2;-;-;2;-;-;-;8;8;4;132;-;209;1411;1;-;-;-;-;-;3;4;1;1;1;-;-;2;-;-;4;-;3;-;1796
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ENFERMEIRO;Enfermeiro do trabalho;-;-;-;-;1;-;-;12;5;183;102;2;1;47;308;1;2;-;67;-;6;4;-;4;21;1;-;-;32;11;1;1;-;-;1;813
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ENFERMEIRO;Enfermeiro nefrologista;-;-;-;-;-;-;-;2;2;473;-;-;-;10;325;2;-;-;20;-;-;-;1;-;-;-;-;-;33;-;1;-;-;-;-;869
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ENFERMEIRO;Enfermeiro neonatologista;-;-;-;-;-;-;1;-;-;1;-;-;-;112;223;-;-;-;-;-;-;-;5;-;-;-;-;-;-;-;-;-;-;-;-;342
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ENFERMEIRO;Enfermeiro obstétrico;-;-;-;1;10;-;71;39;1;30;10;78;-;754;2107;3;-;-;18;-;3;6;30;11;20;-;-;-;7;-;61;-;-;3;-;3263
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ENFERMEIRO;Enfermeiro psiquiátrico;-;-;-;-;-;66;-;3;-;15;-;-;-;132;55;3;-;-;-;-;-;-;-;-;1;-;-;-;-;-;-;-;-;-;-;275
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ENFERMEIRO;Enfermeiro puericultor e pediátrico;-;-;-;-;2;-;-;3;-;1;1;-;-;21;115;-;-;-;2;-;-;1;-;-;-;-;-;-;-;-;-;-;-;-;-;146
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ENFERMEIRO;Enfermeiro sanitarista;3;3;-;4;3;-;-;35;1;22;3;-;-;10;63;-;-;-;23;-;1;4;-;2;245;1;1;-;4;126;2;-;-;-;4;560
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; FISIOTERAPEUTA;;397;25;2;1179;33;115;-;9361;59;24560;6610;397;4;3485;22668;173;-;-;4128;8;248;261;255;254;310;515;5;1;3827;28;309;4;-;16;3;79240
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; FISIOTERAPEUTA;Fisioterapeuta do trabalho;-;-;-;-;-;-;-;1;-;21;18;2;-;2;13;-;-;-;1;-;-;1;-;1;1;6;-;-;1;-;-;-;-;-;-;68
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; FISIOTERAPEUTA;Fisioterapeuta acupunturista;1;-;-;2;-;-;-;25;-;158;105;-;-;1;14;-;-;-;37;-;1;1;-;1;1;2;-;-;18;-;1;-;-;-;-;368
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; FISIOTERAPEUTA;Fisioterapeuta esportivo;-;-;-;-;-;-;-;1;-;13;10;-;-;3;10;-;-;-;1;-;-;-;-;-;-;1;-;-;-;-;-;-;-;-;-;39
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; FISIOTERAPEUTA;Fisioterapeuta geral;396;25;2;1176;33;115;-;9319;59;24125;6333;395;4;3427;22222;171;-;-;4049;8;247;258;254;251;306;501;5;1;3750;28;308;4;-;16;3;77791
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; FISIOTERAPEUTA;Fisioterapeuta neurofuncional;-;-;-;1;-;-;-;4;-;48;20;-;-;7;8;-;-;-;14;-;-;-;1;-;1;1;-;-;16;-;-;-;-;-;-;121
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; FISIOTERAPEUTA;Fisioterapeuta osteopata;-;-;-;-;-;-;-;-;-;15;8;-;-;-;1;-;-;-;1;-;-;-;-;-;-;-;-;-;5;-;-;-;-;-;-;30
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; FISIOTERAPEUTA;Fisioterapeuta quiropraxista;-;-;-;-;-;-;-;1;-;6;8;-;-;-;-;-;-;-;1;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;16
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; FISIOTERAPEUTA;Fisioterapeuta respiratório;-;-;-;-;-;-;-;2;-;46;16;-;-;40;348;2;-;-;12;-;-;-;-;1;1;3;-;-;5;-;-;-;-;-;-;476
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; FISIOTERAPEUTA;Fisioterapeuta traumato-ortopédica funcional;-;-;-;-;-;-;-;8;-;128;92;-;-;5;52;-;-;-;12;-;-;1;-;-;-;1;-;-;32;-;-;-;-;-;-;331
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; FONOAUDIÓLOGO;;13;20;-;381;1;211;-;2908;7;7194;3208;54;-;816;3922;74;1;-;2047;-;67;41;16;46;117;136;-;-;597;12;51;2;-;14;2;21958
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; FONOAUDIÓLOGO;Fonoaudiólogo;13;20;-;381;1;211;-;2908;7;7194;3208;54;-;816;3922;74;1;-;2047;-;67;41;16;46;117;136;-;-;597;12;51;2;-;14;2;21958
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; FONOAUDIÓLOGO; GINECO OBSTETRA;-;52;1;14;1;-;-;2260;7;1965;2474;434;3;2217;10125;83;-;1;1348;-;52;39;95;41;76;-;-;-;391;5;85;3;-;4;1;21777
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; FONOAUDIÓLOGO;Médico Ginecologista e Obstetra;-;52;1;14;1;-;-;2260;7;1965;2474;434;3;2217;10125;83;-;1;1348;-;52;39;95;41;76;-;-;-;391;5;85;3;-;4;1;21777
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; FONOAUDIÓLOGO; MÉDICO DE FAMÍLIA;-;13;1;1;-;1;-;25245;-;90;49;5;-;16;119;2;-;-;71;-;1810;18;-;4;52;2;17;-;4;1;22;-;19;1;12;27575
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; FONOAUDIÓLOGO;Médico da estratégia de Saúde da Família;-;7;1;-;-;1;-;24933;-;9;7;1;-;4;25;1;-;-;16;-;1783;10;-;1;39;-;-;-;3;-;22;-;19;1;-;26883
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; FONOAUDIÓLOGO;Médico de família e comunidade;-;6;-;1;-;-;-;312;-;81;42;4;-;12;94;1;-;-;55;-;27;8;-;3;13;2;17;-;1;1;-;-;-;-;12;692
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; NUTRICIONISTA;;112;19;1;873;21;172;2;6127;33;3359;3155;62;10;1882;10085;116;13;15;1694;-;148;207;98;122;619;104;97;4;280;194;202;-;-;8;2;29836
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; NUTRICIONISTA;Nutricionista;112;19;1;873;21;172;2;6127;33;3359;3155;62;10;1882;10085;116;13;15;1694;-;148;207;98;122;619;104;97;4;280;194;202;-;-;8;2;29836
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;;-;86;-;13;34;14;-;34389;30;23204;57581;533;10;777;5818;182;-;4;3807;-;2684;1268;83;227;1328;6;317;-;1388;234;294;-;27;559;17;134914
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - auditor;-;14;-;-;-;-;-;1;-;19;23;1;-;1;7;-;-;-;7;-;1;-;-;-;81;-;-;-;1;2;-;-;-;-;-;158
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - clínico geral;-;60;-;11;26;9;-;12111;11;14167;48199;429;7;535;3087;148;-;2;2671;-;900;1220;51;192;1073;4;280;-;842;192;233;-;9;488;13;86970
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - dentística;-;-;-;-;-;1;-;62;1;351;653;6;-;12;104;2;-;-;62;-;4;3;1;4;17;-;26;-;18;6;7;-;-;10;1;1351
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - disfunção temporomandibular e;-;-;-;-;-;-;-;-;-;7;7;-;-;-;2;-;-;-;3;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;19
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - endodontista;-;2;-;-;3;-;-;140;3;2195;1837;27;1;7;185;9;-;-;215;-;4;18;-;1;14;1;2;-;41;1;8;-;-;9;-;4723
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - epidemiologista;-;-;-;-;-;-;-;1;-;5;-;-;-;-;3;-;-;-;-;-;-;-;-;-;6;-;-;-;-;2;-;-;-;-;-;17
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - estomatologista;-;-;-;-;1;-;-;5;-;205;14;-;-;14;40;-;-;-;20;-;-;1;-;-;-;-;-;-;3;-;-;-;-;-;-;303
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - implantodontista;-;-;-;-;-;-;-;-;2;314;599;3;-;7;45;4;-;-;47;-;-;-;-;-;-;-;-;-;9;-;-;-;-;1;-;1031
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - odontogeriatra;-;-;-;-;-;-;-;1;-;16;15;-;-;-;5;-;-;-;-;-;-;1;-;-;-;-;-;-;-;-;-;-;-;-;-;38
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - odontologia do trabalho;-;3;-;-;-;-;-;3;1;10;32;-;-;-;14;-;-;-;6;-;-;1;-;-;4;-;1;-;1;1;-;-;-;-;-;77
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - odontologia para pacientes co;-;-;-;-;1;-;-;16;-;462;22;1;-;20;50;3;-;-;22;-;-;2;-;2;2;-;1;-;5;-;1;-;-;-;-;610
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - odontologista legal;-;3;-;1;-;-;-;17;-;44;246;-;-;13;61;-;-;-;17;-;3;2;-;2;5;-;4;-;4;-;2;-;-;1;-;425
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - odontopediatra;-;1;-;-;-;1;-;113;1;672;904;6;-;38;125;3;-;-;137;-;7;5;2;-;3;-;-;-;13;-;1;-;-;6;1;2039
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - ortopedista e ortodontista;-;-;-;-;-;-;-;21;4;1290;2504;24;-;21;115;4;-;-;165;-;-;-;-;-;5;-;-;-;23;-;1;-;-;1;-;4178
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - patologista bucal;-;-;-;-;-;-;-;3;-;92;63;-;-;-;37;-;-;-;18;-;-;1;-;-;-;-;-;-;9;-;-;-;-;-;-;223
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - periodontista;-;-;-;-;-;-;-;48;1;1162;904;11;1;7;97;1;-;-;127;-;3;5;-;-;5;-;-;-;15;-;5;-;-;2;-;2394
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - protesista;-;-;-;1;-;1;-;77;2;987;757;13;-;6;120;2;-;1;123;-;5;-;1;1;5;-;-;-;101;-;2;-;-;1;-;2206
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - protesiólogo bucomaxilofacial;-;-;-;-;-;-;-;2;-;69;76;2;-;8;116;1;-;-;6;-;-;1;-;1;-;-;-;-;1;-;1;-;-;-;-;284
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - radiologista;-;-;-;-;-;-;-;27;-;419;377;-;-;7;50;-;-;-;39;-;2;1;3;1;1;1;-;-;282;-;-;-;-;-;-;1210
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - reabilitador oral;-;-;-;-;-;-;-;-;-;15;22;-;-;-;3;-;-;-;8;-;-;-;-;-;-;-;-;-;1;-;-;-;-;-;-;49
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista - traumatologista bucomaxilofac;-;-;-;-;1;-;-;37;4;595;251;10;-;76;1527;5;-;-;68;-;-;5;25;21;1;-;-;-;8;2;7;-;-;1;-;2644
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião dentista de saúde coletiva;-;2;-;-;2;1;-;79;-;85;54;-;-;2;23;-;-;1;35;-;7;2;-;2;41;-;3;-;9;26;-;-;-;-;1;375
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; ODONTÓLOGO;Cirurgião-dentista da estratégia de saúde da família;-;1;-;-;-;1;-;21625;-;23;22;-;1;3;2;-;-;-;11;-;1748;-;-;-;65;-;-;-;2;2;26;-;18;39;1;23590
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; PEDIATRA;;-;125;6;31;26;24;2;4599;32;1968;3103;694;2;3723;18844;95;-;-;1714;-;144;2662;290;640;263;12;1;-;109;48;206;18;-;10;3;39394
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; PEDIATRA;Médico Pediatra;-;125;6;31;26;24;2;4599;32;1968;3103;694;2;3723;18844;95;-;-;1714;-;144;2662;290;640;263;12;1;-;109;48;206;18;-;10;3;39394
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; PSICÓLOGO;;49;32;3;999;49;6216;-;9610;33;13176;17766;188;3;2347;6899;201;-;2;3958;1;358;100;57;86;593;67;57;56;881;52;167;3;-;9;1;64019
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; PSICÓLOGO;Psicólogo Clínico;43;29;3;998;42;6192;-;9528;28;12893;17379;187;3;1824;5414;197;-;2;3891;1;353;96;36;76;560;65;51;52;854;45;161;1;-;8;1;61013
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; PSICÓLOGO;Psicólogo do Esporte;2;-;-;-;-;-;-;1;-;7;5;-;-;1;-;-;-;-;1;-;-;-;-;-;1;-;-;-;-;-;-;-;-;-;-;18
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; PSICÓLOGO;Psicólogo do Trabalho;-;3;-;-;4;1;-;1;1;46;35;-;-;19;107;-;-;-;5;-;-;1;1;1;14;-;-;-;7;1;-;1;-;-;-;248
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; PSICÓLOGO;Psicólogo Social;3;-;-;1;1;17;-;56;-;64;90;-;-;17;26;-;-;-;26;-;3;1;-;-;8;1;6;1;2;6;4;-;-;-;-;333
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; PSICÓLOGO;Psicólogo Educacional;-;-;-;-;-;3;-;12;-;68;110;1;-;5;11;1;-;-;13;-;1;1;-;-;4;-;-;3;11;-;-;-;-;-;-;244
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; PSICÓLOGO;Psicólogo Hospitalar;-;-;-;-;2;3;-;5;4;23;31;-;-;480;1339;3;-;-;10;-;-;1;20;8;2;1;-;-;4;-;2;1;-;-;-;1939
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; PSICÓLOGO;Psicólogo Juridico;-;-;-;-;-;-;-;7;-;5;16;-;-;1;-;-;-;-;1;-;1;-;-;-;2;-;-;-;1;-;-;-;-;1;-;35
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; PSICÓLOGO;Psicólogo do trânsito;-;-;-;-;-;-;-;-;-;56;67;-;-;-;-;-;-;-;5;-;-;-;-;-;-;-;-;-;2;-;-;-;-;-;-;130
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; PSICÓLOGO;Psicólogo acupunturista;1;-;-;-;-;-;-;-;-;14;33;-;-;-;2;-;-;-;6;-;-;-;-;1;2;-;-;-;-;-;-;-;-;-;-;59
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; PSIQUIATRA;;-;9;4;17;-;1424;-;606;2;1027;1459;31;3;1160;1800;35;-;-;549;-;8;42;9;36;35;-;1;1;36;1;23;-;-;-;1;8319
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; PSIQUIATRA;Médico psiquiatra;-;9;4;17;-;1424;-;606;2;1027;1459;31;3;1160;1800;35;-;-;549;-;8;42;9;36;35;-;1;1;36;1;23;-;-;-;1;8319
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; RADIOLOGISTA;;-;4;-;3;1;-;-;131;8;1821;245;17;-;684;5080;80;-;1;783;-;1;61;38;50;4;2;-;-;2926;-;42;-;-;29;28;12039
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; RADIOLOGISTA;Médico em radiologia e diagnóstico por imagem;-;4;-;3;1;-;-;131;8;1821;245;17;-;684;5080;80;-;1;783;-;1;61;38;50;4;2;-;-;2926;-;42;-;-;29;28;12039
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; SANITARISTA;;-;13;-;-;1;1;-;27;1;14;21;-;-;22;70;-;-;2;8;-;2;1;1;1;85;-;-;-;1;48;-;-;-;-;-;319
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; SANITARISTA;Médico sanitarista;-;13;-;-;1;1;-;27;1;14;21;-;-;22;70;-;-;2;8;-;2;1;1;1;85;-;-;-;1;48;-;-;-;-;-;319
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;;-;134;17;9;127;95;-;1891;134;19920;15247;1398;17;11852;83555;2070;6;20;9674;-;75;472;489;557;237;81;1;-;3307;51;245;66;-;79;13;151839
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico acupunturista;-;-;-;-;1;4;-;72;-;362;701;13;-;35;190;15;-;-;187;-;1;-;1;1;1;2;-;-;12;-;3;1;-;-;-;1602
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico alergista e imunologista;-;2;-;-;-;-;-;19;1;315;449;17;-;64;423;13;-;-;250;-;1;7;-;4;1;4;-;-;17;-;1;1;-;-;1;1590
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico anatomopatologista;-;-;-;-;1;-;-;3;2;81;14;3;-;153;601;2;3;6;30;-;-;3;5;1;12;-;-;-;606;-;2;-;-;-;-;1528
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico angiologista;-;1;-;-;-;-;-;28;1;500;531;105;-;118;1238;53;-;-;323;-;2;5;2;5;1;2;-;-;73;-;8;-;-;-;-;2996
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico broncoesofalogista;-;-;-;-;-;-;-;-;1;8;5;1;-;8;113;-;-;-;-;-;-;-;-;-;-;-;-;-;6;-;-;-;-;-;-;142
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico Cardiologista Intervencionista;-;1;-;-;1;-;-;-;7;48;15;13;-;68;613;9;-;-;10;-;-;2;-;-;-;-;-;-;25;-;-;8;-;1;-;821
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico cancerologista cirúrgico;-;-;-;-;-;-;-;-;-;4;2;-;-;12;45;-;-;-;2;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;65
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico cancerologista pediátrico;-;-;-;-;1;-;-;-;1;10;3;5;-;93;162;-;-;-;4;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;279
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico cardiologista;-;15;-;4;4;1;-;450;17;3032;1787;279;1;1528;9762;118;1;1;1614;-;13;54;22;40;42;11;-;-;704;1;54;6;-;1;1;19563
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico cirurgião cardiovascular;-;-;1;-;-;-;-;-;1;24;65;20;1;73;397;3;-;-;10;-;-;-;3;1;-;-;-;-;8;-;-;-;-;-;-;607
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico cirurgião da mão;-;-;-;-;-;-;-;-;-;-;1;-;-;-;7;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;8
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico cirurgião de cabeça e pescoço;-;-;-;-;-;-;-;1;3;28;22;7;-;83;502;6;-;-;22;-;-;-;-;-;-;1;-;-;2;-;1;-;-;1;-;679
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico cirurgião do aparelho digestivo;-;-;-;-;-;-;-;-;-;75;109;15;-;57;721;5;-;-;43;-;-;2;1;1;-;1;-;-;11;-;2;-;-;-;-;1043
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico cirurgião pediátrico;-;-;-;-;-;-;-;2;-;9;25;3;-;122;459;4;-;-;10;-;-;1;3;-;5;-;-;-;3;-;1;-;-;-;-;647
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico cirurgião plástico;-;1;-;-;-;-;-;3;3;168;385;39;-;168;1657;61;-;-;99;-;-;4;31;6;2;-;-;-;4;-;4;1;-;-;-;2636
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico cirurgião torácico;-;-;-;-;-;-;-;1;-;11;13;2;-;16;146;-;-;-;1;-;-;1;-;1;-;-;-;-;-;-;-;-;-;-;-;192
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico citopatologista;-;-;-;-;-;-;-;1;-;27;8;1;-;9;44;-;1;7;4;-;-;-;1;-;-;-;-;-;88;-;1;-;-;-;-;192
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico coloproctologista;-;-;-;-;-;-;-;5;-;56;60;10;-;11;198;8;-;-;33;-;2;-;-;-;1;-;-;-;11;1;-;1;-;-;-;397
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico dermatologista;-;4;-;1;4;-;-;199;3;1536;2791;68;2;141;1790;138;-;-;1201;-;12;16;-;23;12;1;-;-;69;2;13;-;-;1;3;8030
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico do trabalho;-;18;1;-;5;-;-;44;4;671;869;12;-;69;550;8;1;2;254;-;3;16;4;12;37;17;-;-;112;14;2;-;-;1;1;2727
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico em cirurgia vascular;-;4;-;-;-;-;-;5;1;130;93;12;-;41;990;21;-;-;55;-;-;1;16;13;2;1;-;-;30;-;1;3;-;-;-;1419
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico em endoscopia;-;1;-;-;-;-;-;-;-;88;34;7;-;22;346;7;-;-;30;-;-;1;6;3;-;-;-;-;43;-;-;-;-;-;-;588
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico em medicina de tráfego;-;-;-;-;-;-;-;-;-;55;59;-;-;-;11;-;-;-;6;-;-;-;-;-;-;-;-;-;-;-;-;1;-;1;-;133
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico em medicina intensiva;-;3;11;-;1;-;-;1;10;19;11;106;-;325;2303;4;-;-;1;-;-;2;26;16;1;-;-;-;5;-;1;30;-;2;-;2878
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico em medicina nuclear;-;-;-;-;-;-;-;-;-;58;3;-;-;65;188;12;-;-;5;-;-;-;-;-;-;-;-;-;157;-;5;-;-;-;-;493
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico em medicina preventiva e social;-;1;-;-;-;-;-;4;-;6;7;1;-;9;55;-;-;-;6;-;-;-;-;-;7;4;-;-;1;-;-;-;-;-;1;102
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico endocrinologista e metabologista;-;6;-;-;-;-;-;57;-;728;910;23;1;121;1200;45;-;-;599;-;3;5;2;7;6;1;-;-;55;-;15;-;-;-;1;3785
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico fisiatra;-;1;-;-;-;-;-;3;-;120;52;1;-;62;113;1;-;-;30;-;-;1;-;-;1;-;-;-;23;-;-;-;-;-;-;408
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico foniatra;-;-;-;-;-;-;-;-;-;1;2;-;-;-;1;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;4
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico gastroenterologista;-;1;-;1;3;-;-;45;3;742;619;13;1;77;1405;73;-;1;431;-;2;9;1;5;5;4;-;-;103;1;8;-;-;-;-;3553
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico geneticista;-;-;-;-;-;-;-;-;-;16;14;1;-;19;94;2;-;-;14;-;-;-;-;-;-;-;-;-;12;-;-;-;-;-;-;172
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico geriatra;-;3;-;1;-;-;-;26;1;143;161;8;-;41;323;5;-;-;124;-;3;3;-;3;2;7;-;-;6;-;4;-;-;1;1;866
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico hansenologista;-;-;-;-;-;-;-;13;-;17;1;-;-;5;10;2;-;-;8;-;2;-;-;-;1;-;-;-;2;-;-;-;-;-;1;62
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico hematologista;-;-;-;-;96;-;-;3;-;123;32;1;-;165;654;3;-;-;37;-;-;-;2;3;1;1;-;-;88;-;1;2;-;-;-;1212
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico hiperbarista;-;-;-;-;-;-;-;-;-;1;2;-;-;1;2;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;6
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico homeopata;-;2;-;-;-;1;-;45;-;77;281;1;-;7;47;3;-;-;74;-;-;-;1;-;3;-;-;-;4;-;1;1;-;1;-;549
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico infectologista;-;2;-;-;1;2;-;81;3;404;145;9;-;337;1995;43;-;-;199;-;3;4;10;7;22;3;-;-;38;11;6;-;-;-;-;3325
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico legista;-;-;-;-;-;-;-;3;-;13;7;-;-;-;18;-;-;-;4;-;-;-;4;-;10;-;-;-;2;10;-;-;-;-;-;71
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico mastologista;-;1;-;-;-;-;-;5;1;72;41;2;-;34;179;2;-;-;60;-;-;-;3;-;-;-;-;-;32;-;-;-;-;2;1;435
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico nefrologista;-;9;-;-;-;-;-;23;8;1251;171;31;2;243;2647;7;-;-;169;-;2;2;17;6;7;1;-;-;108;-;4;2;-;5;-;4715
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico neurocirurgião;-;2;-;-;-;-;-;1;3;63;76;23;-;100;867;1;-;-;20;-;-;-;29;9;-;-;1;-;5;-;2;-;-;-;-;1202
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico neurofisiologista clínico;-;-;-;-;-;-;-;-;-;7;6;-;-;11;9;-;-;-;-;-;-;1;-;-;-;-;-;-;-;-;-;-;-;-;-;34
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico neurologista;-;7;-;-;-;19;-;119;13;1343;719;59;1;332;3959;66;-;-;741;-;6;17;17;24;7;6;-;-;159;1;9;1;-;1;1;7627
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico nutrologista;-;-;-;-;-;-;-;7;-;78;120;5;1;49;395;3;-;-;64;-;-;1;2;4;1;4;-;-;2;-;1;1;-;-;-;738
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico oftalmologista;-;14;2;-;-;-;-;112;7;3410;1716;118;-;1274;4299;1013;-;-;813;-;5;18;23;8;6;-;-;-;103;-;38;-;-;54;-;13033
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico oncologista clínico;-;8;-;-;4;-;-;9;12;534;153;121;-;1132;2631;14;-;-;143;-;-;3;-;1;9;5;-;-;46;-;1;3;-;-;-;4829
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico ortopedista e traumatologista;-;12;1;1;-;-;-;150;5;1550;549;121;3;948;6844;69;-;-;685;-;5;249;117;256;10;-;-;-;87;1;45;3;-;-;-;11711
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico otorrinolaringologista;-;8;-;-;-;-;-;62;-;893;602;66;1;277;2288;91;-;-;520;-;4;15;22;7;3;-;-;-;39;-;3;-;-;-;-;4901
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico patologista;-;-;-;-;1;-;-;-;1;11;2;-;-;20;99;-;-;1;2;-;-;1;-;-;5;-;-;-;86;6;-;-;-;-;-;235
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico patologista clínico / medicina laboratorial;-;-;-;-;3;-;-;-;-;22;8;1;-;33;150;1;-;2;6;-;-;-;1;-;-;-;-;-;213;1;-;-;-;-;-;441
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico pneumologista;-;1;1;-;-;-;-;41;1;269;226;6;1;106;777;17;-;-;188;-;2;8;-;4;8;3;-;-;28;2;2;-;-;1;1;1693
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico radioterapeuta;-;1;-;-;-;-;-;-;4;57;4;-;-;93;217;2;-;-;14;-;-;-;-;-;-;-;-;-;19;-;-;-;-;-;-;411
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico residente;-;-;-;-;-;68;-;197;16;92;3;16;-;2962;26945;77;-;-;45;-;4;14;110;78;1;1;-;-;8;-;-;1;-;6;-;30644
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico reumatologista;-;4;-;-;1;-;-;15;-;230;305;9;2;25;524;12;-;-;255;-;-;4;-;3;3;1;-;-;23;-;-;-;-;-;-;1416
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS ESPECIALIDADES MÉDICAS;Médico urologista;-;1;-;1;-;-;-;36;1;332;258;24;-;88;1352;31;-;-;229;-;-;2;7;5;2;-;-;-;29;-;6;-;-;-;-;2404
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;;60;41;2;165;440;2653;1;2020;26;7700;1148;14;2;2345;7347;98;180;673;1425;2;98;306;65;69;2524;35;12;9;9191;2232;172;1;5;14;9;41084
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Médico veterinário;-;9;-;39;-;1;-;296;1;69;49;1;-;14;46;-;8;48;13;-;18;1;2;1;1742;-;-;-;44;1608;2;-;-;3;-;4015
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Biólogo;-;13;-;2;152;-;-;112;2;293;49;5;-;625;1936;12;107;206;142;-;6;42;9;10;411;1;5;-;2912;466;20;-;1;1;3;7543
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;BioMédico;-;4;-;2;275;3;1;264;11;701;122;2;1;373;3139;21;55;354;327;-;13;257;27;46;103;2;2;-;5477;56;122;-;3;5;-;11768
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Coordenador Pedagógico;1;-;-;-;-;3;-;19;-;62;8;-;-;6;6;-;-;-;15;-;-;-;-;2;19;-;-;-;14;2;-;-;-;-;1;158
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Engenheiro Agrícola;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1;-;-;-;-;-;1
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Engenheiro Agrônomo;-;2;-;-;-;1;-;-;-;4;3;-;1;4;2;-;-;-;2;-;-;1;-;-;27;-;-;-;2;18;-;-;-;-;-;67
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Físico;-;-;-;-;-;-;-;-;-;9;-;-;-;40;35;-;-;-;2;-;-;-;-;-;7;-;-;-;1;7;1;-;-;-;-;102
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Físico (medicina);-;-;-;-;-;-;-;-;1;28;-;-;-;54;130;-;-;-;2;-;-;-;-;-;-;-;-;-;16;1;1;-;-;-;-;233
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Físico (nuclear e reatores);-;-;-;-;-;-;-;-;2;68;1;-;-;47;123;3;-;-;9;-;-;-;-;-;-;-;-;-;31;-;-;-;-;-;-;284
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Musicólogo;-;-;-;-;-;4;-;-;-;2;-;-;-;2;1;-;-;-;2;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;11
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Neuropsicólogo;-;-;-;-;-;1;-;2;-;30;30;-;-;9;16;1;-;-;11;-;-;-;-;-;-;-;-;-;1;-;-;-;-;-;-;101
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Orientador Educacional;1;-;1;-;-;96;-;24;-;16;1;-;-;1;11;-;-;-;5;-;-;-;-;-;5;-;-;-;1;8;-;-;-;1;1;172
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Ortoptista;-;-;-;-;-;-;-;1;-;46;12;-;-;10;49;15;-;-;7;-;-;-;-;2;-;-;-;-;1;-;-;-;-;-;-;143
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Pedagogo;1;4;-;5;10;592;-;78;3;2068;56;-;-;93;138;7;-;-;191;-;26;1;-;-;83;1;2;4;201;9;1;-;-;2;1;3577
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Professor de alunos com deficiência auditiva e surdos;-;-;-;-;-;-;-;-;-;21;4;-;-;-;1;-;-;-;26;-;-;-;-;-;1;-;-;-;17;-;-;-;-;-;-;70
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Professor de alunos com deficiência física;-;-;-;-;-;1;-;-;-;34;2;-;-;3;1;-;-;-;4;-;-;-;-;-;1;-;-;-;5;-;-;-;-;-;-;51
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Professor de alunos com deficiência múltipla;-;-;-;-;-;-;-;5;-;288;15;-;-;-;1;-;-;-;20;-;-;-;-;-;-;-;-;-;22;-;-;-;-;-;-;351
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Professor de alunos com deficiência visual;-;-;-;-;-;-;-;-;-;72;2;-;-;13;7;1;-;-;2;-;-;-;-;-;-;-;-;-;31;-;-;-;-;-;-;128
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Pesquisador de Clinica Médica;-;-;-;-;-;-;-;-;-;1;2;-;-;16;49;1;1;-;-;-;-;1;-;-;-;-;-;-;1;-;-;-;-;-;-;72
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Pesquisador de Medicina Basica;-;-;-;-;-;-;-;-;-;1;-;-;-;22;1;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1;25
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Pesquisador em Biologia Ambiental;-;-;-;-;-;-;-;-;-;1;-;-;-;-;-;-;-;-;-;-;-;-;-;-;4;-;-;-;4;4;-;-;-;-;-;13
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Pesquisador em Biologia Animal;-;-;-;-;-;-;-;1;-;-;9;-;-;1;-;-;-;-;-;-;-;-;-;-;1;-;-;-;2;1;-;-;-;-;-;15
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Pesquisador em biologia de Microorganismos e Parasitas;-;-;-;-;-;-;-;6;-;4;1;-;-;7;141;-;-;26;1;-;-;-;4;-;5;-;-;-;77;1;2;-;-;-;-;275
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Pesquisador em Biologia Humana;-;-;-;-;-;-;-;-;-;3;-;-;-;135;12;5;-;1;-;-;-;-;-;-;-;-;-;-;6;-;-;-;-;-;-;162
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Pesquisador em Ciências Sociais e Humanas;-;-;-;-;-;-;-;-;-;1;-;-;-;2;14;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1;18
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Pesquisador em Psicologia;-;-;-;-;-;-;-;-;-;5;11;-;-;-;2;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;18
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Pesquisador em Saúde Coletiva;-;-;-;-;-;-;-;8;-;2;-;-;-;14;19;-;-;2;-;-;-;-;-;-;6;-;-;-;1;3;-;-;1;-;1;57
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Preparador Físico;14;-;-;-;-;23;-;30;2;46;22;-;-;30;27;2;-;-;20;-;-;-;-;-;3;-;-;1;13;1;4;-;-;-;-;238
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Professor da Educação de Jovens e Adulto;-;-;-;-;-;6;-;1;-;27;2;-;-;-;-;-;-;-;2;-;1;-;-;-;1;-;-;1;-;2;-;-;-;-;-;43
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Professor de Artes no Ensino Médio;-;-;-;3;1;9;-;1;-;10;-;-;-;-;-;-;-;-;3;-;-;-;-;-;2;-;-;-;1;1;-;-;-;-;-;31
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Professor de educação física do ensino fundamental;1;-;-;-;-;5;-;9;-;65;2;1;-;4;-;1;-;-;23;-;3;-;-;-;-;-;-;-;8;-;-;-;-;1;-;123
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Professor de educação física no ensino superior;19;-;-;3;-;41;-;36;-;57;11;-;-;20;14;-;-;-;13;-;-;-;-;-;7;-;-;-;7;-;-;-;-;-;-;228
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Professor de Educação Fisica Ensino Médio;13;-;-;2;-;11;-;9;-;56;5;-;-;23;6;-;-;-;2;-;4;-;1;-;4;-;-;-;5;-;-;-;-;-;-;141
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Professor de Nutricao;-;2;-;-;-;-;-;-;-;-;-;-;-;-;8;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;10
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Professor de técnicas e Recursos Audiovisuais;-;-;-;-;-;-;-;-;-;2;1;-;-;-;-;-;-;-;1;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;4
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Professor de Terapia Ocupacional;1;-;-;-;-;1;-;-;-;3;-;-;-;-;5;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;10
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Psicanalista;-;-;-;1;-;5;-;7;-;31;97;-;-;6;10;-;-;-;9;-;-;-;-;1;-;-;-;-;1;-;1;-;-;-;-;169
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Psicopedagogo;1;-;-;1;-;117;-;23;-;477;114;-;-;16;28;2;-;-;112;-;4;-;-;-;6;-;-;-;42;-;3;-;-;-;-;946
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Químico;-;-;-;-;1;-;-;4;-;8;-;-;-;6;9;-;9;36;1;-;-;-;1;2;20;-;3;-;31;29;-;-;-;-;-;160
-PESSOAL DE SAÚDE - NÍVEL SUPERIOR; OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE;Terapeuta ocupacional;8;7;1;107;1;1733;-;1084;4;3089;517;5;-;749;1360;27;-;-;458;2;23;3;21;5;66;31;-;3;216;14;15;1;-;1;-;9551
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR;;;67;377;1486;128;3329;8365;110;113932;792;33427;3146;2428;1223;57199;422502;3415;306;1791;15272;27;10770;34673;4090;8863;9117;2972;2586;12;36550;4251;8774;26142;111;2695;5;820933
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; AUXILIAR DE ENFERMAGEM;;12;118;194;30;581;2501;46;40925;33;5985;644;488;129;15021;106045;819;17;94;4082;-;3379;6318;1183;2204;1460;133;121;1;2774;447;2556;1641;13;109;1;200104
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; AUXILIAR DE ENFERMAGEM;Auxiliar de Enfermagem;11;114;194;24;578;2478;46;20803;33;5919;613;488;127;14959;105670;819;17;93;4053;-;2153;6275;1182;2200;1376;132;121;1;2757;437;2485;1637;12;107;1;177915
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; AUXILIAR DE ENFERMAGEM;Auxiliar de Enfermagem do Trabalho;-;-;-;-;2;1;-;18;-;31;27;-;-;58;247;-;-;-;5;-;1;2;1;-;7;1;-;-;11;-;21;3;-;1;-;437
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; AUXILIAR DE ENFERMAGEM;Auxiliar de enfermagem da estratégia de saúde da família;1;4;-;6;1;22;-;20104;-;35;4;-;2;4;128;-;-;1;24;-;1225;41;-;4;77;-;-;-;6;10;50;1;1;1;-;21752
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; FISCAL SANITÁRIO;;-;11;1;2;1;4;-;857;3;63;1;-;3;1;32;-;1;7;33;-;44;6;-;3;4489;-;17;-;22;2845;11;-;-;-;-;8457
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; FISCAL SANITÁRIO;Visitador Sanitário;-;11;1;2;1;4;-;857;3;63;1;-;3;1;32;-;1;7;33;-;44;6;-;3;4489;-;17;-;22;2845;11;-;-;-;-;8457
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO DE ENFERMAGEM;;46;227;1269;83;1147;5568;58;65927;621;18672;1382;1781;212;35841;274043;2046;17;145;8001;-;7192;23187;2382;5652;2394;2806;2274;10;6195;564;5411;24496;85;2390;3;502127
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO DE ENFERMAGEM;Técnico de enfermagem;43;203;775;69;1117;5487;57;26734;576;18234;1115;1775;206;34923;270667;2030;17;137;7822;-;3608;22826;2313;5568;2144;2761;2274;10;6060;540;5231;10065;30;589;3;436009
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO DE ENFERMAGEM;Técnico de enfermagem de saúde da família;3;4;2;14;-;20;-;38893;2;58;2;-;5;9;174;1;-;4;46;-;3556;51;-;10;106;-;-;-;7;14;85;15;52;11;-;43144
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO DE ENFERMAGEM;Técnico de enfermagem de terapia intensiva;-;-;-;-;29;1;-;4;22;133;1;-;-;443;2341;1;-;-;8;-;-;8;4;3;-;1;-;-;67;2;-;2;-;22;-;3092
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO DE ENFERMAGEM;Técnico de enfermagem do trabalho;-;-;-;-;1;-;-;36;21;176;223;2;1;28;352;10;-;4;72;-;5;39;3;1;13;2;-;-;38;7;9;1;-;1;-;1045
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO DE ENFERMAGEM;Técnico de enfermagem psiquiátrica;-;-;-;-;-;57;-;2;-;21;-;-;-;434;140;1;-;-;1;-;-;-;-;1;1;-;-;-;2;-;4;-;-;-;-;664
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO DE ENFERMAGEM;Socorrista (exceto médicos e enfermeiros) habilita;-;20;492;-;-;3;1;258;-;50;41;4;-;4;369;3;-;-;52;-;23;263;62;69;130;42;-;-;21;1;82;14413;3;1767;-;18173
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR DE FARMÁCIA;;-;1;21;3;9;165;-;2279;3;244;7;3;833;1131;6158;126;1;11;251;-;20;606;31;122;120;23;2;-;103;4;42;3;-;-;-;12322
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR DE FARMÁCIA;Auxiliar de Farmácia de Manipulação;-;1;1;2;-;21;-;291;2;59;4;-;466;436;2883;60;-;1;43;-;3;188;7;30;27;14;-;-;5;-;11;-;-;-;-;4555
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR DE FARMÁCIA;Auxiliar de Produção Farmacêutica;-;-;2;1;-;-;-;20;-;10;-;-;9;31;241;2;-;2;5;-;-;11;1;1;3;-;-;-;5;-;2;-;-;-;-;346
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR DE FARMÁCIA;Auxiliar técnico em laboratório de farmácia;-;-;5;-;7;13;-;41;-;26;2;-;34;234;667;9;1;3;15;-;1;61;1;10;7;6;1;-;63;2;5;-;-;-;-;1214
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR DE FARMÁCIA;Mestre de produção farmacêutica;-;-;-;-;-;-;-;-;-;-;-;-;-;-;2;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;2
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR DE FARMÁCIA;Técnico em Farmácia;-;-;13;-;2;131;-;1923;1;148;1;3;324;430;2362;55;-;1;188;-;16;346;22;81;79;3;1;-;28;2;22;3;-;-;-;6185
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR DE FARMÁCIA;Técnico em Imunobiológicos;-;-;-;-;-;-;-;4;-;1;-;-;-;-;3;-;-;4;-;-;-;-;-;-;4;-;-;-;2;-;2;-;-;-;-;20
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR DE LABORATÓRIO;;-;11;-;3;1343;6;6;1457;66;1607;131;10;39;2212;13250;107;267;1518;914;-;26;1156;174;92;232;7;46;-;20126;209;367;1;11;1;-;45395
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR DE LABORATÓRIO;Auxiliar de Laboratório de Análises Clínicas;-;2;-;-;101;1;2;409;22;633;44;1;17;354;3076;56;58;359;214;-;10;349;18;23;75;6;12;-;8426;66;100;1;3;1;-;14439
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR DE LABORATÓRIO;Auxiliar de laboratório de análises físico-química;-;-;-;-;-;-;-;1;-;5;1;-;4;11;39;-;1;14;-;-;-;-;-;-;3;-;-;-;74;6;-;-;-;-;-;159
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR DE LABORATÓRIO;Auxiliar de Laboratório de Imunobiológicos;-;1;-;-;20;-;-;7;-;7;-;-;-;8;99;-;3;22;1;-;1;3;-;-;4;-;3;-;103;6;2;-;-;-;-;290
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR DE LABORATÓRIO;Auxiliar Técnico em Patologia Clínica;-;-;-;1;205;2;3;437;9;202;20;-;5;190;1703;8;56;173;112;-;7;109;29;4;20;1;3;-;2996;33;56;-;2;-;-;6386
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR DE LABORATÓRIO;Técnico de laboratório de análises físico-químicas;-;-;-;-;19;-;-;15;-;44;2;-;-;110;372;8;12;17;21;-;-;7;1;2;18;-;3;-;222;6;9;-;-;-;-;888
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR DE LABORATÓRIO;Técnico em Laboratório de Farmácia;-;3;-;-;24;-;-;58;-;41;-;-;9;110;569;2;4;46;22;-;-;66;2;5;20;-;10;-;187;36;26;-;-;-;-;1240
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR DE LABORATÓRIO;Técnico em patologia clínica;-;5;-;2;974;3;1;530;35;675;64;9;4;1429;7392;33;133;887;544;-;8;622;124;58;92;-;15;-;8118;56;174;-;6;-;-;21993
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM NUTRIÇÃO E DIETÉTICA;;-;-;-;-;-;-;-;-;-;1;2;-;-;28;69;2;-;-;1;-;-;3;-;-;2;-;-;-;-;-;-;-;-;-;-;108
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM NUTRIÇÃO E DIETÉTICA;Dietista;-;-;-;-;-;-;-;-;-;1;2;-;-;28;69;2;-;-;1;-;-;3;-;-;2;-;-;-;-;-;-;-;-;-;-;108
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM FISIOTERAPIA E REABILITAÇÃO;;-;1;-;-;-;7;-;29;-;558;9;-;-;136;1805;6;-;-;133;20;2;276;46;128;1;-;-;-;16;-;9;-;-;14;-;3196
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM FISIOTERAPIA E REABILITAÇÃO;Técnico de imobilização ortopédica;-;1;-;-;-;-;-;18;-;127;4;-;-;45;1435;4;-;-;86;1;1;229;44;112;1;-;-;-;4;-;7;-;-;-;-;2119
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM FISIOTERAPIA E REABILITAÇÃO;Técnico de ortopedia;-;-;-;-;-;-;-;7;-;291;4;-;-;82;343;2;-;-;33;18;-;46;2;16;-;-;-;-;8;-;1;-;-;14;-;867
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM FISIOTERAPIA E REABILITAÇÃO;Técnico em reabilitação;-;-;-;-;-;7;-;4;-;140;1;-;-;9;27;-;-;-;14;1;1;1;-;-;-;-;-;-;4;-;1;-;-;-;-;210
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM SAÚDE ORAL;;-;3;-;1;5;1;-;1650;13;2216;542;1;1;71;402;17;1;4;305;6;79;138;2;9;76;1;55;-;1320;3;42;-;2;51;-;7017
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM SAÚDE ORAL;Auxiliar de Prótese Dentária;-;-;-;-;-;-;-;24;3;201;89;-;-;2;18;-;-;1;12;1;2;1;-;-;1;-;1;-;244;-;-;-;-;-;-;600
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM SAÚDE ORAL;Protético Dentário;-;1;-;1;-;-;-;163;3;597;193;-;-;11;32;5;1;3;59;5;6;1;-;2;1;1;-;-;1025;-;15;-;-;-;-;2125
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM SAÚDE ORAL;Técnico em saúde bucal;-;2;-;-;5;1;-;1463;7;1418;260;1;1;58;352;12;-;-;234;-;71;136;2;7;74;-;54;-;51;3;27;-;2;51;-;4292
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM VIG SANITÁRIA E AMBIENTAL;;-;-;-;2;-;-;-;50;-;1;-;-;-;-;6;-;-;-;-;-;-;-;-;-;89;-;1;-;-;43;-;-;-;-;-;192
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM VIG SANITÁRIA E AMBIENTAL;Agente de defesa ambiental;-;-;-;2;-;-;-;50;-;1;-;-;-;-;6;-;-;-;-;-;-;-;-;-;89;-;1;-;-;43;-;-;-;-;-;192
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM EQUIP MÉDICO-HOSPITALARES;;-;-;-;-;-;-;-;1;-;22;2;-;-;71;169;3;1;-;6;-;-;3;-;4;1;-;-;-;21;-;-;-;-;-;-;304
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM EQUIP MÉDICO-HOSPITALARES;Técnico em equipamento médico hospitalar;-;-;-;-;-;-;-;1;-;22;2;-;-;71;169;3;1;-;6;-;-;3;-;4;1;-;-;-;21;-;-;-;-;-;-;304
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM RADIOLOGIA MÉDICA;;-;-;-;4;1;-;-;637;52;3177;233;37;-;2101;18279;212;-;-;1336;1;15;2937;268;641;29;-;-;-;5190;6;316;-;-;122;1;35595
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM RADIOLOGIA MÉDICA;Auxiliar de Radiologia (Revelação Fotográfica);-;-;-;-;-;-;-;3;-;68;7;-;-;43;458;4;-;-;28;-;-;60;11;17;4;-;-;-;82;1;5;-;-;-;-;791
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM RADIOLOGIA MÉDICA;Técnico em radiologia e imagenologia;-;-;-;4;1;-;-;634;52;3109;226;37;-;2058;17821;208;-;-;1308;1;15;2877;257;624;25;-;-;-;5108;5;311;-;-;122;1;34804
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM HEMATOLOGIA/HEMOTERAPIA;;-;-;-;-;234;-;-;-;-;20;4;-;-;24;311;-;-;-;4;-;-;13;-;-;-;-;-;-;355;-;2;-;-;-;-;967
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM HEMATOLOGIA/HEMOTERAPIA;Auxiliar de banco de sangue;-;-;-;-;234;-;-;-;-;20;4;-;-;24;311;-;-;-;4;-;-;13;-;-;-;-;-;-;355;-;2;-;-;-;-;967
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM HISTOLOGIA;;-;-;-;-;-;-;-;-;-;4;-;-;-;21;40;-;-;1;-;-;-;-;-;-;1;-;-;-;72;-;-;-;-;-;-;139
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; TÉCNICO E AUXILIAR EM HISTOLOGIA;Técnico em Histologia;-;-;-;-;-;-;-;-;-;4;-;-;-;21;40;-;-;1;-;-;-;-;-;-;1;-;-;-;72;-;-;-;-;-;-;139
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;;9;5;1;-;8;113;-;120;1;857;189;108;6;541;1893;77;1;11;206;-;13;30;4;8;223;2;70;1;356;130;18;1;-;8;-;5010
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Técnico em acupuntura;-;-;-;-;-;-;-;6;1;36;54;-;-;-;5;-;-;-;12;-;-;-;-;-;1;-;-;-;3;-;-;-;-;-;-;118
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Artista de Circo (Outros);-;-;-;-;-;1;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Auxiliar de Desenvolvimento Infantil;-;-;-;-;-;-;-;5;-;56;3;-;1;55;95;-;-;-;1;-;-;-;1;-;5;-;-;-;19;1;1;-;-;-;-;243
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Auxiliar de Saúde Navegação Marítima;-;4;-;-;-;3;-;11;-;-;-;-;3;2;35;-;-;-;-;-;-;1;-;-;10;-;1;-;1;5;-;-;-;-;-;76
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Auxiliar Geral de Conservação de Vias Per;-;-;1;-;1;8;-;57;-;43;5;1;-;82;189;16;-;-;13;-;7;4;-;-;14;1;-;-;13;9;14;1;-;2;-;481
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Instrumentador Cirúrgico;-;-;-;-;1;-;-;1;-;32;11;107;-;162;891;29;-;-;3;-;-;-;2;4;-;-;-;-;9;-;-;-;-;-;-;1252
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Instrutor de Cursos Livres;4;-;-;-;-;27;-;2;-;17;-;-;-;-;-;-;-;-;-;-;2;-;-;-;1;-;-;-;4;2;-;-;-;-;-;59
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Mecanico de Manutenção de Automóveis Moto;-;1;-;-;-;-;-;4;-;1;-;-;1;-;3;-;-;-;-;-;1;1;-;-;4;-;-;-;-;-;-;-;-;-;-;16
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Mecanico de Manutenção de Máquinas em Ger;-;-;-;-;-;-;-;-;-;2;-;-;-;10;111;-;-;-;10;-;-;9;1;-;3;-;-;-;1;-;-;-;-;-;-;147
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Mecânico de manutenção e instalação de aparelhos de climatização e refrigeração;-;-;-;-;-;-;-;-;-;-;-;-;-;11;32;1;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;44
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Ministro de Culto Religioso;-;-;-;-;-;-;-;-;-;6;-;-;-;3;31;-;-;-;-;-;-;-;-;1;-;-;-;1;-;-;-;-;-;-;-;42
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Musico Intérprete Cantor;-;-;-;-;-;-;-;-;-;-;1;-;-;-;-;-;-;-;1;-;-;-;-;-;-;-;-;-;4;-;-;-;-;-;-;6
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Musico Intérprete Instrumentista;-;-;-;-;-;2;-;1;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;2;-;-;-;-;-;-;5
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Professor de Alunos Com Deficiência Menta;-;-;-;-;-;4;-;-;-;417;1;-;-;3;-;-;-;-;78;-;-;-;-;-;-;-;-;-;16;-;-;-;-;-;-;519
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Professor de Nível Médio Na Educação Inf;-;-;-;-;-;-;-;3;-;3;-;-;-;1;17;-;-;-;2;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;26
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Professor de Nível Médio No Ensino Profis;-;-;-;-;-;1;-;1;-;2;-;-;-;-;2;-;-;-;-;-;-;-;-;-;2;-;-;-;1;-;-;-;-;-;-;9
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Quiropraxista Cinesoterapeuta Eutonista;1;-;-;-;-;-;-;-;-;4;12;-;-;-;3;-;-;-;1;-;-;-;-;-;-;-;-;-;12;-;-;-;-;1;-;34
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Recreador;4;-;-;-;-;62;-;4;-;30;5;-;-;85;26;-;-;-;21;-;-;1;-;-;-;-;-;-;4;-;-;-;-;-;-;242
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Técnico de Alimentos;-;-;-;-;-;-;-;2;-;3;-;-;-;5;87;-;-;4;-;-;-;-;-;-;14;-;-;-;4;26;-;-;-;-;-;145
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Técnico de Desporto Individual e Coletivo;-;-;-;-;-;5;-;3;-;16;-;-;1;7;4;-;-;-;-;-;1;-;-;-;1;-;-;-;-;-;-;-;-;-;-;38
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Técnico de Saneamento;-;-;-;-;2;-;-;7;-;7;-;-;-;-;7;-;1;4;1;-;2;1;-;-;157;-;69;-;-;81;1;-;-;-;-;340
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Técnico em Laboratório Óptico;-;-;-;-;-;-;-;-;-;3;1;-;-;-;5;13;-;-;-;-;-;-;-;-;2;-;-;-;3;-;-;-;-;-;-;27
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Técnico em Métodos Eletrográficos em Ence;-;-;-;-;-;-;-;5;-;80;12;-;-;48;84;13;-;-;30;-;-;-;-;2;-;-;-;-;153;-;1;-;-;-;-;428
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Técnico em Métodos Gráficos em Cardiologia;-;-;-;-;-;-;-;3;-;54;5;-;-;44;152;-;-;-;19;-;-;1;-;1;-;-;-;-;28;-;1;-;-;3;-;311
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Técnico em Óptica e Optometria Contatólog;-;-;-;-;-;-;-;3;-;40;79;-;-;16;47;5;-;-;6;-;-;-;-;-;1;1;-;-;10;-;-;-;-;2;-;210
-PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR; OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE;Técnico Químico;-;-;-;-;4;-;-;2;-;5;-;-;-;7;67;-;-;3;8;-;-;12;-;-;8;-;-;-;69;6;-;-;-;-;-;191
-PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR;;;2210;7260;4501;923;2195;17844;110;408514;396;48072;10864;569;5887;29969;190547;4502;319;1813;18909;20;33057;18991;1136;4765;93512;929;5371;195;29102;41067;5842;2772;488;1064;131;993846
-PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR; AGENTE COMUNITÁRIO DE SAÚDE;;1;16;-;-;5;49;-;258086;-;49;4;-;12;12;86;3;-;4;69;-;22690;11;-;-;422;-;-;-;6;88;474;-;321;-;-;282408
-PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR; AGENTE COMUNITÁRIO DE SAÚDE;Agente comunitário de saúde;1;16;-;-;5;49;-;258086;-;49;4;-;12;12;86;3;-;4;69;-;22690;11;-;-;422;-;-;-;6;88;474;-;321;-;-;282408
-PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR; AGENTE DE SAÚDE PÚBLICA;;2;65;1;3;17;65;-;1681;3;274;2;-;47;117;541;2;2;43;191;-;126;78;1;13;7537;-;75;-;45;4748;53;1;-;10;-;15743
-PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR; AGENTE DE SAÚDE PÚBLICA;Agente de saúde pública agente de saneam;2;65;1;3;17;65;-;1681;3;274;2;-;47;117;541;2;2;43;191;-;126;78;1;13;7537;-;75;-;45;4748;53;1;-;10;-;15743
-PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR; ATENDENTE DE ENFERMAGEM/AUX OPER SERV DIV E ASSEM;;-;79;11;7;27;140;3;10398;6;6299;2095;10;2075;920;7587;56;2;15;1165;-;834;1584;52;285;625;36;245;-;347;28;310;7;4;234;-;35486
-PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR; ATENDENTE DE ENFERMAGEM/AUX OPER SERV DIV E ASSEM;Atendente de consultório dentario;-;17;2;2;5;6;-;7100;4;5849;2010;-;9;62;453;28;-;1;852;-;449;571;18;95;177;-;227;-;196;10;110;1;1;233;-;18488
-PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR; ATENDENTE DE ENFERMAGEM/AUX OPER SERV DIV E ASSEM;Atendente de enfermagem;-;58;3;2;21;32;3;885;1;325;64;6;19;473;2576;5;2;14;127;-;302;510;24;119;114;2;17;-;135;15;129;6;1;1;-;5991
-PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR; ATENDENTE DE ENFERMAGEM/AUX OPER SERV DIV E ASSEM;Atendente de farmácia balconista;-;4;6;3;1;102;-;2413;1;125;21;4;2047;385;4558;23;-;-;186;-;83;503;10;71;334;34;1;-;16;3;71;-;2;-;-;11007
-PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR; PARTEIRA;;-;-;-;-;-;-;2;38;-;1;-;-;-;4;88;-;-;-;-;-;22;2;-;2;4;-;48;-;1;-;39;-;-;-;-;251
-PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR; PARTEIRA;Parteira leiga;-;-;-;-;-;-;2;38;-;1;-;-;-;4;88;-;-;-;-;-;22;2;-;2;4;-;48;-;1;-;39;-;-;-;-;251
-PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR; OUTRAS OCUPAÇÕES NÍVEL ELEMENTAR EM SAÚDE;;2207;7100;4489;913;2146;17590;105;138311;387;41449;8763;559;3753;28916;182245;4441;315;1751;17484;20;9385;17316;1083;4465;84924;893;5003;195;28703;36203;4966;2764;163;820;131;659958
-PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR; OUTRAS OCUPAÇÕES NÍVEL ELEMENTAR EM SAÚDE;Artesao modelador vidros;-;-;-;-;-;10;-;-;-;2;-;-;-;1;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;13
-PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR; OUTRAS OCUPAÇÕES NÍVEL ELEMENTAR EM SAÚDE;Gesseiro;-;-;-;-;-;-;-;-;-;14;1;1;-;3;50;-;-;-;3;-;-;8;-;1;-;-;-;-;-;-;-;-;-;-;-;81
-PESSOAL ADMINISTRATIVO;;;2207;7100;4489;913;2146;17580;105;138311;387;41433;8762;558;3753;28912;182195;4441;315;1751;17481;20;9385;17308;1083;4464;84924;893;5003;195;28703;36203;4966;2764;163;820;131;659864
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;;222;6330;3615;179;1121;5750;38;55994;275;29549;7362;401;2748;17869;108335;3533;140;741;13090;13;3015;10293;846;3029;41951;541;428;71;17605;3120;2095;699;17;359;94;341468
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Administrador;13;111;7;1;27;79;2;599;6;1112;331;31;53;197;1319;32;7;13;283;2;55;76;7;18;1133;35;21;8;424;64;26;24;1;16;2;6135
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Administrador de banco de dados;-;9;-;-;-;2;-;16;-;1;1;-;-;13;29;-;-;-;2;-;4;-;-;2;93;-;-;-;2;1;2;-;-;-;2;179
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Administrador de sistemas operacionais;-;54;-;-;10;5;-;117;-;26;-;1;-;17;98;1;-;-;14;-;8;1;1;1;499;1;-;-;7;5;15;-;-;-;-;881
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Advogado;-;8;2;-;4;2;-;18;-;62;21;3;3;33;158;-;-;3;12;-;-;1;-;2;128;1;-;3;23;10;-;-;-;-;1;498
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Advogado de empresa;-;1;-;-;-;-;-;-;-;5;1;-;-;2;19;-;-;-;2;-;-;-;-;-;-;-;-;-;4;-;-;-;-;-;-;34
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Almoxarife;-;1;6;-;8;2;-;63;1;148;-;2;61;181;1596;24;-;-;38;-;7;110;5;25;196;5;4;-;73;4;16;3;-;-;-;2579
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Analista de redes e de comunicação de dados;-;-;-;-;4;1;-;1;-;9;-;-;-;8;92;4;-;1;3;-;-;1;-;1;13;1;-;-;9;-;-;-;-;-;2;150
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Analista de suporte computacional;-;15;-;-;2;-;-;5;-;27;2;3;1;58;275;13;1;-;22;-;1;7;-;4;52;1;1;-;17;2;3;-;1;-;9;522
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Analista financeiro instituições financeiras;-;-;-;-;-;-;-;-;-;28;1;1;-;21;147;11;-;-;9;-;-;4;1;-;8;4;-;-;12;-;-;-;-;-;-;247
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Arquiteto de edificacoes;-;-;-;-;-;-;-;-;1;-;-;-;-;4;53;-;-;-;2;-;-;-;-;-;37;-;2;-;1;25;-;-;-;-;-;125
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Arquivista;-;1;-;-;-;2;-;111;-;23;-;-;-;42;141;4;-;-;25;-;7;3;-;7;7;-;-;-;3;-;3;-;-;-;-;379
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Arquivista de documentos;-;-;-;-;-;1;-;50;-;5;-;-;-;68;122;6;-;-;26;-;-;1;2;-;10;-;-;-;3;1;1;-;-;-;-;296
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Assistente tecnico administrativo;44;3294;310;39;444;2483;15;19815;131;6736;657;107;1223;5672;30712;803;79;360;3817;-;796;3900;359;723;16028;151;187;17;3286;1243;586;91;4;97;29;104238
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Atendente de agencia;-;11;-;-;-;-;-;12;-;4;3;-;-;-;4;11;-;-;3;-;1;-;-;4;7;-;-;-;4;-;-;-;-;-;-;64
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Atendente de ambulatorio ou clínica;-;27;1;5;8;87;-;1603;-;2220;1128;1;25;393;3297;204;-;10;818;-;156;290;2;217;94;3;-;-;869;3;40;4;-;2;-;11507
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Auditor (contadores e afins);-;19;-;-;-;1;-;1;-;3;-;-;-;7;82;2;-;-;-;-;-;-;-;-;76;1;-;-;1;132;-;-;-;-;-;325
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Auxiliar de contabilidade;-;2;-;-;-;-;-;5;-;48;3;2;4;69;471;6;-;-;13;-;-;11;-;4;46;7;2;-;22;-;1;-;-;-;1;717
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Auxiliar de escritorio;9;686;74;15;246;864;9;10415;16;4623;1852;44;681;4453;25562;826;22;105;2503;-;316;1774;97;735;4792;71;38;5;2838;327;450;39;1;55;10;64553
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Auxiliar de estatistica;-;1;-;-;1;2;-;8;-;5;2;-;1;13;78;-;-;-;5;-;-;3;-;5;11;-;3;-;8;1;11;-;-;1;-;159
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Auxiliar de faturamento;-;9;1;-;10;13;-;45;4;566;25;24;3;489;4010;93;-;1;192;-;6;106;30;44;239;18;-;1;441;3;19;1;-;-;-;6393
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Auxiliar de pessoal;1;13;5;2;9;36;-;189;4;102;23;1;13;115;813;9;-;8;33;-;15;29;1;2;110;3;8;1;40;7;40;-;-;-;-;1632
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Chefe de contabilidade tecnico;-;-;-;-;2;-;-;1;-;1;-;-;-;3;14;-;-;-;3;-;-;3;-;-;11;-;1;-;-;-;-;-;-;-;-;39
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Cobrador externo;-;-;-;-;-;-;-;-;-;9;1;-;-;-;3;-;-;-;2;-;-;-;-;-;-;-;-;-;5;-;-;-;-;-;-;20
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Comprador;-;-;1;-;-;1;-;-;-;18;1;-;3;51;352;8;-;-;5;-;-;5;-;9;11;2;-;-;14;-;1;-;-;-;-;482
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Contador;-;14;3;-;2;1;-;8;-;65;12;7;1;55;474;6;1;2;19;-;-;3;-;1;127;4;3;1;29;-;1;-;-;1;-;840
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Continuo;-;1;-;2;2;6;-;95;-;98;3;2;7;235;745;1;-;4;20;-;33;7;2;8;48;-;-;-;58;10;-;-;-;-;-;1387
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Datilografo;-;-;-;-;6;3;-;59;-;9;-;-;-;42;99;-;-;2;50;-;-;3;-;1;21;-;1;-;1;5;2;-;-;-;-;304
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Digitador;6;405;12;8;1;112;-;2467;19;369;8;-;46;247;1164;6;8;64;230;-;196;30;4;9;7009;3;5;-;567;138;107;1;2;8;1;13252
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Diretor administrativo;27;130;19;11;12;204;-;1297;6;1240;329;22;59;159;1118;22;3;13;312;1;145;204;4;41;1225;25;16;12;421;160;119;44;1;21;5;7427
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Diretor administrativo e financeiro;1;-;-;-;5;1;-;11;-;131;40;3;7;40;141;4;-;1;25;-;-;8;3;3;109;5;-;3;76;2;2;1;-;3;1;626
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Diretor comercial;-;-;-;-;-;-;-;-;-;6;7;1;1;2;4;-;-;-;1;-;-;-;-;-;1;-;-;-;3;-;-;1;-;-;-;27
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Diretor de manutenção;-;1;-;-;5;-;-;-;-;5;-;-;1;6;36;-;-;-;1;-;-;1;1;-;14;-;-;-;-;-;-;-;-;-;-;71
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Diretor de marketing;-;-;-;-;-;-;-;-;-;1;-;-;-;1;2;-;-;-;1;-;-;-;-;-;-;-;-;-;1;-;-;-;-;-;-;6
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Diretor de pesquisa e desenvolvimento (p&d);-;-;-;-;-;-;-;-;-;1;-;-;-;2;4;-;-;-;1;-;-;-;-;-;1;-;-;-;2;-;-;-;-;-;-;11
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Diretor de recursos humanos;-;-;-;-;1;-;-;3;-;4;-;-;-;6;21;-;1;-;3;-;-;-;-;-;44;-;1;-;2;-;-;-;-;-;-;86
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Diretor de relacoes de trabalho;-;-;-;-;-;-;-;-;-;-;-;-;-;1;2;-;-;-;-;-;-;-;-;-;4;-;-;-;-;-;-;-;-;-;-;7
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Diretor de serviços culturais;-;-;-;-;-;-;-;-;-;2;-;-;-;-;-;-;-;-;-;-;-;-;-;1;-;-;-;-;-;-;-;-;-;-;-;3
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Diretor de serviços de informatica;-;4;-;1;-;-;-;19;-;8;1;2;-;4;22;-;-;-;5;-;1;1;-;-;83;-;-;-;1;-;-;-;-;-;-;152
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Diretor de serviços de saúde;-;14;13;1;11;10;-;74;10;582;169;22;5;1048;5613;606;-;-;198;-;7;184;79;302;70;6;-;1;210;6;96;12;-;4;2;9355
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Diretor de serviços sociais;-;-;-;-;-;-;-;3;-;10;3;-;-;1;3;1;-;-;-;-;-;-;-;-;10;-;-;-;3;-;-;-;-;-;-;34
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Diretor de suprimentos;-;-;-;-;-;-;-;-;-;1;-;-;-;-;6;-;-;-;1;-;-;-;-;-;3;1;-;-;-;-;-;-;-;-;-;12
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Diretor de suprimentos no serviço publico;-;-;-;-;-;-;-;1;-;1;-;-;-;-;-;-;-;-;-;-;-;-;-;-;3;-;-;-;-;-;-;-;-;-;-;5
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Diretor financeiro;-;-;-;-;1;-;-;-;-;18;3;2;2;7;30;1;-;1;11;-;-;1;-;1;27;2;1;-;11;-;-;-;-;-;-;119
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Economista domestico;-;-;-;-;-;-;-;-;-;-;-;-;-;2;5;-;-;-;2;-;-;-;-;-;4;-;-;-;-;1;-;-;-;-;-;14
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Engenheiro civil;-;1;-;-;-;-;-;2;-;12;6;-;-;24;142;2;-;-;6;-;-;-;-;-;220;-;28;-;3;67;-;-;-;-;-;513
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Engenheiro civil (saneamento);-;-;-;-;-;-;-;-;-;2;-;-;-;-;2;-;-;3;-;-;-;-;-;-;35;-;3;-;-;40;-;-;-;-;-;85
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Engenheiro de seguranca do trabalho;-;-;-;-;-;-;-;3;1;88;18;-;-;26;190;2;1;-;11;-;-;-;1;1;18;-;1;-;5;12;1;-;-;-;-;379
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Fiscal de tributos municipal;-;-;-;-;-;-;-;1;-;2;-;-;-;-;-;-;-;-;-;-;-;1;1;-;42;-;-;-;-;57;-;-;-;-;-;104
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente administrativo;44;135;16;20;17;223;4;2001;11;2418;618;49;157;170;975;54;4;22;518;1;202;173;8;32;1161;107;32;5;974;146;32;78;3;27;6;10443
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente comercial;-;-;-;-;-;1;-;-;-;26;11;-;11;6;24;3;-;-;10;-;-;-;-;-;-;2;-;-;24;-;-;3;-;-;-;121
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de almoxarifado;-;-;-;-;-;-;-;6;-;6;-;-;10;6;55;1;-;-;5;-;1;5;-;2;39;-;-;-;3;1;5;-;-;-;-;145
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de compras;-;-;-;-;-;-;-;1;-;6;1;-;-;5;78;-;-;-;3;-;1;1;-;-;35;-;-;-;9;-;1;-;-;-;-;141
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de comunicacao;-;1;1;-;-;-;-;1;-;7;-;-;-;8;18;3;-;-;1;-;-;-;-;-;11;-;-;-;10;-;-;-;-;-;-;61
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de departamento pessoal;-;-;-;-;2;1;-;3;-;16;1;-;-;19;121;2;-;-;7;-;5;6;1;1;34;1;-;-;5;-;4;-;-;-;-;229
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de desenvolvimento de sistemas;-;1;-;-;-;-;-;-;-;2;-;-;-;-;10;-;-;-;-;-;-;-;-;-;7;-;-;-;2;-;-;-;-;-;-;22
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de marketing;-;-;-;-;-;-;-;-;-;5;-;1;-;11;18;1;-;-;-;-;-;-;-;-;1;-;-;-;6;-;-;-;-;-;-;43
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de pesquisa e desenvolvimento (p&d);-;2;-;-;-;-;-;-;-;7;1;-;-;2;9;-;-;-;-;-;-;-;-;-;1;-;-;-;3;-;-;-;-;-;-;25
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de operação de tecnologia da informação;-;1;-;-;1;-;-;-;-;3;-;-;-;-;15;1;-;-;1;-;-;-;-;-;22;-;-;-;-;-;-;-;-;-;-;44
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de producao e operacoes;-;-;-;-;1;-;-;1;-;4;-;-;-;5;16;1;-;-;-;-;-;-;-;-;2;1;-;-;5;1;-;-;-;1;-;38
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de projetos de tecnologia da informação;-;-;-;-;-;-;-;-;-;2;-;-;-;1;18;-;-;-;-;-;-;-;-;-;5;-;-;-;2;-;-;-;-;-;2;30
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de projetos e serviços de manutenção;-;-;-;-;-;-;-;-;-;9;-;-;-;11;74;3;-;-;-;-;-;2;-;-;5;-;-;-;5;-;-;-;-;-;-;109
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de recursos humanos;-;2;1;-;1;1;-;5;-;33;2;1;-;40;180;2;-;1;15;-;-;9;1;2;72;2;-;-;25;-;2;-;-;-;-;397
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de rede;-;-;-;-;-;-;-;-;-;-;-;-;-;4;8;-;-;-;-;-;-;1;-;-;4;-;-;-;1;-;-;-;-;-;-;18
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de riscos;-;-;-;-;-;-;-;-;-;-;-;-;-;-;3;-;-;-;-;-;-;-;-;-;-;-;-;-;1;-;-;-;-;-;-;4
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de seguranca da informação;-;-;-;-;-;-;-;-;-;-;-;-;-;1;4;2;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;7
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de serviços culturais;-;-;-;-;-;-;-;-;-;2;-;-;-;1;-;-;-;-;-;-;-;-;-;-;2;-;1;-;1;-;-;-;-;-;-;7
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de serviços de saúde;28;220;64;32;64;574;4;4258;13;1963;599;23;86;222;1146;47;4;35;596;1;264;337;9;45;2880;21;23;2;876;383;71;141;3;41;5;15080
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de serviços sociais;-;1;-;-;-;-;-;-;-;13;3;-;-;1;19;-;-;-;6;-;-;-;-;-;5;-;1;-;4;-;1;-;-;-;-;54
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de suporte técnico de tecnologia da informação;1;8;1;-;2;-;-;7;-;7;-;-;-;9;69;4;-;-;4;-;-;4;1;1;49;-;-;-;9;-;1;-;-;1;-;178
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de suprimentos;-;-;-;-;-;-;-;-;-;5;-;-;-;9;57;-;-;-;1;-;-;1;-;1;1;1;-;-;2;-;-;-;-;-;-;78
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente de vendas;-;-;-;-;-;-;-;-;-;2;-;-;2;-;3;-;-;-;-;-;-;-;-;-;2;-;-;-;3;-;-;-;-;-;-;12
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Gerente financeiro;-;1;2;-;1;-;-;2;-;55;10;2;2;21;143;4;-;-;20;-;-;5;-;2;43;2;1;2;34;-;3;2;-;-;-;357
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Matematico;-;-;-;-;-;-;-;1;1;1;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1;-;-;-;-;-;-;-;-;-;-;4
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Operador de computador;-;74;-;-;15;3;-;146;-;25;5;-;5;20;182;-;-;11;6;-;7;4;3;-;258;-;-;-;25;11;3;-;-;-;1;804
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Operador de radiochamada;-;106;993;-;-;-;-;-;-;1;5;-;-;4;13;-;-;-;-;-;3;3;-;-;18;3;-;-;-;-;-;80;-;14;-;1243
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Operador de telemarketing ativo e receptivo;-;117;-;-;-;-;-;-;-;49;2;5;-;57;114;4;-;-;58;-;-;-;-;-;40;-;-;1;54;-;-;-;-;-;-;501
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Operador de telemarketing tecnico;-;1;-;-;-;-;-;-;-;2;-;-;-;11;2;-;-;-;2;-;-;-;-;-;3;-;-;-;-;-;-;-;-;-;-;21
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Professor de computacao no ensino superior;-;-;-;-;-;-;-;-;-;1;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Programador de sistemas de informacao;1;6;2;-;-;-;-;3;-;9;-;-;-;12;109;3;-;-;-;-;-;7;1;1;73;-;-;-;4;3;-;-;-;-;-;234
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Recepcionista, em geral;38;316;16;39;67;768;3;11608;18;4698;1123;22;201;1957;16689;459;1;53;2345;-;745;2549;187;618;2002;15;17;-;4968;85;369;37;1;11;-;52025
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Secretário executivo;-;11;-;-;2;6;-;40;-;266;152;2;1;83;407;29;-;3;44;1;2;5;1;3;454;1;4;3;160;5;3;1;-;1;-;1690
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Supervisor administrativo;8;73;11;1;14;68;1;301;19;378;34;6;36;395;2471;95;-;9;198;-;12;153;6;69;672;16;3;3;353;64;17;12;-;4;3;5505
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Supervisor de almoxarifado;-;-;-;-;-;-;-;5;-;13;-;-;7;9;116;4;-;-;1;-;-;13;-;2;36;-;-;-;9;-;3;-;-;-;-;218
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Supervisor de andar;-;-;-;-;-;-;-;-;-;-;-;-;-;1;14;1;-;-;-;-;-;1;-;-;-;-;-;-;-;-;-;-;-;-;-;17
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Supervisor de compras;-;-;-;-;-;-;-;-;-;6;1;-;-;13;68;1;-;-;3;-;-;-;1;-;11;-;-;-;4;-;-;-;-;-;-;108
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Supervisor de contas a pagar;-;1;1;-;-;-;-;-;-;4;-;-;-;3;14;-;-;-;2;-;-;-;-;-;2;2;-;-;4;-;-;-;-;-;-;33
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Supervisor de controle patrimonial;-;-;-;-;-;1;-;-;-;2;-;-;-;11;46;2;-;-;2;-;-;-;-;-;20;-;-;-;-;-;1;-;-;-;-;85
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Supervisor de recepcionistas;-;-;-;-;-;2;-;1;-;88;4;-;-;55;388;18;-;-;41;-;-;12;5;2;1;-;-;-;110;-;1;-;-;-;-;728
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Supervisor de tesouraria;-;-;-;-;-;-;-;2;-;12;-;2;-;9;87;5;-;-;7;-;-;1;-;-;15;-;-;1;13;-;1;-;-;-;1;156
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Supervisor de transportes;-;1;1;-;-;-;-;10;-;2;-;-;1;3;7;1;-;-;2;-;-;3;-;-;28;1;-;-;-;-;-;-;-;-;-;60
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Técnico de suporte ao usuário de tecnologia da informação;-;7;1;-;17;1;-;25;4;40;2;-;2;53;333;8;-;4;12;-;4;30;2;3;78;1;2;-;29;1;-;-;-;-;8;667
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Tecnico de contabilidade;-;1;1;-;9;7;-;6;1;23;1;1;2;48;147;7;-;1;8;-;-;-;1;1;90;-;-;1;5;4;-;1;-;-;-;366
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Técnico de manutenção de sistemas e instrumentos;-;-;-;-;-;-;-;-;-;4;-;-;-;2;45;-;-;1;2;-;-;1;-;-;7;-;-;-;-;-;-;-;-;-;-;62
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Tecnico eletrônico;-;-;-;-;-;-;-;-;-;15;-;-;-;9;192;6;-;-;1;-;-;-;-;1;-;-;1;-;3;-;1;-;-;-;-;229
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Tecnico em administração;-;63;4;-;76;160;-;215;4;142;4;1;19;200;1264;1;1;5;127;7;2;58;1;33;354;1;1;1;90;30;5;-;-;2;-;2871
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Técnico em manutenção de equipamentos de informática;1;11;2;-;1;3;-;26;-;43;2;-;1;57;400;7;-;-;29;-;2;42;4;3;246;1;4;-;44;4;3;-;-;-;2;938
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Tecnico em secretariado;-;1;1;1;-;4;-;8;-;86;30;-;-;71;356;2;3;-;24;-;-;-;-;3;33;4;12;-;53;-;2;-;-;-;1;695
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Tecnico em segurança do trabalho;-;-;7;-;2;2;-;18;4;302;84;1;2;165;1117;12;4;2;75;-;-;51;5;16;94;2;-;-;27;46;6;-;-;-;-;2044
-PESSOAL ADMINISTRATIVO; ADMINISTRAÇÃO;Telefonista;-;337;2036;1;8;7;-;177;1;310;16;4;3;252;1421;32;-;3;185;-;11;48;9;17;315;7;-;-;147;10;18;123;-;49;-;5547
-PESSOAL ADMINISTRATIVO; SERVIÇO DE LIMPEZA/CONSERVAÇÃO;;26;17;69;5;12;395;5;2424;1;806;103;36;67;1187;9492;114;5;9;228;-;208;592;13;146;542;8;54;1;378;109;305;40;5;1;-;17403
-PESSOAL ADMINISTRATIVO; SERVIÇO DE LIMPEZA/CONSERVAÇÃO;Agente de higiene e segurança;5;5;11;2;3;71;3;337;-;166;1;-;5;146;1767;46;3;1;41;-;27;164;-;48;61;-;1;-;52;26;67;12;1;-;-;3072
-PESSOAL ADMINISTRATIVO; SERVIÇO DE LIMPEZA/CONSERVAÇÃO;Ajustador mecanico;-;-;-;-;-;-;-;-;-;-;-;-;-;4;17;-;-;-;1;-;-;-;-;-;2;-;1;-;-;-;-;-;-;-;-;25
-PESSOAL ADMINISTRATIVO; SERVIÇO DE LIMPEZA/CONSERVAÇÃO;Atendente de lavanderia;-;-;-;-;-;-;-;4;-;3;4;-;-;62;118;-;-;-;-;-;-;-;1;1;2;-;-;-;-;-;16;-;-;-;-;211
-PESSOAL ADMINISTRATIVO; SERVIÇO DE LIMPEZA/CONSERVAÇÃO;Auxiliar de lavanderia;1;-;-;-;-;9;2;106;-;29;7;8;-;469;2911;10;-;-;12;-;12;32;1;20;12;1;5;-;17;2;68;-;-;-;-;3734
-PESSOAL ADMINISTRATIVO; SERVIÇO DE LIMPEZA/CONSERVAÇÃO;Eletricista de instalações;-;-;-;-;1;-;-;6;-;8;-;-;1;45;320;-;-;-;3;-;1;8;7;1;52;-;-;-;8;-;5;-;-;-;-;466
-PESSOAL ADMINISTRATIVO; SERVIÇO DE LIMPEZA/CONSERVAÇÃO;Empregado doméstico nos serviços gerais;9;10;41;1;3;223;-;1159;1;349;66;27;29;84;1149;12;1;6;128;-;93;215;-;51;218;4;44;1;175;49;59;14;3;1;-;4225
-PESSOAL ADMINISTRATIVO; SERVIÇO DE LIMPEZA/CONSERVAÇÃO;Encanador;-;-;-;-;-;1;-;2;-;-;1;-;-;14;136;4;-;1;2;-;1;2;-;-;15;-;-;-;1;1;-;-;-;-;-;181
-PESSOAL ADMINISTRATIVO; SERVIÇO DE LIMPEZA/CONSERVAÇÃO;Jardineiro;-;-;-;-;-;7;-;8;-;14;-;-;-;20;119;5;-;-;3;-;-;4;-;1;14;-;-;-;-;1;2;-;-;-;-;198
-PESSOAL ADMINISTRATIVO; SERVIÇO DE LIMPEZA/CONSERVAÇÃO;Lavadeiro, em geral;-;-;5;-;-;2;-;21;-;8;3;-;-;31;512;-;-;-;3;-;1;12;-;3;2;-;-;-;2;-;18;-;-;-;-;623
-PESSOAL ADMINISTRATIVO; SERVIÇO DE LIMPEZA/CONSERVAÇÃO;Lavador de roupas à máquina;-;-;1;-;3;-;-;3;-;2;-;1;-;41;417;1;-;-;1;-;-;2;-;-;-;-;-;-;1;-;8;-;-;-;-;481
-PESSOAL ADMINISTRATIVO; SERVIÇO DE LIMPEZA/CONSERVAÇÃO;Marceneiro;-;-;-;-;-;3;-;5;-;4;-;-;-;15;123;2;-;-;1;-;-;-;2;-;6;-;-;-;-;-;-;-;-;-;-;161
-PESSOAL ADMINISTRATIVO; SERVIÇO DE LIMPEZA/CONSERVAÇÃO;Operador de caldeira;-;-;-;-;-;-;-;-;-;-;-;-;-;6;134;-;-;-;-;-;-;-;-;-;1;-;-;-;-;-;-;-;-;-;-;141
-PESSOAL ADMINISTRATIVO; SERVIÇO DE LIMPEZA/CONSERVAÇÃO;Passador de roupas em geral;-;-;-;-;-;-;-;-;-;-;1;-;-;4;110;-;-;-;-;-;-;1;-;-;-;-;-;-;-;-;1;-;-;-;-;117
-PESSOAL ADMINISTRATIVO; SERVIÇO DE LIMPEZA/CONSERVAÇÃO;Pedreiro;2;-;-;-;-;3;-;5;-;3;-;-;2;41;410;2;-;-;2;-;-;1;1;1;43;-;-;-;2;2;1;-;-;-;-;521
-PESSOAL ADMINISTRATIVO; SERVIÇO DE LIMPEZA/CONSERVAÇÃO;Pintor a pincel e rolo (exceto obras e estruturas metálicas);-;-;-;-;-;-;-;-;-;2;-;-;-;10;24;-;-;-;3;-;-;-;-;-;1;-;-;-;-;-;-;-;-;-;-;40
-PESSOAL ADMINISTRATIVO; SERVIÇO DE LIMPEZA/CONSERVAÇÃO;Servente de obras;-;-;1;-;-;3;-;27;-;15;-;-;2;25;321;2;-;1;10;-;1;6;1;-;16;1;-;-;2;2;-;-;-;-;-;436
-PESSOAL ADMINISTRATIVO; SERVIÇO DE LIMPEZA/CONSERVAÇÃO;Zelador de edificio;9;2;10;2;2;73;-;741;-;203;20;-;28;170;904;30;1;-;18;-;72;145;-;20;97;2;3;-;118;26;60;14;1;-;-;2771
-PESSOAL ADMINISTRATIVO; SEGURANÇA;;47;27;51;10;61;911;12;3865;5;723;33;12;34;781;5244;80;1;8;432;-;395;1178;14;107;649;12;74;-;110;133;357;80;2;1;-;15449
-PESSOAL ADMINISTRATIVO; SEGURANÇA;Agente de pátio;-;1;-;-;2;4;-;20;-;7;-;-;-;37;36;-;-;2;13;-;2;1;-;-;6;-;-;-;1;2;3;-;-;-;-;137
-PESSOAL ADMINISTRATIVO; SEGURANÇA;Agente de segurança;-;3;-;-;5;119;-;208;-;18;-;-;1;90;366;8;-;2;22;-;7;208;-;8;22;-;2;-;5;3;7;5;-;-;-;1109
-PESSOAL ADMINISTRATIVO; SEGURANÇA;Agente de segurança penitenciária;-;-;-;-;-;-;-;44;-;6;6;-;-;1;-;-;-;-;-;-;4;-;-;-;-;-;-;-;-;-;-;-;-;-;-;61
-PESSOAL ADMINISTRATIVO; SEGURANÇA;Guarda-civil municipal;-;1;-;-;-;19;-;34;-;20;-;-;-;18;44;-;-;-;1;-;8;-;4;-;107;-;-;-;1;2;10;-;-;-;-;269
-PESSOAL ADMINISTRATIVO; SEGURANÇA;Guardador de veículos;-;-;-;-;-;-;-;1;-;5;-;-;-;2;-;-;-;-;1;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;9
-PESSOAL ADMINISTRATIVO; SEGURANÇA;Porteiro de edifícios;5;2;7;-;4;88;-;453;-;146;8;12;1;245;2095;54;-;-;99;-;2;364;9;34;49;11;2;-;42;9;26;-;-;-;-;3767
-PESSOAL ADMINISTRATIVO; SEGURANÇA;Vigia;40;14;13;7;8;496;8;2420;4;428;12;-;31;272;1785;11;1;1;175;-;298;395;-;46;334;1;25;-;47;98;209;52;2;-;-;7233
-PESSOAL ADMINISTRATIVO; SEGURANÇA;Vigilante;2;6;31;3;42;185;4;685;1;93;7;-;1;116;918;7;-;3;121;-;74;210;1;19;131;-;45;-;14;19;102;23;-;1;-;2864
-PESSOAL ADMINISTRATIVO; OUTRAS OCUPAÇÕES ADMINISTRATIVAS;;1912;726;754;719;952;10524;50;76028;106;10355;1264;109;904;9075;59124;714;169;993;3731;7;5767;5245;210;1182;41782;332;4447;123;10610;32841;2209;1945;139;459;37;285544
-PESSOAL ADMINISTRATIVO; OUTRAS OCUPAÇÕES ADMINISTRATIVAS;Acabador de calçados;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1
-PESSOAL ADMINISTRATIVO; OUTRAS OCUPAÇÕES ADMINISTRATIVAS;Ascensorista;-;-;-;-;-;-;-;5;-;5;-;-;-;19;296;-;-;-;6;-;-;2;2;-;1;-;1;-;2;-;2;-;-;-;-;341
-PESSOAL ADMINISTRATIVO; OUTRAS OCUPAÇÕES ADMINISTRATIVAS;Copeiro;1;2;10;-;29;107;6;135;1;217;7;-;2;152;1731;25;-;3;75;-;4;189;5;28;54;2;5;-;65;10;21;6;-;-;-;2892
-PESSOAL ADMINISTRATIVO; OUTRAS OCUPAÇÕES ADMINISTRATIVAS;Copeiro de hospital;-;1;-;-;1;5;-;1;-;34;2;-;-;542;5550;17;-;-;8;-;-;74;2;8;-;-;-;-;4;1;39;3;-;-;-;6292
-PESSOAL ADMINISTRATIVO; OUTRAS OCUPAÇÕES ADMINISTRATIVAS;Costureira de reparação de roupas;-;-;-;-;-;1;-;1;-;1;-;-;-;27;200;1;-;-;3;-;-;-;-;2;-;-;-;-;-;-;2;-;-;-;-;238
-PESSOAL ADMINISTRATIVO; OUTRAS OCUPAÇÕES ADMINISTRATIVAS;Costureiro na confecção em serie;-;-;-;-;-;1;-;-;-;3;-;-;-;10;109;1;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;124
-PESSOAL ADMINISTRATIVO; OUTRAS OCUPAÇÕES ADMINISTRATIVAS;Cozinhador conservação de alimentos;-;-;-;-;-;-;-;4;-;5;1;-;-;32;192;-;-;-;3;-;-;-;-;-;1;-;-;-;-;-;4;-;-;1;-;243
-PESSOAL ADMINISTRATIVO; OUTRAS OCUPAÇÕES ADMINISTRATIVAS;Cozinheiro de embarcações;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;5;-;-;5
-PESSOAL ADMINISTRATIVO; OUTRAS OCUPAÇÕES ADMINISTRATIVAS;Cozinheiro de hospital;-;-;-;-;-;21;5;10;-;14;3;1;-;344;3457;7;-;-;7;-;1;56;3;26;1;-;2;-;3;1;195;1;-;-;-;4158
-PESSOAL ADMINISTRATIVO; OUTRAS OCUPAÇÕES ADMINISTRATIVAS;Cozinheiro geral;-;-;5;-;8;434;2;97;-;158;34;-;1;161;763;9;-;-;31;-;11;74;-;61;27;8;50;9;7;3;58;5;5;2;-;2023
-PESSOAL ADMINISTRATIVO; OUTRAS OCUPAÇÕES ADMINISTRATIVAS;Motorista de carro de passeio;1;64;44;15;69;109;5;1224;3;272;18;12;26;210;1219;12;6;11;201;-;132;220;5;46;2928;51;129;2;123;301;171;54;-;79;-;7762
-PESSOAL ADMINISTRATIVO; OUTRAS OCUPAÇÕES ADMINISTRATIVAS;Motorista de furgão ou veículo similar;-;216;96;-;8;47;3;1342;6;266;28;-;5;197;1971;9;1;3;217;-;133;518;7;132;1832;24;70;-;31;138;307;738;-;108;-;8453
-PESSOAL ADMINISTRATIVO; OUTRAS OCUPAÇÕES ADMINISTRATIVAS;Trabalhador de serviços de manutenção;1910;443;599;704;837;9799;29;73209;96;9380;1171;96;870;7381;43635;633;162;976;3180;7;5486;4112;186;879;36938;247;4190;112;10375;32387;1410;1138;129;269;37;253012
-Total;;;2983;10076;7879;5764;7492;46721;318;698933;2008;208402;134411;11494;11456;145886;999370;13084;864;4478;77062;61;54981;85004;9210;21472;121392;6211;9949;331;92874;50359;20975;35317;706;4991;306;2902820
+﻿NÍVEL DE ESCOLARIDADE,FAMÍLIA,Ocupações em geral,ACADEMIA DA SAÚDE,CENTRAL DE REGUALAÇÃO,CENTRAL DE REGULAÇÃO MÉDICA DAS URGÊNCIAS,CENTRO DE APOIO A SAÚDE DA FAMÍLIA-CASF,CENTRO DE ATENÇÃO HEMOTERÁPICA E/OU HEMATOLÓGICA,CENTRO DE ATENÇÃO PSICOSSOCIAL-CAPS,CENTRO DE PARTO NORMAL,CENTRO DE SAUDE/UNIDADE BASICA DE SAUDE,CENTRAL DE NOTIF. CAPTAÇÃO E DISTR. ÓRGÃOS ESTADUA,CLINICA ESPECIALIZADA/AMBULATORIO ESPECIALIZADO,CONSULTORIO,COOPERATIVA,FARMACIA,HOSPITAL ESPECIALIZADO,HOSPITAL GERAL,HOSPITAL DIA,LABORATORIO CENTRAL DE SAUDE PUBLICA - LACEN,LABORATORIO DE SAUDE PUBLICA,POLICLINICA,OFICINA ORTOPEDICA,POSTO DE SAUDE,PRONTO ANTEDIMENTO,PRONTO SOCORRO ESPECIALIZADO,PRONTO SOCORRO GERAL,SECRETARIA DE SAUDE,SERVICO DE ATENCAO DOMICILIAR ISOLADO(HOME CARE),UNIDADE DE ATENÇÃO À SAÚDE INDÍGENA,UNIDADE DE ATENCAO EM REGIME RESIDENCIAL,UNIDADE DE SERVICO DE APOIO DE DIAGNOSE E TERAPIA,UNIDADE DE VIGILANCIA EM SAUDE,UNIDADE MISTA,UNIDADE MOVEL DE NIVEL PRE-HOSP-URGENCIA/EMERGENCI,UNIDADE MOVEL FLUVIAL,UNIDADE MOVEL TERRESTRE,TELESAÚDE,Total
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR,,,706,2439,1892,4713,1968,20512,98,176487,820,126903,120401,8497,4346,58718,386321,5167,239,874,42881,14,11154,31340,3984,7844,18763,2310,1992,124,27222,5041,6359,6403,107,1232,170,1088041
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR,ANESTESISTA,,-,5,-,-,2,-,-,5,21,261,225,1435,-,1783,10149,212,-,-,70,-,1,1,109,32,14,4,-,-,55,1,34,6,-,2,-,14427
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR,ANESTESISTA,Médico Anestesiologista,-,5,-,-,2,-,-,5,21,261,225,1435,-,1783,10149,212,-,-,70,-,1,1,109,32,14,4,-,-,55,1,34,6,-,2,-,14427
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ASSISTENTE SOCIAL,,38,275,8,698,210,3384,1,7101,49,4527,455,16,26,2256,8176,147,1,16,1181,1,280,1288,141,218,1371,73,99,35,366,84,211,3,4,22,3,32764
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ASSISTENTE SOCIAL,Assistente Social,38,275,8,698,210,3384,1,7101,49,4527,455,16,26,2256,8176,147,1,16,1181,1,280,1288,141,218,1371,73,99,35,366,84,211,3,4,22,3,32764
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, BIOQUÍMICO/FARMACÊUTICO,,1,25,41,225,168,742,1,5986,29,1387,171,24,4203,1944,10998,205,29,115,794,-,203,1266,115,213,2017,91,95,1,1241,362,206,34,3,13,3,32951
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, BIOQUÍMICO/FARMACÊUTICO,Farmacêutico,1,25,41,225,168,742,1,5986,29,1387,171,24,4203,1944,10998,205,29,115,794,-,203,1266,115,213,2017,91,95,1,1241,362,206,34,3,13,3,32951
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, CIRURGIÃO GERAL,,-,21,24,-,-,-,-,26,30,348,356,288,-,589,7338,74,-,-,240,-,2,124,74,99,12,13,1,-,41,1,28,9,-,1,-,9739
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, CIRURGIÃO GERAL,Médico Cirurgião Geral,-,21,24,-,-,-,-,26,30,348,356,288,-,589,7338,74,-,-,240,-,2,124,74,99,12,13,1,-,41,1,28,9,-,1,-,9739
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, CLÍNICO GERAL,,-,884,1283,20,215,605,6,10254,61,4995,5890,1515,29,3115,57584,303,1,7,4602,-,591,11605,722,2467,1077,227,184,5,798,71,1600,1818,9,149,25,112717
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, CLÍNICO GERAL,Médico Clínico,-,878,1270,20,214,602,6,9664,61,4955,5859,1497,29,3106,57108,297,1,7,4578,-,571,11555,722,2451,1054,217,174,5,781,70,1599,1812,9,146,25,111343
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, CLÍNICO GERAL,Médico Generalista Alopata,-,6,13,-,1,3,-,590,-,40,31,18,-,9,476,6,-,-,24,-,20,50,-,16,23,10,10,-,17,1,1,6,-,3,-,1374
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ENFERMEIRO,,36,656,499,85,639,4855,85,53941,258,9387,1238,1392,34,17705,115744,1017,8,18,4788,2,4382,11578,1327,2682,8029,942,1105,12,1783,1616,2462,4436,40,302,47,253130
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ENFERMEIRO,Outros enfermeiros,-,-,-,-,-,-,-,-,-,2,-,46,-,57,265,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,370
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ENFERMEIRO,Enfermeiro,33,608,498,76,620,4769,13,15394,227,8581,1106,1129,33,16200,109724,989,6,18,4591,2,1225,11539,1283,2659,7254,927,1104,12,1696,1465,2338,4422,9,294,39,200883
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ENFERMEIRO,Enfermeiro Estomaterapeuta,-,-,-,-,-,-,-,2,-,13,3,1,-,-,13,1,-,-,7,-,-,-,1,-,-,1,-,-,-,-,-,-,-,-,-,42
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ENFERMEIRO,Enfermeiro auditor,-,40,1,-,-,-,-,4,4,19,4,4,-,76,626,4,-,-,26,-,-,3,1,2,195,11,-,-,6,-,1,-,-,1,-,1028
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ENFERMEIRO,Enfermeiro da estratégia de saúde da família,-,3,-,4,1,20,-,38447,-,17,-,-,-,3,25,-,-,-,29,-,3147,18,-,3,292,-,-,-,3,14,56,3,31,1,3,42120
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ENFERMEIRO,Enfermeiro de bordo,-,-,-,-,-,-,-,-,-,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,6,-,-,-,9
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ENFERMEIRO,Enfermeiro de centro cirúrgico,-,-,-,-,-,-,-,-,10,19,5,-,-,74,484,13,-,-,5,-,-,-,2,-,-,-,-,-,-,-,2,-,-,-,-,614
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ENFERMEIRO,Enfermeiro de terapia intensiva,-,2,-,-,2,-,-,-,8,8,4,132,-,209,1411,1,-,-,-,-,-,3,4,1,1,1,-,-,2,-,-,4,-,3,-,1796
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ENFERMEIRO,Enfermeiro do trabalho,-,-,-,-,1,-,-,12,5,183,102,2,1,47,308,1,2,-,67,-,6,4,-,4,21,1,-,-,32,11,1,1,-,-,1,813
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ENFERMEIRO,Enfermeiro nefrologista,-,-,-,-,-,-,-,2,2,473,-,-,-,10,325,2,-,-,20,-,-,-,1,-,-,-,-,-,33,-,1,-,-,-,-,869
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ENFERMEIRO,Enfermeiro neonatologista,-,-,-,-,-,-,1,-,-,1,-,-,-,112,223,-,-,-,-,-,-,-,5,-,-,-,-,-,-,-,-,-,-,-,-,342
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ENFERMEIRO,Enfermeiro obstétrico,-,-,-,1,10,-,71,39,1,30,10,78,-,754,2107,3,-,-,18,-,3,6,30,11,20,-,-,-,7,-,61,-,-,3,-,3263
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ENFERMEIRO,Enfermeiro psiquiátrico,-,-,-,-,-,66,-,3,-,15,-,-,-,132,55,3,-,-,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,275
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ENFERMEIRO,Enfermeiro puericultor e pediátrico,-,-,-,-,2,-,-,3,-,1,1,-,-,21,115,-,-,-,2,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,146
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ENFERMEIRO,Enfermeiro sanitarista,3,3,-,4,3,-,-,35,1,22,3,-,-,10,63,-,-,-,23,-,1,4,-,2,245,1,1,-,4,126,2,-,-,-,4,560
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, FISIOTERAPEUTA,,397,25,2,1179,33,115,-,9361,59,24560,6610,397,4,3485,22668,173,-,-,4128,8,248,261,255,254,310,515,5,1,3827,28,309,4,-,16,3,79240
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, FISIOTERAPEUTA,Fisioterapeuta do trabalho,-,-,-,-,-,-,-,1,-,21,18,2,-,2,13,-,-,-,1,-,-,1,-,1,1,6,-,-,1,-,-,-,-,-,-,68
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, FISIOTERAPEUTA,Fisioterapeuta acupunturista,1,-,-,2,-,-,-,25,-,158,105,-,-,1,14,-,-,-,37,-,1,1,-,1,1,2,-,-,18,-,1,-,-,-,-,368
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, FISIOTERAPEUTA,Fisioterapeuta esportivo,-,-,-,-,-,-,-,1,-,13,10,-,-,3,10,-,-,-,1,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,39
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, FISIOTERAPEUTA,Fisioterapeuta geral,396,25,2,1176,33,115,-,9319,59,24125,6333,395,4,3427,22222,171,-,-,4049,8,247,258,254,251,306,501,5,1,3750,28,308,4,-,16,3,77791
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, FISIOTERAPEUTA,Fisioterapeuta neurofuncional,-,-,-,1,-,-,-,4,-,48,20,-,-,7,8,-,-,-,14,-,-,-,1,-,1,1,-,-,16,-,-,-,-,-,-,121
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, FISIOTERAPEUTA,Fisioterapeuta osteopata,-,-,-,-,-,-,-,-,-,15,8,-,-,-,1,-,-,-,1,-,-,-,-,-,-,-,-,-,5,-,-,-,-,-,-,30
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, FISIOTERAPEUTA,Fisioterapeuta quiropraxista,-,-,-,-,-,-,-,1,-,6,8,-,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,16
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, FISIOTERAPEUTA,Fisioterapeuta respiratório,-,-,-,-,-,-,-,2,-,46,16,-,-,40,348,2,-,-,12,-,-,-,-,1,1,3,-,-,5,-,-,-,-,-,-,476
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, FISIOTERAPEUTA,Fisioterapeuta traumato-ortopédica funcional,-,-,-,-,-,-,-,8,-,128,92,-,-,5,52,-,-,-,12,-,-,1,-,-,-,1,-,-,32,-,-,-,-,-,-,331
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, FONOAUDIÓLOGO,,13,20,-,381,1,211,-,2908,7,7194,3208,54,-,816,3922,74,1,-,2047,-,67,41,16,46,117,136,-,-,597,12,51,2,-,14,2,21958
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, FONOAUDIÓLOGO,Fonoaudiólogo,13,20,-,381,1,211,-,2908,7,7194,3208,54,-,816,3922,74,1,-,2047,-,67,41,16,46,117,136,-,-,597,12,51,2,-,14,2,21958
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, FONOAUDIÓLOGO, GINECO OBSTETRA,-,52,1,14,1,-,-,2260,7,1965,2474,434,3,2217,10125,83,-,1,1348,-,52,39,95,41,76,-,-,-,391,5,85,3,-,4,1,21777
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, FONOAUDIÓLOGO,Médico Ginecologista e Obstetra,-,52,1,14,1,-,-,2260,7,1965,2474,434,3,2217,10125,83,-,1,1348,-,52,39,95,41,76,-,-,-,391,5,85,3,-,4,1,21777
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, FONOAUDIÓLOGO, MÉDICO DE FAMÍLIA,-,13,1,1,-,1,-,25245,-,90,49,5,-,16,119,2,-,-,71,-,1810,18,-,4,52,2,17,-,4,1,22,-,19,1,12,27575
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, FONOAUDIÓLOGO,Médico da estratégia de Saúde da Família,-,7,1,-,-,1,-,24933,-,9,7,1,-,4,25,1,-,-,16,-,1783,10,-,1,39,-,-,-,3,-,22,-,19,1,-,26883
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, FONOAUDIÓLOGO,Médico de família e comunidade,-,6,-,1,-,-,-,312,-,81,42,4,-,12,94,1,-,-,55,-,27,8,-,3,13,2,17,-,1,1,-,-,-,-,12,692
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, NUTRICIONISTA,,112,19,1,873,21,172,2,6127,33,3359,3155,62,10,1882,10085,116,13,15,1694,-,148,207,98,122,619,104,97,4,280,194,202,-,-,8,2,29836
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, NUTRICIONISTA,Nutricionista,112,19,1,873,21,172,2,6127,33,3359,3155,62,10,1882,10085,116,13,15,1694,-,148,207,98,122,619,104,97,4,280,194,202,-,-,8,2,29836
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,,-,86,-,13,34,14,-,34389,30,23204,57581,533,10,777,5818,182,-,4,3807,-,2684,1268,83,227,1328,6,317,-,1388,234,294,-,27,559,17,134914
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - auditor,-,14,-,-,-,-,-,1,-,19,23,1,-,1,7,-,-,-,7,-,1,-,-,-,81,-,-,-,1,2,-,-,-,-,-,158
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - clínico geral,-,60,-,11,26,9,-,12111,11,14167,48199,429,7,535,3087,148,-,2,2671,-,900,1220,51,192,1073,4,280,-,842,192,233,-,9,488,13,86970
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - dentística,-,-,-,-,-,1,-,62,1,351,653,6,-,12,104,2,-,-,62,-,4,3,1,4,17,-,26,-,18,6,7,-,-,10,1,1351
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - disfunção temporomandibular e,-,-,-,-,-,-,-,-,-,7,7,-,-,-,2,-,-,-,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,19
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - endodontista,-,2,-,-,3,-,-,140,3,2195,1837,27,1,7,185,9,-,-,215,-,4,18,-,1,14,1,2,-,41,1,8,-,-,9,-,4723
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - epidemiologista,-,-,-,-,-,-,-,1,-,5,-,-,-,-,3,-,-,-,-,-,-,-,-,-,6,-,-,-,-,2,-,-,-,-,-,17
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - estomatologista,-,-,-,-,1,-,-,5,-,205,14,-,-,14,40,-,-,-,20,-,-,1,-,-,-,-,-,-,3,-,-,-,-,-,-,303
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - implantodontista,-,-,-,-,-,-,-,-,2,314,599,3,-,7,45,4,-,-,47,-,-,-,-,-,-,-,-,-,9,-,-,-,-,1,-,1031
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - odontogeriatra,-,-,-,-,-,-,-,1,-,16,15,-,-,-,5,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,38
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - odontologia do trabalho,-,3,-,-,-,-,-,3,1,10,32,-,-,-,14,-,-,-,6,-,-,1,-,-,4,-,1,-,1,1,-,-,-,-,-,77
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - odontologia para pacientes co,-,-,-,-,1,-,-,16,-,462,22,1,-,20,50,3,-,-,22,-,-,2,-,2,2,-,1,-,5,-,1,-,-,-,-,610
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - odontologista legal,-,3,-,1,-,-,-,17,-,44,246,-,-,13,61,-,-,-,17,-,3,2,-,2,5,-,4,-,4,-,2,-,-,1,-,425
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - odontopediatra,-,1,-,-,-,1,-,113,1,672,904,6,-,38,125,3,-,-,137,-,7,5,2,-,3,-,-,-,13,-,1,-,-,6,1,2039
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - ortopedista e ortodontista,-,-,-,-,-,-,-,21,4,1290,2504,24,-,21,115,4,-,-,165,-,-,-,-,-,5,-,-,-,23,-,1,-,-,1,-,4178
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - patologista bucal,-,-,-,-,-,-,-,3,-,92,63,-,-,-,37,-,-,-,18,-,-,1,-,-,-,-,-,-,9,-,-,-,-,-,-,223
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - periodontista,-,-,-,-,-,-,-,48,1,1162,904,11,1,7,97,1,-,-,127,-,3,5,-,-,5,-,-,-,15,-,5,-,-,2,-,2394
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - protesista,-,-,-,1,-,1,-,77,2,987,757,13,-,6,120,2,-,1,123,-,5,-,1,1,5,-,-,-,101,-,2,-,-,1,-,2206
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - protesiólogo bucomaxilofacial,-,-,-,-,-,-,-,2,-,69,76,2,-,8,116,1,-,-,6,-,-,1,-,1,-,-,-,-,1,-,1,-,-,-,-,284
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - radiologista,-,-,-,-,-,-,-,27,-,419,377,-,-,7,50,-,-,-,39,-,2,1,3,1,1,1,-,-,282,-,-,-,-,-,-,1210
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - reabilitador oral,-,-,-,-,-,-,-,-,-,15,22,-,-,-,3,-,-,-,8,-,-,-,-,-,-,-,-,-,1,-,-,-,-,-,-,49
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista - traumatologista bucomaxilofac,-,-,-,-,1,-,-,37,4,595,251,10,-,76,1527,5,-,-,68,-,-,5,25,21,1,-,-,-,8,2,7,-,-,1,-,2644
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião dentista de saúde coletiva,-,2,-,-,2,1,-,79,-,85,54,-,-,2,23,-,-,1,35,-,7,2,-,2,41,-,3,-,9,26,-,-,-,-,1,375
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, ODONTÓLOGO,Cirurgião-dentista da estratégia de saúde da família,-,1,-,-,-,1,-,21625,-,23,22,-,1,3,2,-,-,-,11,-,1748,-,-,-,65,-,-,-,2,2,26,-,18,39,1,23590
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, PEDIATRA,,-,125,6,31,26,24,2,4599,32,1968,3103,694,2,3723,18844,95,-,-,1714,-,144,2662,290,640,263,12,1,-,109,48,206,18,-,10,3,39394
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, PEDIATRA,Médico Pediatra,-,125,6,31,26,24,2,4599,32,1968,3103,694,2,3723,18844,95,-,-,1714,-,144,2662,290,640,263,12,1,-,109,48,206,18,-,10,3,39394
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, PSICÓLOGO,,49,32,3,999,49,6216,-,9610,33,13176,17766,188,3,2347,6899,201,-,2,3958,1,358,100,57,86,593,67,57,56,881,52,167,3,-,9,1,64019
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, PSICÓLOGO,Psicólogo Clínico,43,29,3,998,42,6192,-,9528,28,12893,17379,187,3,1824,5414,197,-,2,3891,1,353,96,36,76,560,65,51,52,854,45,161,1,-,8,1,61013
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, PSICÓLOGO,Psicólogo do Esporte,2,-,-,-,-,-,-,1,-,7,5,-,-,1,-,-,-,-,1,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,18
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, PSICÓLOGO,Psicólogo do Trabalho,-,3,-,-,4,1,-,1,1,46,35,-,-,19,107,-,-,-,5,-,-,1,1,1,14,-,-,-,7,1,-,1,-,-,-,248
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, PSICÓLOGO,Psicólogo Social,3,-,-,1,1,17,-,56,-,64,90,-,-,17,26,-,-,-,26,-,3,1,-,-,8,1,6,1,2,6,4,-,-,-,-,333
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, PSICÓLOGO,Psicólogo Educacional,-,-,-,-,-,3,-,12,-,68,110,1,-,5,11,1,-,-,13,-,1,1,-,-,4,-,-,3,11,-,-,-,-,-,-,244
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, PSICÓLOGO,Psicólogo Hospitalar,-,-,-,-,2,3,-,5,4,23,31,-,-,480,1339,3,-,-,10,-,-,1,20,8,2,1,-,-,4,-,2,1,-,-,-,1939
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, PSICÓLOGO,Psicólogo Juridico,-,-,-,-,-,-,-,7,-,5,16,-,-,1,-,-,-,-,1,-,1,-,-,-,2,-,-,-,1,-,-,-,-,1,-,35
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, PSICÓLOGO,Psicólogo do trânsito,-,-,-,-,-,-,-,-,-,56,67,-,-,-,-,-,-,-,5,-,-,-,-,-,-,-,-,-,2,-,-,-,-,-,-,130
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, PSICÓLOGO,Psicólogo acupunturista,1,-,-,-,-,-,-,-,-,14,33,-,-,-,2,-,-,-,6,-,-,-,-,1,2,-,-,-,-,-,-,-,-,-,-,59
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, PSIQUIATRA,,-,9,4,17,-,1424,-,606,2,1027,1459,31,3,1160,1800,35,-,-,549,-,8,42,9,36,35,-,1,1,36,1,23,-,-,-,1,8319
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, PSIQUIATRA,Médico psiquiatra,-,9,4,17,-,1424,-,606,2,1027,1459,31,3,1160,1800,35,-,-,549,-,8,42,9,36,35,-,1,1,36,1,23,-,-,-,1,8319
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, RADIOLOGISTA,,-,4,-,3,1,-,-,131,8,1821,245,17,-,684,5080,80,-,1,783,-,1,61,38,50,4,2,-,-,2926,-,42,-,-,29,28,12039
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, RADIOLOGISTA,Médico em radiologia e diagnóstico por imagem,-,4,-,3,1,-,-,131,8,1821,245,17,-,684,5080,80,-,1,783,-,1,61,38,50,4,2,-,-,2926,-,42,-,-,29,28,12039
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, SANITARISTA,,-,13,-,-,1,1,-,27,1,14,21,-,-,22,70,-,-,2,8,-,2,1,1,1,85,-,-,-,1,48,-,-,-,-,-,319
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, SANITARISTA,Médico sanitarista,-,13,-,-,1,1,-,27,1,14,21,-,-,22,70,-,-,2,8,-,2,1,1,1,85,-,-,-,1,48,-,-,-,-,-,319
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,,-,134,17,9,127,95,-,1891,134,19920,15247,1398,17,11852,83555,2070,6,20,9674,-,75,472,489,557,237,81,1,-,3307,51,245,66,-,79,13,151839
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico acupunturista,-,-,-,-,1,4,-,72,-,362,701,13,-,35,190,15,-,-,187,-,1,-,1,1,1,2,-,-,12,-,3,1,-,-,-,1602
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico alergista e imunologista,-,2,-,-,-,-,-,19,1,315,449,17,-,64,423,13,-,-,250,-,1,7,-,4,1,4,-,-,17,-,1,1,-,-,1,1590
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico anatomopatologista,-,-,-,-,1,-,-,3,2,81,14,3,-,153,601,2,3,6,30,-,-,3,5,1,12,-,-,-,606,-,2,-,-,-,-,1528
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico angiologista,-,1,-,-,-,-,-,28,1,500,531,105,-,118,1238,53,-,-,323,-,2,5,2,5,1,2,-,-,73,-,8,-,-,-,-,2996
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico broncoesofalogista,-,-,-,-,-,-,-,-,1,8,5,1,-,8,113,-,-,-,-,-,-,-,-,-,-,-,-,-,6,-,-,-,-,-,-,142
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico Cardiologista Intervencionista,-,1,-,-,1,-,-,-,7,48,15,13,-,68,613,9,-,-,10,-,-,2,-,-,-,-,-,-,25,-,-,8,-,1,-,821
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico cancerologista cirúrgico,-,-,-,-,-,-,-,-,-,4,2,-,-,12,45,-,-,-,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,65
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico cancerologista pediátrico,-,-,-,-,1,-,-,-,1,10,3,5,-,93,162,-,-,-,4,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,279
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico cardiologista,-,15,-,4,4,1,-,450,17,3032,1787,279,1,1528,9762,118,1,1,1614,-,13,54,22,40,42,11,-,-,704,1,54,6,-,1,1,19563
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico cirurgião cardiovascular,-,-,1,-,-,-,-,-,1,24,65,20,1,73,397,3,-,-,10,-,-,-,3,1,-,-,-,-,8,-,-,-,-,-,-,607
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico cirurgião da mão,-,-,-,-,-,-,-,-,-,-,1,-,-,-,7,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,8
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico cirurgião de cabeça e pescoço,-,-,-,-,-,-,-,1,3,28,22,7,-,83,502,6,-,-,22,-,-,-,-,-,-,1,-,-,2,-,1,-,-,1,-,679
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico cirurgião do aparelho digestivo,-,-,-,-,-,-,-,-,-,75,109,15,-,57,721,5,-,-,43,-,-,2,1,1,-,1,-,-,11,-,2,-,-,-,-,1043
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico cirurgião pediátrico,-,-,-,-,-,-,-,2,-,9,25,3,-,122,459,4,-,-,10,-,-,1,3,-,5,-,-,-,3,-,1,-,-,-,-,647
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico cirurgião plástico,-,1,-,-,-,-,-,3,3,168,385,39,-,168,1657,61,-,-,99,-,-,4,31,6,2,-,-,-,4,-,4,1,-,-,-,2636
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico cirurgião torácico,-,-,-,-,-,-,-,1,-,11,13,2,-,16,146,-,-,-,1,-,-,1,-,1,-,-,-,-,-,-,-,-,-,-,-,192
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico citopatologista,-,-,-,-,-,-,-,1,-,27,8,1,-,9,44,-,1,7,4,-,-,-,1,-,-,-,-,-,88,-,1,-,-,-,-,192
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico coloproctologista,-,-,-,-,-,-,-,5,-,56,60,10,-,11,198,8,-,-,33,-,2,-,-,-,1,-,-,-,11,1,-,1,-,-,-,397
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico dermatologista,-,4,-,1,4,-,-,199,3,1536,2791,68,2,141,1790,138,-,-,1201,-,12,16,-,23,12,1,-,-,69,2,13,-,-,1,3,8030
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico do trabalho,-,18,1,-,5,-,-,44,4,671,869,12,-,69,550,8,1,2,254,-,3,16,4,12,37,17,-,-,112,14,2,-,-,1,1,2727
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico em cirurgia vascular,-,4,-,-,-,-,-,5,1,130,93,12,-,41,990,21,-,-,55,-,-,1,16,13,2,1,-,-,30,-,1,3,-,-,-,1419
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico em endoscopia,-,1,-,-,-,-,-,-,-,88,34,7,-,22,346,7,-,-,30,-,-,1,6,3,-,-,-,-,43,-,-,-,-,-,-,588
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico em medicina de tráfego,-,-,-,-,-,-,-,-,-,55,59,-,-,-,11,-,-,-,6,-,-,-,-,-,-,-,-,-,-,-,-,1,-,1,-,133
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico em medicina intensiva,-,3,11,-,1,-,-,1,10,19,11,106,-,325,2303,4,-,-,1,-,-,2,26,16,1,-,-,-,5,-,1,30,-,2,-,2878
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico em medicina nuclear,-,-,-,-,-,-,-,-,-,58,3,-,-,65,188,12,-,-,5,-,-,-,-,-,-,-,-,-,157,-,5,-,-,-,-,493
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico em medicina preventiva e social,-,1,-,-,-,-,-,4,-,6,7,1,-,9,55,-,-,-,6,-,-,-,-,-,7,4,-,-,1,-,-,-,-,-,1,102
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico endocrinologista e metabologista,-,6,-,-,-,-,-,57,-,728,910,23,1,121,1200,45,-,-,599,-,3,5,2,7,6,1,-,-,55,-,15,-,-,-,1,3785
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico fisiatra,-,1,-,-,-,-,-,3,-,120,52,1,-,62,113,1,-,-,30,-,-,1,-,-,1,-,-,-,23,-,-,-,-,-,-,408
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico foniatra,-,-,-,-,-,-,-,-,-,1,2,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,4
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico gastroenterologista,-,1,-,1,3,-,-,45,3,742,619,13,1,77,1405,73,-,1,431,-,2,9,1,5,5,4,-,-,103,1,8,-,-,-,-,3553
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico geneticista,-,-,-,-,-,-,-,-,-,16,14,1,-,19,94,2,-,-,14,-,-,-,-,-,-,-,-,-,12,-,-,-,-,-,-,172
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico geriatra,-,3,-,1,-,-,-,26,1,143,161,8,-,41,323,5,-,-,124,-,3,3,-,3,2,7,-,-,6,-,4,-,-,1,1,866
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico hansenologista,-,-,-,-,-,-,-,13,-,17,1,-,-,5,10,2,-,-,8,-,2,-,-,-,1,-,-,-,2,-,-,-,-,-,1,62
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico hematologista,-,-,-,-,96,-,-,3,-,123,32,1,-,165,654,3,-,-,37,-,-,-,2,3,1,1,-,-,88,-,1,2,-,-,-,1212
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico hiperbarista,-,-,-,-,-,-,-,-,-,1,2,-,-,1,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,6
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico homeopata,-,2,-,-,-,1,-,45,-,77,281,1,-,7,47,3,-,-,74,-,-,-,1,-,3,-,-,-,4,-,1,1,-,1,-,549
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico infectologista,-,2,-,-,1,2,-,81,3,404,145,9,-,337,1995,43,-,-,199,-,3,4,10,7,22,3,-,-,38,11,6,-,-,-,-,3325
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico legista,-,-,-,-,-,-,-,3,-,13,7,-,-,-,18,-,-,-,4,-,-,-,4,-,10,-,-,-,2,10,-,-,-,-,-,71
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico mastologista,-,1,-,-,-,-,-,5,1,72,41,2,-,34,179,2,-,-,60,-,-,-,3,-,-,-,-,-,32,-,-,-,-,2,1,435
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico nefrologista,-,9,-,-,-,-,-,23,8,1251,171,31,2,243,2647,7,-,-,169,-,2,2,17,6,7,1,-,-,108,-,4,2,-,5,-,4715
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico neurocirurgião,-,2,-,-,-,-,-,1,3,63,76,23,-,100,867,1,-,-,20,-,-,-,29,9,-,-,1,-,5,-,2,-,-,-,-,1202
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico neurofisiologista clínico,-,-,-,-,-,-,-,-,-,7,6,-,-,11,9,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,34
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico neurologista,-,7,-,-,-,19,-,119,13,1343,719,59,1,332,3959,66,-,-,741,-,6,17,17,24,7,6,-,-,159,1,9,1,-,1,1,7627
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico nutrologista,-,-,-,-,-,-,-,7,-,78,120,5,1,49,395,3,-,-,64,-,-,1,2,4,1,4,-,-,2,-,1,1,-,-,-,738
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico oftalmologista,-,14,2,-,-,-,-,112,7,3410,1716,118,-,1274,4299,1013,-,-,813,-,5,18,23,8,6,-,-,-,103,-,38,-,-,54,-,13033
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico oncologista clínico,-,8,-,-,4,-,-,9,12,534,153,121,-,1132,2631,14,-,-,143,-,-,3,-,1,9,5,-,-,46,-,1,3,-,-,-,4829
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico ortopedista e traumatologista,-,12,1,1,-,-,-,150,5,1550,549,121,3,948,6844,69,-,-,685,-,5,249,117,256,10,-,-,-,87,1,45,3,-,-,-,11711
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico otorrinolaringologista,-,8,-,-,-,-,-,62,-,893,602,66,1,277,2288,91,-,-,520,-,4,15,22,7,3,-,-,-,39,-,3,-,-,-,-,4901
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico patologista,-,-,-,-,1,-,-,-,1,11,2,-,-,20,99,-,-,1,2,-,-,1,-,-,5,-,-,-,86,6,-,-,-,-,-,235
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico patologista clínico / medicina laboratorial,-,-,-,-,3,-,-,-,-,22,8,1,-,33,150,1,-,2,6,-,-,-,1,-,-,-,-,-,213,1,-,-,-,-,-,441
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico pneumologista,-,1,1,-,-,-,-,41,1,269,226,6,1,106,777,17,-,-,188,-,2,8,-,4,8,3,-,-,28,2,2,-,-,1,1,1693
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico radioterapeuta,-,1,-,-,-,-,-,-,4,57,4,-,-,93,217,2,-,-,14,-,-,-,-,-,-,-,-,-,19,-,-,-,-,-,-,411
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico residente,-,-,-,-,-,68,-,197,16,92,3,16,-,2962,26945,77,-,-,45,-,4,14,110,78,1,1,-,-,8,-,-,1,-,6,-,30644
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico reumatologista,-,4,-,-,1,-,-,15,-,230,305,9,2,25,524,12,-,-,255,-,-,4,-,3,3,1,-,-,23,-,-,-,-,-,-,1416
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS ESPECIALIDADES MÉDICAS,Médico urologista,-,1,-,1,-,-,-,36,1,332,258,24,-,88,1352,31,-,-,229,-,-,2,7,5,2,-,-,-,29,-,6,-,-,-,-,2404
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,,60,41,2,165,440,2653,1,2020,26,7700,1148,14,2,2345,7347,98,180,673,1425,2,98,306,65,69,2524,35,12,9,9191,2232,172,1,5,14,9,41084
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Médico veterinário,-,9,-,39,-,1,-,296,1,69,49,1,-,14,46,-,8,48,13,-,18,1,2,1,1742,-,-,-,44,1608,2,-,-,3,-,4015
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Biólogo,-,13,-,2,152,-,-,112,2,293,49,5,-,625,1936,12,107,206,142,-,6,42,9,10,411,1,5,-,2912,466,20,-,1,1,3,7543
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,BioMédico,-,4,-,2,275,3,1,264,11,701,122,2,1,373,3139,21,55,354,327,-,13,257,27,46,103,2,2,-,5477,56,122,-,3,5,-,11768
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Coordenador Pedagógico,1,-,-,-,-,3,-,19,-,62,8,-,-,6,6,-,-,-,15,-,-,-,-,2,19,-,-,-,14,2,-,-,-,-,1,158
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Engenheiro Agrícola,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,1,-,-,-,-,-,1
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Engenheiro Agrônomo,-,2,-,-,-,1,-,-,-,4,3,-,1,4,2,-,-,-,2,-,-,1,-,-,27,-,-,-,2,18,-,-,-,-,-,67
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Físico,-,-,-,-,-,-,-,-,-,9,-,-,-,40,35,-,-,-,2,-,-,-,-,-,7,-,-,-,1,7,1,-,-,-,-,102
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Físico (medicina),-,-,-,-,-,-,-,-,1,28,-,-,-,54,130,-,-,-,2,-,-,-,-,-,-,-,-,-,16,1,1,-,-,-,-,233
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Físico (nuclear e reatores),-,-,-,-,-,-,-,-,2,68,1,-,-,47,123,3,-,-,9,-,-,-,-,-,-,-,-,-,31,-,-,-,-,-,-,284
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Musicólogo,-,-,-,-,-,4,-,-,-,2,-,-,-,2,1,-,-,-,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,11
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Neuropsicólogo,-,-,-,-,-,1,-,2,-,30,30,-,-,9,16,1,-,-,11,-,-,-,-,-,-,-,-,-,1,-,-,-,-,-,-,101
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Orientador Educacional,1,-,1,-,-,96,-,24,-,16,1,-,-,1,11,-,-,-,5,-,-,-,-,-,5,-,-,-,1,8,-,-,-,1,1,172
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Ortoptista,-,-,-,-,-,-,-,1,-,46,12,-,-,10,49,15,-,-,7,-,-,-,-,2,-,-,-,-,1,-,-,-,-,-,-,143
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Pedagogo,1,4,-,5,10,592,-,78,3,2068,56,-,-,93,138,7,-,-,191,-,26,1,-,-,83,1,2,4,201,9,1,-,-,2,1,3577
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Professor de alunos com deficiência auditiva e surdos,-,-,-,-,-,-,-,-,-,21,4,-,-,-,1,-,-,-,26,-,-,-,-,-,1,-,-,-,17,-,-,-,-,-,-,70
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Professor de alunos com deficiência física,-,-,-,-,-,1,-,-,-,34,2,-,-,3,1,-,-,-,4,-,-,-,-,-,1,-,-,-,5,-,-,-,-,-,-,51
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Professor de alunos com deficiência múltipla,-,-,-,-,-,-,-,5,-,288,15,-,-,-,1,-,-,-,20,-,-,-,-,-,-,-,-,-,22,-,-,-,-,-,-,351
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Professor de alunos com deficiência visual,-,-,-,-,-,-,-,-,-,72,2,-,-,13,7,1,-,-,2,-,-,-,-,-,-,-,-,-,31,-,-,-,-,-,-,128
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Pesquisador de Clinica Médica,-,-,-,-,-,-,-,-,-,1,2,-,-,16,49,1,1,-,-,-,-,1,-,-,-,-,-,-,1,-,-,-,-,-,-,72
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Pesquisador de Medicina Basica,-,-,-,-,-,-,-,-,-,1,-,-,-,22,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,1,25
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Pesquisador em Biologia Ambiental,-,-,-,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,4,-,-,-,4,4,-,-,-,-,-,13
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Pesquisador em Biologia Animal,-,-,-,-,-,-,-,1,-,-,9,-,-,1,-,-,-,-,-,-,-,-,-,-,1,-,-,-,2,1,-,-,-,-,-,15
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Pesquisador em biologia de Microorganismos e Parasitas,-,-,-,-,-,-,-,6,-,4,1,-,-,7,141,-,-,26,1,-,-,-,4,-,5,-,-,-,77,1,2,-,-,-,-,275
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Pesquisador em Biologia Humana,-,-,-,-,-,-,-,-,-,3,-,-,-,135,12,5,-,1,-,-,-,-,-,-,-,-,-,-,6,-,-,-,-,-,-,162
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Pesquisador em Ciências Sociais e Humanas,-,-,-,-,-,-,-,-,-,1,-,-,-,2,14,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,1,18
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Pesquisador em Psicologia,-,-,-,-,-,-,-,-,-,5,11,-,-,-,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,18
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Pesquisador em Saúde Coletiva,-,-,-,-,-,-,-,8,-,2,-,-,-,14,19,-,-,2,-,-,-,-,-,-,6,-,-,-,1,3,-,-,1,-,1,57
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Preparador Físico,14,-,-,-,-,23,-,30,2,46,22,-,-,30,27,2,-,-,20,-,-,-,-,-,3,-,-,1,13,1,4,-,-,-,-,238
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Professor da Educação de Jovens e Adulto,-,-,-,-,-,6,-,1,-,27,2,-,-,-,-,-,-,-,2,-,1,-,-,-,1,-,-,1,-,2,-,-,-,-,-,43
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Professor de Artes no Ensino Médio,-,-,-,3,1,9,-,1,-,10,-,-,-,-,-,-,-,-,3,-,-,-,-,-,2,-,-,-,1,1,-,-,-,-,-,31
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Professor de educação física do ensino fundamental,1,-,-,-,-,5,-,9,-,65,2,1,-,4,-,1,-,-,23,-,3,-,-,-,-,-,-,-,8,-,-,-,-,1,-,123
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Professor de educação física no ensino superior,19,-,-,3,-,41,-,36,-,57,11,-,-,20,14,-,-,-,13,-,-,-,-,-,7,-,-,-,7,-,-,-,-,-,-,228
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Professor de Educação Fisica Ensino Médio,13,-,-,2,-,11,-,9,-,56,5,-,-,23,6,-,-,-,2,-,4,-,1,-,4,-,-,-,5,-,-,-,-,-,-,141
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Professor de Nutricao,-,2,-,-,-,-,-,-,-,-,-,-,-,-,8,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,10
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Professor de técnicas e Recursos Audiovisuais,-,-,-,-,-,-,-,-,-,2,1,-,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,4
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Professor de Terapia Ocupacional,1,-,-,-,-,1,-,-,-,3,-,-,-,-,5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,10
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Psicanalista,-,-,-,1,-,5,-,7,-,31,97,-,-,6,10,-,-,-,9,-,-,-,-,1,-,-,-,-,1,-,1,-,-,-,-,169
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Psicopedagogo,1,-,-,1,-,117,-,23,-,477,114,-,-,16,28,2,-,-,112,-,4,-,-,-,6,-,-,-,42,-,3,-,-,-,-,946
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Químico,-,-,-,-,1,-,-,4,-,8,-,-,-,6,9,-,9,36,1,-,-,-,1,2,20,-,3,-,31,29,-,-,-,-,-,160
+PESSOAL DE SAÚDE - NÍVEL SUPERIOR, OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE,Terapeuta ocupacional,8,7,1,107,1,1733,-,1084,4,3089,517,5,-,749,1360,27,-,-,458,2,23,3,21,5,66,31,-,3,216,14,15,1,-,1,-,9551
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR,,,67,377,1486,128,3329,8365,110,113932,792,33427,3146,2428,1223,57199,422502,3415,306,1791,15272,27,10770,34673,4090,8863,9117,2972,2586,12,36550,4251,8774,26142,111,2695,5,820933
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, AUXILIAR DE ENFERMAGEM,,12,118,194,30,581,2501,46,40925,33,5985,644,488,129,15021,106045,819,17,94,4082,-,3379,6318,1183,2204,1460,133,121,1,2774,447,2556,1641,13,109,1,200104
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, AUXILIAR DE ENFERMAGEM,Auxiliar de Enfermagem,11,114,194,24,578,2478,46,20803,33,5919,613,488,127,14959,105670,819,17,93,4053,-,2153,6275,1182,2200,1376,132,121,1,2757,437,2485,1637,12,107,1,177915
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, AUXILIAR DE ENFERMAGEM,Auxiliar de Enfermagem do Trabalho,-,-,-,-,2,1,-,18,-,31,27,-,-,58,247,-,-,-,5,-,1,2,1,-,7,1,-,-,11,-,21,3,-,1,-,437
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, AUXILIAR DE ENFERMAGEM,Auxiliar de enfermagem da estratégia de saúde da família,1,4,-,6,1,22,-,20104,-,35,4,-,2,4,128,-,-,1,24,-,1225,41,-,4,77,-,-,-,6,10,50,1,1,1,-,21752
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, FISCAL SANITÁRIO,,-,11,1,2,1,4,-,857,3,63,1,-,3,1,32,-,1,7,33,-,44,6,-,3,4489,-,17,-,22,2845,11,-,-,-,-,8457
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, FISCAL SANITÁRIO,Visitador Sanitário,-,11,1,2,1,4,-,857,3,63,1,-,3,1,32,-,1,7,33,-,44,6,-,3,4489,-,17,-,22,2845,11,-,-,-,-,8457
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO DE ENFERMAGEM,,46,227,1269,83,1147,5568,58,65927,621,18672,1382,1781,212,35841,274043,2046,17,145,8001,-,7192,23187,2382,5652,2394,2806,2274,10,6195,564,5411,24496,85,2390,3,502127
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO DE ENFERMAGEM,Técnico de enfermagem,43,203,775,69,1117,5487,57,26734,576,18234,1115,1775,206,34923,270667,2030,17,137,7822,-,3608,22826,2313,5568,2144,2761,2274,10,6060,540,5231,10065,30,589,3,436009
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO DE ENFERMAGEM,Técnico de enfermagem de saúde da família,3,4,2,14,-,20,-,38893,2,58,2,-,5,9,174,1,-,4,46,-,3556,51,-,10,106,-,-,-,7,14,85,15,52,11,-,43144
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO DE ENFERMAGEM,Técnico de enfermagem de terapia intensiva,-,-,-,-,29,1,-,4,22,133,1,-,-,443,2341,1,-,-,8,-,-,8,4,3,-,1,-,-,67,2,-,2,-,22,-,3092
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO DE ENFERMAGEM,Técnico de enfermagem do trabalho,-,-,-,-,1,-,-,36,21,176,223,2,1,28,352,10,-,4,72,-,5,39,3,1,13,2,-,-,38,7,9,1,-,1,-,1045
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO DE ENFERMAGEM,Técnico de enfermagem psiquiátrica,-,-,-,-,-,57,-,2,-,21,-,-,-,434,140,1,-,-,1,-,-,-,-,1,1,-,-,-,2,-,4,-,-,-,-,664
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO DE ENFERMAGEM,Socorrista (exceto médicos e enfermeiros) habilita,-,20,492,-,-,3,1,258,-,50,41,4,-,4,369,3,-,-,52,-,23,263,62,69,130,42,-,-,21,1,82,14413,3,1767,-,18173
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR DE FARMÁCIA,,-,1,21,3,9,165,-,2279,3,244,7,3,833,1131,6158,126,1,11,251,-,20,606,31,122,120,23,2,-,103,4,42,3,-,-,-,12322
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR DE FARMÁCIA,Auxiliar de Farmácia de Manipulação,-,1,1,2,-,21,-,291,2,59,4,-,466,436,2883,60,-,1,43,-,3,188,7,30,27,14,-,-,5,-,11,-,-,-,-,4555
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR DE FARMÁCIA,Auxiliar de Produção Farmacêutica,-,-,2,1,-,-,-,20,-,10,-,-,9,31,241,2,-,2,5,-,-,11,1,1,3,-,-,-,5,-,2,-,-,-,-,346
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR DE FARMÁCIA,Auxiliar técnico em laboratório de farmácia,-,-,5,-,7,13,-,41,-,26,2,-,34,234,667,9,1,3,15,-,1,61,1,10,7,6,1,-,63,2,5,-,-,-,-,1214
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR DE FARMÁCIA,Mestre de produção farmacêutica,-,-,-,-,-,-,-,-,-,-,-,-,-,-,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,2
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR DE FARMÁCIA,Técnico em Farmácia,-,-,13,-,2,131,-,1923,1,148,1,3,324,430,2362,55,-,1,188,-,16,346,22,81,79,3,1,-,28,2,22,3,-,-,-,6185
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR DE FARMÁCIA,Técnico em Imunobiológicos,-,-,-,-,-,-,-,4,-,1,-,-,-,-,3,-,-,4,-,-,-,-,-,-,4,-,-,-,2,-,2,-,-,-,-,20
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR DE LABORATÓRIO,,-,11,-,3,1343,6,6,1457,66,1607,131,10,39,2212,13250,107,267,1518,914,-,26,1156,174,92,232,7,46,-,20126,209,367,1,11,1,-,45395
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR DE LABORATÓRIO,Auxiliar de Laboratório de Análises Clínicas,-,2,-,-,101,1,2,409,22,633,44,1,17,354,3076,56,58,359,214,-,10,349,18,23,75,6,12,-,8426,66,100,1,3,1,-,14439
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR DE LABORATÓRIO,Auxiliar de laboratório de análises físico-química,-,-,-,-,-,-,-,1,-,5,1,-,4,11,39,-,1,14,-,-,-,-,-,-,3,-,-,-,74,6,-,-,-,-,-,159
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR DE LABORATÓRIO,Auxiliar de Laboratório de Imunobiológicos,-,1,-,-,20,-,-,7,-,7,-,-,-,8,99,-,3,22,1,-,1,3,-,-,4,-,3,-,103,6,2,-,-,-,-,290
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR DE LABORATÓRIO,Auxiliar Técnico em Patologia Clínica,-,-,-,1,205,2,3,437,9,202,20,-,5,190,1703,8,56,173,112,-,7,109,29,4,20,1,3,-,2996,33,56,-,2,-,-,6386
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR DE LABORATÓRIO,Técnico de laboratório de análises físico-químicas,-,-,-,-,19,-,-,15,-,44,2,-,-,110,372,8,12,17,21,-,-,7,1,2,18,-,3,-,222,6,9,-,-,-,-,888
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR DE LABORATÓRIO,Técnico em Laboratório de Farmácia,-,3,-,-,24,-,-,58,-,41,-,-,9,110,569,2,4,46,22,-,-,66,2,5,20,-,10,-,187,36,26,-,-,-,-,1240
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR DE LABORATÓRIO,Técnico em patologia clínica,-,5,-,2,974,3,1,530,35,675,64,9,4,1429,7392,33,133,887,544,-,8,622,124,58,92,-,15,-,8118,56,174,-,6,-,-,21993
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM NUTRIÇÃO E DIETÉTICA,,-,-,-,-,-,-,-,-,-,1,2,-,-,28,69,2,-,-,1,-,-,3,-,-,2,-,-,-,-,-,-,-,-,-,-,108
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM NUTRIÇÃO E DIETÉTICA,Dietista,-,-,-,-,-,-,-,-,-,1,2,-,-,28,69,2,-,-,1,-,-,3,-,-,2,-,-,-,-,-,-,-,-,-,-,108
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM FISIOTERAPIA E REABILITAÇÃO,,-,1,-,-,-,7,-,29,-,558,9,-,-,136,1805,6,-,-,133,20,2,276,46,128,1,-,-,-,16,-,9,-,-,14,-,3196
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM FISIOTERAPIA E REABILITAÇÃO,Técnico de imobilização ortopédica,-,1,-,-,-,-,-,18,-,127,4,-,-,45,1435,4,-,-,86,1,1,229,44,112,1,-,-,-,4,-,7,-,-,-,-,2119
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM FISIOTERAPIA E REABILITAÇÃO,Técnico de ortopedia,-,-,-,-,-,-,-,7,-,291,4,-,-,82,343,2,-,-,33,18,-,46,2,16,-,-,-,-,8,-,1,-,-,14,-,867
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM FISIOTERAPIA E REABILITAÇÃO,Técnico em reabilitação,-,-,-,-,-,7,-,4,-,140,1,-,-,9,27,-,-,-,14,1,1,1,-,-,-,-,-,-,4,-,1,-,-,-,-,210
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM SAÚDE ORAL,,-,3,-,1,5,1,-,1650,13,2216,542,1,1,71,402,17,1,4,305,6,79,138,2,9,76,1,55,-,1320,3,42,-,2,51,-,7017
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM SAÚDE ORAL,Auxiliar de Prótese Dentária,-,-,-,-,-,-,-,24,3,201,89,-,-,2,18,-,-,1,12,1,2,1,-,-,1,-,1,-,244,-,-,-,-,-,-,600
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM SAÚDE ORAL,Protético Dentário,-,1,-,1,-,-,-,163,3,597,193,-,-,11,32,5,1,3,59,5,6,1,-,2,1,1,-,-,1025,-,15,-,-,-,-,2125
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM SAÚDE ORAL,Técnico em saúde bucal,-,2,-,-,5,1,-,1463,7,1418,260,1,1,58,352,12,-,-,234,-,71,136,2,7,74,-,54,-,51,3,27,-,2,51,-,4292
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM VIG SANITÁRIA E AMBIENTAL,,-,-,-,2,-,-,-,50,-,1,-,-,-,-,6,-,-,-,-,-,-,-,-,-,89,-,1,-,-,43,-,-,-,-,-,192
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM VIG SANITÁRIA E AMBIENTAL,Agente de defesa ambiental,-,-,-,2,-,-,-,50,-,1,-,-,-,-,6,-,-,-,-,-,-,-,-,-,89,-,1,-,-,43,-,-,-,-,-,192
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM EQUIP MÉDICO-HOSPITALARES,,-,-,-,-,-,-,-,1,-,22,2,-,-,71,169,3,1,-,6,-,-,3,-,4,1,-,-,-,21,-,-,-,-,-,-,304
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM EQUIP MÉDICO-HOSPITALARES,Técnico em equipamento médico hospitalar,-,-,-,-,-,-,-,1,-,22,2,-,-,71,169,3,1,-,6,-,-,3,-,4,1,-,-,-,21,-,-,-,-,-,-,304
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM RADIOLOGIA MÉDICA,,-,-,-,4,1,-,-,637,52,3177,233,37,-,2101,18279,212,-,-,1336,1,15,2937,268,641,29,-,-,-,5190,6,316,-,-,122,1,35595
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM RADIOLOGIA MÉDICA,Auxiliar de Radiologia (Revelação Fotográfica),-,-,-,-,-,-,-,3,-,68,7,-,-,43,458,4,-,-,28,-,-,60,11,17,4,-,-,-,82,1,5,-,-,-,-,791
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM RADIOLOGIA MÉDICA,Técnico em radiologia e imagenologia,-,-,-,4,1,-,-,634,52,3109,226,37,-,2058,17821,208,-,-,1308,1,15,2877,257,624,25,-,-,-,5108,5,311,-,-,122,1,34804
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM HEMATOLOGIA/HEMOTERAPIA,,-,-,-,-,234,-,-,-,-,20,4,-,-,24,311,-,-,-,4,-,-,13,-,-,-,-,-,-,355,-,2,-,-,-,-,967
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM HEMATOLOGIA/HEMOTERAPIA,Auxiliar de banco de sangue,-,-,-,-,234,-,-,-,-,20,4,-,-,24,311,-,-,-,4,-,-,13,-,-,-,-,-,-,355,-,2,-,-,-,-,967
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM HISTOLOGIA,,-,-,-,-,-,-,-,-,-,4,-,-,-,21,40,-,-,1,-,-,-,-,-,-,1,-,-,-,72,-,-,-,-,-,-,139
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, TÉCNICO E AUXILIAR EM HISTOLOGIA,Técnico em Histologia,-,-,-,-,-,-,-,-,-,4,-,-,-,21,40,-,-,1,-,-,-,-,-,-,1,-,-,-,72,-,-,-,-,-,-,139
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,,9,5,1,-,8,113,-,120,1,857,189,108,6,541,1893,77,1,11,206,-,13,30,4,8,223,2,70,1,356,130,18,1,-,8,-,5010
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Técnico em acupuntura,-,-,-,-,-,-,-,6,1,36,54,-,-,-,5,-,-,-,12,-,-,-,-,-,1,-,-,-,3,-,-,-,-,-,-,118
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Artista de Circo (Outros),-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,1
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Auxiliar de Desenvolvimento Infantil,-,-,-,-,-,-,-,5,-,56,3,-,1,55,95,-,-,-,1,-,-,-,1,-,5,-,-,-,19,1,1,-,-,-,-,243
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Auxiliar de Saúde Navegação Marítima,-,4,-,-,-,3,-,11,-,-,-,-,3,2,35,-,-,-,-,-,-,1,-,-,10,-,1,-,1,5,-,-,-,-,-,76
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Auxiliar Geral de Conservação de Vias Per,-,-,1,-,1,8,-,57,-,43,5,1,-,82,189,16,-,-,13,-,7,4,-,-,14,1,-,-,13,9,14,1,-,2,-,481
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Instrumentador Cirúrgico,-,-,-,-,1,-,-,1,-,32,11,107,-,162,891,29,-,-,3,-,-,-,2,4,-,-,-,-,9,-,-,-,-,-,-,1252
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Instrutor de Cursos Livres,4,-,-,-,-,27,-,2,-,17,-,-,-,-,-,-,-,-,-,-,2,-,-,-,1,-,-,-,4,2,-,-,-,-,-,59
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Mecanico de Manutenção de Automóveis Moto,-,1,-,-,-,-,-,4,-,1,-,-,1,-,3,-,-,-,-,-,1,1,-,-,4,-,-,-,-,-,-,-,-,-,-,16
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Mecanico de Manutenção de Máquinas em Ger,-,-,-,-,-,-,-,-,-,2,-,-,-,10,111,-,-,-,10,-,-,9,1,-,3,-,-,-,1,-,-,-,-,-,-,147
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Mecânico de manutenção e instalação de aparelhos de climatização e refrigeração,-,-,-,-,-,-,-,-,-,-,-,-,-,11,32,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,44
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Ministro de Culto Religioso,-,-,-,-,-,-,-,-,-,6,-,-,-,3,31,-,-,-,-,-,-,-,-,1,-,-,-,1,-,-,-,-,-,-,-,42
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Musico Intérprete Cantor,-,-,-,-,-,-,-,-,-,-,1,-,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,4,-,-,-,-,-,-,6
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Musico Intérprete Instrumentista,-,-,-,-,-,2,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,2,-,-,-,-,-,-,5
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Professor de Alunos Com Deficiência Menta,-,-,-,-,-,4,-,-,-,417,1,-,-,3,-,-,-,-,78,-,-,-,-,-,-,-,-,-,16,-,-,-,-,-,-,519
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Professor de Nível Médio Na Educação Inf,-,-,-,-,-,-,-,3,-,3,-,-,-,1,17,-,-,-,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,26
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Professor de Nível Médio No Ensino Profis,-,-,-,-,-,1,-,1,-,2,-,-,-,-,2,-,-,-,-,-,-,-,-,-,2,-,-,-,1,-,-,-,-,-,-,9
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Quiropraxista Cinesoterapeuta Eutonista,1,-,-,-,-,-,-,-,-,4,12,-,-,-,3,-,-,-,1,-,-,-,-,-,-,-,-,-,12,-,-,-,-,1,-,34
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Recreador,4,-,-,-,-,62,-,4,-,30,5,-,-,85,26,-,-,-,21,-,-,1,-,-,-,-,-,-,4,-,-,-,-,-,-,242
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Técnico de Alimentos,-,-,-,-,-,-,-,2,-,3,-,-,-,5,87,-,-,4,-,-,-,-,-,-,14,-,-,-,4,26,-,-,-,-,-,145
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Técnico de Desporto Individual e Coletivo,-,-,-,-,-,5,-,3,-,16,-,-,1,7,4,-,-,-,-,-,1,-,-,-,1,-,-,-,-,-,-,-,-,-,-,38
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Técnico de Saneamento,-,-,-,-,2,-,-,7,-,7,-,-,-,-,7,-,1,4,1,-,2,1,-,-,157,-,69,-,-,81,1,-,-,-,-,340
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Técnico em Laboratório Óptico,-,-,-,-,-,-,-,-,-,3,1,-,-,-,5,13,-,-,-,-,-,-,-,-,2,-,-,-,3,-,-,-,-,-,-,27
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Técnico em Métodos Eletrográficos em Ence,-,-,-,-,-,-,-,5,-,80,12,-,-,48,84,13,-,-,30,-,-,-,-,2,-,-,-,-,153,-,1,-,-,-,-,428
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Técnico em Métodos Gráficos em Cardiologia,-,-,-,-,-,-,-,3,-,54,5,-,-,44,152,-,-,-,19,-,-,1,-,1,-,-,-,-,28,-,1,-,-,3,-,311
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Técnico em Óptica e Optometria Contatólog,-,-,-,-,-,-,-,3,-,40,79,-,-,16,47,5,-,-,6,-,-,-,-,-,1,1,-,-,10,-,-,-,-,2,-,210
+PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR, OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE,Técnico Químico,-,-,-,-,4,-,-,2,-,5,-,-,-,7,67,-,-,3,8,-,-,12,-,-,8,-,-,-,69,6,-,-,-,-,-,191
+PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR,,,2210,7260,4501,923,2195,17844,110,408514,396,48072,10864,569,5887,29969,190547,4502,319,1813,18909,20,33057,18991,1136,4765,93512,929,5371,195,29102,41067,5842,2772,488,1064,131,993846
+PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR, AGENTE COMUNITÁRIO DE SAÚDE,,1,16,-,-,5,49,-,258086,-,49,4,-,12,12,86,3,-,4,69,-,22690,11,-,-,422,-,-,-,6,88,474,-,321,-,-,282408
+PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR, AGENTE COMUNITÁRIO DE SAÚDE,Agente comunitário de saúde,1,16,-,-,5,49,-,258086,-,49,4,-,12,12,86,3,-,4,69,-,22690,11,-,-,422,-,-,-,6,88,474,-,321,-,-,282408
+PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR, AGENTE DE SAÚDE PÚBLICA,,2,65,1,3,17,65,-,1681,3,274,2,-,47,117,541,2,2,43,191,-,126,78,1,13,7537,-,75,-,45,4748,53,1,-,10,-,15743
+PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR, AGENTE DE SAÚDE PÚBLICA,Agente de saúde pública agente de saneam,2,65,1,3,17,65,-,1681,3,274,2,-,47,117,541,2,2,43,191,-,126,78,1,13,7537,-,75,-,45,4748,53,1,-,10,-,15743
+PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR, ATENDENTE DE ENFERMAGEM/AUX OPER SERV DIV E ASSEM,,-,79,11,7,27,140,3,10398,6,6299,2095,10,2075,920,7587,56,2,15,1165,-,834,1584,52,285,625,36,245,-,347,28,310,7,4,234,-,35486
+PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR, ATENDENTE DE ENFERMAGEM/AUX OPER SERV DIV E ASSEM,Atendente de consultório dentario,-,17,2,2,5,6,-,7100,4,5849,2010,-,9,62,453,28,-,1,852,-,449,571,18,95,177,-,227,-,196,10,110,1,1,233,-,18488
+PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR, ATENDENTE DE ENFERMAGEM/AUX OPER SERV DIV E ASSEM,Atendente de enfermagem,-,58,3,2,21,32,3,885,1,325,64,6,19,473,2576,5,2,14,127,-,302,510,24,119,114,2,17,-,135,15,129,6,1,1,-,5991
+PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR, ATENDENTE DE ENFERMAGEM/AUX OPER SERV DIV E ASSEM,Atendente de farmácia balconista,-,4,6,3,1,102,-,2413,1,125,21,4,2047,385,4558,23,-,-,186,-,83,503,10,71,334,34,1,-,16,3,71,-,2,-,-,11007
+PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR, PARTEIRA,,-,-,-,-,-,-,2,38,-,1,-,-,-,4,88,-,-,-,-,-,22,2,-,2,4,-,48,-,1,-,39,-,-,-,-,251
+PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR, PARTEIRA,Parteira leiga,-,-,-,-,-,-,2,38,-,1,-,-,-,4,88,-,-,-,-,-,22,2,-,2,4,-,48,-,1,-,39,-,-,-,-,251
+PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR, OUTRAS OCUPAÇÕES NÍVEL ELEMENTAR EM SAÚDE,,2207,7100,4489,913,2146,17590,105,138311,387,41449,8763,559,3753,28916,182245,4441,315,1751,17484,20,9385,17316,1083,4465,84924,893,5003,195,28703,36203,4966,2764,163,820,131,659958
+PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR, OUTRAS OCUPAÇÕES NÍVEL ELEMENTAR EM SAÚDE,Artesao modelador vidros,-,-,-,-,-,10,-,-,-,2,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,13
+PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR, OUTRAS OCUPAÇÕES NÍVEL ELEMENTAR EM SAÚDE,Gesseiro,-,-,-,-,-,-,-,-,-,14,1,1,-,3,50,-,-,-,3,-,-,8,-,1,-,-,-,-,-,-,-,-,-,-,-,81
+PESSOAL ADMINISTRATIVO,,,2207,7100,4489,913,2146,17580,105,138311,387,41433,8762,558,3753,28912,182195,4441,315,1751,17481,20,9385,17308,1083,4464,84924,893,5003,195,28703,36203,4966,2764,163,820,131,659864
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,,222,6330,3615,179,1121,5750,38,55994,275,29549,7362,401,2748,17869,108335,3533,140,741,13090,13,3015,10293,846,3029,41951,541,428,71,17605,3120,2095,699,17,359,94,341468
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Administrador,13,111,7,1,27,79,2,599,6,1112,331,31,53,197,1319,32,7,13,283,2,55,76,7,18,1133,35,21,8,424,64,26,24,1,16,2,6135
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Administrador de banco de dados,-,9,-,-,-,2,-,16,-,1,1,-,-,13,29,-,-,-,2,-,4,-,-,2,93,-,-,-,2,1,2,-,-,-,2,179
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Administrador de sistemas operacionais,-,54,-,-,10,5,-,117,-,26,-,1,-,17,98,1,-,-,14,-,8,1,1,1,499,1,-,-,7,5,15,-,-,-,-,881
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Advogado,-,8,2,-,4,2,-,18,-,62,21,3,3,33,158,-,-,3,12,-,-,1,-,2,128,1,-,3,23,10,-,-,-,-,1,498
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Advogado de empresa,-,1,-,-,-,-,-,-,-,5,1,-,-,2,19,-,-,-,2,-,-,-,-,-,-,-,-,-,4,-,-,-,-,-,-,34
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Almoxarife,-,1,6,-,8,2,-,63,1,148,-,2,61,181,1596,24,-,-,38,-,7,110,5,25,196,5,4,-,73,4,16,3,-,-,-,2579
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Analista de redes e de comunicação de dados,-,-,-,-,4,1,-,1,-,9,-,-,-,8,92,4,-,1,3,-,-,1,-,1,13,1,-,-,9,-,-,-,-,-,2,150
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Analista de suporte computacional,-,15,-,-,2,-,-,5,-,27,2,3,1,58,275,13,1,-,22,-,1,7,-,4,52,1,1,-,17,2,3,-,1,-,9,522
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Analista financeiro instituições financeiras,-,-,-,-,-,-,-,-,-,28,1,1,-,21,147,11,-,-,9,-,-,4,1,-,8,4,-,-,12,-,-,-,-,-,-,247
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Arquiteto de edificacoes,-,-,-,-,-,-,-,-,1,-,-,-,-,4,53,-,-,-,2,-,-,-,-,-,37,-,2,-,1,25,-,-,-,-,-,125
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Arquivista,-,1,-,-,-,2,-,111,-,23,-,-,-,42,141,4,-,-,25,-,7,3,-,7,7,-,-,-,3,-,3,-,-,-,-,379
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Arquivista de documentos,-,-,-,-,-,1,-,50,-,5,-,-,-,68,122,6,-,-,26,-,-,1,2,-,10,-,-,-,3,1,1,-,-,-,-,296
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Assistente tecnico administrativo,44,3294,310,39,444,2483,15,19815,131,6736,657,107,1223,5672,30712,803,79,360,3817,-,796,3900,359,723,16028,151,187,17,3286,1243,586,91,4,97,29,104238
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Atendente de agencia,-,11,-,-,-,-,-,12,-,4,3,-,-,-,4,11,-,-,3,-,1,-,-,4,7,-,-,-,4,-,-,-,-,-,-,64
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Atendente de ambulatorio ou clínica,-,27,1,5,8,87,-,1603,-,2220,1128,1,25,393,3297,204,-,10,818,-,156,290,2,217,94,3,-,-,869,3,40,4,-,2,-,11507
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Auditor (contadores e afins),-,19,-,-,-,1,-,1,-,3,-,-,-,7,82,2,-,-,-,-,-,-,-,-,76,1,-,-,1,132,-,-,-,-,-,325
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Auxiliar de contabilidade,-,2,-,-,-,-,-,5,-,48,3,2,4,69,471,6,-,-,13,-,-,11,-,4,46,7,2,-,22,-,1,-,-,-,1,717
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Auxiliar de escritorio,9,686,74,15,246,864,9,10415,16,4623,1852,44,681,4453,25562,826,22,105,2503,-,316,1774,97,735,4792,71,38,5,2838,327,450,39,1,55,10,64553
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Auxiliar de estatistica,-,1,-,-,1,2,-,8,-,5,2,-,1,13,78,-,-,-,5,-,-,3,-,5,11,-,3,-,8,1,11,-,-,1,-,159
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Auxiliar de faturamento,-,9,1,-,10,13,-,45,4,566,25,24,3,489,4010,93,-,1,192,-,6,106,30,44,239,18,-,1,441,3,19,1,-,-,-,6393
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Auxiliar de pessoal,1,13,5,2,9,36,-,189,4,102,23,1,13,115,813,9,-,8,33,-,15,29,1,2,110,3,8,1,40,7,40,-,-,-,-,1632
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Chefe de contabilidade tecnico,-,-,-,-,2,-,-,1,-,1,-,-,-,3,14,-,-,-,3,-,-,3,-,-,11,-,1,-,-,-,-,-,-,-,-,39
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Cobrador externo,-,-,-,-,-,-,-,-,-,9,1,-,-,-,3,-,-,-,2,-,-,-,-,-,-,-,-,-,5,-,-,-,-,-,-,20
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Comprador,-,-,1,-,-,1,-,-,-,18,1,-,3,51,352,8,-,-,5,-,-,5,-,9,11,2,-,-,14,-,1,-,-,-,-,482
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Contador,-,14,3,-,2,1,-,8,-,65,12,7,1,55,474,6,1,2,19,-,-,3,-,1,127,4,3,1,29,-,1,-,-,1,-,840
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Continuo,-,1,-,2,2,6,-,95,-,98,3,2,7,235,745,1,-,4,20,-,33,7,2,8,48,-,-,-,58,10,-,-,-,-,-,1387
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Datilografo,-,-,-,-,6,3,-,59,-,9,-,-,-,42,99,-,-,2,50,-,-,3,-,1,21,-,1,-,1,5,2,-,-,-,-,304
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Digitador,6,405,12,8,1,112,-,2467,19,369,8,-,46,247,1164,6,8,64,230,-,196,30,4,9,7009,3,5,-,567,138,107,1,2,8,1,13252
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Diretor administrativo,27,130,19,11,12,204,-,1297,6,1240,329,22,59,159,1118,22,3,13,312,1,145,204,4,41,1225,25,16,12,421,160,119,44,1,21,5,7427
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Diretor administrativo e financeiro,1,-,-,-,5,1,-,11,-,131,40,3,7,40,141,4,-,1,25,-,-,8,3,3,109,5,-,3,76,2,2,1,-,3,1,626
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Diretor comercial,-,-,-,-,-,-,-,-,-,6,7,1,1,2,4,-,-,-,1,-,-,-,-,-,1,-,-,-,3,-,-,1,-,-,-,27
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Diretor de manutenção,-,1,-,-,5,-,-,-,-,5,-,-,1,6,36,-,-,-,1,-,-,1,1,-,14,-,-,-,-,-,-,-,-,-,-,71
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Diretor de marketing,-,-,-,-,-,-,-,-,-,1,-,-,-,1,2,-,-,-,1,-,-,-,-,-,-,-,-,-,1,-,-,-,-,-,-,6
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Diretor de pesquisa e desenvolvimento (p&d),-,-,-,-,-,-,-,-,-,1,-,-,-,2,4,-,-,-,1,-,-,-,-,-,1,-,-,-,2,-,-,-,-,-,-,11
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Diretor de recursos humanos,-,-,-,-,1,-,-,3,-,4,-,-,-,6,21,-,1,-,3,-,-,-,-,-,44,-,1,-,2,-,-,-,-,-,-,86
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Diretor de relacoes de trabalho,-,-,-,-,-,-,-,-,-,-,-,-,-,1,2,-,-,-,-,-,-,-,-,-,4,-,-,-,-,-,-,-,-,-,-,7
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Diretor de serviços culturais,-,-,-,-,-,-,-,-,-,2,-,-,-,-,-,-,-,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,3
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Diretor de serviços de informatica,-,4,-,1,-,-,-,19,-,8,1,2,-,4,22,-,-,-,5,-,1,1,-,-,83,-,-,-,1,-,-,-,-,-,-,152
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Diretor de serviços de saúde,-,14,13,1,11,10,-,74,10,582,169,22,5,1048,5613,606,-,-,198,-,7,184,79,302,70,6,-,1,210,6,96,12,-,4,2,9355
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Diretor de serviços sociais,-,-,-,-,-,-,-,3,-,10,3,-,-,1,3,1,-,-,-,-,-,-,-,-,10,-,-,-,3,-,-,-,-,-,-,34
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Diretor de suprimentos,-,-,-,-,-,-,-,-,-,1,-,-,-,-,6,-,-,-,1,-,-,-,-,-,3,1,-,-,-,-,-,-,-,-,-,12
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Diretor de suprimentos no serviço publico,-,-,-,-,-,-,-,1,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,3,-,-,-,-,-,-,-,-,-,-,5
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Diretor financeiro,-,-,-,-,1,-,-,-,-,18,3,2,2,7,30,1,-,1,11,-,-,1,-,1,27,2,1,-,11,-,-,-,-,-,-,119
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Economista domestico,-,-,-,-,-,-,-,-,-,-,-,-,-,2,5,-,-,-,2,-,-,-,-,-,4,-,-,-,-,1,-,-,-,-,-,14
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Engenheiro civil,-,1,-,-,-,-,-,2,-,12,6,-,-,24,142,2,-,-,6,-,-,-,-,-,220,-,28,-,3,67,-,-,-,-,-,513
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Engenheiro civil (saneamento),-,-,-,-,-,-,-,-,-,2,-,-,-,-,2,-,-,3,-,-,-,-,-,-,35,-,3,-,-,40,-,-,-,-,-,85
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Engenheiro de seguranca do trabalho,-,-,-,-,-,-,-,3,1,88,18,-,-,26,190,2,1,-,11,-,-,-,1,1,18,-,1,-,5,12,1,-,-,-,-,379
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Fiscal de tributos municipal,-,-,-,-,-,-,-,1,-,2,-,-,-,-,-,-,-,-,-,-,-,1,1,-,42,-,-,-,-,57,-,-,-,-,-,104
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente administrativo,44,135,16,20,17,223,4,2001,11,2418,618,49,157,170,975,54,4,22,518,1,202,173,8,32,1161,107,32,5,974,146,32,78,3,27,6,10443
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente comercial,-,-,-,-,-,1,-,-,-,26,11,-,11,6,24,3,-,-,10,-,-,-,-,-,-,2,-,-,24,-,-,3,-,-,-,121
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de almoxarifado,-,-,-,-,-,-,-,6,-,6,-,-,10,6,55,1,-,-,5,-,1,5,-,2,39,-,-,-,3,1,5,-,-,-,-,145
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de compras,-,-,-,-,-,-,-,1,-,6,1,-,-,5,78,-,-,-,3,-,1,1,-,-,35,-,-,-,9,-,1,-,-,-,-,141
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de comunicacao,-,1,1,-,-,-,-,1,-,7,-,-,-,8,18,3,-,-,1,-,-,-,-,-,11,-,-,-,10,-,-,-,-,-,-,61
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de departamento pessoal,-,-,-,-,2,1,-,3,-,16,1,-,-,19,121,2,-,-,7,-,5,6,1,1,34,1,-,-,5,-,4,-,-,-,-,229
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de desenvolvimento de sistemas,-,1,-,-,-,-,-,-,-,2,-,-,-,-,10,-,-,-,-,-,-,-,-,-,7,-,-,-,2,-,-,-,-,-,-,22
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de marketing,-,-,-,-,-,-,-,-,-,5,-,1,-,11,18,1,-,-,-,-,-,-,-,-,1,-,-,-,6,-,-,-,-,-,-,43
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de pesquisa e desenvolvimento (p&d),-,2,-,-,-,-,-,-,-,7,1,-,-,2,9,-,-,-,-,-,-,-,-,-,1,-,-,-,3,-,-,-,-,-,-,25
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de operação de tecnologia da informação,-,1,-,-,1,-,-,-,-,3,-,-,-,-,15,1,-,-,1,-,-,-,-,-,22,-,-,-,-,-,-,-,-,-,-,44
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de producao e operacoes,-,-,-,-,1,-,-,1,-,4,-,-,-,5,16,1,-,-,-,-,-,-,-,-,2,1,-,-,5,1,-,-,-,1,-,38
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de projetos de tecnologia da informação,-,-,-,-,-,-,-,-,-,2,-,-,-,1,18,-,-,-,-,-,-,-,-,-,5,-,-,-,2,-,-,-,-,-,2,30
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de projetos e serviços de manutenção,-,-,-,-,-,-,-,-,-,9,-,-,-,11,74,3,-,-,-,-,-,2,-,-,5,-,-,-,5,-,-,-,-,-,-,109
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de recursos humanos,-,2,1,-,1,1,-,5,-,33,2,1,-,40,180,2,-,1,15,-,-,9,1,2,72,2,-,-,25,-,2,-,-,-,-,397
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de rede,-,-,-,-,-,-,-,-,-,-,-,-,-,4,8,-,-,-,-,-,-,1,-,-,4,-,-,-,1,-,-,-,-,-,-,18
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de riscos,-,-,-,-,-,-,-,-,-,-,-,-,-,-,3,-,-,-,-,-,-,-,-,-,-,-,-,-,1,-,-,-,-,-,-,4
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de seguranca da informação,-,-,-,-,-,-,-,-,-,-,-,-,-,1,4,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,7
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de serviços culturais,-,-,-,-,-,-,-,-,-,2,-,-,-,1,-,-,-,-,-,-,-,-,-,-,2,-,1,-,1,-,-,-,-,-,-,7
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de serviços de saúde,28,220,64,32,64,574,4,4258,13,1963,599,23,86,222,1146,47,4,35,596,1,264,337,9,45,2880,21,23,2,876,383,71,141,3,41,5,15080
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de serviços sociais,-,1,-,-,-,-,-,-,-,13,3,-,-,1,19,-,-,-,6,-,-,-,-,-,5,-,1,-,4,-,1,-,-,-,-,54
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de suporte técnico de tecnologia da informação,1,8,1,-,2,-,-,7,-,7,-,-,-,9,69,4,-,-,4,-,-,4,1,1,49,-,-,-,9,-,1,-,-,1,-,178
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de suprimentos,-,-,-,-,-,-,-,-,-,5,-,-,-,9,57,-,-,-,1,-,-,1,-,1,1,1,-,-,2,-,-,-,-,-,-,78
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente de vendas,-,-,-,-,-,-,-,-,-,2,-,-,2,-,3,-,-,-,-,-,-,-,-,-,2,-,-,-,3,-,-,-,-,-,-,12
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Gerente financeiro,-,1,2,-,1,-,-,2,-,55,10,2,2,21,143,4,-,-,20,-,-,5,-,2,43,2,1,2,34,-,3,2,-,-,-,357
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Matematico,-,-,-,-,-,-,-,1,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,4
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Operador de computador,-,74,-,-,15,3,-,146,-,25,5,-,5,20,182,-,-,11,6,-,7,4,3,-,258,-,-,-,25,11,3,-,-,-,1,804
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Operador de radiochamada,-,106,993,-,-,-,-,-,-,1,5,-,-,4,13,-,-,-,-,-,3,3,-,-,18,3,-,-,-,-,-,80,-,14,-,1243
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Operador de telemarketing ativo e receptivo,-,117,-,-,-,-,-,-,-,49,2,5,-,57,114,4,-,-,58,-,-,-,-,-,40,-,-,1,54,-,-,-,-,-,-,501
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Operador de telemarketing tecnico,-,1,-,-,-,-,-,-,-,2,-,-,-,11,2,-,-,-,2,-,-,-,-,-,3,-,-,-,-,-,-,-,-,-,-,21
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Professor de computacao no ensino superior,-,-,-,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,1
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Programador de sistemas de informacao,1,6,2,-,-,-,-,3,-,9,-,-,-,12,109,3,-,-,-,-,-,7,1,1,73,-,-,-,4,3,-,-,-,-,-,234
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,"Recepcionista, em geral",38,316,16,39,67,768,3,11608,18,4698,1123,22,201,1957,16689,459,1,53,2345,-,745,2549,187,618,2002,15,17,-,4968,85,369,37,1,11,-,52025
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Secretário executivo,-,11,-,-,2,6,-,40,-,266,152,2,1,83,407,29,-,3,44,1,2,5,1,3,454,1,4,3,160,5,3,1,-,1,-,1690
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Supervisor administrativo,8,73,11,1,14,68,1,301,19,378,34,6,36,395,2471,95,-,9,198,-,12,153,6,69,672,16,3,3,353,64,17,12,-,4,3,5505
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Supervisor de almoxarifado,-,-,-,-,-,-,-,5,-,13,-,-,7,9,116,4,-,-,1,-,-,13,-,2,36,-,-,-,9,-,3,-,-,-,-,218
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Supervisor de andar,-,-,-,-,-,-,-,-,-,-,-,-,-,1,14,1,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,17
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Supervisor de compras,-,-,-,-,-,-,-,-,-,6,1,-,-,13,68,1,-,-,3,-,-,-,1,-,11,-,-,-,4,-,-,-,-,-,-,108
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Supervisor de contas a pagar,-,1,1,-,-,-,-,-,-,4,-,-,-,3,14,-,-,-,2,-,-,-,-,-,2,2,-,-,4,-,-,-,-,-,-,33
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Supervisor de controle patrimonial,-,-,-,-,-,1,-,-,-,2,-,-,-,11,46,2,-,-,2,-,-,-,-,-,20,-,-,-,-,-,1,-,-,-,-,85
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Supervisor de recepcionistas,-,-,-,-,-,2,-,1,-,88,4,-,-,55,388,18,-,-,41,-,-,12,5,2,1,-,-,-,110,-,1,-,-,-,-,728
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Supervisor de tesouraria,-,-,-,-,-,-,-,2,-,12,-,2,-,9,87,5,-,-,7,-,-,1,-,-,15,-,-,1,13,-,1,-,-,-,1,156
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Supervisor de transportes,-,1,1,-,-,-,-,10,-,2,-,-,1,3,7,1,-,-,2,-,-,3,-,-,28,1,-,-,-,-,-,-,-,-,-,60
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Técnico de suporte ao usuário de tecnologia da informação,-,7,1,-,17,1,-,25,4,40,2,-,2,53,333,8,-,4,12,-,4,30,2,3,78,1,2,-,29,1,-,-,-,-,8,667
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Tecnico de contabilidade,-,1,1,-,9,7,-,6,1,23,1,1,2,48,147,7,-,1,8,-,-,-,1,1,90,-,-,1,5,4,-,1,-,-,-,366
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Técnico de manutenção de sistemas e instrumentos,-,-,-,-,-,-,-,-,-,4,-,-,-,2,45,-,-,1,2,-,-,1,-,-,7,-,-,-,-,-,-,-,-,-,-,62
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Tecnico eletrônico,-,-,-,-,-,-,-,-,-,15,-,-,-,9,192,6,-,-,1,-,-,-,-,1,-,-,1,-,3,-,1,-,-,-,-,229
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Tecnico em administração,-,63,4,-,76,160,-,215,4,142,4,1,19,200,1264,1,1,5,127,7,2,58,1,33,354,1,1,1,90,30,5,-,-,2,-,2871
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Técnico em manutenção de equipamentos de informática,1,11,2,-,1,3,-,26,-,43,2,-,1,57,400,7,-,-,29,-,2,42,4,3,246,1,4,-,44,4,3,-,-,-,2,938
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Tecnico em secretariado,-,1,1,1,-,4,-,8,-,86,30,-,-,71,356,2,3,-,24,-,-,-,-,3,33,4,12,-,53,-,2,-,-,-,1,695
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Tecnico em segurança do trabalho,-,-,7,-,2,2,-,18,4,302,84,1,2,165,1117,12,4,2,75,-,-,51,5,16,94,2,-,-,27,46,6,-,-,-,-,2044
+PESSOAL ADMINISTRATIVO, ADMINISTRAÇÃO,Telefonista,-,337,2036,1,8,7,-,177,1,310,16,4,3,252,1421,32,-,3,185,-,11,48,9,17,315,7,-,-,147,10,18,123,-,49,-,5547
+PESSOAL ADMINISTRATIVO, SERVIÇO DE LIMPEZA/CONSERVAÇÃO,,26,17,69,5,12,395,5,2424,1,806,103,36,67,1187,9492,114,5,9,228,-,208,592,13,146,542,8,54,1,378,109,305,40,5,1,-,17403
+PESSOAL ADMINISTRATIVO, SERVIÇO DE LIMPEZA/CONSERVAÇÃO,Agente de higiene e segurança,5,5,11,2,3,71,3,337,-,166,1,-,5,146,1767,46,3,1,41,-,27,164,-,48,61,-,1,-,52,26,67,12,1,-,-,3072
+PESSOAL ADMINISTRATIVO, SERVIÇO DE LIMPEZA/CONSERVAÇÃO,Ajustador mecanico,-,-,-,-,-,-,-,-,-,-,-,-,-,4,17,-,-,-,1,-,-,-,-,-,2,-,1,-,-,-,-,-,-,-,-,25
+PESSOAL ADMINISTRATIVO, SERVIÇO DE LIMPEZA/CONSERVAÇÃO,Atendente de lavanderia,-,-,-,-,-,-,-,4,-,3,4,-,-,62,118,-,-,-,-,-,-,-,1,1,2,-,-,-,-,-,16,-,-,-,-,211
+PESSOAL ADMINISTRATIVO, SERVIÇO DE LIMPEZA/CONSERVAÇÃO,Auxiliar de lavanderia,1,-,-,-,-,9,2,106,-,29,7,8,-,469,2911,10,-,-,12,-,12,32,1,20,12,1,5,-,17,2,68,-,-,-,-,3734
+PESSOAL ADMINISTRATIVO, SERVIÇO DE LIMPEZA/CONSERVAÇÃO,Eletricista de instalações,-,-,-,-,1,-,-,6,-,8,-,-,1,45,320,-,-,-,3,-,1,8,7,1,52,-,-,-,8,-,5,-,-,-,-,466
+PESSOAL ADMINISTRATIVO, SERVIÇO DE LIMPEZA/CONSERVAÇÃO,Empregado doméstico nos serviços gerais,9,10,41,1,3,223,-,1159,1,349,66,27,29,84,1149,12,1,6,128,-,93,215,-,51,218,4,44,1,175,49,59,14,3,1,-,4225
+PESSOAL ADMINISTRATIVO, SERVIÇO DE LIMPEZA/CONSERVAÇÃO,Encanador,-,-,-,-,-,1,-,2,-,-,1,-,-,14,136,4,-,1,2,-,1,2,-,-,15,-,-,-,1,1,-,-,-,-,-,181
+PESSOAL ADMINISTRATIVO, SERVIÇO DE LIMPEZA/CONSERVAÇÃO,Jardineiro,-,-,-,-,-,7,-,8,-,14,-,-,-,20,119,5,-,-,3,-,-,4,-,1,14,-,-,-,-,1,2,-,-,-,-,198
+PESSOAL ADMINISTRATIVO, SERVIÇO DE LIMPEZA/CONSERVAÇÃO,"Lavadeiro, em geral",-,-,5,-,-,2,-,21,-,8,3,-,-,31,512,-,-,-,3,-,1,12,-,3,2,-,-,-,2,-,18,-,-,-,-,623
+PESSOAL ADMINISTRATIVO, SERVIÇO DE LIMPEZA/CONSERVAÇÃO,Lavador de roupas à máquina,-,-,1,-,3,-,-,3,-,2,-,1,-,41,417,1,-,-,1,-,-,2,-,-,-,-,-,-,1,-,8,-,-,-,-,481
+PESSOAL ADMINISTRATIVO, SERVIÇO DE LIMPEZA/CONSERVAÇÃO,Marceneiro,-,-,-,-,-,3,-,5,-,4,-,-,-,15,123,2,-,-,1,-,-,-,2,-,6,-,-,-,-,-,-,-,-,-,-,161
+PESSOAL ADMINISTRATIVO, SERVIÇO DE LIMPEZA/CONSERVAÇÃO,Operador de caldeira,-,-,-,-,-,-,-,-,-,-,-,-,-,6,134,-,-,-,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,141
+PESSOAL ADMINISTRATIVO, SERVIÇO DE LIMPEZA/CONSERVAÇÃO,Passador de roupas em geral,-,-,-,-,-,-,-,-,-,-,1,-,-,4,110,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,1,-,-,-,-,117
+PESSOAL ADMINISTRATIVO, SERVIÇO DE LIMPEZA/CONSERVAÇÃO,Pedreiro,2,-,-,-,-,3,-,5,-,3,-,-,2,41,410,2,-,-,2,-,-,1,1,1,43,-,-,-,2,2,1,-,-,-,-,521
+PESSOAL ADMINISTRATIVO, SERVIÇO DE LIMPEZA/CONSERVAÇÃO,Pintor a pincel e rolo (exceto obras e estruturas metálicas),-,-,-,-,-,-,-,-,-,2,-,-,-,10,24,-,-,-,3,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,40
+PESSOAL ADMINISTRATIVO, SERVIÇO DE LIMPEZA/CONSERVAÇÃO,Servente de obras,-,-,1,-,-,3,-,27,-,15,-,-,2,25,321,2,-,1,10,-,1,6,1,-,16,1,-,-,2,2,-,-,-,-,-,436
+PESSOAL ADMINISTRATIVO, SERVIÇO DE LIMPEZA/CONSERVAÇÃO,Zelador de edificio,9,2,10,2,2,73,-,741,-,203,20,-,28,170,904,30,1,-,18,-,72,145,-,20,97,2,3,-,118,26,60,14,1,-,-,2771
+PESSOAL ADMINISTRATIVO, SEGURANÇA,,47,27,51,10,61,911,12,3865,5,723,33,12,34,781,5244,80,1,8,432,-,395,1178,14,107,649,12,74,-,110,133,357,80,2,1,-,15449
+PESSOAL ADMINISTRATIVO, SEGURANÇA,Agente de pátio,-,1,-,-,2,4,-,20,-,7,-,-,-,37,36,-,-,2,13,-,2,1,-,-,6,-,-,-,1,2,3,-,-,-,-,137
+PESSOAL ADMINISTRATIVO, SEGURANÇA,Agente de segurança,-,3,-,-,5,119,-,208,-,18,-,-,1,90,366,8,-,2,22,-,7,208,-,8,22,-,2,-,5,3,7,5,-,-,-,1109
+PESSOAL ADMINISTRATIVO, SEGURANÇA,Agente de segurança penitenciária,-,-,-,-,-,-,-,44,-,6,6,-,-,1,-,-,-,-,-,-,4,-,-,-,-,-,-,-,-,-,-,-,-,-,-,61
+PESSOAL ADMINISTRATIVO, SEGURANÇA,Guarda-civil municipal,-,1,-,-,-,19,-,34,-,20,-,-,-,18,44,-,-,-,1,-,8,-,4,-,107,-,-,-,1,2,10,-,-,-,-,269
+PESSOAL ADMINISTRATIVO, SEGURANÇA,Guardador de veículos,-,-,-,-,-,-,-,1,-,5,-,-,-,2,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,9
+PESSOAL ADMINISTRATIVO, SEGURANÇA,Porteiro de edifícios,5,2,7,-,4,88,-,453,-,146,8,12,1,245,2095,54,-,-,99,-,2,364,9,34,49,11,2,-,42,9,26,-,-,-,-,3767
+PESSOAL ADMINISTRATIVO, SEGURANÇA,Vigia,40,14,13,7,8,496,8,2420,4,428,12,-,31,272,1785,11,1,1,175,-,298,395,-,46,334,1,25,-,47,98,209,52,2,-,-,7233
+PESSOAL ADMINISTRATIVO, SEGURANÇA,Vigilante,2,6,31,3,42,185,4,685,1,93,7,-,1,116,918,7,-,3,121,-,74,210,1,19,131,-,45,-,14,19,102,23,-,1,-,2864
+PESSOAL ADMINISTRATIVO, OUTRAS OCUPAÇÕES ADMINISTRATIVAS,,1912,726,754,719,952,10524,50,76028,106,10355,1264,109,904,9075,59124,714,169,993,3731,7,5767,5245,210,1182,41782,332,4447,123,10610,32841,2209,1945,139,459,37,285544
+PESSOAL ADMINISTRATIVO, OUTRAS OCUPAÇÕES ADMINISTRATIVAS,Acabador de calçados,-,-,-,-,-,-,-,-,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,1
+PESSOAL ADMINISTRATIVO, OUTRAS OCUPAÇÕES ADMINISTRATIVAS,Ascensorista,-,-,-,-,-,-,-,5,-,5,-,-,-,19,296,-,-,-,6,-,-,2,2,-,1,-,1,-,2,-,2,-,-,-,-,341
+PESSOAL ADMINISTRATIVO, OUTRAS OCUPAÇÕES ADMINISTRATIVAS,Copeiro,1,2,10,-,29,107,6,135,1,217,7,-,2,152,1731,25,-,3,75,-,4,189,5,28,54,2,5,-,65,10,21,6,-,-,-,2892
+PESSOAL ADMINISTRATIVO, OUTRAS OCUPAÇÕES ADMINISTRATIVAS,Copeiro de hospital,-,1,-,-,1,5,-,1,-,34,2,-,-,542,5550,17,-,-,8,-,-,74,2,8,-,-,-,-,4,1,39,3,-,-,-,6292
+PESSOAL ADMINISTRATIVO, OUTRAS OCUPAÇÕES ADMINISTRATIVAS,Costureira de reparação de roupas,-,-,-,-,-,1,-,1,-,1,-,-,-,27,200,1,-,-,3,-,-,-,-,2,-,-,-,-,-,-,2,-,-,-,-,238
+PESSOAL ADMINISTRATIVO, OUTRAS OCUPAÇÕES ADMINISTRATIVAS,Costureiro na confecção em serie,-,-,-,-,-,1,-,-,-,3,-,-,-,10,109,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,124
+PESSOAL ADMINISTRATIVO, OUTRAS OCUPAÇÕES ADMINISTRATIVAS,Cozinhador conservação de alimentos,-,-,-,-,-,-,-,4,-,5,1,-,-,32,192,-,-,-,3,-,-,-,-,-,1,-,-,-,-,-,4,-,-,1,-,243
+PESSOAL ADMINISTRATIVO, OUTRAS OCUPAÇÕES ADMINISTRATIVAS,Cozinheiro de embarcações,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,5,-,-,5
+PESSOAL ADMINISTRATIVO, OUTRAS OCUPAÇÕES ADMINISTRATIVAS,Cozinheiro de hospital,-,-,-,-,-,21,5,10,-,14,3,1,-,344,3457,7,-,-,7,-,1,56,3,26,1,-,2,-,3,1,195,1,-,-,-,4158
+PESSOAL ADMINISTRATIVO, OUTRAS OCUPAÇÕES ADMINISTRATIVAS,Cozinheiro geral,-,-,5,-,8,434,2,97,-,158,34,-,1,161,763,9,-,-,31,-,11,74,-,61,27,8,50,9,7,3,58,5,5,2,-,2023
+PESSOAL ADMINISTRATIVO, OUTRAS OCUPAÇÕES ADMINISTRATIVAS,Motorista de carro de passeio,1,64,44,15,69,109,5,1224,3,272,18,12,26,210,1219,12,6,11,201,-,132,220,5,46,2928,51,129,2,123,301,171,54,-,79,-,7762
+PESSOAL ADMINISTRATIVO, OUTRAS OCUPAÇÕES ADMINISTRATIVAS,Motorista de furgão ou veículo similar,-,216,96,-,8,47,3,1342,6,266,28,-,5,197,1971,9,1,3,217,-,133,518,7,132,1832,24,70,-,31,138,307,738,-,108,-,8453
+PESSOAL ADMINISTRATIVO, OUTRAS OCUPAÇÕES ADMINISTRATIVAS,Trabalhador de serviços de manutenção,1910,443,599,704,837,9799,29,73209,96,9380,1171,96,870,7381,43635,633,162,976,3180,7,5486,4112,186,879,36938,247,4190,112,10375,32387,1410,1138,129,269,37,253012
+Total,,,2983,10076,7879,5764,7492,46721,318,698933,2008,208402,134411,11494,11456,145886,999370,13084,864,4478,77062,61,54981,85004,9210,21472,121392,6211,9949,331,92874,50359,20975,35317,706,4991,306,2902820

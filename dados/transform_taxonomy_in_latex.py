@@ -16,7 +16,7 @@ def acrescentarFamília():
     global taxonomia
 
     csv_file = open('TISS/CBO2002_Familia.csv', 'r', encoding='utf-8-sig')
-    reader = csv.DictReader(csv_file, delimiter=';')
+    reader = csv.DictReader(csv_file)
     cbo_família = {}
     for line in reader:
         cbo_família[str(line['Código'])] = line['Título']

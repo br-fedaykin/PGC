@@ -63,7 +63,7 @@ def acrescentarContagem():
     global taxonomia
 
     csv_file = open('profissionais-saúde-2019-geral.csv', 'r', encoding='utf-8-sig')
-    profissões_contagem = csv.DictReader(csv_file, delimiter=';')
+    profissões_contagem = csv.DictReader(csv_file)
 
     for linha in profissões_contagem:
         ocupação = linha['Ocupações em geral'].strip()
@@ -81,7 +81,7 @@ def acrescentarCBO(filename):
     global taxonomia
 
     csv_file = open(filename, 'r', encoding='utf-8-sig')
-    cbo = csv.DictReader(csv_file, delimiter=';')
+    cbo = csv.DictReader(csv_file)
 
     for linha in cbo:
         código_cbo = str(linha['Código do Termo'])
