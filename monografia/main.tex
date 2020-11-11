@@ -209,11 +209,48 @@ Santo André -- SP
 \newpage
 \section{Introdução}
 
-A tecnologia Blockchain~\cite{nakamoto2008bitcoin}...
+{\color{blue} A tecnologia Blockchain~\cite{nakamoto2008bitcoin} permite o armazenamento confiável e distribuído das informações ...}
+
+A tecnologia Blockchain permite o armazenamento confiável e distribuído de informações, sem a necessidade de uma autoridade confiável central \cite{Swan2015}.
+A principal inovação da Blockchain foi eliminar a necessidade de uma contraparte confiável e distribuir a manutenção da rede aos próprios integrantes, que tem suas atividades coordenadas por uma nova gama de algoritmos de consenso.
+Essa família de algoritmos de consenso apresentam duas diferenças fundamentais em relação aos modelos tradicionais descritos na literatura quanto às premissas envolvidas \cite{Narayanan2016a}.
+A primeira diferença é a ideia do incentivo, introduzida no consenso da Blockchain ao exigir o consumo de recursos computacionais para participação na rede e ao alinhar a possibilidade de ganho ao comportamento honesto e de prejuízo à tentativa de corromper ou alterar os registros da rede.
+A segunda diferença é a noção estatística do consenso, isto é, enquanto algoritmos de consenso tradicionais modelam soluções que eventualmente encerram seu processamento e retornam uma decisão unânime e irrevogável, o protocolo da rede Bitcoin é fundamentalmente estocástico e contínuo ao longo do tempo.
+Para exemplificar, em termos práticos estima-se que o consenso sobre a validade de uma transação no Bitcoin leve em torno de uma hora, porém, mesmo após este tempo, não é possível ter certeza absoluta sobre a validade desta transação.
+De fato, o que ocorre é que a chance de reversão da transação (isto é, alteração do consenso estabelecido na rede para um estado onde a transação seja inválida) cai exponencialmente com o passar do tempo e o processamento de novas transações.
+
+{\color{blue} Inicialmente, ela foi usada no contexto de transações financeiras, mas foi expandida e tem sido utilizada em diversos outros contextos, sendo na área de saúde um deles ...}
+
+A ideia dos incentivos no consenso da Blockchain foi inicialmente usada no contexto de transações financeiras por meio do Bitcoin \cite{nakamoto2008bitcoin} e seu sucesso incentivou a proposta de novos protocolos de Blockchain e de mecanismos de consenso para diversos outros contextos, onde ocorre a troca e criação de qualquer tipo de ativo, financeiro ou não-financeiro.
+A vantagem de permitir a interação segura e confiável entre duas partes sem arcar com os custos de transação de uma terceira parte abre caminho para a formação de consórcios entre empresas de diversos segmentos onde a troca de informações agregue valor ao produto ou serviço \cite{Wust2017}.
+Um exemplo de área que se beneficia de tal integração é a área da saúde, uma vez que a qualidade do serviço prestado ao paciente aumenta se houver disponibilidade de seu histórico médico, que está distribuído pelas instituições que o atenderam no curso de vida dele.
+
+{\color{blue} A expansão foi possível pela inserção de contratos inteligentes, softwares que possibilitam a inserção de regras de negócios na Blockchain}
+
+Inicialmente, novas soluções baseadas em Blockchains lançavam sua própria rede, personalizando transações e regras de validação para atender a área de aplicação do projeto.
+Uma nova abordagem para soluções em Blockchain surgiu com a Ethereum \cite{Buterin2014}, uma Blockchain capaz de emular uma máquina virtual distribuída, na qual é possível implantar e interagir com Smart Contracts.
+Smart Contracts são programas que reagem à interação de um usuário ou de outro contrato, com capacidade para possuir estruturas de dados e regras de negócio arbitrárias.
+Os Smart Contracts se tornam interfaces de consulta e de alteração do estado da Blockchain, facilitando o desenvolvimento de novas soluções distribuídas (denominados como \emph{dApps}) sem as complicações de desenvolvimento e de risco de segurança de implantar uma rede própria.
+
+{\color{blue} Na área de saúde, os trabalhos propõem armazenar os prontuários dos pacientes na Blockchain...}
+
+{\color{blue} Entretanto, os prontuários não podem ser armazenados diretamente por duas razões: (1) problema de espaço no armazenamento ... (2) problema de visibilidade de dados sensíveis ...}
+
+Soluções baseadas em Blockchain com suporte nativo a Smart Contracts como a Ethereum possuem um problema relacionado ao armazenamento, por basicamente dois fatores.
+Primeiro, existe um custo associado ao uso, o que torna inviável o armazenamento de dados muito extensos.
+Mesmo que exista uma amplitude de recursos para se despender no uso da Blockchain, há uma limitação imposta ao tamanho de uma transação e, consequentemente, no volume de dados que pode ser publicado por meio dela.
+Segundo, dados na Blockchain são inerentemente visíveis a todos os usuários, inviabilizando o seu uso para o armazenamento de informações sensíveis.
+Mesmo informações criptografadas correm risco se forem incluídas na Blockchain, uma vez que não é possível nem apagar ou alterar a senha usada na geração do conteúdo criptografado, pondo em risco o sigilo da informação em caso de vazamento de senha.
+
+{\color{blue} Nesse sentido, este trabalho propõe um sistema, baseado em contratos inteligentes, que permite o acesso aos prontuários. Para isso, foi criado um modelo de dados específico para lidar com o espaço de armazenamento e foi usada a encriptação baseada em atributos para lidar com o problema da visibilidade de dados ...}
+
+Este trabalho apresenta um sistema distribuído de compartilhamento de arquivos médicos por meio de Smart Contracts que registram informações sobre arquivos médicos, que são armazenados fora da Blockchain e tem seu conteúdo protegido contra o acesso não autorizado por meio da criptografia baseada em atributos.
+Este trabalho também propõe uma taxonomia para fundamentar a criação de atributos para uso na criptografia a deriva algumas políticas de acesso em termos destes atributos que podem vir a ser utilizadas em cenários de uso reais, modelados a partir da análise das regras na legislação
+brasileira que disciplinam as condições de acesso ao prontuário de um paciente .
 
 \subsection{Objetivo geral}
 
-Criar um sistema, com base em contratos inteligentes executados em uma Blockchain, que permita o acesso a prontuários eletrônicos dos pacientes via políticas de acesso baseadas em atributos.
+Criar um sistema distribuído, com base em Smart Contracts executados em uma Blockchain, que permita o acesso a prontuários eletrônicos dos pacientes por meio de políticas de acesso baseadas em atributos.
 
 \subsection{Objetivos específicos}
 
@@ -223,7 +260,7 @@ Criar um sistema, com base em contratos inteligentes executados em uma Blockchai
 
 \item Analisar como funciona a criptografia baseada em atributos (\textit{attribute-based encryption}, em inglês).
 
-\item Analisar como funcionam a tecnologia Blockchain {\color{red}escolher a tecnologia} e os contratos inteligentes.
+\item Analisar como funcionam a tecnologia Blockchain Ethereum e os contratos inteligentes.
 
 \item Implementar os contratos inteligentes para dar acesso aos prontuários eletrônicos utilizando a taxonomia e a criptografia baseada em atributos.
 
@@ -329,7 +366,7 @@ O administrador do centro de emergência tem posse da chave do atributo ``\emph{
 Este cenário privilegia o atendimento de emergência ao considerar a presença prévia do atributo ``\emph{emergência}'' nas políticas de acesso, mas isto não constitui uma obrigatoriedade.
 Sem este atributo em um prontuário, este seria aplicado sob demanda, quando por exemplo um hospital recebesse um pedido de acesso ao prontuário junto a uma notificação de internação do paciente, sendo removido das condições de acesso quando tão logo fosse possível delegar a decisão ao paciente ou seu representante legal.
 
-\subsection{Blockchain, \emph{Distributed Ledger} e o Ethereum}
+\subsection{Blockchain e Smart Contracts}
 
 {\color{ForestGreen}Explicar quando nasceu, quem a criou e que resolve o problema de não estar atrelada somente a transações financeiras, tendo um uso mais abrangente para qualquer domínio de aplicação. (2 parágrafos).}
 
@@ -842,11 +879,11 @@ Após a geração da chave pessoal de um atributo, cabe ao certificador realizar
 %O sistema proposto integra bases de dados de diferentes órgãos que, quando tornados  certificadores, serão providos com a capacidade de publicar tantos atributos quanto considerarem necessários.
 
 Em resumo, o fluxo da requisição por um atributo, isto é, da requisição das chaves pessoais daquele atributo para um usuário funciona da seguinte maneira.
-Primeiro, o módulo cliente realiza uma requisição de um atributo, publicando-a na Blockcahin.
+Primeiro, o módulo cliente realiza uma requisição de um atributo, publicando-a na Blockchain.
 Esta requisição contém uma situação, uma lista de atributos (neste exemplo, um só) e o endereço do certificador responsável por elas.
 Em um segundo momento, o certificador desse atributo consulta a Blockchain para obter as requisições e decide se irá processá-las ou não.
 A seguir, ele atualiza a situação da requisição na Blockchain de acordo com uma lista possível de situações, informando se aceitou ou rejeitou por meio dos códigos disponíveis na Blockchain.
-Finalmente, o usuário usa o módulo client para checar a Blockchain, a resposta é recebida e se ela for positiva, caberá ao usuário e certificador acordarem a forma de envio da chave pessoaldo atributo.
+Finalmente, o usuário usa o módulo client para checar a Blockchain, a resposta é recebida e se ela for positiva, caberá ao usuário e certificador acordarem a forma de envio da chave pessoal do atributo.
 Cabe destacar que quaisquer operações criptográficas envolvendo chaves sempre ocorrem localmente e que chaves nunca são transmitidas pela rede para evitar a exposição de informação sensível.
 
 \subsubsection{Criptografia com ABE}
