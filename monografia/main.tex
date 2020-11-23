@@ -1550,7 +1550,7 @@ A geração de uma política de acesso aleatória com $n$ atributos utiliza a se
 se a política contém mais de 1 atributo, escolhe-se um operador lógico de forma aleatória.
 O operador lógico admite 2 operandos, então o processo é repetido em cada operando respectivamente com tamanho de política de acesso $k$ e $n-k$, onde $k$ é um número aleatório e $1 < k < n$.
 Quando $n = 1$, o nó atual representa um atributo e um atributo aleatório é escolhido.
-O mesmo experimento foi executado em 3 cenários, um onde apenas o operador AND é usado na construção da política de acesso aleatória, um onde apenas o operador OR e um onde ambos são usados na geração das políticas, representados pelas linhas AZUL, VERMELHA E VERDE, respectivamente.
+O mesmo experimento foi executado em 3 cenários, um onde apenas o operador AND é usado na construção da política de acesso aleatória, um onde apenas o operador OR e um onde ambos são usados na geração das políticas, entretanto tal divisão não resultou em alterações de tamanho da cifra.
 
 Os dados apresentados permitem a inferência de uma função linear na forma $y = ax + b$ que descreva o tamanho esperado de uma cifra $Cf$ em função dos $m$ atributos usados na política de acesso:
 
@@ -1574,50 +1574,71 @@ O consumo de gas realizado por uma transação tem seu comportamento detalhado n
   \label{fig:serie-gasLimit}
 \end{figure}
 
-O custo em gas de uma transação possui dois componentes, um custo denominado como intrínseco, definido para o caso de uma transação que contenha dados como:
+O custo em gas $g$ de uma transação $tx$ depende d possui dois componentes, um custo $g_{0}(tx)$ denominado como intrínseco, e um custo $C(tx)$ denominado como geral:
 
-\[g_{0}(n) = G_{transaction} + n \cdot G_{txdatanonzero}\]
+\[ g(tx) = g_{0}(tx) + C(tx) \]
 
-E um custo $C$ denominado como geral, definido em detalhes no anexo H do Yellow Paper, basicamente descrito como a soma dos custos de gas das operações executadas em decorrência da transação.
-Para uma transação que armazene dados em um Smart Contract, serão cobrados os custos de armazenamento permanente $C_{SSTORE}$, o custo de invocação do contrato $C_{CALL}$ e o custo por byte de alocação de memória temporária, genericamente descrito como possuindo um custo $G_{verylow}$.
-O custo de alocação de memória envolve a tarefa de transferência dos dados da transação para a memória durante a execução da função do Smart Contract.
-O custo geral estimado para armazenar $n$ bytes de dado seria portanto:
+O custo intrínseco de uma transação é o custo associado ao próprio ato de realização de uma transação.
+Com a finalidade de estimar qual é o limite de capacidade de uma transação, podemos aproximar $g(tx)$ em termos do tamanho em bytes dos dados codificados em $tx$, que será denominado como $n$.
+A função de aproximação em termos de $n$ envolve dois custos principais, o custo base de transação $G_{transaction}$ e o custo de carga de dados $G_{txdatanonzero}$, cobrado por byte, na seguinte forma:
 
-\[C(n) = C_{CALL} + C_{SSTORE} + n \cdot G_{verylow}\]
+\[ g_{0}'(n) = G_{transaction} + n \cdot G_{txdatanonzero} \]
 
-Portanto, o custo total em gas $g$ de uma transação de armazenamento de $n$ bytes de dados será de:
+Onde $n$ é o tamanho em bytes dos dados codificados na transação.
+O custo geral $C$ de uma transação envolve o consumo de gas causado pela execução da função quando aplicados aos parâmetros (caso existam) que estão codificados na transação.
+Uma função que estima
+E um custo $C$ denominado como geral, definido em detalhes no anexo H do , basicamente descrito como a soma dos custos de gas das operações executadas em decorrência da transação.
+Para uma transação que armazene dados em um Smart Contract, os custos majoritários são o custo de armazenamento
+persistente $C_{SSTORE}$.
+O custo $C_{SSTORE}$ pode ser aplicado mais de uma vez no armazenamento de uma mesma variável, caso a variável possua mais de 32 bytes.
+Isto ocorre porque a EVM trabalha somente com palavras de 256, realizando sempre o alinhamento de variáveis de tamanho menor e truncando valores maiores em uma quantidade de palavras de 32 bytes.
+O custo de $C_{SSTORE}$ tem duas faixas de custo, $G_{sset}$ e $G_{sreset}$, onde a primeira é maior que a segunda e é aplicada somente na escrita da primeira palavra de 32 bytes dos dados, enquanto a segunda é aplicada às palavras restantes formadas pela divisão de uma variável maior que 32 bytes.
 
-\begin{equation}
-  \begin{aligned}
-    g(n) & = g_{0}(n) + C(n)\\
-      & = G_{transaction} + n \cdot G_{txdatanonzero} + C_{CALL} + C_{SSTORE} + n \cdot G_{verylow}
-  \end{aligned}
-\end{equation}
 
-Igualando $g(n)$ ao limite de gas, podemos isolar $n$ e descobrir desta forma qual é o limite do conteúdo que uma transação pode conter:
+Além do custo de armazenamento, é útil considerar custos inescapáveis de uma função de um Smart Contract com a finalidade de armazenar bytes de forma permanente, tais como o custo de invocação do contrato $C_{CALL}$ e o custo por byte de alocação de memória, associado a um custo genérico $G_{verylow}$.
+Este custo de alocação de memória envolve a tarefa de transferência dos dados da transação para a memória durante a execução da função do Smart Contract.
+A função aproximada para descrever o custo geral de uma transação com a finalidade de armazenar $n$ bytes em um Smart Contract ganha a seguinte forma:
 
-\begin{equation}
-  \begin{aligned}
-    gasLimit & = G_{transaction} + n \cdot G_{txdatanonzero} + C_{CALL} + C_{SSTORE} + n \cdot G_{verylow} \\
-     n_{max} & = \left\lfloor \frac{gasLimit - (G_{transaction} + C_{CALL} + C_{SSTORE})}{(G_{txdatanonzero} + G_{verylow})} \right\rfloor \\
-     n_{max} & = \left\lfloor \frac{12.474.388 - (21000 + 700 + 20000)}{68 + 3} \right\rfloor \\
-     n_{max} & = 175.108
-  \end{aligned}
-\end{equation}
+\[ C'(n) = C_{CALL} + G_{sset} +  ( w(n) - 1 ) \cdot G_{sreset} + n \cdot G_{verylow} \]
 
-Em um cenário ideal onde não há outras operações sendo realizadas pela função que armazena dados, a transação poderia conter até 175.108 bytes em dados.
-No caso de uma cifra ABE, podemos igualar o tamanho da cifra $Cf(m)$ ao valor de $n_{max}$ e deduzir a partir disso a quantidade máxima de atributos $m$ que podem ser usadas em uma política de acesso:
+Onde $w = \left\lceil \frac{n}{32} \right\rceil $ representa a quantidade de palavras formadas a partir dos dados de entrada.
+Portanto, o custo aproximado total em gas $g'$ de uma transação de armazenamento de $n$ bytes de dados Smart Contract é:
 
 \begin{equation}
   \begin{aligned}
-    n_{max} & = 3 \cdot 495 \cdot m + 164 \\
-    m_{max} & = \left\lfloor \frac{175.108 - 164}{3 \cdot 495} \right\rfloor \\
-    m_{max} & = 117
+    g'(n) & = g_{0}(n) + C(n)\\
+      & = G_{transaction} + n \cdot G_{txdatanonzero} + C_{CALL} + G_{sset} +  ( w(n) - 1 ) \cdot G_{sreset} + n \cdot G_{verylow}
   \end{aligned}
 \end{equation}
 
-Isto significa que, em um cenário ideal de uso onde não há gastos de processamento além do armazenamento da cifra ABE codificada na transação, ainda assim haveria um limite imposto à política de acesso, de forma que sejam utilizado no máximo 177 atributos em sua composição.
+Igualando $g'(n)$ ao último valor da série histórica do limite de gas, podemos isolar $n$ e descobrir desta forma qual é a capacidade máxima de bytes que uma transação pode conter:
 
+\begin{equation}
+  \begin{aligned}
+    gasLimit & = G_{transaction} + n \cdot G_{txdatanonzero} + C_{CALL} + G_{sset} +  ( w(n) - 1 ) \cdot G_{sreset} + n \cdot G_{verylow} \\
+    gasLimit & = G_{transaction} + n \cdot G_{txdatanonzero} + C_{CALL} + G_{sset} +  ( \left\lceil \frac{n}{32} \right\rceil - 1 ) \cdot G_{sreset} + n \cdot G_{verylow} \\
+     N_{max} & = \left\lfloor \frac{gasLimit + G_{sreset} - (G_{transaction} + C_{CALL} + C_{SSTORE})}{(G_{txdatanonzero} + G_{verylow} + \frac{G_{sreset}}{32})} \right\rfloor \\
+     N_{max} & = \left\lfloor \frac{12474388 + 5000 - (21000 + 700 + 20000)}{68 + 3 + 156.25} \right\rfloor \\
+     N_{max} & = 54731
+  \end{aligned}
+\end{equation}
+
+Ou seja, em um cenário ideal onde não há outras operações sendo realizadas pela função que armazena dados, a transação poderia conter até 54.731 bytes em dados.
+No caso de uma cifra ABE, podemos igualar o tamanho da cifra $Cf(m)$ ao valor de $n_{max}$ e deduzir a partir disso a quantidade máxima de atributos $M_{max}$ que podem ser usadas em uma política de acesso:
+
+\begin{equation}
+  \begin{aligned}
+    N_{max} & = 3 \cdot 495 \cdot m + 164 \\
+    M_{max} & = \left\lfloor \frac{54731 - 164}{3 \cdot 495} \right\rfloor \\
+    M_{max} & = 36
+  \end{aligned}
+\end{equation}
+
+FIGURA X
+
+Isto significa que, no cenário mais simplista de uso, onde não há custos além dos envolvidos no armazenamento de uma cifra ABE em uma única variável persistente de um Smart Contract, ainda assim haveria um limite imposto à política de acesso, de forma que sejam utilizado no máximo 36 atributos em sua composição.
+A função de aproximação g' segue de perto o custo de gas obtidos por experimentação, conforme demonstra a figura X.
+As linhas azul e vermelho apontam para os limites de uso de gas das redes Rinkeby e principal, respectivamente.
 
 %\subsection{Atributos na Blockchain}
 %\label{sec:sub:experimento-atributos}
@@ -1625,8 +1646,22 @@ Isto significa que, em um cenário ideal de uso onde não há gastos de processa
 \subsection{Requisições na Blockchain}
 \label{sec:sub:experimento-requisicoes}
 
+Uma requisição na Blockchain parte de um usuário para um certificador e contém em si uma lista de atributos, para que o certificador decida pela concessão (ou não) das chaves pessoais daqueles atributos ao usuário.
+A estrutura de dados de uma requisição é padronizada, onde todos os seus elementos são variáveis de tamanho fixo com a exceção da lista de atributos, que possui um tamanho arbitrário de acordo com a escolha do usuário.
+A variável de tamanho dinâmico dessa estrutura de dados impõe à requisição as mesmas limitações discutidas na subseção anterior, que trata sobre a codificação da cifra, de forma que o limite ao tamanho de uma transação no Ethereum também leva a uma limitação do tamanho de uma requisição, ou seja, existe um limite para a quantidade de atributos que podem ser solicitados em uma mesma requisição.
+Entretanto, nota-se que tal limitação não apresenta complicações como no caso da cifra, uma vez que a requisição de atributos é divisível.
+Uma requisição com uma grande lista de atributos pode ser dividida em múltiplas requisições independentes com subconjuntos desta lista.
+
+FIGURA Y
+
+A figura Y mostra a relação entre a quantidade de atributos solicitados e o custo em gas para a publicação.
+Repare que
+
+
 \subsection{Custos de transação no Ethereum}
 \label{sec:sub:experimento-custos}
+
+
 
 % -------------------------------------------------------------------- %
 \newpage
@@ -1639,6 +1674,43 @@ Isto significa que, em um cenário ideal de uso onde não há gastos de processa
 \appendix
 \section{Taxonomia de profissões na área da saúde}
 \label{app:taxonomiaProfissões}
+
+Esta taxonomia foi montada a partir da junção de fontes de dados distintas, coletadas durante o trabalho.
+Especificamente, foi utilizada a Classificação Brasileira de Ocupações para obtenção do código CBO, que é um código único associado a cada profissão pelo Ministério do Trabalho.
+Entretanto, a CBO se demonstrou incompleta por não possuir o código ou a descrição de certas profissões, como por exemplo de certas especialidades como ``Enfermeiro Estomaterapeuta'', ``Médico residente'' ou ``Técnico de enfermagem de saúde da família''.
+Isto acontece basicamente por um lapso de atualização da CBO, que não reflete profissões já criadas por outras legislações, quer seja pela morosidade da tramitação de propostas de inclusão das profissões na CBO ou por uma divergência ainda não avaliada pelos legisladores.
+
+Fontes de dados disponibilizadas pelo DATASUS foram utilizadas para completar e atualizar a CBO em relação a possíveis profissões que estivessem ausentes, completando assim a lista de profissões.
+Tanto a CBO quanto as fontes de consulta do DATASUS realizam categorizações destas profissões, entretanto estas são conflitantes.
+A CBO define uma semântica a cada digito que compõem o código CBO, onde os dois últimos dígitos correspondem a ocupações, o quarto digito da esquerda para a direita corresponde a uma família, que é um conjunto de ocupações similares.
+A fonte de consulta do DATASUS ignora esse conceito de família e realiza um agrupamento arbitrário e desbalanceado, em termos de quantidades de ocupações.
+Fez parte deste trabalho mesclar as fontes de dados e apresentar uma taxonomia unificada da área da saúde.
+
+A taxonomia foi construída seguindo as seguintes heurísticas, enumeradas em ordem de importância e aplicação na construção da taxonomia apresentada mais abaixo.
+
+\begin{enumerate}
+  \item seguir a terminologia e codificação da CBO;
+  \item seguir a terminologia e codificação encontrada em fontes de consulta do DATASUS, caso a ocupação não conste na CBO;
+  \item seguir o agrupamento e especialização do DATASUS;
+  \item dentro de cada grupo de especialização, seguir as famílias de ocupações do CBO, caso se trate de ocupações na área da saúde;
+  \item dentro de cada grupo de especialização, tratar como uma família de ocupações a categorização feita pelo DATASUS, caso se tratem de ocupações fora da área da saúde;
+  \item manter, dentro de cada especialização, um grupo especial denominado como ``sem código CBO'' para descrever ocupações sem qualquer tipo de referência ou codificação.
+\end{enumerate}
+
+A regra 1 permite que a taxonomia possua a maior quantidade possível de termos interoperáveis com outras bases de dados dependentes da CBO.
+A regra 6 complementa a finalidade na regra 1 de conservar a interoperabilidade entre sistemas, na medida em que evita a criação ou derivação de códigos para as ocupações que não os tenham.
+A regra 2 somente cobre os casos de termos e códigos ausentes na CBO.
+As regras 3 a 5 não tratam das profissões em si mas de seus agrupamentos.
+Foi observado que uma categorização seguindo os termos da CBO produziriam uma lista exaustiva de profissões que não estão relacionadas à área da saúde, ao menos não no aspecto analisado neste trabalho, que é sobre o acesso e utilização de informações em prontuários médicos.
+A categorização oferecida pelo DATASUS resolve esse problema, por outro lado também introduz uma aglutinação de diversas famílias de profissões na área da saúde que poderiam ser úteis para serem usadas como termos de atributos no sistema.
+Portanto, as regras 3, 4 e 5 tentam unir os melhores aspectos da CBO e do DATASUS para produzir a taxonomia mais útil possível no escopo deste trabalho.
+
+
+\subsection{Taxonomia de famílias de profissões}
+
+teste a
+
+\subsection{Taxonomia de profissões envolvidas na área da saúde}
 
 \import{./}{taxonomia-profissões-completo.tex}
 
