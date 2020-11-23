@@ -29,13 +29,14 @@
 \usepackage{pifont}% http://ctan.org/pkg/pifont
 \usepackage{import}
 \usepackage{tikz}
+\input{solidity-highlighting.tex}	% copy the file from this repo
 
 % custom link style
 \newcommand{\link}[2]{{\color{blue}\underline{\href{#1}{#2}}}}
 \newcommand{\tabitem}{~~\llap{\textbullet{\ensuremath{\bullet}}}~~}
 \newcommand*{\SignatureAndDate}[4]{%
-	\parbox{7cm}{
-      \centering
+\parbox{7cm}{
+  \centering
       \rule{6cm}{1pt}
        #1
 
@@ -530,7 +531,7 @@ Com Solidity é possível descrever funções e criar variáveis e estruturas de
 A coleção de dados armazenados na Blockchain compõe o que se denomina como estado da EVM.
 O código \ref{cod:exemploSmartContract} contém um exemplo de uso de Solidity, implementando um contrato que disponibiliza o acesso de resultado de exames a pacientes.
 
-\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={cod:exemploSmartContract}, caption={Exemplo de Contrato Inteligente}}
+\lstset{basicstyle=\small, numbers=left, language=Solidity, keywordstyle=\color{blue}, numbersep=1pt, label={cod:exemploSmartContract}, caption={Exemplo de Contrato Inteligente}}
 \begin{lstlisting}
  pragma solidity ^0.5.1;
  pragma experimental ABIEncoderV2;
@@ -921,7 +922,7 @@ Esse comportamento da biblioteca foi modificado no protótipo deste trabalho par
 
 % {\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como realizar a encriptação. Explicar cada linha do código.}
 
-\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={cod:metodoCriptografia}, caption={Criptografando um arquivo usando a biblioteca DCPABE}}
+\lstset{basicstyle=\small, numbers=left, language=Solidity, keywordstyle=\color{blue}, numbersep=1pt, label={cod:metodoCriptografia}, caption={Criptografando um arquivo usando a biblioteca DCPABE}}
 
 \begin{lstlisting}
  public void encrypt(String file, String policy, String[] authorities) {
@@ -963,7 +964,7 @@ Em se tratando da conexão, a biblioteca Web3j fornece conectividade com diferen
 Entre essas fontes, podem-se citar a rede principal (denominada \emph{MainNet}), as redes de teste oficiais (Ropsten, Rinkeby e Kovan) ou simulações da rede Ethereum para teste por meio de programas como o Ganache~\cite{Ganache2020}.
 % A Web3j se conecta ao provedor de dados por meio de Protocolos HTTP/HTTPS e IPC.
 
-\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={cod:conexaoBlockchain}, caption={Código para conexão com a Blockchain usando o web3j}}
+\lstset{basicstyle=\small, numbers=left, language=Solidity, keywordstyle=\color{blue}, numbersep=1pt, label={cod:conexaoBlockchain}, caption={Código para conexão com a Blockchain usando o web3j}}
 
 \begin{lstlisting}
  private final Web3j web3j;
@@ -982,7 +983,7 @@ Dentro desse módulo, a classe \emph{BlockchainConnection} é a responsável por
 
 % {\color{Magenta} 1 parágrafo para explicar as 3 linhas mais importantes do código fonte de como acessar um contrato inteligente. Explicar cada linha do código.}
 
-\lstset{basicstyle=\small, numbers=left, language=java, keywordstyle=\color{blue}, numbersep=1pt, label={cod:acessoSmartContract}, caption={Acessando um Smart Contract na Blockchain}}
+\lstset{basicstyle=\small, numbers=left, language=Solidity, keywordstyle=\color{blue}, numbersep=1pt, label={cod:acessoSmartContract}, caption={Acessando um Smart Contract na Blockchain}}
 
 \begin{lstlisting}
  private CiphertextJSON getCiphertext(String user, String fileName) {
@@ -1035,7 +1036,7 @@ Essa escolha é feita para assegurar que todo certificador possua um endereço E
 
 %{\color{Magenta} Inserir o código da linha 7 até 20.}
 
-\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABEAuthority}, caption={Dados em SmartDCPABEAuthority}}
+\lstset{basicstyle=\small, numbers=left, language=Solidity, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABEAuthority}, caption={Dados em SmartDCPABEAuthority}}
 \begin{lstlisting}
  contract SmartDCPABEAuthority is Collection {
 
@@ -1070,7 +1071,7 @@ Por outro lado, não seria fácil implementar os protocolos de revogação e sub
 
 % {\color{Magenta} Inserir o código da linha 6 até 24.}
 
-\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABEKeys}, caption={Dados em SmartDCPABEKeys}}
+\lstset{basicstyle=\small, numbers=left, language=Solidity, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABEKeys}, caption={Dados em SmartDCPABEKeys}}
 \begin{lstlisting}
  contract SmartDCPABEKeys is Collection {
 
@@ -1112,7 +1113,7 @@ O contrato também gerencia informações sobre as bases de dados onde os arquiv
 
 % {\color{Magenta} Inserir o código da linha 6 até 39.}
 
-\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABEFiles}, caption={Dados em SmartDCPABEFiles}}
+\lstset{basicstyle=\small, numbers=left, language=Solidity, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABEFiles}, caption={Dados em SmartDCPABEFiles}}
 \begin{lstlisting}
  contract SmartDCPABEFiles is Collection {
 
@@ -1170,7 +1171,7 @@ A transmissão dos atributos ocorre fora da Blockchain e pode usar qualquer meio
 
 % {\color{Magenta} Inserir o código da linha 6 até 35.}
 
-\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABERequests}, caption={Dados em SmartDCPABERequests}}
+\lstset{basicstyle=\small, numbers=left, language=Solidity, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABERequests}, caption={Dados em SmartDCPABERequests}}
 \begin{lstlisting}
  contract SmartDCPABERequests is Collection {
 
@@ -1219,7 +1220,7 @@ A lista \emph{userAddresses} armazena todos os endereços já cadastrados para p
 
 % {\color{Magenta} Inserir o código da linha 6 até 16.}
 
-\lstset{basicstyle=\small, numbers=left, language=bash, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABEUsers}, caption={Dados em SmartDCPABEUsers}}
+\lstset{basicstyle=\small, numbers=left, language=Solidity, keywordstyle=\color{blue}, numbersep=1pt, label={cod:SmartDCPABEUsers}, caption={Dados em SmartDCPABEUsers}}
 \begin{lstlisting}
  contract SmartDCPABEUsers is Collection {
 
@@ -1722,6 +1723,791 @@ Portanto, as regras 3, 4 e 5 tentam unir os melhores aspectos da CBO e do DATASU
 \section{Código fonte dos Smart Contracts}
 \label{app:codigoSmartContracts}
 
+\begin{lstlisting}[language=Solidity, caption=SmartDCPABEAuthority]
+  // SPDX-License-Identifier: MIT
+  pragma solidity ^0.7.0 <= 0.7.5;
+
+  import "./SmartDCPABEUsers.sol";
+  import "./Collection.sol";
+
+  contract SmartDCPABEAuthority is Collection {
+
+      struct Certifier {
+          address addr;
+          string name;
+          string email;
+          uint64 numPublicKeys;
+      }
+
+      address[] public certifierAddresses;
+      mapping (address => Certifier) certifiers;
+      SmartDCPABEUsers user;
+      address contractKeys;
+
+      constructor(address root) Collection(root) {}
+
+      function setContractDependencies(ContractType contractType, address addr) override public onlyOwner {
+          if (contractType == ContractType.USERS) {
+              user = SmartDCPABEUsers(addr);
+          } else if (contractType == ContractType.KEYS) {
+              contractKeys = addr;
+          }
+      }
+
+      function incrementPublicKeyCount(address addr) public {
+          require(msg.sender == contractKeys, "Operation not allowed.");
+          certifiers[addr].numPublicKeys++;
+      }
+
+      function isCertifier(address addr) public view returns (bool) {
+          return (bytes(certifiers[addr].name)).length > 0;
+      }
+
+      function addCertifier(address addr, string memory name, string memory email) public {
+          certifierAddresses.push(addr);
+          certifiers[addr] = Certifier(addr, name, email, 0);
+      }
+
+      function getCertifier
+      (
+          address addr
+      )
+          public
+          view
+          returns
+      (
+          address addr_,
+          string memory name,
+          string memory email,
+          uint64 numPublicKeys
+      )
+      {
+          Certifier storage c = certifiers[addr];
+          return (c.addr, c.name, c.email, c.numPublicKeys);
+      }
+  }
+\end{lstlisting}
+
+\begin{lstlisting}[language=Solidity, caption=SmartDCPABEFiles]
+  // SPDX-License-Identifier: MIT
+  pragma solidity ^0.7.0 <= 0.7.5;
+  import "./SmartDCPABEUsers.sol";
+  import "./Collection.sol";
+
+  contract SmartDCPABEFiles is Collection {
+
+      struct Recording {
+          uint64 serverID;
+          string uRIPathname;
+          bytes32 hashing;
+          uint64 timestamp;
+      }
+
+      struct Ciphertext {
+          string policy;
+          bytes c0;
+          bytes c1;
+          bytes c2;
+          bytes c3;
+      }
+
+      struct FileServer {
+          string domain;
+          string path;
+          uint16 port;
+      }
+
+      uint64 public numServers;
+      mapping (address => string[]) fileNames;
+      mapping (address => mapping(string => Recording)) files;
+      mapping (address => mapping(string => Ciphertext)) ciphertexts;
+      /* IDEIA: in order to allow ciphertext changes, ciphertext must be decoupled from Recording,
+       * maybe in a map of the recording to a Ciphertext object
+       */
+
+      FileServer[] servers;
+      SmartDCPABEUsers users;
+
+      constructor(address root) Collection(root) {}
+
+      function setContractDependencies(ContractType contractType, address addr) override public onlyOwner {
+          if (contractType == ContractType.USERS) {
+              users = SmartDCPABEUsers(addr);
+          }
+      }
+
+      function addServer(string memory domain, string memory path, uint16 port) public returns (uint64 serverIndex) {
+          servers.push(FileServer(domain, path, port));
+          serverIndex = numServers;
+          numServers++;
+      }
+
+      function addRecording (
+          address addr,
+          string memory filename,
+          uint64 serverID,
+          string memory uRIPathname,
+          bytes32 hashing,
+          uint64 timestamp
+      )
+          public
+          onlyFileOwner(addr)
+          validUser(addr)
+
+      {
+          if (files[addr][filename].timestamp == 0) {
+              fileNames[addr].push(filename);
+          }
+          files[addr][filename] = Recording(serverID, uRIPathname, hashing, timestamp);
+      }
+
+      function addRecordingCiphertext
+      (
+          address addr,
+          string memory fileName,
+          string memory policy,
+          bytes memory c0,
+          bytes memory c1,
+          bytes memory c2,
+          bytes memory c3
+      )
+          public
+          onlyFileOwner(addr)
+      {
+          ciphertexts[addr][fileName] = Ciphertext(policy, c0, c1, c2, c3);
+      }
+
+      function deleteFileAndCiphertext
+      (
+          address addr,
+          string memory filename
+      )
+          public
+          onlyFileOwner(addr)
+      {
+          delete files[addr][filename];
+          delete ciphertexts[addr][filename];
+      }
+
+      function getCiphertext
+      (
+          address addr,
+          string memory fileName
+      )
+          public
+          view
+          returns
+      (
+          string memory policy,
+          bytes memory c0,
+          bytes memory c1,
+          bytes memory c2,
+          bytes memory c3
+      )
+      {
+          Ciphertext memory ct = ciphertexts[addr][fileName];
+          return (
+              ct.policy,
+              ct.c0,
+              ct.c1,
+              ct.c2,
+              ct.c3
+          );
+      }
+
+      function getServerID(string memory domain) public view returns (int64) {
+          for (uint64 i = 0; i < numServers; i++) {
+              if (keccak256(bytes(domain)) == keccak256(bytes(servers[i].domain))) {
+                  return int64(i);
+              }
+          }
+          return -1;
+      }
+
+      function getServer(uint64 index) public view returns (string memory domain, string memory path, uint16 port) {
+          assert(index < numServers);
+          FileServer storage s = servers[index];
+          return (s.domain, s.path, s.port);
+      }
+
+      function getRecording
+      (
+          address addr,
+          uint64 index
+      )
+          public
+          view
+          returns
+      (
+          string memory name,
+          uint64 serverID,
+          string memory uRIPathname,
+          bytes32 hashing,
+          uint64 timestamp
+      )
+      {
+          return getRecording(addr, fileNames[addr][index]);
+      }
+
+      function getRecording
+      (
+          address addr,
+          string memory name
+      )
+          public
+          view
+          returns
+      (
+          string memory name_,
+          uint64 serverID,
+          string memory uRIPathname,
+          bytes32 hashing,
+          uint64 timestamp
+      )
+      {
+          Recording storage r = files[addr][name];
+          return (
+              name,
+              r.serverID,
+              r.uRIPathname,
+              r.hashing,
+              r.timestamp
+          );
+      }
+
+      function getFileNameByIndex(address addr, uint64 index) public view returns (string memory) {
+          return fileNames[addr][index];
+      }
+
+      function getFileCounting(address addr) public view returns (uint256) {
+          return fileNames[addr].length;
+      }
+
+      modifier onlyFileOwner(address addr) {
+          require (msg.sender == addr, "Operation not allowed. User must be the file owner");
+          _;
+      }
+
+      modifier validUser(address addr) {
+          require(users.isUser(addr), "User not registered");
+          _;
+      }
+
+      modifier validFile(address addr, string memory fileName) {
+          require(files[addr][fileName].timestamp != 0, "File does not exist.");
+          _;
+      }
+  }
+\end{lstlisting}
+
+\begin{lstlisting}[language=Solidity, caption=SmartDCPABEKeys]
+  // SPDX-License-Identifier: MIT
+  pragma solidity ^0.7.0 <= 0.7.5;
+  import "./SmartDCPABEUtility.sol";
+  import "./SmartDCPABEAuthority.sol";
+  import "./Collection.sol";
+
+  contract SmartDCPABEKeys is Collection {
+
+      struct PublicKey {
+          Bytes127 eg1g1ai;
+          Bytes127 g1yi;
+      }
+
+      struct Bytes127 {
+          bytes32 chunk1;
+          bytes32 chunk2;
+          bytes32 chunk3;
+          bytes31 chunk4;
+          uint8 lastChunkSize;
+      }
+
+      SmartDCPABEUtility util;
+      SmartDCPABEAuthority authority;
+      mapping (address => string[]) publicKeyNames;
+      mapping (address => mapping (string => PublicKey)) ABEKeys;
+
+      constructor(address root) Collection(root) {}
+
+      function setContractDependencies(ContractType contractType, address addr) override public onlyOwner {
+          if (contractType == ContractType.UTILITY) {
+              util = SmartDCPABEUtility(addr);
+          } else if (contractType == ContractType.AUTHORITY) {
+              authority = SmartDCPABEAuthority(addr);
+          }
+      }
+
+      function addPublicKey(address addr, string memory name, bytes memory eg1g1ai, bytes memory g1yi) public {
+          require(authority.isCertifier(addr), "certifier not found");
+
+          bytes32[3] memory eg1g1aiChunks;
+          bytes31 eg1g1aiLastChunk;
+          uint8 eg1g1aiLastChunkSize = uint8(eg1g1ai.length % 32);
+          bytes32[3] memory g1yiChunks;
+          bytes31 g1yiLastChunk;
+          uint8 g1yiLastChunkSize = uint8(g1yi.length % 32);
+
+          assembly {
+              // writing eg1g1ai byte dynamic array on the bytes32[3] structure
+              mstore(eg1g1aiChunks, mload(add(eg1g1ai, 0x20)))
+              mstore(add(eg1g1aiChunks, 0x20), mload(add(eg1g1ai, 0x40)))
+              mstore(add(eg1g1aiChunks, 0x40), mload(add(eg1g1ai, 0x60)))
+              eg1g1aiLastChunk := mload(add(eg1g1ai, 0x80))
+
+              // writing g1yi byte dynamic array on the bytes32[3] structure
+              mstore(g1yiChunks, mload(add(g1yi, 0x20)))
+              mstore(add(g1yiChunks, 0x20), mload(add(g1yi, 0x40)))
+              mstore(add(g1yiChunks, 0x40), mload(add(g1yi, 0x60)))
+              g1yiLastChunk := mload(add(g1yi, 0x80))
+          }
+
+          addPublicKey(addr, name, eg1g1aiChunks, eg1g1aiLastChunk, eg1g1aiLastChunkSize,
+                       g1yiChunks, g1yiLastChunk, g1yiLastChunkSize);
+      }
+
+      function addPublicKey
+      (
+          address addr,
+          string memory name,
+          bytes32[3] memory eg1g1aiChunks,
+          bytes31 eg1g1aiLastChunk,
+          uint8 eg1g1aiLastChunkSize,
+          bytes32[3] memory g1yiChunks,
+          bytes31 g1yiLastChunk,
+          uint8 g1yiLastChunkSize
+      )
+          internal
+      {
+          Bytes127 memory eg1g1ai = Bytes127(eg1g1aiChunks[0], eg1g1aiChunks[1], eg1g1aiChunks[2], eg1g1aiLastChunk, eg1g1aiLastChunkSize);
+          Bytes127 memory g1yi = Bytes127(g1yiChunks[0], g1yiChunks[1], g1yiChunks[2], g1yiLastChunk, g1yiLastChunkSize);
+          // checks existence of data to decide whether to push or not name into the stack
+          if (uint(ABEKeys[addr][name].eg1g1ai.chunk1) == uint(0)) {
+              publicKeyNames[addr].push(name);
+              authority.incrementPublicKeyCount(addr);
+          }
+          ABEKeys[addr][name] = PublicKey(eg1g1ai, g1yi);
+      }
+
+      function getPublicKey
+      (
+          address addr,
+          string memory name
+      )
+          public
+          view
+          returns
+      (
+          string memory name_,
+          bytes memory eg1g1ai,
+          bytes memory g1yi
+      )
+      {
+          PublicKey storage pk = ABEKeys[addr][name];
+          return (
+              name,
+              abi.encodePacked(
+                  pk.eg1g1ai.chunk1,
+                  pk.eg1g1ai.chunk2,
+                  pk.eg1g1ai.chunk3,
+                  util.trimBytes31(pk.eg1g1ai.chunk4, pk.eg1g1ai.lastChunkSize)),
+              abi.encodePacked(
+                  pk.g1yi.chunk1,
+                  pk.g1yi.chunk2,
+                  pk.g1yi.chunk3,
+                  util.trimBytes31(pk.g1yi.chunk4, pk.g1yi.lastChunkSize)));
+      }
+  }
+\end{lstlisting}
+
+\begin{lstlisting}[language=Solidity, caption=SmartDCPABERequests]
+  // SPDX-License-Identifier: MIT
+  pragma solidity ^0.7.0 <= 0.7.5;
+
+  import "./SmartDCPABEAuthority.sol";
+  import "./SmartDCPABEUsers.sol";
+  import "./Collection.sol";
+
+  contract SmartDCPABERequests is Collection {
+
+      enum KeyRequestStatus {
+          PENDING,
+          OK,
+          REJECTED
+      }
+
+      struct KeyRequest {
+          KeyRequestStatus status;
+          uint64 timestamp;
+          uint64 responseTimestamp;
+          string attrNames;
+      }
+
+      event pendingRequestIndexChanged (
+          uint64 oldIndex,
+          uint64 newIndex
+      );
+
+      event pendingRequesterIndexChanged (
+          uint64 oldIndex,
+          uint64 newIndex
+      );
+
+      mapping (address => address[]) pendingRequesters;
+      mapping (address => mapping (address => uint64[])) pendingRequests;
+      mapping (address => mapping (address => KeyRequest[])) requests;
+      SmartDCPABEUsers user;
+      SmartDCPABEAuthority authority;
+
+      constructor(address root) Collection(root) {}
+
+      function setContractDependencies(Collection.ContractType contractType, address addr) override public onlyOwner {
+          if (contractType == ContractType.AUTHORITY) {
+              authority = SmartDCPABEAuthority(addr);
+          } else if (contractType == ContractType.USERS) {
+              user = SmartDCPABEUsers(addr);
+          }
+      }
+
+      /**
+       * attrNames are bytes32 instead of string because I don't tested if web3j works well
+       * with dynamic array of dynamic types string/bytes
+       */
+      function addRequest(address certifier, address requester, uint64 timestamp, string memory attrNames) public {
+          assert(user.isUser(requester));
+          assert(authority.isCertifier(certifier));
+          uint64 pendingIndex = uint64(requests[certifier][requester].length);
+          requests[certifier][requester].push(KeyRequest(KeyRequestStatus.PENDING, timestamp, 0, attrNames));
+          pendingRequests[certifier][requester].push(pendingIndex);
+          pendingRequesters[certifier].push(requester);
+      }
+
+      function processRequest(address certifier, uint64 requesterIndex, uint64 pendingIndex, KeyRequestStatus newStatus) public {
+          address requester = pendingRequesters[certifier][requesterIndex];
+          uint64 listSize = uint64(pendingRequests[certifier][requester].length);
+          require(listSize >= 1, "No pending requests for this certifier.");
+          uint64 index = pendingRequests[certifier][requester][pendingIndex];
+          requests[certifier][requester][index].status = newStatus;
+          if (listSize == 1) {
+              pendingRequests[certifier][requester].pop();
+              address lastRequester = pendingRequesters[certifier][pendingRequesters[certifier].length - 1];
+              pendingRequesters[certifier].pop();
+              if (requesterIndex != pendingRequesters[certifier].length) {
+                  pendingRequesters[certifier][requesterIndex] = lastRequester;
+                  emit pendingRequesterIndexChanged(uint64(pendingRequesters[certifier].length), requesterIndex);
+              }
+          } else {
+              uint64 lastIndex = pendingRequests[certifier][requester][listSize - 1];
+              pendingRequests[certifier][requester].pop();
+              if (pendingIndex != listSize - 1) {
+                  pendingRequests[certifier][requester][pendingIndex] = lastIndex;
+                  emit pendingRequestIndexChanged(listSize - 1, pendingIndex);
+              }
+          }
+      }
+
+      function getRequestListSize(address certifier, address requester) public view returns (uint256) {
+          return requests[certifier][requester].length;
+      }
+
+      function getPendingList(address certifier, address requester) public view returns (uint64[] memory) {
+          return pendingRequests[certifier][requester];
+      }
+
+      function getPendingRequesterListSize(address certifier) public view returns (uint256) {
+          return pendingRequesters[certifier].length;
+      }
+
+      function getPendingRequesterAddress(address certifier, uint64 requesterIndex) public view returns (address) {
+          return pendingRequesters[certifier][requesterIndex];
+      }
+
+      function getRequestStatus(address certifier, address requester, uint64 index) public view returns (KeyRequestStatus status) {
+          return requests[certifier][requester][index].status;
+      }
+
+      function getRequest
+      (
+          address certifier,
+          address requester,
+          uint64 index
+      )
+          public
+          view
+          returns
+      (
+          KeyRequestStatus status,
+          uint64,
+          uint64 timestamp,
+          uint64 responseTimestamp,
+          string memory attrNames
+      )
+      {
+          KeyRequest memory kr = requests[certifier][requester][index];
+          return (
+              kr.status,
+              index,
+              kr.timestamp,
+              kr.responseTimestamp,
+              kr.attrNames
+              );
+      }
+  }
+\end{lstlisting}
+
+\begin{lstlisting}[language=Solidity, caption=SmartDCPABERoot]
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.7.0 <= 0.7.5;
+
+import "./Collection.sol";
+
+contract SmartDCPABERoot {
+
+    uint8 constant numContracts = 6;
+    address[numContracts] public contractAddress;
+    Collection.ContractType AUTHORITY = Collection.ContractType.AUTHORITY;
+    Collection.ContractType FILES = Collection.ContractType.FILES;
+    Collection.ContractType KEYS = Collection.ContractType.KEYS;
+    Collection.ContractType REQUESTS = Collection.ContractType.REQUESTS;
+    Collection.ContractType USERS = Collection.ContractType.USERS;
+    Collection.ContractType UTILITY = Collection.ContractType.UTILITY;
+    address owner;
+
+    constructor () {
+        owner = msg.sender;
+    }
+
+    function changeOwnership(address newRoot) public onlyOwner{
+        for (uint8 i = 0; i < numContracts; i++) {
+            bytes memory payload = abi.encodeWithSignature("changeOwnership(address)", newRoot);
+            (bool success, ) = contractAddress[i].call(payload);
+
+            // NOTE: this could lead to consistency problems if a failed require() breaks the loop and ownership is not restored.
+            require(success, "Contract method invocation failed.");
+        }
+    }
+
+    function setAllContracts(Collection.ContractType[numContracts] memory contractType, address[numContracts] memory addr) public onlyOwner {
+        for (uint8 i = 0; i < numContracts; i++) {
+            require(uint(addr[i]) != uint(0), "Some address is 0x0. Please inform a correct address.");
+        }
+        for (uint8 i = 0; i < numContracts; i++) {
+            if (uint(addr[i]) != 0) {
+                setContractAddress(contractType[i], addr[i]);
+            }
+        }
+        for (uint8 i = 0; i < numContracts; i++) {
+            if (uint(addr[i]) != 0) {
+                supplyContractDependencies(contractType[i]);
+            }
+        }
+    }
+
+    function setContract(Collection.ContractType contractType, address addr) public onlyOwner validIndex(contractType) {
+        setContractAddress(contractType, addr);
+        supplyContractDependencies(contractType);
+        receiveContractDependencies(contractType);
+    }
+
+    function setContractAddress(Collection.ContractType contractType, address addr) private {
+        uint8 index = uint8(contractType);
+        if (contractType == AUTHORITY) {
+            contractAddress[index] = addr;
+        } else if (contractType == FILES) {
+            contractAddress[index] = addr;
+        } else if (contractType == KEYS) {
+            contractAddress[index] = addr;
+        } else if (contractType == REQUESTS) {
+            contractAddress[index] = addr;
+        }else if (contractType == USERS) {
+            contractAddress[index] = addr;
+        } else if (contractType == UTILITY) {
+            contractAddress[index] = addr;
+        }
+    }
+
+    function receiveContractDependencies(Collection.ContractType contractType) private {
+        if (contractType == UTILITY || contractType == USERS) {
+            return;
+        }
+        Collection.ContractType[numContracts] memory dependencies;
+        uint8 numDependencies = 0;
+        if (contractType == AUTHORITY) {
+            dependencies[0] = KEYS;
+            dependencies[1] = USERS;
+            numDependencies = 2;
+        } else if (contractType == FILES) {
+            dependencies[0] = USERS;
+            numDependencies = 1;
+        } else if (contractType == KEYS) {
+            dependencies[0] = UTILITY;
+            dependencies[1] = AUTHORITY;
+            numDependencies = 2;
+        } else if (contractType == REQUESTS) {
+            dependencies[0] = USERS;
+            dependencies[1] = AUTHORITY;
+            numDependencies = 2;
+        }
+
+        uint8 index = uint8(contractType);
+        for (uint8 i = 0; i < numDependencies; i++) {
+            uint8 dependentContract = uint8(dependencies[i]);
+            bytes memory payload = abi.encodeWithSignature("setContractDependencies(uint8,address)", dependentContract, contractAddress[dependentContract]);
+            (bool success, ) = contractAddress[index].call(payload);
+            require(success, "Contract method invocation failed.");
+        }
+    }
+
+    function supplyContractDependencies(Collection.ContractType contractType) private {
+        if (contractType == FILES || contractType == REQUESTS) {
+            return;
+        }
+        Collection.ContractType[numContracts] memory dependencies;
+        uint8 numDependencies = 0;
+        if (contractType == AUTHORITY) {
+            dependencies[0] = KEYS;
+            dependencies[1] = REQUESTS;
+            numDependencies = 2;
+        } else if (contractType == KEYS) {
+            dependencies[0] = AUTHORITY;
+            numDependencies = 1;
+        } else if (contractType == USERS) {
+            dependencies[0] = AUTHORITY;
+            dependencies[1] = FILES;
+            dependencies[2] = REQUESTS;
+            numDependencies = 3;
+        } else if (contractType == UTILITY) {
+            dependencies[0] = KEYS;
+            numDependencies = 1;
+        }
+
+        uint8 index = uint8(contractType);
+        for (uint8 i = 0; i < numDependencies; i++) {
+            uint8 dependentContract = uint8(dependencies[i]);
+            bytes memory payload = abi.encodeWithSignature("setContractDependencies(uint8,address)", index, contractAddress[index]);
+            (bool success, ) = contractAddress[dependentContract].call(payload);
+            require(success, "Contract method invocation failed.");
+        }
+    }
+
+    function getAllContractAddresses() public view returns (address[numContracts] memory) {
+        return contractAddress;
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Operation not allowed.");
+        _;
+    }
+
+    modifier validIndex(Collection.ContractType contractType) {
+        require(uint8(contractType) < numContracts, "targered contract type aren't implemented yet.");
+        _;
+    }
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Solidity, caption=SmartDCPABERoot]
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.7.0 <= 0.7.5;
+import "./Collection.sol";
+
+contract SmartDCPABEUsers is Collection {
+
+    struct User {
+        address addr;
+        string name;
+        string email;
+    }
+
+    address[] public userAddresses;
+    mapping (address => User) users;
+    uint64 public numUsers;
+
+   constructor(address root) Collection(root)  {}
+
+    function setContractDependencies(ContractType contractType, address addr) override public view onlyOwner {}
+
+    function addUser(address addr, string memory name, string memory email) public {
+        userAddresses.push(addr);
+        numUsers++;
+        users[addr] = User(addr, name, email);
+    }
+
+    function isUser(address addr) public view returns (bool) {
+        return (bytes(users[addr].name)).length > 0;
+    }
+
+    function getUser
+    (
+        address addr
+    )
+        public
+        view
+        returns
+    (
+        address addr_,
+        string memory name,
+        string memory email
+    )
+    {
+        User storage u = users[addr];
+        return (u.addr, u.name, u.email);
+    }
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Solidity, caption=SmartDCPABERoot]
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.7.0 <= 0.7.5;
+
+import "./Collection.sol";
+
+// TODO: change Utility to a Library
+contract SmartDCPABEUtility is Collection {
+
+    constructor(address root) Collection(root) {}
+
+    function stringToBytes32(string memory source) public pure returns (bytes32 result) {
+        bytes memory tempEmptyStringTest = bytes(source);
+        assert(tempEmptyStringTest.length <= 32);
+        if (tempEmptyStringTest.length == 0) {
+            return 0x0;
+        }
+        assembly {
+            result := mload(add(source, 0x20))
+        }
+    }
+
+    function bytes32ToString(bytes32 source) public pure returns (string memory value) {
+        // OPTIMIZE: avoid loops somehow, look for a solution with assembly.
+        bytes memory bytesString = new bytes(32);
+        uint charCount = 0;
+        for (uint j = 0; j < 32; j++) {
+            byte char = byte(bytes32(uint(source) * 2 ** (8 * j)));
+            if (char != 0) {
+                bytesString[charCount] = char;
+                charCount++;
+            }
+        }
+        bytes memory bytesStringTrimmed = new bytes(charCount);
+        for (uint j = 0; j < charCount; j++) {
+            bytesStringTrimmed[j] = bytesString[j];
+        }
+        value = string(bytesStringTrimmed);
+    }
+
+    function trimBytes31(bytes31 source, uint8 size) public pure returns (bytes memory output) {
+        output = new bytes(size);
+        bytes32 source32 = bytes32(source);
+        for (uint j = 0; j < size; j++) {
+            byte char = byte(bytes32(uint(source32) * 2 ** (8 * j)));
+            output[j] = char;
+        }
+        return output;
+    }
+
+    function setContractDependencies(ContractType contractType, address addr) override public view onlyOwner {}
+}
+\end{lstlisting}
 
 
 \end{document}
