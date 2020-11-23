@@ -1321,7 +1321,7 @@ Quando um contrato é publicado na EVM do Ethereum, ele se torna um objeto imut�
 Portanto, para alterar a lógica do contrato ou a estrutura de dados, é necessário publicar um novo contrato e também todos os outros contratos que fizessem uma referência estática ao endereço deste contrato.
 O \emph{SmartDCPABERoot} auxilia o processo de injeção de novos valores de contrato e conta com uma trava de segurança em suas funções para somente aceitar como válidas as invocações feitas pelo dono do contrato, i.e., somente as transações cujo  endereço de carteira do autor coincidam com o usado na transação de criação do contrato.
 A Figura \ref{fig:dependenciasSmartContracts} mostra a dependência entre contratos gerenciados pelo contrato SmartDCPABERoot. % e que sem ele precisariam ser configurados manualmente a cada nova versão dos contratos durante o desenvolvimento.
-Para efeitos da implantação do sistema, foi criado um endereço da carteira com valor 0x584cf84bcc601da596b4f12a4c976577b40e9970, e os endereços dos contratos na Blockchain testnet Rinkeby estão na tabela \ref{tbl:enderecosSmartContracts}. % TODO: (ok) da carteira de quem? associar com os módulos ou com algo
+Para efeitos da implantação do sistema, foi criado um endereço da carteira com valor 0x5Fe4f6e97c5Df337ff5BE5dEf7f34EDba947e286, e os endereços dos contratos na Blockchain testnet Rinkeby estão na tabela \ref{tbl:enderecosSmartContracts}. % TODO: (ok) da carteira de quem? associar com os módulos ou com algo
 Os endereços são links clicáveis e direcionam para a página do respectivo contrato no site Etherscan, um serviço de exploração e pesquisa de transações, endereços e outros dados tanto na rede principal Ethereum quanto nas testnets.
 
 \begin{table}[h]
@@ -1330,19 +1330,19 @@ Os endereços são links clicáveis e direcionam para a página do respectivo co
       \hline
       Contrato & Endereço do contrato na rede Rinkeby \\
       \hline
-      SmartDCPABERoot & \href{https://rinkeby.etherscan.io/address/0xad1c2b4d33bb1d373e5fbf0cc525390362433dd9#code}{0xAd1c2b4d33Bb1d373E5fBF0cC525390362433DD9} \\
+      SmartDCPABERoot & \href{https://rinkeby.etherscan.io/address/0x086be8d285b11578f94f757bc6a452c63c712135#code}{0x086be8d285B11578F94F757BC6A452c63c712135} \\
       \hline
-      SmartDCPABEAuthority & \href{https://rinkeby.etherscan.io/address/0x94f5cb858438cfc9841fb50f2d022d9a66168b67#code}{0x94f5Cb858438CFc9841FB50F2d022d9a66168b67 } \\
+      SmartDCPABEAuthority & \href{https://rinkeby.etherscan.io/address/0x141e7a8e8c930dde5bda6c22c0e35b6f1a062521#code}{0x141e7A8E8C930DDe5bda6C22c0e35B6F1A062521} \\
       \hline
-      SmartDCPABEFiles & \href{https://rinkeby.etherscan.io/address/0xad1c2b4d33bb1d373e5fbf0cc525390362433dd9#code}{0xAd1c2b4d33Bb1d373E5fBF0cC525390362433DD9} \\
+      SmartDCPABEFiles & \href{https://rinkeby.etherscan.io/address/0x183ef364d692e5c91ad7e57555088534c22dd80b#code}{0x183ef364D692E5c91aD7e57555088534C22dD80B} \\
       \hline
-      SmartDCPABEKeys & \href{https://rinkeby.etherscan.io/address/0x2b92348a73681debb4b2c111000f3cb1bfd143b5#code}{0x2B92348A73681dEbb4B2c111000f3CB1BfD143b5} \\
+      SmartDCPABEKeys & \href{https://rinkeby.etherscan.io/address/0xef7358201e9ecd111a2fde532a3ff4c7879919e1#code}{0xEf7358201E9EcD111a2fDe532A3ff4c7879919E1} \\
       \hline
-      SmartDCPABERequests & \href{https://rinkeby.etherscan.io/address/0x76a5b0db83060951837363787bb0f711b1a2901d#code}{0x76A5b0dB83060951837363787Bb0f711b1A2901D} \\
+      SmartDCPABERequests & \href{https://rinkeby.etherscan.io/address/0xc8a28aea39eff146f4d2235c990269dcdecb0db5#code}{0xc8A28AEa39EFf146F4d2235C990269DcdeCb0Db5} \\
       \hline
-      SmartDCPABEUsers & \href{https://rinkeby.etherscan.io/address/0x9004de663614268a1663a9dcbe5a65e79542db0a#code}{0x9004de663614268a1663A9dCbe5A65E79542Db0A } \\
+      SmartDCPABEUsers & \href{https://rinkeby.etherscan.io/address/0x116eab042813618e1e53742c1341f017f9a0b717#code}{0x116Eab042813618E1e53742c1341f017f9A0b717} \\
       \hline
-      SmartDCPABEUtility & \href{https://rinkeby.etherscan.io/address/0xae0ac361c316a696cd4a89990036d95a45296841#code}{0xaE0aC361c316A696Cd4a89990036d95A45296841 } \\
+      SmartDCPABEUtility & \href{https://rinkeby.etherscan.io/address/0x0272042cc128ce71003a4fe13e71d825d63697d1#code}{0x0272042CC128ce71003A4Fe13E71D825d63697D1} \\
       \hline
     \end{tabular}
   \caption{Endereços dos Smart Contracts na rede testnet Ethereum Rinkeby}
@@ -1403,26 +1403,6 @@ Foi necessário a passagem do tempo para que se tornasse evidente a viabilidade 
 Em 2016 foram publicados os primeiros trabalhos na área médica com projetos usando Blockchain, focados em garantir a autenticidade de dados médicos com soluções baseadas em Blockchain \cite{Zhang2016,Azaria2016,Ekblaw2016}.
 A aplicação de ABE e de Blockchains na área da saúde se uniram em estudos recentes que são analisados a seguir e comparados ao trabalho proposto aqui.
 A tabela \ref{tbl:comparacao-entre-trabalhos} sumariza as comparações com os sistemas considerados mais próximos a este trabalho.
-
-% \begin{table}[h]
-%   \begin{center}
-%     \begin{adjustbox}{width=1\textwidth}
-%     \begin{tabular}{lcccccc}
-%       \hline
-%       Propriedades & \cite{Yang2017} & \cite{Sun2018} & \cite{Zhang2018} & \cite{Guo2020} & \cite{Yang2020} & \makecell{Smart\\DCPABE} \\
-%       \hline
-%       \makecell[l]{Baseado em\\Blockchain} & v & v & v & v & v & v \\
-%       Smart Contracts & v & x & x & v & x & v \\
-%       \makecell[l]{Controle\\de acesso} & v & x & v & v & v & v \\
-%       \makecell[l]{Lastreabilidade\\de Autoridades} & x & x & x & x & x & v \\
-%       \makecell[l]{Normalização\\semântica} & v & x & v & x & x & v \\
-%       \hline
-%     \end{tabular}
-%   \end{adjustbox}
-%   \caption{Comparação de propriedades dos sistemas apresentados em trabalhos similares}
-%   \label{tbl:comparacao-entre-trabalhos}
-% \end{center}
-% \end{table}
 
 \begin{table}[h]
   \begin{center}
@@ -1821,9 +1801,6 @@ Portanto, as regras 3, 4 e 5 tentam unir os melhores aspectos da CBO e do DATASU
       mapping (address => string[]) fileNames;
       mapping (address => mapping(string => Recording)) files;
       mapping (address => mapping(string => Ciphertext)) ciphertexts;
-      /* IDEIA: in order to allow ciphertext changes, ciphertext must be decoupled from Recording,
-       * maybe in a map of the recording to a Ciphertext object
-       */
 
       FileServer[] servers;
       SmartDCPABEUsers users;
@@ -2080,7 +2057,7 @@ Portanto, as regras 3, 4 e 5 tentam unir os melhores aspectos da CBO e do DATASU
       {
           Bytes127 memory eg1g1ai = Bytes127(eg1g1aiChunks[0], eg1g1aiChunks[1], eg1g1aiChunks[2], eg1g1aiLastChunk, eg1g1aiLastChunkSize);
           Bytes127 memory g1yi = Bytes127(g1yiChunks[0], g1yiChunks[1], g1yiChunks[2], g1yiLastChunk, g1yiLastChunkSize);
-          // checks existence of data to decide whether to push or not name into the stack
+          // checks existence of data to decide whether or not to push the name into the stack
           if (uint(ABEKeys[addr][name].eg1g1ai.chunk1) == uint(0)) {
               publicKeyNames[addr].push(name);
               authority.incrementPublicKeyCount(addr);
@@ -2168,10 +2145,6 @@ Portanto, as regras 3, 4 e 5 tentam unir os melhores aspectos da CBO e do DATASU
           }
       }
 
-      /**
-       * attrNames are bytes32 instead of string because I don't tested if web3j works well
-       * with dynamic array of dynamic types string/bytes
-       */
       function addRequest(address certifier, address requester, uint64 timestamp, string memory attrNames) public {
           assert(user.isUser(requester));
           assert(authority.isCertifier(certifier));
@@ -2461,7 +2434,6 @@ pragma solidity ^0.7.0 <= 0.7.5;
 
 import "./Collection.sol";
 
-// TODO: change Utility to a Library
 contract SmartDCPABEUtility is Collection {
 
     constructor(address root) Collection(root) {}
@@ -2478,7 +2450,6 @@ contract SmartDCPABEUtility is Collection {
     }
 
     function bytes32ToString(bytes32 source) public pure returns (string memory value) {
-        // OPTIMIZE: avoid loops somehow, look for a solution with assembly.
         bytes memory bytesString = new bytes(32);
         uint charCount = 0;
         for (uint j = 0; j < 32; j++) {
@@ -2508,6 +2479,5 @@ contract SmartDCPABEUtility is Collection {
     function setContractDependencies(ContractType contractType, address addr) override public view onlyOwner {}
 }
 \end{lstlisting}
-
 
 \end{document}
