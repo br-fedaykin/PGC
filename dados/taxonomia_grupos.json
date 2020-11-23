@@ -742,7 +742,7 @@
                     ]
                 },
                 {
-                    "especialidade": "OUTRAS OCUPAÇÕES DE NÍVEL SUPERIOR RELACIONADOS À SAÚDE",
+                    "especialidade": "Outras ocupações de Nível Superior Relacionados à Saúde",
                     "total": 0,
                     "profissões": [
                         {
@@ -1211,7 +1211,7 @@
                     ]
                 },
                 {
-                    "especialidade": "OUTRAS OCUPAÇÕES NÍVEL TÉCNICO E AUXILIAR EM SAÚDE",
+                    "especialidade": "Outras ocupações de Nível Técnico e Auxiliar em Saúde",
                     "total": 0,
                     "profissões": [
                         {
@@ -1374,7 +1374,7 @@
                     ]
                 },
                 {
-                    "especialidade": "ATENDENTE DE ENFERMAGEM/AUX OPER SERV DIV E ASSEM",
+                    "especialidade": "Atendente de Enfermagem/Auxiliar operacional de serviços diversos e assemelhados",
                     "total": 0,
                     "profissões": [
                         {
@@ -1406,7 +1406,7 @@
                     ]
                 },
                 {
-                    "especialidade": "OUTRAS OCUPAÇÕES NÍVEL ELEMENTAR EM SAÚDE",
+                    "especialidade": "Outras ocupações de Nível Elementar em Saúde",
                     "total": 0,
                     "profissões": [
                         {
@@ -1427,7 +1427,7 @@
             "nível de especialização": "PESSOAL ADMINISTRATIVO",
             "grupos": [
                 {
-                    "especialidade": "ADMINISTRAÇÃO",
+                    "especialidade": "Administração",
                     "total": 0,
                     "profissões": [
                         {
@@ -1901,7 +1901,7 @@
                             "código CBO": "313215"
                         },
                         {
-                            "profissão": "Técnico em administração",
+                            "profissão": "Técnico em Administração",
                             "total": 2871,
                             "código CBO": "351305"
                         },
@@ -1928,7 +1928,7 @@
                     ]
                 },
                 {
-                    "especialidade": "SERVIÇO DE LIMPEZA/CONSERVAÇÃO",
+                    "especialidade": "Serviço de Limpeza/Conservação",
                     "total": 0,
                     "profissões": [
                         {
@@ -2019,7 +2019,7 @@
                     ]
                 },
                 {
-                    "especialidade": "SEGURANÇA",
+                    "especialidade": "Segurança",
                     "total": 0,
                     "profissões": [
                         {
@@ -2065,7 +2065,7 @@
                     ]
                 },
                 {
-                    "especialidade": "OUTRAS OCUPAÇÕES ADMINISTRATIVAS",
+                    "especialidade": "Outras ocupações administrativas",
                     "total": 0,
                     "profissões": [
                         {

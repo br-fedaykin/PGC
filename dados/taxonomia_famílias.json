@@ -2,6 +2,602 @@
     "taxonomia": [
         {
             "nível de especialização": "PESSOAL DE SAÚDE - NÍVEL SUPERIOR",
+            "grupos": [
+                {
+                    "especialidade": "ASSISTENTE SOCIAL",
+                    "total": 32764,
+                    "profissões": [
+                        {
+                            "profissão": "Assistente Social",
+                            "total": 32764,
+                            "código CBO": "251605"
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "CIRURGIÃO GERAL",
+                    "total": 0,
+                    "profissões": [
+                        {
+                            "profissão": "Médico Cirurgião Geral",
+                            "total": 9739,
+                            "código CBO": "225225"
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "ENFERMEIRO",
+                    "total": 200883,
+                    "profissões": [
+                        {
+                            "profissão": "Outros enfermeiros",
+                            "total": 370,
+                            "código CBO": "2235"
+                        },
+                        {
+                            "profissão": "Enfermeiro",
+                            "total": 200883,
+                            "código CBO": "223505"
+                        },
+                        {
+                            "profissão": "Enfermeiro Estomaterapeuta",
+                            "total": 42,
+                            "código CBO": ""
+                        },
+                        {
+                            "profissão": "Enfermeiro auditor",
+                            "total": 1028,
+                            "código CBO": "223510"
+                        },
+                        {
+                            "profissão": "Enfermeiro da estratégia de saúde da família",
+                            "total": 42120,
+                            "código CBO": "223565"
+                        },
+                        {
+                            "profissão": "Enfermeiro de bordo",
+                            "total": 9,
+                            "código CBO": "223515"
+                        },
+                        {
+                            "profissão": "Enfermeiro de centro cirúrgico",
+                            "total": 614,
+                            "código CBO": "223520"
+                        },
+                        {
+                            "profissão": "Enfermeiro de terapia intensiva",
+                            "total": 1796,
+                            "código CBO": "223525"
+                        },
+                        {
+                            "profissão": "Enfermeiro do trabalho",
+                            "total": 813,
+                            "código CBO": "223530"
+                        },
+                        {
+                            "profissão": "Enfermeiro nefrologista",
+                            "total": 869,
+                            "código CBO": "223535"
+                        },
+                        {
+                            "profissão": "Enfermeiro neonatologista",
+                            "total": 342,
+                            "código CBO": "223540"
+                        },
+                        {
+                            "profissão": "Enfermeiro obstétrico",
+                            "total": 3263,
+                            "código CBO": "223545"
+                        },
+                        {
+                            "profissão": "Enfermeiro psiquiátrico",
+                            "total": 275,
+                            "código CBO": "223550"
+                        },
+                        {
+                            "profissão": "Enfermeiro puericultor e pediátrico",
+                            "total": 146,
+                            "código CBO": "223555"
+                        },
+                        {
+                            "profissão": "Enfermeiro sanitarista",
+                            "total": 560,
+                            "código CBO": "223560"
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "FONOAUDIÓLOGO",
+                    "total": 21958,
+                    "profissões": [
+                        {
+                            "profissão": "Fonoaudiólogo",
+                            "total": 21958,
+                            "código CBO": "223810"
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "MÉDICO DE FAMÍLIA",
+                    "total": 27575,
+                    "profissões": [
+                        {
+                            "profissão": "Médico da estratégia de Saúde da Família",
+                            "total": 26883,
+                            "código CBO": "225142"
+                        },
+                        {
+                            "profissão": "Médico de família e comunidade",
+                            "total": 692,
+                            "código CBO": "225130"
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "ODONTÓLOGO",
+                    "total": 0,
+                    "profissões": [
+                        {
+                            "profissão": "Cirurgião dentista - auditor",
+                            "total": 158,
+                            "código CBO": "223204"
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - clínico geral",
+                            "total": 86970,
+                            "código CBO": "223208"
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - dentística",
+                            "total": 1351,
+                            "código CBO": "223280"
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - disfunção temporomandibular e",
+                            "total": 19,
+                            "código CBO": ""
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - endodontista",
+                            "total": 4723,
+                            "código CBO": "223212"
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - epidemiologista",
+                            "total": 17,
+                            "código CBO": "223216"
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - estomatologista",
+                            "total": 303,
+                            "código CBO": "223220"
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - implantodontista",
+                            "total": 1031,
+                            "código CBO": "223224"
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - odontogeriatra",
+                            "total": 38,
+                            "código CBO": "223228"
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - odontologia do trabalho",
+                            "total": 77,
+                            "código CBO": "223276"
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - odontologia para pacientes co",
+                            "total": 610,
+                            "código CBO": ""
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - odontologista legal",
+                            "total": 425,
+                            "código CBO": "223232"
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - odontopediatra",
+                            "total": 2039,
+                            "código CBO": "223236"
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - ortopedista e ortodontista",
+                            "total": 4178,
+                            "código CBO": "223240"
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - patologista bucal",
+                            "total": 223,
+                            "código CBO": "223244"
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - periodontista",
+                            "total": 2394,
+                            "código CBO": "223248"
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - protesista",
+                            "total": 2206,
+                            "código CBO": "223256"
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - protesiólogo bucomaxilofacial",
+                            "total": 284,
+                            "código CBO": "223252"
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - radiologista",
+                            "total": 1210,
+                            "código CBO": "223260"
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - reabilitador oral",
+                            "total": 49,
+                            "código CBO": "223264"
+                        },
+                        {
+                            "profissão": "Cirurgião dentista - traumatologista bucomaxilofac",
+                            "total": 2644,
+                            "código CBO": ""
+                        },
+                        {
+                            "profissão": "Cirurgião dentista de saúde coletiva",
+                            "total": 375,
+                            "código CBO": "223272"
+                        },
+                        {
+                            "profissão": "Cirurgião-dentista da estratégia de saúde da família",
+                            "total": 23590,
+                            "código CBO": "223293"
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "PSICÓLOGO",
+                    "total": 0,
+                    "profissões": [
+                        {
+                            "profissão": "Psicólogo Clínico",
+                            "total": 61013,
+                            "código CBO": "251510"
+                        },
+                        {
+                            "profissão": "Psicólogo do Esporte",
+                            "total": 18,
+                            "código CBO": "251515"
+                        },
+                        {
+                            "profissão": "Psicólogo do Trabalho",
+                            "total": 248,
+                            "código CBO": "251540"
+                        },
+                        {
+                            "profissão": "Psicólogo Social",
+                            "total": 333,
+                            "código CBO": "251530"
+                        },
+                        {
+                            "profissão": "Psicólogo Educacional",
+                            "total": 244,
+                            "código CBO": "251505"
+                        },
+                        {
+                            "profissão": "Psicólogo Hospitalar",
+                            "total": 1939,
+                            "código CBO": "251520"
+                        },
+                        {
+                            "profissão": "Psicólogo Jurídico",
+                            "total": 35,
+                            "código CBO": "251525"
+                        },
+                        {
+                            "profissão": "Psicólogo do trânsito",
+                            "total": 130,
+                            "código CBO": "251535"
+                        },
+                        {
+                            "profissão": "Psicólogo acupunturista",
+                            "total": 59,
+                            "código CBO": "251555"
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "RADIOLOGISTA",
+                    "total": 0,
+                    "profissões": [
+                        {
+                            "profissão": "Médico em radiologia e diagnóstico por imagem",
+                            "total": 12039,
+                            "código CBO": "225320"
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "OUTRAS ESPECIALIDADES MÉDICAS",
+                    "total": 0,
+                    "profissões": [
+                        {
+                            "profissão": "Médico acupunturista",
+                            "total": 1602,
+                            "código CBO": "225105"
+                        },
+                        {
+                            "profissão": "Médico alergista e imunologista",
+                            "total": 1590,
+                            "código CBO": "225110"
+                        },
+                        {
+                            "profissão": "Médico anatomopatologista",
+                            "total": 1528,
+                            "código CBO": "225148"
+                        },
+                        {
+                            "profissão": "Médico angiologista",
+                            "total": 2996,
+                            "código CBO": "225115"
+                        },
+                        {
+                            "profissão": "Médico broncoesofalogista",
+                            "total": 142,
+                            "código CBO": "2231A1"
+                        },
+                        {
+                            "profissão": "Médico Cardiologista Intervencionista",
+                            "total": 821,
+                            "código CBO": ""
+                        },
+                        {
+                            "profissão": "Médico cancerologista cirúrgico",
+                            "total": 65,
+                            "código CBO": "225290"
+                        },
+                        {
+                            "profissão": "Médico cancerologista pediátrico",
+                            "total": 279,
+                            "código CBO": "225122"
+                        },
+                        {
+                            "profissão": "Médico cardiologista",
+                            "total": 19563,
+                            "código CBO": "225120"
+                        },
+                        {
+                            "profissão": "Médico cirurgião cardiovascular",
+                            "total": 607,
+                            "código CBO": "225210"
+                        },
+                        {
+                            "profissão": "Médico cirurgião da mão",
+                            "total": 8,
+                            "código CBO": "225295"
+                        },
+                        {
+                            "profissão": "Médico cirurgião de cabeça e pescoço",
+                            "total": 679,
+                            "código CBO": "225215"
+                        },
+                        {
+                            "profissão": "Médico cirurgião do aparelho digestivo",
+                            "total": 1043,
+                            "código CBO": "225220"
+                        },
+                        {
+                            "profissão": "Médico cirurgião pediátrico",
+                            "total": 647,
+                            "código CBO": "225230"
+                        },
+                        {
+                            "profissão": "Médico cirurgião plástico",
+                            "total": 2636,
+                            "código CBO": "225235"
+                        },
+                        {
+                            "profissão": "Médico cirurgião torácico",
+                            "total": 192,
+                            "código CBO": "225240"
+                        },
+                        {
+                            "profissão": "Médico citopatologista",
+                            "total": 192,
+                            "código CBO": "225305"
+                        },
+                        {
+                            "profissão": "Médico coloproctologista",
+                            "total": 397,
+                            "código CBO": "225280"
+                        },
+                        {
+                            "profissão": "Médico dermatologista",
+                            "total": 8030,
+                            "código CBO": "225135"
+                        },
+                        {
+                            "profissão": "Médico do trabalho",
+                            "total": 2727,
+                            "código CBO": "225140"
+                        },
+                        {
+                            "profissão": "Médico em cirurgia vascular",
+                            "total": 1419,
+                            "código CBO": "225203"
+                        },
+                        {
+                            "profissão": "Médico em endoscopia",
+                            "total": 588,
+                            "código CBO": "225310"
+                        },
+                        {
+                            "profissão": "Médico em medicina de tráfego",
+                            "total": 133,
+                            "código CBO": "225145"
+                        },
+                        {
+                            "profissão": "Médico em medicina intensiva",
+                            "total": 2878,
+                            "código CBO": "225150"
+                        },
+                        {
+                            "profissão": "Médico em medicina nuclear",
+                            "total": 493,
+                            "código CBO": "225315"
+                        },
+                        {
+                            "profissão": "Médico em medicina preventiva e social",
+                            "total": 102,
+                            "código CBO": ""
+                        },
+                        {
+                            "profissão": "Médico endocrinologista e metabologista",
+                            "total": 3785,
+                            "código CBO": "225155"
+                        },
+                        {
+                            "profissão": "Médico fisiatra",
+                            "total": 408,
+                            "código CBO": "225160"
+                        },
+                        {
+                            "profissão": "Médico foniatra",
+                            "total": 4,
+                            "código CBO": "223127"
+                        },
+                        {
+                            "profissão": "Médico gastroenterologista",
+                            "total": 3553,
+                            "código CBO": "225165"
+                        },
+                        {
+                            "profissão": "Médico geneticista",
+                            "total": 172,
+                            "código CBO": "225175"
+                        },
+                        {
+                            "profissão": "Médico geriatra",
+                            "total": 866,
+                            "código CBO": "225180"
+                        },
+                        {
+                            "profissão": "Médico hansenologista",
+                            "total": 62,
+                            "código CBO": "2231A2"
+                        },
+                        {
+                            "profissão": "Médico hematologista",
+                            "total": 1212,
+                            "código CBO": "225185"
+                        },
+                        {
+                            "profissão": "Médico hiperbarista",
+                            "total": 6,
+                            "código CBO": "225345"
+                        },
+                        {
+                            "profissão": "Médico homeopata",
+                            "total": 549,
+                            "código CBO": "225195"
+                        },
+                        {
+                            "profissão": "Médico infectologista",
+                            "total": 3325,
+                            "código CBO": "225103"
+                        },
+                        {
+                            "profissão": "Médico legista",
+                            "total": 71,
+                            "código CBO": "225106"
+                        },
+                        {
+                            "profissão": "Médico mastologista",
+                            "total": 435,
+                            "código CBO": "225255"
+                        },
+                        {
+                            "profissão": "Médico nefrologista",
+                            "total": 4715,
+                            "código CBO": "225109"
+                        },
+                        {
+                            "profissão": "Médico neurocirurgião",
+                            "total": 1202,
+                            "código CBO": "225260"
+                        },
+                        {
+                            "profissão": "Médico neurofisiologista clínico",
+                            "total": 34,
+                            "código CBO": "225350"
+                        },
+                        {
+                            "profissão": "Médico neurologista",
+                            "total": 7627,
+                            "código CBO": "225112"
+                        },
+                        {
+                            "profissão": "Médico nutrologista",
+                            "total": 738,
+                            "código CBO": "225118"
+                        },
+                        {
+                            "profissão": "Médico oftalmologista",
+                            "total": 13033,
+                            "código CBO": "225265"
+                        },
+                        {
+                            "profissão": "Médico oncologista clínico",
+                            "total": 4829,
+                            "código CBO": "225121"
+                        },
+                        {
+                            "profissão": "Médico ortopedista e traumatologista",
+                            "total": 11711,
+                            "código CBO": "225270"
+                        },
+                        {
+                            "profissão": "Médico otorrinolaringologista",
+                            "total": 4901,
+                            "código CBO": "225275"
+                        },
+                        {
+                            "profissão": "Médico patologista",
+                            "total": 235,
+                            "código CBO": "225325"
+                        },
+                        {
+                            "profissão": "Médico patologista clínico / medicina laboratorial",
+                            "total": 441,
+                            "código CBO": "225335"
+                        },
+                        {
+                            "profissão": "Médico pneumologista",
+                            "total": 1693,
+                            "código CBO": "225127"
+                        },
+                        {
+                            "profissão": "Médico radioterapeuta",
+                            "total": 411,
+                            "código CBO": "225330"
+                        },
+                        {
+                            "profissão": "Médico residente",
+                            "total": 30644,
+                            "código CBO": ""
+                        },
+                        {
+                            "profissão": "Médico reumatologista",
+                            "total": 1416,
+                            "código CBO": "225136"
+                        },
+                        {
+                            "profissão": "Médico urologista",
+                            "total": 2404,
+                            "código CBO": "225285"
+                        }
+                    ]
+                }
+            ],
             "famílias": {
                 "Médicos clínicos": {
                     "código CBO": "2251",
@@ -667,19 +1263,9 @@
                             "profissão": "Psicólogo acupunturista",
                             "total": 59,
                             "código CBO": "251555"
-                        },
-                        {
-                            "profissão": "Neuropsicólogo",
-                            "total": 101,
-                            "código CBO": "251545"
-                        },
-                        {
-                            "profissão": "Psicanalista",
-                            "total": 169,
-                            "código CBO": "251550"
                         }
                     ],
-                    "total": 64289
+                    "total": 64019
                 },
                 "Médicos em medicina diagnóstica e terapêutica": {
                     "código CBO": "2253",
@@ -733,22 +1319,80 @@
                     ],
                     "total": 14439
                 },
-                "Químicos": {
-                    "código CBO": "2132",
-                    "descrição": "Químicos",
+                "Outras ocupações de Nível Superior Relacionados à Saúde": {
+                    "código CBO": "00000",
+                    "descrição": "Outras ocupações de Nível Superior Relacionados à Saúde",
                     "profissões": [
                         {
-                            "profissão": "Químico",
-                            "total": 160,
-                            "código CBO": "213205"
-                        }
-                    ],
-                    "total": 160
-                },
-                "Professores de educação especial": {
-                    "código CBO": "2392",
-                    "descrição": "Professores de educação especial",
-                    "profissões": [
+                            "profissão": "Médico veterinário",
+                            "total": 4015,
+                            "código CBO": "223305"
+                        },
+                        {
+                            "profissão": "Biólogo",
+                            "total": 7543,
+                            "código CBO": "221105"
+                        },
+                        {
+                            "profissão": "BioMédico",
+                            "total": 11768,
+                            "código CBO": "221205"
+                        },
+                        {
+                            "profissão": "Coordenador Pedagógico",
+                            "total": 158,
+                            "código CBO": "239405"
+                        },
+                        {
+                            "profissão": "Engenheiro Agrícola",
+                            "total": 1,
+                            "código CBO": "222105"
+                        },
+                        {
+                            "profissão": "Engenheiro Agrônomo",
+                            "total": 67,
+                            "código CBO": "222110"
+                        },
+                        {
+                            "profissão": "Físico",
+                            "total": 102,
+                            "código CBO": "213105"
+                        },
+                        {
+                            "profissão": "Físico (medicina)",
+                            "total": 233,
+                            "código CBO": "213150"
+                        },
+                        {
+                            "profissão": "Físico (nuclear e reatores)",
+                            "total": 284,
+                            "código CBO": "213155"
+                        },
+                        {
+                            "profissão": "Musicólogo",
+                            "total": 11,
+                            "código CBO": "262620"
+                        },
+                        {
+                            "profissão": "Neuropsicólogo",
+                            "total": 101,
+                            "código CBO": "251545"
+                        },
+                        {
+                            "profissão": "Orientador Educacional",
+                            "total": 172,
+                            "código CBO": "239410"
+                        },
+                        {
+                            "profissão": "Ortoptista",
+                            "total": 143,
+                            "código CBO": "223910"
+                        },
+                        {
+                            "profissão": "Pedagogo",
+                            "total": 3577,
+                            "código CBO": "239415"
+                        },
                         {
                             "profissão": "Professor de alunos com deficiência auditiva e surdos",
                             "total": 70,
@@ -768,77 +1412,17 @@
                             "profissão": "Professor de alunos com deficiência visual",
                             "total": 128,
                             "código CBO": "239225"
-                        }
-                    ],
-                    "total": 600
-                },
-                "Professores do ensino médio": {
-                    "código CBO": "2321",
-                    "descrição": "Professores do ensino médio",
-                    "profissões": [
-                        {
-                            "profissão": "Professor de Artes no Ensino Médio",
-                            "total": 31,
-                            "código CBO": "232105"
                         },
                         {
-                            "profissão": "Professor de Artes no Ensino Médio",
-                            "total": 31,
-                            "código CBO": "232105"
-                        }
-                    ],
-                    "total": 62
-                },
-                "Professores de nível superior do ensino fundamental (primeira a quarta séries)": {
-                    "código CBO": "2312",
-                    "descrição": "Professores de nível superior do ensino fundamental (primeira a quarta séries)",
-                    "profissões": [
-                        {
-                            "profissão": "Professor da Educação de Jovens e Adulto",
-                            "total": 43,
-                            "código CBO": "231205"
-                        }
-                    ],
-                    "total": 43
-                },
-                "Professores de nível superior no ensino fundamental de quinta a oitava série": {
-                    "código CBO": "2313",
-                    "descrição": "Professores de nível superior no ensino fundamental de quinta a oitava série",
-                    "profissões": [
-                        {
-                            "profissão": "Professor de educação física do ensino fundamental",
-                            "total": 123,
-                            "código CBO": "231315"
-                        }
-                    ],
-                    "total": 123
-                },
-                "Físicos": {
-                    "código CBO": "2131",
-                    "descrição": "Físicos",
-                    "profissões": [
-                        {
-                            "profissão": "Físico",
-                            "total": 102,
-                            "código CBO": "213105"
+                            "profissão": "Pesquisador de Clinica Médica",
+                            "total": 72,
+                            "código CBO": "203305"
                         },
                         {
-                            "profissão": "Físico (medicina)",
-                            "total": 233,
-                            "código CBO": "213150"
+                            "profissão": "Pesquisador de Medicina Básica",
+                            "total": 25,
+                            "código CBO": "203310"
                         },
-                        {
-                            "profissão": "Físico (nuclear e reatores)",
-                            "total": 284,
-                            "código CBO": "213155"
-                        }
-                    ],
-                    "total": 619
-                },
-                "Pesquisadores das ciências biológicas": {
-                    "código CBO": "2030",
-                    "descrição": "Pesquisadores das ciências biológicas",
-                    "profissões": [
                         {
                             "profissão": "Pesquisador em Biologia Ambiental",
                             "total": 13,
@@ -858,157 +1442,7 @@
                             "profissão": "Pesquisador em Biologia Humana",
                             "total": 162,
                             "código CBO": "203020"
-                        }
-                    ],
-                    "total": 465
-                },
-                "Professores de ciências biológicas e da saúde do ensino superior": {
-                    "código CBO": "2344",
-                    "descrição": "Professores de ciências biológicas e da saúde do ensino superior",
-                    "profissões": [
-                        {
-                            "profissão": "Professor de educação física no ensino superior",
-                            "total": 228,
-                            "código CBO": "234410"
                         },
-                        {
-                            "profissão": "Professor de Nutrição",
-                            "total": 10,
-                            "código CBO": "234445"
-                        },
-                        {
-                            "profissão": "Professor de Terapia Ocupacional",
-                            "total": 10,
-                            "código CBO": "234455"
-                        }
-                    ],
-                    "total": 248
-                },
-                "Biólogos e afins": {
-                    "código CBO": "2211",
-                    "descrição": "Biólogos e afins",
-                    "profissões": [
-                        {
-                            "profissão": "Biólogo",
-                            "total": 7543,
-                            "código CBO": "221105"
-                        },
-                        {
-                            "profissão": "Engenheiro Agrônomo",
-                            "total": 67,
-                            "código CBO": "222110"
-                        }
-                    ],
-                    "total": 7610
-                },
-                "Terapeutas ocupacionais, ortoptistas e psicomotricistas": {
-                    "código CBO": "2239",
-                    "descrição": "Terapeutas ocupacionais, ortoptistas e psicomotricistas",
-                    "profissões": [
-                        {
-                            "profissão": "Ortoptista",
-                            "total": 143,
-                            "código CBO": "223910"
-                        },
-                        {
-                            "profissão": "Terapeuta ocupacional",
-                            "total": 9551,
-                            "código CBO": "223905"
-                        }
-                    ],
-                    "total": 9694
-                },
-                "Biomédicos": {
-                    "código CBO": "2212",
-                    "descrição": "Biomédicos",
-                    "profissões": [
-                        {
-                            "profissão": "BioMédico",
-                            "total": 11768,
-                            "código CBO": "221205"
-                        }
-                    ],
-                    "total": 11768
-                },
-                "Músicos compositores, arranjadores, regentes e musicólogos": {
-                    "código CBO": "2626",
-                    "descrição": "Músicos compositores, arranjadores, regentes e musicólogos",
-                    "profissões": [
-                        {
-                            "profissão": "Musicólogo",
-                            "total": 11,
-                            "código CBO": "262620"
-                        }
-                    ],
-                    "total": 11
-                },
-                "Profissionais da educação física": {
-                    "código CBO": "2241",
-                    "descrição": "Profissionais da educação física",
-                    "profissões": [
-                        {
-                            "profissão": "Preparador Físico",
-                            "total": 238,
-                            "código CBO": "224120"
-                        }
-                    ],
-                    "total": 238
-                },
-                "Veterinários e zootecnistas": {
-                    "código CBO": "2233",
-                    "descrição": "Veterinários e zootecnistas",
-                    "profissões": [
-                        {
-                            "profissão": "Médico veterinário",
-                            "total": 4015,
-                            "código CBO": "223305"
-                        }
-                    ],
-                    "total": 4015
-                },
-                "Pesquisadores das ciências da saúde": {
-                    "código CBO": "2033",
-                    "descrição": "Pesquisadores das ciências da saúde",
-                    "profissões": [
-                        {
-                            "profissão": "Pesquisador de Clinica Médica",
-                            "total": 72,
-                            "código CBO": "203305"
-                        },
-                        {
-                            "profissão": "Pesquisador de Medicina Básica",
-                            "total": 25,
-                            "código CBO": "203310"
-                        },
-                        {
-                            "profissão": "Pesquisador em Saúde Coletiva",
-                            "total": 57,
-                            "código CBO": "203320"
-                        }
-                    ],
-                    "total": 154
-                },
-                "Engenheiros agrossilvipecuários": {
-                    "código CBO": "2221",
-                    "descrição": "Engenheiros agrossilvipecuários",
-                    "profissões": [
-                        {
-                            "profissão": "Engenheiro Agrícola",
-                            "total": 1,
-                            "código CBO": "222105"
-                        },
-                        {
-                            "profissão": "Engenheiro Agrônomo",
-                            "total": 67,
-                            "código CBO": "222110"
-                        }
-                    ],
-                    "total": 68
-                },
-                "Pesquisadores das ciências sociais e humanas": {
-                    "código CBO": "2035",
-                    "descrição": "Pesquisadores das ciências sociais e humanas",
-                    "profissões": [
                         {
                             "profissão": "Pesquisador em Ciências Sociais e Humanas",
                             "total": 18,
@@ -1018,28 +1452,46 @@
                             "profissão": "Pesquisador em Psicologia",
                             "total": 18,
                             "código CBO": "203525"
-                        }
-                    ],
-                    "total": 36
-                },
-                "Programadores, avaliadores e orientadores de ensino": {
-                    "código CBO": "2394",
-                    "descrição": "Programadores, avaliadores e orientadores de ensino",
-                    "profissões": [
-                        {
-                            "profissão": "Coordenador Pedagógico",
-                            "total": 158,
-                            "código CBO": "239405"
                         },
                         {
-                            "profissão": "Orientador Educacional",
-                            "total": 172,
-                            "código CBO": "239410"
+                            "profissão": "Pesquisador em Saúde Coletiva",
+                            "total": 57,
+                            "código CBO": "203320"
                         },
                         {
-                            "profissão": "Pedagogo",
-                            "total": 3577,
-                            "código CBO": "239415"
+                            "profissão": "Preparador Físico",
+                            "total": 238,
+                            "código CBO": "224120"
+                        },
+                        {
+                            "profissão": "Professor da Educação de Jovens e Adulto",
+                            "total": 43,
+                            "código CBO": "231205"
+                        },
+                        {
+                            "profissão": "Professor de Artes no Ensino Médio",
+                            "total": 31,
+                            "código CBO": "232105"
+                        },
+                        {
+                            "profissão": "Professor de educação física do ensino fundamental",
+                            "total": 123,
+                            "código CBO": "231315"
+                        },
+                        {
+                            "profissão": "Professor de educação física no ensino superior",
+                            "total": 228,
+                            "código CBO": "234410"
+                        },
+                        {
+                            "profissão": "Professor de Artes no Ensino Médio",
+                            "total": 31,
+                            "código CBO": "232105"
+                        },
+                        {
+                            "profissão": "Professor de Nutrição",
+                            "total": 10,
+                            "código CBO": "234445"
                         },
                         {
                             "profissão": "Professor de técnicas e Recursos Audiovisuais",
@@ -1047,17 +1499,276 @@
                             "código CBO": "239420"
                         },
                         {
+                            "profissão": "Professor de Terapia Ocupacional",
+                            "total": 10,
+                            "código CBO": "234455"
+                        },
+                        {
+                            "profissão": "Psicanalista",
+                            "total": 169,
+                            "código CBO": "251550"
+                        },
+                        {
                             "profissão": "Psicopedagogo",
                             "total": 946,
                             "código CBO": "239425"
+                        },
+                        {
+                            "profissão": "Químico",
+                            "total": 160,
+                            "código CBO": "213205"
+                        },
+                        {
+                            "profissão": "Terapeuta ocupacional",
+                            "total": 9551,
+                            "código CBO": "223905"
                         }
                     ],
-                    "total": 4857
+                    "total": 40974
                 }
             }
         },
         {
             "nível de especialização": "PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR",
+            "grupos": [
+                {
+                    "especialidade": "FISCAL SANITÁRIO",
+                    "total": 0,
+                    "profissões": [
+                        {
+                            "profissão": "Visitador Sanitário",
+                            "total": 8457,
+                            "código CBO": "515120"
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "TÉCNICO E AUXILIAR DE FARMÁCIA",
+                    "total": 0,
+                    "profissões": [
+                        {
+                            "profissão": "Auxiliar de Farmácia de Manipulação",
+                            "total": 4555,
+                            "código CBO": "515210"
+                        },
+                        {
+                            "profissão": "Auxiliar de Produção Farmacêutica",
+                            "total": 346,
+                            "código CBO": "515225"
+                        },
+                        {
+                            "profissão": "Auxiliar técnico em laboratório de farmácia",
+                            "total": 1214,
+                            "código CBO": "325105"
+                        },
+                        {
+                            "profissão": "Mestre de produção farmacêutica",
+                            "total": 2,
+                            "código CBO": "810305"
+                        },
+                        {
+                            "profissão": "Técnico em Farmácia",
+                            "total": 6185,
+                            "código CBO": "325115"
+                        },
+                        {
+                            "profissão": "Técnico em Imunobiológicos",
+                            "total": 20,
+                            "código CBO": "325310"
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "TÉCNICO E AUXILIAR EM NUTRIÇÃO E DIETÉTICA",
+                    "total": 0,
+                    "profissões": [
+                        {
+                            "profissão": "Dietista",
+                            "total": 108,
+                            "código CBO": "223705"
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "TÉCNICO E AUXILIAR EM SAÚDE ORAL",
+                    "total": 0,
+                    "profissões": [
+                        {
+                            "profissão": "Auxiliar de Prótese Dentária",
+                            "total": 600,
+                            "código CBO": "322420"
+                        },
+                        {
+                            "profissão": "Protético Dentário",
+                            "total": 2125,
+                            "código CBO": "322410"
+                        },
+                        {
+                            "profissão": "Técnico em saúde bucal",
+                            "total": 4292,
+                            "código CBO": "322405"
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "TÉCNICO E AUXILIAR EM EQUIP MÉDICO-HOSPITALARES",
+                    "total": 0,
+                    "profissões": [
+                        {
+                            "profissão": "Técnico em equipamento médico hospitalar",
+                            "total": 304,
+                            "código CBO": "3135D2"
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "TÉCNICO E AUXILIAR EM HEMATOLOGIA/HEMOTERAPIA",
+                    "total": 0,
+                    "profissões": [
+                        {
+                            "profissão": "Auxiliar de banco de sangue",
+                            "total": 967,
+                            "código CBO": "515205"
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "Outras ocupações de Nível Técnico e Auxiliar em Saúde",
+                    "total": 0,
+                    "profissões": [
+                        {
+                            "profissão": "Técnico em acupuntura",
+                            "total": 118,
+                            "código CBO": "322105"
+                        },
+                        {
+                            "profissão": "Artista de Circo (Outros)",
+                            "total": 1,
+                            "código CBO": "376215"
+                        },
+                        {
+                            "profissão": "Auxiliar de Desenvolvimento Infantil",
+                            "total": 243,
+                            "código CBO": "331110"
+                        },
+                        {
+                            "profissão": "Auxiliar de Saúde (Navegação Marítima)",
+                            "total": 0,
+                            "código CBO": "322240"
+                        },
+                        {
+                            "profissão": "Auxiliar geral de conservação de vias permanentes (exceto trilhos)",
+                            "total": 0,
+                            "código CBO": "992225"
+                        },
+                        {
+                            "profissão": "Instrumentador Cirúrgico",
+                            "total": 1252,
+                            "código CBO": "322225"
+                        },
+                        {
+                            "profissão": "Instrutor de Cursos Livres",
+                            "total": 59,
+                            "código CBO": "333110"
+                        },
+                        {
+                            "profissão": "Mecânico de manutenção de automóveis, motocicletas e veículos similares",
+                            "total": 0,
+                            "código CBO": "914405"
+                        },
+                        {
+                            "profissão": "Mecânico de manutenção de máquinas, em geral",
+                            "total": 0,
+                            "código CBO": "911305"
+                        },
+                        {
+                            "profissão": "Mecânico de manutenção e instalação de aparelhos de climatização e refrigeração",
+                            "total": 44,
+                            "código CBO": "911205"
+                        },
+                        {
+                            "profissão": "Ministro de Culto Religioso",
+                            "total": 42,
+                            "código CBO": "263105"
+                        },
+                        {
+                            "profissão": "Musico Intérprete Cantor",
+                            "total": 6,
+                            "código CBO": "262705"
+                        },
+                        {
+                            "profissão": "Musico Intérprete Instrumentista",
+                            "total": 5,
+                            "código CBO": "262710"
+                        },
+                        {
+                            "profissão": "Professor de Alunos Com Deficiência Menta",
+                            "total": 519,
+                            "código CBO": "239215"
+                        },
+                        {
+                            "profissão": "Professor de Nível Médio Na Educação Inf",
+                            "total": 26,
+                            "código CBO": "331105"
+                        },
+                        {
+                            "profissão": "Professor de Nível Médio No Ensino Profis",
+                            "total": 9,
+                            "código CBO": "331305"
+                        },
+                        {
+                            "profissão": "Quiropraxista Cinesoterapeuta Eutonista",
+                            "total": 34,
+                            "código CBO": "322115"
+                        },
+                        {
+                            "profissão": "Recreador",
+                            "total": 242,
+                            "código CBO": "371410"
+                        },
+                        {
+                            "profissão": "Técnico de Alimentos",
+                            "total": 145,
+                            "código CBO": "325205"
+                        },
+                        {
+                            "profissão": "Técnico de Desporto Individual e Coletivo",
+                            "total": 38,
+                            "código CBO": "224125"
+                        },
+                        {
+                            "profissão": "Técnico de Saneamento",
+                            "total": 340,
+                            "código CBO": "312210"
+                        },
+                        {
+                            "profissão": "Técnico em Laboratório Óptico",
+                            "total": 27,
+                            "código CBO": "313505"
+                        },
+                        {
+                            "profissão": "Técnico em Métodos Eletrográficos em Ence",
+                            "total": 428,
+                            "código CBO": "324105"
+                        },
+                        {
+                            "profissão": "Técnico em Métodos Gráficos em Cardiologia",
+                            "total": 311,
+                            "código CBO": "324110"
+                        },
+                        {
+                            "profissão": "Técnico em Óptica e Optometria Contatólog",
+                            "total": 210,
+                            "código CBO": "322305"
+                        },
+                        {
+                            "profissão": "Técnico Químico",
+                            "total": 191,
+                            "código CBO": "311105"
+                        }
+                    ]
+                }
+            ],
             "famílias": {
                 "Técnicos e auxiliares de enfermagem": {
                     "código CBO": "3222",
@@ -1102,19 +1813,9 @@
                             "profissão": "Técnico de enfermagem psiquiátrica",
                             "total": 664,
                             "código CBO": "322220"
-                        },
-                        {
-                            "profissão": "Auxiliar de Saúde (Navegação Marítima)",
-                            "total": 0,
-                            "código CBO": "322240"
-                        },
-                        {
-                            "profissão": "Instrumentador Cirúrgico",
-                            "total": 1252,
-                            "código CBO": "322225"
                         }
                     ],
-                    "total": 685310
+                    "total": 684058
                 },
                 "Trabalhadores em serviços de promoção e apoio à saúde": {
                     "código CBO": "5151",
@@ -1188,18 +1889,6 @@
                     ],
                     "total": 2
                 },
-                "Técnicos de apoio à biotecnologia": {
-                    "código CBO": "3253",
-                    "descrição": "Técnicos de apoio à biotecnologia",
-                    "profissões": [
-                        {
-                            "profissão": "Técnico em Imunobiológicos",
-                            "total": 20,
-                            "código CBO": "325310"
-                        }
-                    ],
-                    "total": 20
-                },
                 "Auxiliares de laboratório da saúde": {
                     "código CBO": "5152",
                     "descrição": "Auxiliares de laboratório da saúde",
@@ -1232,6 +1921,18 @@
                     ],
                     "total": 20597
                 },
+                "Técnicos de apoio à biotecnologia": {
+                    "código CBO": "3253",
+                    "descrição": "Técnicos de apoio à biotecnologia",
+                    "profissões": [
+                        {
+                            "profissão": "Técnico em Imunobiológicos",
+                            "total": 20,
+                            "código CBO": "325310"
+                        }
+                    ],
+                    "total": 20
+                },
                 "Técnicos de laboratórios de saúde e bancos de sangue": {
                     "código CBO": "3242",
                     "descrição": "Técnicos de laboratórios de saúde e bancos de sangue",
@@ -1261,17 +1962,17 @@
                     ],
                     "total": 108
                 },
-                "Técnicos de imobilizações ortopédicas": {
-                    "código CBO": "3226",
-                    "descrição": "Técnicos de imobilizações ortopédicas",
+                "Técnicos em próteses ortopédicas": {
+                    "código CBO": "3225",
+                    "descrição": "Técnicos em próteses ortopédicas",
                     "profissões": [
                         {
-                            "profissão": "Técnico de imobilização ortopédica",
-                            "total": 2119,
-                            "código CBO": "322605"
+                            "profissão": "Técnico de ortopedia",
+                            "total": 867,
+                            "código CBO": "322505"
                         }
                     ],
-                    "total": 2119
+                    "total": 867
                 },
                 "Técnicos em fotônica": {
                     "código CBO": "3135",
@@ -1286,26 +1987,21 @@
                             "profissão": "Técnico em equipamento médico hospitalar",
                             "total": 304,
                             "código CBO": "3135D2"
-                        },
-                        {
-                            "profissão": "Técnico em Laboratório Óptico",
-                            "total": 27,
-                            "código CBO": "313505"
                         }
                     ],
-                    "total": 541
+                    "total": 514
                 },
-                "Técnicos em próteses ortopédicas": {
-                    "código CBO": "3225",
-                    "descrição": "Técnicos em próteses ortopédicas",
+                "Técnicos de imobilizações ortopédicas": {
+                    "código CBO": "3226",
+                    "descrição": "Técnicos de imobilizações ortopédicas",
                     "profissões": [
                         {
-                            "profissão": "Técnico de ortopedia",
-                            "total": 867,
-                            "código CBO": "322505"
+                            "profissão": "Técnico de imobilização ortopédica",
+                            "total": 2119,
+                            "código CBO": "322605"
                         }
                     ],
-                    "total": 867
+                    "total": 2119
                 },
                 "Técnicos de odontologia": {
                     "código CBO": "3224",
@@ -1349,19 +2045,9 @@
                             "profissão": "Técnico em radiologia e imagenologia",
                             "total": 34804,
                             "código CBO": "324115"
-                        },
-                        {
-                            "profissão": "Técnico em Métodos Eletrográficos em Ence",
-                            "total": 428,
-                            "código CBO": "324105"
-                        },
-                        {
-                            "profissão": "Técnico em Métodos Gráficos em Cardiologia",
-                            "total": 311,
-                            "código CBO": "324110"
                         }
                     ],
-                    "total": 35543
+                    "total": 34804
                 },
                 "Técnicos em biologia": {
                     "código CBO": "3201",
@@ -1375,46 +2061,65 @@
                     ],
                     "total": 139
                 },
-                "Professores de educação especial": {
-                    "código CBO": "2392",
-                    "descrição": "Professores de educação especial",
+                "Outras ocupações de Nível Técnico e Auxiliar em Saúde": {
+                    "código CBO": "00000",
+                    "descrição": "Outras ocupações de Nível Técnico e Auxiliar em Saúde",
                     "profissões": [
                         {
-                            "profissão": "Professor de Alunos Com Deficiência Menta",
-                            "total": 519,
-                            "código CBO": "239215"
-                        }
-                    ],
-                    "total": 519
-                },
-                "Professores de nível médio no ensino profissionalizante": {
-                    "código CBO": "3313",
-                    "descrição": "Professores de nível médio no ensino profissionalizante",
-                    "profissões": [
+                            "profissão": "Técnico em acupuntura",
+                            "total": 118,
+                            "código CBO": "322105"
+                        },
                         {
-                            "profissão": "Professor de Nível Médio No Ensino Profis",
-                            "total": 9,
-                            "código CBO": "331305"
-                        }
-                    ],
-                    "total": 9
-                },
-                "Técnicos em óptica e optometria": {
-                    "código CBO": "3223",
-                    "descrição": "Técnicos em óptica e optometria",
-                    "profissões": [
+                            "profissão": "Artista de Circo (Outros)",
+                            "total": 1,
+                            "código CBO": "376215"
+                        },
                         {
-                            "profissão": "Técnico em Óptica e Optometria Contatólog",
-                            "total": 210,
-                            "código CBO": "322305"
-                        }
-                    ],
-                    "total": 210
-                },
-                "Músicos intérpretes": {
-                    "código CBO": "2627",
-                    "descrição": "Músicos intérpretes",
-                    "profissões": [
+                            "profissão": "Auxiliar de Desenvolvimento Infantil",
+                            "total": 243,
+                            "código CBO": "331110"
+                        },
+                        {
+                            "profissão": "Auxiliar de Saúde (Navegação Marítima)",
+                            "total": 0,
+                            "código CBO": "322240"
+                        },
+                        {
+                            "profissão": "Auxiliar geral de conservação de vias permanentes (exceto trilhos)",
+                            "total": 0,
+                            "código CBO": "992225"
+                        },
+                        {
+                            "profissão": "Instrumentador Cirúrgico",
+                            "total": 1252,
+                            "código CBO": "322225"
+                        },
+                        {
+                            "profissão": "Instrutor de Cursos Livres",
+                            "total": 59,
+                            "código CBO": "333110"
+                        },
+                        {
+                            "profissão": "Mecânico de manutenção de automóveis, motocicletas e veículos similares",
+                            "total": 0,
+                            "código CBO": "914405"
+                        },
+                        {
+                            "profissão": "Mecânico de manutenção de máquinas, em geral",
+                            "total": 0,
+                            "código CBO": "911305"
+                        },
+                        {
+                            "profissão": "Mecânico de manutenção e instalação de aparelhos de climatização e refrigeração",
+                            "total": 44,
+                            "código CBO": "911205"
+                        },
+                        {
+                            "profissão": "Ministro de Culto Religioso",
+                            "total": 42,
+                            "código CBO": "263105"
+                        },
                         {
                             "profissão": "Musico Intérprete Cantor",
                             "total": 6,
@@ -1424,76 +2129,66 @@
                             "profissão": "Musico Intérprete Instrumentista",
                             "total": 5,
                             "código CBO": "262710"
-                        }
-                    ],
-                    "total": 11
-                },
-                "Ministros de culto, missionários, teólogos e profissionais assemelhados": {
-                    "código CBO": "2631",
-                    "descrição": "Ministros de culto, missionários, teólogos e profissionais assemelhados",
-                    "profissões": [
-                        {
-                            "profissão": "Ministro de Culto Religioso",
-                            "total": 42,
-                            "código CBO": "263105"
-                        }
-                    ],
-                    "total": 42
-                },
-                "Mecânicos de manutenção de máquinas industriais": {
-                    "código CBO": "9113",
-                    "descrição": "Mecânicos de manutenção de máquinas industriais",
-                    "profissões": [
-                        {
-                            "profissão": "Mecânico de manutenção de máquinas, em geral",
-                            "total": 0,
-                            "código CBO": "911305"
-                        }
-                    ],
-                    "total": 0
-                },
-                "Mecânicos de manutenção de veículos automotores": {
-                    "código CBO": "9144",
-                    "descrição": "Mecânicos de manutenção de veículos automotores",
-                    "profissões": [
-                        {
-                            "profissão": "Mecânico de manutenção de automóveis, motocicletas e veículos similares",
-                            "total": 0,
-                            "código CBO": "914405"
-                        }
-                    ],
-                    "total": 0
-                },
-                "Professores de nível médio na educação infantil": {
-                    "código CBO": "3311",
-                    "descrição": "Professores de nível médio na educação infantil",
-                    "profissões": [
-                        {
-                            "profissão": "Auxiliar de Desenvolvimento Infantil",
-                            "total": 243,
-                            "código CBO": "331110"
                         },
                         {
-                            "profissão": "Instrutor de Cursos Livres",
-                            "total": 59,
-                            "código CBO": "333110"
+                            "profissão": "Professor de Alunos Com Deficiência Menta",
+                            "total": 519,
+                            "código CBO": "239215"
                         },
                         {
                             "profissão": "Professor de Nível Médio Na Educação Inf",
                             "total": 26,
                             "código CBO": "331105"
-                        }
-                    ],
-                    "total": 328
-                },
-                "Técnicos químicos": {
-                    "código CBO": "3111",
-                    "descrição": "Técnicos químicos",
-                    "profissões": [
+                        },
                         {
-                            "profissão": "Auxiliar de Desenvolvimento Infantil",
-                            "total": 243,
-                            "código CBO": "331110"
+                            "profissão": "Professor de Nível Médio No Ensino Profis",
+                            "total": 9,
+                            "código CBO": "331305"
+                        },
+                        {
+                            "profissão": "Quiropraxista Cinesoterapeuta Eutonista",
+                            "total": 34,
+                            "código CBO": "322115"
+                        },
+                        {
+                            "profissão": "Recreador",
+                            "total": 242,
+                            "código CBO": "371410"
+                        },
+                        {
+                            "profissão": "Técnico de Alimentos",
+                            "total": 145,
+                            "código CBO": "325205"
+                        },
+                        {
+                            "profissão": "Técnico de Desporto Individual e Coletivo",
+                            "total": 38,
+                            "código CBO": "224125"
+                        },
+                        {
+                            "profissão": "Técnico de Saneamento",
+                            "total": 340,
+                            "código CBO": "312210"
+                        },
+                        {
+                            "profissão": "Técnico em Laboratório Óptico",
+                            "total": 27,
+                            "código CBO": "313505"
+                        },
+                        {
+                            "profissão": "Técnico em Métodos Eletrográficos em Ence",
+                            "total": 428,
+                            "código CBO": "324105"
+                        },
+                        {
+                            "profissão": "Técnico em Métodos Gráficos em Cardiologia",
+                            "total": 311,
+                            "código CBO": "324110"
+                        },
+                        {
+                            "profissão": "Técnico em Óptica e Optometria Contatólog",
+                            "total": 210,
+                            "código CBO": "322305"
                         },
                         {
                             "profissão": "Técnico Químico",
@@ -1501,125 +2196,36 @@
                             "código CBO": "311105"
                         }
                     ],
-                    "total": 434
-                },
-                "Técnicos em construção civil (obras de infraestrutura)": {
-                    "código CBO": "3122",
-                    "descrição": "Técnicos em construção civil (obras de infraestrutura)",
-                    "profissões": [
-                        {
-                            "profissão": "Técnico de Saneamento",
-                            "total": 340,
-                            "código CBO": "312210"
-                        }
-                    ],
-                    "total": 340
-                },
-                "Profissionais da educação física": {
-                    "código CBO": "2241",
-                    "descrição": "Profissionais da educação física",
-                    "profissões": [
-                        {
-                            "profissão": "Técnico de Desporto Individual e Coletivo",
-                            "total": 38,
-                            "código CBO": "224125"
-                        }
-                    ],
-                    "total": 38
-                },
-                "Instrutores e professores de cursos livres": {
-                    "código CBO": "3331",
-                    "descrição": "Instrutores e professores de cursos livres",
-                    "profissões": [
-                        {
-                            "profissão": "Instrutor de Cursos Livres",
-                            "total": 59,
-                            "código CBO": "333110"
-                        }
-                    ],
-                    "total": 59
-                },
-                "Trabalhadores operacionais de conservação de vias permanentes (exceto trilhos)": {
-                    "código CBO": "9922",
-                    "descrição": "Trabalhadores operacionais de conservação de vias permanentes (exceto trilhos)",
-                    "profissões": [
-                        {
-                            "profissão": "Auxiliar geral de conservação de vias permanentes (exceto trilhos)",
-                            "total": 0,
-                            "código CBO": "992225"
-                        }
-                    ],
-                    "total": 0
-                },
-                "Artistas de circo (circenses)": {
-                    "código CBO": "3762",
-                    "descrição": "Artistas de circo (circenses)",
-                    "profissões": [
-                        {
-                            "profissão": "Artista de Circo (Outros)",
-                            "total": 1,
-                            "código CBO": "376215"
-                        }
-                    ],
-                    "total": 1
-                },
-                "Tecnólogos e técnicos em terapias complementares e estéticas": {
-                    "código CBO": "3221",
-                    "descrição": "Tecnólogos e técnicos em terapias complementares e estéticas",
-                    "profissões": [
-                        {
-                            "profissão": "Técnico em acupuntura",
-                            "total": 118,
-                            "código CBO": "322105"
-                        },
-                        {
-                            "profissão": "Quiropraxista Cinesoterapeuta Eutonista",
-                            "total": 34,
-                            "código CBO": "322115"
-                        }
-                    ],
-                    "total": 152
-                },
-                "Técnicos em produção, conservação  e de qualidade de alimentos": {
-                    "código CBO": "3252",
-                    "descrição": "Técnicos em produção, conservação  e de qualidade de alimentos",
-                    "profissões": [
-                        {
-                            "profissão": "Técnico de Alimentos",
-                            "total": 145,
-                            "código CBO": "325205"
-                        }
-                    ],
-                    "total": 145
-                },
-                "Mecânicos de manutenção e instalação de aparelhos de  climatização e refrigeração": {
-                    "código CBO": "9112",
-                    "descrição": "Mecânicos de manutenção e instalação de aparelhos de  climatização e refrigeração",
-                    "profissões": [
-                        {
-                            "profissão": "Mecânico de manutenção e instalação de aparelhos de climatização e refrigeração",
-                            "total": 44,
-                            "código CBO": "911205"
-                        }
-                    ],
-                    "total": 44
-                },
-                "Recreadores": {
-                    "código CBO": "3714",
-                    "descrição": "Recreadores",
-                    "profissões": [
-                        {
-                            "profissão": "Recreador",
-                            "total": 242,
-                            "código CBO": "371410"
-                        }
-                    ],
-                    "total": 242
+                    "total": 4290
                 }
             }
         },
         {
             "nível de especialização": "PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR",
+            "grupos": [
+                {
+                    "especialidade": "AGENTE DE SAÚDE PÚBLICA",
+                    "total": 0,
+                    "profissões": [
+                        {
+                            "profissão": "Agente de saúde pública",
+                            "total": 0,
+                            "código CBO": "352210"
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "PARTEIRA",
+                    "total": 0,
+                    "profissões": [
+                        {
+                            "profissão": "Parteira leiga",
+                            "total": 251,
+                            "código CBO": "515115"
+                        }
+                    ]
+                }
+            ],
             "famílias": {
                 "Trabalhadores em serviços de promoção e apoio à saúde": {
                     "código CBO": "5151",
@@ -1631,17 +2237,12 @@
                             "código CBO": "515105"
                         },
                         {
-                            "profissão": "Atendente de enfermagem",
-                            "total": 5991,
-                            "código CBO": "515110"
-                        },
-                        {
                             "profissão": "Parteira leiga",
                             "total": 251,
                             "código CBO": "515115"
                         }
                     ],
-                    "total": 288650
+                    "total": 282659
                 },
                 "Agentes da saúde e do meio ambiente": {
                     "código CBO": "3522",
@@ -1655,46 +2256,37 @@
                     ],
                     "total": 0
                 },
-                "Operadores do comércio em lojas e mercados": {
-                    "código CBO": "5211",
-                    "descrição": "Operadores do comércio em lojas e mercados",
+                "Atendente de Enfermagem/Auxiliar operacional de serviços diversos e assemelhados": {
+                    "código CBO": "00000",
+                    "descrição": "Atendente de Enfermagem/Auxiliar operacional de serviços diversos e assemelhados",
                     "profissões": [
+                        {
+                            "profissão": "Atendente de consultório dentário",
+                            "total": 18488,
+                            "código CBO": "322415"
+                        },
+                        {
+                            "profissão": "Atendente de enfermagem",
+                            "total": 5991,
+                            "código CBO": "515110"
+                        },
                         {
                             "profissão": "Atendente de farmácia - balconista",
                             "total": 0,
                             "código CBO": "521130"
                         }
                     ],
-                    "total": 0
+                    "total": 24479
                 },
-                "Técnicos de odontologia": {
-                    "código CBO": "3224",
-                    "descrição": "Técnicos de odontologia",
-                    "profissões": [
-                        {
-                            "profissão": "Atendente de consultório dentário",
-                            "total": 18488,
-                            "código CBO": "322415"
-                        }
-                    ],
-                    "total": 18488
-                },
-                "Sopradores, moldadores e modeladores de vidros e afins": {
-                    "código CBO": "7521",
-                    "descrição": "Sopradores, moldadores e modeladores de vidros e afins",
+                "Outras ocupações de Nível Elementar em Saúde": {
+                    "código CBO": "00000",
+                    "descrição": "Outras ocupações de Nível Elementar em Saúde",
                     "profissões": [
                         {
                             "profissão": "Artesão modelador (vidros)",
                             "total": 0,
                             "código CBO": "752105"
-                        }
-                    ],
-                    "total": 0
-                },
-                "Gesseiros": {
-                    "código CBO": "7164",
-                    "descrição": "Gesseiros",
-                    "profissões": [
+                        },
                         {
                             "profissão": "Gesseiro",
                             "total": 81,
@@ -1707,1080 +2299,21 @@
         },
         {
             "nível de especialização": "PESSOAL ADMINISTRATIVO",
-            "famílias": {
-                "Gerentes de produção e operações em empresa da indústria extrativa, de transformação e de serviços de utilidade pública": {
-                    "código CBO": "1412",
-                    "descrição": "Gerentes de produção e operações em empresa da indústria extrativa, de transformação e de serviços de utilidade pública",
-                    "profissões": [
-                        {
-                            "profissão": "Gerente de produção e operações",
-                            "total": 38,
-                            "código CBO": "141205"
-                        }
-                    ],
-                    "total": 38
-                },
-                "Operadores de telefonia": {
-                    "código CBO": "4222",
-                    "descrição": "Operadores de telefonia",
-                    "profissões": [
-                        {
-                            "profissão": "Operador de rádiochamada",
-                            "total": 1243,
-                            "código CBO": "422220"
-                        },
-                        {
-                            "profissão": "Telefonista",
-                            "total": 5547,
-                            "código CBO": "422205"
-                        }
-                    ],
-                    "total": 6790
-                },
-                "Administradores": {
-                    "código CBO": "2521",
-                    "descrição": "Administradores",
-                    "profissões": [
-                        {
-                            "profissão": "Administrador",
-                            "total": 6135,
-                            "código CBO": "252105"
-                        }
-                    ],
-                    "total": 6135
-                },
-                "Contínuos": {
-                    "código CBO": "4122",
-                    "descrição": "Contínuos",
-                    "profissões": [
-                        {
-                            "profissão": "Continuo",
-                            "total": 1387,
-                            "código CBO": "412205"
-                        }
-                    ],
-                    "total": 1387
-                },
-                "Professores de matemática, estatística e informática do ensino superior": {
-                    "código CBO": "2341",
-                    "descrição": "Professores de matemática, estatística e informática do ensino superior",
-                    "profissões": [
-                        {
-                            "profissão": "Diretor de suprimentos no serviço publico",
-                            "total": 5,
-                            "código CBO": "123410"
-                        },
-                        {
-                            "profissão": "Professor de computação (no ensino superior)",
-                            "total": 0,
-                            "código CBO": "234120"
-                        }
-                    ],
-                    "total": 5
-                },
-                "Diretores administrativos e financeiros": {
-                    "código CBO": "1231",
-                    "descrição": "Diretores administrativos e financeiros",
-                    "profissões": [
-                        {
-                            "profissão": "Administrador de sistemas operacionais",
-                            "total": 881,
-                            "código CBO": "212315"
-                        },
-                        {
-                            "profissão": "Diretor administrativo",
-                            "total": 7427,
-                            "código CBO": "123105"
-                        },
-                        {
-                            "profissão": "Diretor administrativo e financeiro",
-                            "total": 626,
-                            "código CBO": "123110"
-                        },
-                        {
-                            "profissão": "Diretor financeiro",
-                            "total": 119,
-                            "código CBO": "123115"
-                        }
-                    ],
-                    "total": 9053
-                },
-                "Técnicos mecânicos na manutenção de máquinas, sistemas e instrumentos": {
-                    "código CBO": "3144",
-                    "descrição": "Técnicos mecânicos na manutenção de máquinas, sistemas e instrumentos",
-                    "profissões": [
-                        {
-                            "profissão": "Técnico de manutenção de sistemas e instrumentos",
-                            "total": 62,
-                            "código CBO": "314405"
-                        }
-                    ],
-                    "total": 62
-                },
-                "Cobradores e afins": {
-                    "código CBO": "4213",
-                    "descrição": "Cobradores e afins",
-                    "profissões": [
-                        {
-                            "profissão": "Cobrador externo",
-                            "total": 20,
-                            "código CBO": "421305"
-                        }
-                    ],
-                    "total": 20
-                },
-                "Operadores de equipamentos de entrada e transmissão de dados": {
-                    "código CBO": "4121",
-                    "descrição": "Operadores de equipamentos de entrada e transmissão de dados",
-                    "profissões": [
-                        {
-                            "profissão": "Datilografo",
-                            "total": 304,
-                            "código CBO": "412105"
-                        },
-                        {
-                            "profissão": "Digitador",
-                            "total": 13252,
-                            "código CBO": "412110"
-                        }
-                    ],
-                    "total": 13556
-                },
-                "Gerentes administrativos, financeiros, de riscos e afins": {
-                    "código CBO": "1421",
-                    "descrição": "Gerentes administrativos, financeiros, de riscos e afins",
-                    "profissões": [
-                        {
-                            "profissão": "Gerente administrativo",
-                            "total": 10443,
-                            "código CBO": "142105"
-                        },
-                        {
-                            "profissão": "Gerente de riscos",
-                            "total": 4,
-                            "código CBO": "142110"
-                        },
-                        {
-                            "profissão": "Gerente financeiro",
-                            "total": 357,
-                            "código CBO": "142115"
-                        }
-                    ],
-                    "total": 10804
-                },
-                "Fiscais de tributos estaduais e municipais": {
-                    "código CBO": "2544",
-                    "descrição": "Fiscais de tributos estaduais e municipais",
-                    "profissões": [
-                        {
-                            "profissão": "Fiscal de tributos municipal",
-                            "total": 104,
-                            "código CBO": "254410"
-                        }
-                    ],
-                    "total": 104
-                },
-                "Gerentes de tecnologia da informação": {
-                    "código CBO": "1425",
-                    "descrição": "Gerentes de tecnologia da informação",
-                    "profissões": [
-                        {
-                            "profissão": "Gerente de desenvolvimento de sistemas",
-                            "total": 22,
-                            "código CBO": "142510"
-                        },
-                        {
-                            "profissão": "Gerente de operação de tecnologia da informação",
-                            "total": 44,
-                            "código CBO": "142515"
-                        },
-                        {
-                            "profissão": "Gerente de projetos de tecnologia da informação",
-                            "total": 30,
-                            "código CBO": "142520"
-                        },
-                        {
-                            "profissão": "Gerente de rede",
-                            "total": 18,
-                            "código CBO": "142505"
-                        },
-                        {
-                            "profissão": "Gerente de segurança da informação",
-                            "total": 7,
-                            "código CBO": "142525"
-                        },
-                        {
-                            "profissão": "Gerente de suporte técnico de tecnologia da informação",
-                            "total": 178,
-                            "código CBO": "142530"
-                        }
-                    ],
-                    "total": 299
-                },
-                "Arquitetos e urbanistas": {
-                    "código CBO": "2141",
-                    "descrição": "Arquitetos e urbanistas",
-                    "profissões": [
-                        {
-                            "profissão": "Arquiteto de edificações",
-                            "total": 125,
-                            "código CBO": "214105"
-                        }
-                    ],
-                    "total": 125
-                },
-                "Supervisores de atendimento ao público e de pesquisa": {
-                    "código CBO": "4201",
-                    "descrição": "Supervisores de atendimento ao público e de pesquisa",
-                    "profissões": [
-                        {
-                            "profissão": "Supervisor de recepcionistas",
-                            "total": 728,
-                            "código CBO": "420125"
-                        }
-                    ],
-                    "total": 728
-                },
-                "Gerentes de comercialização, marketing e comunicação": {
-                    "código CBO": "1423",
-                    "descrição": "Gerentes de comercialização, marketing e comunicação",
-                    "profissões": [
-                        {
-                            "profissão": "Gerente comercial",
-                            "total": 121,
-                            "código CBO": "142305"
-                        },
-                        {
-                            "profissão": "Gerente de comunicação",
-                            "total": 61,
-                            "código CBO": "142310"
-                        },
-                        {
-                            "profissão": "Gerente de marketing",
-                            "total": 43,
-                            "código CBO": "142315"
-                        },
-                        {
-                            "profissão": "Gerente de vendas",
-                            "total": 12,
-                            "código CBO": "142320"
-                        }
-                    ],
-                    "total": 237
-                },
-                "Diretores e gerentes de operações em empresa de serviços pessoais, sociais e culturais": {
-                    "código CBO": "1311",
-                    "descrição": "Diretores e gerentes de operações em empresa de serviços pessoais, sociais e culturais",
-                    "profissões": [
-                        {
-                            "profissão": "Auxiliar de contabilidade",
-                            "total": 717,
-                            "código CBO": "413110"
-                        },
-                        {
-                            "profissão": "Auxiliar de faturamento",
-                            "total": 6393,
-                            "código CBO": "413115"
-                        },
-                        {
-                            "profissão": "Diretor de serviços culturais",
-                            "total": 3,
-                            "código CBO": "131105"
-                        },
-                        {
-                            "profissão": "Diretor de serviços sociais",
-                            "total": 34,
-                            "código CBO": "131110"
-                        },
-                        {
-                            "profissão": "Gerente de serviços culturais",
-                            "total": 7,
-                            "código CBO": "131115"
-                        },
-                        {
-                            "profissão": "Gerente de serviços sociais",
-                            "total": 54,
-                            "código CBO": "131120"
-                        }
-                    ],
-                    "total": 7208
-                },
-                "Auxiliares de contabilidade": {
-                    "código CBO": "4131",
-                    "descrição": "Auxiliares de contabilidade",
-                    "profissões": [
-                        {
-                            "profissão": "Auxiliar de contabilidade",
-                            "total": 717,
-                            "código CBO": "413110"
-                        },
-                        {
-                            "profissão": "Auxiliar de faturamento",
-                            "total": 6393,
-                            "código CBO": "413115"
-                        }
-                    ],
-                    "total": 7110
-                },
-                "Técnicos em secretariado, taquígrafos e estenotipistas": {
-                    "código CBO": "3515",
-                    "descrição": "Técnicos em secretariado, taquígrafos e estenotipistas",
-                    "profissões": [
-                        {
-                            "profissão": "Técnico em secretariado",
-                            "total": 695,
-                            "código CBO": "351505"
-                        }
-                    ],
-                    "total": 695
-                },
-                "Diretores de recursos humanos e relações de trabalho": {
-                    "código CBO": "1232",
-                    "descrição": "Diretores de recursos humanos e relações de trabalho",
-                    "profissões": [
-                        {
-                            "profissão": "Diretor de recursos humanos",
-                            "total": 86,
-                            "código CBO": "123205"
-                        },
-                        {
-                            "profissão": "Diretor de relações de trabalho",
-                            "total": 7,
-                            "código CBO": "123210"
-                        }
-                    ],
-                    "total": 93
-                },
-                "Supervisores de serviços financeiros, de câmbio e de controle": {
-                    "código CBO": "4102",
-                    "descrição": "Supervisores de serviços financeiros, de câmbio e de controle",
-                    "profissões": [
-                        {
-                            "profissão": "Supervisor de almoxarifado",
-                            "total": 218,
-                            "código CBO": "410205"
-                        },
-                        {
-                            "profissão": "Supervisor de contas a pagar",
-                            "total": 33,
-                            "código CBO": "410215"
-                        },
-                        {
-                            "profissão": "Supervisor de controle patrimonial",
-                            "total": 85,
-                            "código CBO": "410220"
-                        },
-                        {
-                            "profissão": "Supervisor de tesouraria",
-                            "total": 156,
-                            "código CBO": "410235"
-                        }
-                    ],
-                    "total": 492
-                },
-                "Engenheiros civis e afins": {
-                    "código CBO": "2142",
-                    "descrição": "Engenheiros civis e afins",
-                    "profissões": [
-                        {
-                            "profissão": "Engenheiro civil",
-                            "total": 513,
-                            "código CBO": "214205"
-                        },
-                        {
-                            "profissão": "Engenheiro civil (saneamento)",
-                            "total": 85,
-                            "código CBO": "214260"
-                        }
-                    ],
-                    "total": 598
-                },
-                "Diretores de tecnologia da informação": {
-                    "código CBO": "1236",
-                    "descrição": "Diretores de tecnologia da informação",
-                    "profissões": [
-                        {
-                            "profissão": "Diretor de serviços de informática",
-                            "total": 152,
-                            "código CBO": "123605"
-                        }
-                    ],
-                    "total": 152
-                },
-                "Operadores de telemarketing": {
-                    "código CBO": "4223",
-                    "descrição": "Operadores de telemarketing",
-                    "profissões": [
-                        {
-                            "profissão": "Operador de telemarketing ativo e receptivo",
-                            "total": 501,
-                            "código CBO": "422310"
-                        },
-                        {
-                            "profissão": "Operador de telemarketing técnico",
-                            "total": 21,
-                            "código CBO": "422320"
-                        }
-                    ],
-                    "total": 522
-                },
-                "Compradores": {
-                    "código CBO": "3542",
-                    "descrição": "Compradores",
-                    "profissões": [
-                        {
-                            "profissão": "Comprador",
-                            "total": 482,
-                            "código CBO": "354205"
-                        },
-                        {
-                            "profissão": "Supervisor de compras",
-                            "total": 108,
-                            "código CBO": "354210"
-                        }
-                    ],
-                    "total": 590
-                },
-                "Arquivistas e museólogos": {
-                    "código CBO": "2613",
-                    "descrição": "Arquivistas e museólogos",
-                    "profissões": [
-                        {
-                            "profissão": "Arquivista",
-                            "total": 379,
-                            "código CBO": "261305"
-                        }
-                    ],
-                    "total": 379
-                },
-                "Técnicos em contabilidade": {
-                    "código CBO": "3511",
-                    "descrição": "Técnicos em contabilidade",
-                    "profissões": [
-                        {
-                            "profissão": "Chefe de contabilidade (técnico)",
-                            "total": 0,
-                            "código CBO": "351110"
-                        },
-                        {
-                            "profissão": "Técnico de contabilidade",
-                            "total": 366,
-                            "código CBO": "351105"
-                        }
-                    ],
-                    "total": 366
-                },
-                "Secretárias(os) executivas(os) e afins": {
-                    "código CBO": "2523",
-                    "descrição": "Secretárias(os) executivas(os) e afins",
-                    "profissões": [
-                        {
-                            "profissão": "Secretário executivo",
-                            "total": 1690,
-                            "código CBO": "252305"
-                        }
-                    ],
-                    "total": 1690
-                },
-                "Contadores e afins": {
-                    "código CBO": "2522",
-                    "descrição": "Contadores e afins",
-                    "profissões": [
-                        {
-                            "profissão": "Auditor (contadores e afins)",
-                            "total": 325,
-                            "código CBO": "252205"
-                        },
-                        {
-                            "profissão": "Contador",
-                            "total": 840,
-                            "código CBO": "252210"
-                        }
-                    ],
-                    "total": 1165
-                },
-                "Técnicos de suporte e monitoração ao usuário de tecnologia da informação.": {
-                    "código CBO": "3172",
-                    "descrição": "Técnicos de suporte e monitoração ao usuário de tecnologia da informação.",
-                    "profissões": [
-                        {
-                            "profissão": "Operador de computador",
-                            "total": 804,
-                            "código CBO": "317205"
-                        },
-                        {
-                            "profissão": "Técnico de suporte ao usuário de tecnologia da informação",
-                            "total": 667,
-                            "código CBO": "317210"
-                        }
-                    ],
-                    "total": 1471
-                },
-                "Administradores de tecnologia da informação": {
-                    "código CBO": "2123",
-                    "descrição": "Administradores de tecnologia da informação",
-                    "profissões": [
-                        {
-                            "profissão": "Administrador de banco de dados",
-                            "total": 179,
-                            "código CBO": "212305"
-                        },
-                        {
-                            "profissão": "Administrador de sistemas operacionais",
-                            "total": 881,
-                            "código CBO": "212315"
-                        }
-                    ],
-                    "total": 1060
-                },
-                "Recepcionistas": {
-                    "código CBO": "4221",
-                    "descrição": "Recepcionistas",
-                    "profissões": [
-                        {
-                            "profissão": "Atendente de ambulatório ou clínica",
-                            "total": 11507,
-                            "código CBO": "422110"
-                        },
-                        {
-                            "profissão": "Gerente de departamento pessoal",
-                            "total": 229,
-                            "código CBO": "142210"
-                        },
-                        {
-                            "profissão": "Recepcionista, em geral",
-                            "total": 52025,
-                            "código CBO": "422105"
-                        }
-                    ],
-                    "total": 63761
-                },
-                "Gestores e especialistas de operações em empresas, secretarias e unidades de serviços de saúde": {
-                    "código CBO": "1312",
-                    "descrição": "Gestores e especialistas de operações em empresas, secretarias e unidades de serviços de saúde",
-                    "profissões": [
-                        {
-                            "profissão": "Diretor de serviços de saúde",
-                            "total": 9355,
-                            "código CBO": "131205"
-                        },
-                        {
-                            "profissão": "Gerente de serviços de saúde",
-                            "total": 15080,
-                            "código CBO": "131210"
-                        }
-                    ],
-                    "total": 24435
-                },
-                "Diretores de suprimentos e afins": {
-                    "código CBO": "1234",
-                    "descrição": "Diretores de suprimentos e afins",
-                    "profissões": [
-                        {
-                            "profissão": "Diretor de suprimentos",
-                            "total": 12,
-                            "código CBO": "123405"
-                        },
-                        {
-                            "profissão": "Diretor de suprimentos no serviço publico",
-                            "total": 5,
-                            "código CBO": "123410"
-                        }
-                    ],
-                    "total": 17
-                },
-                "Gerentes de manutenção e afins": {
-                    "código CBO": "1427",
-                    "descrição": "Gerentes de manutenção e afins",
-                    "profissões": [
-                        {
-                            "profissão": "Gerente de projetos e serviços de manutenção",
-                            "total": 109,
-                            "código CBO": "142705"
-                        }
-                    ],
-                    "total": 109
-                },
-                "Técnicos em eletrônica": {
-                    "código CBO": "3132",
-                    "descrição": "Técnicos em eletrônica",
-                    "profissões": [
-                        {
-                            "profissão": "Técnico eletrônico",
-                            "total": 229,
-                            "código CBO": "313215"
-                        },
-                        {
-                            "profissão": "Técnico em manutenção de equipamentos de informática",
-                            "total": 938,
-                            "código CBO": "313220"
-                        }
-                    ],
-                    "total": 1167
-                },
-                "Engenheiros de produção, qualidade, segurança e afins": {
-                    "código CBO": "2149",
-                    "descrição": "Engenheiros de produção, qualidade, segurança e afins",
-                    "profissões": [
-                        {
-                            "profissão": "Engenheiro de segurança do trabalho",
-                            "total": 379,
-                            "código CBO": "214915"
-                        }
-                    ],
-                    "total": 379
-                },
-                "Técnicos de desenvolvimento de sistemas e aplicações": {
-                    "código CBO": "3171",
-                    "descrição": "Técnicos de desenvolvimento de sistemas e aplicações",
-                    "profissões": [
-                        {
-                            "profissão": "Programador de sistemas de informação",
-                            "total": 234,
-                            "código CBO": "317110"
-                        }
-                    ],
-                    "total": 234
-                },
-                "Supervisores administrativos": {
-                    "código CBO": "4101",
-                    "descrição": "Supervisores administrativos",
-                    "profissões": [
-                        {
-                            "profissão": "Advogado de empresa",
-                            "total": 34,
-                            "código CBO": "241010"
-                        },
-                        {
-                            "profissão": "Supervisor administrativo",
-                            "total": 5505,
-                            "código CBO": "410105"
-                        }
-                    ],
-                    "total": 5539
-                },
-                "Diretores de comercialização e marketing": {
-                    "código CBO": "1233",
-                    "descrição": "Diretores de comercialização e marketing",
-                    "profissões": [
-                        {
-                            "profissão": "Diretor comercial",
-                            "total": 27,
-                            "código CBO": "123305"
-                        },
-                        {
-                            "profissão": "Diretor de marketing",
-                            "total": 6,
-                            "código CBO": "123310"
-                        }
-                    ],
-                    "total": 33
-                },
-                "Gerentes de pesquisa e desenvolvimento e afins": {
-                    "código CBO": "1426",
-                    "descrição": "Gerentes de pesquisa e desenvolvimento e afins",
-                    "profissões": [
-                        {
-                            "profissão": "Engenheiro civil (saneamento)",
-                            "total": 85,
-                            "código CBO": "214260"
-                        },
-                        {
-                            "profissão": "Gerente de pesquisa e desenvolvimento (p&d)",
-                            "total": 25,
-                            "código CBO": "142605"
-                        }
-                    ],
-                    "total": 110
-                },
-                "Escriturários de serviços bancários": {
-                    "código CBO": "4132",
-                    "descrição": "Escriturários de serviços bancários",
-                    "profissões": [
-                        {
-                            "profissão": "Atendente de agencia",
-                            "total": 64,
-                            "código CBO": "413205"
-                        }
-                    ],
-                    "total": 64
-                },
-                "Almoxarifes e armazenistas": {
-                    "código CBO": "4141",
-                    "descrição": "Almoxarifes e armazenistas",
-                    "profissões": [
-                        {
-                            "profissão": "Almoxarife",
-                            "total": 2579,
-                            "código CBO": "414105"
-                        }
-                    ],
-                    "total": 2579
-                },
-                "Analistas de tecnologia da informação": {
-                    "código CBO": "2124",
-                    "descrição": "Analistas de tecnologia da informação",
-                    "profissões": [
-                        {
-                            "profissão": "Analista de redes e de comunicação de dados",
-                            "total": 150,
-                            "código CBO": "212410"
-                        },
-                        {
-                            "profissão": "Analista de suporte computacional",
-                            "total": 522,
-                            "código CBO": "212420"
-                        }
-                    ],
-                    "total": 672
-                },
-                "Assistentes sociais e economistas domésticos": {
-                    "código CBO": "2516",
-                    "descrição": "Assistentes sociais e economistas domésticos",
-                    "profissões": [
-                        {
-                            "profissão": "Economista domestico",
-                            "total": 14,
-                            "código CBO": "251610"
-                        }
-                    ],
-                    "total": 14
-                },
-                "Gerentes de suprimentos e afins": {
-                    "código CBO": "1424",
-                    "descrição": "Gerentes de suprimentos e afins",
-                    "profissões": [
-                        {
-                            "profissão": "Gerente de almoxarifado",
-                            "total": 145,
-                            "código CBO": "142415"
-                        },
-                        {
-                            "profissão": "Gerente de compras",
-                            "total": 141,
-                            "código CBO": "142405"
-                        },
-                        {
-                            "profissão": "Gerente de suprimentos",
-                            "total": 78,
-                            "código CBO": "142410"
-                        }
-                    ],
-                    "total": 364
-                },
-                "Técnicos em administração": {
-                    "código CBO": "3513",
-                    "descrição": "Técnicos em administração",
-                    "profissões": [
-                        {
-                            "profissão": "Técnico em administração",
-                            "total": 2871,
-                            "código CBO": "351305"
-                        }
-                    ],
-                    "total": 2871
-                },
-                "Gerentes de recursos humanos e de relações do trabalho": {
-                    "código CBO": "1422",
-                    "descrição": "Gerentes de recursos humanos e de relações do trabalho",
-                    "profissões": [
-                        {
-                            "profissão": "Gerente de departamento pessoal",
-                            "total": 229,
-                            "código CBO": "142210"
-                        },
-                        {
-                            "profissão": "Gerente de recursos humanos",
-                            "total": 397,
-                            "código CBO": "142205"
-                        }
-                    ],
-                    "total": 626
-                },
-                "Agentes, assistentes e auxiliares administrativos": {
-                    "código CBO": "4110",
-                    "descrição": "Agentes, assistentes e auxiliares administrativos",
-                    "profissões": [
-                        {
-                            "profissão": "Assistente técnico administrativo",
-                            "total": 104238,
-                            "código CBO": "411010"
-                        },
-                        {
-                            "profissão": "Auxiliar de escritório",
-                            "total": 64553,
-                            "código CBO": "411005"
-                        },
-                        {
-                            "profissão": "Auxiliar de estatística",
-                            "total": 159,
-                            "código CBO": "411035"
-                        },
-                        {
-                            "profissão": "Auxiliar de pessoal",
-                            "total": 1632,
-                            "código CBO": "411030"
-                        }
-                    ],
-                    "total": 170582
-                },
-                "Supervisores dos serviços de transporte, turismo, hotelaria e administração de edifícios": {
-                    "código CBO": "5101",
-                    "descrição": "Supervisores dos serviços de transporte, turismo, hotelaria e administração de edifícios",
-                    "profissões": [
-                        {
-                            "profissão": "Supervisor de andar",
-                            "total": 17,
-                            "código CBO": "510115"
-                        },
-                        {
-                            "profissão": "Supervisor de transportes",
-                            "total": 60,
-                            "código CBO": "510105"
-                        }
-                    ],
-                    "total": 77
-                },
-                "Profissionais de administração ecônomico-financeira": {
-                    "código CBO": "2525",
-                    "descrição": "Profissionais de administração ecônomico-financeira",
-                    "profissões": [
-                        {
-                            "profissão": "Analista financeiro (instituições financeiras)",
-                            "total": 0,
-                            "código CBO": "252545"
-                        },
-                        {
-                            "profissão": "Gerente de segurança da informação",
-                            "total": 7,
-                            "código CBO": "142525"
-                        }
-                    ],
-                    "total": 7
-                },
-                "Advogados": {
-                    "código CBO": "2410",
-                    "descrição": "Advogados",
-                    "profissões": [
-                        {
-                            "profissão": "Advogado",
-                            "total": 498,
-                            "código CBO": "241005"
-                        },
-                        {
-                            "profissão": "Advogado de empresa",
-                            "total": 34,
-                            "código CBO": "241010"
-                        },
-                        {
-                            "profissão": "Analista de redes e de comunicação de dados",
-                            "total": 150,
-                            "código CBO": "212410"
-                        },
-                        {
-                            "profissão": "Gerente de suprimentos",
-                            "total": 78,
-                            "código CBO": "142410"
-                        }
-                    ],
-                    "total": 760
-                },
-                "Diretores de manutenção": {
-                    "código CBO": "1238",
-                    "descrição": "Diretores de manutenção",
-                    "profissões": [
-                        {
-                            "profissão": "Diretor de manutenção",
-                            "total": 71,
-                            "código CBO": "123805"
-                        }
-                    ],
-                    "total": 71
-                },
-                "Diretores de pesquisa e desenvolvimento": {
-                    "código CBO": "1237",
-                    "descrição": "Diretores de pesquisa e desenvolvimento",
-                    "profissões": [
-                        {
-                            "profissão": "Diretor de pesquisa e desenvolvimento (p&d)",
-                            "total": 11,
-                            "código CBO": "123705"
-                        }
-                    ],
-                    "total": 11
-                },
-                "Profissionais da matemática": {
-                    "código CBO": "2111",
-                    "descrição": "Profissionais da matemática",
-                    "profissões": [
-                        {
-                            "profissão": "Matemático",
-                            "total": 4,
-                            "código CBO": "211115"
-                        }
-                    ],
-                    "total": 4
-                },
-                "Técnicos em segurança do trabalho": {
-                    "código CBO": "3516",
-                    "descrição": "Técnicos em segurança do trabalho",
-                    "profissões": [
-                        {
-                            "profissão": "Técnico em segurança do trabalho",
-                            "total": 2044,
-                            "código CBO": "351605"
-                        }
-                    ],
-                    "total": 2044
-                },
-                "Auxiliares de serviços de documentação, informação e pesquisa": {
-                    "código CBO": "4151",
-                    "descrição": "Auxiliares de serviços de documentação, informação e pesquisa",
-                    "profissões": [
-                        {
-                            "profissão": "Arquivista de documentos",
-                            "total": 296,
-                            "código CBO": "415105"
-                        }
-                    ],
-                    "total": 296
-                },
-                "Trabalhadores de instalações elétricas": {
-                    "código CBO": "7156",
-                    "descrição": "Trabalhadores de instalações elétricas",
-                    "profissões": [
-                        {
-                            "profissão": "Eletricista de instalações",
-                            "total": 466,
-                            "código CBO": "715615"
-                        }
-                    ],
-                    "total": 466
-                },
-                "Trabalhadores de apoio à agricultura": {
-                    "código CBO": "6220",
-                    "descrição": "Trabalhadores de apoio à agricultura",
-                    "profissões": [
-                        {
-                            "profissão": "Jardineiro",
-                            "total": 198,
-                            "código CBO": "622010"
-                        }
-                    ],
-                    "total": 198
-                },
-                "Operadores de máquinas a vapor e utilidades": {
-                    "código CBO": "8621",
-                    "descrição": "Operadores de máquinas a vapor e utilidades",
-                    "profissões": [
-                        {
-                            "profissão": "Operador de caldeira",
-                            "total": 141,
-                            "código CBO": "862120"
-                        }
-                    ],
-                    "total": 141
-                },
-                "Trabalhadores de estruturas de alvenaria": {
-                    "código CBO": "7152",
-                    "descrição": "Trabalhadores de estruturas de alvenaria",
-                    "profissões": [
-                        {
-                            "profissão": "Pedreiro",
-                            "total": 521,
-                            "código CBO": "715210"
-                        }
-                    ],
-                    "total": 521
-                },
-                "Trabalhadores da pintura de equipamentos, veículos, estruturas metálicas e de compósitos": {
-                    "código CBO": "7233",
-                    "descrição": "Trabalhadores da pintura de equipamentos, veículos, estruturas metálicas e de compósitos",
-                    "profissões": [
-                        {
-                            "profissão": "Pintor a pincel e rolo (exceto obras e estruturas metálicas)",
-                            "total": 40,
-                            "código CBO": "723310"
-                        }
-                    ],
-                    "total": 40
-                },
-                "Ajudantes de obras civis": {
-                    "código CBO": "7170",
-                    "descrição": "Ajudantes de obras civis",
-                    "profissões": [
-                        {
-                            "profissão": "Servente de obras",
-                            "total": 436,
-                            "código CBO": "717020"
-                        }
-                    ],
-                    "total": 436
-                },
-                "Encanadores e instaladores de tubulações": {
-                    "código CBO": "7241",
-                    "descrição": "Encanadores e instaladores de tubulações",
-                    "profissões": [
-                        {
-                            "profissão": "Encanador",
-                            "total": 181,
-                            "código CBO": "724110"
-                        }
-                    ],
-                    "total": 181
-                },
-                "Auditores fiscais do trabalho": {
-                    "código CBO": "2543",
-                    "descrição": "Auditores fiscais do trabalho",
+            "grupos": [
+                {
+                    "especialidade": "Serviço de Limpeza/Conservação",
+                    "total": 0,
                     "profissões": [
                         {
                             "profissão": "Agente de higiene e segurança",
                             "total": 3072,
                             "código CBO": "254310"
-                        }
-                    ],
-                    "total": 3072
-                },
-                "Ajustadores mecânicos polivalentes": {
-                    "código CBO": "7250",
-                    "descrição": "Ajustadores mecânicos polivalentes",
-                    "profissões": [
+                        },
                         {
                             "profissão": "Ajustador mecânico",
                             "total": 25,
                             "código CBO": "725010"
-                        }
-                    ],
-                    "total": 25
-                },
-                "Trabalhadores dos serviços domésticos em geral": {
-                    "código CBO": "5121",
-                    "descrição": "Trabalhadores dos serviços domésticos em geral",
-                    "profissões": [
-                        {
-                            "profissão": "Empregado doméstico nos serviços gerais",
-                            "total": 4225,
-                            "código CBO": "512105"
-                        }
-                    ],
-                    "total": 4225
-                },
-                "Marceneiros e afins": {
-                    "código CBO": "7711",
-                    "descrição": "Marceneiros e afins",
-                    "profissões": [
-                        {
-                            "profissão": "Marceneiro",
-                            "total": 161,
-                            "código CBO": "771105"
-                        }
-                    ],
-                    "total": 161
-                },
-                "Tintureiros, lavadeiros e afins, a máquina": {
-                    "código CBO": "5163",
-                    "descrição": "Tintureiros, lavadeiros e afins, a máquina",
-                    "profissões": [
+                        },
                         {
                             "profissão": "Atendente de lavanderia",
                             "total": 211,
@@ -2790,6 +2323,26 @@
                             "profissão": "Auxiliar de lavanderia",
                             "total": 3734,
                             "código CBO": "516345"
+                        },
+                        {
+                            "profissão": "Eletricista de instalações",
+                            "total": 466,
+                            "código CBO": "715615"
+                        },
+                        {
+                            "profissão": "Empregado doméstico nos serviços gerais",
+                            "total": 4225,
+                            "código CBO": "512105"
+                        },
+                        {
+                            "profissão": "Encanador",
+                            "total": 181,
+                            "código CBO": "724110"
+                        },
+                        {
+                            "profissão": "Jardineiro",
+                            "total": 198,
+                            "código CBO": "622010"
                         },
                         {
                             "profissão": "Lavadeiro, em geral",
@@ -2802,133 +2355,81 @@
                             "código CBO": "516310"
                         },
                         {
+                            "profissão": "Marceneiro",
+                            "total": 161,
+                            "código CBO": "771105"
+                        },
+                        {
+                            "profissão": "Operador de caldeira",
+                            "total": 141,
+                            "código CBO": "862120"
+                        },
+                        {
                             "profissão": "Passador de roupas em geral",
                             "total": 117,
                             "código CBO": "516325"
-                        }
-                    ],
-                    "total": 5166
-                },
-                "Trabalhadores nos serviços de administração de edifícios": {
-                    "código CBO": "5141",
-                    "descrição": "Trabalhadores nos serviços de administração de edifícios",
-                    "profissões": [
+                        },
+                        {
+                            "profissão": "Pedreiro",
+                            "total": 521,
+                            "código CBO": "715210"
+                        },
+                        {
+                            "profissão": "Pintor a pincel e rolo (exceto obras e estruturas metálicas)",
+                            "total": 40,
+                            "código CBO": "723310"
+                        },
+                        {
+                            "profissão": "Servente de obras",
+                            "total": 436,
+                            "código CBO": "717020"
+                        },
                         {
                             "profissão": "Zelador de edifício",
                             "total": 2771,
                             "código CBO": "514120"
+                        }
+                    ]
+                },
+                {
+                    "especialidade": "Outras ocupações administrativas",
+                    "total": 0,
+                    "profissões": [
+                        {
+                            "profissão": "Acabador de calçados",
+                            "total": 1,
+                            "código CBO": "764305"
                         },
                         {
                             "profissão": "Ascensorista",
                             "total": 341,
                             "código CBO": "514105"
-                        }
-                    ],
-                    "total": 3112
-                },
-                "Outros trabalhadores dos serviços": {
-                    "código CBO": "5199",
-                    "descrição": "Outros trabalhadores dos serviços",
-                    "profissões": [
-                        {
-                            "profissão": "Guardador de veículos",
-                            "total": 9,
-                            "código CBO": "519925"
-                        }
-                    ],
-                    "total": 9
-                },
-                "Porteiros, vigias e afins": {
-                    "código CBO": "5174",
-                    "descrição": "Porteiros, vigias e afins",
-                    "profissões": [
-                        {
-                            "profissão": "Porteiro de edifícios",
-                            "total": 3767,
-                            "código CBO": "517410"
                         },
                         {
-                            "profissão": "Vigia",
-                            "total": 7233,
-                            "código CBO": "517420"
-                        }
-                    ],
-                    "total": 11000
-                },
-                "Vigilantes e guardas de segurança": {
-                    "código CBO": "5173",
-                    "descrição": "Vigilantes e guardas de segurança",
-                    "profissões": [
-                        {
-                            "profissão": "Agente de segurança",
-                            "total": 1109,
-                            "código CBO": "517310"
+                            "profissão": "Copeiro",
+                            "total": 2892,
+                            "código CBO": "513425"
                         },
                         {
-                            "profissão": "Agente de segurança penitenciária",
-                            "total": 61,
-                            "código CBO": "517315"
+                            "profissão": "Copeiro de hospital",
+                            "total": 6292,
+                            "código CBO": "513430"
                         },
-                        {
-                            "profissão": "Vigilante",
-                            "total": 2864,
-                            "código CBO": "517330"
-                        }
-                    ],
-                    "total": 4034
-                },
-                "Policiais, guardas-civis municipais e agentes de trânsito": {
-                    "código CBO": "5172",
-                    "descrição": "Policiais, guardas-civis municipais e agentes de trânsito",
-                    "profissões": [
-                        {
-                            "profissão": "Guarda-civil municipal",
-                            "total": 269,
-                            "código CBO": "517215"
-                        }
-                    ],
-                    "total": 269
-                },
-                "Trabalhadores de manobras de transportes sobre trilhos": {
-                    "código CBO": "7831",
-                    "descrição": "Trabalhadores de manobras de transportes sobre trilhos",
-                    "profissões": [
-                        {
-                            "profissão": "Agente de pátio",
-                            "total": 137,
-                            "código CBO": "783105"
-                        }
-                    ],
-                    "total": 137
-                },
-                "Profissionais polivalentes da confecção de roupas": {
-                    "código CBO": "7630",
-                    "descrição": "Profissionais polivalentes da confecção de roupas",
-                    "profissões": [
                         {
                             "profissão": "Costureira de reparação de roupas",
                             "total": 238,
                             "código CBO": "763015"
-                        }
-                    ],
-                    "total": 238
-                },
-                "Trabalhadores na fabricação e conservação de alimentos": {
-                    "código CBO": "8414",
-                    "descrição": "Trabalhadores na fabricação e conservação de alimentos",
-                    "profissões": [
+                        },
+                        {
+                            "profissão": "Costureiro na confecção em serie",
+                            "total": 124,
+                            "código CBO": "763210"
+                        },
                         {
                             "profissão": "Cozinhador conservação de alimentos",
                             "total": 243,
                             "código CBO": "841408"
-                        }
-                    ],
-                    "total": 243
-                },
-                "Cozinheiros": {
-                    "código CBO": "5132",
-                    "descrição": "Cozinheiros",
-                    "profissões": [
+                        },
                         {
                             "profissão": "Cozinheiro de embarcações",
                             "total": 5,
@@ -2943,26 +2444,7 @@
                             "profissão": "Cozinheiro geral",
                             "total": 2023,
                             "código CBO": "513205"
-                        }
-                    ],
-                    "total": 6186
-                },
-                "Operadores de máquinas para costura de peças do vestuário": {
-                    "código CBO": "7632",
-                    "descrição": "Operadores de máquinas para costura de peças do vestuário",
-                    "profissões": [
-                        {
-                            "profissão": "Costureiro na confecção em serie",
-                            "total": 124,
-                            "código CBO": "763210"
-                        }
-                    ],
-                    "total": 124
-                },
-                "Motoristas de veículos de pequeno e médio porte": {
-                    "código CBO": "7823",
-                    "descrição": "Motoristas de veículos de pequeno e médio porte",
-                    "profissões": [
+                        },
                         {
                             "profissão": "Motorista de carro de passeio",
                             "total": 7762,
@@ -2972,14 +2454,671 @@
                             "profissão": "Motorista de furgão ou veículo similar",
                             "total": 8453,
                             "código CBO": "782310"
+                        },
+                        {
+                            "profissão": "Trabalhador de serviços de manutenção",
+                            "total": 253012,
+                            "código CBO": "514225"
+                        }
+                    ]
+                }
+            ],
+            "famílias": {
+                "Administração": {
+                    "código CBO": "00000",
+                    "descrição": "Administração",
+                    "profissões": [
+                        {
+                            "profissão": "Administrador",
+                            "total": 6135,
+                            "código CBO": "252105"
+                        },
+                        {
+                            "profissão": "Administrador de banco de dados",
+                            "total": 179,
+                            "código CBO": "212305"
+                        },
+                        {
+                            "profissão": "Administrador de sistemas operacionais",
+                            "total": 881,
+                            "código CBO": "212315"
+                        },
+                        {
+                            "profissão": "Advogado",
+                            "total": 498,
+                            "código CBO": "241005"
+                        },
+                        {
+                            "profissão": "Advogado de empresa",
+                            "total": 34,
+                            "código CBO": "241010"
+                        },
+                        {
+                            "profissão": "Almoxarife",
+                            "total": 2579,
+                            "código CBO": "414105"
+                        },
+                        {
+                            "profissão": "Analista de redes e de comunicação de dados",
+                            "total": 150,
+                            "código CBO": "212410"
+                        },
+                        {
+                            "profissão": "Analista de suporte computacional",
+                            "total": 522,
+                            "código CBO": "212420"
+                        },
+                        {
+                            "profissão": "Analista financeiro (instituições financeiras)",
+                            "total": 0,
+                            "código CBO": "252545"
+                        },
+                        {
+                            "profissão": "Arquiteto de edificações",
+                            "total": 125,
+                            "código CBO": "214105"
+                        },
+                        {
+                            "profissão": "Arquivista",
+                            "total": 379,
+                            "código CBO": "261305"
+                        },
+                        {
+                            "profissão": "Arquivista de documentos",
+                            "total": 296,
+                            "código CBO": "415105"
+                        },
+                        {
+                            "profissão": "Assistente técnico administrativo",
+                            "total": 104238,
+                            "código CBO": "411010"
+                        },
+                        {
+                            "profissão": "Atendente de agencia",
+                            "total": 64,
+                            "código CBO": "413205"
+                        },
+                        {
+                            "profissão": "Atendente de ambulatório ou clínica",
+                            "total": 11507,
+                            "código CBO": "422110"
+                        },
+                        {
+                            "profissão": "Auditor (contadores e afins)",
+                            "total": 325,
+                            "código CBO": "252205"
+                        },
+                        {
+                            "profissão": "Auxiliar de contabilidade",
+                            "total": 717,
+                            "código CBO": "413110"
+                        },
+                        {
+                            "profissão": "Auxiliar de escritório",
+                            "total": 64553,
+                            "código CBO": "411005"
+                        },
+                        {
+                            "profissão": "Auxiliar de estatística",
+                            "total": 159,
+                            "código CBO": "411035"
+                        },
+                        {
+                            "profissão": "Auxiliar de faturamento",
+                            "total": 6393,
+                            "código CBO": "413115"
+                        },
+                        {
+                            "profissão": "Auxiliar de pessoal",
+                            "total": 1632,
+                            "código CBO": "411030"
+                        },
+                        {
+                            "profissão": "Chefe de contabilidade (técnico)",
+                            "total": 0,
+                            "código CBO": "351110"
+                        },
+                        {
+                            "profissão": "Cobrador externo",
+                            "total": 20,
+                            "código CBO": "421305"
+                        },
+                        {
+                            "profissão": "Comprador",
+                            "total": 482,
+                            "código CBO": "354205"
+                        },
+                        {
+                            "profissão": "Contador",
+                            "total": 840,
+                            "código CBO": "252210"
+                        },
+                        {
+                            "profissão": "Continuo",
+                            "total": 1387,
+                            "código CBO": "412205"
+                        },
+                        {
+                            "profissão": "Datilografo",
+                            "total": 304,
+                            "código CBO": "412105"
+                        },
+                        {
+                            "profissão": "Digitador",
+                            "total": 13252,
+                            "código CBO": "412110"
+                        },
+                        {
+                            "profissão": "Diretor administrativo",
+                            "total": 7427,
+                            "código CBO": "123105"
+                        },
+                        {
+                            "profissão": "Diretor administrativo e financeiro",
+                            "total": 626,
+                            "código CBO": "123110"
+                        },
+                        {
+                            "profissão": "Diretor comercial",
+                            "total": 27,
+                            "código CBO": "123305"
+                        },
+                        {
+                            "profissão": "Diretor de manutenção",
+                            "total": 71,
+                            "código CBO": "123805"
+                        },
+                        {
+                            "profissão": "Diretor de marketing",
+                            "total": 6,
+                            "código CBO": "123310"
+                        },
+                        {
+                            "profissão": "Diretor de pesquisa e desenvolvimento (p&d)",
+                            "total": 11,
+                            "código CBO": "123705"
+                        },
+                        {
+                            "profissão": "Diretor de recursos humanos",
+                            "total": 86,
+                            "código CBO": "123205"
+                        },
+                        {
+                            "profissão": "Diretor de relações de trabalho",
+                            "total": 7,
+                            "código CBO": "123210"
+                        },
+                        {
+                            "profissão": "Diretor de serviços culturais",
+                            "total": 3,
+                            "código CBO": "131105"
+                        },
+                        {
+                            "profissão": "Diretor de serviços de informática",
+                            "total": 152,
+                            "código CBO": "123605"
+                        },
+                        {
+                            "profissão": "Diretor de serviços de saúde",
+                            "total": 9355,
+                            "código CBO": "131205"
+                        },
+                        {
+                            "profissão": "Diretor de serviços sociais",
+                            "total": 34,
+                            "código CBO": "131110"
+                        },
+                        {
+                            "profissão": "Diretor de suprimentos",
+                            "total": 12,
+                            "código CBO": "123405"
+                        },
+                        {
+                            "profissão": "Diretor de suprimentos no serviço publico",
+                            "total": 5,
+                            "código CBO": "123410"
+                        },
+                        {
+                            "profissão": "Diretor financeiro",
+                            "total": 119,
+                            "código CBO": "123115"
+                        },
+                        {
+                            "profissão": "Economista domestico",
+                            "total": 14,
+                            "código CBO": "251610"
+                        },
+                        {
+                            "profissão": "Engenheiro civil",
+                            "total": 513,
+                            "código CBO": "214205"
+                        },
+                        {
+                            "profissão": "Engenheiro civil (saneamento)",
+                            "total": 85,
+                            "código CBO": "214260"
+                        },
+                        {
+                            "profissão": "Engenheiro de segurança do trabalho",
+                            "total": 379,
+                            "código CBO": "214915"
+                        },
+                        {
+                            "profissão": "Fiscal de tributos municipal",
+                            "total": 104,
+                            "código CBO": "254410"
+                        },
+                        {
+                            "profissão": "Gerente administrativo",
+                            "total": 10443,
+                            "código CBO": "142105"
+                        },
+                        {
+                            "profissão": "Gerente comercial",
+                            "total": 121,
+                            "código CBO": "142305"
+                        },
+                        {
+                            "profissão": "Gerente de almoxarifado",
+                            "total": 145,
+                            "código CBO": "142415"
+                        },
+                        {
+                            "profissão": "Gerente de compras",
+                            "total": 141,
+                            "código CBO": "142405"
+                        },
+                        {
+                            "profissão": "Gerente de comunicação",
+                            "total": 61,
+                            "código CBO": "142310"
+                        },
+                        {
+                            "profissão": "Gerente de departamento pessoal",
+                            "total": 229,
+                            "código CBO": "142210"
+                        },
+                        {
+                            "profissão": "Gerente de desenvolvimento de sistemas",
+                            "total": 22,
+                            "código CBO": "142510"
+                        },
+                        {
+                            "profissão": "Gerente de marketing",
+                            "total": 43,
+                            "código CBO": "142315"
+                        },
+                        {
+                            "profissão": "Gerente de pesquisa e desenvolvimento (p&d)",
+                            "total": 25,
+                            "código CBO": "142605"
+                        },
+                        {
+                            "profissão": "Gerente de operação de tecnologia da informação",
+                            "total": 44,
+                            "código CBO": "142515"
+                        },
+                        {
+                            "profissão": "Gerente de produção e operações",
+                            "total": 38,
+                            "código CBO": "141205"
+                        },
+                        {
+                            "profissão": "Gerente de projetos de tecnologia da informação",
+                            "total": 30,
+                            "código CBO": "142520"
+                        },
+                        {
+                            "profissão": "Gerente de projetos e serviços de manutenção",
+                            "total": 109,
+                            "código CBO": "142705"
+                        },
+                        {
+                            "profissão": "Gerente de recursos humanos",
+                            "total": 397,
+                            "código CBO": "142205"
+                        },
+                        {
+                            "profissão": "Gerente de rede",
+                            "total": 18,
+                            "código CBO": "142505"
+                        },
+                        {
+                            "profissão": "Gerente de riscos",
+                            "total": 4,
+                            "código CBO": "142110"
+                        },
+                        {
+                            "profissão": "Gerente de segurança da informação",
+                            "total": 7,
+                            "código CBO": "142525"
+                        },
+                        {
+                            "profissão": "Gerente de serviços culturais",
+                            "total": 7,
+                            "código CBO": "131115"
+                        },
+                        {
+                            "profissão": "Gerente de serviços de saúde",
+                            "total": 15080,
+                            "código CBO": "131210"
+                        },
+                        {
+                            "profissão": "Gerente de serviços sociais",
+                            "total": 54,
+                            "código CBO": "131120"
+                        },
+                        {
+                            "profissão": "Gerente de suporte técnico de tecnologia da informação",
+                            "total": 178,
+                            "código CBO": "142530"
+                        },
+                        {
+                            "profissão": "Gerente de suprimentos",
+                            "total": 78,
+                            "código CBO": "142410"
+                        },
+                        {
+                            "profissão": "Gerente de vendas",
+                            "total": 12,
+                            "código CBO": "142320"
+                        },
+                        {
+                            "profissão": "Gerente financeiro",
+                            "total": 357,
+                            "código CBO": "142115"
+                        },
+                        {
+                            "profissão": "Matemático",
+                            "total": 4,
+                            "código CBO": "211115"
+                        },
+                        {
+                            "profissão": "Operador de computador",
+                            "total": 804,
+                            "código CBO": "317205"
+                        },
+                        {
+                            "profissão": "Operador de rádiochamada",
+                            "total": 1243,
+                            "código CBO": "422220"
+                        },
+                        {
+                            "profissão": "Operador de telemarketing ativo e receptivo",
+                            "total": 501,
+                            "código CBO": "422310"
+                        },
+                        {
+                            "profissão": "Operador de telemarketing técnico",
+                            "total": 21,
+                            "código CBO": "422320"
+                        },
+                        {
+                            "profissão": "Professor de computação (no ensino superior)",
+                            "total": 0,
+                            "código CBO": "234120"
+                        },
+                        {
+                            "profissão": "Programador de sistemas de informação",
+                            "total": 234,
+                            "código CBO": "317110"
+                        },
+                        {
+                            "profissão": "Recepcionista, em geral",
+                            "total": 52025,
+                            "código CBO": "422105"
+                        },
+                        {
+                            "profissão": "Secretário executivo",
+                            "total": 1690,
+                            "código CBO": "252305"
+                        },
+                        {
+                            "profissão": "Supervisor administrativo",
+                            "total": 5505,
+                            "código CBO": "410105"
+                        },
+                        {
+                            "profissão": "Supervisor de almoxarifado",
+                            "total": 218,
+                            "código CBO": "410205"
+                        },
+                        {
+                            "profissão": "Supervisor de andar",
+                            "total": 17,
+                            "código CBO": "510115"
+                        },
+                        {
+                            "profissão": "Supervisor de compras",
+                            "total": 108,
+                            "código CBO": "354210"
+                        },
+                        {
+                            "profissão": "Supervisor de contas a pagar",
+                            "total": 33,
+                            "código CBO": "410215"
+                        },
+                        {
+                            "profissão": "Supervisor de controle patrimonial",
+                            "total": 85,
+                            "código CBO": "410220"
+                        },
+                        {
+                            "profissão": "Supervisor de recepcionistas",
+                            "total": 728,
+                            "código CBO": "420125"
+                        },
+                        {
+                            "profissão": "Supervisor de tesouraria",
+                            "total": 156,
+                            "código CBO": "410235"
+                        },
+                        {
+                            "profissão": "Supervisor de transportes",
+                            "total": 60,
+                            "código CBO": "510105"
+                        },
+                        {
+                            "profissão": "Técnico de suporte ao usuário de tecnologia da informação",
+                            "total": 667,
+                            "código CBO": "317210"
+                        },
+                        {
+                            "profissão": "Técnico de contabilidade",
+                            "total": 366,
+                            "código CBO": "351105"
+                        },
+                        {
+                            "profissão": "Técnico de manutenção de sistemas e instrumentos",
+                            "total": 62,
+                            "código CBO": "314405"
+                        },
+                        {
+                            "profissão": "Técnico eletrônico",
+                            "total": 229,
+                            "código CBO": "313215"
+                        },
+                        {
+                            "profissão": "Técnico em Administração",
+                            "total": 2871,
+                            "código CBO": "351305"
+                        },
+                        {
+                            "profissão": "Técnico em manutenção de equipamentos de informática",
+                            "total": 938,
+                            "código CBO": "313220"
+                        },
+                        {
+                            "profissão": "Técnico em secretariado",
+                            "total": 695,
+                            "código CBO": "351505"
+                        },
+                        {
+                            "profissão": "Técnico em segurança do trabalho",
+                            "total": 2044,
+                            "código CBO": "351605"
+                        },
+                        {
+                            "profissão": "Telefonista",
+                            "total": 5547,
+                            "código CBO": "422205"
                         }
                     ],
-                    "total": 16215
+                    "total": 341181
                 },
-                "Trabalhadores no atendimento em estabelecimentos de serviços de alimentação, bebidas e hotelaria": {
-                    "código CBO": "5134",
-                    "descrição": "Trabalhadores no atendimento em estabelecimentos de serviços de alimentação, bebidas e hotelaria",
+                "Serviço de Limpeza/Conservação": {
+                    "código CBO": "00000",
+                    "descrição": "Serviço de Limpeza/Conservação",
                     "profissões": [
+                        {
+                            "profissão": "Agente de higiene e segurança",
+                            "total": 3072,
+                            "código CBO": "254310"
+                        },
+                        {
+                            "profissão": "Ajustador mecânico",
+                            "total": 25,
+                            "código CBO": "725010"
+                        },
+                        {
+                            "profissão": "Atendente de lavanderia",
+                            "total": 211,
+                            "código CBO": "516340"
+                        },
+                        {
+                            "profissão": "Auxiliar de lavanderia",
+                            "total": 3734,
+                            "código CBO": "516345"
+                        },
+                        {
+                            "profissão": "Eletricista de instalações",
+                            "total": 466,
+                            "código CBO": "715615"
+                        },
+                        {
+                            "profissão": "Empregado doméstico nos serviços gerais",
+                            "total": 4225,
+                            "código CBO": "512105"
+                        },
+                        {
+                            "profissão": "Encanador",
+                            "total": 181,
+                            "código CBO": "724110"
+                        },
+                        {
+                            "profissão": "Jardineiro",
+                            "total": 198,
+                            "código CBO": "622010"
+                        },
+                        {
+                            "profissão": "Lavadeiro, em geral",
+                            "total": 623,
+                            "código CBO": "516305"
+                        },
+                        {
+                            "profissão": "Lavador de roupas à máquina",
+                            "total": 481,
+                            "código CBO": "516310"
+                        },
+                        {
+                            "profissão": "Marceneiro",
+                            "total": 161,
+                            "código CBO": "771105"
+                        },
+                        {
+                            "profissão": "Operador de caldeira",
+                            "total": 141,
+                            "código CBO": "862120"
+                        },
+                        {
+                            "profissão": "Passador de roupas em geral",
+                            "total": 117,
+                            "código CBO": "516325"
+                        },
+                        {
+                            "profissão": "Pedreiro",
+                            "total": 521,
+                            "código CBO": "715210"
+                        },
+                        {
+                            "profissão": "Pintor a pincel e rolo (exceto obras e estruturas metálicas)",
+                            "total": 40,
+                            "código CBO": "723310"
+                        },
+                        {
+                            "profissão": "Servente de obras",
+                            "total": 436,
+                            "código CBO": "717020"
+                        },
+                        {
+                            "profissão": "Zelador de edifício",
+                            "total": 2771,
+                            "código CBO": "514120"
+                        }
+                    ],
+                    "total": 17403
+                },
+                "Segurança": {
+                    "código CBO": "00000",
+                    "descrição": "Segurança",
+                    "profissões": [
+                        {
+                            "profissão": "Agente de pátio",
+                            "total": 137,
+                            "código CBO": "783105"
+                        },
+                        {
+                            "profissão": "Agente de segurança",
+                            "total": 1109,
+                            "código CBO": "517310"
+                        },
+                        {
+                            "profissão": "Agente de segurança penitenciária",
+                            "total": 61,
+                            "código CBO": "517315"
+                        },
+                        {
+                            "profissão": "Guarda-civil municipal",
+                            "total": 269,
+                            "código CBO": "517215"
+                        },
+                        {
+                            "profissão": "Guardador de veículos",
+                            "total": 9,
+                            "código CBO": "519925"
+                        },
+                        {
+                            "profissão": "Porteiro de edifícios",
+                            "total": 3767,
+                            "código CBO": "517410"
+                        },
+                        {
+                            "profissão": "Vigia",
+                            "total": 7233,
+                            "código CBO": "517420"
+                        },
+                        {
+                            "profissão": "Vigilante",
+                            "total": 2864,
+                            "código CBO": "517330"
+                        }
+                    ],
+                    "total": 15449
+                },
+                "Outras ocupações administrativas": {
+                    "código CBO": "00000",
+                    "descrição": "Outras ocupações administrativas",
+                    "profissões": [
+                        {
+                            "profissão": "Acabador de calçados",
+                            "total": 1,
+                            "código CBO": "764305"
+                        },
+                        {
+                            "profissão": "Ascensorista",
+                            "total": 341,
+                            "código CBO": "514105"
+                        },
                         {
                             "profissão": "Copeiro",
                             "total": 2892,
@@ -2989,33 +3128,54 @@
                             "profissão": "Copeiro de hospital",
                             "total": 6292,
                             "código CBO": "513430"
-                        }
-                    ],
-                    "total": 9184
-                },
-                "Trabalhadores nos serviços de coleta de resíduos, de limpeza e conservação de áreas públicas": {
-                    "código CBO": "5142",
-                    "descrição": "Trabalhadores nos serviços de coleta de resíduos, de limpeza e conservação de áreas públicas",
-                    "profissões": [
+                        },
+                        {
+                            "profissão": "Costureira de reparação de roupas",
+                            "total": 238,
+                            "código CBO": "763015"
+                        },
+                        {
+                            "profissão": "Costureiro na confecção em serie",
+                            "total": 124,
+                            "código CBO": "763210"
+                        },
+                        {
+                            "profissão": "Cozinhador conservação de alimentos",
+                            "total": 243,
+                            "código CBO": "841408"
+                        },
+                        {
+                            "profissão": "Cozinheiro de embarcações",
+                            "total": 5,
+                            "código CBO": "513225"
+                        },
+                        {
+                            "profissão": "Cozinheiro de hospital",
+                            "total": 4158,
+                            "código CBO": "513220"
+                        },
+                        {
+                            "profissão": "Cozinheiro geral",
+                            "total": 2023,
+                            "código CBO": "513205"
+                        },
+                        {
+                            "profissão": "Motorista de carro de passeio",
+                            "total": 7762,
+                            "código CBO": "782305"
+                        },
+                        {
+                            "profissão": "Motorista de furgão ou veículo similar",
+                            "total": 8453,
+                            "código CBO": "782310"
+                        },
                         {
                             "profissão": "Trabalhador de serviços de manutenção",
                             "total": 253012,
                             "código CBO": "514225"
                         }
                     ],
-                    "total": 253012
-                },
-                "Trabalhadores de acabamento de calçados": {
-                    "código CBO": "7643",
-                    "descrição": "Trabalhadores de acabamento de calçados",
-                    "profissões": [
-                        {
-                            "profissão": "Acabador de calçados",
-                            "total": 1,
-                            "código CBO": "764305"
-                        }
-                    ],
-                    "total": 1
+                    "total": 285544
                 }
             }
         }

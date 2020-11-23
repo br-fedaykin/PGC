@@ -16,14 +16,31 @@ def acrescentarFamília():
     global taxonomia
 
     csv_file = open('TISS/CBO2002_Familia.csv', 'r', encoding='utf-8-sig')
-    reader = csv.DictReader(csv_file)
+    reader = csv.DictReader(csv_file, delimiter=';')
     cbo_família = {}
     for line in reader:
         cbo_família[str(line['Código'])] = line['Título']
     csv_file.close()
+    gruposExcluidos = [
+        'Outras ocupações de Nível Superior Relacionados à Saúde'.lower(),
+        'Outras ocupações de Nível Técnico e Auxiliar em Saúde'.lower(),
+        'Atendente de Enfermagem/Auxiliar operacional de serviços diversos e assemelhados'.lower(),
+        'Outras ocupações de Nível Elementar em Saúde'.lower(),
+        'Administração'.lower(),
+        'Serviço de Limpeza/Conservação'.lower(),
+        'Segurança'.lower(),
+        'Outras ocupações administrativas'.lower()
+    ]
     for nível in taxonomia['taxonomia']:
         nível['famílias'] = {}
         for grupo in nível['grupos']:
+            print(grupo["especialidade"])
+            if grupo["especialidade"].lower() in gruposExcluidos:
+                familia = {'código CBO': '00000'}
+                familia['descrição'] = grupo["especialidade"]
+                familia['profissões'] = [x for x in grupo["profissões"]]
+                nível['famílias'][grupo["especialidade"]] = familia
+                continue
             códigoFamílias = set([x['código CBO'][:4] for x in grupo['profissões'] if x['código CBO'][:4] != ''])
             for código in códigoFamílias:
                 descrição = cbo_família[código]
@@ -40,7 +57,27 @@ def acrescentarFamília():
                     if nível['famílias'].get('sem CBO') == None:
                         nível['famílias']['sem CBO'] = {'código CBO' : 'sem CBO', 'profissões': []}
                     nível['famílias']['sem CBO']['profissões'].append(profissão)
-        del(nível['grupos'])
+    for nível in taxonomia['taxonomia']:
+        for (k, grupo) in enumerate(nível['grupos']):
+            i = 0
+            while i != len(grupo['profissões']):
+                for j in range(i, len(grupo['profissões'])):
+                    deleted = False
+                    profissao = grupo['profissões'][j]['profissão']
+                    for código in nível['famílias']:
+                        for prof in nível['famílias'][código]['profissões']:
+                            if profissao.lower() == prof['profissão'].lower():
+                                del grupo['profissões'][j]
+                                deleted = True
+                                break
+                        if deleted:
+                            break
+                    if deleted:
+                        break
+                else:
+                    i+=1
+            if len(grupo['profissões']) == 0:
+                del(nível['grupos'][k])
         for código in nível['famílias']:
             família = nível['famílias'][código]
             família['total'] = sum([x['total'] for x in família['profissões']])
