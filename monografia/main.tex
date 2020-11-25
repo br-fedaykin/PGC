@@ -1525,27 +1525,29 @@ A figura \ref{fig:crescimento-cifra} apresenta o crescimento do tamanho da cifra
   \label{fig:crescimento-cifra}
 \end{figure}
 
-A figura \ref{fig:crescimento-cifra} demonstra o crescimento do tamanho da cifra em função da quantidade de atributos utilizados na política de acesso. Para esta análise, foram executadas múltiplas aplicações ($n=100$) de criptografia ABE a um mesmo arquivo, variando o tamanho da política de acesso de 1 atributo até 100 atributos.
-A geração de políticas de acesso para o experimento utilizou uma estratégia recursiva, da seguinte forma:
-A geração de uma política de acesso aleatória com $n$ atributos utiliza a seguinte estratégia recursiva:
-se a política contém mais de 1 atributo, escolhe-se um operador lógico de forma aleatória.
-O operador lógico admite 2 operandos, então o processo é repetido em cada operando respectivamente com tamanho de política de acesso $k$ e $n-k$, onde $k$ é um número aleatório e $1 < k < n$.
-Quando $n = 1$, o nó atual representa um atributo e um atributo aleatório é escolhido.
+A figura \ref{fig:crescimento-cifra} demonstra o crescimento do tamanho da cifra em função da quantidade de atributos utilizados na política de acesso.
+Para esta análise, foram executadas múltiplas aplicações ($n=100$) de criptografia ABE a um mesmo arquivo, variando o tamanho da política de acesso de 1 atributo até 100 atributos.
+A geração de uma política de acesso aleatória com $n$ atributos aplica uma estratégia recursiva de construção que resulta em diferentes estruturas de acesso.
+%A geração de uma política de acesso aleatória com $n$ atributos utiliza a seguinte estratégia recursiva:
+%se a política contém mais de 1 atributo, escolhe-se um operador lógico de forma aleatória.
+%O operador lógico admite 2 operandos, então o processo é repetido em cada operando respectivamente com tamanho de política de acesso $k$ e $n-k$, onde $k$ é um número aleatório e $1 < k < n$.
+%Quando $n = 1$, o nó atual representa um atributo e um atributo aleatório é escolhido.
+Para este experimento, o tamanho dos nomes dos atributos foi fixado em 28 bytes, que equivale ao arredondamento do tamanho médio do tamanho dos termos utilizados na taxonomia das Profissões, disponível no Anexo \ref{app:taxonomiaProfissoes}.
 O mesmo experimento foi executado em 3 cenários, um onde apenas o operador AND é usado na construção da política de acesso aleatória, um onde apenas o operador OR e um onde ambos são usados na geração das políticas, entretanto tal divisão não resultou em alterações de tamanho da cifra.
 
-Os dados apresentados permitem a inferência de uma função linear na forma $y = ax + b$ que descreva o tamanho esperado de uma cifra $Cf$ em função dos $m$ atributos usados na política de acesso:
+Os dados apresentados permitem a inferência de uma função linear na forma $y = ax + b$ que descreva o tamanho esperado de uma cifra $f$ em função dos $m$ atributos usados na política de acesso e dos cenários onde a política de acesso é serializada junto com a cifra ($p = 0$) ou não ($p = 1$):
 
-\begin{equation}
-  \begin{aligned}
-    Cf(m) & =  3 a \cdot m + b, \textnormal{ onde } a = 495, b = 164 \textnormal{ e } m > 0
-  \end{aligned}
-\end{equation}
+\[ f(m, p) =
+\left\{\begin{matrix}
+    1485 \cdot m + 164, & \mbox{se }p = 0 \\
+    1576{,}5 \cdot m + 164, & \mbox{caso contrário}
+\end{matrix} \right. \]
 
-Considerando que o esquema ABE admite tamanhos arbitrários de política de acesso, a função descrita acima não possui um limite superior.
-Isso apresenta o problema para a codificação da cifra em uma transação Ethereum, uma vez que existe um limite prático ao tamanho do bloco e consequentemente, ao tamanho da transação, denominado como \emph{Gas Limit}.
-O limite de gas impede que a EVM trave na execução de alguma transação e também ajuda a controlar a taxa de adição de novos blocos à Blockchain, podendo subir ou descer de acordo com algumas métricas de uso da rede, como a quantidade de transações passadas, total de taxas pagas em mineração e quantidade de transações aguardando confirmação.
-A figura \ref{fig:serie-gasLimit} mostra a série histórica de valores de limite de gas na rede Ethereum, sendo que o valor mais recente dessa série histórica está em 12.474.388 unidades de gas.
-O consumo de gas realizado por uma transação tem seu comportamento detalhado nos anexos G e H do Yellow Paper do Ethereum \cite{Wood2017}.
+A função $f$ descrita acima não possui um limite superior, uma vez que o esquema ABE admite tamanhos arbitrários de política de acesso.
+Isso apresenta um problema para a codificação de uma cifra ABE em uma transação Ethereum, uma vez que o protocolo impõem um limite ao tamanho do bloco, que por sua vez implica em um limite ao tamanho da transação.
+O limite de gas denominado como \emph{Gas Limit} impede que a EVM trave na execução de alguma transação e também ajuda a controlar a taxa de adição de novos blocos à Blockchain e varia de acordo com algumas métricas de uso da rede, como a quantidade de transações passadas, total de taxas pagas em mineração e quantidade de transações aguardando confirmação.
+A figura \ref{fig:serie-gasLimit} mostra a série histórica de valores de limite de gas na rede Ethereum.
+Para a estimativa de gasto de gas pelo sistema, o valor do limite de gas será considerado o valor mais recente da série histórica, assumindo o valor de 12.474.388 unidades de gas.
 
 \begin{figure}[!h]
   \centering
@@ -1555,34 +1557,32 @@ O consumo de gas realizado por uma transação tem seu comportamento detalhado n
   \label{fig:serie-gasLimit}
 \end{figure}
 
-O custo em gas $g$ de uma transação $tx$ depende d possui dois componentes, um custo $g_{0}(tx)$ denominado como intrínseco, e um custo $C(tx)$ denominado como geral:
+Para estimar consumo de gás, é necessário consultar os detalhamentos de seu cálculo, descritos no Yellow Paper do Ethereum \cite{Wood2017}, principalmente na seção 6 e nos anexos G e H.
+Pode-se verificar que o custo em gas $g$ de uma transação $tx$ possui dois componentes, um custo $g_{0}(tx)$ denominado como intrínseco, e um custo $C(tx)$ denominado como geral:
 
 \[ g(tx) = g_{0}(tx) + C(tx) \]
 
-O custo intrínseco de uma transação é o custo associado ao próprio ato de realização de uma transação.
-Com a finalidade de estimar qual é o limite de capacidade de uma transação, podemos aproximar $g(tx)$ em termos do tamanho em bytes dos dados codificados em $tx$, que será denominado como $n$.
-A função de aproximação em termos de $n$ envolve dois custos principais, o custo base de transação $G_{transaction}$ e o custo de carga de dados $G_{txdatanonzero}$, cobrado por byte, na seguinte forma:
+O custo intrínseco de uma transação é o custo associado ao próprio ato de proposição de uma transação.
+Com a finalidade de estimar qual é o limite de capacidade de uma transação, podemos aproximar $g(tx)$ em função do tamanho (em bytes) dos dados codificados em $tx$, que será denominado como $n$.
+Esta função de aproximação $g'$ envolve dois custos principais, o custo base de transação $G_{transaction}$ e o custo de carga de dados $G_{txdatanonzero}$, cobrado por byte, na seguinte forma:
 
 \[ g_{0}'(n) = G_{transaction} + n \cdot G_{txdatanonzero} \]
 
-Onde $n$ é o tamanho em bytes dos dados codificados na transação.
-O custo geral $C$ de uma transação envolve o consumo de gas causado pela execução da função quando aplicados aos parâmetros (caso existam) que estão codificados na transação.
-Uma função que estima
-E um custo $C$ denominado como geral, definido em detalhes no anexo H do , basicamente descrito como a soma dos custos de gas das operações executadas em decorrência da transação.
+O custo geral $C(tx)$ envolve o consumo de gas causado pela execução da função e eventuais parâmetros associados que se encontrem no campo de dados da transação.
+O custo geral é basicamente a somatória dos custos de gas de todas as operações executadas em decorrência da transação.
 Para uma transação que armazene dados em um Smart Contract, os custos majoritários são o custo de armazenamento
 persistente $C_{SSTORE}$.
 O custo $C_{SSTORE}$ pode ser aplicado mais de uma vez no armazenamento de uma mesma variável, caso a variável possua mais de 32 bytes.
-Isto ocorre porque a EVM trabalha somente com palavras de 256, realizando sempre o alinhamento de variáveis de tamanho menor e truncando valores maiores em uma quantidade de palavras de 32 bytes.
-O custo de $C_{SSTORE}$ tem duas faixas de custo, $G_{sset}$ e $G_{sreset}$, onde a primeira é maior que a segunda e é aplicada somente na escrita da primeira palavra de 32 bytes dos dados, enquanto a segunda é aplicada às palavras restantes formadas pela divisão de uma variável maior que 32 bytes.
-
+Isto ocorre porque a EVM trabalha somente com palavras de 256 bits, realizando sempre o alinhamento de variáveis de tamanho menor e segmentando valores que excedem o tamanho da palavra da EVM em uma sequência de palavras de 32 bytes.
+O custo de $C_{SSTORE}$ tem duas faixas de custo, $G_{sset}$ e $G_{sreset}$, onde a primeira é maior que a segunda e é aplicada somente na escrita da primeira palavra de 32 bytes, enquanto a segunda é aplicada às palavras restantes formadas pela segmentação de valores que ultrapassem os 32 bytes de tamanho.
 
 Além do custo de armazenamento, é útil considerar custos inescapáveis de uma função de um Smart Contract com a finalidade de armazenar bytes de forma permanente, tais como o custo de invocação do contrato $C_{CALL}$ e o custo por byte de alocação de memória, associado a um custo genérico $G_{verylow}$.
 Este custo de alocação de memória envolve a tarefa de transferência dos dados da transação para a memória durante a execução da função do Smart Contract.
-A função aproximada para descrever o custo geral de uma transação com a finalidade de armazenar $n$ bytes em um Smart Contract ganha a seguinte forma:
+Os custos descritos até aqui são suficientes para construir uma função que aproxime o valor de $C(tx)$, para o caso específico de uma transação que invoca uma função com a única finalidade de armazenar $n$ bytes em uma variável de um Smart Contract:
 
 \[ C'(n) = C_{CALL} + G_{sset} +  ( w(n) - 1 ) \cdot G_{sreset} + n \cdot G_{verylow} \]
 
-Onde $w = \left\lceil \frac{n}{32} \right\rceil $ representa a quantidade de palavras formadas a partir dos dados de entrada.
+Onde $w = \left\lceil \frac{n}{32} \right\rceil $ representa a quantidade de palavras de 32 bytes que serão formadas durante a execução da transação pela EVM, a partir da segmentação dos $n$ bytes de dados.
 Portanto, o custo aproximado total em gas $g'$ de uma transação de armazenamento de $n$ bytes de dados Smart Contract é:
 
 \begin{equation}
@@ -1592,12 +1592,13 @@ Portanto, o custo aproximado total em gas $g'$ de uma transação de armazenamen
   \end{aligned}
 \end{equation}
 
-Igualando $g'(n)$ ao último valor da série histórica do limite de gas, podemos isolar $n$ e descobrir desta forma qual é a capacidade máxima de bytes que uma transação pode conter:
+Igualando $g'(n)$ ao último valor da série histórica do limite de gas, podemos isolar $n$ e descobrir desta forma qual é a capacidade máxima de bytes $N_{max}$ que uma transação pode conter:
 
 \begin{equation}
   \begin{aligned}
-    gasLimit & = G_{transaction} + n \cdot G_{txdatanonzero} + C_{CALL} + G_{sset} +  ( w(n) - 1 ) \cdot G_{sreset} + n \cdot G_{verylow} \\
-    gasLimit & = G_{transaction} + n \cdot G_{txdatanonzero} + C_{CALL} + G_{sset} +  ( \left\lceil \frac{n}{32} \right\rceil - 1 ) \cdot G_{sreset} + n \cdot G_{verylow} \\
+    gasLimit & =\begin{aligned}
+                    G_{transaction} + N_{max} \cdot G_{txdatanonzero} + C_{CALL} + G_{sset} + ( \left\lceil \frac{N_{max}}{32} \right\rceil - 1 ) \cdot G_{sreset} + \\ N_{max} \cdot G_{verylow}
+                \end{aligned} \\
      N_{max} & = \left\lfloor \frac{gasLimit + G_{sreset} - (G_{transaction} + C_{CALL} + C_{SSTORE})}{(G_{txdatanonzero} + G_{verylow} + \frac{G_{sreset}}{32})} \right\rfloor \\
      N_{max} & = \left\lfloor \frac{12474388 + 5000 - (21000 + 700 + 20000)}{68 + 3 + 156.25} \right\rfloor \\
      N_{max} & = 54731
@@ -1605,21 +1606,28 @@ Igualando $g'(n)$ ao último valor da série histórica do limite de gas, podemo
 \end{equation}
 
 Ou seja, em um cenário ideal onde não há outras operações sendo realizadas pela função que armazena dados, a transação poderia conter até 54.731 bytes em dados.
-No caso de uma cifra ABE, podemos igualar o tamanho da cifra $Cf(m)$ ao valor de $n_{max}$ e deduzir a partir disso a quantidade máxima de atributos $M_{max}$ que podem ser usadas em uma política de acesso:
+No caso de uma cifra ABE, podemos igualar o tamanho da cifra $f(m, p = 1)$ ao valor de $N_{max}$ e deduzir a partir disso a quantidade máxima de atributos $M_{max}$ que podem ser usadas em uma política de acesso:
 
 \begin{equation}
   \begin{aligned}
-    N_{max} & = 3 \cdot 495 \cdot m + 164 \\
-    M_{max} & = \left\lfloor \frac{54731 - 164}{3 \cdot 495} \right\rfloor \\
-    M_{max} & = 36
+    54731 & = 1576{,}5 \cdot M_{max} + 164 \\
+    M_{max} & = \left\lfloor \frac{54731 - 164}{1576{,}5} \right\rfloor \\
+    M_{max} & = 34
   \end{aligned}
 \end{equation}
 
-FIGURA X
+\begin{figure}[!h]
+    \centering
+    %\includesvg{images/diagrama-DCPABE.svg}
+    \includegraphics[width=\textwidth]{images/resultados-crescimento-custo-cifra.png}
+    \caption{Gas consumido na publicação de uma cifra, em função da quantidade de atributos na política de acesso}
+    \label{fig:custo-cifra}
+\end{figure}
 
-Isto significa que, no cenário mais simplista de uso, onde não há custos além dos envolvidos no armazenamento de uma cifra ABE em uma única variável persistente de um Smart Contract, ainda assim haveria um limite imposto à política de acesso, de forma que sejam utilizado no máximo 36 atributos em sua composição.
-A função de aproximação g' segue de perto o custo de gas obtidos por experimentação, conforme demonstra a figura X.
-As linhas azul e vermelho apontam para os limites de uso de gas das redes Rinkeby e principal, respectivamente.
+Isto significa que, no cenário mais simplista de uso, onde não há custos além dos envolvidos no armazenamento de uma cifra ABE em uma única variável persistente de um Smart Contract, ainda assim haveria um limite imposto à política de acesso, de forma que sejam utilizado no máximo 34 atributos em sua composição.
+Caso a política de acesso seja excluída da cifra ou armazenada de forma independentes, $p = 0$ e desta forma os coeficientes de $f(m, p)$ mudam de valor e o valor de $M_{max}$ aumenta para 36 atributos,
+O consumo de gas medido na experimentação segue de perto a função  $g'$ , conforme demonstra a figura \ref{fig:custo-cifra}.
+Isso torna evidente que a função do Smart Contract responsável pelo armazenamento da cifra de um arquivo possui uma ordem de complexidade linear em relação ao tamanho da cifra e indica que a implementação desta função consome gas de maneira eficiente,  próximo ao custo mínimo, estimado por meio de $g'$.
 
 %\subsection{Atributos na Blockchain}
 %\label{sec:sub:experimento-atributos}
@@ -1629,14 +1637,22 @@ As linhas azul e vermelho apontam para os limites de uso de gas das redes Rinkeb
 
 Uma requisição na Blockchain parte de um usuário para um certificador e contém em si uma lista de atributos, para que o certificador decida pela concessão (ou não) das chaves pessoais daqueles atributos ao usuário.
 A estrutura de dados de uma requisição é padronizada, onde todos os seus elementos são variáveis de tamanho fixo com a exceção da lista de atributos, que possui um tamanho arbitrário de acordo com a escolha do usuário.
-A variável de tamanho dinâmico dessa estrutura de dados impõe à requisição as mesmas limitações discutidas na subseção anterior, que trata sobre a codificação da cifra, de forma que o limite ao tamanho de uma transação no Ethereum também leva a uma limitação do tamanho de uma requisição, ou seja, existe um limite para a quantidade de atributos que podem ser solicitados em uma mesma requisição.
-Entretanto, nota-se que tal limitação não apresenta complicações como no caso da cifra, uma vez que a requisição de atributos é divisível.
-Uma requisição com uma grande lista de atributos pode ser dividida em múltiplas requisições independentes com subconjuntos desta lista.
+A variável de tamanho dinâmico dessa estrutura de dados impõe à requisição as mesmas limitações discutidas na subseção anterior, que trata sobre a codificação da cifra, de forma que também existe um limite para a quantidade de atributos que podem ser solicitados em uma mesma requisição por causa das limitações decorrentes do limite de gas em blocos e, por extensão, às transações.
+Entretanto, nota-se que tal limitação não apresenta complicações como no caso da cifra, uma vez que a requisição de atributos é naturalmente divisível, isto é, uma requisição com uma grande lista de atributos pode ser dividida em múltiplas requisições independentes com subconjuntos desta lista.
 
-FIGURA Y
+\begin{figure}[!h]
+    \centering
+    %\includesvg{images/diagrama-DCPABE.svg}
+    \includegraphics[width=\textwidth]{images/resultados-crescimento-custo-requisicao.png}
+    \caption{Gas consumido na publicação de uma requisição de atributos, em função da quantidade de atributos}
+    \label{fig:custo-transacao}
+\end{figure}
 
-A figura Y mostra a relação entre a quantidade de atributos solicitados e o custo em gas para a publicação.
-Repare que
+A figura \ref{fig:custo-transacao} mostra a relação entre a quantidade de atributos solicitados e o custo em gas para a publicação.
+Para verificar o comportamento do sistema, foram realizadas múltiplas requisições por atributos, com tamanhos de nome fixados em 29 caracteres, que representa a média do tamanho dos termos usados na taxonomia de ocupações.
+O teste cobriu requisições com um intervalo de 1 até 450 atributos porque este numero supera a quantidade de termos da referida taxonomia.
+Os resultados apontam que é possível, em uma mesma requisição, solicitar todos os atributos referentes a ocupações descritos neste trabalho, chegando a consumir em torno de 4 milhões de unidades de gas.
+Esse consumo de gas e o comportamento linear do crescimento do consumo de gas em função dos atributos permite concluir que seria possível mais que dobrar a quantidade de atributos requeridos e ainda assim a transação resultante seria válida e poderia ser incluída na Blockchain.
 
 
 \subsection{Custos de transação no Ethereum}
