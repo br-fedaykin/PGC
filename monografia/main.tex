@@ -1664,6 +1664,26 @@ Esse consumo de gas e o comportamento linear do crescimento do consumo de gas em
 \newpage
 \section{Conclusões e Trabalhos futuros}
 
+Aqui, apresentamos um protótipo de um sistema para o compartilhamento Registros Eletrônicos de Saúde (RES) que garante a integridade e confidencialidade dos seus dados, mesmo quando fora do domínio de segurança da instituição ou do provedor que os hospeda.
+Usamos ABE (sigla em inglês de \emph{Attribute-Based Encryption}) para definir políticas de acesso que restringem o acesso a quem pode ler informações do RES.
+Analisamos a aplicabilidade da ABE em cenários descritos nas normas legais, envolvendo acesso de familiares e terceiros, auditoria e tratamento de menores e modelamos políticas de acesso específicas para os cenários descritos.
+Aproveitando a tecnologia Blockchain, demonstramos como princípios de descentralização podem ser aplicados a sistemas de compartilhamento de arquivos em larga escala, como é o caso da área da saúde.
+Nosso sistema garante que cada instituição seja independente das demais e opere sem necessidade de coordenação.
+Para garantir a interoperabilidade entre os dados compartilhados por estas diferentes instituições, também propomos uma taxonomia para ocupações na área da saúde a fim de assegurar uma normalização de terminologia e escopo dos atributos a serem criados pelas instituições.
+Por fim, verificamos que existe uma compatibilidade limitada entre estruturas de dados da ABE e o protocolo Ethereum, mas que são totalmente compatíveis para todos os cenários de uso investigados na área da saúde.
+
+A aplicação da tecnologia Blockchain e ABE na área da saúde certamente abrange muitas possibilidades, algumas vislumbradas no início do trabalho, outras durante seu desenvolvimento.
+Um ramo de investigação consiste em aprofundar a análise de desempenho deste sistema e dos riscos associados ao uso da rede pública Ethereum, como a volatilidade da precificação do ether, congestionamento da rede e demora na confirmação de transações, dentre outros aspectos.
+Outra questão interessante é comparar o desempenho deste sistema na rede Ethereum 2.0, que será lançada em 1° de dezembro e promete atingir metas ambiciosas envolvendo a redução drástica do custo de gas das transações e da capacidade de processamento da rede.
+
+Outro ramo de investigação  consiste em comparar e analisar as diferenças e resultados deste sistema quando implementado em Blockchains e plataformas descentralizadas compatíveis com Smart Contracts.
+As opções são várias e provavelmente merecem estudos comparativos a parte.
+Seguindo a lógica de valorização de mercado, as opções de estudo mais relevantes são a Cardano, EOS, Tezos, Neo, Blockstack e Golem\footnote{Página dos projetos, para consulta: \link{https://cardano.org/}{Cardano}, \link{https://eos.io/}{EOS}, \link{https://tezos.com/}{Tezos}, \link{https://neo.org/}{Neo}, \link{https://www.blockstack.org/}{Blockstack} e \link{https://golem.network/}{Golem}.}.
+Plataformas orientadas à criação de blockchains privadas como o Hyperledger Besu e Hyperledger Fabric\footnote{Página dos projetos, para consulta: \link{https://www.hyperledger.org/use/besu}{Hyperledger Besu} e \link{https://www.hyperledger.org/use/fabric}{Hyperledger Fabric}.} despertam ainda mais interesse pelo isolamento do projeto contra a flutuações de preços de ativos (e.g., Ether) consumidas durante a operação do sistema, controle de ambiente e versatilidade na alteração de parâmetros que exigiriam o esforço hercúleo de um soft ou hard fork em Blockchains públicas.
+
+Por fim, este trabalho considera a possibilidade futura de parcerias com instituições locais de saúde visando o desenvolvimento de um protótipo aprimorado para o uso em campo, por meio de Blockchains públicas ou privadas, e desta forma obter estatísticas de uso, de desempenho e estimar a viabilidade do sistema em um contexto de uso próximo ao real.
+
+\newpage
 \bibliography{doc}
 \bibliographystyle{plainnat}
 
