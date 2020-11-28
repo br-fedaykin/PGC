@@ -19,17 +19,29 @@ contract SmartDCPABERoot {
         owner = msg.sender;
     }
 
-    function changeOwnership(address newRoot) public onlyOwner{
+    function changeOwnership(address newRoot) public onlyOwner {
         for (uint8 i = 0; i < numContracts; i++) {
             bytes memory payload = abi.encodeWithSignature("changeOwnership(address)", newRoot);
             (bool success, ) = contractAddress[i].call(payload);
-
-            // NOTE: this could lead to consistency problems if a failed require() breaks the loop and ownership is not restored.
+            /*
+             * NOTE: this could lead to consistency problems if a failed require()
+             * breaks the loop and ownership is not restored.
+             */
             require(success, "Contract method invocation failed.");
         }
     }
 
-    function setAllContracts(Collection.ContractType[numContracts] memory contractType, address[numContracts] memory addr) public onlyOwner {
+    function getAllContractAddresses() public view returns (address[numContracts] memory) {
+        return contractAddress;
+    }
+
+    function setAllContracts(
+        Collection.ContractType[numContracts] memory contractType,
+        address[numContracts] memory addr
+    )
+        public
+        onlyOwner
+    {
         for (uint8 i = 0; i < numContracts; i++) {
             require(uint(addr[i]) != uint(0), "Some address is 0x0. Please inform a correct address.");
         }
@@ -45,7 +57,14 @@ contract SmartDCPABERoot {
         }
     }
 
-    function setContract(Collection.ContractType contractType, address addr) public onlyOwner validIndex(contractType) {
+    function setContract(
+        Collection.ContractType contractType,
+        address addr
+    )
+        public
+        onlyOwner
+        validIndex(contractType)
+    {
         setContractAddress(contractType, addr);
         supplyContractDependencies(contractType);
         receiveContractDependencies(contractType);
@@ -94,7 +113,11 @@ contract SmartDCPABERoot {
         uint8 index = uint8(contractType);
         for (uint8 i = 0; i < numDependencies; i++) {
             uint8 dependentContract = uint8(dependencies[i]);
-            bytes memory payload = abi.encodeWithSignature("setContractDependencies(uint8,address)", dependentContract, contractAddress[dependentContract]);
+            bytes memory payload = abi.encodeWithSignature(
+                "setContractDependencies(uint8,address)",
+                dependentContract,
+                contractAddress[dependentContract]
+            );
             (bool success, ) = contractAddress[index].call(payload);
             require(success, "Contract method invocation failed.");
         }
@@ -126,14 +149,14 @@ contract SmartDCPABERoot {
         uint8 index = uint8(contractType);
         for (uint8 i = 0; i < numDependencies; i++) {
             uint8 dependentContract = uint8(dependencies[i]);
-            bytes memory payload = abi.encodeWithSignature("setContractDependencies(uint8,address)", index, contractAddress[index]);
+            bytes memory payload = abi.encodeWithSignature(
+                "setContractDependencies(uint8,address)",
+                index,
+                contractAddress[index]
+            );
             (bool success, ) = contractAddress[dependentContract].call(payload);
             require(success, "Contract method invocation failed.");
         }
-    }
-
-    function getAllContractAddresses() public view returns (address[numContracts] memory) {
-        return contractAddress;
     }
 
     modifier onlyOwner() {
@@ -142,7 +165,7 @@ contract SmartDCPABERoot {
     }
 
     modifier validIndex(Collection.ContractType contractType) {
-        require(uint8(contractType) < numContracts, "targered contract type aren't implemented yet.");
+        require(uint8(contractType) < numContracts, "target contract type aren't implemented yet.");
         _;
     }
 }

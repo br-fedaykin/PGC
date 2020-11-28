@@ -27,22 +27,36 @@ contract SmartDCPABEFiles is Collection {
     }
 
     uint64 public numServers;
-    mapping (address => string[]) fileNames;
-    mapping (address => mapping(string => Recording)) files;
-    mapping (address => mapping(string => Ciphertext)) ciphertexts;
+    mapping(address => string[]) fileNames;
+    mapping(address => mapping(string => Recording)) files;
+    mapping(address => mapping(string => Ciphertext)) ciphertexts;
 
     FileServer[] servers;
     SmartDCPABEUsers users;
 
     constructor(address root) Collection(root) {}
 
-    function setContractDependencies(ContractType contractType, address addr) override public onlyOwner {
+    function setContractDependencies(
+        ContractType contractType,
+        address addr
+    )
+        public
+        override
+        onlyOwner
+    {
         if (contractType == ContractType.USERS) {
             users = SmartDCPABEUsers(addr);
         }
     }
 
-    function addServer(string memory domain, string memory path, uint16 port) public returns (uint64 serverIndex) {
+    function addServer(
+        string memory domain,
+        string memory path,
+        uint16 port
+    )
+        public
+        returns (uint64 serverIndex)
+    {
         servers.push(FileServer(domain, path, port));
         serverIndex = numServers;
         numServers++;
@@ -130,7 +144,13 @@ contract SmartDCPABEFiles is Collection {
         return -1;
     }
 
-    function getServer(uint64 index) public view returns (string memory domain, string memory path, uint16 port) {
+    function getServer(
+        uint64 index
+    )
+        public
+        view
+        returns (string memory domain, string memory path, uint16 port)
+    {
         assert(index < numServers);
         FileServer storage s = servers[index];
         return (s.domain, s.path, s.port);

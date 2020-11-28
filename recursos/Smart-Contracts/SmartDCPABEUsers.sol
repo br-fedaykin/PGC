@@ -11,12 +11,12 @@ contract SmartDCPABEUsers is Collection {
     }
 
     address[] public userAddresses;
-    mapping (address => User) users;
+    mapping(address => User) users;
     uint64 public numUsers;
 
    constructor(address root) Collection(root)  {}
 
-    function setContractDependencies(ContractType contractType, address addr) override public view onlyOwner {}
+    function setContractDependencies(ContractType contractType, address addr) public view override onlyOwner {}
 
     function addUser(address addr, string memory name, string memory email) public {
         userAddresses.push(addr);

@@ -30,15 +30,22 @@ contract SmartDCPABERequests is Collection {
         uint64 newIndex
     );
 
-    mapping (address => address[]) pendingRequesters;
-    mapping (address => mapping (address => uint64[])) pendingRequests;
-    mapping (address => mapping (address => KeyRequest[])) requests;
+    mapping(address => address[]) pendingRequesters;
+    mapping(address => mapping(address => uint64[])) pendingRequests;
+    mapping(address => mapping(address => KeyRequest[])) requests;
     SmartDCPABEUsers user;
     SmartDCPABEAuthority authority;
 
     constructor(address root) Collection(root) {}
 
-    function setContractDependencies(Collection.ContractType contractType, address addr) override public onlyOwner {
+    function setContractDependencies(
+        Collection.ContractType contractType,
+        address addr
+    )
+        public
+        override
+        onlyOwner
+    {
         if (contractType == ContractType.AUTHORITY) {
             authority = SmartDCPABEAuthority(addr);
         } else if (contractType == ContractType.USERS) {
@@ -46,16 +53,32 @@ contract SmartDCPABERequests is Collection {
         }
     }
 
-    function addRequest(address certifier, address requester, uint64 timestamp, string memory attrNames) public {
+    function addRequest(
+        address certifier,
+        address requester,
+        uint64 timestamp,
+        string memory attrNames
+    )
+        public
+    {
         assert(user.isUser(requester));
         assert(authority.isCertifier(certifier));
         uint64 pendingIndex = uint64(requests[certifier][requester].length);
-        requests[certifier][requester].push(KeyRequest(KeyRequestStatus.PENDING, timestamp, 0, attrNames));
+        requests[certifier][requester].push(
+            KeyRequest(KeyRequestStatus.PENDING, timestamp, 0, attrNames)
+        );
         pendingRequests[certifier][requester].push(pendingIndex);
         pendingRequesters[certifier].push(requester);
     }
 
-    function processRequest(address certifier, uint64 requesterIndex, uint64 pendingIndex, KeyRequestStatus newStatus) public {
+    function processRequest(
+        address certifier,
+        uint64 requesterIndex,
+        uint64 pendingIndex,
+        KeyRequestStatus newStatus
+    )
+        public
+    {
         address requester = pendingRequesters[certifier][requesterIndex];
         uint64 listSize = uint64(pendingRequests[certifier][requester].length);
         require(listSize >= 1, "No pending requests for this certifier.");
@@ -67,7 +90,10 @@ contract SmartDCPABERequests is Collection {
             pendingRequesters[certifier].pop();
             if (requesterIndex != pendingRequesters[certifier].length) {
                 pendingRequesters[certifier][requesterIndex] = lastRequester;
-                emit pendingRequesterIndexChanged(uint64(pendingRequesters[certifier].length), requesterIndex);
+                emit pendingRequesterIndexChanged(
+                    uint64(pendingRequesters[certifier].length),
+                    requesterIndex
+                );
             }
         } else {
             uint64 lastIndex = pendingRequests[certifier][requester][listSize - 1];
@@ -79,11 +105,25 @@ contract SmartDCPABERequests is Collection {
         }
     }
 
-    function getRequestListSize(address certifier, address requester) public view returns (uint256) {
+    function getRequestListSize(
+        address certifier,
+        address requester
+    )
+        public
+        view
+        returns (uint256)
+    {
         return requests[certifier][requester].length;
     }
 
-    function getPendingList(address certifier, address requester) public view returns (uint64[] memory) {
+    function getPendingList(
+        address certifier,
+        address requester
+    )
+        public
+        view
+        returns (uint64[] memory)
+    {
         return pendingRequests[certifier][requester];
     }
 
@@ -91,11 +131,26 @@ contract SmartDCPABERequests is Collection {
         return pendingRequesters[certifier].length;
     }
 
-    function getPendingRequesterAddress(address certifier, uint64 requesterIndex) public view returns (address) {
+    function getPendingRequesterAddress(
+        address certifier,
+        uint64 requesterIndex
+    )
+        public
+        view
+        returns (address)
+    {
         return pendingRequesters[certifier][requesterIndex];
     }
 
-    function getRequestStatus(address certifier, address requester, uint64 index) public view returns (KeyRequestStatus status) {
+    function getRequestStatus(
+        address certifier,
+        address requester,
+        uint64 index
+    )
+        public
+        view
+        returns (KeyRequestStatus status)
+    {
         return requests[certifier][requester][index].status;
     }
 
@@ -123,6 +178,6 @@ contract SmartDCPABERequests is Collection {
             kr.timestamp,
             kr.responseTimestamp,
             kr.attrNames
-            );
+        );
     }
 }

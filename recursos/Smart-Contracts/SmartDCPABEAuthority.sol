@@ -14,13 +14,20 @@ contract SmartDCPABEAuthority is Collection {
     }
 
     address[] public certifierAddresses;
-    mapping (address => Certifier) certifiers;
+    mapping(address => Certifier) certifiers;
     SmartDCPABEUsers user;
     address contractKeys;
 
     constructor(address root) Collection(root) {}
 
-    function setContractDependencies(ContractType contractType, address addr) override public onlyOwner {
+    function setContractDependencies(
+        ContractType contractType,
+        address addr
+    )
+        public
+        override
+        onlyOwner
+    {
         if (contractType == ContractType.USERS) {
             user = SmartDCPABEUsers(addr);
         } else if (contractType == ContractType.KEYS) {

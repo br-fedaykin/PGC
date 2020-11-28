@@ -21,12 +21,19 @@ contract SmartDCPABEKeys is Collection {
 
     SmartDCPABEUtility util;
     SmartDCPABEAuthority authority;
-    mapping (address => string[]) publicKeyNames;
-    mapping (address => mapping (string => PublicKey)) ABEKeys;
+    mapping(address => string[]) publicKeyNames;
+    mapping(address => mapping(string => PublicKey)) ABEKeys;
 
     constructor(address root) Collection(root) {}
 
-    function setContractDependencies(ContractType contractType, address addr) override public onlyOwner {
+    function setContractDependencies(
+        ContractType contractType,
+        address addr
+    )
+        public
+        override
+        onlyOwner
+    {
         if (contractType == ContractType.UTILITY) {
             util = SmartDCPABEUtility(addr);
         } else if (contractType == ContractType.AUTHORITY) {
@@ -34,7 +41,14 @@ contract SmartDCPABEKeys is Collection {
         }
     }
 
-    function addPublicKey(address addr, string memory name, bytes memory eg1g1ai, bytes memory g1yi) public {
+    function addPublicKey(
+        address addr,
+        string memory name,
+        bytes memory eg1g1ai,
+        bytes memory g1yi
+    )
+        public
+    {
         require(authority.isCertifier(addr), "certifier not found");
 
         bytes32[3] memory eg1g1aiChunks;
@@ -58,31 +72,16 @@ contract SmartDCPABEKeys is Collection {
             g1yiLastChunk := mload(add(g1yi, 0x80))
         }
 
-        addPublicKey(addr, name, eg1g1aiChunks, eg1g1aiLastChunk, eg1g1aiLastChunkSize,
-                     g1yiChunks, g1yiLastChunk, g1yiLastChunkSize);
-    }
-
-    function addPublicKey
-    (
-        address addr,
-        string memory name,
-        bytes32[3] memory eg1g1aiChunks,
-        bytes31 eg1g1aiLastChunk,
-        uint8 eg1g1aiLastChunkSize,
-        bytes32[3] memory g1yiChunks,
-        bytes31 g1yiLastChunk,
-        uint8 g1yiLastChunkSize
-    )
-        internal
-    {
-        Bytes127 memory eg1g1ai = Bytes127(eg1g1aiChunks[0], eg1g1aiChunks[1], eg1g1aiChunks[2], eg1g1aiLastChunk, eg1g1aiLastChunkSize);
-        Bytes127 memory g1yi = Bytes127(g1yiChunks[0], g1yiChunks[1], g1yiChunks[2], g1yiLastChunk, g1yiLastChunkSize);
-        // checks existence of data to decide whether or not to push the attribute name into the stack
-        if (uint(ABEKeys[addr][name].eg1g1ai.chunk1) == uint(0)) {
-            publicKeyNames[addr].push(name);
-            authority.incrementPublicKeyCount(addr);
-        }
-        ABEKeys[addr][name] = PublicKey(eg1g1ai, g1yi);
+        addPublicKey(
+            addr,
+            name,
+            eg1g1aiChunks,
+            eg1g1aiLastChunk,
+            eg1g1aiLastChunkSize,
+            g1yiChunks,
+            g1yiLastChunk,
+            g1yiLastChunkSize
+        );
     }
 
     function getPublicKey
@@ -112,5 +111,41 @@ contract SmartDCPABEKeys is Collection {
                 pk.g1yi.chunk2,
                 pk.g1yi.chunk3,
                 util.trimBytes31(pk.g1yi.chunk4, pk.g1yi.lastChunkSize)));
+    }
+
+    function addPublicKey
+    (
+        address addr,
+        string memory name,
+        bytes32[3] memory eg1g1aiChunks,
+        bytes31 eg1g1aiLastChunk,
+        uint8 eg1g1aiLastChunkSize,
+        bytes32[3] memory g1yiChunks,
+        bytes31 g1yiLastChunk,
+        uint8 g1yiLastChunkSize
+    )
+        internal
+    {
+        Bytes127 memory eg1g1ai = Bytes127(
+            eg1g1aiChunks[0],
+            eg1g1aiChunks[1],
+            eg1g1aiChunks[2],
+            eg1g1aiLastChunk,
+            eg1g1aiLastChunkSize
+        );
+        Bytes127 memory g1yi = Bytes127(
+            g1yiChunks[0],
+            g1yiChunks[1],
+            g1yiChunks[2],
+            g1yiLastChunk,
+            g1yiLastChunkSize
+        );
+
+        // checks existence of data to decide whether or not to push the attribute name into the stack
+        if (uint(ABEKeys[addr][name].eg1g1ai.chunk1) == uint(0)) {
+            publicKeyNames[addr].push(name);
+            authority.incrementPublicKeyCount(addr);
+        }
+        ABEKeys[addr][name] = PublicKey(eg1g1ai, g1yi);
     }
 }

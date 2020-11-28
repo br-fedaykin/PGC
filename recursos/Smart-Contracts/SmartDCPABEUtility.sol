@@ -7,6 +7,8 @@ contract SmartDCPABEUtility is Collection {
 
     constructor(address root) Collection(root) {}
 
+    function setContractDependencies(ContractType contractType, address addr) public view override onlyOwner {}
+
     function stringToBytes32(string memory source) public pure returns (bytes32 result) {
         bytes memory tempEmptyStringTest = bytes(source);
         assert(tempEmptyStringTest.length <= 32);
@@ -44,6 +46,4 @@ contract SmartDCPABEUtility is Collection {
         }
         return output;
     }
-
-    function setContractDependencies(ContractType contractType, address addr) override public view onlyOwner {}
 }

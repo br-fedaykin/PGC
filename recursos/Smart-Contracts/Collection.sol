@@ -10,7 +10,7 @@ abstract contract Collection {
         owner = rootContract;
     }
 
-    function setContractDependencies(ContractType contractType, address addr) virtual public;
+    function setContractDependencies(ContractType contractType, address addr) public virtual;
 
     function changeOwnership(address newOwner) public onlyOwner {
         owner = newOwner;
