@@ -1,8 +1,125 @@
 # TAXONOMIA DE PROFISSÕES NA ÁREA DA SAÚDE
 
-## PESSOAL DE SAÚDE - NÍVEL SUPERIOR
+Esta taxonomia foi montada a partir da junção de fontes de dados distintas, coletadas durante o trabalho.
+Especificamente, foi utilizada a Classificação Brasileira de Ocupações para obtenção do código CBO, que é um código único associado a cada profissão pelo Ministério do Trabalho.
+Fontes de dados disponibilizadas pelo DATASUS foram utilizadas para completar e atualizar a CBO em relação a possíveis profissões que estivessem ausentes, completando assim a lista de profissões.
+Tanto a CBO quanto as fontes de consulta do DATASUS realizam categorizações destas profissões, entretanto estas são conflitantes.
+A CBO define uma semântica a cada digito que compõem o código CBO, onde os dois últimos dígitos correspondem a ocupações, o quarto digito da esquerda para a direita corresponde a uma família, que é um conjunto de ocupações similares.
+A fonte de consulta do DATASUS ignora esse conceito de família e realiza um agrupamento arbitrário e desbalanceado, em termos de quantidades de ocupações.
 
-### 2251 : Médicos clínicos
+Fez parte deste trabalho mesclar as fontes de dados e apresentar uma taxonomia unificada da área da saúde.
+A taxonomia foi construída seguindo as seguintes heurísticas, enumeradas em ordem de importância e aplicação na construção da taxonomia apresentada mais abaixo.
+
+1. seguir a terminologia e codificação da CBO;
+2. seguir a terminologia e codificação encontrada em fontes de consulta do DATASUS, caso a ocupação não conste na CBO;
+3. seguir o agrupamento e especialização do DATASUS;
+4. dentro de cada grupo de especialização, seguir as famílias de ocupações do CBO, caso se trate de ocupações na área da saúde;
+5. dentro de cada grupo de especialização, tratar como uma família de ocupações a categorização feita pelo DATASUS, caso se tratem de ocupações fora da área da saúde;
+6. manter, dentro de cada especialização, um grupo especial denominado como ``sem código CBO'' para descrever ocupações sem qualquer tipo de referência ou codificação.
+
+A regra 1 permite que a taxonomia possua a maior quantidade possível de termos interoperáveis com outras bases de dados dependentes da CBO.
+A regra 6 complementa a finalidade na regra 1 de conservar a interoperabilidade entre sistemas, na medida em que evita a criação ou derivação de códigos para as ocupações que não os tenham.
+A regra 2 somente cobre os casos de termos e códigos ausentes na CBO.
+As regras 3 a 5 não tratam das profissões em si mas de seus agrupamentos, e tentam unir os melhores aspectos da CBO e do DATASUS para produzir a taxonomia mais útil possível no escopo deste trabalho.
+
+## Taxonomia das Famílias de Ocupações
+
+- [PESSOAL DE SAÚDE - NÍVEL SUPERIOR](#pessoal-de-saúde---nível-superior)
+
+  - [2251 : Médicos clínicos](#2251--médicos-clínicos)
+  - [2516 : Assistentes sociais e economistas domésticos](#2516--assistentes-sociais-e-economistas-domésticos)
+  - [2234 : Farmacêuticos](#2234--farmacêuticos)
+
+  - [2252 : Médicos em especialidades cirúrgicas](#2252--médicos-em-especialidades-cirúrgicas)
+  - [2231 : Médicos](#2231--médicos)
+  - [2235 : Enfermeiros e afins](#2235--enfermeiros-e-afins)
+  - [0000 : sem CBO](#0000--sem-cbo)
+  - [2236 : Fisioterapeutas](#2236--fisioterapeutas)
+  - [2238 : Fonoaudiólogos](#2238--fonoaudiólogos)
+  - [2237 : Nutricionistas](#2237--nutricionistas)
+  - [2232 : Cirurgiões-dentistas](#2232--cirurgiões-dentistas)
+  - [2515 : Psicólogos e psicanalistas](#2515--psicólogos-e-psicanalistas)
+  - [2253 : Médicos em medicina diagnóstica e terapêutica](#2253--médicos-em-medicina-diagnóstica-e-terapêutica)
+  - [2000 : Outras ocupações de Nível Superior Relacionados à Saúde](#2000--outras-ocupações-de-nível-superior-relacionados-à-saúde)
+
+- [PESSOAL DE SAÚDE - NÍVEL SUPERIOR](#pessoal-de-saúde---nível-superior)
+
+  - [2251 : Médicos clínicos](#2251--médicos-clínicos)
+  - [2516 : Assistentes sociais e economistas domésticos](#2516--assistentes-sociais-e-economistas-domésticos)
+  - [2234 : Farmacêuticos](#2234--farmacêuticos)
+  - [2252 : Médicos em especialidades cirúrgicas](#2252--médicos-em-especialidades-cirúrgicas)
+  - [2231 : Médicos](#2231--médicos)
+  - [2235 : Enfermeiros e afins](#2235--enfermeiros-e-afins)
+  - [0000 : sem CBO](#0000--sem-cbo)
+  - [2236 : Fisioterapeutas](#2236--fisioterapeutas)
+  - [2238 : Fonoaudiólogos](#2238--fonoaudiólogos)
+  - [2237 : Nutricionistas](#2237--nutricionistas)
+  - [2232 : Cirurgiões-dentistas](#2232--cirurgiões-dentistas)
+  - [2515 : Psicólogos e psicanalistas](#2515--psicólogos-e-psicanalistas)
+  - [2253 : Médicos em medicina diagnóstica e terapêutica](#2253--médicos-em-medicina-diagnóstica-e-terapêutica)
+  - [2000 : Outras ocupações de Nível Superior Relacionados à Saúde](#2000--outras-ocupações-de-nível-superior-relacionados-à-saúde)
+
+- [PESSOAL DE SAÚDE - NÍVEL SUPERIOR](#pessoal-de-saúde---nível-superior)
+  - [2251 : Médicos clínicos](#2251--médicos-clínicos)
+  - [2516 : Assistentes sociais e economistas domésticos](#2516--assistentes-sociais-e-economistas-domésticos)
+  - [2234 : Farmacêuticos](#2234--farmacêuticos)
+  - [2252 : Médicos em especialidades cirúrgicas](#2252--médicos-em-especialidades-cirúrgicas)
+  - [2231 : Médicos](#2231--médicos)
+  - [2235 : Enfermeiros e afins](#2235--enfermeiros-e-afins)
+  - [0000 : sem CBO](#0000--sem-cbo)
+  - [2236 : Fisioterapeutas](#2236--fisioterapeutas)
+  - [2238 : Fonoaudiólogos](#2238--fonoaudiólogos)
+  - [2237 : Nutricionistas](#2237--nutricionistas)
+  - [2232 : Cirurgiões-dentistas](#2232--cirurgiões-dentistas)
+  - [2515 : Psicólogos e psicanalistas](#2515--psicólogos-e-psicanalistas)
+  - [2253 : Médicos em medicina diagnóstica e terapêutica](#2253--médicos-em-medicina-diagnóstica-e-terapêutica)
+  - [2000 : Outras ocupações de Nível Superior Relacionados à Saúde](#2000--outras-ocupações-de-nível-superior-relacionados-à-saúde)
+- [PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR](#pessoal-de-saúde---nível-técnico-técnicoauxiliar)
+    - [3222 : Técnicos e auxiliares de enfermagem](#3222--técnicos-e-auxiliares-de-enfermagem)
+    - [5151 : Trabalhadores em serviços de promoção e apoio à saúde](#5151--trabalhadores-em-serviços-de-promoção-e-apoio-à-saúde)
+    - [000000 : sem CBO](#000000--sem-cbo)
+    - [3251 : Técnico em farmácia e em manipulação farmacêutica](#3251--técnico-em-farmácia-e-em-manipulação-farmacêutica)
+    - [8103 : Supervisores de produção em indústrias de produtos farmacêuticos, cosméticos e afins](#8103--supervisores-de-produção-em-indústrias-de-produtos-farmacêuticos-cosméticos-e-afins)
+    - [5152 : Auxiliares de laboratório da saúde](#5152--auxiliares-de-laboratório-da-saúde)
+    - [3253 : Técnicos de apoio à biotecnologia](#3253--técnicos-de-apoio-à-biotecnologia)
+    - [3242 : Técnicos de laboratórios de saúde e bancos de sangue](#3242--técnicos-de-laboratórios-de-saúde-e-bancos-de-sangue)
+    - [2237 : Nutricionistas](#2237--nutricionistas-1)
+    - [3225 : Técnicos em próteses ortopédicas](#3225--técnicos-em-próteses-ortopédicas)
+    - [3135 : Técnicos em fotônica](#3135--técnicos-em-fotônica)
+    - [3226 : Técnicos de imobilizações ortopédicas](#3226--técnicos-de-imobilizações-ortopédicas)
+    - [3224 : Técnicos de odontologia](#3224--técnicos-de-odontologia)
+    - [3522 : Agentes da saúde e do meio ambiente](#3522--agentes-da-saúde-e-do-meio-ambiente)
+    - [3241 : Tecnólogos e técnicos em métodos de diagnósticos e terapêutica](#3241--tecnólogos-e-técnicos-em-métodos-de-diagnósticos-e-terapêutica)
+    - [3201 : Técnicos em biologia](#3201--técnicos-em-biologia)
+    - [3000 : Outras ocupações de Nível Técnico e Auxiliar em Saúde](#3000--outras-ocupações-de-nível-técnico-e-auxiliar-em-saúde)
+- [PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR](#pessoal-de-saúde---qualificação-elementar)
+    - [5151 : Trabalhadores em serviços de promoção e apoio à saúde](#5151--trabalhadores-em-serviços-de-promoção-e-apoio-à-saúde-1)
+    - [3522 : Agentes da saúde e do meio ambiente](#3522--agentes-da-saúde-e-do-meio-ambiente-1)
+    - [00000 : Atendente de Enfermagem/Auxiliar operacional de serviços diversos e assemelhados](#00000--atendente-de-enfermagemauxiliar-operacional-de-serviços-diversos-e-assemelhados)
+    - [00000 : Outras ocupações de Nível Elementar em Saúde](#00000--outras-ocupações-de-nível-elementar-em-saúde)
+- [PESSOAL ADMINISTRATIVO](#pessoal-administrativo)
+    - [1000 : Administração](#1000--administração)
+    - [7000 : Serviço de Limpeza/Conservação](#7000--serviço-de-limpezaconservação)
+    - [5000 : Segurança](#5000--segurança)
+    - [5000 : Outras ocupações administrativas](#5000--outras-ocupações-administrativas)
+
+- [PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR](#pessoal-de-saúde---qualificação-elementar)
+  - [5151 : Trabalhadores em serviços de promoção e apoio à saúde](#5151--trabalhadores-em-serviços-de-promoção-e-apoio-à-saúde-1)
+  - [3522 : Agentes da saúde e do meio ambiente](#3522--agentes-da-saúde-e-do-meio-ambiente-1)
+  - [00000 : Atendente de Enfermagem/Auxiliar operacional de serviços diversos e assemelhados](#00000--atendente-de-enfermagemauxiliar-operacional-de-serviços-diversos-e-assemelhados)
+  - [00000 : Outras ocupações de Nível Elementar em Saúde](#00000--outras-ocupações-de-nível-elementar-em-saúde)
+
+- [PESSOAL ADMINISTRATIVO](#pessoal-administrativo)
+  - [1000 : Administração](#1000--administração)
+  - [7000 : Serviço de Limpeza/Conservação](#7000--serviço-de-limpezaconservação)
+  - [5000 : Segurança](#5000--segurança)
+  - [5000 : Outras ocupações administrativas](#5000--outras-ocupações-administrativas)
+
+## Taxonomia de profissões completa
+
+### PESSOAL DE SAÚDE - NÍVEL SUPERIOR
+
+#### 2251 : Médicos clínicos
 
     225103 : Médico infectologista;
     225105 : Médico acupunturista;
@@ -37,15 +154,15 @@
     225185 : Médico hematologista;
     225195 : Médico homeopata;
 
-### 2516 : Assistentes sociais e economistas domésticos
+#### 2516 : Assistentes sociais e economistas domésticos
 
     251605 : Assistente Social;
 
-### 2234 : Farmacêuticos
+#### 2234 : Farmacêuticos
 
     223405 : Farmacêutico;
 
-### 2252 : Médicos em especialidades cirúrgicas
+#### 2252 : Médicos em especialidades cirúrgicas
 
     225203 : Médico em cirurgia vascular;
     225210 : Médico cirurgião cardiovascular;
@@ -66,14 +183,14 @@
     225290 : Médico cancerologista cirúrgico;
     225295 : Médico cirurgião da mão;
 
-### 2231 : Médicos
+#### 2231 : Médicos
 
     223127 : Médico foniatra;
     223129 : Médico Generalista Alopata;
     2231A1 : Médico broncoesofalogista;
     2231A2 : Médico hansenologista;
 
-### 2235 : Enfermeiros e afins
+#### 2235 : Enfermeiros e afins
 
     2235 : Outros enfermeiros;
     223505 : Enfermeiro;
@@ -90,7 +207,7 @@
     223560 : Enfermeiro sanitarista;
     223565 : Enfermeiro da estratégia de saúde da família;
 
-### 0000 : sem CBO
+#### 0000 : sem CBO
 
      : Enfermeiro Estomaterapeuta;
      : Fisioterapeuta respiratório;
@@ -101,7 +218,7 @@
      : Médico em medicina preventiva e social;
      : Médico residente;
 
-### 2236 : Fisioterapeutas
+#### 2236 : Fisioterapeutas
 
     223605 : Fisioterapeuta geral;
     223630 : Fisioterapeuta neurofuncional;
@@ -112,15 +229,15 @@
     223655 : Fisioterapeuta esportivo;
     223660 : Fisioterapeuta do trabalho;
 
-### 2238 : Fonoaudiólogos
+#### 2238 : Fonoaudiólogos
 
     223810 : Fonoaudiólogo;
 
-### 2237 : Nutricionistas
+#### 2237 : Nutricionistas
 
     223710 : Nutricionista;
 
-### 2232 : Cirurgiões-dentistas
+#### 2232 : Cirurgiões-dentistas
 
     223204 : Cirurgião dentista - auditor;
     223208 : Cirurgião dentista - clínico geral;
@@ -143,7 +260,7 @@
     223280 : Cirurgião dentista - dentística;
     223293 : Cirurgião-dentista da estratégia de saúde da família;
 
-### 2515 : Psicólogos e psicanalistas
+#### 2515 : Psicólogos e psicanalistas
 
     251505 : Psicólogo Educacional;
     251510 : Psicólogo Clínico;
@@ -155,7 +272,7 @@
     251540 : Psicólogo do Trabalho;
     251555 : Psicólogo acupunturista;
 
-### 2253 : Médicos em medicina diagnóstica e terapêutica
+#### 2253 : Médicos em medicina diagnóstica e terapêutica
 
     225305 : Médico citopatologista;
     225310 : Médico em endoscopia;
@@ -167,7 +284,7 @@
     225345 : Médico hiperbarista;
     225350 : Médico neurofisiologista clínico;
 
-### 2000 : Outras ocupações de Nível Superior Relacionados à Saúde
+#### 2000 : Outras ocupações de Nível Superior Relacionados à Saúde
 
     203005 : Pesquisador em Biologia Ambiental;
     203010 : Pesquisador em Biologia Animal;
@@ -212,7 +329,7 @@
 
 ## PESSOAL DE SAÚDE - NÍVEL TÉCNICO TÉCNICO/AUXILIAR
 
-### 3222 : Técnicos e auxiliares de enfermagem
+#### 3222 : Técnicos e auxiliares de enfermagem
 
     322205 : Técnico de enfermagem;
     322210 : Técnico de enfermagem de terapia intensiva;
@@ -223,28 +340,28 @@
     322250 : Auxiliar de enfermagem da estratégia de saúde da família;
     3222E1 : Técnico de enfermagem de saúde da família;
 
-### 5151 : Trabalhadores em serviços de promoção e apoio à saúde
+#### 5151 : Trabalhadores em serviços de promoção e apoio à saúde
 
     515120 : Visitador Sanitário;
 
-### 000000 : sem CBO
+#### 000000 : sem CBO
 
      : Socorrista (exceto médicos e enfermeiros) habilita;
      : Auxiliar de laboratório de análises físico-química;
      : Técnico de laboratório de análises físico-químicas;
      : Auxiliar de Radiologia (Revelação Fotográfica);
 
-### 3251 : Técnico em farmácia e em manipulação farmacêutica
+#### 3251 : Técnico em farmácia e em manipulação farmacêutica
 
     325105 : Auxiliar técnico em laboratório de farmácia;
     325110 : Técnico em Laboratório de Farmácia;
     325115 : Técnico em Farmácia;
 
-### 8103 : Supervisores de produção em indústrias de produtos farmacêuticos, cosméticos e afins
+#### 8103 : Supervisores de produção em indústrias de produtos farmacêuticos, cosméticos e afins
 
     810305 : Mestre de produção farmacêutica;
 
-### 5152 : Auxiliares de laboratório da saúde
+#### 5152 : Auxiliares de laboratório da saúde
 
     515205 : Auxiliar de banco de sangue;
     515210 : Auxiliar de Farmácia de Manipulação;
@@ -252,51 +369,51 @@
     515220 : Auxiliar de Laboratório de Imunobiológicos;
     515225 : Auxiliar de Produção Farmacêutica;
 
-### 3253 : Técnicos de apoio à biotecnologia
+#### 3253 : Técnicos de apoio à biotecnologia
 
     325310 : Técnico em Imunobiológicos;
 
-### 3242 : Técnicos de laboratórios de saúde e bancos de sangue
+#### 3242 : Técnicos de laboratórios de saúde e bancos de sangue
 
     324205 : Técnico em patologia clínica;
     324210 : Auxiliar Técnico em Patologia Clínica;
 
-### 2237 : Nutricionistas
+#### 2237 : Nutricionistas
 
     223705 : Dietista;
 
-### 3225 : Técnicos em próteses ortopédicas
+#### 3225 : Técnicos em próteses ortopédicas
 
     322505 : Técnico de ortopedia;
 
-### 3135 : Técnicos em fotônica
+#### 3135 : Técnicos em fotônica
 
     3135D1 : Técnico em reabilitação;
     3135D2 : Técnico em equipamento médico hospitalar;
 
-### 3226 : Técnicos de imobilizações ortopédicas
+#### 3226 : Técnicos de imobilizações ortopédicas
 
     322605 : Técnico de imobilização ortopédica;
 
-### 3224 : Técnicos de odontologia
+#### 3224 : Técnicos de odontologia
 
     322405 : Técnico em saúde bucal;
     322410 : Protético Dentário;
     322420 : Auxiliar de Prótese Dentária;
 
-### 3522 : Agentes da saúde e do meio ambiente
+#### 3522 : Agentes da saúde e do meio ambiente
 
     352205 : Agente de defesa ambiental;
 
-### 3241 : Tecnólogos e técnicos em métodos de diagnósticos e terapêutica
+#### 3241 : Tecnólogos e técnicos em métodos de diagnósticos e terapêutica
 
     324115 : Técnico em radiologia e imagenologia;
 
-### 3201 : Técnicos em biologia
+#### 3201 : Técnicos em biologia
 
     320110 : Técnico em Histologia;
 
-### 3000 : Outras ocupações de Nível Técnico e Auxiliar em Saúde
+#### 3000 : Outras ocupações de Nível Técnico e Auxiliar em Saúde
 
     224125 : Técnico de Desporto Individual e Coletivo;
     239215 : Professor de Alunos Com Deficiência Menta;
@@ -327,30 +444,30 @@
 
 ## PESSOAL DE SAÚDE - QUALIFICAÇÃO ELEMENTAR
 
-### 5151 : Trabalhadores em serviços de promoção e apoio à saúde
+#### 5151 : Trabalhadores em serviços de promoção e apoio à saúde
 
     515105 : Agente comunitário de saúde;
     515115 : Parteira leiga;
 
 
-### 3522 : Agentes da saúde e do meio ambiente
+#### 3522 : Agentes da saúde e do meio ambiente
 
     352210 : Agente de saúde pública;
 
-### 00000 : Atendente de Enfermagem/Auxiliar operacional de serviços diversos e assemelhados
+#### 00000 : Atendente de Enfermagem/Auxiliar operacional de serviços diversos e assemelhados
 
     322415 : Atendente de consultório dentário;
     515110 : Atendente de enfermagem;
     521130 : Atendente de farmácia - balconista;
 
-### 00000 : Outras ocupações de Nível Elementar em Saúde
+#### 00000 : Outras ocupações de Nível Elementar em Saúde
 
     716405 : Gesseiro;
     752105 : Artesão modelador (vidros);
 
 ## PESSOAL ADMINISTRATIVO
 
-### 1000 : Administração
+#### 1000 : Administração
 
     123105 : Diretor administrativo;
     123110 : Diretor administrativo e financeiro;
@@ -452,7 +569,7 @@
     510105 : Supervisor de transportes;
     510115 : Supervisor de andar;
 
-### 7000 : Serviço de Limpeza/Conservação
+#### 7000 : Serviço de Limpeza/Conservação
 
     254310 : Agente de higiene e segurança;
     512105 : Empregado doméstico nos serviços gerais;
@@ -472,7 +589,7 @@
     771105 : Marceneiro;
     862120 : Operador de caldeira;
 
-### 5000 : Segurança
+#### 5000 : Segurança
 
     517215 : Guarda-civil municipal;
     517310 : Agente de segurança;
@@ -483,7 +600,7 @@
     519925 : Guardador de veículos;
     783105 : Agente de pátio;
 
-### 5000 : Outras ocupações administrativas
+#### 5000 : Outras ocupações administrativas
 
     513205 : Cozinheiro geral;
     513220 : Cozinheiro de hospital;
