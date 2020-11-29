@@ -1,17 +1,20 @@
 # Smart Contracts
 
-Clique no contrato abaixo para ver seu código fonte:
+Essa página lista o código dos Smart Contracts desenvolvidos para a experimentação de um protótipo
+do esquema proposto no trabalho deste repositório.
+Clique no contrato abaixo para explorar seu código:
 
-[SmartDCPABEAuthority](SmartDCPABEAuthority.sol)
+**[SmartDCPABEAuthority](SmartDCPABEAuthority.sol):** Esse contrato permite registrar e pesquisar por certificadores.
 
-[SmartDCPABEFiles](SmartDCPABEFiles.sol)
+**[SmartDCPABEFiles](SmartDCPABEFiles.sol):** Esse contrato permite a gestão e a pesquisa de arquivos publicados neste contrato.
+Esse contrato também registra os servidores que hospedam estes arquivos.
 
-[SmartDCPABEKeys](SmartDCPABEKeys.sol)
+**[SmartDCPABEKeys](SmartDCPABEKeys.sol):** Esse contrato permite registrar e pesquisar por chaves públicas de atributos.
 
-[SmartDCPABERequests](SmartDCPABERequests.sol)
+**[SmartDCPABERequests](SmartDCPABERequests.sol):** Esse contrato permite registrar e pesquisar por requisições de chaves pessoais de atributos feitas por usuários aos certificadores.
 
-[SmartDCPABERoot](SmartDCPABERoot.sol)
+**[SmartDCPABERoot](SmartDCPABERoot.sol):** Esse contrato permite a gestão de dependência de contratos entre os outros contratos relacionados neste projeto.
 
-[SmartDCPABEUsers](SmartDCPABEUsers.sol)
+**[SmartDCPABEUsers](SmartDCPABEUsers.sol):** Esse contrato permite registrar e pesquisar por usuários.
 
-[SmartDCPABEUtility](SmartDCPABEUtility.sol)
+**[SmartDCPABEUtility](SmartDCPABEUtility.sol):** Esse contrato se comporta como uma biblioteca de funções utilitárias.
