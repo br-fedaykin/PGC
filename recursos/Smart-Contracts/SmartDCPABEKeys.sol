@@ -4,6 +4,11 @@ import "./SmartDCPABEUtility.sol";
 import "./SmartDCPABEAuthority.sol";
 import "./Collection.sol";
 
+/**
+ * @author Bruno C. P. Arruda
+ * @title SmartDCPABE Key Management Contract
+ * @notice This contract allow to register and find attribute public keys
+ */
 contract SmartDCPABEKeys is Collection {
 
     struct PublicKey {
@@ -24,8 +29,15 @@ contract SmartDCPABEKeys is Collection {
     mapping(address => string[]) publicKeyNames;
     mapping(address => mapping(string => PublicKey)) ABEKeys;
 
+    /**
+     * @notice creates the contract with unset dependencies
+     * @param root the address of the Root contract
+     */
     constructor(address root) Collection(root) {}
 
+    /**
+     * @inheritdoc Collection
+     */
     function setContractDependencies(
         ContractType contractType,
         address addr
@@ -41,6 +53,13 @@ contract SmartDCPABEKeys is Collection {
         }
     }
 
+    /**
+     * @notice register a public key of an attribute
+     * @param addr user's address
+     * @param name attribute name
+     * @param eg1g1ai a component of the DCPABE attribute data structure
+     * @param g1yi a component of the DCPABE attribute data structure
+     */
     function addPublicKey(
         address addr,
         string memory name,
@@ -84,6 +103,14 @@ contract SmartDCPABEKeys is Collection {
         );
     }
 
+    /**
+     * @notice get the public key data
+     * @param addr user's address
+     * @param name attribute name
+     * @return name_ attribute name
+     * @return eg1g1ai a component of the DCPABE attribute data structure
+     * @return g1yi a component of the DCPABE attribute data structure
+     */
     function getPublicKey
     (
         address addr,
@@ -113,6 +140,21 @@ contract SmartDCPABEKeys is Collection {
                 util.trimBytes31(pk.g1yi.chunk4, pk.g1yi.lastChunkSize)));
     }
 
+    /**
+     * @notice register a public key of an attribute
+     * @dev this function is called only by the addPublicKey public function,
+     * after the split of the bytes values into words of 32 bytes
+     * @param addr user's address
+     * @param name attribute name
+     * @param eg1g1aiChunks three first words of 32 bytes a DCPABE attribute component
+     * named as 'eg1g1ai'
+     * @param eg1g1aiLastChunk last bytes of 'eg1g1ai1', fit into a word of 31 bytes
+     * @param eg1g1aiLastChunkSize the data offset inside the last word of eg1g1ai1
+     * @param g1yiChunks three first words of 32 bytes a DCPABE attribute component
+     * named as 'g1yi'
+     * @param g1yiLastChunk last bytes of 'g1yi', fit into a bytes31 variable
+     * @param g1yiLastChunkSize the data offset inside the last word of g1yi
+     */
     function addPublicKey
     (
         address addr,
@@ -141,7 +183,8 @@ contract SmartDCPABEKeys is Collection {
             g1yiLastChunkSize
         );
 
-        // checks existence of data to decide whether or not to push the attribute name into the stack
+        // checks existence of data to decide whether or not to push the attribute name
+        // into the stack
         if (uint(ABEKeys[addr][name].eg1g1ai.chunk1) == uint(0)) {
             publicKeyNames[addr].push(name);
             authority.incrementPublicKeyCount(addr);

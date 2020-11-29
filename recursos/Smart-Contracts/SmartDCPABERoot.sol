@@ -3,6 +3,14 @@ pragma solidity ^0.7.0 <= 0.7.5;
 
 import "./Collection.sol";
 
+/**
+ * @author Bruno C. P. Arruda
+ * @title Root Administrator Contract
+ * @notice This contract manages contract dependencies among the contracts related to
+ * the SmartDCPABE project
+ * @dev This contract must be published before other contracts, and its address must be passed
+ * as argument to other contract constructors
+ */
 contract SmartDCPABERoot {
 
     uint8 constant numContracts = 6;
@@ -15,26 +23,39 @@ contract SmartDCPABERoot {
     Collection.ContractType UTILITY = Collection.ContractType.UTILITY;
     address owner;
 
+    /**
+     * @notice sets the transaction sender's as the owner of this contract
+     */
     constructor () {
         owner = msg.sender;
     }
 
+    /**
+     * @notice pass the ownership of contracts to a new Root contract
+     * @param  newRoot the address of a new SmartDCPABERoot contract
+     */
     function changeOwnership(address newRoot) public onlyOwner {
         for (uint8 i = 0; i < numContracts; i++) {
             bytes memory payload = abi.encodeWithSignature("changeOwnership(address)", newRoot);
             (bool success, ) = contractAddress[i].call(payload);
-            /*
-             * NOTE: this could lead to consistency problems if a failed require()
-             * breaks the loop and ownership is not restored.
-             */
             require(success, "Contract method invocation failed.");
         }
     }
 
+    /**
+     * @notice get all contract addresses managed by SmartDCPABERoot
+     * @return addresses a list of contract addresses
+     */
     function getAllContractAddresses() public view returns (address[numContracts] memory) {
         return contractAddress;
     }
 
+    /**
+     * @notice register all contract addresses and inject their dependencies
+     * @param contractType a list of values indicating the contract type of the addresses,
+     * as defined by the Collection.ContractType Enum
+     * @param addr a list of SmartDCPABE contract addresses
+     */
     function setAllContracts(
         Collection.ContractType[numContracts] memory contractType,
         address[numContracts] memory addr
@@ -57,6 +78,12 @@ contract SmartDCPABERoot {
         }
     }
 
+    /**
+     * @notice register a contract address and set corresponding dependencies
+     * @param contractType a value indicating the contract type of the addresses, as defined
+     * by the Collection.ContractType Enum
+     * @param addr a SmartDCPABE contract address
+     */
     function setContract(
         Collection.ContractType contractType,
         address addr
@@ -70,6 +97,12 @@ contract SmartDCPABERoot {
         receiveContractDependencies(contractType);
     }
 
+    /**
+     * @notice register a contract address
+     * @param contractType a value indicating the contract type of the addresses, as defined
+     * by the Collection.ContractType Enum
+     * @param addr a SmartDCPABE contract address
+     */
     function setContractAddress(Collection.ContractType contractType, address addr) private {
         uint8 index = uint8(contractType);
         if (contractType == AUTHORITY) {
@@ -87,6 +120,12 @@ contract SmartDCPABERoot {
         }
     }
 
+    /**
+     * @notice update all dependencies of a contract, used when there is a new
+     * contract to replace an existing one and it has dependencies
+     * @param contractType a value indicating the contract type, as defined
+     * by the Collection.ContractType Enum
+     */
     function receiveContractDependencies(Collection.ContractType contractType) private {
         if (contractType == UTILITY || contractType == USERS) {
             return;
@@ -123,6 +162,12 @@ contract SmartDCPABERoot {
         }
     }
 
+    /**
+     * @notice injects a contract address in all contracts that depends on it,
+     * used when there is a new contract deploy to replace existing one
+     * @param contractType a value indicating the contract type, as defined
+     * by the Collection.ContractType Enum
+     */
     function supplyContractDependencies(Collection.ContractType contractType) private {
         if (contractType == FILES || contractType == REQUESTS) {
             return;
@@ -159,11 +204,17 @@ contract SmartDCPABERoot {
         }
     }
 
+    /**
+     * @notice checks if the transaction sender is the owner
+     */
     modifier onlyOwner() {
         require(msg.sender == owner, "Operation not allowed.");
         _;
     }
 
+     /**
+     * @notice checks wether passed value is defined in ContractType Enum
+     */
     modifier validIndex(Collection.ContractType contractType) {
         require(uint8(contractType) < numContracts, "target contract type aren't implemented yet.");
         _;

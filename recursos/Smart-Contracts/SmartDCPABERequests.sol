@@ -5,6 +5,11 @@ import "./SmartDCPABEAuthority.sol";
 import "./SmartDCPABEUsers.sol";
 import "./Collection.sol";
 
+/**
+ * @author Bruno C. P. Arruda
+ * @title SmartDCPABE Attribute Request Contract
+ * @notice This contract allow the management and search of attribute requests made by users
+ */
 contract SmartDCPABERequests is Collection {
 
     enum KeyRequestStatus {
@@ -36,8 +41,15 @@ contract SmartDCPABERequests is Collection {
     SmartDCPABEUsers user;
     SmartDCPABEAuthority authority;
 
+    /**
+     * @notice creates the contract with unset dependencies
+     * @param root the address of the Root contract
+     */
     constructor(address root) Collection(root) {}
 
+    /**
+     * @inheritdoc Collection
+     */
     function setContractDependencies(
         Collection.ContractType contractType,
         address addr
@@ -53,6 +65,13 @@ contract SmartDCPABERequests is Collection {
         }
     }
 
+    /**
+     * @notice registers a user request for attributes
+     * @param certifier certifier's address
+     * @param requester requester's address
+     * @param timestamp timestamp of the request
+     * @param attrNames an array with names of attributes published by the certifier
+     */
     function addRequest(
         address certifier,
         address requester,
@@ -70,7 +89,14 @@ contract SmartDCPABERequests is Collection {
         pendingRequests[certifier][requester].push(pendingIndex);
         pendingRequesters[certifier].push(requester);
     }
-
+    /**
+     * @notice process a request by removing it from the list of pending requests
+     * and changing its status
+     * @param certifier certifier's address
+     * @param requesterIndex index of the user in the requester array
+     * @param pendingIndex index of the request in the pending request array
+     * @param newStatus the new, final state of the request
+     */
     function processRequest(
         address certifier,
         uint64 requesterIndex,
@@ -105,6 +131,12 @@ contract SmartDCPABERequests is Collection {
         }
     }
 
+    /**
+     * @notice get the number of requests made by an user to a certifier
+     * @param certifier certifier's address
+     * @param requester user's address
+     * @return num_requests the number of the requests
+     */
     function getRequestListSize(
         address certifier,
         address requester
@@ -116,6 +148,13 @@ contract SmartDCPABERequests is Collection {
         return requests[certifier][requester].length;
     }
 
+    /**
+     * @notice get the indexes of requests made by an user to a certifier with
+     * current "pending" status
+     * @param certifier certifier's address
+     * @param requester user's address
+     * @return indexes a list of indexes of requests stored in the request array
+     */
     function getPendingList(
         address certifier,
         address requester
@@ -127,10 +166,21 @@ contract SmartDCPABERequests is Collection {
         return pendingRequests[certifier][requester];
     }
 
+    /**
+     * @notice get the number of different users with pending requests to a certifier
+     * @param certifier certifier's address
+     * @return num_requesters the number of users with pending requests
+     */
     function getPendingRequesterListSize(address certifier) public view returns (uint256) {
         return pendingRequesters[certifier].length;
     }
 
+    /**
+     * @notice get the address of an user with pending requests
+     * @param certifier certifier's address
+     * @param requesterIndex index of the user in the requester array
+     * @return addr the user's address
+     */
     function getPendingRequesterAddress(
         address certifier,
         uint64 requesterIndex
@@ -142,6 +192,15 @@ contract SmartDCPABERequests is Collection {
         return pendingRequesters[certifier][requesterIndex];
     }
 
+    /**
+     * @notice get the status of a request
+     * @param certifier certifier's address
+     * @param requester user's address
+     * @param index the index of the request in the list of requests made by an
+     * user to a certifier
+     * @return status a value indicating the request status, defined in the
+     * KeyRequestStatus Enum
+     */
     function getRequestStatus(
         address certifier,
         address requester,
@@ -154,6 +213,21 @@ contract SmartDCPABERequests is Collection {
         return requests[certifier][requester][index].status;
     }
 
+    /**
+     * @notice get request data
+     * @param certifier certifier's address
+     * @param requester user's address
+     * @param index the index of the request in the list of requests made by an
+     * user to a certifier
+     * @return status a value indicating the request status, defined in the
+     * KeyRequestStatus Enum
+     * @return index the index of the request in the list of requests made by an
+     * user to a certifier
+     * @return timestamp publication timestamp
+     * @return responseTimestamp certifier processing timestamp. In case the request is pending,
+     * responseTimestamp = 0.
+     * @return attrNames an array with names of attributes published by the certifier
+     */
     function getRequest
     (
         address certifier,
