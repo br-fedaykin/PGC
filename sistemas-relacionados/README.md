@@ -6,7 +6,17 @@ Autor | linguagem | Artigos citados | disponibilizado em | andamento | dependên
 |---| ---| ---| ---| --- | --- |
 |[sagrawal87](https://github.com/sagrawal87/ABE)| Python |[1], [2],  [3]| ago/2017 | 3 commits, todos em ago/2017 | Charm 0.43. Funciona com o branch dev, commit [40f2671](https://github.com/JHUISI/charm/commit/40f2671d6233ea669d1e2fab90531623993baf2b)
 
-O projeto contém um arquivo [main.py](sagrawal87-python-ABE/main.py) que demonstra uma prova de conceito de criptografia utilizando Charm. Ele utiliza principalmente os submódulos  [```charm.toolbox.pairinggroup```](https://github.com/JHUISI/charm/blob/dev/charm/toolbox/pairinggroup.py) e [```charm.toolbox.ABEnc```](https://github.com/JHUISI/charm/blob/dev/charm/toolbox/ABEnc.py). Infelizmente, não existe um método implementado para converter uma mensagem nos parâmetros necessários para a execução da criptografia por pareamento de grupos. Isso inviabiliza o uso.
+O projeto contém um arquivo [main.py](sagrawal87-python-ABE/main.py) que demonstra uma prova de conceito de criptografia utilizando Charm.
+Ele contém somente um teste de que uma criptografia funciona, a mensagem porém não é um texto, mas um parâmetro obtido a partir da biblioteca pgb.
+Ele utiliza principalmente os submódulos  [```charm.toolbox.pairinggroup```](https://github.com/JHUISI/charm/blob/dev/charm/toolbox/pairinggroup.py) e [```charm.toolbox.ABEnc```](https://github.com/JHUISI/charm/blob/dev/charm/toolbox/ABEnc.py).
+Infelizmente, não existe um método implementado para converter uma mensagem nos parâmetros necessários para a execução da criptografia por pareamento de grupos. Isso inviabiliza o uso.
+
+o arquivo [msp.py](sagrawal87-python-ABE/msp.py) deve significar algo como M Secret Policy ou melhor, Monotone Span Program.
+É um utilitário para processar políticas de acesso.
+
+O arquivo [ac17.py](sagrawal87-python-ABE/ac17.py) implementa o sistema de acordo com o artigo <https://eprint.iacr.org/2017/807.pdf>.
+
+
 
 Autor | linguagem | Artigos citados | disponibilizado em | andamento | dependências
 |---| ---| ---| ---| --- | --- |
@@ -40,7 +50,7 @@ Autor | linguagem | Artigos citados | disponibilizado em | andamento | dependên
 | [9] | sim | ethereum rinkeby testnet | dataUser contract address  - [testnet](https://rinkeby.etherscan.io/address/0xafdbce7575143ddff0e34874bc95812ea620eccd), [código recuperado](https://ethervm.io/decompile?address=0xafdBCe7575143ddff0e34874bc95812EA620EccD&network=rinkeby) <br> dataSharing contract address - [testnet](https://rinkeby.etherscan.io/address/0x3ca4b656e24d45fc1a5f408bf5ac1b9f3ef05f1f), [código recuperado](https://ethervm.io/decompile?address=0x3ca4b656e24d45fc1a5f408bf5ac1b9f3ef05f1f&network=rinkeby)| tentei através de comentário na página do artigo
 | [10] | só das funções criptográficas | - | - | vou desconsiderar
 | [11] | sim | fabricado com [BigchainDB 1.3.0](https://www.bigchaindb.com/) | não usa | zhimeisui@gmail.com e outros
-| [12] | não | - | - | - 
+| [12] | não | - | - | -
 | [13] | não | - | - | -
 | [14] | sim | private ethereum network | não é descrito, nem publicado, mas há intenção de fazê-lo | obour539@yahoo.com e outros
 
